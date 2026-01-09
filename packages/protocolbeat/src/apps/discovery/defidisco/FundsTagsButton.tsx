@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useUpdateContractTag, useContractTags } from '../../../hooks/useContractTags'
+import {
+  useUpdateContractTag,
+  useContractTags,
+} from '../../../hooks/useContractTags'
 import { useStore } from '../panel-nodes/store/store'
 import { ControlButton } from '../panel-nodes/controls/ControlButton'
 
@@ -18,15 +21,19 @@ export function FundsTagsButton() {
   const updateContractTag = useUpdateContractTag(project)
   const { data: contractTags } = useContractTags(project)
 
-  const selectedNodes = nodes.filter(node => selected.includes(node.id))
+  const selectedNodes = nodes.filter((node) => selected.includes(node.id))
   const selectionExists = selected.length > 0
 
   // Get current funds settings for first selected node
   const getCurrentSettings = () => {
     if (selectedNodes.length > 0 && selectedNodes[0]) {
-      const normalizedNodeAddress = selectedNodes[0].address.toLowerCase().replace('eth:', '')
-      const tag = contractTags?.tags.find(tag =>
-        tag.contractAddress.toLowerCase().replace('eth:', '') === normalizedNodeAddress
+      const normalizedNodeAddress = selectedNodes[0].address
+        .toLowerCase()
+        .replace('eth:', '')
+      const tag = contractTags?.tags.find(
+        (tag) =>
+          tag.contractAddress.toLowerCase().replace('eth:', '') ===
+          normalizedNodeAddress,
       )
       return {
         fetchBalances: tag?.fetchBalances ?? false,
@@ -69,12 +76,12 @@ export function FundsTagsButton() {
     const newValue = !currentSettings.fetchBalances
 
     await Promise.all(
-      selectedNodes.map(node => {
+      selectedNodes.map((node) => {
         return updateContractTag.mutateAsync({
           contractAddress: node.address,
           fetchBalances: newValue,
         })
-      })
+      }),
     )
   }
 
@@ -82,20 +89,22 @@ export function FundsTagsButton() {
     const newValue = !currentSettings.fetchPositions
 
     await Promise.all(
-      selectedNodes.map(node => {
+      selectedNodes.map((node) => {
         return updateContractTag.mutateAsync({
           contractAddress: node.address,
           fetchPositions: newValue,
         })
-      })
+      }),
     )
   }
 
   // Count selected nodes that have funds fetching enabled
-  const fundsEnabledCount = selectedNodes.filter(node => {
+  const fundsEnabledCount = selectedNodes.filter((node) => {
     const normalizedNodeAddress = node.address.toLowerCase().replace('eth:', '')
-    const tag = contractTags?.tags.find(tag =>
-      tag.contractAddress.toLowerCase().replace('eth:', '') === normalizedNodeAddress
+    const tag = contractTags?.tags.find(
+      (tag) =>
+        tag.contractAddress.toLowerCase().replace('eth:', '') ===
+        normalizedNodeAddress,
     )
     return tag?.fetchBalances || tag?.fetchPositions
   }).length
@@ -125,7 +134,9 @@ export function FundsTagsButton() {
                 onChange={handleToggleBalances}
                 className="w-4 h-4 accent-blue-500 cursor-pointer"
               />
-              <span className="text-xs text-coffee-200">Fetch Token Balances</span>
+              <span className="text-xs text-coffee-200">
+                Fetch Token Balances
+              </span>
             </label>
 
             <label
@@ -138,11 +149,14 @@ export function FundsTagsButton() {
                 onChange={handleTogglePositions}
                 className="w-4 h-4 accent-blue-500 cursor-pointer"
               />
-              <span className="text-xs text-coffee-200">Fetch DeFi Positions</span>
+              <span className="text-xs text-coffee-200">
+                Fetch DeFi Positions
+              </span>
             </label>
 
             <div className="text-xs text-coffee-500 mt-1">
-              Selected: {selectedNodes.length} contract{selectedNodes.length !== 1 ? 's' : ''}
+              Selected: {selectedNodes.length} contract
+              {selectedNodes.length !== 1 ? 's' : ''}
             </div>
           </div>
         </div>

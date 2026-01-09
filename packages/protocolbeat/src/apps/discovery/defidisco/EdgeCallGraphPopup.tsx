@@ -213,8 +213,8 @@ export function EdgeCallGraphPopup({
           </span>
         </div>
         <div className="mt-1 text-xs text-coffee-400">
-          {totalCalls} call{totalCalls !== 1 ? 's' : ''} ({calls.outgoing.length}{' '}
-          outgoing, {calls.incoming.length} incoming)
+          {totalCalls} call{totalCalls !== 1 ? 's' : ''} (
+          {calls.outgoing.length} outgoing, {calls.incoming.length} incoming)
         </div>
       </div>
 

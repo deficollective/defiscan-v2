@@ -36,26 +36,33 @@ export function DependencyPropagationDialog({
   onCancel,
   onSkip,
 }: DependencyPropagationDialogProps) {
-  const [selectedFunctions, setSelectedFunctions] = useState<Set<string>>(new Set())
-  const [expandedContracts, setExpandedContracts] = useState<Set<string>>(new Set())
+  const [selectedFunctions, setSelectedFunctions] = useState<Set<string>>(
+    new Set(),
+  )
+  const [expandedContracts, setExpandedContracts] = useState<Set<string>>(
+    new Set(),
+  )
   const [isLoading, setIsLoading] = useState(false)
 
   // Group functions by contract
-  const groupedFunctions: GroupedFunctions = affectedFunctions.reduce((acc, func) => {
-    if (!acc[func.contractAddress]) {
-      acc[func.contractAddress] = {
-        contractName: func.contractName,
-        functions: [],
+  const groupedFunctions: GroupedFunctions = affectedFunctions.reduce(
+    (acc, func) => {
+      if (!acc[func.contractAddress]) {
+        acc[func.contractAddress] = {
+          contractName: func.contractName,
+          functions: [],
+        }
       }
-    }
-    acc[func.contractAddress].functions.push(func)
-    return acc
-  }, {} as GroupedFunctions)
+      acc[func.contractAddress].functions.push(func)
+      return acc
+    },
+    {} as GroupedFunctions,
+  )
 
   // Initialize all functions as selected (pre-checked)
   useEffect(() => {
     const allFunctionKeys = affectedFunctions.map(
-      func => `${func.contractAddress}:${func.functionName}`
+      (func) => `${func.contractAddress}:${func.functionName}`,
     )
     setSelectedFunctions(new Set(allFunctionKeys))
   }, [affectedFunctions])
@@ -73,12 +80,12 @@ export function DependencyPropagationDialog({
 
   const handleToggleContract = (contractAddress: string) => {
     const contractFunctions = groupedFunctions[contractAddress]?.functions || []
-    const allSelected = contractFunctions.every(func =>
-      selectedFunctions.has(`${func.contractAddress}:${func.functionName}`)
+    const allSelected = contractFunctions.every((func) =>
+      selectedFunctions.has(`${func.contractAddress}:${func.functionName}`),
     )
 
     const newSelected = new Set(selectedFunctions)
-    contractFunctions.forEach(func => {
+    contractFunctions.forEach((func) => {
       const key = `${func.contractAddress}:${func.functionName}`
       if (allSelected) {
         newSelected.delete(key)
@@ -91,7 +98,7 @@ export function DependencyPropagationDialog({
 
   const handleSelectAll = () => {
     const allFunctionKeys = affectedFunctions.map(
-      func => `${func.contractAddress}:${func.functionName}`
+      (func) => `${func.contractAddress}:${func.functionName}`,
     )
     setSelectedFunctions(new Set(allFunctionKeys))
   }
@@ -113,8 +120,8 @@ export function DependencyPropagationDialog({
   const handleConfirm = async () => {
     setIsLoading(true)
     try {
-      const functionsToUpdate = affectedFunctions.filter(func =>
-        selectedFunctions.has(`${func.contractAddress}:${func.functionName}`)
+      const functionsToUpdate = affectedFunctions.filter((func) =>
+        selectedFunctions.has(`${func.contractAddress}:${func.functionName}`),
       )
       await onConfirm(functionsToUpdate)
     } finally {
@@ -124,15 +131,18 @@ export function DependencyPropagationDialog({
 
   const isContractFullySelected = (contractAddress: string) => {
     const contractFunctions = groupedFunctions[contractAddress]?.functions || []
-    return contractFunctions.length > 0 && contractFunctions.every(func =>
-      selectedFunctions.has(`${func.contractAddress}:${func.functionName}`)
+    return (
+      contractFunctions.length > 0 &&
+      contractFunctions.every((func) =>
+        selectedFunctions.has(`${func.contractAddress}:${func.functionName}`),
+      )
     )
   }
 
   const isContractPartiallySelected = (contractAddress: string) => {
     const contractFunctions = groupedFunctions[contractAddress]?.functions || []
-    const selectedCount = contractFunctions.filter(func =>
-      selectedFunctions.has(`${func.contractAddress}:${func.functionName}`)
+    const selectedCount = contractFunctions.filter((func) =>
+      selectedFunctions.has(`${func.contractAddress}:${func.functionName}`),
     ).length
     return selectedCount > 0 && selectedCount < contractFunctions.length
   }
@@ -145,7 +155,9 @@ export function DependencyPropagationDialog({
         {/* Header */}
         <div className="border-b border-coffee-600 p-4">
           <h2 className="text-lg font-semibold">
-            {mode === 'add' ? 'Add Dependencies to Connected Functions?' : 'Remove Dependencies from Functions?'}
+            {mode === 'add'
+              ? 'Add Dependencies to Connected Functions?'
+              : 'Remove Dependencies from Functions?'}
           </h2>
         </div>
 
@@ -157,7 +169,7 @@ export function DependencyPropagationDialog({
               {mode === 'add' ? 'Marking as external:' : 'Marking as internal:'}
             </div>
             <ul className="space-y-1 text-sm">
-              {externalContracts.map(contract => (
+              {externalContracts.map((contract) => (
                 <li key={contract.address} className="text-coffee-200">
                   • {contract.name}
                 </li>
@@ -192,67 +204,78 @@ export function DependencyPropagationDialog({
 
           {/* Grouped functions list */}
           <div className="space-y-2">
-            {Object.entries(groupedFunctions).map(([contractAddress, { contractName, functions }]) => {
-              const isExpanded = expandedContracts.has(contractAddress)
-              const isFullySelected = isContractFullySelected(contractAddress)
-              const isPartiallySelected = isContractPartiallySelected(contractAddress)
+            {Object.entries(groupedFunctions).map(
+              ([contractAddress, { contractName, functions }]) => {
+                const isExpanded = expandedContracts.has(contractAddress)
+                const isFullySelected = isContractFullySelected(contractAddress)
+                const isPartiallySelected =
+                  isContractPartiallySelected(contractAddress)
 
-              return (
-                <div key={contractAddress} className="rounded border border-coffee-600 bg-coffee-700">
-                  {/* Contract header */}
-                  <div className="flex items-center gap-2 p-2">
-                    <input
-                      type="checkbox"
-                      checked={isFullySelected}
-                      ref={input => {
-                        if (input) {
-                          input.indeterminate = isPartiallySelected
-                        }
-                      }}
-                      onChange={() => handleToggleContract(contractAddress)}
-                      disabled={isLoading}
-                      className="cursor-pointer"
-                    />
-                    <button
-                      className="flex flex-1 items-center gap-2 text-left text-sm font-medium hover:text-coffee-200"
-                      onClick={() => handleToggleExpanded(contractAddress)}
-                      disabled={isLoading}
-                    >
-                      <span className="text-xs">{isExpanded ? '▼' : '▶'}</span>
-                      <span>
-                        {contractName} ({functions.length} function{functions.length !== 1 ? 's' : ''})
-                      </span>
-                    </button>
-                  </div>
-
-                  {/* Functions list */}
-                  {isExpanded && (
-                    <div className="border-t border-coffee-600 p-2">
-                      {functions.map(func => {
-                        const key = `${func.contractAddress}:${func.functionName}`
-                        const isSelected = selectedFunctions.has(key)
-
-                        return (
-                          <label
-                            key={key}
-                            className="flex cursor-pointer items-center gap-2 py-1 pl-4 hover:bg-coffee-600"
-                          >
-                            <input
-                              type="checkbox"
-                              checked={isSelected}
-                              onChange={() => handleToggleFunction(func)}
-                              disabled={isLoading}
-                              className="cursor-pointer"
-                            />
-                            <span className="text-sm font-mono">{func.functionName}()</span>
-                          </label>
-                        )
-                      })}
+                return (
+                  <div
+                    key={contractAddress}
+                    className="rounded border border-coffee-600 bg-coffee-700"
+                  >
+                    {/* Contract header */}
+                    <div className="flex items-center gap-2 p-2">
+                      <input
+                        type="checkbox"
+                        checked={isFullySelected}
+                        ref={(input) => {
+                          if (input) {
+                            input.indeterminate = isPartiallySelected
+                          }
+                        }}
+                        onChange={() => handleToggleContract(contractAddress)}
+                        disabled={isLoading}
+                        className="cursor-pointer"
+                      />
+                      <button
+                        className="flex flex-1 items-center gap-2 text-left text-sm font-medium hover:text-coffee-200"
+                        onClick={() => handleToggleExpanded(contractAddress)}
+                        disabled={isLoading}
+                      >
+                        <span className="text-xs">
+                          {isExpanded ? '▼' : '▶'}
+                        </span>
+                        <span>
+                          {contractName} ({functions.length} function
+                          {functions.length !== 1 ? 's' : ''})
+                        </span>
+                      </button>
                     </div>
-                  )}
-                </div>
-              )
-            })}
+
+                    {/* Functions list */}
+                    {isExpanded && (
+                      <div className="border-t border-coffee-600 p-2">
+                        {functions.map((func) => {
+                          const key = `${func.contractAddress}:${func.functionName}`
+                          const isSelected = selectedFunctions.has(key)
+
+                          return (
+                            <label
+                              key={key}
+                              className="flex cursor-pointer items-center gap-2 py-1 pl-4 hover:bg-coffee-600"
+                            >
+                              <input
+                                type="checkbox"
+                                checked={isSelected}
+                                onChange={() => handleToggleFunction(func)}
+                                disabled={isLoading}
+                                className="cursor-pointer"
+                              />
+                              <span className="text-sm font-mono">
+                                {func.functionName}()
+                              </span>
+                            </label>
+                          )
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )
+              },
+            )}
           </div>
         </div>
 

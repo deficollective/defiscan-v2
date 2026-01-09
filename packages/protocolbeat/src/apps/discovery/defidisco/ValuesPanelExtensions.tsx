@@ -4,7 +4,11 @@ import { useQuery } from '@tanstack/react-query'
 import { Folder } from '../panel-values/Folder'
 import { PermissionsDisplay } from './PermissionsDisplay'
 import { getFundsData } from '../../../api/api'
-import type { ContractFundsData, FundsTokenBalance, FundsPositionProtocol } from '../../../api/types'
+import type {
+  ContractFundsData,
+  FundsTokenBalance,
+  FundsPositionProtocol,
+} from '../../../api/types'
 
 interface Props {
   selected: any
@@ -64,9 +68,13 @@ function ContractFundsDisplay({ fundsData }: { fundsData: ContractFundsData }) {
               .map((token, idx) => (
                 <TokenRow key={idx} token={token} />
               ))}
-            {fundsData.balances.tokens.filter((t) => t.usdValue > 0).length > 10 && (
+            {fundsData.balances.tokens.filter((t) => t.usdValue > 0).length >
+              10 && (
               <div className="text-coffee-500">
-                +{fundsData.balances.tokens.filter((t) => t.usdValue > 0).length - 10} more tokens
+                +
+                {fundsData.balances.tokens.filter((t) => t.usdValue > 0)
+                  .length - 10}{' '}
+                more tokens
               </div>
             )}
           </div>
@@ -95,7 +103,8 @@ function ContractFundsDisplay({ fundsData }: { fundsData: ContractFundsData }) {
 }
 
 function TokenRow({ token }: { token: FundsTokenBalance }) {
-  const formattedBalance = parseFloat(token.balance) / Math.pow(10, token.decimals)
+  const formattedBalance =
+    parseFloat(token.balance) / Math.pow(10, token.decimals)
   const displayBalance = formattedBalance.toLocaleString(undefined, {
     maximumFractionDigits: 4,
   })
@@ -123,7 +132,9 @@ function ProtocolRow({ protocol }: { protocol: FundsPositionProtocol }) {
           <span className="text-coffee-400">{isExpanded ? 'v' : '>'}</span>
           <span className="text-coffee-300">{protocol.name}</span>
         </div>
-        <span className="text-aux-green">{formatUsdValue(protocol.totalUsdValue)}</span>
+        <span className="text-aux-green">
+          {formatUsdValue(protocol.totalUsdValue)}
+        </span>
       </div>
 
       {isExpanded && (
@@ -140,7 +151,10 @@ function ProtocolRow({ protocol }: { protocol: FundsPositionProtocol }) {
                 <div className="ml-2 text-coffee-500">
                   {item.tokens.map((t, tidx) => (
                     <span key={tidx}>
-                      {t.amount.toLocaleString(undefined, { maximumFractionDigits: 4 })} {t.symbol}
+                      {t.amount.toLocaleString(undefined, {
+                        maximumFractionDigits: 4,
+                      })}{' '}
+                      {t.symbol}
                       {tidx < item.tokens.length - 1 ? ', ' : ''}
                     </span>
                   ))}
@@ -159,7 +173,7 @@ function ContractFundsSection({ address }: { address: string }) {
 
   const { data: fundsData } = useQuery({
     queryKey: ['funds-data', project],
-    queryFn: () => project ? getFundsData(project) : null,
+    queryFn: () => (project ? getFundsData(project) : null),
     enabled: !!project,
   })
 

@@ -1,7 +1,11 @@
 import { useState, useMemo } from 'react'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { getFundsData, executeFetchFunds } from '../../../api/api'
-import type { ContractFundsData, FundsTokenBalance, FundsPositionProtocol } from '../../../api/types'
+import type {
+  ContractFundsData,
+  FundsTokenBalance,
+  FundsPositionProtocol,
+} from '../../../api/types'
 import { useContractTags } from '../../../hooks/useContractTags'
 import { usePanelStore } from '../store/panel-store'
 import { ProxyTypeTag } from './ProxyTypeTag'
@@ -75,7 +79,16 @@ function ContractFundsRow({
               className="text-aux-blue hover:opacity-80 px-1"
               title="Select contract in graph"
             >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                 <polyline points="15 3 21 3 21 9" />
                 <line x1="10" y1="14" x2="21" y2="3" />
@@ -107,7 +120,8 @@ function ContractFundsRow({
           {fundsData.balances && fundsData.balances.tokens.length > 0 && (
             <div className="mb-3">
               <div className="text-aux-orange font-semibold mb-1">
-                Token Balances ({formatUsdValue(fundsData.balances.totalUsdValue)})
+                Token Balances (
+                {formatUsdValue(fundsData.balances.totalUsdValue)})
               </div>
               <div className="ml-2 flex flex-col gap-1">
                 {fundsData.balances.tokens
@@ -117,9 +131,13 @@ function ContractFundsRow({
                   .map((token, idx) => (
                     <TokenRow key={idx} token={token} />
                   ))}
-                {fundsData.balances.tokens.filter((t) => t.usdValue > 0).length > 10 && (
+                {fundsData.balances.tokens.filter((t) => t.usdValue > 0)
+                  .length > 10 && (
                   <div className="text-coffee-500">
-                    +{fundsData.balances.tokens.filter((t) => t.usdValue > 0).length - 10} more tokens
+                    +
+                    {fundsData.balances.tokens.filter((t) => t.usdValue > 0)
+                      .length - 10}{' '}
+                    more tokens
                   </div>
                 )}
               </div>
@@ -130,7 +148,8 @@ function ContractFundsRow({
           {fundsData.positions && fundsData.positions.protocols.length > 0 && (
             <div>
               <div className="text-aux-orange font-semibold mb-1">
-                DeFi Positions ({formatUsdValue(fundsData.positions.totalUsdValue)})
+                DeFi Positions (
+                {formatUsdValue(fundsData.positions.totalUsdValue)})
               </div>
               <div className="ml-2 flex flex-col gap-2">
                 {fundsData.positions.protocols.map((protocol, idx) => (
@@ -150,7 +169,8 @@ function ContractFundsRow({
 }
 
 function TokenRow({ token }: { token: FundsTokenBalance }) {
-  const formattedBalance = parseFloat(token.balance) / Math.pow(10, token.decimals)
+  const formattedBalance =
+    parseFloat(token.balance) / Math.pow(10, token.decimals)
   const displayBalance = formattedBalance.toLocaleString(undefined, {
     maximumFractionDigits: 4,
   })
@@ -178,7 +198,9 @@ function ProtocolRow({ protocol }: { protocol: FundsPositionProtocol }) {
           <span className="text-coffee-400">{isExpanded ? 'v' : '>'}</span>
           <span className="text-coffee-300">{protocol.name}</span>
         </div>
-        <span className="text-aux-green">{formatUsdValue(protocol.totalUsdValue)}</span>
+        <span className="text-aux-green">
+          {formatUsdValue(protocol.totalUsdValue)}
+        </span>
       </div>
 
       {isExpanded && (
@@ -195,7 +217,10 @@ function ProtocolRow({ protocol }: { protocol: FundsPositionProtocol }) {
                 <div className="ml-2 text-coffee-500">
                   {item.tokens.map((t, tidx) => (
                     <span key={tidx}>
-                      {t.amount.toLocaleString(undefined, { maximumFractionDigits: 4 })} {t.symbol}
+                      {t.amount.toLocaleString(undefined, {
+                        maximumFractionDigits: 4,
+                      })}{' '}
+                      {t.symbol}
                       {tidx < item.tokens.length - 1 ? ', ' : ''}
                     </span>
                   ))}
@@ -215,7 +240,11 @@ export function FundsSection({ project, projectData }: FundsSectionProps) {
   const [fetchProgress, setFetchProgress] = useState<string[]>([])
   const [forceRefresh, setForceRefresh] = useState(false)
 
-  const { data: fundsData, isLoading, error } = useQuery({
+  const {
+    data: fundsData,
+    isLoading,
+    error,
+  } = useQuery({
     queryKey: ['funds-data', project],
     queryFn: () => getFundsData(project),
   })
@@ -227,20 +256,25 @@ export function FundsSection({ project, projectData }: FundsSectionProps) {
     if (!projectData?.entries) return new Map<string, string>()
     const map = new Map<string, string>()
     projectData.entries.forEach((entry: any) => {
-      [...entry.initialContracts, ...entry.discoveredContracts].forEach((c: any) => {
-        map.set(c.address.toLowerCase(), c.name)
-      })
+      ;[...entry.initialContracts, ...entry.discoveredContracts].forEach(
+        (c: any) => {
+          map.set(c.address.toLowerCase(), c.name)
+        },
+      )
     })
     return map
   }, [projectData])
 
   // Build proxy type lookup map from projectData
-  const proxyTypeMap = useMemo(() => buildProxyTypeMap(projectData), [projectData])
+  const proxyTypeMap = useMemo(
+    () => buildProxyTypeMap(projectData),
+    [projectData],
+  )
 
   // Count contracts with funds fetching enabled
-  const contractsWithFundsEnabled = contractTags?.tags.filter(
-    (t) => t.fetchBalances || t.fetchPositions
-  ).length ?? 0
+  const contractsWithFundsEnabled =
+    contractTags?.tags.filter((t) => t.fetchBalances || t.fetchPositions)
+      .length ?? 0
 
   const handleFetchFunds = () => {
     if (isFetching) return
@@ -299,7 +333,9 @@ export function FundsSection({ project, projectData }: FundsSectionProps) {
       <div className="border-b border-b-coffee-600 pb-2">
         <h2 className="p-2 font-bold text-2xl text-aux-blue">Funds Data:</h2>
         <div className="mb-1 flex flex-col gap-2 border-l-4 border-transparent p-2 pl-1">
-          <p className="text-aux-red">Error loading funds data: {String(error)}</p>
+          <p className="text-aux-red">
+            Error loading funds data: {String(error)}
+          </p>
         </div>
       </div>
     )
@@ -336,7 +372,9 @@ export function FundsSection({ project, projectData }: FundsSectionProps) {
                   : 'Fetch funds data for all marked contracts (skips if fetched within 24h)'
             }
           >
-            {isFetching ? 'Fetching...' : `Fetch Funds (${contractsWithFundsEnabled})`}
+            {isFetching
+              ? 'Fetching...'
+              : `Fetch Funds (${contractsWithFundsEnabled})`}
           </button>
         </div>
       </div>
@@ -392,7 +430,7 @@ export function FundsSection({ project, projectData }: FundsSectionProps) {
                     proxyType={proxyTypeMap.get(address.toLowerCase())}
                     onSelect={() => usePanelStore.getState().select(address)}
                   />
-                )
+                ),
               )}
             </div>
           </>
@@ -400,8 +438,8 @@ export function FundsSection({ project, projectData }: FundsSectionProps) {
           <div className="ml-2 text-sm text-coffee-400">
             <p>No funds data available.</p>
             <p className="mt-1 text-coffee-500">
-              Mark contracts with "Fetch Balances" or "Fetch Positions" in contract tags,
-              then click "Fetch Funds" to retrieve data.
+              Mark contracts with "Fetch Balances" or "Fetch Positions" in
+              contract tags, then click "Fetch Funds" to retrieve data.
             </p>
           </div>
         )}

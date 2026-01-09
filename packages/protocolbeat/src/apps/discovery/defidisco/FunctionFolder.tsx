@@ -1,6 +1,11 @@
 import React, { Fragment, useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
-import type { ApiAbiEntry, FunctionEntry, AddressFieldValue, Likelihood } from '../../../api/types'
+import type {
+  ApiAbiEntry,
+  FunctionEntry,
+  AddressFieldValue,
+  Likelihood,
+} from '../../../api/types'
 import * as solidity from '../../../components/editor/languages/solidity'
 import { IconCheckFalse } from './IconCheckFalse'
 import { IconCheckTrue } from './IconCheckTrue'
@@ -28,18 +33,58 @@ interface FunctionFolderProps {
   contractAddress: string
   functionName: string
   functions: FunctionEntryWithContract[]
-  onPermissionToggle: (contractAddress: string, functionName: string, currentIsPermissioned: boolean) => void
-  onCheckedToggle: (contractAddress: string, functionName: string, currentChecked: boolean) => void
-  onScoreToggle: (contractAddress: string, functionName: string, currentScore: 'unscored' | 'low-risk' | 'medium-risk' | 'high-risk' | 'critical') => void
-  onLikelihoodToggle: (contractAddress: string, functionName: string, currentLikelihood?: Likelihood) => void
-  onDescriptionUpdate: (contractAddress: string, functionName: string, description: string) => void
-  onConstraintsUpdate: (contractAddress: string, functionName: string, constraints: string) => void
+  onPermissionToggle: (
+    contractAddress: string,
+    functionName: string,
+    currentIsPermissioned: boolean,
+  ) => void
+  onCheckedToggle: (
+    contractAddress: string,
+    functionName: string,
+    currentChecked: boolean,
+  ) => void
+  onScoreToggle: (
+    contractAddress: string,
+    functionName: string,
+    currentScore:
+      | 'unscored'
+      | 'low-risk'
+      | 'medium-risk'
+      | 'high-risk'
+      | 'critical',
+  ) => void
+  onLikelihoodToggle: (
+    contractAddress: string,
+    functionName: string,
+    currentLikelihood?: Likelihood,
+  ) => void
+  onDescriptionUpdate: (
+    contractAddress: string,
+    functionName: string,
+    description: string,
+  ) => void
+  onConstraintsUpdate: (
+    contractAddress: string,
+    functionName: string,
+    constraints: string,
+  ) => void
   onOpenInCode: (contractAddress: string, functionName: string) => void
-  onOwnerDefinitionsUpdate: (contractAddress: string, functionName: string, ownerDefinitions: OwnerDefinition[]) => void
-  onDelayUpdate: (contractAddress: string, functionName: string, delay?: { contractAddress: string; fieldName: string }) => void
-  onDependenciesUpdate: (contractAddress: string, functionName: string, dependencies?: { contractAddress: string }[]) => void
+  onOwnerDefinitionsUpdate: (
+    contractAddress: string,
+    functionName: string,
+    ownerDefinitions: OwnerDefinition[],
+  ) => void
+  onDelayUpdate: (
+    contractAddress: string,
+    functionName: string,
+    delay?: { contractAddress: string; fieldName: string },
+  ) => void
+  onDependenciesUpdate: (
+    contractAddress: string,
+    functionName: string,
+    dependencies?: { contractAddress: string }[],
+  ) => void
 }
-
 
 export function FunctionFolder({
   entry,
@@ -55,20 +100,21 @@ export function FunctionFolder({
   onOpenInCode,
   onOwnerDefinitionsUpdate,
   onDelayUpdate,
-  onDependenciesUpdate
+  onDependenciesUpdate,
 }: FunctionFolderProps) {
   const { project } = useParams()
   const [isOpen, setIsOpen] = useState(false)
 
   // Get current function data for this function
-  const currentFunction = functions.find(o =>
-    o.contractAddress === contractAddress && o.functionName === functionName
+  const currentFunction = functions.find(
+    (o) =>
+      o.contractAddress === contractAddress && o.functionName === functionName,
   )
 
   // Fetch project data to get available contracts and fields
   const { data: projectData } = useQuery({
     queryKey: ['project', project],
-    queryFn: () => project ? getProject(project) : null,
+    queryFn: () => (project ? getProject(project) : null),
     enabled: !!project,
   })
 
@@ -81,18 +127,25 @@ export function FunctionFolder({
       return []
     }
 
-    const allContracts = projectData.entries.flatMap(e => [...e.initialContracts, ...e.discoveredContracts])
+    const allContracts = projectData.entries.flatMap((e) => [
+      ...e.initialContracts,
+      ...e.discoveredContracts,
+    ])
     const dataAccess = new UIContractDataAccess(allContracts)
 
-    return currentFunction.ownerDefinitions.map(definition => {
-      const result = resolvePathExpression(dataAccess, contractAddress, definition.path)
+    return currentFunction.ownerDefinitions.map((definition) => {
+      const result = resolvePathExpression(
+        dataAccess,
+        contractAddress,
+        definition.path,
+      )
 
       if (result.error) {
         return {
           address: 'RESOLUTION_FAILED',
           source: definition,
           isResolved: false,
-          error: result.error
+          error: result.error,
         }
       }
 
@@ -101,7 +154,7 @@ export function FunctionFolder({
         source: definition,
         isResolved: true,
         allAddresses: result.addresses, // Keep all resolved addresses for display
-        structuredValue: result.structuredValue // Keep the structured value to preserve object structure
+        structuredValue: result.structuredValue, // Keep the structured value to preserve object structure
       }
     })
   }, [currentFunction?.ownerDefinitions, projectData, contractAddress])
@@ -113,8 +166,9 @@ export function FunctionFolder({
   const getContractName = (address: string): string => {
     if (!projectData?.entries) return address
 
-    const contract = projectData.entries.flatMap(e => [...e.initialContracts, ...e.discoveredContracts])
-      .find(c => c.address === address)
+    const contract = projectData.entries
+      .flatMap((e) => [...e.initialContracts, ...e.discoveredContracts])
+      .find((c) => c.address === address)
 
     return contract?.name || address.slice(0, 10) + '...'
   }
@@ -129,17 +183,24 @@ export function FunctionFolder({
 
     try {
       for (const entry of projectData.entries) {
-        const allContracts = [...entry.initialContracts, ...entry.discoveredContracts]
-        const contract = allContracts.find(c => c.address === delayRef.contractAddress)
+        const allContracts = [
+          ...entry.initialContracts,
+          ...entry.discoveredContracts,
+        ]
+        const contract = allContracts.find(
+          (c) => c.address === delayRef.contractAddress,
+        )
 
         if (contract?.fields) {
-          const field = contract.fields.find(f => f.name === delayRef.fieldName)
+          const field = contract.fields.find(
+            (f) => f.name === delayRef.fieldName,
+          )
           if (field?.value?.type === 'number') {
             const seconds = parseInt(field.value.value, 10)
             if (!isNaN(seconds)) {
               return {
                 seconds,
-                isResolved: true
+                isResolved: true,
               }
             }
           }
@@ -149,13 +210,13 @@ export function FunctionFolder({
       return {
         seconds: 0,
         isResolved: false,
-        error: 'Could not resolve delay field'
+        error: 'Could not resolve delay field',
       }
     } catch (error) {
       return {
         seconds: 0,
         isResolved: false,
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : 'Unknown error',
       }
     }
   }, [currentFunction?.delay, projectData])
@@ -168,30 +229,31 @@ export function FunctionFolder({
   const availableContracts = React.useMemo(() => {
     if (!projectData?.entries) return []
 
-    const contracts: Array<{ address: string; name: string; source: string }> = []
+    const contracts: Array<{ address: string; name: string; source: string }> =
+      []
 
-    projectData.entries.forEach(entry => {
+    projectData.entries.forEach((entry) => {
       // Add initial contracts
       entry.initialContracts
-        .filter(contract => contract.type === 'Contract')
-        .forEach(contract => {
+        .filter((contract) => contract.type === 'Contract')
+        .forEach((contract) => {
           contracts.push({
             address: contract.address,
             name: contract.name || 'Unknown Contract',
-            source: 'initial'
+            source: 'initial',
           })
         })
 
       // Add discovered contracts
       entry.discoveredContracts
-        .filter(contract => contract.type === 'Contract')
-        .forEach(contract => {
+        .filter((contract) => contract.type === 'Contract')
+        .forEach((contract) => {
           // Avoid duplicates
-          if (!contracts.some(c => c.address === contract.address)) {
+          if (!contracts.some((c) => c.address === contract.address)) {
             contracts.push({
               address: contract.address,
               name: contract.name || 'Unknown Contract',
-              source: 'discovered'
+              source: 'discovered',
             })
           }
         })
@@ -206,23 +268,27 @@ export function FunctionFolder({
 
     for (const entry of projectData.entries) {
       // Check both initial and discovered contracts
-      const allContracts = [...entry.initialContracts, ...entry.discoveredContracts]
-      const contract = allContracts.find(c => c.address === contractAddr)
+      const allContracts = [
+        ...entry.initialContracts,
+        ...entry.discoveredContracts,
+      ]
+      const contract = allContracts.find((c) => c.address === contractAddr)
 
       if (contract?.fields) {
         return contract.fields
-          .filter(field => {
+          .filter((field) => {
             const isNumeric = field.value?.type === 'number'
-            const hasDelayName = field.name?.toLowerCase().includes('delay') ||
-                                 field.name?.toLowerCase().includes('timelock') ||
-                                 field.name?.toLowerCase().includes('period') ||
-                                 field.name?.toLowerCase().includes('duration')
+            const hasDelayName =
+              field.name?.toLowerCase().includes('delay') ||
+              field.name?.toLowerCase().includes('timelock') ||
+              field.name?.toLowerCase().includes('period') ||
+              field.name?.toLowerCase().includes('duration')
             return isNumeric && (hasDelayName || true) // Accept all numeric fields, but prefer delay-related ones
           })
-          .map(field => ({
+          .map((field) => ({
             name: field.name,
             description: field.description || '',
-            value: field.value?.type === 'number' ? field.value.value : ''
+            value: field.value?.type === 'number' ? field.value.value : '',
           }))
       }
     }
@@ -233,7 +299,7 @@ export function FunctionFolder({
   const getExternalContracts = React.useMemo(() => {
     if (!projectData?.entries || !contractTags?.tags) return []
 
-    const externalTags = contractTags.tags.filter(tag => tag.isExternal)
+    const externalTags = contractTags.tags.filter((tag) => tag.isExternal)
     const contracts: Array<{
       address: string
       name: string
@@ -241,18 +307,19 @@ export function FunctionFolder({
       likelihood?: 'high' | 'medium' | 'low' | 'mitigated'
     }> = []
 
-    externalTags.forEach(tag => {
+    externalTags.forEach((tag) => {
       // Find contract name from project data
       // Address normalization is now handled in the backend when saving
-      const contract = projectData.entries.flatMap(e => [...e.initialContracts, ...e.discoveredContracts])
-        .find(c => c.address === tag.contractAddress)
+      const contract = projectData.entries
+        .flatMap((e) => [...e.initialContracts, ...e.discoveredContracts])
+        .find((c) => c.address === tag.contractAddress)
 
       if (contract) {
         contracts.push({
           address: tag.contractAddress,
           name: contract.name || 'Unknown Contract',
           centralization: tag.centralization,
-          likelihood: tag.likelihood
+          likelihood: tag.likelihood,
         })
       }
     })
@@ -262,13 +329,16 @@ export function FunctionFolder({
 
   // Helper to get dependency info (name, centralization, likelihood)
   const getDependencyInfo = (address: string) => {
-    return getExternalContracts.find(c => c.address === address)
+    return getExternalContracts.find((c) => c.address === address)
   }
 
   // Helper functions for dependency management
   const handleAddDependency = (dependencyAddress: string) => {
     const currentDependencies = currentFunction?.dependencies || []
-    const newDependencies = [...currentDependencies, { contractAddress: dependencyAddress }]
+    const newDependencies = [
+      ...currentDependencies,
+      { contractAddress: dependencyAddress },
+    ]
     onDependenciesUpdate(contractAddress, functionName, newDependencies)
     setIsAddingDependency(false)
   }
@@ -282,24 +352,39 @@ export function FunctionFolder({
   }
 
   // Helper to get centralization color
-  const getCentralizationColor = (centralization?: 'high' | 'medium' | 'low' | 'immutable') => {
+  const getCentralizationColor = (
+    centralization?: 'high' | 'medium' | 'low' | 'immutable',
+  ) => {
     switch (centralization) {
-      case 'high': return '#f87171' // red-400
-      case 'medium': return '#fb923c' // orange-400
-      case 'low': return '#fbbf24' // amber-400
-      case 'immutable': return '#10b981' // green-500
-      default: return '#9ca3af' // gray-400
+      case 'high':
+        return '#f87171' // red-400
+      case 'medium':
+        return '#fb923c' // orange-400
+      case 'low':
+        return '#fbbf24' // amber-400
+      case 'immutable':
+        return '#10b981' // green-500
+      default:
+        return '#9ca3af' // gray-400
     }
   }
 
   // Helper to get likelihood color
-  const getLikelihoodColor = (likelihood?: 'high' | 'medium' | 'low' | 'mitigated', isHover: boolean = false) => {
+  const getLikelihoodColor = (
+    likelihood?: 'high' | 'medium' | 'low' | 'mitigated',
+    isHover: boolean = false,
+  ) => {
     switch (likelihood) {
-      case 'high': return isHover ? '#fca5a5' : '#f87171' // red-300 : red-400
-      case 'medium': return isHover ? '#fdba74' : '#fb923c' // orange-300 : orange-400
-      case 'low': return isHover ? '#6ee7b7' : '#10b981' // green-300 : green-500 (swapped from amber to match new mapping)
-      case 'mitigated': return isHover ? '#93c5fd' : '#60a5fa' // blue-300 : blue-400
-      default: return isHover ? '#d1d5db' : '#9ca3af' // gray-300 : gray-400 (unassigned)
+      case 'high':
+        return isHover ? '#fca5a5' : '#f87171' // red-300 : red-400
+      case 'medium':
+        return isHover ? '#fdba74' : '#fb923c' // orange-300 : orange-400
+      case 'low':
+        return isHover ? '#6ee7b7' : '#10b981' // green-300 : green-500 (swapped from amber to match new mapping)
+      case 'mitigated':
+        return isHover ? '#93c5fd' : '#60a5fa' // blue-300 : blue-400
+      default:
+        return isHover ? '#d1d5db' : '#9ca3af' // gray-300 : gray-400 (unassigned)
     }
   }
 
@@ -319,14 +404,16 @@ export function FunctionFolder({
   const constraintsTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Local state for owner path editing with debouncing
-  const [editedOwnerPaths, setEditedOwnerPaths] = useState<Record<number, string>>({})
+  const [editedOwnerPaths, setEditedOwnerPaths] = useState<
+    Record<number, string>
+  >({})
   const ownerPathTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // State for managing delay field
   const [isSettingDelay, setIsSettingDelay] = useState(false)
   const [newDelayData, setNewDelayData] = useState({
     contractAddress: contractAddress,
-    fieldName: ''
+    fieldName: '',
   })
 
   // State for managing dependencies
@@ -367,7 +454,8 @@ export function FunctionFolder({
     // For permissioned functions, require all fields to be completed
     const hasValidScore = scoreStatus !== 'unscored'
     const hasDescription = description.trim().length > 0
-    const hasOwnerDefinitions = (currentFunction?.ownerDefinitions || []).length > 0
+    const hasOwnerDefinitions =
+      (currentFunction?.ownerDefinitions || []).length > 0
     return hasValidScore && hasDescription && hasOwnerDefinitions
   }
 
@@ -376,15 +464,22 @@ export function FunctionFolder({
   // Score colors
   const getScoreColor = (score: string, isHover: boolean = false) => {
     switch (score) {
-      case 'low-risk': return isHover ? '#6ee7b7' : '#10b981' // green-300 : green-500
-      case 'medium-risk': return isHover ? '#fcd34d' : '#f59e0b' // yellow-300 : yellow-500
-      case 'high-risk': return isHover ? '#fca5a5' : '#f87171' // red-300 : red-400
-      case 'critical': return isHover ? '#c084fc' : '#a855f7' // purple-400 : purple-500
-      default: return isHover ? '#d1d5db' : '#9ca3af' // gray-300 : gray-400
+      case 'low-risk':
+        return isHover ? '#6ee7b7' : '#10b981' // green-300 : green-500
+      case 'medium-risk':
+        return isHover ? '#fcd34d' : '#f59e0b' // yellow-300 : yellow-500
+      case 'high-risk':
+        return isHover ? '#fca5a5' : '#f87171' // red-300 : red-400
+      case 'critical':
+        return isHover ? '#c084fc' : '#a855f7' // purple-400 : purple-500
+      default:
+        return isHover ? '#d1d5db' : '#9ca3af' // gray-300 : gray-400
     }
   }
 
-  const handleDescriptionChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleDescriptionChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
     const newDescription = event.target.value
     setLocalDescription(newDescription)
 
@@ -401,7 +496,9 @@ export function FunctionFolder({
     }, 500)
   }
 
-  const handleConstraintsChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleConstraintsChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
     const newConstraints = event.target.value
     setLocalConstraints(newConstraints)
 
@@ -420,9 +517,9 @@ export function FunctionFolder({
 
   const handleOwnerPathChange = (index: number, newPath: string) => {
     // Update local state immediately for responsive UI
-    setEditedOwnerPaths(prev => ({
+    setEditedOwnerPaths((prev) => ({
       ...prev,
-      [index]: newPath
+      [index]: newPath,
     }))
 
     // Clear existing timeout
@@ -438,9 +535,13 @@ export function FunctionFolder({
       if (newPath !== originalPath && newPath.trim().length > 0) {
         // Create updated definitions array with the new path
         const updatedDefinitions = currentDefinitions.map((def, i) =>
-          i === index ? { path: newPath } : def
+          i === index ? { path: newPath } : def,
         )
-        onOwnerDefinitionsUpdate(contractAddress, functionName, updatedDefinitions)
+        onOwnerDefinitionsUpdate(
+          contractAddress,
+          functionName,
+          updatedDefinitions,
+        )
       }
     }, 500)
   }
@@ -465,7 +566,7 @@ export function FunctionFolder({
     const currentDefinitions = currentFunction?.ownerDefinitions || []
 
     const newDefinition: OwnerDefinition = {
-      path: newOwnerPath
+      path: newOwnerPath,
     }
 
     const updatedDefinitions = [...currentDefinitions, newDefinition]
@@ -487,12 +588,12 @@ export function FunctionFolder({
     if (newDelayData.contractAddress && newDelayData.fieldName) {
       onDelayUpdate(contractAddress, functionName, {
         contractAddress: newDelayData.contractAddress,
-        fieldName: newDelayData.fieldName
+        fieldName: newDelayData.fieldName,
       })
       setIsSettingDelay(false)
       setNewDelayData({
         contractAddress: contractAddress,
-        fieldName: ''
+        fieldName: '',
       })
     }
   }
@@ -506,16 +607,29 @@ export function FunctionFolder({
   }
 
   // Format owner definition with resolved value
-  const formatOwnerDefinition = (definition: OwnerDefinition, resolvedOwner?: { address: string; isResolved: boolean; allAddresses?: string[]; structuredValue?: any }) => {
+  const formatOwnerDefinition = (
+    definition: OwnerDefinition,
+    resolvedOwner?: {
+      address: string
+      isResolved: boolean
+      allAddresses?: string[]
+      structuredValue?: any
+    },
+  ) => {
     let baseDescription = definition.path
 
     // Append resolved value if available
-    if (resolvedOwner?.isResolved && resolvedOwner.allAddresses && resolvedOwner.allAddresses.length > 0) {
+    if (
+      resolvedOwner?.isResolved &&
+      resolvedOwner.allAddresses &&
+      resolvedOwner.allAddresses.length > 0
+    ) {
       // Check if it's a structured value (object with properties, not array)
-      const isStructured = resolvedOwner.structuredValue &&
-                          typeof resolvedOwner.structuredValue === 'object' &&
-                          !Array.isArray(resolvedOwner.structuredValue) &&
-                          !resolvedOwner.structuredValue.startsWith?.('eth:')
+      const isStructured =
+        resolvedOwner.structuredValue &&
+        typeof resolvedOwner.structuredValue === 'object' &&
+        !Array.isArray(resolvedOwner.structuredValue) &&
+        !resolvedOwner.structuredValue.startsWith?.('eth:')
 
       if (isStructured) {
         baseDescription += ` → [structured value]`
@@ -540,7 +654,10 @@ export function FunctionFolder({
         {isOpen ? <IconChevronDown /> : <IconChevronRight />}
 
         {/* Interactive icons */}
-        <div className="flex items-center gap-1 mr-2" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="flex items-center gap-1 mr-2"
+          onClick={(e) => e.stopPropagation()}
+        >
           {/* Checked Icon */}
           <button
             onClick={() => {
@@ -550,14 +667,12 @@ export function FunctionFolder({
             }}
             disabled={!canCheck && !isChecked}
             className={`inline-block transition-colors ${
-              canCheck || isChecked ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'
+              canCheck || isChecked
+                ? 'cursor-pointer'
+                : 'cursor-not-allowed opacity-50'
             }`}
             style={{
-              color: isChecked
-                ? '#10b981'
-                : canCheck
-                  ? '#9ca3af'
-                  : '#6b7280', // green-500 : gray-400 : gray-500 (disabled)
+              color: isChecked ? '#10b981' : canCheck ? '#9ca3af' : '#6b7280', // green-500 : gray-400 : gray-500 (disabled)
             }}
             title={
               canCheck || isChecked
@@ -582,17 +697,23 @@ export function FunctionFolder({
 
           {/* Permission Icon */}
           <button
-            onClick={() => onPermissionToggle(contractAddress, functionName, isPermissioned)}
+            onClick={() =>
+              onPermissionToggle(contractAddress, functionName, isPermissioned)
+            }
             className="inline-block cursor-pointer transition-colors"
             style={{
               color: isPermissioned ? '#f87171' : '#9ca3af', // red-400 : gray-400
             }}
             title={`Click to mark as ${isPermissioned ? 'non-permissioned' : 'permissioned'}`}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = isPermissioned ? '#fca5a5' : '#d1d5db' // red-300 : gray-300
+              e.currentTarget.style.color = isPermissioned
+                ? '#fca5a5'
+                : '#d1d5db' // red-300 : gray-300
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = isPermissioned ? '#f87171' : '#9ca3af' // red-400 : gray-400
+              e.currentTarget.style.color = isPermissioned
+                ? '#f87171'
+                : '#9ca3af' // red-400 : gray-400
             }}
           >
             {isPermissioned ? <IconLockClosed /> : <IconLockOpen />}
@@ -600,7 +721,9 @@ export function FunctionFolder({
 
           {/* Score Icon */}
           <button
-            onClick={() => onScoreToggle(contractAddress, functionName, scoreStatus)}
+            onClick={() =>
+              onScoreToggle(contractAddress, functionName, scoreStatus)
+            }
             className="inline-block cursor-pointer transition-colors"
             style={{
               color: getScoreColor(scoreStatus),
@@ -618,14 +741,23 @@ export function FunctionFolder({
 
           {/* Likelihood Icon */}
           <button
-            onClick={() => onLikelihoodToggle(contractAddress, functionName, likelihoodStatus)}
+            onClick={() =>
+              onLikelihoodToggle(
+                contractAddress,
+                functionName,
+                likelihoodStatus,
+              )
+            }
             className="inline-block cursor-pointer transition-colors"
             style={{
               color: getLikelihoodColor(likelihoodStatus),
             }}
             title={`Current likelihood: ${likelihoodStatus}. Click to cycle: mitigated → low → medium → high`}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = getLikelihoodColor(likelihoodStatus, true)
+              e.currentTarget.style.color = getLikelihoodColor(
+                likelihoodStatus,
+                true,
+              )
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.color = getLikelihoodColor(likelihoodStatus)
@@ -686,7 +818,7 @@ export function FunctionFolder({
           <div className="p-3 border-b border-coffee-700">
             <div className="flex items-center justify-between mb-2">
               <label className="block text-xs text-coffee-300">
-                Manage Function Owners 
+                Manage Function Owners
               </label>
               <button
                 onClick={() => setIsAddingOwner(!isAddingOwner)}
@@ -697,136 +829,215 @@ export function FunctionFolder({
             </div>
 
             {/* Current owner definitions with resolved addresses and delete buttons */}
-            {currentFunction?.ownerDefinitions && currentFunction.ownerDefinitions.length > 0 && (
-              <div className="mb-3">
-                <div className="text-xs text-coffee-400 mb-1">
-                  Current Definitions ({currentFunction.ownerDefinitions.length}):
-                </div>
+            {currentFunction?.ownerDefinitions &&
+              currentFunction.ownerDefinitions.length > 0 && (
+                <div className="mb-3">
+                  <div className="text-xs text-coffee-400 mb-1">
+                    Current Definitions (
+                    {currentFunction.ownerDefinitions.length}):
+                  </div>
 
-                {ownersLoading && (
-                  <div className="text-xs text-coffee-400 mb-2">Resolving owners...</div>
-                )}
+                  {ownersLoading && (
+                    <div className="text-xs text-coffee-400 mb-2">
+                      Resolving owners...
+                    </div>
+                  )}
 
-                {ownersError && (
-                  <div className="text-xs text-aux-red mb-2">Error: {ownersError}</div>
-                )}
+                  {ownersError && (
+                    <div className="text-xs text-aux-red mb-2">
+                      Error: {ownersError}
+                    </div>
+                  )}
 
-                <div className="space-y-2">
-                  {currentFunction.ownerDefinitions.map((definition, index) => {
-                    const correspondingResolved = resolvedOwners[index]
+                  <div className="space-y-2">
+                    {currentFunction.ownerDefinitions.map(
+                      (definition, index) => {
+                        const correspondingResolved = resolvedOwners[index]
 
-                    return (
-                      <div key={index} className="bg-coffee-800 p-2 rounded">
-                        <div className="flex items-center gap-2 mb-1">
-                          <input
-                            type="text"
-                            value={editedOwnerPaths[index] || definition.path}
-                            onChange={(e) => handleOwnerPathChange(index, e.target.value)}
-                            className="flex-1 px-2 py-1 text-xs bg-coffee-700 text-coffee-100 border border-coffee-600 rounded font-mono focus:outline-none focus:border-coffee-500"
-                            placeholder="e.g., $self.owner"
-                          />
-                          <button
-                            onClick={() => handleRemoveOwnerDefinition(index)}
-                            className="text-aux-red hover:opacity-80 flex-shrink-0"
-                            title="Remove this owner definition"
+                        return (
+                          <div
+                            key={index}
+                            className="bg-coffee-800 p-2 rounded"
                           >
-                            ✕
-                          </button>
-                        </div>
-                        {correspondingResolved?.isResolved && (
-                          <div className="text-xs text-coffee-400 mb-1 px-2">
-                            {(() => {
-                              const isStructured = correspondingResolved.structuredValue &&
-                                                  typeof correspondingResolved.structuredValue === 'object' &&
-                                                  !Array.isArray(correspondingResolved.structuredValue) &&
-                                                  !correspondingResolved.structuredValue.startsWith?.('eth:')
-                              if (isStructured) {
-                                return `→ [structured value with ${correspondingResolved.allAddresses?.length || 0} address(es)]`
-                              } else if (correspondingResolved.allAddresses?.length === 1) {
-                                return `→ ${correspondingResolved.allAddresses[0]!.slice(0, 10)}...`
-                              } else {
-                                return `→ ${correspondingResolved.allAddresses?.length || 0} addresses`
-                              }
-                            })()}
-                          </div>
-                        )}
-
-                        {/* Show resolved owners */}
-                        {!ownersLoading && correspondingResolved && correspondingResolved.isResolved && (
-                          <div className="ml-2 mt-1">
-                            {/* Check if we have a structured value (object with properties, not array) */}
-                            {(correspondingResolved as any).structuredValue &&
-                             typeof (correspondingResolved as any).structuredValue === 'object' &&
-                             !Array.isArray((correspondingResolved as any).structuredValue) &&
-                             !(correspondingResolved as any).structuredValue.startsWith?.('eth:') ? (
-                              <>
-                                <div className="text-xs text-coffee-400 mb-1">Structured Value:</div>
-                                <div className="bg-coffee-700 p-2 rounded text-xs font-mono">
-                                  <pre className="text-coffee-200 overflow-x-auto">
-                                    {JSON.stringify((correspondingResolved as any).structuredValue, null, 2)}
-                                  </pre>
-                                </div>
-                                <div className="text-xs text-coffee-400 mt-2 mb-1">
-                                  Contains {(correspondingResolved as any).allAddresses?.length || 0} address(es):
-                                </div>
-                                {(correspondingResolved as any).allAddresses?.map((addr: string, idx: number) => (
-                                  <div key={idx} className="flex items-center gap-2 mb-1">
-                                    <button
-                                      onClick={() => usePanelStore.getState().select(addr)}
-                                      className="text-aux-cyan hover:text-aux-cyan-light text-xs"
-                                      title={`Select ${addr}`}
-                                    >
-                                      {getContractName(addr)}
-                                    </button>
-                                    <button
-                                      onClick={() => usePanelStore.getState().select(addr)}
-                                      className="text-coffee-400 hover:text-coffee-300"
-                                      title="Select this contract"
-                                    >
-                                      <IconOpen />
-                                    </button>
-                                  </div>
-                                ))}
-                              </>
-                            ) : (
-                              <>
-                                <div className="text-xs text-coffee-400 mb-1">Resolves to:</div>
-                                {/* Show all resolved addresses */}
-                                {(correspondingResolved as any).allAddresses?.map((addr: string, idx: number) => (
-                                  <div key={idx} className="flex items-center gap-2 mb-1">
-                                    <button
-                                      onClick={() => usePanelStore.getState().select(addr)}
-                                      className="text-aux-cyan hover:text-aux-cyan-light text-xs"
-                                      title={`Select ${addr}`}
-                                    >
-                                      {getContractName(addr)}
-                                    </button>
-                                    <button
-                                      onClick={() => usePanelStore.getState().select(addr)}
-                                      className="text-coffee-400 hover:text-coffee-300"
-                                      title="Select this contract"
-                                    >
-                                      <IconOpen />
-                                    </button>
-                                  </div>
-                                ))}
-                              </>
+                            <div className="flex items-center gap-2 mb-1">
+                              <input
+                                type="text"
+                                value={
+                                  editedOwnerPaths[index] || definition.path
+                                }
+                                onChange={(e) =>
+                                  handleOwnerPathChange(index, e.target.value)
+                                }
+                                className="flex-1 px-2 py-1 text-xs bg-coffee-700 text-coffee-100 border border-coffee-600 rounded font-mono focus:outline-none focus:border-coffee-500"
+                                placeholder="e.g., $self.owner"
+                              />
+                              <button
+                                onClick={() =>
+                                  handleRemoveOwnerDefinition(index)
+                                }
+                                className="text-aux-red hover:opacity-80 flex-shrink-0"
+                                title="Remove this owner definition"
+                              >
+                                ✕
+                              </button>
+                            </div>
+                            {correspondingResolved?.isResolved && (
+                              <div className="text-xs text-coffee-400 mb-1 px-2">
+                                {(() => {
+                                  const isStructured =
+                                    correspondingResolved.structuredValue &&
+                                    typeof correspondingResolved.structuredValue ===
+                                      'object' &&
+                                    !Array.isArray(
+                                      correspondingResolved.structuredValue,
+                                    ) &&
+                                    !correspondingResolved.structuredValue.startsWith?.(
+                                      'eth:',
+                                    )
+                                  if (isStructured) {
+                                    return `→ [structured value with ${correspondingResolved.allAddresses?.length || 0} address(es)]`
+                                  } else if (
+                                    correspondingResolved.allAddresses
+                                      ?.length === 1
+                                  ) {
+                                    return `→ ${correspondingResolved.allAddresses[0]!.slice(0, 10)}...`
+                                  } else {
+                                    return `→ ${correspondingResolved.allAddresses?.length || 0} addresses`
+                                  }
+                                })()}
+                              </div>
                             )}
-                          </div>
-                        )}
 
-                        {/* Show resolution error */}
-                        {!ownersLoading && correspondingResolved && !correspondingResolved.isResolved && (
-                          <div className="text-aux-red text-xs ml-2 mt-1">
-                            Error: {correspondingResolved.error}
+                            {/* Show resolved owners */}
+                            {!ownersLoading &&
+                              correspondingResolved &&
+                              correspondingResolved.isResolved && (
+                                <div className="ml-2 mt-1">
+                                  {/* Check if we have a structured value (object with properties, not array) */}
+                                  {(correspondingResolved as any)
+                                    .structuredValue &&
+                                  typeof (correspondingResolved as any)
+                                    .structuredValue === 'object' &&
+                                  !Array.isArray(
+                                    (correspondingResolved as any)
+                                      .structuredValue,
+                                  ) &&
+                                  !(
+                                    correspondingResolved as any
+                                  ).structuredValue.startsWith?.('eth:') ? (
+                                    <>
+                                      <div className="text-xs text-coffee-400 mb-1">
+                                        Structured Value:
+                                      </div>
+                                      <div className="bg-coffee-700 p-2 rounded text-xs font-mono">
+                                        <pre className="text-coffee-200 overflow-x-auto">
+                                          {JSON.stringify(
+                                            (correspondingResolved as any)
+                                              .structuredValue,
+                                            null,
+                                            2,
+                                          )}
+                                        </pre>
+                                      </div>
+                                      <div className="text-xs text-coffee-400 mt-2 mb-1">
+                                        Contains{' '}
+                                        {(correspondingResolved as any)
+                                          .allAddresses?.length || 0}{' '}
+                                        address(es):
+                                      </div>
+                                      {(
+                                        correspondingResolved as any
+                                      ).allAddresses?.map(
+                                        (addr: string, idx: number) => (
+                                          <div
+                                            key={idx}
+                                            className="flex items-center gap-2 mb-1"
+                                          >
+                                            <button
+                                              onClick={() =>
+                                                usePanelStore
+                                                  .getState()
+                                                  .select(addr)
+                                              }
+                                              className="text-aux-cyan hover:text-aux-cyan-light text-xs"
+                                              title={`Select ${addr}`}
+                                            >
+                                              {getContractName(addr)}
+                                            </button>
+                                            <button
+                                              onClick={() =>
+                                                usePanelStore
+                                                  .getState()
+                                                  .select(addr)
+                                              }
+                                              className="text-coffee-400 hover:text-coffee-300"
+                                              title="Select this contract"
+                                            >
+                                              <IconOpen />
+                                            </button>
+                                          </div>
+                                        ),
+                                      )}
+                                    </>
+                                  ) : (
+                                    <>
+                                      <div className="text-xs text-coffee-400 mb-1">
+                                        Resolves to:
+                                      </div>
+                                      {/* Show all resolved addresses */}
+                                      {(
+                                        correspondingResolved as any
+                                      ).allAddresses?.map(
+                                        (addr: string, idx: number) => (
+                                          <div
+                                            key={idx}
+                                            className="flex items-center gap-2 mb-1"
+                                          >
+                                            <button
+                                              onClick={() =>
+                                                usePanelStore
+                                                  .getState()
+                                                  .select(addr)
+                                              }
+                                              className="text-aux-cyan hover:text-aux-cyan-light text-xs"
+                                              title={`Select ${addr}`}
+                                            >
+                                              {getContractName(addr)}
+                                            </button>
+                                            <button
+                                              onClick={() =>
+                                                usePanelStore
+                                                  .getState()
+                                                  .select(addr)
+                                              }
+                                              className="text-coffee-400 hover:text-coffee-300"
+                                              title="Select this contract"
+                                            >
+                                              <IconOpen />
+                                            </button>
+                                          </div>
+                                        ),
+                                      )}
+                                    </>
+                                  )}
+                                </div>
+                              )}
+
+                            {/* Show resolution error */}
+                            {!ownersLoading &&
+                              correspondingResolved &&
+                              !correspondingResolved.isResolved && (
+                                <div className="text-aux-red text-xs ml-2 mt-1">
+                                  Error: {correspondingResolved.error}
+                                </div>
+                              )}
                           </div>
-                        )}
-                      </div>
-                    )
-                  })}
+                        )
+                      },
+                    )}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
             {/* Add new owner definition form - UNIFIED PATH APPROACH */}
             {isAddingOwner && (
@@ -847,11 +1058,31 @@ export function FunctionFolder({
                     className="w-full px-2 py-1 text-xs bg-coffee-700 text-coffee-100 border border-coffee-600 rounded font-mono"
                   />
                   <div className="text-xs text-coffee-400 mt-2 space-y-1">
-                    <div><strong>Examples:</strong></div>
-                    <div>• <code className="text-aux-cyan">$self.owner</code> - owner field in current contract</div>
-                    <div>• <code className="text-aux-cyan">@governor.signers[0]</code> - follow governor field, get first signer</div>
-                    <div>• <code className="text-aux-cyan">$self.accessControl.ADMIN_ROLE.members</code> - get role members</div>
-                    <div>• <code className="text-aux-cyan">$self</code> - current contract itself</div>
+                    <div>
+                      <strong>Examples:</strong>
+                    </div>
+                    <div>
+                      • <code className="text-aux-cyan">$self.owner</code> -
+                      owner field in current contract
+                    </div>
+                    <div>
+                      •{' '}
+                      <code className="text-aux-cyan">
+                        @governor.signers[0]
+                      </code>{' '}
+                      - follow governor field, get first signer
+                    </div>
+                    <div>
+                      •{' '}
+                      <code className="text-aux-cyan">
+                        $self.accessControl.ADMIN_ROLE.members
+                      </code>{' '}
+                      - get role members
+                    </div>
+                    <div>
+                      • <code className="text-aux-cyan">$self</code> - current
+                      contract itself
+                    </div>
                   </div>
                 </div>
 
@@ -894,7 +1125,12 @@ export function FunctionFolder({
               <div className="mb-3">
                 <div className="bg-coffee-800 p-2 rounded">
                   <div className="text-xs font-mono text-coffee-300 mb-1">
-                    {currentFunction.delay.fieldName} on {availableContracts.find(c => c.address === currentFunction.delay?.contractAddress)?.name || 'Unknown'} ({currentFunction.delay.contractAddress.slice(0, 10)}...)
+                    {currentFunction.delay.fieldName} on{' '}
+                    {availableContracts.find(
+                      (c) =>
+                        c.address === currentFunction.delay?.contractAddress,
+                    )?.name || 'Unknown'}{' '}
+                    ({currentFunction.delay.contractAddress.slice(0, 10)}...)
                   </div>
                   {resolvedDelay?.isResolved && (
                     <div className="text-sm font-bold text-aux-green">
@@ -914,44 +1150,68 @@ export function FunctionFolder({
             {isSettingDelay && !currentFunction?.delay && (
               <div className="bg-coffee-800 p-3 rounded">
                 <div className="mb-2">
-                  <label className="block text-xs text-coffee-300 mb-1">Contract:</label>
+                  <label className="block text-xs text-coffee-300 mb-1">
+                    Contract:
+                  </label>
                   <select
                     value={newDelayData.contractAddress}
-                    onChange={(e) => setNewDelayData(prev => ({ ...prev, contractAddress: e.target.value, fieldName: '' }))}
+                    onChange={(e) =>
+                      setNewDelayData((prev) => ({
+                        ...prev,
+                        contractAddress: e.target.value,
+                        fieldName: '',
+                      }))
+                    }
                     className="w-full px-2 py-1 text-xs bg-coffee-700 text-coffee-100 border border-coffee-600 rounded"
                   >
                     <option value="">Select a contract...</option>
                     {availableContracts.map((contract) => (
                       <option key={contract.address} value={contract.address}>
-                        {contract.name} ({contract.address.slice(0, 10)}...) [{contract.source}]
+                        {contract.name} ({contract.address.slice(0, 10)}...) [
+                        {contract.source}]
                       </option>
                     ))}
                   </select>
                 </div>
                 <div className="mb-3">
-                  <label className="block text-xs text-coffee-300 mb-1">Delay Field:</label>
+                  <label className="block text-xs text-coffee-300 mb-1">
+                    Delay Field:
+                  </label>
                   <select
                     value={newDelayData.fieldName}
-                    onChange={(e) => setNewDelayData(prev => ({ ...prev, fieldName: e.target.value }))}
+                    onChange={(e) =>
+                      setNewDelayData((prev) => ({
+                        ...prev,
+                        fieldName: e.target.value,
+                      }))
+                    }
                     disabled={!newDelayData.contractAddress}
                     className="w-full px-2 py-1 text-xs bg-coffee-700 text-coffee-100 border border-coffee-600 rounded disabled:opacity-50"
                   >
                     <option value="">Select a field...</option>
-                    {newDelayData.contractAddress && getAvailableDelayFields(newDelayData.contractAddress).map((field) => (
-                      <option key={field.name} value={field.name}>
-                        {field.name} (value: {field.value}) {field.description && `- ${field.description}`}
-                      </option>
-                    ))}
+                    {newDelayData.contractAddress &&
+                      getAvailableDelayFields(newDelayData.contractAddress).map(
+                        (field) => (
+                          <option key={field.name} value={field.name}>
+                            {field.name} (value: {field.value}){' '}
+                            {field.description && `- ${field.description}`}
+                          </option>
+                        ),
+                      )}
                   </select>
-                  {newDelayData.contractAddress && getAvailableDelayFields(newDelayData.contractAddress).length === 0 && (
-                    <div className="text-xs text-coffee-400 mt-1">
-                      No numeric fields found in this contract
-                    </div>
-                  )}
+                  {newDelayData.contractAddress &&
+                    getAvailableDelayFields(newDelayData.contractAddress)
+                      .length === 0 && (
+                      <div className="text-xs text-coffee-400 mt-1">
+                        No numeric fields found in this contract
+                      </div>
+                    )}
                 </div>
                 <button
                   onClick={handleSetDelay}
-                  disabled={!newDelayData.contractAddress || !newDelayData.fieldName}
+                  disabled={
+                    !newDelayData.contractAddress || !newDelayData.fieldName
+                  }
                   className="text-xs bg-green-600 hover:bg-green-500 disabled:bg-coffee-600 disabled:text-coffee-400 text-white px-3 py-1 rounded"
                 >
                   Set Delay
@@ -975,90 +1235,117 @@ export function FunctionFolder({
             </div>
 
             {/* Display current dependencies */}
-            {currentFunction?.dependencies && currentFunction.dependencies.length > 0 && (
-              <div className="mb-3">
-                <div className="text-xs text-coffee-400 mb-1">
-                  Current Dependencies ({currentFunction.dependencies.length}):
-                </div>
+            {currentFunction?.dependencies &&
+              currentFunction.dependencies.length > 0 && (
+                <div className="mb-3">
+                  <div className="text-xs text-coffee-400 mb-1">
+                    Current Dependencies ({currentFunction.dependencies.length}
+                    ):
+                  </div>
 
-                <div className="space-y-2">
-                  {currentFunction.dependencies.map((dependency, index) => {
-                    const depInfo = getDependencyInfo(dependency.contractAddress)
+                  <div className="space-y-2">
+                    {currentFunction.dependencies.map((dependency, index) => {
+                      const depInfo = getDependencyInfo(
+                        dependency.contractAddress,
+                      )
 
-                    return (
-                      <div key={index} className="bg-coffee-800 p-2 rounded">
-                        <div className="flex items-center justify-between mb-1">
-                          <div className="flex items-center gap-2 flex-1">
+                      return (
+                        <div key={index} className="bg-coffee-800 p-2 rounded">
+                          <div className="flex items-center justify-between mb-1">
+                            <div className="flex items-center gap-2 flex-1">
+                              <button
+                                onClick={() =>
+                                  usePanelStore
+                                    .getState()
+                                    .select(dependency.contractAddress)
+                                }
+                                className="text-aux-cyan hover:text-aux-cyan-light text-xs font-mono"
+                                title={`Select ${dependency.contractAddress}`}
+                              >
+                                {depInfo?.name ||
+                                  dependency.contractAddress.slice(0, 10) +
+                                    '...'}
+                              </button>
+                              <button
+                                onClick={() =>
+                                  usePanelStore
+                                    .getState()
+                                    .select(dependency.contractAddress)
+                                }
+                                className="text-coffee-400 hover:text-coffee-300"
+                                title="Select this contract"
+                              >
+                                <IconOpen />
+                              </button>
+                            </div>
                             <button
-                              onClick={() => usePanelStore.getState().select(dependency.contractAddress)}
-                              className="text-aux-cyan hover:text-aux-cyan-light text-xs font-mono"
-                              title={`Select ${dependency.contractAddress}`}
+                              onClick={() => handleRemoveDependency(index)}
+                              className="text-aux-red hover:opacity-80 flex-shrink-0 ml-2"
+                              title="Remove this dependency"
                             >
-                              {depInfo?.name || dependency.contractAddress.slice(0, 10) + '...'}
-                            </button>
-                            <button
-                              onClick={() => usePanelStore.getState().select(dependency.contractAddress)}
-                              className="text-coffee-400 hover:text-coffee-300"
-                              title="Select this contract"
-                            >
-                              <IconOpen />
+                              ✕
                             </button>
                           </div>
-                          <button
-                            onClick={() => handleRemoveDependency(index)}
-                            className="text-aux-red hover:opacity-80 flex-shrink-0 ml-2"
-                            title="Remove this dependency"
-                          >
-                            ✕
-                          </button>
+
+                          {/* Show centralization and likelihood attributes */}
+                          {depInfo &&
+                            (depInfo.centralization || depInfo.likelihood) && (
+                              <div className="flex items-center gap-3 text-xs mt-1">
+                                {depInfo.centralization && (
+                                  <div className="flex items-center gap-1">
+                                    <span className="text-coffee-400">
+                                      Centralization:
+                                    </span>
+                                    <span
+                                      style={{
+                                        color: getCentralizationColor(
+                                          depInfo.centralization,
+                                        ),
+                                      }}
+                                      className="font-semibold"
+                                    >
+                                      {depInfo.centralization}
+                                    </span>
+                                  </div>
+                                )}
+                                {depInfo.likelihood && (
+                                  <div className="flex items-center gap-1">
+                                    <span className="text-coffee-400">
+                                      Likelihood:
+                                    </span>
+                                    <span
+                                      style={{
+                                        color: getLikelihoodColor(
+                                          depInfo.likelihood,
+                                        ),
+                                      }}
+                                      className="font-semibold"
+                                    >
+                                      {depInfo.likelihood}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            )}
                         </div>
-
-                        {/* Show centralization and likelihood attributes */}
-                        {depInfo && (depInfo.centralization || depInfo.likelihood) && (
-                          <div className="flex items-center gap-3 text-xs mt-1">
-                            {depInfo.centralization && (
-                              <div className="flex items-center gap-1">
-                                <span className="text-coffee-400">Centralization:</span>
-                                <span
-                                  style={{ color: getCentralizationColor(depInfo.centralization) }}
-                                  className="font-semibold"
-                                >
-                                  {depInfo.centralization}
-                                </span>
-                              </div>
-                            )}
-                            {depInfo.likelihood && (
-                              <div className="flex items-center gap-1">
-                                <span className="text-coffee-400">Likelihood:</span>
-                                <span
-                                  style={{ color: getLikelihoodColor(depInfo.likelihood) }}
-                                  className="font-semibold"
-                                >
-                                  {depInfo.likelihood}
-                                </span>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    )
-                  })}
+                      )
+                    })}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
-          {/* Description Section */}
-          <div className="p-3">
-            <label className="block text-xs text-coffee-300 mb-2">
-              Function Description
-            </label>
-            <textarea
-              value={localDescription}
-              onChange={handleDescriptionChange}
-              placeholder="Add a description for this function..."
-              className="w-full h-20 px-2 py-1 text-xs font-mono bg-coffee-800 text-coffee-100 border border-coffee-600 rounded resize-none focus:outline-none focus:border-coffee-500"
-            />
-          </div>
+            {/* Description Section */}
+            <div className="p-3">
+              <label className="block text-xs text-coffee-300 mb-2">
+                Function Description
+              </label>
+              <textarea
+                value={localDescription}
+                onChange={handleDescriptionChange}
+                placeholder="Add a description for this function..."
+                className="w-full h-20 px-2 py-1 text-xs font-mono bg-coffee-800 text-coffee-100 border border-coffee-600 rounded resize-none focus:outline-none focus:border-coffee-500"
+              />
+            </div>
 
             {/* Add dependency form */}
             {isAddingDependency && (
@@ -1069,7 +1356,8 @@ export function FunctionFolder({
 
                 {getExternalContracts.length === 0 ? (
                   <div className="text-xs text-coffee-400">
-                    No external contracts found. Mark contracts as external in the Values panel to add them as dependencies.
+                    No external contracts found. Mark contracts as external in
+                    the Values panel to add them as dependencies.
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -1077,7 +1365,9 @@ export function FunctionFolder({
                       <button
                         key={contract.address}
                         onClick={() => handleAddDependency(contract.address)}
-                        disabled={currentFunction?.dependencies?.some(d => d.contractAddress === contract.address)}
+                        disabled={currentFunction?.dependencies?.some(
+                          (d) => d.contractAddress === contract.address,
+                        )}
                         className="w-full text-left bg-coffee-700 hover:bg-coffee-600 disabled:bg-coffee-600 disabled:opacity-50 disabled:cursor-not-allowed p-2 rounded"
                       >
                         <div className="flex items-center justify-between">
@@ -1092,20 +1382,34 @@ export function FunctionFolder({
                           <div className="flex items-center gap-2 ml-2">
                             {contract.centralization && (
                               <div className="flex items-center gap-1">
-                                <span className="text-xs text-coffee-400">C:</span>
+                                <span className="text-xs text-coffee-400">
+                                  C:
+                                </span>
                                 <span
-                                  style={{ color: getCentralizationColor(contract.centralization) }}
+                                  style={{
+                                    color: getCentralizationColor(
+                                      contract.centralization,
+                                    ),
+                                  }}
                                   className="text-xs font-semibold"
                                 >
-                                  {contract.centralization.charAt(0).toUpperCase()}
+                                  {contract.centralization
+                                    .charAt(0)
+                                    .toUpperCase()}
                                 </span>
                               </div>
                             )}
                             {contract.likelihood && (
                               <div className="flex items-center gap-1">
-                                <span className="text-xs text-coffee-400">L:</span>
+                                <span className="text-xs text-coffee-400">
+                                  L:
+                                </span>
                                 <span
-                                  style={{ color: getLikelihoodColor(contract.likelihood) }}
+                                  style={{
+                                    color: getLikelihoodColor(
+                                      contract.likelihood,
+                                    ),
+                                  }}
                                   className="text-xs font-semibold"
                                 >
                                   {contract.likelihood.charAt(0).toUpperCase()}

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { getProject, detectPermissionsWithAI, getFunctions } from '../../../api/api'
+import {
+  getProject,
+  detectPermissionsWithAI,
+  getFunctions,
+} from '../../../api/api'
 import { Checkbox } from '../../../components/Checkbox'
 import type { ApiProjectContract } from '../../../api/types'
 
@@ -19,10 +23,10 @@ interface ScanResult {
 export function AIPermissionsScanDialog({ project, onClose }: Props) {
   const queryClient = useQueryClient()
   const [selectedContracts, setSelectedContracts] = useState<Set<string>>(
-    new Set()
+    new Set(),
   )
   const [scanResults, setScanResults] = useState<Map<string, ScanResult>>(
-    new Map()
+    new Map(),
   )
   const [isScanning, setIsScanning] = useState(false)
   const [currentScanIndex, setCurrentScanIndex] = useState(0)
@@ -43,17 +47,19 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
   const getScannableContracts = (): ApiProjectContract[] => {
     if (!projectData || !functionsData) return []
 
-    const allContracts = projectData.entries.flatMap(e =>
-      [...e.initialContracts, ...e.discoveredContracts]
-    )
+    const allContracts = projectData.entries.flatMap((e) => [
+      ...e.initialContracts,
+      ...e.discoveredContracts,
+    ])
 
     // Filter contracts that have source code AND don't already have permission overrides
-    return allContracts.filter(c => {
+    return allContracts.filter((c) => {
       // Check if contract has fields (indicates it has been analyzed)
       if (!c.fields || c.fields.length === 0) return false
 
       // Check if this contract already has any permission overrides
-      const contractFunctions = functionsData.contracts?.[c.address]?.functions || []
+      const contractFunctions =
+        functionsData.contracts?.[c.address]?.functions || []
       const hasPermissions = contractFunctions.length > 0
 
       // Only include contracts that DON'T have any permission entries yet
@@ -74,7 +80,7 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
   }
 
   const handleSelectAll = () => {
-    setSelectedContracts(new Set(scannableContracts.map(c => c.address)))
+    setSelectedContracts(new Set(scannableContracts.map((c) => c.address)))
   }
 
   const handleDeselectAll = () => {
@@ -91,7 +97,7 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
     const results = new Map<string, ScanResult>()
 
     // Initialize all as pending
-    contractsToScan.forEach(address => {
+    contractsToScan.forEach((address) => {
       results.set(address, { status: 'pending' })
     })
     setScanResults(new Map(results))
@@ -167,7 +173,8 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
     }
   }
 
-  const allSelected = scannableContracts.length > 0 &&
+  const allSelected =
+    scannableContracts.length > 0 &&
     selectedContracts.size === scannableContracts.length
   const someSelected = selectedContracts.size > 0 && !allSelected
 
@@ -176,11 +183,10 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
       <div className="flex max-h-[calc(100vh-12rem)] w-[700px] flex-col rounded border border-coffee-600 bg-coffee-800 shadow-xl">
         {/* Header */}
         <div className="border-b border-coffee-600 p-4">
-          <h2 className="text-lg font-semibold">
-            AI Permissions Scanner
-          </h2>
+          <h2 className="text-lg font-semibold">AI Permissions Scanner</h2>
           <p className="mt-1 text-sm text-coffee-400">
-            Select contracts to scan for permissioned functions using AI analysis
+            Select contracts to scan for permissioned functions using AI
+            analysis
           </p>
         </div>
 
@@ -203,7 +209,7 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
               <input
                 type="checkbox"
                 checked={allSelected}
-                ref={input => {
+                ref={(input) => {
                   if (input) {
                     input.indeterminate = someSelected
                   }
@@ -248,7 +254,7 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
             </div>
           ) : (
             <div className="space-y-2">
-              {scannableContracts.map(contract => {
+              {scannableContracts.map((contract) => {
                 const isSelected = selectedContracts.has(contract.address)
                 const statusIcon = getStatusIcon(contract.address)
                 const statusText = getStatusText(contract.address)
@@ -256,7 +262,9 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
                 return (
                   <div
                     key={contract.address}
-                    onClick={() => !isScanning && handleToggle(contract.address)}
+                    onClick={() =>
+                      !isScanning && handleToggle(contract.address)
+                    }
                     className={`flex items-start gap-3 rounded border p-3 transition-colors ${
                       isSelected
                         ? 'border-autumn-600 bg-autumn-900/20'
@@ -282,11 +290,14 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
                         {contract.address}
                       </div>
                       {statusText && (
-                        <div className={`mt-1 text-xs ${
-                          scanResults.get(contract.address)?.status === 'error'
-                            ? 'text-red-400'
-                            : 'text-coffee-300'
-                        }`}>
+                        <div
+                          className={`mt-1 text-xs ${
+                            scanResults.get(contract.address)?.status ===
+                            'error'
+                              ? 'text-red-400'
+                              : 'text-coffee-300'
+                          }`}
+                        >
                           {statusIcon} {statusText}
                         </div>
                       )}
@@ -306,7 +317,11 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
               disabled={isScanning}
               className="rounded border border-coffee-600 bg-coffee-700 px-4 py-2 text-sm hover:bg-coffee-600 disabled:opacity-50"
             >
-              {isScanning ? 'Scanning...' : scanResults.size > 0 ? 'Close' : 'Cancel'}
+              {isScanning
+                ? 'Scanning...'
+                : scanResults.size > 0
+                  ? 'Close'
+                  : 'Cancel'}
             </button>
             <button
               onClick={handleScan}
