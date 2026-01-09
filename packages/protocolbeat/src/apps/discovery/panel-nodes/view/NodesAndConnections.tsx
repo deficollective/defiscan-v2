@@ -9,8 +9,8 @@ import {
   type BidirectionalCalls,
 } from '../../defidisco/useEdgeCallGraph'
 import { EdgeCallGraphPopup } from '../../defidisco/EdgeCallGraphPopup'
+import { ClickableConnection } from '../../defidisco/ClickableConnection'
 import { useStore } from '../store/store'
-import { Connection } from './Connection'
 import { NodeView } from './NodeView'
 
 interface ClickedEdge {
@@ -137,7 +137,7 @@ export function NodesAndConnections() {
         fill="none"
       >
         {connections.map(({ key, sourceAddress, sourceName, targetAddress, targetName, calls, ...rest }) => (
-          <Connection
+          <ClickableConnection
             key={key}
             {...rest}
             onClick={
