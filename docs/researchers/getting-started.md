@@ -74,9 +74,9 @@ l2b discover euler-v2
 
 ## Continue Analysis
 
-After first run, we suggest you to start the local UI to facilitate and discover the DeFi project.
+After first run, we suggest you to start the local UI to facilitate discovery of the entire DeFi project.
 
-To see the project, head to `packages/config/src/defidisco-config.json` and add the project name (make sure same as folder name).
+To see the project in the UI, head to `packages/config/src/defidisco-config.json` and add the project name (make sure same as folder name).
 
 ```json
 {
@@ -87,8 +87,8 @@ To see the project, head to `packages/config/src/defidisco-config.json` and add 
     "uniswap-v2",
     "morpho",
     "lido",
-    "liquity-v2"
-    "euler-v2", <--- here
+    "liquity-v2",
+    "euler-v2" <--- here
   ],
   "lastUpdated": "2026-01-09"
 }
@@ -124,7 +124,7 @@ When you think you have the whole system mapped, choose the `Scan Permissions` b
 
 ## Track Funds
 
-When you have a good overview of permissions, it's important to know what funds are under control with this permissions.
+Once you have a clear overview of the permissions, it's important to know which funds are controlled by these permissions.
 
 Use the button `Fetch Funds` inside the terminal. Make sure the DeFiScan API service is running.
 
