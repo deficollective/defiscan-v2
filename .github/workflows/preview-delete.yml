@@ -1,0 +1,17 @@
+name: Preview Delete
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  delete-preview:
+    name: Delete Preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: digitalocean/app_action/delete@v2
+        with:
+          from_pr_preview: "true"
+          ignore_not_found: "true"
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
