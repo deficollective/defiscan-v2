@@ -6,6 +6,11 @@ import type {
 import { spawn } from 'child_process'
 import * as fs from 'fs'
 import * as path from 'path'
+import {
+  createHeuristicEngine,
+  parseVariableAssignments,
+  type HeuristicContext,
+} from './callGraphHeuristics'
 import { getContractTags } from './contractTags'
 import type {
   ApiCallGraphResponse,
@@ -19,6 +24,18 @@ import type {
 
 const SLITHER_VENV_PATH = path.join(process.env.HOME || '', '.slither-venv')
 const SLITHER_PATH = path.join(SLITHER_VENV_PATH, 'bin', 'slither')
+const SLITHIR_CACHE_FOLDER = 'slithir-cache'
+
+// =============================================================================
+// Slithir Cache Types
+// =============================================================================
+
+interface SlithirCacheEntry {
+  version: string
+  sourceHash: string
+  generatedAt: string
+  slithirOutput: string
+}
 
 // =============================================================================
 // Internal Types (for slithir parsing)
@@ -101,12 +118,14 @@ export function saveCallGraphData(
 
 /**
  * Generate call graph for a project
+ * @param verbose - If true, outputs detailed heuristic resolution info (use with devMode)
  */
 export async function generateCallGraph(
   paths: DiscoveryPaths,
   configReader: ConfigReader,
   project: string,
   onProgress?: (message: string) => void,
+  verbose = false,
 ): Promise<ApiCallGraphResponse> {
   // Get Etherscan API key from environment
   const etherscanApiKey =
@@ -138,44 +157,81 @@ export async function generateCallGraph(
 
   const result: Record<string, ContractCallGraph> = {}
 
+  // Track cache statistics
+  let cacheHits = 0
+  let cacheMisses = 0
+
   for (let i = 0; i < contracts.length; i++) {
     const contract = contracts[i]!
     onProgress?.(
       `[${i + 1}/${contracts.length}] Analyzing ${contract.name} (${contract.address})...`,
     )
 
-    // Run slither on the contract
-    const slitherResult = await runSlitherOnContract(
-      contract.address,
-      etherscanApiKey,
-      onProgress,
-    )
+    // Check cache first
+    const currentSourceHash = getContractSourceHash(discovered, contract.address)
+    const cachedEntry = getSlithirCache(paths, project, contract.address)
 
-    if (slitherResult.error === 'UNVERIFIED') {
-      onProgress?.(
-        '  Skipping: Source code not available (unverified contract)',
+    let slithirOutput: string | null = null
+
+    // Use cache if source hash matches
+    if (
+      cachedEntry &&
+      currentSourceHash &&
+      cachedEntry.sourceHash === currentSourceHash
+    ) {
+      onProgress?.('  Using cached Slithir output (source unchanged)')
+      slithirOutput = cachedEntry.slithirOutput
+      cacheHits++
+    } else {
+      // Run slither on the contract
+      const reason = cachedEntry ? 'source changed' : 'no cache'
+      onProgress?.(`  Running Slither (${reason})...`)
+
+      const slitherResult = await runSlitherOnContract(
+        contract.address,
+        etherscanApiKey,
+        onProgress,
       )
-      result[contract.address] = {
-        address: contract.address,
-        name: contract.name,
-        externalCalls: [],
-        generatedAt: new Date().toISOString(),
-        skipped: true,
-        skipReason: 'Unverified contract',
-      }
-      continue
-    }
 
-    if (slitherResult.error) {
-      onProgress?.(`  Error: ${slitherResult.error}`)
-      result[contract.address] = {
-        address: contract.address,
-        name: contract.name,
-        externalCalls: [],
-        generatedAt: new Date().toISOString(),
-        error: slitherResult.error,
+      if (slitherResult.error === 'UNVERIFIED') {
+        onProgress?.(
+          '  Skipping: Source code not available (unverified contract)',
+        )
+        result[contract.address] = {
+          address: contract.address,
+          name: contract.name,
+          externalCalls: [],
+          generatedAt: new Date().toISOString(),
+          skipped: true,
+          skipReason: 'Unverified contract',
+        }
+        continue
       }
-      continue
+
+      if (slitherResult.error) {
+        onProgress?.(`  Error: ${slitherResult.error}`)
+        result[contract.address] = {
+          address: contract.address,
+          name: contract.name,
+          externalCalls: [],
+          generatedAt: new Date().toISOString(),
+          error: slitherResult.error,
+        }
+        continue
+      }
+
+      slithirOutput = slitherResult.output
+      cacheMisses++
+
+      // Save to cache if we have a source hash
+      if (currentSourceHash && slithirOutput) {
+        saveSlithirCache(paths, project, contract.address, {
+          version: '1.0',
+          sourceHash: currentSourceHash,
+          generatedAt: new Date().toISOString(),
+          slithirOutput,
+        })
+      }
     }
 
     // Get ABI function names for this contract
@@ -186,27 +242,90 @@ export async function generateCallGraph(
 
     // Parse the slithir output using ABI-driven approach
     const externalCalls = parseSlithirForContract(
-      slitherResult.output,
+      slithirOutput!,
       contract.name,
       abiFunctionNames,
       onProgress,
     )
 
+    // Parse variable assignments for heuristic resolution
+    const variableAssignments = parseVariableAssignments(slithirOutput!)
+
+    // Create heuristic engine for optimistic resolution
+    const heuristicEngine = createHeuristicEngine()
+
+    // Track resolution statistics
+    let deterministicCount = 0
+    let optimisticCount = 0
+
+    // In verbose mode, create a throttled progress callback with delays
+    // to prevent overwhelming the UI with too many messages
+    let verboseMessageCount = 0
+    const THROTTLE_BATCH_SIZE = 5 // Yield to event loop every N verbose messages
+    const THROTTLE_DELAY_MS = 100 // Delay in ms to let UI catch up
+    const verboseProgress = verbose
+      ? async (message: string) => {
+          onProgress?.(message)
+          verboseMessageCount++
+          // Add a delay every batch to let UI catch up
+          if (verboseMessageCount % THROTTLE_BATCH_SIZE === 0) {
+            await new Promise((resolve) => setTimeout(resolve, THROTTLE_DELAY_MS))
+          }
+        }
+      : undefined
+
     // Resolve addresses and classify calls for each external call
     for (const call of externalCalls) {
+      // Try deterministic resolution first (direct state variable lookup)
       const resolved = resolveStorageVariable(
         discovered,
         contract.address,
         call.storageVariable,
       )
-      call.resolvedAddress = resolved.address
-      call.resolvedContractName = resolved.name
+
+      if (resolved.address) {
+        // Deterministic resolution succeeded
+        call.resolvedAddress = resolved.address
+        call.resolvedContractName = resolved.name
+        call.resolutionType = 'deterministic'
+        deterministicCount++
+      } else {
+        // Try optimistic resolution using heuristics
+        const heuristicContext: HeuristicContext = {
+          call,
+          callerContractAddress: contract.address,
+          discovered,
+          variableAssignments,
+        }
+
+        // Only pass progress callback in verbose mode (devMode)
+        const heuristicResult = verbose
+          ? await heuristicEngine.resolveAsync(heuristicContext, verboseProgress)
+          : heuristicEngine.resolve(heuristicContext)
+
+        if (heuristicResult && heuristicResult.matches.length > 0) {
+          // Use the first match as the primary resolution
+          const primaryMatch = heuristicResult.matches[0]!
+          call.resolvedAddress = primaryMatch.address
+          call.resolvedContractName = primaryMatch.contractName
+          call.resolutionType = 'optimistic'
+          call.resolutionHeuristic = heuristicResult.heuristicName
+          call.resolutionConfidence = heuristicResult.confidence
+
+          // Store all candidates if multiple matches
+          if (heuristicResult.matches.length > 1) {
+            call.resolutionCandidates = heuristicResult.matches
+          }
+
+          optimisticCount++
+        }
+      }
 
       // Look up the called function in the target contract's ABI to determine if it's a view/pure
-      if (resolved.address) {
+      if (call.resolvedAddress) {
         const abiLookup = findFunctionInAbi(
           discovered.abis,
-          resolved.address,
+          call.resolvedAddress,
           call.calledFunction,
         )
         if (abiLookup.found) {
@@ -227,6 +346,7 @@ export async function generateCallGraph(
           call.isViewCall = true
         }
       }
+
     }
 
     const resolvedCount = externalCalls.filter((c) => c.resolvedAddress).length
@@ -235,7 +355,10 @@ export async function generateCallGraph(
       (c) => c.isViewCall === false,
     ).length
     onProgress?.(
-      `  Found ${externalCalls.length} external calls (${resolvedCount} resolved, ${viewCount} reads, ${writeCount} writes)`,
+      `  Found ${externalCalls.length} external calls (${deterministicCount} deterministic, ${optimisticCount} optimistic, ${resolvedCount - deterministicCount - optimisticCount} unresolved)`,
+    )
+    onProgress?.(
+      `  Read/Write: ${viewCount} reads, ${writeCount} writes`,
     )
 
     result[contract.address] = {
@@ -244,6 +367,10 @@ export async function generateCallGraph(
       externalCalls,
       generatedAt: new Date().toISOString(),
     }
+
+    // Yield to event loop after each contract to prevent blocking
+    // This is especially important when using cached data (no natural async breaks)
+    await new Promise((resolve) => setImmediate(resolve))
   }
 
   // Calculate summary
@@ -251,21 +378,34 @@ export async function generateCallGraph(
     (sum, c) => sum + c.externalCalls.length,
     0,
   )
-  const resolvedCalls = Object.values(result).reduce(
+  const deterministicTotal = Object.values(result).reduce(
     (sum, c) =>
-      sum + c.externalCalls.filter((call) => call.resolvedAddress).length,
+      sum +
+      c.externalCalls.filter((call) => call.resolutionType === 'deterministic')
+        .length,
     0,
   )
+  const optimisticTotal = Object.values(result).reduce(
+    (sum, c) =>
+      sum +
+      c.externalCalls.filter((call) => call.resolutionType === 'optimistic')
+        .length,
+    0,
+  )
+  const unresolvedTotal = totalCalls - deterministicTotal - optimisticTotal
   const errorCount = Object.values(result).filter((c) => c.error).length
   const skippedCount = Object.values(result).filter((c) => c.skipped).length
 
   onProgress?.('')
   onProgress?.('=== Summary ===')
   onProgress?.(`Contracts analyzed: ${contracts.length}`)
+  onProgress?.(`Cache: ${cacheHits} hits, ${cacheMisses} misses`)
   onProgress?.(`Skipped (unverified): ${skippedCount}`)
   onProgress?.(`Errors: ${errorCount}`)
   onProgress?.(`Total external calls: ${totalCalls}`)
-  onProgress?.(`Resolved addresses: ${resolvedCalls}/${totalCalls}`)
+  onProgress?.(
+    `Resolved: ${deterministicTotal} deterministic, ${optimisticTotal} optimistic, ${unresolvedTotal} unresolved`,
+  )
 
   const response: ApiCallGraphResponse = {
     version: '1.0',
@@ -286,6 +426,87 @@ export async function generateCallGraph(
 
 function getCallGraphDataPath(paths: DiscoveryPaths, project: string): string {
   return path.join(paths.discovery, project, 'call-graph-data.json')
+}
+
+// =============================================================================
+// Private Helpers - Slithir Cache
+// =============================================================================
+
+function getSlithirCacheFolderPath(
+  paths: DiscoveryPaths,
+  project: string,
+): string {
+  return path.join(paths.discovery, project, SLITHIR_CACHE_FOLDER)
+}
+
+function getSlithirCacheFilePath(
+  paths: DiscoveryPaths,
+  project: string,
+  contractAddress: string,
+): string {
+  // Use the address (without eth: prefix) as filename
+  const cleanAddress = contractAddress.replace(/^eth:/i, '')
+  return path.join(
+    getSlithirCacheFolderPath(paths, project),
+    `${cleanAddress}.json`,
+  )
+}
+
+function getSlithirCache(
+  paths: DiscoveryPaths,
+  project: string,
+  contractAddress: string,
+): SlithirCacheEntry | null {
+  const cachePath = getSlithirCacheFilePath(paths, project, contractAddress)
+
+  if (!fs.existsSync(cachePath)) {
+    return null
+  }
+
+  try {
+    const content = fs.readFileSync(cachePath, 'utf8')
+    return JSON.parse(content) as SlithirCacheEntry
+  } catch {
+    return null
+  }
+}
+
+function saveSlithirCache(
+  paths: DiscoveryPaths,
+  project: string,
+  contractAddress: string,
+  entry: SlithirCacheEntry,
+): void {
+  const cacheFolder = getSlithirCacheFolderPath(paths, project)
+
+  // Ensure cache folder exists
+  if (!fs.existsSync(cacheFolder)) {
+    fs.mkdirSync(cacheFolder, { recursive: true })
+  }
+
+  const cachePath = getSlithirCacheFilePath(paths, project, contractAddress)
+  fs.writeFileSync(cachePath, JSON.stringify(entry, null, 2))
+}
+
+function getContractSourceHash(
+  discovered: DiscoveryOutput,
+  address: string,
+): string | undefined {
+  const entry = discovered.entries.find(
+    (e) => e.address.toLowerCase() === address.toLowerCase(),
+  )
+
+  if (!entry || !('sourceHashes' in entry)) {
+    return undefined
+  }
+
+  const sourceHashes = (entry as { sourceHashes?: string[] }).sourceHashes
+  if (!sourceHashes || sourceHashes.length === 0) {
+    return undefined
+  }
+
+  // Combine all source hashes into one (handles proxy + implementation)
+  return sourceHashes.join(':')
 }
 
 // =============================================================================
