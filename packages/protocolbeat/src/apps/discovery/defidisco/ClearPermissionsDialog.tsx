@@ -32,24 +32,33 @@ export function ClearPermissionsDialog({
       <div className="flex w-[500px] flex-col rounded border border-coffee-600 bg-coffee-800 shadow-xl">
         {/* Header */}
         <div className="border-coffee-600 border-b p-4">
-          <h2 className="font-semibold text-lg">Clear Permission Scanner Results</h2>
+          <h2 className="font-semibold text-lg">
+            Clear Permission Scanner Results
+          </h2>
         </div>
 
         {/* Body */}
         <div className="p-4">
           <p className="mb-4 text-coffee-200">
-            Are you sure you want to clear all permission scanner results for this contract?
+            Are you sure you want to clear all permission scanner results for
+            this contract?
           </p>
 
           <div className="rounded bg-coffee-700 p-3">
             <div className="mb-2 text-coffee-300 text-sm">Contract:</div>
             <div className="mb-1 font-medium">{contractName}</div>
-            <div className="break-all font-mono text-coffee-400 text-xs">{contractAddress}</div>
+            <div className="break-all font-mono text-coffee-400 text-xs">
+              {contractAddress}
+            </div>
 
             <div className="mt-3 text-coffee-300 text-sm">
               {functionCount > 0 ? (
                 <>
-                  This will delete <span className="font-semibold text-white">{functionCount}</span> function
+                  This will delete{' '}
+                  <span className="font-semibold text-white">
+                    {functionCount}
+                  </span>{' '}
+                  function
                   {functionCount !== 1 ? 's' : ''} from functions.json
                 </>
               ) : (
@@ -60,7 +69,8 @@ export function ClearPermissionsDialog({
 
           <div className="mt-4 rounded bg-yellow-900/30 border border-yellow-600/50 p-3">
             <p className="text-yellow-200 text-sm">
-              ⚠️ This action cannot be undone. You will need to re-scan permissions if you want to restore this data.
+              ⚠️ This action cannot be undone. You will need to re-scan
+              permissions if you want to restore this data.
             </p>
           </div>
         </div>
