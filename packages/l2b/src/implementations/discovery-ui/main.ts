@@ -24,6 +24,12 @@ import {
   updateFunction,
 } from './defidisco/functions'
 import {
+  DEFAULT_MODEL,
+  getModelConfig,
+  isValidModelKey,
+  type ModelKey,
+} from './defidisco/aiModels'
+import {
   getContractTags,
   updateContractTag,
 } from './defidisco/contractTags'
@@ -289,14 +295,34 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
     const { project, address } = paramsValidation.data
 
     try {
-      // Get AI provider and API key from environment
-      const aiProvider = (process.env.AI_PROVIDER as 'openai' | 'claude') || 'openai'
-      const aiApiKey = process.env.AI_API_KEY
+      // Get model from request body or use default
+      const requestedModel = req.body?.model || DEFAULT_MODEL
 
-      if (!aiApiKey) {
-        res.status(500).json({ error: 'AI_API_KEY not configured in environment' })
+      // Validate model key
+      if (!isValidModelKey(requestedModel)) {
+        res.status(400).json({ error: `Invalid model: ${requestedModel}` })
         return
       }
+
+      const modelConfig = getModelConfig(requestedModel)
+
+      // Get appropriate API key based on provider
+      const openaiApiKey = process.env.OPENAI_API_KEY
+      const anthropicApiKey = process.env.ANTHROPIC_API_KEY
+
+      const aiApiKey = modelConfig.provider === 'openai' ? openaiApiKey : anthropicApiKey
+
+      if (!aiApiKey) {
+        const envVarName = modelConfig.provider === 'openai' ? 'OPENAI_API_KEY' : 'ANTHROPIC_API_KEY'
+        res.status(500).json({
+          error: `${envVarName} not configured in environment`,
+          userMessage: `API key for ${modelConfig.displayName} is not configured.`,
+          suggestedAction: `Add ${envVarName} to your .env file.`
+        })
+        return
+      }
+
+      console.log(`Using model: ${modelConfig.displayName} (${modelConfig.modelId})`)
 
       // Get contract source code
       const codeResponse = getCode(paths, configReader, project, address, false)
@@ -370,8 +396,13 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
       const combinedSource = combineSourceFiles(sourcesMap)
 
       // Call AI API
-      console.log(`Detecting permissions for ${address} using ${aiProvider}...`)
-      const aiResult = await detectPermissionsWithAI(combinedSource, aiApiKey, aiProvider)
+      console.log(`Detecting permissions for ${address} using ${modelConfig.displayName}...`)
+      const aiResult = await detectPermissionsWithAI(
+        combinedSource,
+        aiApiKey,
+        modelConfig.provider,
+        modelConfig.modelId
+      )
       console.log(`AI detected ${aiResult.functions.length} functions for ${address}`)
 
       // Build a set of valid write function names from the target contract's ABI
@@ -451,11 +482,15 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         skippedFunctions: skippedCount,
         functions: aiResult.functions
       })
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error detecting permissions with AI:', error)
+
+      // Return enhanced error information if available
       res.status(500).json({
-        error: 'Failed to detect permissions with AI',
-        details: error instanceof Error ? error.message : 'Unknown error'
+        error: error.message || 'Failed to detect permissions with AI',
+        userMessage: error.message,
+        technicalDetails: error.technicalDetails || (error instanceof Error ? error.message : 'Unknown error'),
+        suggestedAction: error.suggestedAction
       })
     }
   })

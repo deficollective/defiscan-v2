@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-01-16T05:56:37.878Z",
+  "contracts": {
+    "eth:0x35400831044167E9E2DE613d26515eeE37e30a1b": {
+      "functions": [
+        {
+          "functionName": "setLTV",
+          "isPermissioned": true,
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.LTV_EMERGENCY_ROLE.members"
+            }
+          ],
+          "timestamp": "2026-01-16T05:56:37.877Z"
+        },
+        {
+          "functionName": "setHookConfig",
+          "isPermissioned": true,
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.HOOK_EMERGENCY_ROLE.members"
+            }
+          ],
+          "timestamp": "2026-01-16T05:56:37.877Z"
+        },
+        {
+          "functionName": "setCaps",
+          "isPermissioned": true,
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.CAPS_EMERGENCY_ROLE.members"
+            }
+          ],
+          "timestamp": "2026-01-16T05:56:37.878Z"
+        }
+      ]
+    }
+  }
+}
