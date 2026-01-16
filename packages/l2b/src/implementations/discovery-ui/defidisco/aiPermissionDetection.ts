@@ -109,23 +109,32 @@ export interface ParsedAiError {
  * Parse AI API errors into user-friendly messages
  */
 export function parseAiError(error: any): ParsedAiError {
-  const technicalDetails = error instanceof Error ? error.message : String(error)
+  const technicalDetails =
+    error instanceof Error ? error.message : String(error)
 
   // Check for rate limit errors (429)
-  if (technicalDetails.includes('429') || technicalDetails.toLowerCase().includes('rate limit')) {
+  if (
+    technicalDetails.includes('429') ||
+    technicalDetails.toLowerCase().includes('rate limit')
+  ) {
     return {
       userMessage: 'Rate limit exceeded. Too many requests to the AI provider.',
       technicalDetails,
-      suggestedAction: 'Wait a few minutes before trying again, or switch to a different model.',
+      suggestedAction:
+        'Wait a few minutes before trying again, or switch to a different model.',
     }
   }
 
   // Check for overload errors (529 or 'overloaded')
-  if (technicalDetails.includes('529') || technicalDetails.toLowerCase().includes('overload')) {
+  if (
+    technicalDetails.includes('529') ||
+    technicalDetails.toLowerCase().includes('overload')
+  ) {
     return {
       userMessage: 'AI provider is currently overloaded with requests.',
       technicalDetails,
-      suggestedAction: 'Try again in a few moments, or switch to a different model.',
+      suggestedAction:
+        'Try again in a few moments, or switch to a different model.',
     }
   }
 
@@ -137,9 +146,11 @@ export function parseAiError(error: any): ParsedAiError {
     technicalDetails.toLowerCase().includes('authentication')
   ) {
     return {
-      userMessage: 'Authentication failed. Please check your API key configuration.',
+      userMessage:
+        'Authentication failed. Please check your API key configuration.',
       technicalDetails,
-      suggestedAction: 'Verify that your API key is correctly set in the .env file.',
+      suggestedAction:
+        'Verify that your API key is correctly set in the .env file.',
     }
   }
 

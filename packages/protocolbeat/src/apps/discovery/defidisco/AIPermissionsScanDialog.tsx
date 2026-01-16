@@ -131,7 +131,11 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
       setScanResults(new Map(results))
 
       try {
-        const result = await detectPermissionsWithAI(project, address, selectedModel)
+        const result = await detectPermissionsWithAI(
+          project,
+          address,
+          selectedModel,
+        )
         results.set(address, {
           status: 'success',
           detectedCount: result.detectedFunctions,
@@ -144,7 +148,10 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
         })
         // Log technical details to console
         if (error.technicalDetails) {
-          console.error(`Technical details for ${address}:`, error.technicalDetails)
+          console.error(
+            `Technical details for ${address}:`,
+            error.technicalDetails,
+          )
         }
       }
 
@@ -192,7 +199,9 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
         return `Found ${result.detectedCount} function${result.detectedCount === 1 ? '' : 's'}`
       case 'error':
         const errorText = `Error: ${result.error}`
-        return result.suggestedAction ? `${errorText}. ${result.suggestedAction}` : errorText
+        return result.suggestedAction
+          ? `${errorText}. ${result.suggestedAction}`
+          : errorText
       default:
         return ''
     }
@@ -217,7 +226,9 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
               </p>
             </div>
             <div className="ml-4">
-              <label className="block text-coffee-400 text-xs mb-1">AI Model</label>
+              <label className="block text-coffee-400 text-xs mb-1">
+                AI Model
+              </label>
               <select
                 value={selectedModel}
                 onChange={(e) => setSelectedModel(e.target.value as ModelKey)}

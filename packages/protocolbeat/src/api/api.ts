@@ -281,7 +281,9 @@ export function executeGeneratePermissionsReport(project: string): EventSource {
   return new EventSource(`/api/terminal/generate-permissions-report?${params}`)
 }
 
-export async function getFunctions(project: string): Promise<ApiFunctionsResponse> {
+export async function getFunctions(
+  project: string,
+): Promise<ApiFunctionsResponse> {
   const res = await fetch(`/api/projects/${project}/functions`)
   if (!res.ok) {
     throw new Error(res.statusText)
@@ -292,7 +294,7 @@ export async function getFunctions(project: string): Promise<ApiFunctionsRespons
 
 export async function updateFunction(
   project: string,
-  request: ApiFunctionsUpdateRequest
+  request: ApiFunctionsUpdateRequest,
 ): Promise<void> {
   const res = await fetch(`/api/projects/${project}/functions`, {
     method: 'PUT',
@@ -307,7 +309,9 @@ export async function updateFunction(
   }
 }
 
-export async function getContractTags(project: string): Promise<ApiContractTagsResponse> {
+export async function getContractTags(
+  project: string,
+): Promise<ApiContractTagsResponse> {
   const res = await fetch(`/api/projects/${project}/contract-tags`)
   if (!res.ok) {
     throw new Error(res.statusText)
@@ -318,7 +322,7 @@ export async function getContractTags(project: string): Promise<ApiContractTagsR
 
 export async function updateContractTag(
   project: string,
-  request: ApiContractTagsUpdateRequest
+  request: ApiContractTagsUpdateRequest,
 ): Promise<void> {
   const res = await fetch(`/api/projects/${project}/contract-tags`, {
     method: 'PUT',
@@ -336,20 +340,25 @@ export async function updateContractTag(
 export async function detectPermissionsWithAI(
   project: string,
   address: string,
-  model?: string
+  model?: string,
 ): Promise<{ success: boolean; detectedFunctions: number; functions: any[] }> {
-  const res = await fetch(`/api/projects/${project}/ai-detect-permissions/${address}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+  const res = await fetch(
+    `/api/projects/${project}/ai-detect-permissions/${address}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ model: model || 'gpt-4o' }),
     },
-    body: JSON.stringify({ model: model || 'gpt-4o' }),
-  })
+  )
 
   if (!res.ok) {
     const errorData = await res.json()
     // Create enhanced error with additional fields
-    const error = new Error(errorData.userMessage || errorData.error || res.statusText) as any
+    const error = new Error(
+      errorData.userMessage || errorData.error || res.statusText,
+    ) as any
     error.userMessage = errorData.userMessage
     error.technicalDetails = errorData.technicalDetails
     error.suggestedAction = errorData.suggestedAction
@@ -368,7 +377,9 @@ export async function getV2Score(project: string): Promise<ApiV2ScoreResponse> {
   return data as ApiV2ScoreResponse
 }
 
-export async function getFundsData(project: string): Promise<ApiFundsDataResponse> {
+export async function getFundsData(
+  project: string,
+): Promise<ApiFundsDataResponse> {
   const res = await fetch(`/api/projects/${project}/funds-data`)
   if (!res.ok) {
     throw new Error(res.statusText)
@@ -377,7 +388,11 @@ export async function getFundsData(project: string): Promise<ApiFundsDataRespons
   return data as ApiFundsDataResponse
 }
 
-export function executeFetchFunds(project: string, contractAddress?: string, forceRefresh?: boolean): EventSource {
+export function executeFetchFunds(
+  project: string,
+  contractAddress?: string,
+  forceRefresh?: boolean,
+): EventSource {
   // For SSE with POST, we need a workaround since EventSource only supports GET
   // We'll use fetch with a ReadableStream instead, but for simplicity, we'll use a pattern
   // that works with the existing terminal pattern
@@ -394,35 +409,39 @@ export function executeFetchFunds(project: string, contractAddress?: string, for
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body,
-  }).then(async (response) => {
-    const reader = response.body?.getReader()
-    if (!reader) return
+  })
+    .then(async (response) => {
+      const reader = response.body?.getReader()
+      if (!reader) return
 
-    const decoder = new TextDecoder()
+      const decoder = new TextDecoder()
 
-    while (true) {
-      const { done, value } = await reader.read()
-      if (done) break
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
 
-      const text = decoder.decode(value)
-      const lines = text.split('\n')
+        const text = decoder.decode(value)
+        const lines = text.split('\n')
 
-      for (const line of lines) {
-        if (line.startsWith('data: ')) {
-          const data = line.slice(6)
-          const event = new MessageEvent('message', { data })
-          eventSource.dispatchEvent(event)
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6)
+            const event = new MessageEvent('message', { data })
+            eventSource.dispatchEvent(event)
+          }
         }
       }
-    }
-  }).catch((error) => {
-    console.error('Fetch funds error:', error)
-  })
+    })
+    .catch((error) => {
+      console.error('Fetch funds error:', error)
+    })
 
   return eventSource
 }
 
-export async function getCallGraphData(project: string): Promise<ApiCallGraphResponse> {
+export async function getCallGraphData(
+  project: string,
+): Promise<ApiCallGraphResponse> {
   const res = await fetch(`/api/projects/${project}/call-graph`)
   if (!res.ok) {
     throw new Error(res.statusText)
@@ -437,4 +456,3 @@ export function executeGenerateCallGraph(project: string): EventSource {
   })
   return new EventSource(`/api/terminal/generate-call-graph?${params}`)
 }
-

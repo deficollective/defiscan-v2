@@ -42,7 +42,10 @@ export function isValidModelKey(key: string): key is ModelKey {
 /**
  * Get all available models as array
  */
-export function getAvailableModels(): Array<{ key: ModelKey; config: AiModelConfig }> {
+export function getAvailableModels(): Array<{
+  key: ModelKey
+  config: AiModelConfig
+}> {
   return Object.entries(AI_MODELS).map(([key, config]) => ({
     key: key as ModelKey,
     config,
