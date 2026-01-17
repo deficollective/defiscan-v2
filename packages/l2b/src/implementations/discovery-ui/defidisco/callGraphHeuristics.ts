@@ -270,7 +270,10 @@ export class HeuristicEngine {
     context: HeuristicContext,
     onProgress?: (message: string) => void,
   ): HeuristicEngineResult | null {
-    const results: { heuristic: ResolutionHeuristic; result: HeuristicResult }[] = []
+    const results: {
+      heuristic: ResolutionHeuristic
+      result: HeuristicResult
+    }[] = []
 
     // Log what we're trying to resolve
     onProgress?.(
@@ -328,7 +331,10 @@ export class HeuristicEngine {
     context: HeuristicContext,
     onProgress?: (message: string) => Promise<void>,
   ): Promise<HeuristicEngineResult | null> {
-    const results: { heuristic: ResolutionHeuristic; result: HeuristicResult }[] = []
+    const results: {
+      heuristic: ResolutionHeuristic
+      result: HeuristicResult
+    }[] = []
 
     // Log what we're trying to resolve
     await onProgress?.(

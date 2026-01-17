@@ -8,8 +8,8 @@ import * as fs from 'fs'
 import * as path from 'path'
 import {
   createHeuristicEngine,
-  parseVariableAssignments,
   type HeuristicContext,
+  parseVariableAssignments,
 } from './callGraphHeuristics'
 import { getContractTags } from './contractTags'
 import type {
@@ -45,7 +45,11 @@ interface ParsedFunction {
   name: string
   contractName: string
   parameters: { name: string; type: string }[]
-  internalCalls: { contract: string; functionName: string; arguments: string[] }[]
+  internalCalls: {
+    contract: string
+    functionName: string
+    arguments: string[]
+  }[]
   libraryCalls: { library: string; functionName: string }[]
   highLevelCalls: {
     storageVariable: string
@@ -169,7 +173,10 @@ export async function generateCallGraph(
     )
 
     // Check cache first
-    const currentSourceHash = getContractSourceHash(discovered, contract.address)
+    const currentSourceHash = getContractSourceHash(
+      discovered,
+      contract.address,
+    )
     const cachedEntry = getSlithirCache(paths, project, contract.address)
 
     let slithirOutput: string | null = null
@@ -270,7 +277,9 @@ export async function generateCallGraph(
           verboseMessageCount++
           // Add a delay every batch to let UI catch up
           if (verboseMessageCount % THROTTLE_BATCH_SIZE === 0) {
-            await new Promise((resolve) => setTimeout(resolve, THROTTLE_DELAY_MS))
+            await new Promise((resolve) =>
+              setTimeout(resolve, THROTTLE_DELAY_MS),
+            )
           }
         }
       : undefined
@@ -301,7 +310,10 @@ export async function generateCallGraph(
 
         // Only pass progress callback in verbose mode (devMode)
         const heuristicResult = verbose
-          ? await heuristicEngine.resolveAsync(heuristicContext, verboseProgress)
+          ? await heuristicEngine.resolveAsync(
+              heuristicContext,
+              verboseProgress,
+            )
           : heuristicEngine.resolve(heuristicContext)
 
         if (heuristicResult && heuristicResult.matches.length > 0) {
@@ -347,7 +359,6 @@ export async function generateCallGraph(
           call.isViewCall = true
         }
       }
-
     }
 
     const resolvedCount = externalCalls.filter((c) => c.resolvedAddress).length
@@ -358,9 +369,7 @@ export async function generateCallGraph(
     onProgress?.(
       `  Found ${externalCalls.length} external calls (${deterministicCount} deterministic, ${optimisticCount} optimistic, ${resolvedCount - deterministicCount - optimisticCount} unresolved)`,
     )
-    onProgress?.(
-      `  Read/Write: ${viewCount} reads, ${writeCount} writes`,
-    )
+    onProgress?.(`  Read/Write: ${viewCount} reads, ${writeCount} writes`)
 
     result[contract.address] = {
       address: contract.address,
@@ -691,7 +700,10 @@ function parseSlithirStructured(output: string): ParsedSlithir {
         // Parse parameter types from the function signature
         // Note: Function headers only have types, not names (e.g., "ITroveManager,uint256")
         const paramTypes = paramsStr
-          ? paramsStr.split(',').map((t) => t.trim()).filter((t) => t.length > 0)
+          ? paramsStr
+              .split(',')
+              .map((t) => t.trim())
+              .filter((t) => t.length > 0)
           : []
 
         currentFunction = {
@@ -720,7 +732,10 @@ function parseSlithirStructured(output: string): ParsedSlithir {
         const [, contract, funcName, argsStr] = internalMatchWithArgs
         // Parse arguments (split by comma, trim whitespace)
         const args = argsStr
-          ? argsStr.split(',').map((a) => a.trim()).filter((a) => a.length > 0)
+          ? argsStr
+              .split(',')
+              .map((a) => a.trim())
+              .filter((a) => a.length > 0)
           : []
         currentFunction.internalCalls.push({
           contract: contract!,
@@ -794,8 +809,12 @@ function buildTypeSubstitutionMap(
   const substitutions = new Map<string, string>()
 
   // Map each parameter type to its corresponding argument
-  for (let i = 0; i < calledFunc.parameters.length && i < callArguments.length; i++) {
-    const paramType = calledFunc.parameters[i]!.type
+  for (
+    let i = 0;
+    i < calledFunc.parameters.length && i < callArguments.length;
+    i++
+  ) {
+    const paramType = calledFunc.parameters[i]?.type
     let argValue = callArguments[i]!
 
     // If the argument is itself a substituted value from a parent scope, resolve it
@@ -1013,11 +1032,11 @@ async function runSlitherOnContract(
 
     const slither = spawn(SLITHER_PATH, args, { env })
 
-    let stdout = ''
+    let _stdout = ''
     let stderr = ''
 
     slither.stdout.on('data', (data) => {
-      stdout += data.toString()
+      _stdout += data.toString()
     })
 
     slither.stderr.on('data', (data) => {
