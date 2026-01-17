@@ -44,7 +44,8 @@ interface SlithirCacheEntry {
 interface ParsedFunction {
   name: string
   contractName: string
-  internalCalls: { contract: string; functionName: string }[]
+  parameters: { name: string; type: string }[]
+  internalCalls: { contract: string; functionName: string; arguments: string[] }[]
   libraryCalls: { library: string; functionName: string }[]
   highLevelCalls: {
     storageVariable: string
@@ -677,18 +678,26 @@ function parseSlithirStructured(output: string): ParsedSlithir {
     }
 
     // Check for function header: "\tFunction ContractName.functionName(params) (*)"
-    const funcMatch = line.match(/^\s*Function\s+(\w+)\.(\w+)\s*\(/)
+    // Example: "Function BorrowerOperations._adjustTrove(ITroveManager,uint256,TroveChange,uint256) (*)"
+    const funcMatch = line.match(/^\s*Function\s+(\w+)\.(\w+)\s*\(([^)]*)\)/)
     if (funcMatch && currentContract) {
-      const [, contractName, functionName] = funcMatch
+      const [, contractName, functionName, paramsStr] = funcMatch
       // Handle function overloading: merge calls from overloaded functions with same name
       const existingFunc = currentContract.functions.get(functionName!)
       if (existingFunc) {
         // Reuse existing function entry to accumulate calls from all overloads
         currentFunction = existingFunc
       } else {
+        // Parse parameter types from the function signature
+        // Note: Function headers only have types, not names (e.g., "ITroveManager,uint256")
+        const paramTypes = paramsStr
+          ? paramsStr.split(',').map((t) => t.trim()).filter((t) => t.length > 0)
+          : []
+
         currentFunction = {
           name: functionName!,
           contractName: contractName!,
+          parameters: paramTypes.map((type) => ({ name: '', type })), // names filled in later from usage
           internalCalls: [],
           libraryCalls: [],
           highLevelCalls: [],
@@ -701,14 +710,34 @@ function parseSlithirStructured(output: string): ParsedSlithir {
     if (!currentFunction) continue
 
     // Parse INTERNAL_CALL: "TMP = INTERNAL_CALL, ContractName.funcName(params)(args)"
+    // Example: "INTERNAL_CALL, BorrowerOperations._adjustTrove(ITroveManager,uint256,TroveChange,uint256)(troveManagerCached,_troveId,troveChange,0)"
     if (line.includes('INTERNAL_CALL')) {
-      const internalMatch = line.match(/INTERNAL_CALL,\s*(\w+)\.(\w+)\(/)
-      if (internalMatch) {
-        const [, contract, funcName] = internalMatch
+      // First try to match with arguments: Contract.func(types)(args)
+      const internalMatchWithArgs = line.match(
+        /INTERNAL_CALL,\s*(\w+)\.(\w+)\([^)]*\)\(([^)]*)\)/,
+      )
+      if (internalMatchWithArgs) {
+        const [, contract, funcName, argsStr] = internalMatchWithArgs
+        // Parse arguments (split by comma, trim whitespace)
+        const args = argsStr
+          ? argsStr.split(',').map((a) => a.trim()).filter((a) => a.length > 0)
+          : []
         currentFunction.internalCalls.push({
           contract: contract!,
           functionName: funcName!,
+          arguments: args,
         })
+      } else {
+        // Fallback: match without arguments (for parameterless functions)
+        const internalMatch = line.match(/INTERNAL_CALL,\s*(\w+)\.(\w+)\(/)
+        if (internalMatch) {
+          const [, contract, funcName] = internalMatch
+          currentFunction.internalCalls.push({
+            contract: contract!,
+            functionName: funcName!,
+            arguments: [],
+          })
+        }
       }
       continue
     }
@@ -748,14 +777,55 @@ function parseSlithirStructured(output: string): ParsedSlithir {
 }
 
 /**
+ * Type-based substitution map: maps (interfaceType) -> argumentName
+ * Used to substitute parameter variables with the actual arguments passed by the caller
+ */
+type TypeSubstitutionMap = Map<string, string>
+
+/**
+ * Build a type-based substitution map from INTERNAL_CALL arguments to called function parameters
+ * This maps parameter types to the actual argument values passed
+ */
+function buildTypeSubstitutionMap(
+  calledFunc: ParsedFunction,
+  callArguments: string[],
+  parentSubstitutions: TypeSubstitutionMap,
+): TypeSubstitutionMap {
+  const substitutions = new Map<string, string>()
+
+  // Map each parameter type to its corresponding argument
+  for (let i = 0; i < calledFunc.parameters.length && i < callArguments.length; i++) {
+    const paramType = calledFunc.parameters[i]!.type
+    let argValue = callArguments[i]!
+
+    // If the argument is itself a substituted value from a parent scope, resolve it
+    if (parentSubstitutions.has(argValue)) {
+      argValue = parentSubstitutions.get(argValue)!
+    }
+
+    // Only store if we don't already have a mapping for this type
+    // (handles case where multiple params have same type - first one wins)
+    if (!substitutions.has(paramType)) {
+      substitutions.set(paramType, argValue)
+    }
+  }
+
+  return substitutions
+}
+
+/**
  * Recursively collect all HIGH_LEVEL_CALLs reachable from a function
  * following INTERNAL_CALL and LIBRARY_CALL chains
+ *
+ * @param typeSubstitutions - Map from interface types to actual argument names from caller.
+ *   When a HIGH_LEVEL_CALL uses a variable of a given type, we substitute with the caller's argument.
  */
 function collectHighLevelCalls(
   parsedSlithir: ParsedSlithir,
   contractName: string,
   functionName: string,
   visited: Set<string>,
+  typeSubstitutions: TypeSubstitutionMap = new Map(),
   onProgress?: (message: string) => void,
 ): {
   storageVariable: string
@@ -778,17 +848,41 @@ function collectHighLevelCalls(
     calledFunction: string
   }[] = []
 
-  // Collect direct HIGH_LEVEL_CALLs
-  calls.push(...func.highLevelCalls)
+  // Collect direct HIGH_LEVEL_CALLs with type-based substitution
+  for (const hlc of func.highLevelCalls) {
+    // Check if this variable's interface type has a substitution
+    // This handles the case where a function parameter is used to make an external call
+    const substitutedVar = typeSubstitutions.get(hlc.interfaceType)
 
-  // Follow INTERNAL_CALLs
+    calls.push({
+      ...hlc,
+      storageVariable: substitutedVar ?? hlc.storageVariable,
+    })
+  }
+
+  // Follow INTERNAL_CALLs with argument propagation
   for (const ic of func.internalCalls) {
+    // Look up the called function to get its parameter types
+    const calledContract = parsedSlithir.contracts.get(ic.contract)
+    const calledFunc = calledContract?.functions.get(ic.functionName)
+
+    // Build new type substitution map for the called function
+    let newSubstitutions = typeSubstitutions
+    if (calledFunc && ic.arguments.length > 0) {
+      newSubstitutions = buildTypeSubstitutionMap(
+        calledFunc,
+        ic.arguments,
+        typeSubstitutions,
+      )
+    }
+
     calls.push(
       ...collectHighLevelCalls(
         parsedSlithir,
         ic.contract,
         ic.functionName,
         visited,
+        newSubstitutions,
         onProgress,
       ),
     )
@@ -816,6 +910,7 @@ function collectHighLevelCalls(
         lc.library,
         lc.functionName,
         visited,
+        typeSubstitutions, // Library calls don't typically pass contract references as params
         onProgress,
       ),
     )
@@ -848,6 +943,7 @@ function parseSlithirForContract(
       contractName,
       funcName,
       visited,
+      new Map(), // No type substitutions for top-level public functions
       onProgress,
     )
 
