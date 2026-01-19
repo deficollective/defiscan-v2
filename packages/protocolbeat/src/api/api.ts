@@ -377,7 +377,7 @@ export async function getFundsData(project: string): Promise<ApiFundsDataRespons
   return data as ApiFundsDataResponse
 }
 
-export function executeFetchFunds(project: string, contractAddress?: string, forceRefresh?: boolean): EventSource {  
+export function executeFetchFunds(project: string, contractAddress?: string, forceRefresh?: boolean): EventSource {
   // For SSE with POST, we need a workaround since EventSource only supports GET
   // We'll use fetch with a ReadableStream instead, but for simplicity, we'll use a pattern
   // that works with the existing terminal pattern
@@ -417,7 +417,7 @@ export function executeFetchFunds(project: string, contractAddress?: string, for
     }
     })
     .catch((error) => {
-      console.error('Fetch funds error:', error)
+    console.error('Fetch funds error:', error)
     })
 
   return eventSource
