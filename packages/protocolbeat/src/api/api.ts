@@ -415,9 +415,8 @@ export function executeFetchFunds(project: string, contractAddress?: string, for
         }
       }
     }
-    })
-    .catch((error) => {
-    console.error('Fetch funds error:', error)
+    }).catch((error) => {
+      console.error('Fetch funds error:', error)
     })
 
   return eventSource
