@@ -281,9 +281,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
   })
 
   // AI permission detection endpoint
-  app.post(
-    '/api/projects/:project/ai-detect-permissions/:address',
-    async (req, res) => {
+  app.post('/api/projects/:project/ai-detect-permissions/:address', async (req, res) => {
       if (readonly) {
         res.status(403).json({ error: 'Server is in readonly mode' })
         return
@@ -333,7 +331,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         )
 
         // Get contract source code
-        const codeResponse = getCode(paths,configReader,project,address,false)
+        const codeResponse = getCode(paths, configReader, project, address, false)
 
         if (!codeResponse.sources || codeResponse.sources.length === 0) {
           res.status(400).json({ error: 'No source code found for this contract' })
@@ -423,13 +421,8 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
 
           // Find the contract in the project response
           for (const chain of projectResponse.entries) {
-            const allContracts = [
-              ...chain.initialContracts,
-              ...chain.discoveredContracts,
-            ]
-            const targetContract = allContracts.find(
-              (c) => c.address === address,
-            )
+            const allContracts = [...chain.initialContracts,...chain.discoveredContracts]
+            const targetContract = allContracts.find((c) => c.address === address)
 
             if (targetContract && 'abis' in targetContract) {
               const readMarkers = [' view ', ' pure ']
