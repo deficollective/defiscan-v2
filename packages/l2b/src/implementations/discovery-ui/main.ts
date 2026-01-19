@@ -19,31 +19,38 @@ import { getPreview } from './getPreview'
 import { getProject } from './getProject'
 import { getProjects } from './getProjects'
 import { searchCode } from './searchCode'
-import { getFunctions, updateFunction } from './defidisco/functions'
+import {
+  getFunctions,
+  updateFunction,
+} from './defidisco/functions'
 import {
   DEFAULT_MODEL,
   getModelConfig,
   isValidModelKey,
   type ModelKey,
 } from './defidisco/aiModels'
-import { getContractTags, updateContractTag } from './defidisco/contractTags'
+import {
+  getContractTags,
+  updateContractTag,
+} from './defidisco/contractTags'
 import {
   getFundsData,
   fetchAllFundsForProject,
   fetchFundsForSingleContract,
 } from './defidisco/fundsData'
-import { getCallGraphData, generateCallGraph } from './defidisco/callGraph'
+import {
+  getCallGraphData,
+  generateCallGraph,
+} from './defidisco/callGraph'
 import { generatePermissionsReport } from './defidisco/generatePermissionsReport'
 import { filterDefiProjects } from './defidisco/defiProjectFilter'
-import {
-  detectPermissionsWithAI,
-  combineSourceFiles,
-} from './defidisco/aiPermissionDetection'
+import { detectPermissionsWithAI, combineSourceFiles } from './defidisco/aiPermissionDetection'
 import { calculateV2Score } from './defidisco/v2Scoring'
 import {
   attachTemplateRouter,
   listTemplateFilesSchema,
 } from './templates/router'
+
 
 const safeStringSchema = z
   .string()
