@@ -280,11 +280,8 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
       res.status(403).json({ error: 'Server is in readonly mode' })
       return
     }
-
-    const paramsValidation = z.object({
-      project: z.string(),
-      address: z.string(),
-    }).safeParse(req.params)
+  
+    const paramsValidation = projectAddressParamsSchema.safeParse(req.params)
 
     if (!paramsValidation.success) {
       res.status(400).json({ errors: paramsValidation.message })
