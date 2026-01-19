@@ -31,7 +31,11 @@ function loadDeFiDiscoConfig(): DeFiDiscoConfig {
         lastUpdated: new Date().toISOString().split('T')[0],
       }
 
-      writeFileSync(configPath, JSON.stringify(defaultConfig, null, 2) + '\n', 'utf-8')
+      writeFileSync(
+        configPath,
+        JSON.stringify(defaultConfig, null, 2) + '\n',
+        'utf-8',
+      )
       cachedConfig = defaultConfig
       return defaultConfig
     }
