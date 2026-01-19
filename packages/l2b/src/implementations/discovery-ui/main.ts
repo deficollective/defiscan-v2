@@ -333,18 +333,10 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         )
 
         // Get contract source code
-        const codeResponse = getCode(
-          paths,
-          configReader,
-          project,
-          address,
-          false,
-        )
+        const codeResponse = getCode(paths,configReader,project,address,false)
 
         if (!codeResponse.sources || codeResponse.sources.length === 0) {
-          res
-            .status(400)
-            .json({ error: 'No source code found for this contract' })
+          res.status(400).json({ error: 'No source code found for this contract' })
           return
         }
 
@@ -365,9 +357,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
           // - For multiple implementations (diamonds), they may be numbered .0.sol, .1.sol, etc.
 
           console.log(`Mapping source files for ${address}:`)
-          console.log(
-            `  Implementation addresses: ${implementationAddresses.join(', ')}`,
-          )
+          console.log(`  Implementation addresses: ${implementationAddresses.join(', ')}`)
 
           for (const source of codeResponse.sources) {
             if (source.name.endsWith('.p.sol')) {
@@ -381,22 +371,16 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
                 const index = parseInt(match[1]!, 10)
                 if (implementationAddresses[index]) {
                   sourceToAddress[source.name] = implementationAddresses[index]!
-                  console.log(
-                    `  ${source.name} → ${implementationAddresses[index]} (impl #${index})`,
-                  )
+                  console.log(`  ${source.name} → ${implementationAddresses[index]} (impl #${index})`)
                 } else {
                   sourceToAddress[source.name] = address // fallback to proxy
-                  console.log(
-                    `  ${source.name} → ${address} (fallback to proxy)`,
-                  )
+                  console.log(`  ${source.name} → ${address} (fallback to proxy)`)
                 }
               } else {
                 // Regular implementation file without numbering
                 if (implementationAddresses.length > 0) {
                   sourceToAddress[source.name] = implementationAddresses[0]!
-                  console.log(
-                    `  ${source.name} → ${implementationAddresses[0]} (impl)`,
-                  )
+                  console.log(`  ${source.name} → ${implementationAddresses[0]} (impl)`)
                 } else {
                   // Single contract (no proxy pattern)
                   sourceToAddress[source.name] = address
@@ -420,18 +404,14 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         const combinedSource = combineSourceFiles(sourcesMap)
 
         // Call AI API
-        console.log(
-          `Detecting permissions for ${address} using ${modelConfig.displayName}...`,
-        )
+        console.log(`Detecting permissions for ${address} using ${modelConfig.displayName}...`)
         const aiResult = await detectPermissionsWithAI(
           combinedSource,
           aiApiKey,
           modelConfig.provider,
           modelConfig.modelId,
         )
-        console.log(
-          `AI detected ${aiResult.functions.length} functions for ${address}`,
-        )
+        console.log(`AI detected ${aiResult.functions.length} functions for ${address}`)
 
         // Build a set of valid write function names from the target contract's ABI
         // Use the same logic as PermissionsDisplay to identify write functions
@@ -439,11 +419,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
 
         if (entry && entry.type === 'Contract') {
           // Get the project response to access ABIs
-          const projectResponse = getProject(
-            configReader,
-            templateService,
-            project,
-          )
+          const projectResponse = getProject(configReader, templateService, project)
 
           // Find the contract in the project response
           for (const chain of projectResponse.entries) {
@@ -483,9 +459,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
           }
         }
 
-        console.log(
-          `Valid write function names for ${address}: ${validFunctionNames.size}`,
-        )
+        console.log(`Valid write function names for ${address}: ${validFunctionNames.size}`)
 
         // Save each detected function to the correct contract address based on source file
         let savedCount = 0
@@ -494,9 +468,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         for (const func of aiResult.functions) {
           // Validate that the function actually exists in some contract's ABI
           if (!validFunctionNames.has(func.functionName)) {
-            console.log(
-              `⚠️  Skipping function ${func.functionName} - not found in any contract ABI`,
-            )
+            console.log(`⚠️  Skipping function ${func.functionName} - not found in any contract ABI`)
             skippedCount++
             continue
           }
@@ -505,9 +477,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
             ? sourceToAddress[func.sourceFile] || address
             : address
 
-          console.log(
-            `✓ Saving function ${func.functionName} from ${func.sourceFile || 'unknown'} to ${targetAddress}`,
-          )
+          console.log(`✓ Saving function ${func.functionName} from ${func.sourceFile || 'unknown'} to ${targetAddress}`)
 
           updateFunction(paths, project, {
             contractAddress: targetAddress,
@@ -519,9 +489,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
           savedCount++
         }
 
-        console.log(
-          `Saved ${savedCount} functions, skipped ${skippedCount} invalid functions`,
-        )
+        console.log(`Saved ${savedCount} functions, skipped ${skippedCount} invalid functions`)
 
         res.json({
           success: true,
