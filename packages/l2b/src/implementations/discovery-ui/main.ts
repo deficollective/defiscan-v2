@@ -466,9 +466,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
             continue
           }
 
-          const targetAddress = func.sourceFile
-            ? sourceToAddress[func.sourceFile] || address
-            : address
+          const targetAddress = func.sourceFile ? sourceToAddress[func.sourceFile] || address : address
 
           console.log(`✓ Saving function ${func.functionName} from ${func.sourceFile || 'unknown'} to ${targetAddress}`)
 
