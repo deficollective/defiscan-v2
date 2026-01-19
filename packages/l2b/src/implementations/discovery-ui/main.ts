@@ -554,12 +554,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
     const { project } = paramsValidation.data
 
     try {
-      const score = calculateV2Score(
-        paths,
-        configReader,
-        templateService,
-        project,
-      )
+      const score = calculateV2Score(paths, configReader, templateService, project)
       res.json(score)
     } catch (error) {
       console.error('Error calculating V2 score:', error)
@@ -597,18 +592,15 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
       return
     }
     const { project } = paramsValidation.data
-    const { contractAddress, forceRefresh } = req.body as {
-      contractAddress?: string
-      forceRefresh?: boolean
-    }
+    const { contractAddress, forceRefresh } = req.body as { contractAddress?: string; forceRefresh?: boolean }
 
     // Set up Server-Sent Events headers
     res.writeHead(200, {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache',
-      Connection: 'keep-alive',
+      'Connection': 'keep-alive',
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Cache-Control',
+      'Access-Control-Allow-Headers': 'Cache-Control'
     })
 
     const sendProgress = (message: string) => {
@@ -618,26 +610,14 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
     try {
       if (contractAddress) {
         // Fetch for single contract
-        await fetchFundsForSingleContract(
-          paths,
-          project,
-          contractAddress,
-          sendProgress,
-          forceRefresh ?? false,
-        )
+        await fetchFundsForSingleContract(paths, project, contractAddress, sendProgress, forceRefresh ?? false)
       } else {
         // Fetch for all tagged contracts
-        await fetchAllFundsForProject(
-          paths,
-          project,
-          sendProgress,
-          forceRefresh ?? false,
-        )
+        await fetchAllFundsForProject(paths, project, sendProgress, forceRefresh ?? false)
       }
       sendProgress('DONE')
     } catch (error) {
-      const errorMessage =
-        error instanceof Error ? error.message : 'Unknown error'
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error'
       sendProgress(`Error: ${errorMessage}`)
     }
 
@@ -762,7 +742,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
       res.writeHead(200, {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
-        Connection: 'keep-alive',
+        'Connection': 'keep-alive',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Cache-Control',
       })
@@ -771,11 +751,8 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         const result = generatePermissionsReport(paths, project)
         res.write(`data: ${result.replace(/\n/g, '\\n')}\n\n`)
       } catch (error) {
-        const errorMessage =
-          error instanceof Error ? error.message : 'Unknown error'
-        res.write(
-          `data: Error generating permissions report: ${errorMessage}\\n\n\n`,
-        )
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+        res.write(`data: Error generating permissions report: ${errorMessage}\\n\n\n`)
       }
 
       res.end()
@@ -793,7 +770,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
       res.writeHead(200, {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
-        Connection: 'keep-alive',
+        'Connection': 'keep-alive',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Cache-Control',
       })
@@ -806,8 +783,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         await generateCallGraph(paths, configReader, project, sendProgress)
         sendProgress('DONE')
       } catch (error) {
-        const errorMessage =
-          error instanceof Error ? error.message : 'Unknown error'
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error'
         sendProgress(`Error: ${errorMessage}`)
       }
 
