@@ -744,7 +744,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Cache-Control',
+        'Access-Control-Allow-Headers': 'Cache-Control'
       })
 
       try {
@@ -772,7 +772,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Cache-Control',
+        'Access-Control-Allow-Headers': 'Cache-Control'
       })
 
       const sendProgress = (message: string) => {
