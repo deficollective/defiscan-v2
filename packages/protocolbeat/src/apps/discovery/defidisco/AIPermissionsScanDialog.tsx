@@ -5,6 +5,7 @@ import {
   detectPermissionsWithAI,
   getFunctions,
   getProject,
+  getAIModels,
 } from '../../../api/api'
 import type { ApiProjectContract } from '../../../api/types'
 import { Checkbox } from '../../../components/Checkbox'
@@ -21,13 +22,6 @@ interface ScanResult {
   suggestedAction?: string
 }
 
-type ModelKey = 'gpt-4o' | 'claude-sonnet-4-5'
-
-const AI_MODELS: Record<ModelKey, { displayName: string }> = {
-  'gpt-4o': { displayName: 'GPT-4o (OpenAI)' },
-  'claude-sonnet-4-5': { displayName: 'Claude Sonnet 4.5 (Anthropic)' },
-}
-
 export function AIPermissionsScanDialog({ project, onClose }: Props) {
   const queryClient = useQueryClient()
   const [selectedContracts, setSelectedContracts] = useState<Set<string>>(
@@ -39,10 +33,16 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
   const [isScanning, setIsScanning] = useState(false)
   const [currentScanIndex, setCurrentScanIndex] = useState(0)
 
+  // Fetch available AI models from API
+  const { data: availableModels } = useQuery({
+    queryKey: ['ai-models'],
+    queryFn: getAIModels,
+  })
+
   // Model selection with localStorage persistence
-  const [selectedModel, setSelectedModel] = useState<ModelKey>(() => {
+  const [selectedModel, setSelectedModel] = useState<string>(() => {
     const saved = localStorage.getItem('ai-model-preference')
-    return (saved && saved in AI_MODELS ? saved : 'gpt-4o') as ModelKey
+    return saved || 'gpt-4o'
   })
 
   // Save model preference to localStorage
@@ -231,13 +231,13 @@ export function AIPermissionsScanDialog({ project, onClose }: Props) {
               </label>
               <select
                 value={selectedModel}
-                onChange={(e) => setSelectedModel(e.target.value as ModelKey)}
+                onChange={(e) => setSelectedModel(e.target.value)}
                 disabled={isScanning}
                 className="rounded border border-coffee-600 bg-coffee-700 px-3 py-2 text-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {Object.entries(AI_MODELS).map(([key, config]) => (
-                  <option key={key} value={key}>
-                    {config.displayName}
+                {availableModels?.map((model) => (
+                  <option key={model.key} value={model.key}>
+                    {model.config.displayName}
                   </option>
                 ))}
               </select>

@@ -2,12 +2,6 @@
  * Configuration for supported AI models
  */
 
-export interface AiModelConfig {
-  provider: 'openai' | 'claude'
-  displayName: string
-  modelId: string
-}
-
 export const AI_MODELS = {
   'gpt-4o': {
     provider: 'openai',
@@ -28,7 +22,11 @@ export const DEFAULT_MODEL: ModelKey = 'gpt-4o'
 /**
  * Get model configuration by key
  */
-export function getModelConfig(modelKey: ModelKey): AiModelConfig {
+export function getModelConfig(modelKey: ModelKey): {
+  provider: 'openai' | 'claude'
+  displayName: string
+  modelId: string
+} {
   return AI_MODELS[modelKey]
 }
 
@@ -44,7 +42,11 @@ export function isValidModelKey(key: string): key is ModelKey {
  */
 export function getAvailableModels(): Array<{
   key: ModelKey
-  config: AiModelConfig
+  config: {
+    provider: 'openai' | 'claude'
+    displayName: string
+    modelId: string
+  }
 }> {
   return Object.entries(AI_MODELS).map(([key, config]) => ({
     key: key as ModelKey,

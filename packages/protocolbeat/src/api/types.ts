@@ -512,3 +512,12 @@ export interface ExternalCall {
   resolvedContractName?: string
   isViewCall?: boolean        // true if view/pure, false if state-changing, undefined if unknown
 }
+
+export interface ApiAIModelsResponse {
+  key: string
+  config: {
+    provider: 'openai' | 'claude'
+    displayName: string
+    modelId: string
+  }
+}

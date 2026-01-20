@@ -19,6 +19,7 @@ import type {
   ApiV2ScoreResponse,
   ApiFundsDataResponse,
   ApiCallGraphResponse,
+  ApiAIModelsResponse,
 } from './types'
 
 export async function getProjects(): Promise<ApiProjectsResponse> {
@@ -28,6 +29,15 @@ export async function getProjects(): Promise<ApiProjectsResponse> {
   }
   const data = await res.json()
   return data as ApiProjectsResponse
+}
+
+export async function getAIModels(): Promise<ApiAIModelsResponse[]> {
+  const res = await fetch('/api/ai-models')
+  if (!res.ok) {
+    throw new Error(res.statusText)
+  }
+  const data = await res.json()
+  return data as ApiAIModelsResponse[]
 }
 
 export async function getProject(project: string): Promise<ApiProjectResponse> {

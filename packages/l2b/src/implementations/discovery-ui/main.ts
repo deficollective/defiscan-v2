@@ -25,6 +25,7 @@ import {
 } from './defidisco/functions'
 import {
   DEFAULT_MODEL,
+  getAvailableModels,
   getModelConfig,
   isValidModelKey,
   type ModelKey,
@@ -107,6 +108,11 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
 
   app.get('/health', (_, res) => {
     res.status(200).send('OK')
+  })
+
+  app.get('/api/ai-models', (_req, res) => {
+    const models = getAvailableModels()
+    res.json(models)
   })
 
   app.get('/api/projects', (_req, res) => {
