@@ -634,7 +634,9 @@ function ContractsWithPermissionsTable({
       {totalFundsAtRisk > 0 && (
         <div className="mb-1 text-xs">
           <span className="font-semibold">Funds at Risk: </span>
-          <span className="text-aux-green">{formatUsdValue(totalFundsAtRisk)}</span>
+          <span className="text-aux-green">
+            {formatUsdValue(totalFundsAtRisk)}
+          </span>
         </div>
       )}
       <div className="text-xs">

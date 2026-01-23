@@ -1,20 +1,20 @@
-import { useState, useEffect, useMemo } from 'react'
-import { useMutation, useQueryClient, useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { getProject, updateContractTag, updateFunction } from '../api/api'
 import type {
-  AdminModuleScore,
   AdminDetailWithCapital,
+  AdminModuleScore,
+  ApiAddressType,
   FunctionCapitalAnalysis,
+  Impact,
   LetterGrade,
   Likelihood,
-  Impact,
-  ApiAddressType,
 } from '../api/types'
-import { usePanelStore } from '../apps/discovery/store/panel-store'
-import { useContractTags } from '../hooks/useContractTags'
-import { updateContractTag, updateFunction, getProject } from '../api/api'
 import { ProxyTypeTag } from '../apps/discovery/defidisco/ProxyTypeTag'
 import { buildProxyTypeMap } from '../apps/discovery/defidisco/proxyTypeUtils'
+import { usePanelStore } from '../apps/discovery/store/panel-store'
+import { useContractTags } from '../hooks/useContractTags'
 
 /**
  * Format USD value for display
@@ -71,7 +71,11 @@ function getGradeColor(grade: LetterGrade): string {
 /**
  * Get inline styles for grade badge
  */
-function getGradeBadgeStyles(grade: LetterGrade): { backgroundColor: string; borderColor: string; color: string } {
+function getGradeBadgeStyles(grade: LetterGrade): {
+  backgroundColor: string
+  borderColor: string
+  color: string
+} {
   switch (grade) {
     case 'AAA':
     case 'AA':
@@ -79,7 +83,7 @@ function getGradeBadgeStyles(grade: LetterGrade): { backgroundColor: string; bor
       return {
         backgroundColor: 'rgba(20, 83, 45, 0.5)', // green-900/50
         borderColor: 'rgba(34, 197, 94, 0.3)', // green-500/30
-        color: '#4ade80' // green-400
+        color: '#4ade80', // green-400
       }
     case 'BBB':
     case 'BB':
@@ -87,7 +91,7 @@ function getGradeBadgeStyles(grade: LetterGrade): { backgroundColor: string; bor
       return {
         backgroundColor: 'rgba(113, 63, 18, 0.5)', // yellow-900/50
         borderColor: 'rgba(234, 179, 8, 0.3)', // yellow-500/30
-        color: '#facc15' // yellow-400
+        color: '#facc15', // yellow-400
       }
     case 'CCC':
     case 'CC':
@@ -95,13 +99,13 @@ function getGradeBadgeStyles(grade: LetterGrade): { backgroundColor: string; bor
       return {
         backgroundColor: 'rgba(124, 45, 18, 0.5)', // orange-900/50
         borderColor: 'rgba(249, 115, 22, 0.3)', // orange-500/30
-        color: '#fb923c' // orange-400
+        color: '#fb923c', // orange-400
       }
     case 'D':
       return {
         backgroundColor: 'rgba(127, 29, 29, 0.5)', // red-900/50
         borderColor: 'rgba(239, 68, 68, 0.3)', // red-500/30
-        color: '#f87171' // red-400
+        color: '#f87171', // red-400
       }
   }
 }
@@ -165,7 +169,9 @@ function getLikelihoodColor(likelihood: string): string {
 /**
  * Convert Impact to score string for API
  */
-function impactToScore(impact: Impact): 'low-risk' | 'medium-risk' | 'high-risk' | 'critical' {
+function impactToScore(
+  impact: Impact,
+): 'low-risk' | 'medium-risk' | 'high-risk' | 'critical' {
   switch (impact) {
     case 'low':
       return 'low-risk'
@@ -203,7 +209,7 @@ function ImpactPicker({
           e.stopPropagation()
           setIsOpen(!isOpen)
         }}
-        className="text-xs px-2 py-0.5 rounded border border-coffee-600 bg-coffee-700 hover:bg-coffee-600 capitalize"
+        className="rounded border border-coffee-600 bg-coffee-700 px-2 py-0.5 text-xs capitalize hover:bg-coffee-600"
         style={{ color: getImpactColor(currentImpact) }}
       >
         {currentImpact}
@@ -215,8 +221,8 @@ function ImpactPicker({
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 z-50 mt-1 flex flex-col gap-2 rounded border border-coffee-600 bg-coffee-800 p-2 shadow-xl min-w-[120px]">
-            <div className="text-xs font-semibold text-coffee-300">Impact</div>
+          <div className="absolute right-0 z-50 mt-1 flex min-w-[120px] flex-col gap-2 rounded border border-coffee-600 bg-coffee-800 p-2 shadow-xl">
+            <div className="font-semibold text-coffee-300 text-xs">Impact</div>
             {impactOptions.map((imp) => (
               <button
                 key={imp}
@@ -250,7 +256,9 @@ function LikelihoodPicker({
   allowUnscored?: boolean
 }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedLikelihood, setSelectedLikelihood] = useState<Likelihood>(currentLikelihood || 'high')
+  const [selectedLikelihood, setSelectedLikelihood] = useState<Likelihood>(
+    currentLikelihood || 'high',
+  )
   const likelihoodOptions: Likelihood[] = ['high', 'medium', 'low', 'mitigated']
 
   // Sync internal state when prop changes
@@ -270,14 +278,18 @@ function LikelihoodPicker({
     setIsOpen(!isOpen)
   }
 
-  const displayText = allowUnscored && !currentLikelihood ? 'unscored' : currentLikelihood
-  const displayColor = allowUnscored && !currentLikelihood ? '#9ca3af' : getLikelihoodColor(currentLikelihood || 'high')
+  const displayText =
+    allowUnscored && !currentLikelihood ? 'unscored' : currentLikelihood
+  const displayColor =
+    allowUnscored && !currentLikelihood
+      ? '#9ca3af'
+      : getLikelihoodColor(currentLikelihood || 'high')
 
   return (
     <div className="relative inline-block">
       <button
         onClick={handleOpen}
-        className="text-xs px-2 py-0.5 rounded border border-coffee-600 bg-coffee-700 hover:bg-coffee-600 capitalize"
+        className="rounded border border-coffee-600 bg-coffee-700 px-2 py-0.5 text-xs capitalize hover:bg-coffee-600"
         style={{ color: displayColor }}
       >
         {displayText}
@@ -289,8 +301,10 @@ function LikelihoodPicker({
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 z-50 mt-1 flex flex-col gap-2 rounded border border-coffee-600 bg-coffee-800 p-2 shadow-xl min-w-[120px]">
-            <div className="text-xs font-semibold text-coffee-300">Likelihood</div>
+          <div className="absolute right-0 z-50 mt-1 flex min-w-[120px] flex-col gap-2 rounded border border-coffee-600 bg-coffee-800 p-2 shadow-xl">
+            <div className="font-semibold text-coffee-300 text-xs">
+              Likelihood
+            </div>
             {likelihoodOptions.map((lik) => (
               <button
                 key={lik}
@@ -338,31 +352,38 @@ function FunctionCapitalBreakdown({
 
   const totalContracts = analysis.reachableContracts.length
   // Split by fundsAtRisk status first, then by view-only
-  const contractsAtRisk = analysis.reachableContracts.filter(c => c.fundsAtRisk)
-  const contractsNotAtRisk = analysis.reachableContracts.filter(c => !c.fundsAtRisk)
+  const contractsAtRisk = analysis.reachableContracts.filter(
+    (c) => c.fundsAtRisk,
+  )
+  const contractsNotAtRisk = analysis.reachableContracts.filter(
+    (c) => !c.fundsAtRisk,
+  )
 
   if (analysis.directFundsUsd === 0 && analysis.totalReachableFundsUsd === 0) {
     return null
   }
 
   return (
-    <div className="ml-6 mt-1 mb-2 pl-3 border-l border-coffee-700">
+    <div className="mt-1 mb-2 ml-6 border-coffee-700 border-l pl-3">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 text-xs text-coffee-400 hover:text-coffee-200 transition-colors"
+        className="flex items-center gap-2 text-coffee-400 text-xs transition-colors hover:text-coffee-200"
       >
         <span>{isExpanded ? '▼' : '▶'}</span>
-        <span className="text-green-400 font-medium">
-          {formatUsdValue(analysis.directFundsUsd + analysis.totalReachableFundsUsd)}
+        <span className="font-medium text-green-400">
+          {formatUsdValue(
+            analysis.directFundsUsd + analysis.totalReachableFundsUsd,
+          )}
         </span>
         <span>via call graph</span>
         {totalContracts > 0 && (
           <span className="text-coffee-500">
-            ({totalContracts} reachable contract{totalContracts !== 1 ? 's' : ''})
+            ({totalContracts} reachable contract
+            {totalContracts !== 1 ? 's' : ''})
           </span>
         )}
         {analysis.unresolvedCallsCount > 0 && (
-          <span className="text-yellow-500 ml-1">
+          <span className="ml-1 text-yellow-500">
             +{analysis.unresolvedCallsCount} unresolved
           </span>
         )}
@@ -373,14 +394,14 @@ function FunctionCapitalBreakdown({
           {/* Direct contract funds */}
           <div className="text-xs">
             <div className="flex items-center gap-2">
-              <span className="text-coffee-500 w-20">Direct:</span>
+              <span className="w-20 text-coffee-500">Direct:</span>
               <button
                 onClick={() => selectGlobal(analysis.contractAddress)}
-                className="text-coffee-200 hover:text-blue-400 transition-colors"
+                className="text-coffee-200 transition-colors hover:text-blue-400"
               >
                 {analysis.contractName}
               </button>
-              <span className="text-green-400 font-medium">
+              <span className="font-medium text-green-400">
                 {formatUsdValue(analysis.directFundsUsd)}
               </span>
             </div>
@@ -389,35 +410,46 @@ function FunctionCapitalBreakdown({
           {/* Reachable contracts with funds at risk */}
           {contractsAtRisk.length > 0 && (
             <div className="text-xs">
-              <div className="text-coffee-500 mb-1">
+              <div className="mb-1 text-coffee-500">
                 Reachable (funds at risk):
               </div>
               <div className="ml-4 space-y-1">
                 {contractsAtRisk.map((contract) => (
                   <div key={contract.contractAddress}>
                     <div className="flex items-center gap-2">
-                      <span className={contract.viewOnlyPath ? "text-coffee-500" : "text-red-400"}>→</span>
+                      <span
+                        className={
+                          contract.viewOnlyPath
+                            ? 'text-coffee-500'
+                            : 'text-red-400'
+                        }
+                      >
+                        →
+                      </span>
                       <button
                         onClick={() => selectGlobal(contract.contractAddress)}
-                        className="text-coffee-200 hover:text-blue-400 transition-colors"
+                        className="text-coffee-200 transition-colors hover:text-blue-400"
                       >
                         {contract.contractName}
                       </button>
                       {contract.fundsUsd > 0 && (
-                        <span className="text-green-400 font-medium">
+                        <span className="font-medium text-green-400">
                           {formatUsdValue(contract.fundsUsd)}
                         </span>
                       )}
                       {contract.viewOnlyPath && (
-                        <span className="text-coffee-600 italic">view-only path</span>
+                        <span className="text-coffee-600 italic">
+                          view-only path
+                        </span>
                       )}
                     </div>
                     {/* Show called functions */}
-                    {contract.calledFunctions && contract.calledFunctions.length > 0 && (
-                      <div className="ml-6 text-coffee-500">
-                        calls: {contract.calledFunctions.join(', ')}
-                      </div>
-                    )}
+                    {contract.calledFunctions &&
+                      contract.calledFunctions.length > 0 && (
+                        <div className="ml-6 text-coffee-500">
+                          calls: {contract.calledFunctions.join(', ')}
+                        </div>
+                      )}
                   </div>
                 ))}
               </div>
@@ -427,7 +459,7 @@ function FunctionCapitalBreakdown({
           {/* Reachable contracts without funds at risk (unscored functions) */}
           {contractsNotAtRisk.length > 0 && (
             <div className="text-xs">
-              <div className="text-coffee-600 mb-1">
+              <div className="mb-1 text-coffee-600">
                 Reachable (unscored functions - not counted):
               </div>
               <div className="ml-4 space-y-1">
@@ -437,7 +469,7 @@ function FunctionCapitalBreakdown({
                       <span>→</span>
                       <button
                         onClick={() => selectGlobal(contract.contractAddress)}
-                        className="hover:text-blue-400 transition-colors"
+                        className="transition-colors hover:text-blue-400"
                       >
                         {contract.contractName}
                       </button>
@@ -448,11 +480,13 @@ function FunctionCapitalBreakdown({
                       )}
                     </div>
                     {/* Show called functions */}
-                    {contract.calledFunctions && contract.calledFunctions.length > 0 && (
-                      <div className="ml-6 text-coffee-600">
-                        calls: {contract.calledFunctions.join(', ')} (unscored)
-                      </div>
-                    )}
+                    {contract.calledFunctions &&
+                      contract.calledFunctions.length > 0 && (
+                        <div className="ml-6 text-coffee-600">
+                          calls: {contract.calledFunctions.join(', ')}{' '}
+                          (unscored)
+                        </div>
+                      )}
                   </div>
                 ))}
               </div>
@@ -460,11 +494,13 @@ function FunctionCapitalBreakdown({
           )}
 
           {/* Summary */}
-          <div className="text-xs pt-2 border-t border-coffee-700/50">
+          <div className="border-coffee-700/50 border-t pt-2 text-xs">
             <div className="flex items-center gap-4">
               <span className="text-coffee-500">Total from this function:</span>
-              <span className="text-green-400 font-semibold">
-                {formatUsdValue(analysis.directFundsUsd + analysis.totalReachableFundsUsd)}
+              <span className="font-semibold text-green-400">
+                {formatUsdValue(
+                  analysis.directFundsUsd + analysis.totalReachableFundsUsd,
+                )}
               </span>
             </div>
           </div>
@@ -486,7 +522,11 @@ function AdminSection({
   admin: any
   proxyType?: string
   onUpdateLikelihood: (adminAddress: string, likelihood: Likelihood) => void
-  onUpdateImpact: (contractAddress: string, functionName: string, impact: Impact) => void
+  onUpdateImpact: (
+    contractAddress: string,
+    functionName: string,
+    impact: Impact,
+  ) => void
 }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const selectGlobal = usePanelStore((state) => state.select)
@@ -494,48 +534,62 @@ function AdminSection({
 
   // Get capital analysis map for quick lookup
   const capitalMap = useMemo(() => {
-    if (!hasCapitalData(admin)) return new Map<string, FunctionCapitalAnalysis>()
+    if (!hasCapitalData(admin))
+      return new Map<string, FunctionCapitalAnalysis>()
     return new Map(
       admin.functionsWithCapital.map((fc: FunctionCapitalAnalysis) => [
         `${fc.contractAddress}:${fc.functionName}`,
-        fc
-      ])
+        fc,
+      ]),
     )
   }, [admin])
 
   // Calculate worst grade among all functions for this admin
-  const worstGrade = admin.functions.length > 0 && admin.likelihood
-    ? admin.functions
-        .filter((func: any) => func.grade) // Only consider functions with grades
-        .reduce((worst: LetterGrade | null, func: any) => {
-          if (!worst) return func.grade
-          const gradeValues: Record<LetterGrade, number> = {
-            'AAA': 10, 'AA': 9, 'A': 8,
-            'BBB': 7, 'BB': 6, 'B': 5,
-            'CCC': 4, 'CC': 3, 'C': 2, 'D': 1
-          }
-          return gradeValues[func.grade] < gradeValues[worst] ? func.grade : worst
-        }, null as LetterGrade | null)
-    : null
+  const worstGrade =
+    admin.functions.length > 0 && admin.likelihood
+      ? admin.functions
+          .filter((func: any) => func.grade) // Only consider functions with grades
+          .reduce(
+            (worst: LetterGrade | null, func: any) => {
+              if (!worst) return func.grade
+              const gradeValues: Record<LetterGrade, number> = {
+                AAA: 10,
+                AA: 9,
+                A: 8,
+                BBB: 7,
+                BB: 6,
+                B: 5,
+                CCC: 4,
+                CC: 3,
+                C: 2,
+                D: 1,
+              }
+              return gradeValues[func.grade] < gradeValues[worst]
+                ? func.grade
+                : worst
+            },
+            null as LetterGrade | null,
+          )
+      : null
 
   const badgeStyles = worstGrade ? getGradeBadgeStyles(worstGrade) : null
 
   return (
-    <div className="ml-4 mb-2">
+    <div className="mb-2 ml-4">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 w-full text-left hover:bg-coffee-800/30 p-2 rounded transition-colors"
+        className="flex w-full items-center gap-2 rounded p-2 text-left transition-colors hover:bg-coffee-800/30"
       >
         <span className="text-coffee-400 text-xs">
           {isExpanded ? '▼' : '▶'}
         </span>
         {badgeStyles && (
           <span
-            className="inline-block px-2 py-0.5 rounded border text-xs font-mono"
+            className="inline-block rounded border px-2 py-0.5 font-mono text-xs"
             style={{
               backgroundColor: badgeStyles.backgroundColor,
               borderColor: badgeStyles.borderColor,
-              color: badgeStyles.color
+              color: badgeStyles.color,
             }}
           >
             {worstGrade}
@@ -543,21 +597,21 @@ function AdminSection({
         )}
         {isRevoked ? (
           <span
-            className="inline-block px-1.5 py-0.5 rounded border text-xs font-semibold"
+            className="inline-block rounded border px-1.5 py-0.5 font-semibold text-xs"
             style={{
               color: '#10b981', // green-500
               borderColor: '#10b98140',
-              backgroundColor: 'rgba(16, 185, 129, 0.1)'
+              backgroundColor: 'rgba(16, 185, 129, 0.1)',
             }}
           >
             Revoked
           </span>
         ) : (
           <span
-            className="inline-block px-1.5 py-0.5 rounded border text-xs capitalize"
+            className="inline-block rounded border px-1.5 py-0.5 text-xs capitalize"
             style={{
               color: getAdminTypeColor(admin.adminType),
-              borderColor: getAdminTypeColor(admin.adminType) + '40'
+              borderColor: getAdminTypeColor(admin.adminType) + '40',
             }}
           >
             {admin.adminType}
@@ -569,76 +623,94 @@ function AdminSection({
             e.stopPropagation()
             if (!isRevoked) selectGlobal(admin.adminAddress)
           }}
-          className={`font-medium text-sm ${isRevoked ? 'text-coffee-400 cursor-default' : 'text-coffee-200 hover:text-blue-400 cursor-pointer transition-colors'}`}
+          className={`font-medium text-sm ${isRevoked ? 'cursor-default text-coffee-400' : 'cursor-pointer text-coffee-200 transition-colors hover:text-blue-400'}`}
         >
           {isRevoked ? '0x0000...0000' : admin.adminName}
         </button>
-        <span className="text-coffee-500 text-xs mx-1">|</span>
-        <span className="text-xs text-coffee-400">Likelihood:</span>
+        <span className="mx-1 text-coffee-500 text-xs">|</span>
+        <span className="text-coffee-400 text-xs">Likelihood:</span>
         <LikelihoodPicker
           currentLikelihood={admin.likelihood}
-          onUpdate={(likelihood) => onUpdateLikelihood(admin.adminAddress, likelihood)}
+          onUpdate={(likelihood) =>
+            onUpdateLikelihood(admin.adminAddress, likelihood)
+          }
           allowUnscored={true}
         />
-        <span className="text-coffee-400 text-xs ml-2">
-          ({admin.functions.length} function{admin.functions.length !== 1 ? 's' : ''})
+        <span className="ml-2 text-coffee-400 text-xs">
+          ({admin.functions.length} function
+          {admin.functions.length !== 1 ? 's' : ''})
         </span>
         {/* Capital at risk display */}
         {hasCapitalData(admin) && admin.totalReachableCapital > 0 && (
           <>
-            <span className="text-coffee-500 text-xs mx-1">|</span>
-            <span className="text-xs text-green-400 font-medium">
+            <span className="mx-1 text-coffee-500 text-xs">|</span>
+            <span className="font-medium text-green-400 text-xs">
               {formatUsdValue(admin.totalReachableCapital)} at risk
             </span>
-            <span className="text-xs text-coffee-500 ml-1">
-              ({admin.uniqueContractsAffected} contract{admin.uniqueContractsAffected !== 1 ? 's' : ''})
+            <span className="ml-1 text-coffee-500 text-xs">
+              ({admin.uniqueContractsAffected} contract
+              {admin.uniqueContractsAffected !== 1 ? 's' : ''})
             </span>
           </>
         )}
       </button>
 
       {isExpanded && (
-        <ul className="ml-8 mt-2 space-y-1.5">
+        <ul className="mt-2 ml-8 space-y-1.5">
           {admin.functions.map((func: any, idx: number) => {
-            const likelihoodColor = admin.likelihood ? getLikelihoodColor(admin.likelihood) : '#9ca3af'
-            const gradeBadgeStyles = func.grade ? getGradeBadgeStyles(func.grade) : null
-            const capitalAnalysis = capitalMap.get(`${func.contractAddress}:${func.functionName}`)
+            const likelihoodColor = admin.likelihood
+              ? getLikelihoodColor(admin.likelihood)
+              : '#9ca3af'
+            const gradeBadgeStyles = func.grade
+              ? getGradeBadgeStyles(func.grade)
+              : null
+            const capitalAnalysis = capitalMap.get(
+              `${func.contractAddress}:${func.functionName}`,
+            )
 
             return (
-              <li key={idx} className="text-xs text-coffee-300">
+              <li key={idx} className="text-coffee-300 text-xs">
                 <div className="flex items-center gap-2">
                   {gradeBadgeStyles ? (
                     <span
-                      className="inline-block px-1.5 py-0.5 rounded border text-xs font-mono"
+                      className="inline-block rounded border px-1.5 py-0.5 font-mono text-xs"
                       style={{
                         backgroundColor: gradeBadgeStyles.backgroundColor,
                         borderColor: gradeBadgeStyles.borderColor,
-                        color: gradeBadgeStyles.color
+                        color: gradeBadgeStyles.color,
                       }}
                     >
                       {func.grade}
                     </span>
                   ) : (
-                    <span className="inline-block px-1.5 py-0.5 text-xs text-coffee-500">
+                    <span className="inline-block px-1.5 py-0.5 text-coffee-500 text-xs">
                       -
                     </span>
                   )}
                   <button
                     onClick={() => selectGlobal(func.contractAddress)}
-                    className="font-medium text-coffee-200 hover:text-blue-400 cursor-pointer transition-colors"
+                    className="cursor-pointer font-medium text-coffee-200 transition-colors hover:text-blue-400"
                   >
                     {func.contractName}
                   </button>
                   <span className="text-coffee-500">.</span>
                   <span className="text-blue-400">{func.functionName}()</span>
-                  <span className="text-coffee-500 ml-2">(Impact: </span>
+                  <span className="ml-2 text-coffee-500">(Impact: </span>
                   <ImpactPicker
                     currentImpact={func.impact}
-                    onUpdate={(impact) => onUpdateImpact(func.contractAddress, func.functionName, impact)}
+                    onUpdate={(impact) =>
+                      onUpdateImpact(
+                        func.contractAddress,
+                        func.functionName,
+                        impact,
+                      )
+                    }
                   />
                   <span className="text-coffee-500">, Likelihood: </span>
                   {admin.likelihood ? (
-                    <span style={{ color: likelihoodColor }}>{admin.likelihood}</span>
+                    <span style={{ color: likelihoodColor }}>
+                      {admin.likelihood}
+                    </span>
                   ) : (
                     <span className="text-coffee-400">unscored</span>
                   )}
@@ -661,7 +733,9 @@ function AdminSection({
  * Admins Inventory Breakdown Component
  * Displays breakdown of admins by address
  */
-export function AdminsInventoryBreakdown({ score }: AdminsInventoryBreakdownProps) {
+export function AdminsInventoryBreakdown({
+  score,
+}: AdminsInventoryBreakdownProps) {
   const { project } = useParams()
   const queryClient = useQueryClient()
   const { data: contractTags } = useContractTags(project!)
@@ -675,17 +749,27 @@ export function AdminsInventoryBreakdown({ score }: AdminsInventoryBreakdownProp
   })
 
   // Build proxy type lookup map
-  const proxyTypeMap = useMemo(() => buildProxyTypeMap(projectData), [projectData])
+  const proxyTypeMap = useMemo(
+    () => buildProxyTypeMap(projectData),
+    [projectData],
+  )
 
   // Mutation for updating likelihood
   const updateLikelihoodMutation = useMutation({
-    mutationFn: ({ adminAddress, likelihood }: { adminAddress: string; likelihood: Likelihood }) => {
+    mutationFn: ({
+      adminAddress,
+      likelihood,
+    }: {
+      adminAddress: string
+      likelihood: Likelihood
+    }) => {
       if (!project) throw new Error('Project not found')
 
       // Get existing tag to preserve other attributes
       // IMPORTANT: Keep the eth: prefix for matching!
-      const existingTag = contractTags?.tags.find(tag =>
-        tag.contractAddress.toLowerCase() === adminAddress.toLowerCase()
+      const existingTag = contractTags?.tags.find(
+        (tag) =>
+          tag.contractAddress.toLowerCase() === adminAddress.toLowerCase(),
       )
 
       return updateContractTag(project, {
@@ -702,13 +786,24 @@ export function AdminsInventoryBreakdown({ score }: AdminsInventoryBreakdownProp
     },
   })
 
-  const handleUpdateLikelihood = (adminAddress: string, likelihood: Likelihood) => {
+  const handleUpdateLikelihood = (
+    adminAddress: string,
+    likelihood: Likelihood,
+  ) => {
     updateLikelihoodMutation.mutate({ adminAddress, likelihood })
   }
 
   // Mutation for updating impact
   const updateImpactMutation = useMutation({
-    mutationFn: ({ contractAddress, functionName, impact }: { contractAddress: string; functionName: string; impact: Impact }) => {
+    mutationFn: ({
+      contractAddress,
+      functionName,
+      impact,
+    }: {
+      contractAddress: string
+      functionName: string
+      impact: Impact
+    }) => {
       if (!project) throw new Error('Project not found')
 
       return updateFunction(project, {
@@ -724,7 +819,11 @@ export function AdminsInventoryBreakdown({ score }: AdminsInventoryBreakdownProp
     },
   })
 
-  const handleUpdateImpact = (contractAddress: string, functionName: string, impact: Impact) => {
+  const handleUpdateImpact = (
+    contractAddress: string,
+    functionName: string,
+    impact: Impact,
+  ) => {
     updateImpactMutation.mutate({ contractAddress, functionName, impact })
   }
 
@@ -739,11 +838,12 @@ export function AdminsInventoryBreakdown({ score }: AdminsInventoryBreakdownProp
       <div className="flex items-center justify-between">
         <span className="font-medium">
           Admins:
-          {score.totalCapitalAtRisk !== undefined && score.totalCapitalAtRisk > 0 && (
-            <span className="ml-2 text-green-400 font-normal text-sm">
-              {formatUsdValue(score.totalCapitalAtRisk)} at risk
-            </span>
-          )}
+          {score.totalCapitalAtRisk !== undefined &&
+            score.totalCapitalAtRisk > 0 && (
+              <span className="ml-2 font-normal text-green-400 text-sm">
+                {formatUsdValue(score.totalCapitalAtRisk)} at risk
+              </span>
+            )}
         </span>
         <span>
           {score.inventory}{' '}
@@ -756,13 +856,16 @@ export function AdminsInventoryBreakdown({ score }: AdminsInventoryBreakdownProp
       {/* Admin breakdown - always shown */}
       <div className="mt-3 ml-2">
         {!score.breakdown || score.breakdown.length === 0 ? (
-          <p className="text-xs text-coffee-400 ml-4">
+          <p className="ml-4 text-coffee-400 text-xs">
             No permission owners found
           </p>
         ) : (
           <>
-            <p className="text-xs text-coffee-400 ml-4 mb-3">
-              {totalFunctionCount} permissioned function{totalFunctionCount !== 1 ? 's' : ''} controlled by {score.breakdown.length} admin{score.breakdown.length !== 1 ? 's' : ''}
+            <p className="mb-3 ml-4 text-coffee-400 text-xs">
+              {totalFunctionCount} permissioned function
+              {totalFunctionCount !== 1 ? 's' : ''} controlled by{' '}
+              {score.breakdown.length} admin
+              {score.breakdown.length !== 1 ? 's' : ''}
             </p>
             {score.breakdown.map((admin) => (
               <AdminSection

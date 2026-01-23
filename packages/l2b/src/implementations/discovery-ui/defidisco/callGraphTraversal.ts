@@ -112,7 +112,11 @@ export class CallGraphTraverser {
     includeViewCalls: boolean,
     reachableContracts: Map<
       string,
-      { contractName?: string; viewOnlyPath: boolean; calledFunctions: Set<string> }
+      {
+        contractName?: string
+        viewOnlyPath: boolean
+        calledFunctions: Set<string>
+      }
     >,
     unresolvedCalls: CallGraphTraversalResult['unresolvedCalls'],
     queue: Array<{
@@ -202,7 +206,11 @@ export class CallGraphTraverser {
     // Merge results from all functions
     const mergedReachable = new Map<
       string,
-      { contractName?: string; viewOnlyPath: boolean; calledFunctions: Set<string> }
+      {
+        contractName?: string
+        viewOnlyPath: boolean
+        calledFunctions: Set<string>
+      }
     >()
     const mergedUnresolved: CallGraphTraversalResult['unresolvedCalls'] = []
 
@@ -244,6 +252,9 @@ export class CallGraphTraverser {
       }
     }
 
-    return { reachableContracts: mergedReachable, unresolvedCalls: mergedUnresolved }
+    return {
+      reachableContracts: mergedReachable,
+      unresolvedCalls: mergedUnresolved,
+    }
   }
 }

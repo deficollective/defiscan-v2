@@ -1,3 +1,4 @@
+import { CallGraphTraverser } from './callGraphTraversal'
 import type {
   AdminDetail,
   AdminDetailWithCapital,
@@ -8,7 +9,6 @@ import type {
   Impact,
   ReachableContract,
 } from './types'
-import { CallGraphTraverser } from './callGraphTraversal'
 
 /**
  * CapitalAnalysisCalculator combines call graph traversal with funds data
@@ -40,12 +40,15 @@ export class CapitalAnalysisCalculator {
    * Returns true if the function has a real impact score, regardless of permissioned status.
    * A non-permissioned function with high impact still represents funds at risk when called.
    */
-  private functionHasImpact(contractAddress: string, functionName: string): boolean {
+  private functionHasImpact(
+    contractAddress: string,
+    functionName: string,
+  ): boolean {
     // Case-insensitive lookup for the contract
     const normalizedAddress = contractAddress.toLowerCase()
-    const contractEntry = Object.entries(this.functionsData.contracts ?? {}).find(
-      ([key]) => key.toLowerCase() === normalizedAddress,
-    )
+    const contractEntry = Object.entries(
+      this.functionsData.contracts ?? {},
+    ).find(([key]) => key.toLowerCase() === normalizedAddress)
 
     if (!contractEntry) return false
     const contractFunctions = contractEntry[1]
@@ -66,7 +69,10 @@ export class CapitalAnalysisCalculator {
   /**
    * Check if ANY of the called functions on a contract have impact.
    */
-  private anyCalledFunctionHasImpact(contractAddress: string, calledFunctions: Set<string>): boolean {
+  private anyCalledFunctionHasImpact(
+    contractAddress: string,
+    calledFunctions: Set<string>,
+  ): boolean {
     for (const fn of calledFunctions) {
       if (this.functionHasImpact(contractAddress, fn)) {
         return true
@@ -127,7 +133,10 @@ export class CapitalAnalysisCalculator {
       const calledFunctions = Array.from(data.calledFunctions)
 
       // Only count funds as "at risk" if at least one called function has impact
-      const fundsAtRisk = this.anyCalledFunctionHasImpact(addr, data.calledFunctions)
+      const fundsAtRisk = this.anyCalledFunctionHasImpact(
+        addr,
+        data.calledFunctions,
+      )
 
       reachableContracts.push({
         contractAddress: addr,
