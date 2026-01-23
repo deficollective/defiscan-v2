@@ -1,12 +1,46 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useMutation, useQueryClient, useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
-import type { AdminModuleScore, LetterGrade, Likelihood, Impact, ApiAddressType } from '../api/types'
+import type {
+  AdminModuleScore,
+  AdminDetailWithCapital,
+  FunctionCapitalAnalysis,
+  LetterGrade,
+  Likelihood,
+  Impact,
+  ApiAddressType,
+} from '../api/types'
 import { usePanelStore } from '../apps/discovery/store/panel-store'
 import { useContractTags } from '../hooks/useContractTags'
 import { updateContractTag, updateFunction, getProject } from '../api/api'
 import { ProxyTypeTag } from '../apps/discovery/defidisco/ProxyTypeTag'
 import { buildProxyTypeMap } from '../apps/discovery/defidisco/proxyTypeUtils'
+
+/**
+ * Format USD value for display
+ */
+function formatUsdValue(value: number): string {
+  if (value >= 1_000_000) {
+    return `$${(value / 1_000_000).toFixed(2)}M`
+  }
+  if (value >= 1_000) {
+    return `$${(value / 1_000).toFixed(2)}K`
+  }
+  if (value > 0) {
+    return `$${value.toFixed(2)}`
+  }
+  return '$0'
+}
+
+/**
+ * Check if admin has capital data
+ */
+function hasCapitalData(admin: any): admin is AdminDetailWithCapital {
+  return (
+    'totalReachableCapital' in admin &&
+    typeof admin.totalReachableCapital === 'number'
+  )
+}
 
 interface AdminsInventoryBreakdownProps {
   score: AdminModuleScore
@@ -292,6 +326,155 @@ function isZeroAddress(address: string): boolean {
 }
 
 /**
+ * Capital breakdown section - shows detailed breakdown for a function
+ */
+function FunctionCapitalBreakdown({
+  analysis,
+}: {
+  analysis: FunctionCapitalAnalysis
+}) {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const selectGlobal = usePanelStore((state) => state.select)
+
+  const totalContracts = analysis.reachableContracts.length
+  // Split by fundsAtRisk status first, then by view-only
+  const contractsAtRisk = analysis.reachableContracts.filter(c => c.fundsAtRisk)
+  const contractsNotAtRisk = analysis.reachableContracts.filter(c => !c.fundsAtRisk)
+
+  if (analysis.directFundsUsd === 0 && analysis.totalReachableFundsUsd === 0) {
+    return null
+  }
+
+  return (
+    <div className="ml-6 mt-1 mb-2 pl-3 border-l border-coffee-700">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="flex items-center gap-2 text-xs text-coffee-400 hover:text-coffee-200 transition-colors"
+      >
+        <span>{isExpanded ? '▼' : '▶'}</span>
+        <span className="text-green-400 font-medium">
+          {formatUsdValue(analysis.directFundsUsd + analysis.totalReachableFundsUsd)}
+        </span>
+        <span>via call graph</span>
+        {totalContracts > 0 && (
+          <span className="text-coffee-500">
+            ({totalContracts} reachable contract{totalContracts !== 1 ? 's' : ''})
+          </span>
+        )}
+        {analysis.unresolvedCallsCount > 0 && (
+          <span className="text-yellow-500 ml-1">
+            +{analysis.unresolvedCallsCount} unresolved
+          </span>
+        )}
+      </button>
+
+      {isExpanded && (
+        <div className="mt-2 space-y-2">
+          {/* Direct contract funds */}
+          <div className="text-xs">
+            <div className="flex items-center gap-2">
+              <span className="text-coffee-500 w-20">Direct:</span>
+              <button
+                onClick={() => selectGlobal(analysis.contractAddress)}
+                className="text-coffee-200 hover:text-blue-400 transition-colors"
+              >
+                {analysis.contractName}
+              </button>
+              <span className="text-green-400 font-medium">
+                {formatUsdValue(analysis.directFundsUsd)}
+              </span>
+            </div>
+          </div>
+
+          {/* Reachable contracts with funds at risk */}
+          {contractsAtRisk.length > 0 && (
+            <div className="text-xs">
+              <div className="text-coffee-500 mb-1">
+                Reachable (funds at risk):
+              </div>
+              <div className="ml-4 space-y-1">
+                {contractsAtRisk.map((contract) => (
+                  <div key={contract.contractAddress}>
+                    <div className="flex items-center gap-2">
+                      <span className={contract.viewOnlyPath ? "text-coffee-500" : "text-red-400"}>→</span>
+                      <button
+                        onClick={() => selectGlobal(contract.contractAddress)}
+                        className="text-coffee-200 hover:text-blue-400 transition-colors"
+                      >
+                        {contract.contractName}
+                      </button>
+                      {contract.fundsUsd > 0 && (
+                        <span className="text-green-400 font-medium">
+                          {formatUsdValue(contract.fundsUsd)}
+                        </span>
+                      )}
+                      {contract.viewOnlyPath && (
+                        <span className="text-coffee-600 italic">view-only path</span>
+                      )}
+                    </div>
+                    {/* Show called functions */}
+                    {contract.calledFunctions && contract.calledFunctions.length > 0 && (
+                      <div className="ml-6 text-coffee-500">
+                        calls: {contract.calledFunctions.join(', ')}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Reachable contracts without funds at risk (unscored functions) */}
+          {contractsNotAtRisk.length > 0 && (
+            <div className="text-xs">
+              <div className="text-coffee-600 mb-1">
+                Reachable (unscored functions - not counted):
+              </div>
+              <div className="ml-4 space-y-1">
+                {contractsNotAtRisk.map((contract) => (
+                  <div key={contract.contractAddress}>
+                    <div className="flex items-center gap-2 text-coffee-600">
+                      <span>→</span>
+                      <button
+                        onClick={() => selectGlobal(contract.contractAddress)}
+                        className="hover:text-blue-400 transition-colors"
+                      >
+                        {contract.contractName}
+                      </button>
+                      {contract.fundsUsd > 0 && (
+                        <span className="line-through">
+                          {formatUsdValue(contract.fundsUsd)}
+                        </span>
+                      )}
+                    </div>
+                    {/* Show called functions */}
+                    {contract.calledFunctions && contract.calledFunctions.length > 0 && (
+                      <div className="ml-6 text-coffee-600">
+                        calls: {contract.calledFunctions.join(', ')} (unscored)
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Summary */}
+          <div className="text-xs pt-2 border-t border-coffee-700/50">
+            <div className="flex items-center gap-4">
+              <span className="text-coffee-500">Total from this function:</span>
+              <span className="text-green-400 font-semibold">
+                {formatUsdValue(analysis.directFundsUsd + analysis.totalReachableFundsUsd)}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+/**
  * Admin section component - displays functions for a single admin address
  */
 function AdminSection({
@@ -308,6 +491,17 @@ function AdminSection({
   const [isExpanded, setIsExpanded] = useState(false)
   const selectGlobal = usePanelStore((state) => state.select)
   const isRevoked = isZeroAddress(admin.adminAddress)
+
+  // Get capital analysis map for quick lookup
+  const capitalMap = useMemo(() => {
+    if (!hasCapitalData(admin)) return new Map<string, FunctionCapitalAnalysis>()
+    return new Map(
+      admin.functionsWithCapital.map((fc: FunctionCapitalAnalysis) => [
+        `${fc.contractAddress}:${fc.functionName}`,
+        fc
+      ])
+    )
+  }, [admin])
 
   // Calculate worst grade among all functions for this admin
   const worstGrade = admin.functions.length > 0 && admin.likelihood
@@ -389,6 +583,18 @@ function AdminSection({
         <span className="text-coffee-400 text-xs ml-2">
           ({admin.functions.length} function{admin.functions.length !== 1 ? 's' : ''})
         </span>
+        {/* Capital at risk display */}
+        {hasCapitalData(admin) && admin.totalReachableCapital > 0 && (
+          <>
+            <span className="text-coffee-500 text-xs mx-1">|</span>
+            <span className="text-xs text-green-400 font-medium">
+              {formatUsdValue(admin.totalReachableCapital)} at risk
+            </span>
+            <span className="text-xs text-coffee-500 ml-1">
+              ({admin.uniqueContractsAffected} contract{admin.uniqueContractsAffected !== 1 ? 's' : ''})
+            </span>
+          </>
+        )}
       </button>
 
       {isExpanded && (
@@ -396,45 +602,52 @@ function AdminSection({
           {admin.functions.map((func: any, idx: number) => {
             const likelihoodColor = admin.likelihood ? getLikelihoodColor(admin.likelihood) : '#9ca3af'
             const gradeBadgeStyles = func.grade ? getGradeBadgeStyles(func.grade) : null
+            const capitalAnalysis = capitalMap.get(`${func.contractAddress}:${func.functionName}`)
 
             return (
-              <li key={idx} className="text-xs text-coffee-300 flex items-center gap-2">
-                {gradeBadgeStyles ? (
-                  <span
-                    className="inline-block px-1.5 py-0.5 rounded border text-xs font-mono"
-                    style={{
-                      backgroundColor: gradeBadgeStyles.backgroundColor,
-                      borderColor: gradeBadgeStyles.borderColor,
-                      color: gradeBadgeStyles.color
-                    }}
+              <li key={idx} className="text-xs text-coffee-300">
+                <div className="flex items-center gap-2">
+                  {gradeBadgeStyles ? (
+                    <span
+                      className="inline-block px-1.5 py-0.5 rounded border text-xs font-mono"
+                      style={{
+                        backgroundColor: gradeBadgeStyles.backgroundColor,
+                        borderColor: gradeBadgeStyles.borderColor,
+                        color: gradeBadgeStyles.color
+                      }}
+                    >
+                      {func.grade}
+                    </span>
+                  ) : (
+                    <span className="inline-block px-1.5 py-0.5 text-xs text-coffee-500">
+                      -
+                    </span>
+                  )}
+                  <button
+                    onClick={() => selectGlobal(func.contractAddress)}
+                    className="font-medium text-coffee-200 hover:text-blue-400 cursor-pointer transition-colors"
                   >
-                    {func.grade}
-                  </span>
-                ) : (
-                  <span className="inline-block px-1.5 py-0.5 text-xs text-coffee-500">
-                    -
-                  </span>
+                    {func.contractName}
+                  </button>
+                  <span className="text-coffee-500">.</span>
+                  <span className="text-blue-400">{func.functionName}()</span>
+                  <span className="text-coffee-500 ml-2">(Impact: </span>
+                  <ImpactPicker
+                    currentImpact={func.impact}
+                    onUpdate={(impact) => onUpdateImpact(func.contractAddress, func.functionName, impact)}
+                  />
+                  <span className="text-coffee-500">, Likelihood: </span>
+                  {admin.likelihood ? (
+                    <span style={{ color: likelihoodColor }}>{admin.likelihood}</span>
+                  ) : (
+                    <span className="text-coffee-400">unscored</span>
+                  )}
+                  <span className="text-coffee-500">)</span>
+                </div>
+                {/* Capital breakdown for this function */}
+                {capitalAnalysis && (
+                  <FunctionCapitalBreakdown analysis={capitalAnalysis} />
                 )}
-                <button
-                  onClick={() => selectGlobal(func.contractAddress)}
-                  className="font-medium text-coffee-200 hover:text-blue-400 cursor-pointer transition-colors"
-                >
-                  {func.contractName}
-                </button>
-                <span className="text-coffee-500">.</span>
-                <span className="text-blue-400">{func.functionName}()</span>
-                <span className="text-coffee-500 ml-2">(Impact: </span>
-                <ImpactPicker
-                  currentImpact={func.impact}
-                  onUpdate={(impact) => onUpdateImpact(func.contractAddress, func.functionName, impact)}
-                />
-                <span className="text-coffee-500">, Likelihood: </span>
-                {admin.likelihood ? (
-                  <span style={{ color: likelihoodColor }}>{admin.likelihood}</span>
-                ) : (
-                  <span className="text-coffee-400">unscored</span>
-                )}
-                <span className="text-coffee-500">)</span>
               </li>
             )
           })}
@@ -524,7 +737,14 @@ export function AdminsInventoryBreakdown({ score }: AdminsInventoryBreakdownProp
     <div className="text-coffee-300">
       {/* Main header - non-expandable, consistent with other inventory items */}
       <div className="flex items-center justify-between">
-        <span className="font-medium">Admins:</span>
+        <span className="font-medium">
+          Admins:
+          {score.totalCapitalAtRisk !== undefined && score.totalCapitalAtRisk > 0 && (
+            <span className="ml-2 text-green-400 font-normal text-sm">
+              {formatUsdValue(score.totalCapitalAtRisk)} at risk
+            </span>
+          )}
+        </span>
         <span>
           {score.inventory}{' '}
           <span className={`font-semibold ${gradeColor}`}>

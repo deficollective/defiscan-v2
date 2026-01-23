@@ -4,14 +4,18 @@ import type {
   TemplateService,
 } from '@l2beat/discovery'
 import { getProject } from '../getProject'
+import { getCallGraphData } from './callGraph'
+import { CapitalAnalysisCalculator } from './capitalAnalysis'
 import { getContractTags } from './contractTags'
 import {
   extractAddressesFromResolvedOwners,
   getFunctions,
   resolveOwnersFromDiscovered,
 } from './functions'
+import { getFundsData } from './fundsData'
 import type {
   AdminDetail,
+  AdminDetailWithCapital,
   ApiAddressType,
   DependencyDetail,
   FunctionDetail,
@@ -52,7 +56,9 @@ export interface DependencyModuleScore extends ModuleScore {
 }
 
 export interface AdminModuleScore extends ModuleScore {
-  breakdown?: AdminDetail[]
+  breakdown?: AdminDetail[] | AdminDetailWithCapital[]
+  // Total capital at risk across all admins (when capital analysis is available)
+  totalCapitalAtRisk?: number
 }
 
 // ============================================================================
@@ -806,6 +812,48 @@ class AdminInventoryModule implements ScoringModule {
           )
         : 'AAA' // Default grade if no graded admins
 
+    // =========================================================================
+    // Capital Analysis Integration
+    // =========================================================================
+    // Load call graph and funds data for capital analysis
+    const callGraphData = getCallGraphData(data.paths, data.projectName)
+    const fundsData = getFundsData(data.paths, data.projectName)
+
+    // Check if we have data for capital analysis
+    const hasCallGraphData = Object.keys(callGraphData.contracts).length > 0
+    const hasFundsData = Object.keys(fundsData?.contracts ?? {}).length > 0
+
+    if (hasCallGraphData && hasFundsData) {
+      // Perform capital analysis for each admin
+      // Pass functions data so we can check impact scores of called functions
+      const capitalCalculator = new CapitalAnalysisCalculator(
+        callGraphData,
+        fundsData,
+        data.functions,
+      )
+
+      const adminsWithCapital: AdminDetailWithCapital[] = []
+      let totalCapitalAtRisk = 0
+
+      for (const admin of adminsMap.values()) {
+        const adminWithCapital = capitalCalculator.analyzeAdminCapital(admin)
+        adminsWithCapital.push(adminWithCapital)
+        // Use reachable capital (includes direct + call graph reachable)
+        totalCapitalAtRisk = Math.max(
+          totalCapitalAtRisk,
+          adminWithCapital.totalReachableCapital,
+        )
+      }
+
+      return {
+        grade: worstGrade,
+        inventory: adminsMap.size,
+        breakdown: adminsWithCapital,
+        totalCapitalAtRisk,
+      }
+    }
+
+    // Fallback: return without capital analysis
     return {
       grade: worstGrade,
       inventory: adminsMap.size,
