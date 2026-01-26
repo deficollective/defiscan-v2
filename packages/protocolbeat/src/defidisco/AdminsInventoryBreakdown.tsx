@@ -339,19 +339,71 @@ function isZeroAddress(address: string): boolean {
   return normalized === '0x0000000000000000000000000000000000000000'
 }
 
+// Tree structure constants
+const TREE_BRANCH = '├──'
+const TREE_LAST = '└──'
+const TREE_PIPE = '│  '
+const TREE_SPACE = '   '
+
 /**
- * Capital breakdown section - shows detailed breakdown for a function
+ * Tree node component for consistent styling
+ */
+function TreeNode({
+  prefix,
+  children,
+  onClick,
+  className = '',
+}: {
+  prefix: string
+  children: React.ReactNode
+  onClick?: () => void
+  className?: string
+}) {
+  return (
+    <div className={`flex items-start font-mono text-xs ${className}`}>
+      <span className="mr-1 whitespace-pre text-coffee-600">{prefix}</span>
+      {onClick ? (
+        <button
+          onClick={onClick}
+          className="text-left transition-colors hover:text-blue-400"
+        >
+          {children}
+        </button>
+      ) : (
+        <span>{children}</span>
+      )}
+    </div>
+  )
+}
+
+/**
+ * Funds display component - subtle text styling to match theme
+ */
+function FundsDisplay({ value }: { value: number }) {
+  if (value <= 0) return null
+  return (
+    <span className="mr-1.5 text-coffee-400">
+      {formatUsdValue(value)}
+    </span>
+  )
+}
+
+/**
+ * Capital breakdown section - shows detailed breakdown for a function using tree structure
  */
 function FunctionCapitalBreakdown({
   analysis,
+  isLastFunction,
+  parentPrefix,
 }: {
   analysis: FunctionCapitalAnalysis
+  isLastFunction: boolean
+  parentPrefix: string
 }) {
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true)
   const selectGlobal = usePanelStore((state) => state.select)
 
-  const totalContracts = analysis.reachableContracts.length
-  // Split by fundsAtRisk status first, then by view-only
+  // Split by fundsAtRisk status
   const contractsAtRisk = analysis.reachableContracts.filter(
     (c) => c.fundsAtRisk,
   )
@@ -359,151 +411,114 @@ function FunctionCapitalBreakdown({
     (c) => !c.fundsAtRisk,
   )
 
-  if (analysis.directFundsUsd === 0 && analysis.totalReachableFundsUsd === 0) {
-    return null
-  }
+  // If no reachable contracts, don't show tree - total is already in function row
+  const hasReachable =
+    contractsAtRisk.length > 0 || contractsNotAtRisk.length > 0
+  if (!hasReachable) return null
+
+  // Continuation prefix for children
+  const childPrefix = parentPrefix + (isLastFunction ? TREE_SPACE : TREE_PIPE)
 
   return (
-    <div className="mt-1 mb-2 ml-6 border-coffee-700 border-l pl-3">
-      <button
+    <div className="font-mono text-xs">
+      {/* Direct contract as clickable root */}
+      <div
+        className="flex cursor-pointer items-start transition-colors hover:text-coffee-200"
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 text-coffee-400 text-xs transition-colors hover:text-coffee-200"
       >
-        <span>{isExpanded ? '▼' : '▶'}</span>
-        <span className="font-medium text-green-400">
-          {formatUsdValue(
-            analysis.directFundsUsd + analysis.totalReachableFundsUsd,
-          )}
+        <span className="mr-1 whitespace-pre text-coffee-600">
+          {childPrefix}
+          {TREE_LAST}
         </span>
-        <span>via call graph</span>
-        {totalContracts > 0 && (
-          <span className="text-coffee-500">
-            ({totalContracts} reachable contract
-            {totalContracts !== 1 ? 's' : ''})
-          </span>
-        )}
-        {analysis.unresolvedCallsCount > 0 && (
-          <span className="ml-1 text-yellow-500">
-            +{analysis.unresolvedCallsCount} unresolved
-          </span>
-        )}
-      </button>
+        <span className="flex items-center gap-1">
+          <FundsDisplay value={analysis.directFundsUsd} />
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              selectGlobal(analysis.contractAddress)
+            }}
+            className="text-coffee-200 transition-colors hover:text-blue-400"
+          >
+            {analysis.contractName}
+          </button>
+          {analysis.unresolvedCallsCount > 0 && (
+            <span className="text-yellow-500">
+              (+{analysis.unresolvedCallsCount} unresolved)
+            </span>
+          )}
+          <span className="text-coffee-600">{isExpanded ? '▼' : '▶'}</span>
+        </span>
+      </div>
 
+      {/* Expanded details - reachable contracts */}
       {isExpanded && (
-        <div className="mt-2 space-y-2">
-          {/* Direct contract funds */}
-          <div className="text-xs">
-            <div className="flex items-center gap-2">
-              <span className="w-20 text-coffee-500">Direct:</span>
-              <button
-                onClick={() => selectGlobal(analysis.contractAddress)}
-                className="text-coffee-200 transition-colors hover:text-blue-400"
+        <div>
+          {/* Reachable contracts at risk */}
+          {contractsAtRisk.map((contract, idx) => {
+            const isLast =
+              idx === contractsAtRisk.length - 1 &&
+              contractsNotAtRisk.length === 0
+            return (
+              <TreeNode
+                key={contract.contractAddress}
+                prefix={`${childPrefix}${TREE_SPACE}${isLast ? TREE_LAST : TREE_BRANCH}`}
+                onClick={() => selectGlobal(contract.contractAddress)}
+                className={
+                  contract.viewOnlyPath ? 'text-coffee-400' : 'text-coffee-200'
+                }
               >
-                {analysis.contractName}
-              </button>
-              <span className="font-medium text-green-400">
-                {formatUsdValue(analysis.directFundsUsd)}
-              </span>
-            </div>
-          </div>
-
-          {/* Reachable contracts with funds at risk */}
-          {contractsAtRisk.length > 0 && (
-            <div className="text-xs">
-              <div className="mb-1 text-coffee-500">
-                Reachable (funds at risk):
-              </div>
-              <div className="ml-4 space-y-1">
-                {contractsAtRisk.map((contract) => (
-                  <div key={contract.contractAddress}>
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={
-                          contract.viewOnlyPath
-                            ? 'text-coffee-500'
-                            : 'text-red-400'
-                        }
-                      >
-                        →
-                      </span>
-                      <button
-                        onClick={() => selectGlobal(contract.contractAddress)}
-                        className="text-coffee-200 transition-colors hover:text-blue-400"
-                      >
-                        {contract.contractName}
-                      </button>
-                      {contract.fundsUsd > 0 && (
-                        <span className="font-medium text-green-400">
-                          {formatUsdValue(contract.fundsUsd)}
-                        </span>
-                      )}
-                      {contract.viewOnlyPath && (
-                        <span className="text-coffee-600 italic">
-                          view-only path
-                        </span>
-                      )}
-                    </div>
-                    {/* Show called functions */}
-                    {contract.calledFunctions &&
-                      contract.calledFunctions.length > 0 && (
-                        <div className="ml-6 text-coffee-500">
-                          calls: {contract.calledFunctions.join(', ')}
-                        </div>
-                      )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Reachable contracts without funds at risk (unscored functions) */}
-          {contractsNotAtRisk.length > 0 && (
-            <div className="text-xs">
-              <div className="mb-1 text-coffee-600">
-                Reachable (unscored functions - not counted):
-              </div>
-              <div className="ml-4 space-y-1">
-                {contractsNotAtRisk.map((contract) => (
-                  <div key={contract.contractAddress}>
-                    <div className="flex items-center gap-2 text-coffee-600">
-                      <span>→</span>
-                      <button
-                        onClick={() => selectGlobal(contract.contractAddress)}
-                        className="transition-colors hover:text-blue-400"
-                      >
-                        {contract.contractName}
-                      </button>
-                      {contract.fundsUsd > 0 && (
-                        <span className="line-through">
-                          {formatUsdValue(contract.fundsUsd)}
-                        </span>
-                      )}
-                    </div>
-                    {/* Show called functions */}
-                    {contract.calledFunctions &&
-                      contract.calledFunctions.length > 0 && (
-                        <div className="ml-6 text-coffee-600">
-                          calls: {contract.calledFunctions.join(', ')}{' '}
-                          (unscored)
-                        </div>
-                      )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Summary */}
-          <div className="border-coffee-700/50 border-t pt-2 text-xs">
-            <div className="flex items-center gap-4">
-              <span className="text-coffee-500">Total from this function:</span>
-              <span className="font-semibold text-green-400">
-                {formatUsdValue(
-                  analysis.directFundsUsd + analysis.totalReachableFundsUsd,
+                <FundsDisplay value={contract.fundsUsd} />
+                <span>{contract.contractName}</span>
+                {contract.viewOnlyPath && (
+                  <span className="ml-1 text-coffee-600 italic">
+                    (view-only)
+                  </span>
                 )}
-              </span>
-            </div>
-          </div>
+                {contract.calledFunctions &&
+                  contract.calledFunctions.length > 0 && (
+                    <span className="ml-1 text-coffee-500">
+                      → {contract.calledFunctions.join(', ')}
+                    </span>
+                  )}
+              </TreeNode>
+            )
+          })}
+
+          {/* Reachable contracts not at risk (unscored) */}
+          {contractsNotAtRisk.length > 0 && (
+            <>
+              <TreeNode
+                prefix={`${childPrefix}${TREE_SPACE}${TREE_BRANCH}`}
+                className="text-coffee-600"
+              >
+                Unscored (not counted):
+              </TreeNode>
+              {contractsNotAtRisk.map((contract, idx) => {
+                const isLast = idx === contractsNotAtRisk.length - 1
+                return (
+                  <TreeNode
+                    key={contract.contractAddress}
+                    prefix={`${childPrefix}${TREE_SPACE}${TREE_PIPE}${isLast ? TREE_LAST : TREE_BRANCH}`}
+                    onClick={() => selectGlobal(contract.contractAddress)}
+                    className="text-coffee-600"
+                  >
+                    {contract.fundsUsd > 0 && (
+                      <span className="mr-1 text-coffee-600 line-through">
+                        {formatUsdValue(contract.fundsUsd)}
+                      </span>
+                    )}
+                    <span>{contract.contractName}</span>
+                    {contract.calledFunctions &&
+                      contract.calledFunctions.length > 0 && (
+                        <span className="ml-1">
+                          → {contract.calledFunctions.join(', ')}
+                        </span>
+                      )}
+                  </TreeNode>
+                )
+              })}
+            </>
+          )}
         </div>
       )}
     </div>
@@ -656,11 +671,9 @@ function AdminSection({
       </button>
 
       {isExpanded && (
-        <ul className="mt-2 ml-8 space-y-1.5">
+        <div className="mt-2 ml-6">
           {admin.functions.map((func: any, idx: number) => {
-            const likelihoodColor = admin.likelihood
-              ? getLikelihoodColor(admin.likelihood)
-              : '#9ca3af'
+            const isLastFunc = idx === admin.functions.length - 1
             const gradeBadgeStyles = func.grade
               ? getGradeBadgeStyles(func.grade)
               : null
@@ -668,12 +681,24 @@ function AdminSection({
               `${func.contractAddress}:${func.functionName}`,
             )
 
+            const treePrefix = isLastFunc ? TREE_LAST : TREE_BRANCH
+
+            // Calculate total funds for this function
+            const totalFundsForFunc = capitalAnalysis
+              ? capitalAnalysis.directFundsUsd +
+                capitalAnalysis.totalReachableFundsUsd
+              : 0
+
             return (
-              <li key={idx} className="text-coffee-300 text-xs">
-                <div className="flex items-center gap-2">
+              <div key={idx} className="text-coffee-300">
+                {/* Function row with tree prefix */}
+                <div className="flex items-center font-mono text-xs">
+                  <span className="mr-1 whitespace-pre text-coffee-600">
+                    {treePrefix}
+                  </span>
                   {gradeBadgeStyles ? (
                     <span
-                      className="inline-block rounded border px-1.5 py-0.5 font-mono text-xs"
+                      className="mr-1.5 inline-block rounded border px-1.5 py-0.5 text-xs"
                       style={{
                         backgroundColor: gradeBadgeStyles.backgroundColor,
                         borderColor: gradeBadgeStyles.borderColor,
@@ -683,19 +708,25 @@ function AdminSection({
                       {func.grade}
                     </span>
                   ) : (
-                    <span className="inline-block px-1.5 py-0.5 text-coffee-500 text-xs">
+                    <span className="mr-1.5 inline-block px-1.5 py-0.5 text-coffee-500 text-xs">
                       -
+                    </span>
+                  )}
+                  {/* Funds display after grade */}
+                  {totalFundsForFunc > 0 && (
+                    <span className="mr-1.5 text-coffee-400">
+                      {formatUsdValue(totalFundsForFunc)}
                     </span>
                   )}
                   <button
                     onClick={() => selectGlobal(func.contractAddress)}
-                    className="cursor-pointer font-medium text-coffee-200 transition-colors hover:text-blue-400"
+                    className="cursor-pointer text-coffee-200 transition-colors hover:text-blue-400"
                   >
                     {func.contractName}
                   </button>
                   <span className="text-coffee-500">.</span>
                   <span className="text-blue-400">{func.functionName}()</span>
-                  <span className="ml-2 text-coffee-500">(Impact: </span>
+                  <span className="ml-2 text-coffee-500">(</span>
                   <ImpactPicker
                     currentImpact={func.impact}
                     onUpdate={(impact) =>
@@ -706,24 +737,20 @@ function AdminSection({
                       )
                     }
                   />
-                  <span className="text-coffee-500">, Likelihood: </span>
-                  {admin.likelihood ? (
-                    <span style={{ color: likelihoodColor }}>
-                      {admin.likelihood}
-                    </span>
-                  ) : (
-                    <span className="text-coffee-400">unscored</span>
-                  )}
                   <span className="text-coffee-500">)</span>
                 </div>
-                {/* Capital breakdown for this function */}
+                {/* Capital breakdown for this function - uses tree structure */}
                 {capitalAnalysis && (
-                  <FunctionCapitalBreakdown analysis={capitalAnalysis} />
+                  <FunctionCapitalBreakdown
+                    analysis={capitalAnalysis}
+                    isLastFunction={isLastFunc}
+                    parentPrefix=""
+                  />
                 )}
-              </li>
+              </div>
             )
           })}
-        </ul>
+        </div>
       )}
     </div>
   )
