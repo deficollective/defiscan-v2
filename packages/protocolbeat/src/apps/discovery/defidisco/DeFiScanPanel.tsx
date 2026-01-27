@@ -8,6 +8,7 @@ import { V2ScoringSection } from '../../../defidisco/V2ScoringSection'
 import { useContractTags } from '../../../hooks/useContractTags'
 import { usePanelStore } from '../store/panel-store'
 import { FundsSection } from './FundsSection'
+import { formatUsdValue } from './formatUtils'
 import { resolvePathExpression, UIContractDataAccess } from './ownerResolution'
 import { ProxyTypeTag } from './ProxyTypeTag'
 import { buildProxyTypeMap } from './proxyTypeUtils'
@@ -601,20 +602,6 @@ function ContractsWithPermissionsTable({
     const info = contractInfoMap.get(address)
     if (info) return info.name
     return address.slice(0, 10) + '...'
-  }
-
-  // Format USD value for display
-  const formatUsdValue = (value: number): string => {
-    if (value >= 1_000_000) {
-      return `$${(value / 1_000_000).toFixed(2)}M`
-    }
-    if (value >= 1_000) {
-      return `$${(value / 1_000).toFixed(2)}K`
-    }
-    if (value > 0) {
-      return `$${value.toFixed(2)}`
-    }
-    return ''
   }
 
   // Sort contracts by funds (descending), then by name
