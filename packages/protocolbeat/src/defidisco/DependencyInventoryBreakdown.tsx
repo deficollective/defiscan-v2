@@ -13,9 +13,11 @@ import { usePanelStore } from '../apps/discovery/store/panel-store'
 import { useContractTags } from '../hooks/useContractTags'
 import {
   computeWorstGrade,
+  formatUsdValue,
   getGradeBadgeStyles,
   getGradeColor,
   getLikelihoodColor,
+  hasCapitalData,
   ImpactPicker,
   impactToScore,
   isZeroAddress,
@@ -304,6 +306,16 @@ export function DependencyInventoryBreakdown({
     0,
   )
 
+  // Aggregate capital at risk across displayed external owners
+  const displayedCapitalAtRisk = useMemo(() => {
+    return displayedExternalOwners.reduce((sum, admin) => {
+      if (hasCapitalData(admin)) {
+        return sum + admin.totalReachableCapital
+      }
+      return sum
+    }, 0)
+  }, [displayedExternalOwners])
+
   const totalFunctionCount = depFunctionCount + extOwnerFunctionCount
   const totalContractCount = regularDeps.length + displayedExternalOwners.length
   const hasAnyEntries = regularDeps.length > 0 || allExternalOwners.length > 0
@@ -312,7 +324,14 @@ export function DependencyInventoryBreakdown({
     <div className="text-coffee-300">
       {/* Main header */}
       <div className="flex items-center justify-between">
-        <span className="font-medium">Dependencies:</span>
+        <span className="font-medium">
+          Dependencies:
+          {displayedCapitalAtRisk > 0 && (
+            <span className="ml-2 font-normal text-green-400 text-sm">
+              {formatUsdValue(displayedCapitalAtRisk)} at risk
+            </span>
+          )}
+        </span>
         <span className="flex items-center gap-2">
           {hasImmutableExternalOwners && (
             <label className="flex cursor-pointer items-center gap-1.5 text-coffee-400 text-xs">

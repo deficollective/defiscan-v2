@@ -175,7 +175,7 @@ export function AdminsInventoryBreakdown({
           Owners:
           {hasAnyCapital && displayedCapitalAtRisk > 0 && (
             <span className="ml-2 font-normal text-green-400 text-sm">
-              {formatUsdValue(displayedCapitalAtRisk)} at risk
+              {formatUsdValue(displayedCapitalAtRisk)} controlled
             </span>
           )}
         </span>
