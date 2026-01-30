@@ -178,6 +178,7 @@ export function computeWorstGrade(
     CC: 3,
     C: 2,
     D: 1,
+    Unscored: 0,
   }
   return functions
     .filter((f) => f.grade)
