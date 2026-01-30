@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { getV2Score } from '../api/api'
-import type { AdminModuleScore, LetterGrade, ModuleScore } from '../api/types'
+import type { LetterGrade, ModuleScore } from '../api/types'
 import { AdminsInventoryBreakdown } from './AdminsInventoryBreakdown'
 import { DependencyInventoryBreakdown } from './DependencyInventoryBreakdown'
 import { FunctionBreakdown } from './FunctionBreakdown'

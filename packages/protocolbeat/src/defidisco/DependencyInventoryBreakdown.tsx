@@ -306,8 +306,7 @@ export function DependencyInventoryBreakdown({
 
   const totalFunctionCount = depFunctionCount + extOwnerFunctionCount
   const totalContractCount = regularDeps.length + displayedExternalOwners.length
-  const hasAnyEntries =
-    regularDeps.length > 0 || allExternalOwners.length > 0
+  const hasAnyEntries = regularDeps.length > 0 || allExternalOwners.length > 0
 
   return (
     <div className="text-coffee-300">
@@ -316,7 +315,7 @@ export function DependencyInventoryBreakdown({
         <span className="font-medium">Dependencies:</span>
         <span className="flex items-center gap-2">
           {hasImmutableExternalOwners && (
-            <label className="flex cursor-pointer items-center gap-1.5 text-xs text-coffee-400">
+            <label className="flex cursor-pointer items-center gap-1.5 text-coffee-400 text-xs">
               <input
                 type="checkbox"
                 checked={showImmutable}
@@ -345,8 +344,8 @@ export function DependencyInventoryBreakdown({
           <>
             <p className="mb-3 ml-4 text-coffee-400 text-xs">
               {totalFunctionCount} function
-              {totalFunctionCount !== 1 ? 's' : ''} using{' '}
-              {totalContractCount} external contract
+              {totalFunctionCount !== 1 ? 's' : ''} using {totalContractCount}{' '}
+              external contract
               {totalContractCount !== 1 ? 's' : ''}
             </p>
 

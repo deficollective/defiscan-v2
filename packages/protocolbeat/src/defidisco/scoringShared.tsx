@@ -226,9 +226,7 @@ export function TreeNode({
 
 export function FundsDisplay({ value }: { value: number }) {
   if (value <= 0) return null
-  return (
-    <span className="mr-1.5 text-coffee-400">{formatUsdValue(value)}</span>
-  )
+  return <span className="mr-1.5 text-coffee-400">{formatUsdValue(value)}</span>
 }
 
 export function ImpactPicker({

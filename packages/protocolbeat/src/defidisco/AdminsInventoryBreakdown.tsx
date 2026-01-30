@@ -2,11 +2,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProject, updateContractTag, updateFunction } from '../api/api'
-import type {
-  AdminModuleScore,
-  Impact,
-  Likelihood,
-} from '../api/types'
+import type { AdminModuleScore, Impact, Likelihood } from '../api/types'
 import { buildProxyTypeMap } from '../apps/discovery/defidisco/proxyTypeUtils'
 import { useContractTags } from '../hooks/useContractTags'
 import {
@@ -185,7 +181,7 @@ export function AdminsInventoryBreakdown({
         </span>
         <span className="flex items-center gap-2">
           {hasImmutableAdmins && (
-            <label className="flex cursor-pointer items-center gap-1.5 text-xs text-coffee-400">
+            <label className="flex cursor-pointer items-center gap-1.5 text-coffee-400 text-xs">
               <input
                 type="checkbox"
                 checked={showImmutable}
