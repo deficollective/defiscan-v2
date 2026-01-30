@@ -378,8 +378,10 @@ class FunctionInventoryModule implements ScoringModule {
                     contractAddress,
                     func.ownerDefinitions,
                   )
-                  // Extract all addresses from resolved owners
-                  adminAddresses = extractAddressesFromResolvedOwners(resolved)
+                  // Extract all addresses from resolved owners (deduplicated)
+                  adminAddresses = [
+                    ...new Set(extractAddressesFromResolvedOwners(resolved)),
+                  ]
                   ownerResolutionCache.set(cacheKey, adminAddresses)
                 }
 
@@ -753,8 +755,11 @@ class AdminInventoryModule implements ScoringModule {
                 contractAddress,
                 func.ownerDefinitions,
               )
-              // Extract all addresses from resolved owners
-              adminAddresses = extractAddressesFromResolvedOwners(resolved)
+              // Extract all addresses from resolved owners (deduplicate to avoid
+              // pushing the same function multiple times per admin)
+              adminAddresses = [
+                ...new Set(extractAddressesFromResolvedOwners(resolved)),
+              ]
               ownerResolutionCache.set(cacheKey, adminAddresses)
             }
 
