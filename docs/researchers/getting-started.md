@@ -118,6 +118,99 @@ You go through the discovered contracts (with list and nodes), see if there are 
 
 Then you adapt the `config.jsonc`, once you're satisfied to run another discovery episode, you select the terminal view and you press `Run discovery`.
 
+## Working with Factory Patterns (Templates)
+
+When analyzing DeFi protocols with factories that deploy multiple contracts with identical bytecode (e.g., Uniswap pools, Euler vaults, etc.), you can use **templates** to configure the discovery process. Templates set standards for what fields are queried and how data is extracted from factory-deployed contracts, ensuring consistent analysis across all instances.
+
+### How Templates Work
+
+- Discovery matches contracts by **bytecode hash**
+- You only need **one example contract** to establish the hash. After that no need to manually configure every deployment
+- All contracts with matching bytecode automatically receive the template configuration
+
+### Template Files
+
+Templates live in `packages/config/src/projects/_templates/` and consist of:
+
+| File | Purpose |
+|------|---------|
+| `template.jsonc` | Defines how to analyze the contract (fields, handlers, ignored methods) |
+| `shapes.json` | Stores the bytecode hash and one reference deployment |
+
+### Adding a Template
+
+1. **Create the template folder and file:**
+   ```bash
+   mkdir -p packages/config/src/projects/_templates/euler-v2/EVault
+   ```
+
+2. **Create `template.jsonc`** with your configuration:
+   ```jsonc
+   {
+     "$schema": "../../../../../../discovery/schemas/contract.v2.schema.json",
+     "displayName": "EVault",
+     "description": "Euler V2 EVault",
+     "ignoreMethods": ["accumulatedFees", "accumulatedFeesAsset", "convertToAssets", "convertToShares", "interestAccumulator", "permit2Address", "previewDeposit", "previewWithdraw", "previewMint", "previewRedeem"]
+   }
+   ```
+
+   > You MUST not change the `$schema` field.
+
+3. **Register the bytecode hash** using any deployed instance:
+   ```bash
+   l2b add-shape ethereum <blockNumber> EVault euler-v2/EVault 0x<vault-address>
+   ```
+
+   > This creates the `shapes.jsonc` file and stores the bytecode hash.
+
+   > If the contracts deployed are factories, take the implementation contract address for adding the shape. Otherwise shapes/templates are not matched (see ⚠️ Warning: Proxy Factory Deployments)
+
+4. **Re-run discovery** - all vaults with matching bytecode will now use the template:
+   ```bash
+   l2b discover euler-v2
+   ```
+
+### Effect
+
+After adding a template, discovery automatically applies the configuration to **all** contracts with matching bytecode. This is particularly useful for protocols with hundreds of pool/vault instances.
+
+<details>
+<summary><strong>⚠️ Warning: Proxy Factory Deployments</strong></summary>
+
+When dealing with **proxy contracts** (Beacon proxies, UUPS, etc.), the `l2b add-shape` command may register the **proxy bytecode hash** instead of the **implementation bytecode hash**.
+
+**Why this matters:** _Discovery_ uses the **implementation hash** (not the proxy hash) for template matching. If you register the wrong hash, your template won't be applied.
+
+**How to identify the issue:**
+
+After running discovery, check the contract's `sourceHashes` in `discovered.json`:
+
+```json
+"sourceHashes": [
+  "0x03b737c5...",  // Index 0: Proxy bytecode (ignored for matching)
+  "0x1ae4cf8a..."   // Index 1: Implementation bytecode (used for matching)
+]
+```
+
+For proxy contracts, the array contains multiple hashes. _Discovery_ skips the first (proxy) and matches against subsequent hashes (implementation).
+
+**How to fix:**
+
+Manually update `shapes.json` to use the **implementation hash** (the second entry in `sourceHashes`):
+
+```json
+{
+  "EVault": {
+    "hash": "0x1ae4cf8a...",  // Use implementation hash, not proxy hash
+    "address": "eth:0x...",
+    "chain": "ethereum",
+    "blockNumber": 12345678
+  }
+}
+```
+
+</details>
+
 ## Permission Analysis
 
 When you think you have the whole system mapped, choose the `Scan Permissions` button inside the terminal. This will allow you to select the contracts for which you want permissions to be analysed.
