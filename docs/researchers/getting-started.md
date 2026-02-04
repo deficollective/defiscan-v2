@@ -14,9 +14,7 @@ cd packages/l2b
 pnpm l2bup
 ```
 
-## Configuration
-
-### Environment Setup
+## Setup Environment Variables
 
 Create a `.env` file inside the `packages/config` folder:
 
@@ -29,9 +27,27 @@ Add the following environment variables to `.env`:
 ```env
 ETHERSCAN_API_KEY=your_etherscan_api_key
 ETHEREUM_RPC_URL_FOR_DISCOVERY=https://your-rpc-url
+
+# at least one of both for AI permission detection
+OPENAI_API_KEY=...
+ANTHROPIC_API_KEY=...
 ```
 
-### Project Configuration
+## Analyse your first protocol
+
+The tool gives the researcher two options to start the research process, either through working directly with the files and the terminal or by starting the UI. For deeper analysis the UI is highly recommended. For the initial process however, the terminal is recommended, if the protocol is already well understood, as this it allows for more fine grained control from the start. Otherwise just start with the UI.
+
+## Start with UI
+
+```bash
+pnpm l2b ui
+```
+
+The app running on http://localhost:2021/ui has a mask allows to specify the first contracts to analyse. The tool will discover more contracts that belong to this project.
+
+You click on the plus symbol this opens the mask for creating a new project. You type in the name of the protocol and a first address or addresses you want to scan. Make sure they follow the form `eth:0x...` if on mainnet, and check this list here if the contracts live on another chain: https://github.com/deficollective/defi-disco/blob/main/packages/shared-pure/src/types/ChainSpecificAddress.ts#L14
+
+## Start with CLI
 
 1. Create a new project folder inside `./packages/config/src/projects`:
 
@@ -61,18 +77,13 @@ mkdir -p src/projects/euler-v2
 }
 ```
 
-## Running Discovery
-
 Execute the discovery process from the `packages/config` directory:
 
 ```bash
 l2b discover euler-v2
 ```
 
-**Note:** Discovery must always be run from the `./packages/config` directory.
-
-
-## Continue Analysis
+### Continue Analysis
 
 After first run, we suggest you to start the local UI to facilitate discovery of the entire DeFi project.
 
@@ -98,8 +109,11 @@ To see the project in the UI, head to `packages/config/src/defidisco-config.json
 Then run:
 
 ```bash
-l2b ui
+pnpm l2b ui
 ```
+
+**Note:** Discovery must always be run from the `./packages/config` directory.
+
 
 **Troubleshooting ⚠️** 
 
@@ -177,9 +191,9 @@ After adding a template, discovery automatically applies the configuration to **
 <details>
 <summary><strong>⚠️ Warning: Proxy Factory Deployments</strong></summary>
 
-When dealing with **proxy contracts** (Beacon proxies, UUPS, etc.), the `l2b add-shape` command may register the **proxy bytecode hash** instead of the **implementation bytecode hash**.
+When dealing with **proxy contracts** (Beacon proxies, UUPS, etc.), the `l2b add-shape` command will register the **proxy bytecode hash** if the proxy address is given as argument, **make sure to use the implementation address**.
 
-**Why this matters:** _Discovery_ uses the **implementation hash** (not the proxy hash) for template matching. If you register the wrong hash, your template won't be applied.
+**Why this matters:** _Discovery_ uses the **implementation hash** (not the proxy hash) for **template matching**. If you register the wrong hash, your template won't be applied.
 
 **How to identify the issue:**
 
@@ -187,8 +201,8 @@ After running discovery, check the contract's `sourceHashes` in `discovered.json
 
 ```json
 "sourceHashes": [
-  "0x03b737c5...",  // Index 0: Proxy bytecode (ignored for matching)
-  "0x1ae4cf8a..."   // Index 1: Implementation bytecode (used for matching)
+  "0x03b737c5...",
+  "0x1ae4cf8a..."
 ]
 ```
 
