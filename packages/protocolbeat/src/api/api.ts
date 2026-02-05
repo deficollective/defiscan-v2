@@ -285,13 +285,6 @@ export function executeFindMinters(address: string): EventSource {
   return new EventSource(`/api/terminal/find-minters?${params}`)
 }
 
-export function executeGeneratePermissionsReport(project: string): EventSource {
-  const params = new URLSearchParams({
-    project,
-  })
-  return new EventSource(`/api/terminal/generate-permissions-report?${params}`)
-}
-
 export async function getFunctions(project: string): Promise<ApiFunctionsResponse> {
   const res = await fetch(`/api/projects/${project}/functions`)
   if (!res.ok) {

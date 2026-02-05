@@ -4,7 +4,6 @@ import {
   executeDownloadAllShapes,
   executeFindMinters,
   executeMatchFlat,
-  executeGeneratePermissionsReport,
   executeFetchFunds,
   executeGenerateCallGraph,
   type SSELike,
@@ -32,7 +31,6 @@ interface TerminalState {
   discover: (project: string) => Promise<boolean>
   downloadAllShapes: () => void
   findMinters: (address: string) => void
-  generatePermissionsReport: (project: string) => Promise<boolean>
   fetchFunds: (project: string) => Promise<boolean>
   generateCallGraph: (project: string) => Promise<boolean>
 }
@@ -76,9 +74,6 @@ export const useTerminalStore = create<TerminalState>((set, get) => ({
   },
   findMinters: (address: string) => {
     executeStreaming(get, set, () => executeFindMinters(address))
-  },
-  generatePermissionsReport: (project: string) => {
-    return executeStreaming(get, set, () => executeGeneratePermissionsReport(project))
   },
   fetchFunds: (project: string) => {
     return executeStreaming(get, set, () => executeFetchFunds(project))
