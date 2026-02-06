@@ -37,7 +37,16 @@ ANTHROPIC_API_KEY=...
 
 The tool gives the researcher two options to start the research process, either through working directly with the files and the terminal or by starting the UI. For deeper analysis the UI is highly recommended. For the initial process however, the terminal is recommended, if the protocol is already well understood, as this it allows for more fine grained control from the start. Otherwise just start with the UI.
 
-With video assistance: https://www.loom.com/share/eb082048da0545fb89db7299e68386e9
+With video assistance:
+<div>
+  <a href="https://www.loom.com/share/eb082048da0545fb89db7299e68386e9">
+    <p>Exploring DeFiScan V2: A Guide to Transparent DeFi Research 🔍</p>
+  </a>
+  <a href="https://www.loom.com/share/eb082048da0545fb89db7299e68386e9">
+    <img src="https://cdn.loom.com/sessions/thumbnails/eb082048da0545fb89db7299e68386e9-9bc585743b5542cb-full-play.gif#t=0.1">
+  </a>
+</div>
+
 
 ## Start with UI
 
@@ -51,7 +60,16 @@ You click on the plus symbol this opens the mask for creating a new project. You
 
 ## Start with CLI
 
-With video assistance: https://www.loom.com/share/864443fb11f8451a9392dac849c97199
+With video assistance:
+
+<div>
+  <a href="https://www.loom.com/share/864443fb11f8451a9392dac849c97199">
+    <p>Streamlining Research Processes in Smart Contract Analysis 🔍</p>
+  </a>
+  <a href="https://www.loom.com/share/864443fb11f8451a9392dac849c97199">
+    <img src="https://cdn.loom.com/sessions/thumbnails/864443fb11f8451a9392dac849c97199-d8080d0aefd848a4-full-play.gif#t=0.1">
+  </a>
+</div>
 
 1. Create a new project folder inside `./packages/config/src/projects`:
 
@@ -138,7 +156,16 @@ Then you adapt the `config.jsonc`, once you're satisfied to run another discover
 
 ## Working with Factory Patterns (Templates)
 
-With Video assistance: https://www.loom.com/share/ed428db408bd4e61bd95cbd3e44b94a0
+With Video assistance:
+
+<div>
+  <a href="https://www.loom.com/share/ed428db408bd4e61bd95cbd3e44b94a0">
+    <p>Implementing Templates 🔧</p>
+  </a>
+  <a href="https://www.loom.com/share/ed428db408bd4e61bd95cbd3e44b94a0">
+    <img src="https://cdn.loom.com/sessions/thumbnails/ed428db408bd4e61bd95cbd3e44b94a0-b7ea293792dca7d2-full-play.gif#t=0.1">
+  </a>
+</div>
 
 When analyzing DeFi protocols with factories that deploy multiple contracts with identical bytecode (e.g., Uniswap pools, Euler vaults, etc.), you can use **templates** to configure the discovery process. Templates set standards for what fields are queried and how data is extracted from factory-deployed contracts, ensuring consistent analysis across all instances.
 
@@ -233,7 +260,16 @@ Manually update `shapes.json` to use the **implementation hash** (the second ent
 
 ## Permission Analysis
 
-With Video assistance: https://www.loom.com/share/2ab2259eb35449a78a8060e2fd6fd8a8
+With Video assistance:
+
+<div>
+  <a href="https://www.loom.com/share/2ab2259eb35449a78a8060e2fd6fd8a8">
+    <p>Analyzing Access Control Roles and Permissions in Smart Contracts 🔍</p>
+  </a>
+  <a href="https://www.loom.com/share/2ab2259eb35449a78a8060e2fd6fd8a8">
+    <img src="https://cdn.loom.com/sessions/thumbnails/2ab2259eb35449a78a8060e2fd6fd8a8-b213014c9e911802-full-play.gif#t=0.1">
+  </a>
+</div>
 
 When you think you have the whole system mapped, choose the `Scan Permissions` button inside the terminal. This will allow you to select the contracts for which you want permissions to be analysed.
 
