@@ -7,6 +7,7 @@ import { ReviewPage } from './pages/review/ReviewPage'
 import { ComparePage } from './pages/compare/ComparePage'
 import { AboutPage } from './pages/about/AboutPage'
 import { GalleryPage } from './pages/gallery/GalleryPage'
+import { ContagionMapPage } from './pages/contagion/ContagionMapPage'
 
 const queryClient = new QueryClient()
 
@@ -22,6 +23,7 @@ export function App() {
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/contagion" element={<ContagionMapPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
