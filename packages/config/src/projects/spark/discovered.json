@@ -1,6 +1,6 @@
 {
   "name": "spark",
-  "timestamp": 1788694880,
+  "timestamp": 1788787816,
   "configHash": "0xb30f351bdb3d3c16cc7233e55a1572c073c01c04155af3af1b94bbe3e19c0a99",
   "entries": [
     {
@@ -92,7 +92,7 @@
         "DAI_PRICE_FEED_ADDRESS": "eth:0x42a03F81dd8A1cEcD746dc262e4d1CD9fD39F777",
         "getAnswer": [],
         "getTimestamp": [],
-        "latestAnswer": 118018895,
+        "latestAnswer": 118023716,
         "POT_ADDRESS": "eth:0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7"
       },
       "errors": {
@@ -131,9 +131,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": "969455669888586944765100",
+        "scaledTotalSupply": "972336643219447785088040",
         "symbol": "spwstETH",
-        "totalSupply": "969495845002427224486202",
+        "totalSupply": "972376937723411553754909",
         "UNDERLYING_ASSET_ADDRESS": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
       },
       "fieldMeta": {
@@ -197,7 +197,7 @@
         "owner": "eth:0x9C070027cdC9dc8F82416B2e5314E11DFb4FE3CD",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
         "symbol": "tBTC",
-        "totalSupply": "4381054182770000000000"
+        "totalSupply": "4346901090000000000000"
       },
       "implementationNames": {
         "eth:0x18084fbA666a33d37592fA2633fD49a74DD93a88": "TBTC"
@@ -216,11 +216,11 @@
       "sinceBlock": 8928160,
       "values": {
         "$immutable": true,
-        "chi": "1180188957232955027244923282",
+        "chi": "1180237164084178218745876551",
         "dsr": "1000000000393915525145987602",
         "live": 1,
-        "Pie": "173152577057168508937923576",
-        "rho": 1788681839,
+        "Pie": "172264996392526716385054497",
+        "rho": 1788785531,
         "vat": "eth:0x35D1b3F3D7966A1DFe207aa4514C12a259A0492B",
         "vow": "eth:0xA950524441892A31ebddF91d3cEEFa04Bf454466"
       },
@@ -270,7 +270,7 @@
         "ASSET_TO_PEG": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
         "DECIMALS": 8,
         "DENOMINATOR": "10000000000000000",
-        "latestAnswer": 7991203438200,
+        "latestAnswer": 7942774343960,
         "MAX_DECIMALS": 18,
         "PEG_TO_BASE": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
       },
@@ -431,15 +431,15 @@
         "description": "Aggregated price feed ETH/USD from Chronicle, Chainlink, and RedStone oracles",
         "getAgeThreshold": 90000,
         "getAggregatedOracleValue": {
-          "value": 249677832254,
+          "value": 250166456700,
           "goodOraclesCount": 3
         },
-        "latestAnswer": 249677832254,
+        "latestAnswer": 250166456700,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 249677832254,
-          "startedAt": 1788694871,
-          "updatedAt": 1788694871,
+          "answer": 250166456700,
+          "startedAt": 1788787799,
+          "updatedAt": 1788787799,
           "answeredInRound": 1
         },
         "redstone": "eth:0x67F6838e58859d612E4ddF04dA396d6DABB66Dc4",
@@ -466,7 +466,7 @@
         "DAI_PRICE_FEED_ADDRESS": "eth:0x42a03F81dd8A1cEcD746dc262e4d1CD9fD39F777",
         "getAnswer": [],
         "getTimestamp": [],
-        "latestAnswer": 110864698,
+        "latestAnswer": 110876275,
         "POT_ADDRESS": "eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD"
       },
       "errors": {
@@ -642,17 +642,17 @@
           ]
         ],
         "$upgradeCount": 13,
-        "currentPeriodMintedFeeAmount": "794581898636856404",
-        "feePeriodStartTime": 1788652800,
-        "getCurrentPeriodStartTime": 1788652800,
-        "getNextDailyLimitResetTimestamp": 1788739200,
-        "highestRsethPrice": "1079461323483415034",
+        "currentPeriodMintedFeeAmount": "2554188784260407086",
+        "feePeriodStartTime": 1788739200,
+        "getCurrentPeriodStartTime": 1788739200,
+        "getNextDailyLimitResetTimestamp": 1788825600,
+        "highestRsethPrice": "1079602534891046851",
         "lrtConfig": "eth:0x947Cb49334e6571ccBFEF1f1f1178d8469D65ec7",
         "maxFeeMintAmountPerDay": "20000000000000000000",
         "paused": false,
         "pricePercentageLimit": "10000000000000000",
-        "remainingDailyFeeMintLimit": "19205418101363143596",
-        "rsETHPrice": "1079461323483415034",
+        "remainingDailyFeeMintLimit": "17445811215739592914",
+        "rsETHPrice": "1079602534891046851",
         "sparkRsETHPoolBalance": "14881525900478222082"
       },
       "fieldMeta": {
@@ -693,9 +693,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 21747967720999,
+        "scaledTotalSupply": 21748381099982,
         "symbol": "spUSDC",
-        "totalSupply": 25640426528921,
+        "totalSupply": 25643590370624,
         "UNDERLYING_ASSET_ADDRESS": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
       },
       "fieldMeta": {
@@ -779,9 +779,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 180260815081,
+        "scaledTotalSupply": 180619436308,
         "symbol": "spWBTC",
-        "totalSupply": 180286005612,
+        "totalSupply": 180644677031,
         "UNDERLYING_ASSET_ADDRESS": "eth:0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
       },
       "fieldMeta": {
@@ -817,15 +817,15 @@
         "description": "Aggregated price feed BTC/USD from Chronicle, Chainlink, and RedStone oracles",
         "getAgeThreshold": 90000,
         "getAggregatedOracleValue": {
-          "value": 7998402000000,
+          "value": 7948088102400,
           "goodOraclesCount": 3
         },
-        "latestAnswer": 7998402000000,
+        "latestAnswer": 7948088102400,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 7998402000000,
-          "startedAt": 1788694871,
-          "updatedAt": 1788694871,
+          "answer": 7948088102400,
+          "startedAt": 1788787799,
+          "updatedAt": 1788787799,
           "answeredInRound": 1
         },
         "redstone": "eth:0xAB7f623fb2F6fea6601D4350FA0E2290663C28Fc",
@@ -1076,7 +1076,7 @@
       "values": {
         "$immutable": true,
         "decimals": 18,
-        "latestAnswer": "999788592368873155",
+        "latestAnswer": "999818976472460991",
         "weeth": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
         "weethETHFeed": "eth:0x5c9C449BbC9a6075A2c061dF312a35fd1E05fF22"
       },
@@ -1112,9 +1112,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0x856900aa78e856a5df1a2665eE3a66b2487cD68f",
-        "scaledTotalSupply": "260893499428729061274847249",
+        "scaledTotalSupply": "260909957838161643057940549",
         "symbol": "spDAI",
-        "totalSupply": "308342457421760922100793408",
+        "totalSupply": "308384255700902335685636947",
         "UNDERLYING_ASSET_ADDRESS": "eth:0x6B175474E89094C44Da98b954EedeAC495271d0F"
       },
       "fieldMeta": {
@@ -1148,7 +1148,7 @@
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
         "ezETH": "eth:0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
-        "latestAnswer": 271001826805,
+        "latestAnswer": 271532840685,
         "oracle": "eth:0x74a09653A083691711cF8215a6ab074BB4e99ef5"
       },
       "implementationNames": {
@@ -1310,9 +1310,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": "468010483929753165421215",
+        "scaledTotalSupply": "472873940046330350403900",
         "symbol": "spWETH",
-        "totalSupply": "495647543855541771175298",
+        "totalSupply": "500821297886988944836956",
         "UNDERLYING_ASSET_ADDRESS": "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
       },
       "fieldMeta": {
@@ -1472,7 +1472,7 @@
         "btcUSDFeed": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
         "cbbtcUSDFeed": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
         "decimals": 18,
-        "latestAnswer": "995901353082278185"
+        "latestAnswer": "999283240215463899"
       },
       "implementationNames": {
         "eth:0x64B157212C21097002920D57322B671b88DFcCBC": "CBBTCRatioOracle"
@@ -1574,13 +1574,13 @@
         "description": "RedStone Price Feed for ETH",
         "getDataFeedId": "0x4554480000000000000000000000000000000000000000000000000000000000",
         "getPriceFeedAdapter": "eth:0xd72a6BA4a87DDB33e801b3f1c7750b2d0911fC6C",
-        "latestAnswer": 249677832254,
+        "latestAnswer": 250166456700,
         "latestRound": 1,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 249677832254,
-          "startedAt": 1788678827,
-          "updatedAt": 1788678827,
+          "answer": 250166456700,
+          "startedAt": 1788785627,
+          "updatedAt": 1788785627,
           "answeredInRound": 1
         },
         "version": 1
@@ -1629,7 +1629,7 @@
         "name": "Dai Stablecoin",
         "PERMIT_TYPEHASH": "0xea2aa0a1be11a07ed86d755c93467f4f82362b452371d1ba94d1715123511acb",
         "symbol": "DAI",
-        "totalSupply": "4610332837183431753247916944",
+        "totalSupply": "4608396771825316992050258930",
         "version": "1"
       },
       "implementationNames": {
@@ -1719,7 +1719,7 @@
         "supplyControl": "eth:0x31d9bDEa6F104606C954f8FE6ba614F1BD347Ec3",
         "supplyControllerDeprecated": "eth:0xE25a329d385f77df5D4eD56265babe2b99A5436e",
         "symbol": "PYUSD",
-        "totalSupply": 1831014759070364,
+        "totalSupply": 1802509471926390,
         "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267"
       },
       "implementationNames": {
@@ -1785,7 +1785,7 @@
         "$immutable": true,
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
-        "latestAnswer": 269517563249,
+        "latestAnswer": 270080340798,
         "oracle": "eth:0x349A73444b1a310BAe67ef67973022020d70020d"
       },
       "implementationNames": {
@@ -1874,7 +1874,7 @@
         "calculateTVLs": [
           [[1, "17313811926125000000000"], [1, "26761126354495000000000"]],
           ["17313811926125000000001", "26761126354495000000001"],
-          "44886283015945704526855"
+          "44874678827880072146967"
         ],
         "collateralTokens": ["eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"],
         "delegationManager": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A",
@@ -1925,9 +1925,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 98767928966624,
+        "scaledTotalSupply": 98765668326793,
         "symbol": "spPYUSD",
-        "totalSupply": 100001025467535,
+        "totalSupply": 100000443810331,
         "UNDERLYING_ASSET_ADDRESS": "eth:0x6c3ea9036406852006290770BEdFcAbA0e23A0e8"
       },
       "fieldMeta": {
@@ -2044,10 +2044,10 @@
         "DOMAIN_SEPARATOR": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
         "name": "Wrapped liquid staked Ether 2.0",
         "stETH": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-        "stEthPerToken": "1243329968432064195",
+        "stEthPerToken": "1243482397510342563",
         "symbol": "wstETH",
-        "tokensPerStEth": "804291720934771472",
-        "totalSupply": "3697320008338730277990162"
+        "tokensPerStEth": "804193128911326291",
+        "totalSupply": "3697558986390842042239418"
       },
       "implementationNames": {
         "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0": "WstETH"
@@ -2186,7 +2186,7 @@
           "extensions": []
         },
         "getAssetRouter": "eth:0x9eCe5fB1aB62d9075c4ec814b321e24D8EA021ac",
-        "getRate": "1004526077030958911",
+        "getRate": "1004527475801524231",
         "getRedeemFee": 10000,
         "getRedeemForBtcMinAmount": 3300,
         "getTreasury": "eth:0x251a604E8E8f6906d60f8dedC5aAeb8CD38F4892",
@@ -2204,10 +2204,10 @@
           "schedule": 0
         },
         "pendingDefaultAdminDelay": { "newDelay": 0, "schedule": 0 },
-        "ratio": "995494316041713450",
+        "ratio": "995492929849517850",
         "symbol": "LBTC",
         "toNativeCommission": 0,
-        "totalSupply": 833403530776
+        "totalSupply": 831618418068
       },
       "implementationNames": {
         "eth:0x8236a87084f8B84306f72007F36F2618A5634494": "TransparentUpgradeableProxy",
@@ -2261,7 +2261,7 @@
         "paused": false,
         "PAUSER_ROLE": "0x539440820030c4994db4e31b6b800deafd503688728f932addfe7a410515c14c",
         "symbol": "RLUSD",
-        "totalSupply": "1378110131870019556976088885",
+        "totalSupply": "1378110133882005556976088885",
         "UPGRADE_INTERFACE_VERSION": "5.0.0",
         "UPGRADER_ROLE": "0xa615a8afb6fffcb8c6809ac0997b5c9c12b8cc97651150f14c8f6203168cff4c"
       },
@@ -2291,8 +2291,8 @@
         "name": "Savings Dai",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
         "symbol": "sDAI",
-        "totalAssets": "166524000341043738977463446",
-        "totalSupply": "141098715142634930750776311",
+        "totalAssets": "165482539571434766750737404",
+        "totalSupply": "140211134477993138197907232",
         "vat": "eth:0x35D1b3F3D7966A1DFe207aa4514C12a259A0492B",
         "version": "1"
       },
@@ -2423,7 +2423,7 @@
         "getChainId": 1,
         "GnosisSafe_modules": [],
         "multisigThreshold": "1 of 2 (50%)",
-        "nonce": 102378,
+        "nonce": 102665,
         "VERSION": "1.4.1"
       },
       "implementationNames": {
@@ -2619,7 +2619,7 @@
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
         "scaledTotalSupply": "5375997376503832561300",
         "symbol": "sprETH",
-        "totalSupply": "5378477779282707927347",
+        "totalSupply": "5378477783698178724515",
         "UNDERLYING_ASSET_ADDRESS": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393"
       },
       "fieldMeta": {
@@ -2733,7 +2733,7 @@
         "RECEIVE_WITH_AUTHORIZATION_TYPEHASH": "0xd099cc98ef71107a616c4f0f941f04c322d8e254fe26b3c6668db87aae413de8",
         "rescuer": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "USDC",
-        "totalSupply": "50753814652219540",
+        "totalSupply": "50594327563399877",
         "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267",
         "version": "2"
       },
@@ -2792,19 +2792,19 @@
           ]
         ],
         "$upgradeCount": 4,
-        "currentPeriodMintedAmount": "794581898636856404",
+        "currentPeriodMintedAmount": "2554188784260407086",
         "custodyAddress": "eth:0xb3696a817D01C8623E66D156B6798291fa10a46d",
         "decimals": 18,
-        "getCurrentPeriodStartTime": 1788652800,
-        "getNextDailyLimitResetTimestamp": 1788739200,
+        "getCurrentPeriodStartTime": 1788739200,
+        "getNextDailyLimitResetTimestamp": 1788825600,
         "lrtConfig": "eth:0x947Cb49334e6571ccBFEF1f1f1178d8469D65ec7",
         "maxMintAmountPerDay": "5000000000000000000000",
         "name": "rsETH",
         "paused": false,
-        "periodStartTime": 1788652800,
-        "remainingDailyMintLimit": "4999205418101363143596",
+        "periodStartTime": 1788739200,
+        "remainingDailyMintLimit": "4997445811215739592914",
         "symbol": "rsETH",
-        "totalSupply": "414417383815282846299630"
+        "totalSupply": "410709975284248264649270"
       },
       "implementationNames": {
         "eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7": "TransparentUpgradeableProxy",
@@ -2835,17 +2835,17 @@
         ],
         "$upgradeCount": 1,
         "asset": "eth:0xdC035D45d973E3EC169d2276DDab16f1e407384F",
-        "chi": "1108646989917818591356593466",
+        "chi": "1108762759998616239796592620",
         "decimals": 18,
         "DOMAIN_SEPARATOR": "0x8b772c141b7d822c799262c0fa58f5b6b522910e811414d0cf217f27294bbbf8",
         "getImplementation": "eth:0x4e7991e5C547ce825BdEb665EE14a3274f9F61e0",
         "name": "Savings USDS",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
-        "rho": 1788694331,
+        "rho": 1788787439,
         "ssr": "1000000001121484774769253326",
         "symbol": "sUSDS",
-        "totalAssets": "4660044391804840782367949780",
-        "totalSupply": "4203359240636159492603550282",
+        "totalAssets": "4666464615671637240063689749",
+        "totalSupply": "4208711637884551437829230882",
         "UPGRADE_INTERFACE_VERSION": "5.0.0",
         "usds": "eth:0xdC035D45d973E3EC169d2276DDab16f1e407384F",
         "usdsJoin": "eth:0x3C0f895007CA717Aa01c8693e59DF1e8C3777FEB",
@@ -2886,9 +2886,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 334241147037,
+        "scaledTotalSupply": 334187590873,
         "symbol": "spLBTC",
-        "totalSupply": 334241147037,
+        "totalSupply": 334187590873,
         "UNDERLYING_ASSET_ADDRESS": "eth:0x8236a87084f8B84306f72007F36F2618A5634494"
       },
       "fieldMeta": {
@@ -2928,13 +2928,13 @@
         "description": "RedStone Price Feed for BTC",
         "getDataFeedId": "0x4254430000000000000000000000000000000000000000000000000000000000",
         "getPriceFeedAdapter": "eth:0xd72a6BA4a87DDB33e801b3f1c7750b2d0911fC6C",
-        "latestAnswer": 7980090000000,
+        "latestAnswer": 7948088102400,
         "latestRound": 1,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 7980090000000,
-          "startedAt": 1788636995,
-          "updatedAt": 1788636995,
+          "answer": 7948088102400,
+          "startedAt": 1788768599,
+          "updatedAt": 1788768599,
           "answeredInRound": 1
         },
         "version": 1
@@ -2963,12 +2963,12 @@
       "values": {
         "$immutable": true,
         "decimals": 18,
-        "getCollateralRate": 347176,
-        "getExchangeRate": "1171157036988534314",
-        "getTotalCollateral": 128975182261,
+        "getCollateralRate": 279901,
+        "getExchangeRate": "1171228595637539761",
+        "getTotalCollateral": 103962111052,
         "name": "Rocket Pool ETH",
         "symbol": "rETH",
-        "totalSupply": "317205425435783998470412",
+        "totalSupply": "317122871839130596857846",
         "version": 1
       },
       "implementationNames": {
@@ -3070,9 +3070,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 361608845314,
+        "scaledTotalSupply": 360589958892,
         "symbol": "spcbBTC",
-        "totalSupply": 361670448391,
+        "totalSupply": 360651390248,
         "UNDERLYING_ASSET_ADDRESS": "eth:0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
       },
       "fieldMeta": {
@@ -3100,7 +3100,7 @@
         "$immutable": true,
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
-        "latestAnswer": 275411753817,
+        "latestAnswer": 275969732201,
         "weeth": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee"
       },
       "implementationNames": {
@@ -3190,7 +3190,7 @@
         "name": "Renzo Restaked ETH",
         "roleManager": "eth:0x4994EFc62101A9e3F885d872514c2dC7b3235849",
         "symbol": "ezETH",
-        "totalSupply": "41354370092123968062709"
+        "totalSupply": "41343578808283052097985"
       },
       "implementationNames": {
         "eth:0xbf5495Efe5DB9ce00f80364C8B423567e58d2110": "TransparentUpgradeableProxy",
@@ -3214,7 +3214,7 @@
         "decimals": 18,
         "name": "Wrapped Ether",
         "symbol": "WETH",
-        "totalSupply": "2028991690103080936397916"
+        "totalSupply": "2042850532540292063879252"
       },
       "implementationNames": {
         "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": "WETH9"
@@ -3248,9 +3248,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": "685382525748100990259723581",
+        "scaledTotalSupply": "718227142150202364112627239",
         "symbol": "spUSDS",
-        "totalSupply": "713204980723457414817528331",
+        "totalSupply": "747433958280188784652666859",
         "UNDERLYING_ASSET_ADDRESS": "eth:0xdC035D45d973E3EC169d2276DDab16f1e407384F"
       },
       "fieldMeta": {
@@ -3394,7 +3394,7 @@
         "RECEIVE_WITH_AUTHORIZATION_TYPEHASH": "0xd099cc98ef71107a616c4f0f941f04c322d8e254fe26b3c6668db87aae413de8",
         "rescuer": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "cbBTC",
-        "totalSupply": 5055820533793,
+        "totalSupply": 5048986556149,
         "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267",
         "version": "2"
       },
@@ -3451,7 +3451,7 @@
         "DOMAIN_SEPARATOR": "0xe481930428c599d86cf3522b2e43b0e3006041a472f66cb41fa924ac01d3a22b",
         "eETH": "eth:0x35fA164735182de50811E8e2E824cFb9B6118ac2",
         "getImplementation": "eth:0xA6Ca0607190d03CF16fe6F2865Cf40c3D160ccf3",
-        "getRate": "1103068507647605954",
+        "getRate": "1103144425682603359",
         "liquidityPool": "eth:0x308861A430be4cce5502d0A12724771Fc6DaF216",
         "MAX_PAUSE_DURATION": 2592000,
         "MIN_PAUSE_DURATION": 28800,
@@ -3462,7 +3462,7 @@
         "pauseUntilDuration": 28800,
         "roleRegistry": "eth:0x62247D29B4B9BECf4BB73E0c722cf6445cfC7cE9",
         "symbol": "weETH",
-        "totalSupply": "1926961423458517005073618"
+        "totalSupply": "1932799909508585016770017"
       },
       "implementationNames": {
         "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee": "UUPSProxy",
@@ -3499,7 +3499,7 @@
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
         "scaledTotalSupply": "20847208005138735576",
         "symbol": "sptBTC",
-        "totalSupply": "20851732053705770652",
+        "totalSupply": "20851732053705770823",
         "UNDERLYING_ASSET_ADDRESS": "eth:0x18084fbA666a33d37592fA2633fD49a74DD93a88"
       },
       "fieldMeta": {
@@ -3531,7 +3531,7 @@
       "values": {
         "$immutable": true,
         "decimals": 18,
-        "latestAnswer": "998061492290161818",
+        "latestAnswer": "997808649701165562",
         "reth": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393",
         "rethETHFeed": "eth:0x536218f9E9Eb48863970252233c8F271f554C2d0"
       },
@@ -3601,7 +3601,7 @@
       "sinceTimestamp": 1511829681,
       "sinceBlock": 4634748,
       "values": {
-        "_totalSupply": "88306226684053103",
+        "_totalSupply": "88306028997331899",
         "$immutable": true,
         "basisPointsRate": 0,
         "decimals": 6,
@@ -3613,7 +3613,7 @@
         "owner": "eth:0xC6CDE7C39eB2f0F0095F41570af89eFC2C1Ea828",
         "paused": false,
         "symbol": "USDT",
-        "totalSupply": "88306226684053103",
+        "totalSupply": "88306028997331899",
         "upgradedAddress": "eth:0x0000000000000000000000000000000000000000"
       },
       "implementationNames": {
@@ -3649,7 +3649,7 @@
         "name": "USDS Stablecoin",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
         "symbol": "USDS",
-        "totalSupply": "6593781938575824473093738877",
+        "totalSupply": "6630576940777451746532118313",
         "UPGRADE_INTERFACE_VERSION": "5.0.0",
         "version": "1"
       },
@@ -3733,7 +3733,7 @@
         "supplyControl": "eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF",
         "supplyControllerDeprecated": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "USDG",
-        "totalSupply": 379940190241727
+        "totalSupply": 352998406286250
       },
       "errors": { "proxiableUUID": "Processing error occurred." },
       "implementationNames": {
@@ -3806,9 +3806,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 332554264493198,
+        "scaledTotalSupply": 335775297379663,
         "symbol": "spUSDT",
-        "totalSupply": 387092012344314,
+        "totalSupply": 390873075365122,
         "UNDERLYING_ASSET_ADDRESS": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7"
       },
       "fieldMeta": {
@@ -3836,7 +3836,7 @@
         "$immutable": true,
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
-        "latestAnswer": 310431931294,
+        "latestAnswer": 311077585353,
         "steth": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
       },
       "implementationNames": {
@@ -4101,7 +4101,7 @@
         "$immutable": true,
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
-        "latestAnswer": 292411950224,
+        "latestAnswer": 293002107756,
         "reth": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393"
       },
       "implementationNames": {
@@ -7405,6 +7405,6 @@
     "tokens/circle/USDC": "0x7263a38223ab636dc8a5aa9a09174968ffed892ce24134bf7e2407576d7fbbdb",
     "tokens/Lido/wstETH": "0xd55ccc93c3f52e654ebbffee9194b0b8a0d974753091db2a43a185679e002e88"
   },
-  "usedBlockNumbers": { "ethereum": 25918069 },
+  "usedBlockNumbers": { "ethereum": 25925782 },
   "permissionsConfigHash": "0x5d22384bf9eb31c1afccc1061c7fc9991b882909acf699a286f698351a4c8dbe"
 }

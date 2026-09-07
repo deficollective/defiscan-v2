@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1788695091,
-  "lastConsumedUpdateNotifierId": 535,
+  "lastReconciledAt": 1788787890,
+  "lastConsumedUpdateNotifierId": 540,
   "events": [
     {
       "timestamp": "2026-03-03T13:51:02.000Z",
@@ -10084,6 +10084,135 @@
           "field": "values.accrueInterestView.0",
           "before": 4000689,
           "after": 4000708
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 540,
+      "address": "eth:0x5E3aCa36fE2361e1866752AD74CB429F64CDcF1A",
+      "contractName": "MorphoMarketV1AdapterV2",
+      "entity": null,
+      "id": "540:eth:0x5E3aCa36fE2361e1866752AD74CB429F64CDcF1A:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.realAssets",
+          "before": "24914239748831808946725700",
+          "after": "24992994877161579716542115"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 540,
+      "address": "eth:0xBEeF01b15dD31E55b4B0d6b6fD19D380c522cc24",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "540:eth:0xBEeF01b15dD31E55b4B0d6b6fD19D380c522cc24:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalAssets",
+          "before": 4000708,
+          "after": 4000728
+        },
+        {
+          "field": "values.previewDeposit.1",
+          "before": 999820781775,
+          "after": 999815783582
+        },
+        {
+          "field": "values.previewDeposit.2",
+          "before": 1999641563550,
+          "after": 1999631567164
+        },
+        {
+          "field": "values.previewDeposit.3",
+          "before": 2999462345326,
+          "after": 2999447350747
+        },
+        {
+          "field": "values.previewDeposit.4",
+          "before": 3999283127101,
+          "after": 3999263134329
+        },
+        {
+          "field": "values.convertToShares.1",
+          "before": 999820781775,
+          "after": 999815783582
+        },
+        {
+          "field": "values.convertToShares.2",
+          "before": 1999641563550,
+          "after": 1999631567164
+        },
+        {
+          "field": "values.convertToShares.3",
+          "before": 2999462345326,
+          "after": 2999447350747
+        },
+        {
+          "field": "values.convertToShares.4",
+          "before": 3999283127101,
+          "after": 3999263134329
+        },
+        {
+          "field": "values.previewWithdraw.1",
+          "before": 999820781776,
+          "after": 999815783583
+        },
+        {
+          "field": "values.previewWithdraw.2",
+          "before": 1999641563551,
+          "after": 1999631567165
+        },
+        {
+          "field": "values.previewWithdraw.3",
+          "before": 2999462345327,
+          "after": 2999447350748
+        },
+        {
+          "field": "values.previewWithdraw.4",
+          "before": 3999283127102,
+          "after": 3999263134330
+        },
+        {
+          "field": "values.accrueInterestView.0",
+          "before": 4000708,
+          "after": 4000728
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 540,
+      "address": "eth:0xBEEFF0DeaC1aBa71EF0D88C4291354eb92ef4589",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "540:eth:0xBEEFF0DeaC1aBa71EF0D88C4291354eb92ef4589:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.maxRate",
+          "before": 1228046331,
+          "after": 1158415585
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 540,
+      "address": "eth:0xBEEFFF9291CB0898ae42626C662f3175d4B69F7F",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "540:eth:0xBEEFFF9291CB0898ae42626C662f3175d4B69F7F:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.maxRate",
+          "before": 6381545514,
+          "after": 1943115668
         }
       ]
     }
