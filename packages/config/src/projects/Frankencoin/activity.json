@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1788787917,
-  "lastConsumedUpdateNotifierId": 541,
+  "lastReconciledAt": 1788869726,
+  "lastConsumedUpdateNotifierId": 546,
   "events": [
     {
       "timestamp": "2026-04-21T09:00:35.000Z",
@@ -2224,6 +2224,94 @@
           "field": "values._totalSupply",
           "before": "88306226684053103",
           "after": "88306028997331899"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-08T12:10:19.000Z",
+      "updateNotifierId": 546,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "546:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1298,
+          "after": 1300
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-08T12:10:19.000Z",
+      "updateNotifierId": 546,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "546:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274188,
+          "after": -274229
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88160477056333985817051",
+          "after": "87980864733671498715444"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400240938602860037970697632426",
+          "after": "6400244458707683012339863046480"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22548870185616,
+          "after": -22571195894484
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788787679,
+          "after": 1788869099
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "7344372480077747036",
+          "after": "1162418751045059702"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 2479147,
+          "after": 1117507
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "194832095132099733206903011714667784642659",
+          "after": "195630365068455146986961987761140472396895"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "295770784926392632917971981382",
+          "after": "296699999931336048194380283258"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-08T12:10:19.000Z",
+      "updateNotifierId": 546,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "546:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98099835565428668",
+          "after": "97700518523207805"
         }
       ]
     }
