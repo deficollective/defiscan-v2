@@ -1,28 +1,28 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-08T12:20:18.510Z",
+  "lastModified": "2026-09-09T12:25:58.781Z",
   "contracts": {
     "eth:0x1F98431c8aD98523631AE4a59f267346ea31F984": {
-      "lastFetched": "2026-09-08T12:20:18.330Z",
+      "lastFetched": "2026-09-09T12:24:40.673Z",
       "aggregate": {
-        "totalUsdValue": 905449215.22312,
+        "totalUsdValue": 910265515.81691,
         "contractCount": 0,
         "handlerName": "uniswap-v3-factory",
         "breakdown": [],
-        "timestamp": "2026-09-08T12:20:18.497Z",
+        "timestamp": "2026-09-09T12:25:58.778Z",
         "source": "defillama-uniswap-v3"
       }
     },
     "eth:0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984": {
-      "lastFetched": "2026-09-08T12:20:18.498Z",
+      "lastFetched": "2026-09-09T12:25:58.778Z",
       "tokenInfo": {
         "symbol": "UNI",
         "name": "Uniswap",
         "decimals": 18,
-        "price": 7.013,
+        "price": 6.6989,
         "totalSupply": "1000000000000000000000000000",
-        "tokenValue": 7013000000,
-        "timestamp": "2026-09-08T12:20:18.510Z",
+        "tokenValue": 6698900000,
+        "timestamp": "2026-09-09T12:25:58.781Z",
         "source": "debank"
       }
     }
