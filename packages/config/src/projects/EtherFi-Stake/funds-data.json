@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-09T12:23:17.040Z",
+  "lastModified": "2026-09-10T12:18:08.446Z",
   "contracts": {
     "eth:0x308861A430be4cce5502d0A12724771Fc6DaF216": {
-      "lastFetched": "2026-09-09T12:23:13.716Z",
+      "lastFetched": "2026-09-10T12:18:05.109Z",
       "balances": {
         "tokens": [
           {
@@ -12,7 +12,7 @@
             "name": "Royal Dog",
             "balance": "1000000000000000000",
             "decimals": 18,
-            "usdValue": 0.007266840713852141
+            "usdValue": 0.007139328556426864
           },
           {
             "assetAddress": "0x13f52241b2b6829401f459ae7219483d25fd96e2",
@@ -44,7 +44,7 @@
             "name": "Wrapped BTC",
             "balance": "1000",
             "decimals": 8,
-            "usdValue": 0.7930565
+            "usdValue": 0.7770134000000001
           },
           {
             "assetAddress": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
@@ -52,7 +52,7 @@
             "name": "HEX",
             "balance": "189500000000",
             "decimals": 8,
-            "usdValue": 2.043693561805901
+            "usdValue": 2.241711474718415
           },
           {
             "assetAddress": "0x387c291bc3274389054e82ce81dd318a0113caf5",
@@ -92,7 +92,7 @@
             "name": "Kohenoor",
             "balance": "40000000000000000",
             "decimals": 18,
-            "usdValue": 1.550838959034524
+            "usdValue": 1.541083634452055
           },
           {
             "assetAddress": "0x6051c1354ccc51b4d561e43b02735deae64768b8",
@@ -116,7 +116,7 @@
             "name": "World Liberty Financial",
             "balance": "78202500000",
             "decimals": 9,
-            "usdValue": 2.0573123261318223e-9
+            "usdValue": 2.02017440737583e-9
           },
           {
             "assetAddress": "0x76988eb5d8a81f44919d87328c36179fdcca044a",
@@ -140,7 +140,7 @@
             "name": "Golden backed US Dollar",
             "balance": "20000",
             "decimals": 6,
-            "usdValue": 0.02007423132357308
+            "usdValue": 0.020078681813304203
           },
           {
             "assetAddress": "0x82866b4a71ba9d930fe338c386b6a45a7133eb36",
@@ -164,7 +164,7 @@
             "name": "henlo",
             "balance": "3580584741378920000",
             "decimals": 9,
-            "usdValue": 0.9213887015939741
+            "usdValue": 0.9055850609568725
           },
           {
             "assetAddress": "0x9abfc0f085c82ec1be31d30843965fcc63053ffe",
@@ -172,7 +172,7 @@
             "name": "QSTAR",
             "balance": "900000000000",
             "decimals": 9,
-            "usdValue": 0.02770100605492083
+            "usdValue": 0.02723588879474563
           },
           {
             "assetAddress": "0x9d24364b97270961b2948734afe8d58832efd43a",
@@ -220,7 +220,7 @@
             "name": "America Party",
             "balance": "1e+26",
             "decimals": 18,
-            "usdValue": 9.658964344099573
+            "usdValue": 9.487562815898654
           },
           {
             "assetAddress": "0xb630d7388e3466af4952b6e5d8db63d828140e5d",
@@ -236,7 +236,7 @@
             "name": "Wrapped Ether",
             "balance": "100000000000",
             "decimals": 18,
-            "usdValue": 0.000250209
+            "usdValue": 0.00024579399999999997
           },
           {
             "assetAddress": "0xc894033209ce75fdb03b26588eb9d7d0189bcd0e",
@@ -276,7 +276,7 @@
             "name": "Tether USD",
             "balance": "50000",
             "decimals": 6,
-            "usdValue": 0.049987500000000004
+            "usdValue": 0.049981500000000005
           },
           {
             "assetAddress": "0xdb99b0477574ac0b2d9c8cec56b42277da3fdb82",
@@ -314,18 +314,18 @@
             "assetAddress": "eth",
             "symbol": "ETH",
             "name": "ETH",
-            "balance": "673047541356587000000",
+            "balance": "5.874668857659915e+21",
             "decimals": 18,
-            "usdValue": 1684025.5227529027
+            "usdValue": 14439583.571996612
           }
         ],
-        "totalUsdValue": 1684040.5959747585,
-        "timestamp": "2026-09-09T12:23:14.238Z",
+        "totalUsdValue": 14439598.629634194,
+        "timestamp": "2026-09-10T12:18:05.656Z",
         "source": "debank"
       }
     },
     "eth:0x6329004E903B7F420245E7aF3f355186f2432466": {
-      "lastFetched": "2026-09-09T12:23:14.239Z",
+      "lastFetched": "2026-09-10T12:18:05.657Z",
       "balances": {
         "tokens": [
           {
@@ -374,7 +374,7 @@
             "name": "Malamute.Finance",
             "balance": "2095038928250316",
             "decimals": 9,
-            "usdValue": 8.67626176464686e-7
+            "usdValue": 8.527205128394966e-7
           },
           {
             "assetAddress": "0xb83a2d9001944ae9282b65b792bb35ab7007f679",
@@ -390,7 +390,7 @@
             "name": "Wrapped Ether",
             "balance": "100000000000",
             "decimals": 18,
-            "usdValue": 0.000250209
+            "usdValue": 0.00024579399999999997
           },
           {
             "assetAddress": "eth",
@@ -398,29 +398,29 @@
             "name": "ETH",
             "balance": "9712223546514006000",
             "decimals": 18,
-            "usdValue": 24300.85741349723
+            "usdValue": 23872.062743918636
           }
         ],
-        "totalUsdValue": 24300.857664573854,
-        "timestamp": "2026-09-09T12:23:15.024Z",
+        "totalUsdValue": 23872.062990565355,
+        "timestamp": "2026-09-10T12:18:06.307Z",
         "source": "debank"
       }
     },
     "eth:0x35fA164735182de50811E8e2E824cFb9B6118ac2": {
-      "lastFetched": "2026-09-09T12:23:15.025Z",
+      "lastFetched": "2026-09-10T12:18:06.308Z",
       "tokenInfo": {
         "symbol": "eETH",
         "name": "ether.fi ETH",
         "decimals": 18,
-        "price": 2502.09,
-        "totalSupply": "2207934318538920057467958",
-        "tokenValue": 5524450379.073047,
-        "timestamp": "2026-09-09T12:23:16.005Z",
+        "price": 2457.94,
+        "totalSupply": "2215038282316490573938686",
+        "tokenValue": 5444431195.636995,
+        "timestamp": "2026-09-10T12:18:07.414Z",
         "source": "debank"
       }
     },
     "eth:0x1B7a4C3797236A1C37f8741c0Be35c2c72736fFf": {
-      "lastFetched": "2026-09-09T12:23:16.005Z",
+      "lastFetched": "2026-09-10T12:18:07.414Z",
       "positions": {
         "protocols": [
           {
@@ -432,21 +432,21 @@
               {
                 "name": "Yield",
                 "stats": {
-                  "assetUsdValue": 5.00066188329953e-15,
+                  "assetUsdValue": 4.914845425807829e-15,
                   "debtUsdValue": 0,
-                  "netUsdValue": 5.00066188329953e-15
+                  "netUsdValue": 4.914845425807829e-15
                 },
                 "tokens": [
                   {
                     "symbol": "stETH",
                     "name": "Liquid staked Ether 2.0",
                     "amount": 2e-18,
-                    "price": 2500.3309416497646
+                    "price": 2457.422712903914
                   }
                 ]
               }
             ],
-            "totalUsdValue": 5.00066188329953e-15
+            "totalUsdValue": 4.914845425807829e-15
           },
           {
             "id": "lido",
@@ -457,41 +457,41 @@
               {
                 "name": "Deposit",
                 "stats": {
-                  "assetUsdValue": 7755827.254601836,
+                  "assetUsdValue": 6076192.180515658,
                   "debtUsdValue": 0,
-                  "netUsdValue": 7755827.254601836
+                  "netUsdValue": 6076192.180515658
                 },
                 "tokens": [
                   {
                     "symbol": "stETH",
                     "name": "Liquid staked Ether 2.0",
-                    "amount": 3101.920279994775,
-                    "price": 2500.3309416497646
+                    "amount": 2472.5872958728687,
+                    "price": 2457.422712903914
                   }
                 ]
               },
               {
                 "name": "Staked",
                 "stats": {
-                  "assetUsdValue": 1292740120.464873,
+                  "assetUsdValue": 1270720512.7911627,
                   "debtUsdValue": 0,
-                  "netUsdValue": 1292740120.464873
+                  "netUsdValue": 1270720512.7911627
                 },
                 "tokens": [
                   {
                     "symbol": "ETH",
                     "name": "ETH",
-                    "amount": 516664.1169841505,
-                    "price": 2502.09
+                    "amount": 516985.97719682445,
+                    "price": 2457.94
                   }
                 ]
               }
             ],
-            "totalUsdValue": 1300495947.7194748
+            "totalUsdValue": 1276796704.9716785
           }
         ],
-        "totalUsdValue": 1300495947.7194748,
-        "timestamp": "2026-09-09T12:23:17.040Z",
+        "totalUsdValue": 1276796704.9716785,
+        "timestamp": "2026-09-10T12:18:08.445Z",
         "source": "debank"
       }
     },
