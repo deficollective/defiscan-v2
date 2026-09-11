@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1785151818,
-  "lastConsumedUpdateNotifierId": 333,
+  "lastReconciledAt": 1789130953,
+  "lastConsumedUpdateNotifierId": 563,
   "events": [
     {
       "timestamp": "2026-05-15T09:55:14.000Z",
@@ -82,6 +82,45 @@
           "field": "values.totalSpecialAllocPoint",
           "before": 54398,
           "after": 54397
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-11T12:12:20.000Z",
+      "updateNotifierId": 563,
+      "address": "bnb:0x0ED943Ce24BaEBf257488771759F9BF482C39706",
+      "contractName": "",
+      "entity": null,
+      "id": "563:bnb:0x0ED943Ce24BaEBf257488771759F9BF482C39706:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$pastUpgrades.10",
+          "after": [
+            "2026-09-10T13:38:19.000Z",
+            "0x7ec317f82ccce86125946394345e9e383db35560503234aa9e47ff87dd146cdb",
+            [
+              "bnb:0x3C637e7766C465a7C030b09205Ca75f5443fb5E4"
+            ]
+          ]
+        },
+        {
+          "field": "values.$upgradeCount",
+          "before": 10,
+          "after": 11
+        },
+        {
+          "field": "values.$implementation",
+          "before": "bnb:0x83DDF44b78eAc75479601C091192Fd9B763C9767",
+          "after": "bnb:0x3C637e7766C465a7C030b09205Ca75f5443fb5E4"
+        },
+        {
+          "field": "implementationNames.bnb:0x83DDF44b78eAc75479601C091192Fd9B763C9767",
+          "before": ""
+        },
+        {
+          "field": "implementationNames.bnb:0x3C637e7766C465a7C030b09205Ca75f5443fb5E4",
+          "after": ""
         }
       ]
     }
