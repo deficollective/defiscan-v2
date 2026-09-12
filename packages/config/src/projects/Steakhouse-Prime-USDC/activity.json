@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1788351125,
-  "lastConsumedUpdateNotifierId": 510,
+  "lastReconciledAt": 1789213144,
+  "lastConsumedUpdateNotifierId": 567,
   "events": [
     {
       "timestamp": "2026-04-30T09:26:35.000Z",
@@ -1353,6 +1353,26 @@
         {
           "field": "values.marketOracles.4",
           "before": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-12T11:38:02.000Z",
+      "updateNotifierId": 567,
+      "address": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+      "contractName": "MetaMorphoV1_1",
+      "isDependency": false,
+      "entity": null,
+      "id": "567:base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.allocators.4",
+          "after": "base:0xfC580f2a77e85f1F47b60F096D36fDc97cE2d827"
+        },
+        {
+          "field": "values.allocators.5",
+          "after": "base:0x7a175FDD0727228C66A985928C9b27104b964E8d"
         }
       ]
     }
