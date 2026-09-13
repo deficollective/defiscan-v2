@@ -1,6 +1,6 @@
 {
   "name": "pancakeswap-v2",
-  "timestamp": 1789213082,
+  "timestamp": 1789303446,
   "configHash": "0x5732b0677f5b274dafd02241565d5a8662e0c75d4d6cbce9ac9a2a9c2a4e7c3a",
   "entries": [
     {
@@ -29,7 +29,7 @@
         "name": "SyrupBar Token",
         "owner": "bnb:0x73feaa1eE314F8c655E354234017bE2193C9E24E",
         "symbol": "SYRUP",
-        "totalSupply": "583729014383384227175420459076"
+        "totalSupply": "583729014216805826986067538834"
       },
       "implementationNames": {
         "bnb:0x009cF7bC57584b7998236eff51b98A168DceA9B0": "SyrupBar"
@@ -290,7 +290,7 @@
       "sinceBlock": 6809737,
       "values": {
         "$immutable": true,
-        "allPairsLength": 2967189,
+        "allPairsLength": 2977344,
         "feeTo": "bnb:0x0ED943Ce24BaEBf257488771759F9BF482C39706",
         "feeToSetter": "bnb:0xcEba60280fb0ecd9A5A26A1552B90944770a4a0e",
         "INIT_CODE_PAIR_HASH": "0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5"
@@ -367,7 +367,7 @@
       "sinceBlock": 20372641,
       "values": {
         "$immutable": true,
-        "avgLockDuration": 32636493,
+        "avgLockDuration": 32636274,
         "BOOST_PRECISION": 1000000000000,
         "BOOST_RATIO_PRECISION": 100000,
         "BOOST_WEIGHT_PRECISION": 1000000000000,
@@ -779,6 +779,6 @@
   "usedTemplates": {
     "GnosisSafe": "0x12db59bec64fa8de67bbeb6a6e913f6c5ff1598c0a5fba90282afaf08e2a748c"
   },
-  "usedBlockNumbers": { "bsc": 121447158 },
+  "usedBlockNumbers": { "bsc": 121647908 },
   "permissionsConfigHash": "0x5670be767b6d00a670ffb09c50f5e3fdcc98a8ede113bfd8544c33652555be5b"
 }

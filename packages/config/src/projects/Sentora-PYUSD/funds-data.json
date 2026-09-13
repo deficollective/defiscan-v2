@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-12T11:40:38.051Z",
+  "lastModified": "2026-09-13T12:47:26.244Z",
   "contracts": {
     "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55": {
-      "lastFetched": "2026-09-12T11:40:37.599Z",
+      "lastFetched": "2026-09-13T12:47:25.552Z",
       "balances": {
         "tokens": [
           {
@@ -12,11 +12,11 @@
             "name": "HEX",
             "balance": "100000000",
             "decimals": 8,
-            "usdValue": 0.001278460863548895
+            "usdValue": 0.0012784936689241013
           }
         ],
-        "totalUsdValue": 0.001278460863548895,
-        "timestamp": "2026-09-12T11:40:37.794Z",
+        "totalUsdValue": 0.0012784936689241013,
+        "timestamp": "2026-09-13T12:47:25.939Z",
         "source": "debank"
       },
       "positions": {
@@ -29,16 +29,16 @@
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 3.0740325659999996,
+                  "assetUsdValue": 3.0740160737999997,
                   "debtUsdValue": 0,
-                  "netUsdValue": 3.0740325659999996
+                  "netUsdValue": 3.0740160737999997
                 },
                 "tokens": [
                   {
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
-                    "amount": 3.07434,
-                    "price": 0.9998999999999999
+                    "amount": 3.074631,
+                    "price": 0.9997999999999999
                   }
                 ]
               },
@@ -54,7 +54,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 0.9998999999999999
+                    "price": 0.9997999999999999
                   }
                 ]
               },
@@ -70,7 +70,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 0.9998999999999999
+                    "price": 0.9997999999999999
                   }
                 ]
               },
@@ -86,7 +86,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 0.9998999999999999
+                    "price": 0.9997999999999999
                   }
                 ]
               },
@@ -102,7 +102,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 0.9998999999999999
+                    "price": 0.9997999999999999
                   }
                 ]
               },
@@ -118,7 +118,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 0.9998999999999999
+                    "price": 0.9997999999999999
                   }
                 ]
               },
@@ -134,7 +134,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 0.9998999999999999
+                    "price": 0.9997999999999999
                   }
                 ]
               },
@@ -150,7 +150,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 0.9998999999999999
+                    "price": 0.9997999999999999
                   }
                 ]
               },
@@ -166,16 +166,16 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 0.9998999999999999
+                    "price": 0.9997999999999999
                   }
                 ]
               }
             ],
-            "totalUsdValue": 3.0740325659999996
+            "totalUsdValue": 3.0740160737999997
           }
         ],
-        "totalUsdValue": 3.0740325659999996,
-        "timestamp": "2026-09-12T11:40:38.050Z",
+        "totalUsdValue": 3.0740160737999997,
+        "timestamp": "2026-09-13T12:47:26.244Z",
         "source": "onchain/debank"
       }
     }

@@ -1,8 +1,40 @@
 {
   "name": "spark",
-  "timestamp": 1789213082,
+  "timestamp": 1789303446,
   "configHash": "0xb30f351bdb3d3c16cc7233e55a1572c073c01c04155af3af1b94bbe3e19c0a99",
   "entries": [
+    {
+      "name": "StableDebtToken",
+      "address": "eth:0x026a5B6114431d8F3eF2fA0E1B2EDdDccA9c540E",
+      "type": "Contract",
+      "sourceHashes": [
+        "0x76cd6fb546f46c1f8917d0d3b03d3e76a5b72e5a94a69725b26d74c9afb158b3"
+      ],
+      "proxyType": "immutable",
+      "sinceTimestamp": 1678191875,
+      "sinceBlock": 16776406,
+      "values": {
+        "$immutable": true,
+        "DEBT_TOKEN_REVISION": 1,
+        "decimals": 0,
+        "DELEGATION_WITH_SIG_TYPEHASH": "0x323db0410fecc107e39e2af5908671f4c8d106123b35a51501bb805c5fa36aa0",
+        "DOMAIN_SEPARATOR": "0xfa3186394f9d58f150b07412067f79e7364f61b0120e2094357f4aacbf608765",
+        "EIP712_REVISION": "0x31",
+        "getAverageStableRate": 0,
+        "getIncentivesController": "eth:0x0000000000000000000000000000000000000000",
+        "getSupplyData": [0, 0, 0, 0],
+        "getTotalSupplyAndAvgRate": [0, 0],
+        "getTotalSupplyLastUpdated": 0,
+        "name": "STABLE_DEBT_TOKEN_IMPL",
+        "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+        "symbol": "STABLE_DEBT_TOKEN_IMPL",
+        "totalSupply": 0,
+        "UNDERLYING_ASSET_ADDRESS": "eth:0x0000000000000000000000000000000000000000"
+      },
+      "implementationNames": {
+        "eth:0x026a5B6114431d8F3eF2fA0E1B2EDdDccA9c540E": "StableDebtToken"
+      }
+    },
     {
       "name": "PoolAddressesProvider",
       "address": "eth:0x02C3eA4e34C0cBd694D2adFa2c690EECbC1793eE",
@@ -52,6 +84,19 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0x071FC8FE1E689fFF1788C2f0eECeCbDf276CA8b6",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x071FC8FE1E689fFF1788C2f0eECeCbDf276CA8b6": ""
+      }
+    },
+    {
       "name": "ESM",
       "address": "eth:0x09e05fF6142F2f9de8B6B65855A1d56B6cfE4c58",
       "type": "Contract",
@@ -92,7 +137,7 @@
         "DAI_PRICE_FEED_ADDRESS": "eth:0x42a03F81dd8A1cEcD746dc262e4d1CD9fD39F777",
         "getAnswer": [],
         "getTimestamp": [],
-        "latestAnswer": 118042853,
+        "latestAnswer": 118047357,
         "POT_ADDRESS": "eth:0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7"
       },
       "errors": {
@@ -131,9 +176,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": "1013228973007004257873984",
+        "scaledTotalSupply": "1015867974416015671229811",
         "symbol": "spwstETH",
-        "totalSupply": "1013270962125851664441181",
+        "totalSupply": "1015910072897452721434057",
         "UNDERLYING_ASSET_ADDRESS": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
       },
       "fieldMeta": {
@@ -197,10 +242,23 @@
         "owner": "eth:0x9C070027cdC9dc8F82416B2e5314E11DFb4FE3CD",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
         "symbol": "tBTC",
-        "totalSupply": "4253560639160000000000"
+        "totalSupply": "4264609340780000000000"
       },
       "implementationNames": {
         "eth:0x18084fbA666a33d37592fA2633fD49a74DD93a88": "TBTC"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x18905dc04Cb800F300DD91D4370E7B3A38Fe7642",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x18905dc04Cb800F300DD91D4370E7B3A38Fe7642": ""
       }
     },
     {
@@ -216,16 +274,55 @@
       "sinceBlock": 8928160,
       "values": {
         "$immutable": true,
-        "chi": "1180428532514449980532863394",
+        "chi": "1180473579660457709674681900",
         "dsr": "1000000000393915525145987602",
         "live": 1,
-        "Pie": "171751224811838931827620025",
-        "rho": 1789197119,
+        "Pie": "171728621032601583024484851",
+        "rho": 1789293995,
         "vat": "eth:0x35D1b3F3D7966A1DFe207aa4514C12a259A0492B",
         "vow": "eth:0xA950524441892A31ebddF91d3cEEFa04Bf454466"
       },
       "implementationNames": {
         "eth:0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7": "Pot"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x2169004F6f1aC7c474C9a2bE27CA810142c273C8",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153747,
+      "sinceBlock": 25042898,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x2169004F6f1aC7c474C9a2bE27CA810142c273C8": ""
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x21783460499b5a4b2fEA8c9c9B7833420aE5a560",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x21783460499b5a4b2fEA8c9c9B7833420aE5a560": ""
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x2222B9B71be0cda50B045832D50b7a451a5271A0",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x2222B9B71be0cda50B045832D50b7a451a5271A0": ""
       }
     },
     {
@@ -270,7 +367,7 @@
         "ASSET_TO_PEG": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
         "DECIMALS": 8,
         "DENOMINATOR": "10000000000000000",
-        "latestAnswer": 7734624160674,
+        "latestAnswer": 7674092881363,
         "MAX_DECIMALS": 18,
         "PEG_TO_BASE": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
       },
@@ -431,15 +528,15 @@
         "description": "Aggregated price feed ETH/USD from Chronicle, Chainlink, and RedStone oracles",
         "getAgeThreshold": 90000,
         "getAggregatedOracleValue": {
-          "value": 253427186127,
+          "value": 247594181771,
           "goodOraclesCount": 3
         },
-        "latestAnswer": 253427186127,
+        "latestAnswer": 247594181771,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 253427186127,
-          "startedAt": 1789213067,
-          "updatedAt": 1789213067,
+          "answer": 247594181771,
+          "startedAt": 1789303427,
+          "updatedAt": 1789303427,
           "answeredInRound": 1
         },
         "redstone": "eth:0x67F6838e58859d612E4ddF04dA396d6DABB66Dc4",
@@ -466,7 +563,7 @@
         "DAI_PRICE_FEED_ADDRESS": "eth:0x42a03F81dd8A1cEcD746dc262e4d1CD9fD39F777",
         "getAnswer": [],
         "getTimestamp": [],
-        "latestAnswer": 110929201,
+        "latestAnswer": 110940442,
         "POT_ADDRESS": "eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD"
       },
       "errors": {
@@ -512,6 +609,32 @@
       }
     },
     {
+      "name": "AaveV3ConfigEngine",
+      "address": "eth:0x3254F7cd0565aA67eEdC86c2fB608BE48d5cCd78",
+      "type": "Contract",
+      "sourceHashes": [
+        "0x43446e888287ec6e868cc246711ddec05116e3569dbecd6c7f6fa8f9e9bb0e2c"
+      ],
+      "proxyType": "immutable",
+      "sinceTimestamp": 1685120219,
+      "sinceBlock": 17344596,
+      "values": {
+        "$immutable": true,
+        "ATOKEN_IMPL": "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6",
+        "COLLECTOR": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
+        "ORACLE": "eth:0x8105f69D9C41644c6A0803fDA7D03Aa70996cFD9",
+        "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+        "POOL_CONFIGURATOR": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
+        "RATE_STRATEGIES_FACTORY": "eth:0xfE57e187EF6285e90d7049e6a21571aa47cF11a2",
+        "REWARDS_CONTROLLER": "eth:0x4370D3b6C9588E02ce9D22e684387859c7Ff5b34",
+        "STOKEN_IMPL": "eth:0x026a5B6114431d8F3eF2fA0E1B2EDdDccA9c540E",
+        "VTOKEN_IMPL": "eth:0x86C71796CcDB31c3997F8Ec5C2E3dB3e9e40b985"
+      },
+      "implementationNames": {
+        "eth:0x3254F7cd0565aA67eEdC86c2fB608BE48d5cCd78": "AaveV3ConfigEngine"
+      }
+    },
+    {
       "name": "SubProxy",
       "address": "eth:0x3300f198988e4C9C63F75dF86De36421f06af8c4",
       "type": "Contract",
@@ -549,6 +672,19 @@
           "role": "admin"
         }
       ]
+    },
+    {
+      "name": "",
+      "address": "eth:0x3322e32917a72d361925Cfb4BeadEB9457f68f6B",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x3322e32917a72d361925Cfb4BeadEB9457f68f6B": ""
+      }
     },
     {
       "name": "LRTOracle",
@@ -642,17 +778,17 @@
           ]
         ],
         "$upgradeCount": 13,
-        "currentPeriodMintedFeeAmount": "766217433352603471",
-        "feePeriodStartTime": 1789171200,
-        "getCurrentPeriodStartTime": 1789171200,
-        "getNextDailyLimitResetTimestamp": 1789257600,
-        "highestRsethPrice": "1079885718747616643",
+        "currentPeriodMintedFeeAmount": "845359168886154001",
+        "feePeriodStartTime": 1789257600,
+        "getCurrentPeriodStartTime": 1789257600,
+        "getNextDailyLimitResetTimestamp": 1789344000,
+        "highestRsethPrice": "1079933292269902971",
         "lrtConfig": "eth:0x947Cb49334e6571ccBFEF1f1f1178d8469D65ec7",
         "maxFeeMintAmountPerDay": "20000000000000000000",
         "paused": false,
         "pricePercentageLimit": "10000000000000000",
-        "remainingDailyFeeMintLimit": "19233782566647396529",
-        "rsETHPrice": "1079885718747616643",
+        "remainingDailyFeeMintLimit": "19154640831113845999",
+        "rsETHPrice": "1079933292269902971",
         "sparkRsETHPoolBalance": "14881525900478222082"
       },
       "fieldMeta": {
@@ -663,6 +799,19 @@
       "implementationNames": {
         "eth:0x349A73444b1a310BAe67ef67973022020d70020d": "TransparentUpgradeableProxy",
         "eth:0xC59110239240761cCd3E670288443316e10Dd271": "LRTOracle"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x34C32840FEE7c35df280BC9fd347265FB9700B7B",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x34C32840FEE7c35df280BC9fd347265FB9700B7B": ""
       }
     },
     {
@@ -693,9 +842,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 22228043292092,
+        "scaledTotalSupply": 22228526142517,
         "symbol": "spUSDC",
-        "totalSupply": 26221683206983,
+        "totalSupply": 26224913899536,
         "UNDERLYING_ASSET_ADDRESS": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
       },
       "fieldMeta": {
@@ -706,6 +855,32 @@
       "implementationNames": {
         "eth:0x377C3bd93f2a2984E1E7bE6A5C22c525eD4A4815": "InitializableImmutableAdminUpgradeabilityProxy",
         "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6": "AToken"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x3961E687503a669f2805aB362F1bdC8bfCb8b21d",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x3961E687503a669f2805aB362F1bdC8bfCb8b21d": ""
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x3A5a2f948E846772a798F80EF1f91BA35ED10f7e",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x3A5a2f948E846772a798F80EF1f91BA35ED10f7e": ""
       }
     },
     {
@@ -752,6 +927,19 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0x40357a28192a36d39c6451C6B9b22aAc76477C2C",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x40357a28192a36d39c6451C6B9b22aAc76477C2C": ""
+      }
+    },
+    {
       "name": "AToken",
       "address": "eth:0x4197ba364AE6698015AE5c1468f54087602715b2",
       "type": "Contract",
@@ -779,9 +967,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 187232969955,
+        "scaledTotalSupply": 187332955982,
         "symbol": "spWBTC",
-        "totalSupply": 187259135242,
+        "totalSupply": 187359135313,
         "UNDERLYING_ASSET_ADDRESS": "eth:0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
       },
       "fieldMeta": {
@@ -817,15 +1005,15 @@
         "description": "Aggregated price feed BTC/USD from Chronicle, Chainlink, and RedStone oracles",
         "getAgeThreshold": 90000,
         "getAggregatedOracleValue": {
-          "value": 7732253240000,
+          "value": 7664370000000,
           "goodOraclesCount": 3
         },
-        "latestAnswer": 7732253240000,
+        "latestAnswer": 7664370000000,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 7732253240000,
-          "startedAt": 1789213067,
-          "updatedAt": 1789213067,
+          "answer": 7664370000000,
+          "startedAt": 1789303427,
+          "updatedAt": 1789303427,
           "answeredInRound": 1
         },
         "redstone": "eth:0xAB7f623fb2F6fea6601D4350FA0E2290663C28Fc",
@@ -1007,6 +1195,19 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0x4911bdae39CBaFcb034280D9bc30d17dB8744594",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x4911bdae39CBaFcb034280D9bc30d17dB8744594": ""
+      }
+    },
+    {
       "name": "Fig",
       "address": "eth:0x4A7Ad931cb40b564A1C453545059131B126BC828",
       "type": "Contract",
@@ -1076,7 +1277,7 @@
       "values": {
         "$immutable": true,
         "decimals": 18,
-        "latestAnswer": "999720360505827692",
+        "latestAnswer": "999745857466902258",
         "weeth": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
         "weethETHFeed": "eth:0x5c9C449BbC9a6075A2c061dF312a35fd1E05fF22"
       },
@@ -1112,9 +1313,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0x856900aa78e856a5df1a2665eE3a66b2487cD68f",
-        "scaledTotalSupply": "260377398012594596735864503",
+        "scaledTotalSupply": "260387968182352902167868113",
         "symbol": "spDAI",
-        "totalSupply": "307856871648457008536934354",
+        "totalSupply": "307891064357546596094836898",
         "UNDERLYING_ASSET_ADDRESS": "eth:0x6B175474E89094C44Da98b954EedeAC495271d0F"
       },
       "fieldMeta": {
@@ -1125,6 +1326,19 @@
       "implementationNames": {
         "eth:0x4DEDf26112B3Ec8eC46e7E31EA5e123490B05B8B": "InitializableImmutableAdminUpgradeabilityProxy",
         "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6": "AToken"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x4fCDe79651BE00d5e50196B84Aa03d938EA1177a",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x4fCDe79651BE00d5e50196B84Aa03d938EA1177a": ""
       }
     },
     {
@@ -1148,11 +1362,24 @@
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
         "ezETH": "eth:0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
-        "latestAnswer": 275104389820,
+        "latestAnswer": 268777745091,
         "oracle": "eth:0x74a09653A083691711cF8215a6ab074BB4e99ef5"
       },
       "implementationNames": {
         "eth:0x52E85eB49e07dF74c8A9466D2164b4C4cA60014A": "EZETHExchangeRateOracle"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0x534020e030c774aF1313129B64092307d2D29ef2",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x534020e030c774aF1313129B64092307d2D29ef2": ""
       }
     },
     {
@@ -1310,9 +1537,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": "516758493923391728200094",
+        "scaledTotalSupply": "517499753756607630830757",
         "symbol": "spWETH",
-        "totalSupply": "547409452300173565769901",
+        "totalSupply": "548217924482135167828668",
         "UNDERLYING_ASSET_ADDRESS": "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
       },
       "fieldMeta": {
@@ -1378,6 +1605,19 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0x5d4704d1764c4D9eC85578a2B61222A2d1a7819A",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x5d4704d1764c4D9eC85578a2B61222A2d1a7819A": ""
+      }
+    },
+    {
       "name": "EACAggregatorProxy",
       "address": "eth:0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
       "type": "Contract",
@@ -1401,6 +1641,44 @@
       },
       "implementationNames": {
         "eth:0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419": "EACAggregatorProxy"
+      }
+    },
+    {
+      "name": "AToken",
+      "address": "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6",
+      "type": "Contract",
+      "template": "spark/AToken",
+      "sourceHashes": [
+        "0x505142a466beaca8f667c084ab2a7c0c72214d9af68e17a49bc66561ce783ac1"
+      ],
+      "proxyType": "immutable",
+      "ignoreInWatchMode": ["scaledTotalSupply", "totalSupply"],
+      "sinceTimestamp": 1678191851,
+      "sinceBlock": 16776404,
+      "values": {
+        "$immutable": true,
+        "ATOKEN_REVISION": 1,
+        "decimals": 0,
+        "DOMAIN_SEPARATOR": "0xb80bed103f3ff0cb311f816406bb8dfe04ac141bec51e92add5c7d038bb6df11",
+        "EIP712_REVISION": "0x31",
+        "getIncentivesController": "eth:0x0000000000000000000000000000000000000000",
+        "name": "SPTOKEN_IMPL",
+        "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+        "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+        "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
+        "RESERVE_TREASURY_ADDRESS": "eth:0x0000000000000000000000000000000000000000",
+        "scaledTotalSupply": 0,
+        "symbol": "SPTOKEN_IMPL",
+        "totalSupply": 0,
+        "UNDERLYING_ASSET_ADDRESS": "eth:0x0000000000000000000000000000000000000000"
+      },
+      "fieldMeta": {
+        "proxyAdmin": {
+          "description": "Immutable admin of the InitializableImmutableAdminUpgradeabilityProxy. Set at deployment by PoolConfigurator._initTokenWithProxy(address(this)) — only PoolConfigurator can call upgradeTo / upgradeToAndCall on the AToken proxy. Hardcoded because the proxy is factory-deployed (no standalone creation tx for constructorArgs to read), and the on-chain admin() getter is gated by ifAdmin."
+        }
+      },
+      "implementationNames": {
+        "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6": "AToken"
       }
     },
     {
@@ -1472,7 +1750,7 @@
         "btcUSDFeed": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
         "cbbtcUSDFeed": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
         "decimals": 18,
-        "latestAnswer": "997133133432307147"
+        "latestAnswer": "1005629473923862170"
       },
       "implementationNames": {
         "eth:0x64B157212C21097002920D57322B671b88DFcCBC": "CBBTCRatioOracle"
@@ -1493,9 +1771,9 @@
         "maxDelay": 604800,
         "prob": false,
         "spellData": {
-          "addr": "eth:0x0000000000000000000000000000000000000000",
-          "tag": "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "deadline": 0
+          "addr": "eth:0x7602cc457786c06778258A0b004f2D66c54386fC",
+          "tag": "0xb3b1f22f29ef3d269404004599f13b840e45ec98909ac3de529e27c155bed088",
+          "deadline": 1789908131
         },
         "subProxy": "eth:0x3300f198988e4C9C63F75dF86De36421f06af8c4",
         "wards": ["eth:0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB"]
@@ -1574,13 +1852,13 @@
         "description": "RedStone Price Feed for ETH",
         "getDataFeedId": "0x4554480000000000000000000000000000000000000000000000000000000000",
         "getPriceFeedAdapter": "eth:0xd72a6BA4a87DDB33e801b3f1c7750b2d0911fC6C",
-        "latestAnswer": 253584550870,
+        "latestAnswer": 247594181771,
         "latestRound": 1,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 253584550870,
-          "startedAt": 1789205423,
-          "updatedAt": 1789205423,
+          "answer": 247594181771,
+          "startedAt": 1789291535,
+          "updatedAt": 1789291535,
           "answeredInRound": 1
         },
         "version": 1
@@ -1612,6 +1890,19 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0x6A3B88379f8d3961fCCBBfA691Ea0574a63fcefE",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153747,
+      "sinceBlock": 25042898,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x6A3B88379f8d3961fCCBBfA691Ea0574a63fcefE": ""
+      }
+    },
+    {
       "name": "Dai Stablecoin Token",
       "address": "eth:0x6B175474E89094C44Da98b954EedeAC495271d0F",
       "type": "Contract",
@@ -1629,7 +1920,7 @@
         "name": "Dai Stablecoin",
         "PERMIT_TYPEHASH": "0xea2aa0a1be11a07ed86d755c93467f4f82362b452371d1ba94d1715123511acb",
         "symbol": "DAI",
-        "totalSupply": "4576724494586841198931635478",
+        "totalSupply": "4573032871403261102025390873",
         "version": "1"
       },
       "implementationNames": {
@@ -1719,7 +2010,7 @@
         "supplyControl": "eth:0x31d9bDEa6F104606C954f8FE6ba614F1BD347Ec3",
         "supplyControllerDeprecated": "eth:0xE25a329d385f77df5D4eD56265babe2b99A5436e",
         "symbol": "PYUSD",
-        "totalSupply": 1722317084706842,
+        "totalSupply": 1714222472001741,
         "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267"
       },
       "implementationNames": {
@@ -1771,6 +2062,19 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0x6FE85B948d84652A3c178a4a3ff512e7926914c4",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153747,
+      "sinceBlock": 25042898,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x6FE85B948d84652A3c178a4a3ff512e7926914c4": ""
+      }
+    },
+    {
       "name": "RSETHExchangeRateOracle",
       "address": "eth:0x70942D6b580741CF50A7906f4100063EE037b8eb",
       "type": "Contract",
@@ -1785,7 +2089,7 @@
         "$immutable": true,
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
-        "latestAnswer": 273672399040,
+        "latestAnswer": 267385199866,
         "oracle": "eth:0x349A73444b1a310BAe67ef67973022020d70020d"
       },
       "implementationNames": {
@@ -1874,7 +2178,7 @@
         "calculateTVLs": [
           [[1, "17313849422426000000000"], [1, "26755874811197000000000"]],
           ["17313849422426000000001", "26755874811197000000001"],
-          "44856645304396256317183"
+          "44857514230042620434547"
         ],
         "collateralTokens": ["eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"],
         "delegationManager": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A",
@@ -1895,6 +2199,56 @@
       "implementationNames": {
         "eth:0x74a09653A083691711cF8215a6ab074BB4e99ef5": "TransparentUpgradeableProxy",
         "eth:0xD5B3Be349ed0b7C82Dbd9271ce3739a381Fc7aa0": "RestakeManager"
+      }
+    },
+    {
+      "name": "SparkEthereum_20260910",
+      "address": "eth:0x7602cc457786c06778258A0b004f2D66c54386fC",
+      "type": "Contract",
+      "sourceHashes": [
+        "0xbd083409e4a628d18dcdc617df031dd2e206ca129626d29498445deec2e576f7"
+      ],
+      "proxyType": "immutable",
+      "sinceTimestamp": 1788537551,
+      "sinceBlock": 25905005,
+      "values": {
+        "$immutable": true,
+        "borrowsUpdates": [],
+        "capsUpdates": [],
+        "collateralsUpdates": [
+          {
+            "asset": "eth:0x8236a87084f8B84306f72007F36F2618A5634494",
+            "ltv": 0,
+            "liqThreshold": "115792089237316195423570985008687907853269984665640564039457584007913129639893",
+            "liqBonus": "115792089237316195423570985008687907853269984665640564039457584007913129639893",
+            "debtCeiling": "115792089237316195423570985008687907853269984665640564039457584007913129639893",
+            "liqProtocolFee": "115792089237316195423570985008687907853269984665640564039457584007913129639893",
+            "eModeCategory": "115792089237316195423570985008687907853269984665640564039457584007913129639893"
+          }
+        ],
+        "getPoolContext": {
+          "networkName": "Ethereum",
+          "networkAbbreviation": "Eth"
+        },
+        "isExecutable": false,
+        "LISTING_ENGINE": "eth:0x3254F7cd0565aA67eEdC86c2fB608BE48d5cCd78",
+        "newListings": [],
+        "newListingsCustom": [],
+        "officeHours": [false, false, false, false, false],
+        "PAYLOAD_ARBITRUM": "eth:0x0000000000000000000000000000000000000000",
+        "PAYLOAD_AVALANCHE": "eth:0x0000000000000000000000000000000000000000",
+        "PAYLOAD_BASE": "eth:0x0000000000000000000000000000000000000000",
+        "PAYLOAD_GNOSIS": "eth:0x9A56C59453a2fBAe01Ba46045441490e5C7a664d",
+        "PAYLOAD_OPTIMISM": "eth:0x0000000000000000000000000000000000000000",
+        "PAYLOAD_ROBINHOOD": "eth:0x0000000000000000000000000000000000000000",
+        "PAYLOAD_UNICHAIN": "eth:0x0000000000000000000000000000000000000000",
+        "PAYLOAD_XLAYER": "eth:0x0000000000000000000000000000000000000000",
+        "priceFeedsUpdates": [],
+        "rateStrategiesUpdates": []
+      },
+      "errors": { "officeHours": "Processing error occurred." },
+      "implementationNames": {
+        "eth:0x7602cc457786c06778258A0b004f2D66c54386fC": "SparkEthereum_20260910"
       }
     },
     {
@@ -1925,9 +2279,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 98757573326525,
+        "scaledTotalSupply": 98756323486097,
         "symbol": "spPYUSD",
-        "totalSupply": 100000372572944,
+        "totalSupply": 100000865985898,
         "UNDERLYING_ASSET_ADDRESS": "eth:0x6c3ea9036406852006290770BEdFcAbA0e23A0e8"
       },
       "fieldMeta": {
@@ -2044,10 +2398,10 @@
         "DOMAIN_SEPARATOR": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
         "name": "Wrapped liquid staked Ether 2.0",
         "stETH": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-        "stEthPerToken": "1243790495836331246",
+        "stEthPerToken": "1243945528957798802",
         "symbol": "wstETH",
-        "tokensPerStEth": "803993922889396867",
-        "totalSupply": "3700561601641708235118654"
+        "tokensPerStEth": "803893721003860192",
+        "totalSupply": "3701642571364740469300643"
       },
       "implementationNames": {
         "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0": "WstETH"
@@ -2186,7 +2540,7 @@
           "extensions": []
         },
         "getAssetRouter": "eth:0x9eCe5fB1aB62d9075c4ec814b321e24D8EA021ac",
-        "getRate": "1004880282013558815",
+        "getRate": "1004895132540340219",
         "getRedeemFee": 10000,
         "getRedeemForBtcMinAmount": 3300,
         "getTreasury": "eth:0x251a604E8E8f6906d60f8dedC5aAeb8CD38F4892",
@@ -2204,10 +2558,10 @@
           "schedule": 0
         },
         "pendingDefaultAdminDelay": { "newDelay": 0, "schedule": 0 },
-        "ratio": "995143419469053762",
+        "ratio": "995128713054898084",
         "symbol": "LBTC",
         "toNativeCommission": 0,
-        "totalSupply": 822960816816
+        "totalSupply": 822620888841
       },
       "implementationNames": {
         "eth:0x8236a87084f8B84306f72007F36F2618A5634494": "TransparentUpgradeableProxy",
@@ -2261,7 +2615,7 @@
         "paused": false,
         "PAUSER_ROLE": "0x539440820030c4994db4e31b6b800deafd503688728f932addfe7a410515c14c",
         "symbol": "RLUSD",
-        "totalSupply": "1369732627856031556976088885",
+        "totalSupply": "1369732626356782306976088885",
         "UPGRADE_INTERFACE_VERSION": "5.0.0",
         "UPGRADER_ROLE": "0xa615a8afb6fffcb8c6809ac0997b5c9c12b8cc97651150f14c8f6203168cff4c"
       },
@@ -2291,8 +2645,8 @@
         "name": "Savings Dai",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
         "symbol": "sDAI",
-        "totalAssets": "164958030094685217983087786",
-        "totalSupply": "139743312924699990211632772",
+        "totalAssets": "164930014120404102909965466",
+        "totalSupply": "139714606222830043089437828",
         "vat": "eth:0x35D1b3F3D7966A1DFe207aa4514C12a259A0492B",
         "version": "1"
       },
@@ -2399,6 +2753,48 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0x868210181cc67EE60514EA8fC022209669b62d8C",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x868210181cc67EE60514EA8fC022209669b62d8C": ""
+      }
+    },
+    {
+      "name": "VariableDebtToken",
+      "address": "eth:0x86C71796CcDB31c3997F8Ec5C2E3dB3e9e40b985",
+      "type": "Contract",
+      "sourceHashes": [
+        "0xf024b6fd41fa1721e8520e4218dc9bc20d93db9d7159481d53d2feb9b20d0c42"
+      ],
+      "proxyType": "immutable",
+      "sinceTimestamp": 1678191911,
+      "sinceBlock": 16776408,
+      "values": {
+        "$immutable": true,
+        "DEBT_TOKEN_REVISION": 1,
+        "decimals": 0,
+        "DELEGATION_WITH_SIG_TYPEHASH": "0x323db0410fecc107e39e2af5908671f4c8d106123b35a51501bb805c5fa36aa0",
+        "DOMAIN_SEPARATOR": "0x8e81bf8ce76b0758112878a1ffa1d578171a319aca9a375762a8bc0fba3fbad5",
+        "EIP712_REVISION": "0x31",
+        "getIncentivesController": "eth:0x0000000000000000000000000000000000000000",
+        "name": "VARIABLE_DEBT_TOKEN_IMPL",
+        "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+        "scaledTotalSupply": 0,
+        "symbol": "VARIABLE_DEBT_TOKEN_IMPL",
+        "totalSupply": 0,
+        "UNDERLYING_ASSET_ADDRESS": "eth:0x0000000000000000000000000000000000000000"
+      },
+      "implementationNames": {
+        "eth:0x86C71796CcDB31c3997F8Ec5C2E3dB3e9e40b985": "VariableDebtToken"
+      }
+    },
+    {
       "name": "Safe",
       "address": "eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB",
       "type": "Contract",
@@ -2423,7 +2819,7 @@
         "getChainId": 1,
         "GnosisSafe_modules": [],
         "multisigThreshold": "1 of 2 (50%)",
-        "nonce": 104438,
+        "nonce": 104719,
         "VERSION": "1.4.1"
       },
       "implementationNames": {
@@ -2619,7 +3015,7 @@
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
         "scaledTotalSupply": "5375997376503832561300",
         "symbol": "sprETH",
-        "totalSupply": "5378477803904773453445",
+        "totalSupply": "5378477808198225816910",
         "UNDERLYING_ASSET_ADDRESS": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393"
       },
       "fieldMeta": {
@@ -2630,6 +3026,866 @@
       "implementationNames": {
         "eth:0x9985dF20D7e9103ECBCeb16a84956434B6f06ae8": "InitializableImmutableAdminUpgradeabilityProxy",
         "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6": "AToken"
+      }
+    },
+    {
+      "name": "Beacon",
+      "address": "eth:0x9A56C59453a2fBAe01Ba46045441490e5C7a664d",
+      "type": "Contract",
+      "sourceHashes": [
+        "0x57bb1b7f71aa6b2f6927592b826f198ec74429dd97e218bd005dc13fa6bf8e47"
+      ],
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153675,
+      "sinceBlock": 25042892,
+      "values": {
+        "$immutable": true,
+        "DEFAULT_ADMIN_ROLE": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "integrations": [
+          {
+            "id": "0x414156455f464143455400000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x9f622D74FD49fe7204805B14824eF01B1Cf04333",
+              "wires": [
+                {
+                  "callSelector": "0x242971a3",
+                  "delegateSelector": "0x73d76dbe"
+                },
+                {
+                  "callSelector": "0x2af897b4",
+                  "delegateSelector": "0xd86483e1"
+                },
+                {
+                  "callSelector": "0x2cefff96",
+                  "delegateSelector": "0x47e7ef24"
+                },
+                {
+                  "callSelector": "0x7891c043",
+                  "delegateSelector": "0xf3fef3a3"
+                },
+                {
+                  "callSelector": "0xc969c157",
+                  "delegateSelector": "0x44cabc34"
+                },
+                {
+                  "callSelector": "0xda1479c5",
+                  "delegateSelector": "0x01da872b"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x424153494e5f4641434554000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x21783460499b5a4b2fEA8c9c9B7833420aE5a560",
+              "wires": [
+                {
+                  "callSelector": "0x81e5cfe0",
+                  "delegateSelector": "0x20e8c565"
+                },
+                {
+                  "callSelector": "0x902997b2",
+                  "delegateSelector": "0x7bfe950c"
+                },
+                {
+                  "callSelector": "0xc2063d20",
+                  "delegateSelector": "0x9108d4f6"
+                },
+                {
+                  "callSelector": "0xc5d56909",
+                  "delegateSelector": "0x01da872b"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x434354505f464143455400000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0xe94A71345C2774f48fE1D6FEa23FdCf906668897",
+              "wires": [
+                {
+                  "callSelector": "0xc67c9ea9",
+                  "delegateSelector": "0xa28e450d"
+                },
+                {
+                  "callSelector": "0x7a556797",
+                  "delegateSelector": "0xb5cbf202"
+                },
+                {
+                  "callSelector": "0xbcd7e46c",
+                  "delegateSelector": "0x4c1bcc70"
+                },
+                {
+                  "callSelector": "0x74e3f621",
+                  "delegateSelector": "0xcd7cccb7"
+                },
+                {
+                  "callSelector": "0xdf135fe9",
+                  "delegateSelector": "0x11522c4e"
+                },
+                {
+                  "callSelector": "0x127febbd",
+                  "delegateSelector": "0x127febbd"
+                },
+                {
+                  "callSelector": "0xe40da594",
+                  "delegateSelector": "0xe85333c5"
+                },
+                {
+                  "callSelector": "0x3f179cbe",
+                  "delegateSelector": "0x845da79b"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x43454e545249465547455f464143455400000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x18905dc04Cb800F300DD91D4370E7B3A38Fe7642",
+              "wires": [
+                {
+                  "callSelector": "0x9ec0d57e",
+                  "delegateSelector": "0x3b6296bb"
+                },
+                {
+                  "callSelector": "0x5bb1a974",
+                  "delegateSelector": "0x9c2a9481"
+                },
+                {
+                  "callSelector": "0x558e0a77",
+                  "delegateSelector": "0xc794a53c"
+                },
+                {
+                  "callSelector": "0xe604ddab",
+                  "delegateSelector": "0x99998406"
+                },
+                {
+                  "callSelector": "0xa0b0c6af",
+                  "delegateSelector": "0xace435e4"
+                },
+                {
+                  "callSelector": "0xb2b094a0",
+                  "delegateSelector": "0xe1124ec2"
+                },
+                {
+                  "callSelector": "0x2ebb9941",
+                  "delegateSelector": "0x5c5e9161"
+                },
+                {
+                  "callSelector": "0xfe3b5824",
+                  "delegateSelector": "0x33672013"
+                },
+                {
+                  "callSelector": "0x7ee891b6",
+                  "delegateSelector": "0xfd1160ec"
+                },
+                {
+                  "callSelector": "0xe44ba0d4",
+                  "delegateSelector": "0xc6529f84"
+                },
+                {
+                  "callSelector": "0xb7013d62",
+                  "delegateSelector": "0x3f22adc8"
+                },
+                {
+                  "callSelector": "0x8ac7972b",
+                  "delegateSelector": "0xf69ff137"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x43555256455f4641434554000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x4911bdae39CBaFcb034280D9bc30d17dB8744594",
+              "wires": [
+                {
+                  "callSelector": "0xb3505669",
+                  "delegateSelector": "0x73d76dbe"
+                },
+                {
+                  "callSelector": "0xd9f18c07",
+                  "delegateSelector": "0xd86483e1"
+                },
+                {
+                  "callSelector": "0x1eaef443",
+                  "delegateSelector": "0x9a5f60e5"
+                },
+                {
+                  "callSelector": "0x533a5901",
+                  "delegateSelector": "0x21fccb48"
+                },
+                {
+                  "callSelector": "0x072ef76d",
+                  "delegateSelector": "0xc83abb85"
+                },
+                {
+                  "callSelector": "0xaf07bbe1",
+                  "delegateSelector": "0x0238451d"
+                },
+                {
+                  "callSelector": "0x0a13c82c",
+                  "delegateSelector": "0xba92d50c"
+                },
+                {
+                  "callSelector": "0x00008180",
+                  "delegateSelector": "0xecbe2511"
+                },
+                {
+                  "callSelector": "0x40612f51",
+                  "delegateSelector": "0x180c92e7"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x444149555344535f464143455400000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0xa23d4484B2c18DC9FdA6450D314E1c56200a06fF",
+              "wires": [
+                {
+                  "callSelector": "0x0d015236",
+                  "delegateSelector": "0x0d015236"
+                },
+                {
+                  "callSelector": "0x7b65461c",
+                  "delegateSelector": "0x7b65461c"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x455243343632365f464143455400000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x2222B9B71be0cda50B045832D50b7a451a5271A0",
+              "wires": [
+                {
+                  "callSelector": "0x7011df99",
+                  "delegateSelector": "0x7011df99"
+                },
+                {
+                  "callSelector": "0x7dbe3c90",
+                  "delegateSelector": "0x0efe6a8b"
+                },
+                {
+                  "callSelector": "0x90893cbe",
+                  "delegateSelector": "0xb5c5f672"
+                },
+                {
+                  "callSelector": "0xa60c8029",
+                  "delegateSelector": "0x2b83cccd"
+                },
+                {
+                  "callSelector": "0x3a01b964",
+                  "delegateSelector": "0x3a01b964"
+                },
+                {
+                  "callSelector": "0xe4604bda",
+                  "delegateSelector": "0x7ed9b88c"
+                },
+                {
+                  "callSelector": "0xf2574d70",
+                  "delegateSelector": "0x9108d4f6"
+                },
+                {
+                  "callSelector": "0x448d2828",
+                  "delegateSelector": "0x180c92e7"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x455243373534305f464143455400000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x3A5a2f948E846772a798F80EF1f91BA35ED10f7e",
+              "wires": [
+                {
+                  "callSelector": "0xc2be3706",
+                  "delegateSelector": "0x5696bdae"
+                },
+                {
+                  "callSelector": "0xe08471fc",
+                  "delegateSelector": "0xde56603c"
+                },
+                {
+                  "callSelector": "0xc95c29d9",
+                  "delegateSelector": "0x65b89f9f"
+                },
+                {
+                  "callSelector": "0x4390e9dd",
+                  "delegateSelector": "0x0c5cb572"
+                },
+                {
+                  "callSelector": "0x05f41aff",
+                  "delegateSelector": "0x276f2add"
+                },
+                {
+                  "callSelector": "0xead7682d",
+                  "delegateSelector": "0xe73db94e"
+                },
+                {
+                  "callSelector": "0x501afe65",
+                  "delegateSelector": "0x57e1aa90"
+                },
+                {
+                  "callSelector": "0x0589216f",
+                  "delegateSelector": "0x9652438d"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x555344455f464143455400000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x534020e030c774aF1313129B64092307d2D29ef2",
+              "wires": [
+                {
+                  "callSelector": "0x36263eb6",
+                  "delegateSelector": "0x53863613"
+                },
+                {
+                  "callSelector": "0x8390b9e3",
+                  "delegateSelector": "0x40e49216"
+                },
+                {
+                  "callSelector": "0xb2eae5ad",
+                  "delegateSelector": "0x476a2a63"
+                },
+                {
+                  "callSelector": "0x0187148f",
+                  "delegateSelector": "0x86ac60f0"
+                },
+                {
+                  "callSelector": "0x02a4ea53",
+                  "delegateSelector": "0xcdac52ed"
+                },
+                {
+                  "callSelector": "0x2d4dcb89",
+                  "delegateSelector": "0x9343d9e1"
+                },
+                {
+                  "callSelector": "0xc77d9a52",
+                  "delegateSelector": "0x2def6620"
+                },
+                {
+                  "callSelector": "0xcc3afea7",
+                  "delegateSelector": "0x7a008f8f"
+                },
+                {
+                  "callSelector": "0xd41408b6",
+                  "delegateSelector": "0x496a06df"
+                },
+                {
+                  "callSelector": "0x857018a8",
+                  "delegateSelector": "0x335b7bbc"
+                },
+                {
+                  "callSelector": "0x5e934793",
+                  "delegateSelector": "0xe8683505"
+                },
+                {
+                  "callSelector": "0xf7aaca00",
+                  "delegateSelector": "0x68b9f8be"
+                },
+                {
+                  "callSelector": "0xaf2cad91",
+                  "delegateSelector": "0xda6fbfae"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x4641524d5f464143455400000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x4fCDe79651BE00d5e50196B84Aa03d938EA1177a",
+              "wires": [
+                {
+                  "callSelector": "0x0562322f",
+                  "delegateSelector": "0x47e7ef24"
+                },
+                {
+                  "callSelector": "0xba635acd",
+                  "delegateSelector": "0xd279c191"
+                },
+                {
+                  "callSelector": "0xdbc48b91",
+                  "delegateSelector": "0xf3fef3a3"
+                },
+                {
+                  "callSelector": "0x97b8a503",
+                  "delegateSelector": "0x9d76d913"
+                },
+                {
+                  "callSelector": "0xabc2722d",
+                  "delegateSelector": "0x9108d4f6"
+                },
+                {
+                  "callSelector": "0x6fbb8028",
+                  "delegateSelector": "0x180c92e7"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x4c415945525f5a45524f5f464143455400000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x34C32840FEE7c35df280BC9fd347265FB9700B7B",
+              "wires": [
+                {
+                  "callSelector": "0xd3eaf93c",
+                  "delegateSelector": "0x2c2d8089"
+                },
+                {
+                  "callSelector": "0x203f0e3e",
+                  "delegateSelector": "0x67d709d0"
+                },
+                {
+                  "callSelector": "0xb0848667",
+                  "delegateSelector": "0xce36a3fa"
+                },
+                {
+                  "callSelector": "0xc28a6f49",
+                  "delegateSelector": "0x8eb97d3f"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x4d41504c455f4641434554000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0xFD599A7C7d9Ac9BeA25C3e9FB7E5D9a7B6A9cD8B",
+              "wires": [
+                {
+                  "callSelector": "0x2e5f2675",
+                  "delegateSelector": "0x65d8480b"
+                },
+                {
+                  "callSelector": "0x248b7ef7",
+                  "delegateSelector": "0x635403f6"
+                },
+                {
+                  "callSelector": "0xe9479595",
+                  "delegateSelector": "0xc6529f84"
+                },
+                {
+                  "callSelector": "0xe5da5651",
+                  "delegateSelector": "0x57e1aa90"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x4d45524b4c5f4641434554000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0xd5042E22C404c90bA80c35d35b2780460606211C",
+              "wires": [
+                {
+                  "callSelector": "0xeb38879a",
+                  "delegateSelector": "0xbdac7ca3"
+                },
+                {
+                  "callSelector": "0x0e94baed",
+                  "delegateSelector": "0xed3596eb"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x4f54435f46414345540000000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x5d4704d1764c4D9eC85578a2B61222A2d1a7819A",
+              "wires": [
+                {
+                  "callSelector": "0x2b10c17e",
+                  "delegateSelector": "0x73d76dbe"
+                },
+                {
+                  "callSelector": "0x10cf716c",
+                  "delegateSelector": "0x9a67510f"
+                },
+                {
+                  "callSelector": "0xdd97978e",
+                  "delegateSelector": "0xf2e3a9c6"
+                },
+                {
+                  "callSelector": "0x133f4355",
+                  "delegateSelector": "0xd132d6fa"
+                },
+                {
+                  "callSelector": "0x58c3e3a9",
+                  "delegateSelector": "0x0779afe6"
+                },
+                {
+                  "callSelector": "0xe150074d",
+                  "delegateSelector": "0x21c0b342"
+                },
+                {
+                  "callSelector": "0xc4c9f473",
+                  "delegateSelector": "0x1912827e"
+                },
+                {
+                  "callSelector": "0x61f22644",
+                  "delegateSelector": "0xd86483e1"
+                },
+                {
+                  "callSelector": "0x56ecc7b3",
+                  "delegateSelector": "0x9dca63f9"
+                },
+                {
+                  "callSelector": "0x5d6d855f",
+                  "delegateSelector": "0xcaa6e354"
+                },
+                {
+                  "callSelector": "0xe1141572",
+                  "delegateSelector": "0x1bab58f5"
+                },
+                {
+                  "callSelector": "0x4fceffcc",
+                  "delegateSelector": "0x371167de"
+                },
+                {
+                  "callSelector": "0xf0d0ef76",
+                  "delegateSelector": "0x483d2617"
+                },
+                {
+                  "callSelector": "0x08580879",
+                  "delegateSelector": "0x2f8c85ee"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x50454e444c455f46414345540000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x071FC8FE1E689fFF1788C2f0eECeCbDf276CA8b6",
+              "wires": [
+                {
+                  "callSelector": "0x7bac30dd",
+                  "delegateSelector": "0x2b83cccd"
+                },
+                {
+                  "callSelector": "0x42d15090",
+                  "delegateSelector": "0x37cb8175"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x50534d5f46414345540000000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0xcd1770b2c1EFAE831E59Ab0078683Dc0B633a9E8",
+              "wires": [
+                {
+                  "callSelector": "0x5acb7053",
+                  "delegateSelector": "0x5acb7053"
+                },
+                {
+                  "callSelector": "0x115c48d5",
+                  "delegateSelector": "0x115c48d5"
+                },
+                {
+                  "callSelector": "0x81455ca9",
+                  "delegateSelector": "0x4010f777"
+                },
+                {
+                  "callSelector": "0xae39ba89",
+                  "delegateSelector": "0xa9b1bb46"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x535041524b5f5641554c545f4641434554000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x3322e32917a72d361925Cfb4BeadEB9457f68f6B",
+              "wires": [
+                {
+                  "callSelector": "0x7a1a0d66",
+                  "delegateSelector": "0x52180208"
+                },
+                {
+                  "callSelector": "0x30bfecee",
+                  "delegateSelector": "0x557b087c"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x535550455253544154455f464143455400000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x868210181cc67EE60514EA8fC022209669b62d8C",
+              "wires": [
+                {
+                  "callSelector": "0x3df1c8c6",
+                  "delegateSelector": "0x0f574ba7"
+                },
+                {
+                  "callSelector": "0x99b24551",
+                  "delegateSelector": "0x3a9758b2"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x5452414e534645525f41535345545f4641434554000000000000000000000000",
+            "config": {
+              "facet": "eth:0x40357a28192a36d39c6451C6B9b22aAc76477C2C",
+              "wires": [
+                {
+                  "callSelector": "0x439e2e45",
+                  "delegateSelector": "0xbeabacc8"
+                },
+                {
+                  "callSelector": "0x35c0b470",
+                  "delegateSelector": "0xa7811f56"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x554e49535741505f56335f464143455400000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x3961E687503a669f2805aB362F1bdC8bfCb8b21d",
+              "wires": [
+                {
+                  "callSelector": "0xa0d4564c",
+                  "delegateSelector": "0x73d76dbe"
+                },
+                {
+                  "callSelector": "0x82fc048e",
+                  "delegateSelector": "0x690b2c22"
+                },
+                {
+                  "callSelector": "0x3e34ecfc",
+                  "delegateSelector": "0x62f609da"
+                },
+                {
+                  "callSelector": "0x256c49f1",
+                  "delegateSelector": "0x916afd77"
+                },
+                {
+                  "callSelector": "0x8603290c",
+                  "delegateSelector": "0xf380eb03"
+                },
+                {
+                  "callSelector": "0xbc206c37",
+                  "delegateSelector": "0xb40b7e0b"
+                },
+                {
+                  "callSelector": "0x4d8f42b2",
+                  "delegateSelector": "0x4443e82d"
+                },
+                {
+                  "callSelector": "0x62facbf1",
+                  "delegateSelector": "0x69ee06c3"
+                },
+                {
+                  "callSelector": "0x3813ca9c",
+                  "delegateSelector": "0x0238451d"
+                },
+                {
+                  "callSelector": "0xa2060f40",
+                  "delegateSelector": "0xba92d50c"
+                },
+                {
+                  "callSelector": "0x22b56c8d",
+                  "delegateSelector": "0xf3e86c39"
+                },
+                {
+                  "callSelector": "0x8ca56a2e",
+                  "delegateSelector": "0xd86483e1"
+                },
+                {
+                  "callSelector": "0x7528b88f",
+                  "delegateSelector": "0xc503f5e0"
+                },
+                {
+                  "callSelector": "0x2943f46c",
+                  "delegateSelector": "0xecbe2511"
+                },
+                {
+                  "callSelector": "0x70a7401a",
+                  "delegateSelector": "0x4d31ce22"
+                },
+                {
+                  "callSelector": "0xed8d14b3",
+                  "delegateSelector": "0x180c92e7"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x554e49535741505f56345f464143455400000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0xE621D9f81c93562f2FA8B210324e80BD0B33D096",
+              "wires": [
+                {
+                  "callSelector": "0xb37a6be8",
+                  "delegateSelector": "0xceb84d3a"
+                },
+                {
+                  "callSelector": "0xfc9ddeb1",
+                  "delegateSelector": "0x6a9dd13c"
+                },
+                {
+                  "callSelector": "0xec7ba5d8",
+                  "delegateSelector": "0xbf78a7d2"
+                },
+                {
+                  "callSelector": "0x033bee43",
+                  "delegateSelector": "0x6d5c723d"
+                },
+                {
+                  "callSelector": "0x48b90d95",
+                  "delegateSelector": "0x14c65511"
+                },
+                {
+                  "callSelector": "0xde34d3dd",
+                  "delegateSelector": "0x4763b720"
+                },
+                {
+                  "callSelector": "0x71d8102c",
+                  "delegateSelector": "0xba22c814"
+                },
+                {
+                  "callSelector": "0x40018249",
+                  "delegateSelector": "0xfb91d1d9"
+                },
+                {
+                  "callSelector": "0x299cba5b",
+                  "delegateSelector": "0xe6d6a85a"
+                },
+                {
+                  "callSelector": "0x014d7919",
+                  "delegateSelector": "0x0387f28a"
+                },
+                {
+                  "callSelector": "0x304eca7b",
+                  "delegateSelector": "0xcaf73d1d"
+                },
+                {
+                  "callSelector": "0x720eb7cc",
+                  "delegateSelector": "0xd06abf74"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x555344535f464143455400000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x6FE85B948d84652A3c178a4a3ff512e7926914c4",
+              "wires": [
+                {
+                  "callSelector": "0xa33b0d25",
+                  "delegateSelector": "0x6817031b"
+                },
+                {
+                  "callSelector": "0x536f6b7e",
+                  "delegateSelector": "0xa0712d68"
+                },
+                {
+                  "callSelector": "0x96122b62",
+                  "delegateSelector": "0x42966c68"
+                },
+                {
+                  "callSelector": "0x7b8334c4",
+                  "delegateSelector": "0xfbfa77cf"
+                },
+                {
+                  "callSelector": "0x576b6e40",
+                  "delegateSelector": "0x335b7bbc"
+                },
+                {
+                  "callSelector": "0xf038999a",
+                  "delegateSelector": "0xe8683505"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x57454554485f4641434554000000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0x2169004F6f1aC7c474C9a2bE27CA810142c273C8",
+              "wires": [
+                {
+                  "callSelector": "0x3fce4685",
+                  "delegateSelector": "0xe2bbb158"
+                },
+                {
+                  "callSelector": "0xd37e3666",
+                  "delegateSelector": "0x3a2bf94e"
+                },
+                {
+                  "callSelector": "0xac73749e",
+                  "delegateSelector": "0x2dd54c6e"
+                },
+                {
+                  "callSelector": "0xcca23702",
+                  "delegateSelector": "0x9108d4f6"
+                },
+                {
+                  "callSelector": "0x323b72b3",
+                  "delegateSelector": "0xf750c581"
+                },
+                {
+                  "callSelector": "0x2fc4d383",
+                  "delegateSelector": "0x323bdfb6"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x575241505f50524f58595f4554485f4641434554000000000000000000000000",
+            "config": {
+              "facet": "eth:0x6A3B88379f8d3961fCCBBfA691Ea0574a63fcefE",
+              "wires": [
+                {
+                  "callSelector": "0xf270ee7c",
+                  "delegateSelector": "0x4c84c1c8"
+                },
+                {
+                  "callSelector": "0x805b396f",
+                  "delegateSelector": "0x9ee2e58a"
+                }
+              ]
+            }
+          },
+          {
+            "id": "0x5753544554485f46414345540000000000000000000000000000000000000000",
+            "config": {
+              "facet": "eth:0xfD1b981580bFcdF0C96860fDA9e79E10Df6A538b",
+              "wires": [
+                {
+                  "callSelector": "0xd8e09fd3",
+                  "delegateSelector": "0xb6b55f25"
+                },
+                {
+                  "callSelector": "0x1ab9366f",
+                  "delegateSelector": "0x745400c9"
+                },
+                {
+                  "callSelector": "0x30a16dd9",
+                  "delegateSelector": "0xf8444436"
+                },
+                {
+                  "callSelector": "0x4b7f76fb",
+                  "delegateSelector": "0x357590c1"
+                },
+                {
+                  "callSelector": "0xde738c2f",
+                  "delegateSelector": "0xb33c0a77"
+                },
+                {
+                  "callSelector": "0xc45d16c7",
+                  "delegateSelector": "0xf8496615"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "implementationNames": {
+        "eth:0x9A56C59453a2fBAe01Ba46045441490e5C7a664d": "Beacon"
       }
     },
     {
@@ -2685,6 +3941,19 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0x9f622D74FD49fe7204805B14824eF01B1Cf04333",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0x9f622D74FD49fe7204805B14824eF01B1Cf04333": ""
+      }
+    },
+    {
       "name": "USD Coin Token",
       "address": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
       "type": "Contract",
@@ -2733,7 +4002,7 @@
         "RECEIVE_WITH_AUTHORIZATION_TYPEHASH": "0xd099cc98ef71107a616c4f0f941f04c322d8e254fe26b3c6668db87aae413de8",
         "rescuer": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "USDC",
-        "totalSupply": "50409408897584471",
+        "totalSupply": "50463080835294015",
         "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267",
         "version": "2"
       },
@@ -2792,23 +4061,36 @@
           ]
         ],
         "$upgradeCount": 4,
-        "currentPeriodMintedAmount": "766217433352603471",
+        "currentPeriodMintedAmount": "845359168886154001",
         "custodyAddress": "eth:0xb3696a817D01C8623E66D156B6798291fa10a46d",
         "decimals": 18,
-        "getCurrentPeriodStartTime": 1789171200,
-        "getNextDailyLimitResetTimestamp": 1789257600,
+        "getCurrentPeriodStartTime": 1789257600,
+        "getNextDailyLimitResetTimestamp": 1789344000,
         "lrtConfig": "eth:0x947Cb49334e6571ccBFEF1f1f1178d8469D65ec7",
         "maxMintAmountPerDay": "5000000000000000000000",
         "name": "rsETH",
         "paused": false,
-        "periodStartTime": 1789171200,
-        "remainingDailyMintLimit": "4999233782566647396529",
+        "periodStartTime": 1789257600,
+        "remainingDailyMintLimit": "4999154640831113845999",
         "symbol": "rsETH",
-        "totalSupply": "407252489544333667255846"
+        "totalSupply": "407253334903502553409847"
       },
       "implementationNames": {
         "eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7": "TransparentUpgradeableProxy",
         "eth:0x7159107483e623707C18C6E06cBc095bd0717783": "RSETH"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0xa23d4484B2c18DC9FdA6450D314E1c56200a06fF",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0xa23d4484B2c18DC9FdA6450D314E1c56200a06fF": ""
       }
     },
     {
@@ -2835,17 +4117,17 @@
         ],
         "$upgradeCount": 1,
         "asset": "eth:0xdC035D45d973E3EC169d2276DDab16f1e407384F",
-        "chi": "1109292018533217417054130330",
+        "chi": "1109404422028329183278843681",
         "decimals": 18,
         "DOMAIN_SEPARATOR": "0x8b772c141b7d822c799262c0fa58f5b6b522910e811414d0cf217f27294bbbf8",
         "getImplementation": "eth:0x4e7991e5C547ce825BdEb665EE14a3274f9F61e0",
         "name": "Savings USDS",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
-        "rho": 1789212971,
+        "rho": 1789303319,
         "ssr": "1000000001121484774769253326",
         "symbol": "sUSDS",
-        "totalAssets": "4611353558949747179904768673",
-        "totalSupply": "4157023565875101520133458870",
+        "totalAssets": "4647784021655798379574278325",
+        "totalSupply": "4189440177475600114865798009",
         "UPGRADE_INTERFACE_VERSION": "5.0.0",
         "usds": "eth:0xdC035D45d973E3EC169d2276DDab16f1e407384F",
         "usdsJoin": "eth:0x3C0f895007CA717Aa01c8693e59DF1e8C3777FEB",
@@ -2928,13 +4210,13 @@
         "description": "RedStone Price Feed for BTC",
         "getDataFeedId": "0x4254430000000000000000000000000000000000000000000000000000000000",
         "getPriceFeedAdapter": "eth:0xd72a6BA4a87DDB33e801b3f1c7750b2d0911fC6C",
-        "latestAnswer": 7732253240000,
+        "latestAnswer": 7658284756498,
         "latestRound": 1,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 7732253240000,
-          "startedAt": 1789176143,
-          "updatedAt": 1789176143,
+          "answer": 7658284756498,
+          "startedAt": 1789291967,
+          "updatedAt": 1789291967,
           "answeredInRound": 1
         },
         "version": 1
@@ -2963,12 +4245,12 @@
       "values": {
         "$immutable": true,
         "decimals": 18,
-        "getCollateralRate": 4895085,
-        "getExchangeRate": "1171579221514033397",
-        "getTotalCollateral": 1817679179116,
+        "getCollateralRate": 930438,
+        "getExchangeRate": "1171646298039254185",
+        "getTotalCollateral": 345501760116,
         "name": "Rocket Pool ETH",
         "symbol": "rETH",
-        "totalSupply": "316946036860567547949546",
+        "totalSupply": "316932031272577233590839",
         "version": 1
       },
       "implementationNames": {
@@ -3070,9 +4352,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 441962083046,
+        "scaledTotalSupply": 442860379935,
         "symbol": "spcbBTC",
-        "totalSupply": 442037381930,
+        "totalSupply": 442935840560,
         "UNDERLYING_ASSET_ADDRESS": "eth:0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
       },
       "fieldMeta": {
@@ -3100,7 +4382,7 @@
         "$immutable": true,
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
-        "latestAnswer": 279656139360,
+        "latestAnswer": 273238222793,
         "weeth": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee"
       },
       "implementationNames": {
@@ -3190,7 +4472,7 @@
         "name": "Renzo Restaked ETH",
         "roleManager": "eth:0x4994EFc62101A9e3F885d872514c2dC7b3235849",
         "symbol": "ezETH",
-        "totalSupply": "41322108331355609603359"
+        "totalSupply": "41322095057708306493672"
       },
       "implementationNames": {
         "eth:0xbf5495Efe5DB9ce00f80364C8B423567e58d2110": "TransparentUpgradeableProxy",
@@ -3214,7 +4496,7 @@
         "decimals": 18,
         "name": "Wrapped Ether",
         "symbol": "WETH",
-        "totalSupply": "2029807393411516300107271"
+        "totalSupply": "2048961528570920452261744"
       },
       "implementationNames": {
         "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": "WETH9"
@@ -3248,9 +4530,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": "987242407615655012848956171",
+        "scaledTotalSupply": "958046898089312495408232265",
         "symbol": "spUSDS",
-        "totalSupply": "1027710070064627865408331202",
+        "totalSupply": "997384071591576909957425151",
         "UNDERLYING_ASSET_ADDRESS": "eth:0xdC035D45d973E3EC169d2276DDab16f1e407384F"
       },
       "fieldMeta": {
@@ -3394,13 +4676,26 @@
         "RECEIVE_WITH_AUTHORIZATION_TYPEHASH": "0xd099cc98ef71107a616c4f0f941f04c322d8e254fe26b3c6668db87aae413de8",
         "rescuer": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "cbBTC",
-        "totalSupply": 5026380957135,
+        "totalSupply": 5018216383015,
         "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267",
         "version": "2"
       },
       "implementationNames": {
         "eth:0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf": "FiatTokenProxy",
         "eth:0x7458bfDC30034EB860B265E6068121D18Fa5Aa72": "FiatTokenV2_1"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0xcd1770b2c1EFAE831E59Ab0078683Dc0B633a9E8",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0xcd1770b2c1EFAE831E59Ab0078683Dc0B633a9E8": ""
       }
     },
     {
@@ -3451,7 +4746,7 @@
         "DOMAIN_SEPARATOR": "0xe481930428c599d86cf3522b2e43b0e3006041a472f66cb41fa924ac01d3a22b",
         "eETH": "eth:0x35fA164735182de50811E8e2E824cFb9B6118ac2",
         "getImplementation": "eth:0xA6Ca0607190d03CF16fe6F2865Cf40c3D160ccf3",
-        "getRate": "1103496999018113785",
+        "getRate": "1103572874124010031",
         "liquidityPool": "eth:0x308861A430be4cce5502d0A12724771Fc6DaF216",
         "MAX_PAUSE_DURATION": 2592000,
         "MIN_PAUSE_DURATION": 28800,
@@ -3462,7 +4757,7 @@
         "pauseUntilDuration": 28800,
         "roleRegistry": "eth:0x62247D29B4B9BECf4BB73E0c722cf6445cfC7cE9",
         "symbol": "weETH",
-        "totalSupply": "1947667272364878216324479"
+        "totalSupply": "1946286644858105296834481"
       },
       "implementationNames": {
         "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee": "UUPSProxy",
@@ -3499,7 +4794,7 @@
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
         "scaledTotalSupply": "20847208005138735576",
         "symbol": "sptBTC",
-        "totalSupply": "20851732053705771602",
+        "totalSupply": "20851732053705771767",
         "UNDERLYING_ASSET_ADDRESS": "eth:0x18084fbA666a33d37592fA2633fD49a74DD93a88"
       },
       "fieldMeta": {
@@ -3531,12 +4826,25 @@
       "values": {
         "$immutable": true,
         "decimals": 18,
-        "latestAnswer": "997214899011112401",
+        "latestAnswer": "997255991198823835",
         "reth": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393",
         "rethETHFeed": "eth:0x536218f9E9Eb48863970252233c8F271f554C2d0"
       },
       "implementationNames": {
         "eth:0xd0B378dA552D06B6D3497e4b5ba2A83418f78d06": "RETHRatioOracle"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0xd5042E22C404c90bA80c35d35b2780460606211C",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0xd5042E22C404c90bA80c35d35b2780460606211C": ""
       }
     },
     {
@@ -3649,7 +4957,7 @@
         "name": "USDS Stablecoin",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
         "symbol": "USDS",
-        "totalSupply": "6671293537271575743217343620",
+        "totalSupply": "6704081429208346356699302146",
         "UPGRADE_INTERFACE_VERSION": "5.0.0",
         "version": "1"
       },
@@ -3733,7 +5041,7 @@
         "supplyControl": "eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF",
         "supplyControllerDeprecated": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "USDG",
-        "totalSupply": 361019157045374
+        "totalSupply": 359991654453241
       },
       "errors": { "proxiableUUID": "Processing error occurred." },
       "implementationNames": {
@@ -3779,6 +5087,19 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0xE621D9f81c93562f2FA8B210324e80BD0B33D096",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153747,
+      "sinceBlock": 25042898,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0xE621D9f81c93562f2FA8B210324e80BD0B33D096": ""
+      }
+    },
+    {
       "name": "AToken",
       "address": "eth:0xe7dF13b8e3d6740fe17CBE928C7334243d86c92f",
       "type": "Contract",
@@ -3806,9 +5127,9 @@
         "POOL": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
         "proxyAdmin": "eth:0x542DBa469bdE58FAeE189ffB60C6b49CE60E0738",
         "RESERVE_TREASURY_ADDRESS": "eth:0xb137E7d16564c81ae2b0C8ee6B55De81dd46ECe5",
-        "scaledTotalSupply": 278799066258119,
+        "scaledTotalSupply": 279586902428830,
         "symbol": "spUSDT",
-        "totalSupply": 324695403427738,
+        "totalSupply": 325644604673587,
         "UNDERLYING_ASSET_ADDRESS": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7"
       },
       "fieldMeta": {
@@ -3819,6 +5140,19 @@
       "implementationNames": {
         "eth:0xe7dF13b8e3d6740fe17CBE928C7334243d86c92f": "InitializableImmutableAdminUpgradeabilityProxy",
         "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6": "AToken"
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0xe94A71345C2774f48fE1D6FEa23FdCf906668897",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153723,
+      "sinceBlock": 25042896,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0xe94A71345C2774f48fE1D6FEa23FdCf906668897": ""
       }
     },
     {
@@ -3836,7 +5170,7 @@
         "$immutable": true,
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
-        "latestAnswer": 315210325491,
+        "latestAnswer": 307993675409,
         "steth": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
       },
       "implementationNames": {
@@ -4087,6 +5421,32 @@
       }
     },
     {
+      "name": "",
+      "address": "eth:0xfD1b981580bFcdF0C96860fDA9e79E10Df6A538b",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153747,
+      "sinceBlock": 25042898,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0xfD1b981580bFcdF0C96860fDA9e79E10Df6A538b": ""
+      }
+    },
+    {
+      "name": "",
+      "address": "eth:0xFD599A7C7d9Ac9BeA25C3e9FB7E5D9a7B6A9cD8B",
+      "type": "Contract",
+      "unverified": true,
+      "proxyType": "immutable",
+      "sinceTimestamp": 1778153735,
+      "sinceBlock": 25042897,
+      "values": { "$immutable": true },
+      "implementationNames": {
+        "eth:0xFD599A7C7d9Ac9BeA25C3e9FB7E5D9a7B6A9cD8B": ""
+      }
+    },
+    {
       "name": "RETHExchangeRateOracle",
       "address": "eth:0xFDdf8D19D092839A26b31365c927cA236B5086cf",
       "type": "Contract",
@@ -4101,7 +5461,7 @@
         "$immutable": true,
         "decimals": 8,
         "ethSource": "eth:0x2750e4CB635aF1FCCFB10C0eA54B5b5bfC2759b6",
-        "latestAnswer": 296910025433,
+        "latestAnswer": 290092806488,
         "reth": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393"
       },
       "implementationNames": {
@@ -4133,9 +5493,102 @@
       "implementationNames": {
         "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23": "EACAggregatorProxy"
       }
+    },
+    {
+      "name": "V3RateStrategyFactory",
+      "address": "eth:0xfE57e187EF6285e90d7049e6a21571aa47cF11a2",
+      "type": "Contract",
+      "sourceHashes": [
+        "0x196188f910314b766dbd781d0b2ada46361bf52bc637e92550b391771bee1b2d",
+        "0xfedc0a75eeb56c69890a337ba0000d95790aa740e9e072112b8331aefdd60901"
+      ],
+      "proxyType": "EIP1967 proxy",
+      "sinceTimestamp": 1685120207,
+      "sinceBlock": 17344595,
+      "values": {
+        "$admin": "eth:0x883A82BDd3d07ae6ACfD151020faD350df25087e",
+        "$implementation": "eth:0xD1A42B609362655e1290Ec3B77fCeA304D1cba99",
+        "$pastUpgrades": [
+          [
+            "2023-05-26T16:56:47.000Z",
+            "0xef863a7ae0138f8da8a9084bba205b8ce3fad42c24800043794939bdca9806a2",
+            ["eth:0xD1A42B609362655e1290Ec3B77fCeA304D1cba99"]
+          ]
+        ],
+        "$upgradeCount": 1,
+        "ADDRESSES_PROVIDER": "eth:0x02C3eA4e34C0cBd694D2adFa2c690EECbC1793eE",
+        "getAllStrategies": [
+          "eth:0xeC4cf692c18E62159a39704Aa1Db82ca2306fF90",
+          "eth:0x4d988568b5f0462B08d1F40bA1F5f17ad2D24F76",
+          "eth:0x764b4AB9bCA18eB633d92368F725765Ebb8f047C",
+          "eth:0x0D56700c90a690D8795D6C148aCD94b12932f4E3",
+          "eth:0xf2812d7a07573322D4Db3C31239C837081D8294E",
+          "eth:0x995c1A1Ee993031B9f3F268dD2B5E2AD7FE2CFdc",
+          "eth:0x36e9A9e26713fb45EB957609Ebb0fa37d9114d28",
+          "eth:0x33425b2CFa30c591120CC7520C284F0B5af55c9c",
+          "eth:0xbc8A68B0ab0617D7c90d15bb1601B25d795Dc4c8",
+          "eth:0xeCe550fB709C85CE9FC999A033447Ee2DF3ce55c",
+          "eth:0xD2139d6d63Acb1e7Cc91cE32bbD86eFb17eBEe46",
+          "eth:0xc1077B2De7b328A84c66A3e419369F8537DC1cFe",
+          "eth:0xD7A8461e6aF708a086D8285f8fD900309336347c",
+          "eth:0xE27c3f9d35e00ae48144b35DD157F72AaF36c77e",
+          "eth:0xDe5Dde40E12763464dc859A9F03793988dE953FB",
+          "eth:0x0d195221329c38A706966eB1da89636160F27c2a",
+          "eth:0xa8632b2f0A3C5327a77ee51a47A168B6490A7178",
+          "eth:0xDD94eC5C14407e0bd6760c8eBDcD4Ec1327D3656",
+          "eth:0xDCf13E780da10Bccb277080DC67F6f89598FCa54",
+          "eth:0x75a1397c72e2965447D2282Dd99eFC75cC080396"
+        ]
+      },
+      "implementationNames": {
+        "eth:0xfE57e187EF6285e90d7049e6a21571aa47cF11a2": "TransparentUpgradeableProxy",
+        "eth:0xD1A42B609362655e1290Ec3B77fCeA304D1cba99": "V3RateStrategyFactory"
+      }
     }
   ],
   "abis": {
+    "eth:0x026a5B6114431d8F3eF2fA0E1B2EDdDccA9c540E": [
+      "constructor(address pool)",
+      "event Approval(address indexed owner, address indexed spender, uint256 value)",
+      "event BorrowAllowanceDelegated(address indexed fromUser, address indexed toUser, address indexed asset, uint256 amount)",
+      "event Burn(address indexed from, uint256 amount, uint256 currentBalance, uint256 balanceIncrease, uint256 avgStableRate, uint256 newTotalSupply)",
+      "event Initialized(address indexed underlyingAsset, address indexed pool, address incentivesController, uint8 debtTokenDecimals, string debtTokenName, string debtTokenSymbol, bytes params)",
+      "event Mint(address indexed user, address indexed onBehalfOf, uint256 amount, uint256 currentBalance, uint256 balanceIncrease, uint256 newRate, uint256 avgStableRate, uint256 newTotalSupply)",
+      "event Transfer(address indexed from, address indexed to, uint256 value)",
+      "function DEBT_TOKEN_REVISION() view returns (uint256)",
+      "function DELEGATION_WITH_SIG_TYPEHASH() view returns (bytes32)",
+      "function DOMAIN_SEPARATOR() view returns (bytes32)",
+      "function EIP712_REVISION() view returns (bytes)",
+      "function POOL() view returns (address)",
+      "function UNDERLYING_ASSET_ADDRESS() view returns (address)",
+      "function allowance(address, address) view returns (uint256)",
+      "function approve(address, uint256) returns (bool)",
+      "function approveDelegation(address delegatee, uint256 amount)",
+      "function balanceOf(address account) view returns (uint256)",
+      "function borrowAllowance(address fromUser, address toUser) view returns (uint256)",
+      "function burn(address from, uint256 amount) returns (uint256, uint256)",
+      "function decimals() view returns (uint8)",
+      "function decreaseAllowance(address, uint256) returns (bool)",
+      "function delegationWithSig(address delegator, address delegatee, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)",
+      "function getAverageStableRate() view returns (uint256)",
+      "function getIncentivesController() view returns (address)",
+      "function getSupplyData() view returns (uint256, uint256, uint256, uint40)",
+      "function getTotalSupplyAndAvgRate() view returns (uint256, uint256)",
+      "function getTotalSupplyLastUpdated() view returns (uint40)",
+      "function getUserLastUpdated(address user) view returns (uint40)",
+      "function getUserStableRate(address user) view returns (uint256)",
+      "function increaseAllowance(address, uint256) returns (bool)",
+      "function initialize(address initializingPool, address underlyingAsset, address incentivesController, uint8 debtTokenDecimals, string debtTokenName, string debtTokenSymbol, bytes params)",
+      "function mint(address user, address onBehalfOf, uint256 amount, uint256 rate) returns (bool, uint256, uint256)",
+      "function name() view returns (string)",
+      "function nonces(address owner) view returns (uint256)",
+      "function principalBalanceOf(address user) view returns (uint256)",
+      "function setIncentivesController(address controller)",
+      "function symbol() view returns (string)",
+      "function totalSupply() view returns (uint256)",
+      "function transfer(address, uint256) returns (bool)",
+      "function transferFrom(address, address, uint256) returns (bool)"
+    ],
     "eth:0x02C3eA4e34C0cBd694D2adFa2c690EECbC1793eE": [
       "constructor(string marketId, address owner)",
       "event ACLAdminUpdated(address indexed oldAddress, address indexed newAddress)",
@@ -4834,6 +6287,25 @@
       "function slot(uint8) view returns (address)",
       "function wards(address) view returns (uint256)",
       "function wat() view returns (bytes32)"
+    ],
+    "eth:0x3254F7cd0565aA67eEdC86c2fB608BE48d5cCd78": [
+      "constructor(address pool, address configurator, address oracle, address aTokenImpl, address vTokenImpl, address sTokenImpl, address rewardsController, address collector, address rateStrategiesFactory)",
+      "function ATOKEN_IMPL() view returns (address)",
+      "function COLLECTOR() view returns (address)",
+      "function ORACLE() view returns (address)",
+      "function POOL() view returns (address)",
+      "function POOL_CONFIGURATOR() view returns (address)",
+      "function RATE_STRATEGIES_FACTORY() view returns (address)",
+      "function REWARDS_CONTROLLER() view returns (address)",
+      "function STOKEN_IMPL() view returns (address)",
+      "function VTOKEN_IMPL() view returns (address)",
+      "function listAssets(tuple(string networkName, string networkAbbreviation) context, tuple(address asset, string assetSymbol, address priceFeed, tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) rateStrategyParams, uint256 enabledToBorrow, uint256 stableRateModeEnabled, uint256 borrowableInIsolation, uint256 withSiloedBorrowing, uint256 flashloanable, uint256 ltv, uint256 liqThreshold, uint256 liqBonus, uint256 reserveFactor, uint256 supplyCap, uint256 borrowCap, uint256 debtCeiling, uint256 liqProtocolFee, uint8 eModeCategory)[] listings)",
+      "function listAssetsCustom(tuple(string networkName, string networkAbbreviation) context, tuple(tuple(address asset, string assetSymbol, address priceFeed, tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) rateStrategyParams, uint256 enabledToBorrow, uint256 stableRateModeEnabled, uint256 borrowableInIsolation, uint256 withSiloedBorrowing, uint256 flashloanable, uint256 ltv, uint256 liqThreshold, uint256 liqBonus, uint256 reserveFactor, uint256 supplyCap, uint256 borrowCap, uint256 debtCeiling, uint256 liqProtocolFee, uint8 eModeCategory) base, tuple(address aToken, address vToken, address sToken) implementations)[] listings)",
+      "function updateBorrowSide(tuple(address asset, uint256 enabledToBorrow, uint256 flashloanable, uint256 stableRateModeEnabled, uint256 borrowableInIsolation, uint256 withSiloedBorrowing, uint256 reserveFactor)[] updates)",
+      "function updateCaps(tuple(address asset, uint256 supplyCap, uint256 borrowCap)[] updates)",
+      "function updateCollateralSide(tuple(address asset, uint256 ltv, uint256 liqThreshold, uint256 liqBonus, uint256 debtCeiling, uint256 liqProtocolFee, uint256 eModeCategory)[] updates)",
+      "function updatePriceFeeds(tuple(address asset, address priceFeed)[] updates)",
+      "function updateRateStrategies(tuple(address asset, tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) params)[] updates)"
     ],
     "eth:0x3300f198988e4C9C63F75dF86De36421f06af8c4": [
       "constructor()",
@@ -5862,6 +7334,33 @@
       "function upgradeTo(address newImplementation)",
       "function upgradeToAndCall(address newImplementation, bytes data) payable"
     ],
+    "eth:0x7602cc457786c06778258A0b004f2D66c54386fC": [
+      "constructor()",
+      "error InvalidOptionType(uint16 optionType)",
+      "error LzTokenUnavailable()",
+      "error SafeCastOverflowedUintDowncast(uint8 bits, uint256 value)",
+      "error SafeERC20FailedOperation(address token)",
+      "function LISTING_ENGINE() view returns (address)",
+      "function PAYLOAD_ARBITRUM() view returns (address)",
+      "function PAYLOAD_AVALANCHE() view returns (address)",
+      "function PAYLOAD_BASE() view returns (address)",
+      "function PAYLOAD_GNOSIS() view returns (address)",
+      "function PAYLOAD_OPTIMISM() view returns (address)",
+      "function PAYLOAD_ROBINHOOD() view returns (address)",
+      "function PAYLOAD_UNICHAIN() view returns (address)",
+      "function PAYLOAD_XLAYER() view returns (address)",
+      "function borrowsUpdates() view returns (tuple(address asset, uint256 enabledToBorrow, uint256 flashloanable, uint256 stableRateModeEnabled, uint256 borrowableInIsolation, uint256 withSiloedBorrowing, uint256 reserveFactor)[])",
+      "function capsUpdates() view returns (tuple(address asset, uint256 supplyCap, uint256 borrowCap)[])",
+      "function collateralsUpdates() view returns (tuple(address asset, uint256 ltv, uint256 liqThreshold, uint256 liqBonus, uint256 debtCeiling, uint256 liqProtocolFee, uint256 eModeCategory)[])",
+      "function execute()",
+      "function getPoolContext() pure returns (tuple(string networkName, string networkAbbreviation))",
+      "function isExecutable() view returns (bool result)",
+      "function newListings() view returns (tuple(address asset, string assetSymbol, address priceFeed, tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) rateStrategyParams, uint256 enabledToBorrow, uint256 stableRateModeEnabled, uint256 borrowableInIsolation, uint256 withSiloedBorrowing, uint256 flashloanable, uint256 ltv, uint256 liqThreshold, uint256 liqBonus, uint256 reserveFactor, uint256 supplyCap, uint256 borrowCap, uint256 debtCeiling, uint256 liqProtocolFee, uint8 eModeCategory)[])",
+      "function newListingsCustom() view returns (tuple(tuple(address asset, string assetSymbol, address priceFeed, tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) rateStrategyParams, uint256 enabledToBorrow, uint256 stableRateModeEnabled, uint256 borrowableInIsolation, uint256 withSiloedBorrowing, uint256 flashloanable, uint256 ltv, uint256 liqThreshold, uint256 liqBonus, uint256 reserveFactor, uint256 supplyCap, uint256 borrowCap, uint256 debtCeiling, uint256 liqProtocolFee, uint8 eModeCategory) base, tuple(address aToken, address vToken, address sToken) implementations)[])",
+      "function officeHours(uint256 timestamp) pure returns (bool)",
+      "function priceFeedsUpdates() view returns (tuple(address asset, address priceFeed)[])",
+      "function rateStrategiesUpdates() view returns (tuple(address asset, tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) params)[])"
+    ],
     "eth:0x779224df1c756b4EDD899854F32a53E8c2B2ce5d": [
       "constructor(address admin)",
       "event Upgraded(address indexed implementation)",
@@ -6044,6 +7543,45 @@
       "function setController(address _accessController)",
       "function transferOwnership(address _to)",
       "function version() view returns (uint256)"
+    ],
+    "eth:0x86C71796CcDB31c3997F8Ec5C2E3dB3e9e40b985": [
+      "constructor(address pool)",
+      "event Approval(address indexed owner, address indexed spender, uint256 value)",
+      "event BorrowAllowanceDelegated(address indexed fromUser, address indexed toUser, address indexed asset, uint256 amount)",
+      "event Burn(address indexed from, address indexed target, uint256 value, uint256 balanceIncrease, uint256 index)",
+      "event Initialized(address indexed underlyingAsset, address indexed pool, address incentivesController, uint8 debtTokenDecimals, string debtTokenName, string debtTokenSymbol, bytes params)",
+      "event Mint(address indexed caller, address indexed onBehalfOf, uint256 value, uint256 balanceIncrease, uint256 index)",
+      "event Transfer(address indexed from, address indexed to, uint256 value)",
+      "function DEBT_TOKEN_REVISION() view returns (uint256)",
+      "function DELEGATION_WITH_SIG_TYPEHASH() view returns (bytes32)",
+      "function DOMAIN_SEPARATOR() view returns (bytes32)",
+      "function EIP712_REVISION() view returns (bytes)",
+      "function POOL() view returns (address)",
+      "function UNDERLYING_ASSET_ADDRESS() view returns (address)",
+      "function allowance(address, address) view returns (uint256)",
+      "function approve(address, uint256) returns (bool)",
+      "function approveDelegation(address delegatee, uint256 amount)",
+      "function balanceOf(address user) view returns (uint256)",
+      "function borrowAllowance(address fromUser, address toUser) view returns (uint256)",
+      "function burn(address from, uint256 amount, uint256 index) returns (uint256)",
+      "function decimals() view returns (uint8)",
+      "function decreaseAllowance(address, uint256) returns (bool)",
+      "function delegationWithSig(address delegator, address delegatee, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)",
+      "function getIncentivesController() view returns (address)",
+      "function getPreviousIndex(address user) view returns (uint256)",
+      "function getScaledUserBalanceAndSupply(address user) view returns (uint256, uint256)",
+      "function increaseAllowance(address, uint256) returns (bool)",
+      "function initialize(address initializingPool, address underlyingAsset, address incentivesController, uint8 debtTokenDecimals, string debtTokenName, string debtTokenSymbol, bytes params)",
+      "function mint(address user, address onBehalfOf, uint256 amount, uint256 index) returns (bool, uint256)",
+      "function name() view returns (string)",
+      "function nonces(address owner) view returns (uint256)",
+      "function scaledBalanceOf(address user) view returns (uint256)",
+      "function scaledTotalSupply() view returns (uint256)",
+      "function setIncentivesController(address controller)",
+      "function symbol() view returns (string)",
+      "function totalSupply() view returns (uint256)",
+      "function transfer(address, uint256) returns (bool)",
+      "function transferFrom(address, address, uint256) returns (bool)"
     ],
     "eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB": [
       "constructor(address _singleton)"
@@ -6349,6 +7887,40 @@
       "function initialize(address _logic, bytes _data) payable",
       "function upgradeTo(address newImplementation)",
       "function upgradeToAndCall(address newImplementation, bytes data) payable"
+    ],
+    "eth:0x9A56C59453a2fBAe01Ba46045441490e5C7a664d": [
+      "constructor(address admin)",
+      "error AccessControlBadConfirmation()",
+      "error AccessControlUnauthorizedAccount(address account, bytes32 neededRole)",
+      "error CallSelectorAlreadyWired(bytes4 callSelector)",
+      "error CallSelectorHardcoded(bytes4 callSelector)",
+      "error EmptyArray()",
+      "error EmptyFacet()",
+      "error IntegrationNotFound(bytes32 id)",
+      "error ReentrancyGuardReentrantCall()",
+      "error ZeroAdmin()",
+      "error ZeroFacet()",
+      "event IntegrationRemoved(bytes32 indexed id)",
+      "event IntegrationSet(bytes32 indexed id, tuple(address facet, tuple(bytes4 callSelector, bytes4 delegateSelector)[] wires) config)",
+      "event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)",
+      "event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)",
+      "event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)",
+      "function DEFAULT_ADMIN_ROLE() view returns (bytes32)",
+      "function getConfig(bytes32 integrationId) view returns (tuple(address facet, tuple(bytes4 callSelector, bytes4 delegateSelector)[] wires))",
+      "function getConfigs(bytes32[] integrationIds) view returns (tuple(address facet, tuple(bytes4 callSelector, bytes4 delegateSelector)[] wires)[] integrationsConfig_)",
+      "function getDispatch(bytes4 callSelector) view returns (tuple(address facet, bytes4 delegateSelector) dispatch)",
+      "function getDispatches(bytes4[] callSelectors) view returns (tuple(address facet, bytes4 delegateSelector)[] dispatches)",
+      "function getRoleAdmin(bytes32 role) view returns (bytes32)",
+      "function getRoleMember(bytes32 role, uint256 index) view returns (address)",
+      "function getRoleMemberCount(bytes32 role) view returns (uint256)",
+      "function grantRole(bytes32 role, address account)",
+      "function hasRole(bytes32 role, address account) view returns (bool)",
+      "function integrations() view returns (tuple(bytes32 id, tuple(address facet, tuple(bytes4 callSelector, bytes4 delegateSelector)[] wires) config)[] integrations_)",
+      "function removeIntegration(bytes32 id)",
+      "function renounceRole(bytes32 role, address callerConfirmation)",
+      "function revokeRole(bytes32 role, address account)",
+      "function setIntegration(bytes32 id, tuple(address facet, tuple(bytes4 callSelector, bytes4 delegateSelector)[] wires) config)",
+      "function supportsInterface(bytes4 interfaceId) view returns (bool)"
     ],
     "eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF": [
       "constructor(address _logic, bytes _data) payable",
@@ -6832,6 +8404,19 @@
       "function latestAnswer() view returns (int256 ratio)",
       "function reth() view returns (address)",
       "function rethETHFeed() view returns (address)"
+    ],
+    "eth:0xD1A42B609362655e1290Ec3B77fCeA304D1cba99": [
+      "constructor(address addressesProvider)",
+      "event Initialized(uint8 version)",
+      "event RateStrategyCreated(address indexed strategy, bytes32 indexed hashedParam, tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) params)",
+      "function ADDRESSES_PROVIDER() view returns (address)",
+      "function createStrategies(tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio)[] params) returns (address[])",
+      "function getAllStrategies() view returns (address[])",
+      "function getStrategyByParams(tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) params) view returns (address)",
+      "function getStrategyData(address strategy) view returns (tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio))",
+      "function getStrategyDataOfAsset(address asset) view returns (tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio))",
+      "function initialize(address[] liveStrategies)",
+      "function strategyHashFromParams(tuple(uint256 optimalUsageRatio, uint256 baseVariableBorrowRate, uint256 variableRateSlope1, uint256 variableRateSlope2, uint256 stableRateSlope1, uint256 stableRateSlope2, uint256 baseStableRateOffset, uint256 stableRateExcessOffset, uint256 optimalStableToTotalDebtRatio) params) pure returns (bytes32)"
     ],
     "eth:0xD5B3Be349ed0b7C82Dbd9271ce3739a381Fc7aa0": [
       "constructor(address _riskOracleMiddleware)",
@@ -7395,6 +8980,16 @@
       "function setController(address _accessController)",
       "function transferOwnership(address _to)",
       "function version() view returns (uint256)"
+    ],
+    "eth:0xfE57e187EF6285e90d7049e6a21571aa47cF11a2": [
+      "constructor(address _logic, address admin_, bytes _data) payable",
+      "event AdminChanged(address previousAdmin, address newAdmin)",
+      "event Upgraded(address indexed implementation)",
+      "function admin() returns (address admin_)",
+      "function changeAdmin(address newAdmin)",
+      "function implementation() returns (address implementation_)",
+      "function upgradeTo(address newImplementation)",
+      "function upgradeToAndCall(address newImplementation, bytes data) payable"
     ]
   },
   "usedTemplates": {
@@ -7405,6 +9000,6 @@
     "tokens/circle/USDC": "0x7263a38223ab636dc8a5aa9a09174968ffed892ce24134bf7e2407576d7fbbdb",
     "tokens/Lido/wstETH": "0xd55ccc93c3f52e654ebbffee9194b0b8a0d974753091db2a43a185679e002e88"
   },
-  "usedBlockNumbers": { "ethereum": 25961080 },
-  "permissionsConfigHash": "0x5d22384bf9eb31c1afccc1061c7fc9991b882909acf699a286f698351a4c8dbe"
+  "usedBlockNumbers": { "ethereum": 25968591 },
+  "permissionsConfigHash": "0x245e388fbc7233734d66717f28aecc6999774a599359b6879656d9462f845f95"
 }
