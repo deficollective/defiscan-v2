@@ -1,6 +1,6 @@
 {
   "name": "pancakeswap-v2",
-  "timestamp": 1789303446,
+  "timestamp": 1789394083,
   "configHash": "0x5732b0677f5b274dafd02241565d5a8662e0c75d4d6cbce9ac9a2a9c2a4e7c3a",
   "entries": [
     {
@@ -29,7 +29,7 @@
         "name": "SyrupBar Token",
         "owner": "bnb:0x73feaa1eE314F8c655E354234017bE2193C9E24E",
         "symbol": "SYRUP",
-        "totalSupply": "583729014216805826986067538834"
+        "totalSupply": "583729014205867833542519898102"
       },
       "implementationNames": {
         "bnb:0x009cF7bC57584b7998236eff51b98A168DceA9B0": "SyrupBar"
@@ -60,7 +60,7 @@
         "name": "PancakeSwap Token",
         "owner": "bnb:0x73feaa1eE314F8c655E354234017bE2193C9E24E",
         "symbol": "Cake",
-        "totalSupply": "5269018771751051201610995531"
+        "totalSupply": "5328111959751051201610995531"
       },
       "implementationNames": {
         "bnb:0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82": "CakeToken"
@@ -253,7 +253,7 @@
         "cakeRateToBurn": 997167691403,
         "cakeRateToRegularFarm": 1,
         "cakeRateToSpecialFarm": 2832308596,
-        "lastBurnedBlock": 120438260,
+        "lastBurnedBlock": 121781287,
         "MASTER_CHEF": "bnb:0x73feaa1eE314F8c655E354234017bE2193C9E24E",
         "MASTER_PID": 526,
         "MASTERCHEF_CAKE_PER_BLOCK": "40000000000000000000",
@@ -290,7 +290,7 @@
       "sinceBlock": 6809737,
       "values": {
         "$immutable": true,
-        "allPairsLength": 2977344,
+        "allPairsLength": 2988843,
         "feeTo": "bnb:0x0ED943Ce24BaEBf257488771759F9BF482C39706",
         "feeToSetter": "bnb:0xcEba60280fb0ecd9A5A26A1552B90944770a4a0e",
         "INIT_CODE_PAIR_HASH": "0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5"
@@ -331,12 +331,12 @@
           "bnb:0xb30dF86dE0e1b321451809cCCEbF5651dfF7B900"
         ],
         "$threshold": 3,
-        "cakeBalance": "803547290764037647",
+        "cakeBalance": "778806959597651884",
         "domainSeparator": "0xf8f7ab3acd5bc5eeb2183e1b5895e7df9bbd5033bdf506404d6f82893691875f",
         "getChainId": 56,
         "GnosisSafe_modules": [],
         "multisigThreshold": "3 of 7 (43%)",
-        "nonce": 640,
+        "nonce": 642,
         "VERSION": "1.3.0"
       },
       "fieldMeta": {
@@ -367,7 +367,7 @@
       "sinceBlock": 20372641,
       "values": {
         "$immutable": true,
-        "avgLockDuration": 32636274,
+        "avgLockDuration": 32636310,
         "BOOST_PRECISION": 1000000000000,
         "BOOST_RATIO_PRECISION": 100000,
         "BOOST_WEIGHT_PRECISION": 1000000000000,
@@ -425,7 +425,7 @@
         "getChainId": 56,
         "GnosisSafe_modules": [],
         "multisigThreshold": "3 of 7 (43%)",
-        "nonce": 4777,
+        "nonce": 4778,
         "VERSION": "1.3.0"
       },
       "implementationNames": {
@@ -779,6 +779,6 @@
   "usedTemplates": {
     "GnosisSafe": "0x12db59bec64fa8de67bbeb6a6e913f6c5ff1598c0a5fba90282afaf08e2a748c"
   },
-  "usedBlockNumbers": { "bsc": 121647908 },
+  "usedBlockNumbers": { "bsc": 121849238 },
   "permissionsConfigHash": "0x5670be767b6d00a670ffb09c50f5e3fdcc98a8ede113bfd8544c33652555be5b"
 }
