@@ -1,6 +1,6 @@
 {
   "name": "Gauntlet-USDC-Prime",
-  "timestamp": 1789562259,
+  "timestamp": 1789648585,
   "configHash": "0x2f7d2bf12bfbfafcc93154502188422448af32fcf114b0517596498c0bf382e2",
   "entries": [
     {
@@ -471,7 +471,7 @@
         "feedCap_64c911996D3c6aC71f9b455B1E8E7266BcbD848F": "750000000000000",
         "feeRecipient": "base:0x82C30B9DB2e3B92ACe4E1593B32890dCf8612D03",
         "guardian": "base:0x7084bF4dB6c21e1834dD6482f6056a39A33584cD",
-        "lastTotalAssets": 422259866491284,
+        "lastTotalAssets": 419324751988584,
         "marketCap_oracle_663BECd10daE6C4A3Dcd89F1d76c1174199639B9": "750000000000000",
         "marketOracles": [
           "base:0x663BECd10daE6C4A3Dcd89F1d76c1174199639B9",
@@ -516,8 +516,8 @@
         "supplyQueueLength": 2,
         "symbol": "gtUSDCp",
         "timelock": 604800,
-        "totalAssets": 422259971484990,
-        "totalSupply": "379901149065542221138550141",
+        "totalAssets": 419324812799525,
+        "totalSupply": "377215751044014956269103883",
         "withdrawQueueLength": 8
       },
       "fieldMeta": {
@@ -569,7 +569,7 @@
           "base:0xf3c72D97A5Dcf0449e89BBCE1A0581d8d15c0237"
         ],
         "multisigThreshold": "4 of 9 (44%)",
-        "nonce": 375,
+        "nonce": 376,
         "VERSION": "1.3.0"
       },
       "implementationNames": {
@@ -1079,6 +1079,6 @@
     "morpho/Morpho": "0xdbb54f2b25b761df9e05263570b2b0fcfef7676c541d7bdfa2974680fe1e3682",
     "Steakhouse-USDC/EACAggregatorProxy": "0x3ba2cbd9a884cdfea15efe908af481b5a5a9c747391c8580bd38b0f8b1603921"
   },
-  "usedBlockNumbers": { "base": 51386456 },
+  "usedBlockNumbers": { "base": 51429460 },
   "permissionsConfigHash": "0xfc454b1ab38f4c2fe0176c26aa51c02484136638d53be3e38acddcef8165f68e"
 }

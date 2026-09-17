@@ -1,6 +1,6 @@
 {
   "name": "Frankencoin",
-  "timestamp": 1789562259,
+  "timestamp": 1789648585,
   "configHash": "0x7440d035bac625a1ace4aae6701a406639aa2f173982d1bd491ac07331b4f1e0",
   "entries": [
     {
@@ -67,7 +67,7 @@
       "values": {
         "$immutable": true,
         "MAX_RELEASE_LENGTH": 20,
-        "nonce": 1331,
+        "nonce": 1336,
         "owner": "eth:0x1a9C8182C09F50C8318d769245beA52c32BE35BC",
         "RESOURCE": "eth:0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
         "RESOURCE_RECIPIENT": "eth:0x000000000000000000000000000000000000dEaD",
@@ -119,10 +119,10 @@
         "DOMAIN_SEPARATOR": "0xb0fe1d8373263d2b320b24a4303f6902da9771e5e1a5f379a68082aad9e4c527",
         "MIN_HOLDING_DURATION": 8153726976000,
         "name": "Frankencoin Pool Share",
-        "price": "1290653351188354081468",
+        "price": "1281840249907655435929",
         "symbol": "FPS",
-        "totalSupply": "8595150627404501611790",
-        "totalVotes": "285697495270844754316159498305639514",
+        "totalSupply": "8566157674440635086997",
+        "totalVotes": "285482421805182509726927765420823145",
         "VALUATION_FACTOR": 3,
         "zchf": "eth:0xB58E61C3098d85632Df34EecfB899A1Ed80921cB"
       },
@@ -229,7 +229,7 @@
       "values": {
         "$immutable": true,
         "currentRatePPM": 35000,
-        "currentTicks": 1407479700000,
+        "currentTicks": 1410501600000,
         "equity": "eth:0x1bA26788dfDe592fec8bcB0Eaff472a42BE341B2",
         "INTEREST_DELAY": 259200,
         "nextChange": 1774551239,
@@ -350,7 +350,7 @@
       "values": {
         "$immutable": true,
         "currentRatePPM": 10000,
-        "currentTicks": 1314938340000,
+        "currentTicks": 1315801740000,
         "equity": "eth:0x1bA26788dfDe592fec8bcB0Eaff472a42BE341B2",
         "INTEREST_DELAY": 259200,
         "nextChange": 1770717611,
@@ -379,7 +379,7 @@
         "decimalMultiplier": 1000000000000,
         "horizon": 1807188455,
         "limit": "10000000000000000000000000",
-        "minted": "626171733593000000000000",
+        "minted": "635748172810000000000000",
         "zchf": "eth:0xB58E61C3098d85632Df34EecfB899A1Ed80921cB"
       },
       "implementationNames": {
@@ -842,15 +842,15 @@
         "$immutable": true,
         "factory": "eth:0x1F98431c8aD98523631AE4a59f267346ea31F984",
         "fee": 100,
-        "feeGrowthGlobal0X128": "196530317476223920363188198464722769242390",
-        "feeGrowthGlobal1X128": "297693122920100285678393824957",
+        "feeGrowthGlobal0X128": "196645231902913254270001062863668866172152",
+        "feeGrowthGlobal1X128": "297723926129425126370028794401",
         "liquidity": "86547060830705683018",
         "maxLiquidityPerTick": "191757530477355301479181766273477",
         "observations": [
           [
-            1789554107,
-            -22759067914524,
-            "6400281385735401714767216837495",
+            1789648367,
+            -22784928684132,
+            "6400281756343202812824770994661",
             true
           ],
           [0, 0, 0, false],
@@ -858,10 +858,10 @@
           [0, 0, 0, false],
           [0, 0, 0, false]
         ],
-        "protocolFees": { "token0": "9828746213980118897", "token1": 111044 },
+        "protocolFees": { "token0": "19571151192723550477", "token1": 184207 },
         "slot0": {
-          "sqrtPriceX96": "87628499586140088540432",
-          "tick": -274309,
+          "sqrtPriceX96": "87289684010830737061148",
+          "tick": -274386,
           "observationIndex": 0,
           "observationCardinality": 1,
           "observationCardinalityNext": 1,
@@ -1023,7 +1023,7 @@
         "EXPIRATION": 1806537599,
         "exploitableAt": "468323724451429889",
         "getMinimumDollars": [0, 0, 0, 0, 0],
-        "getPrice": "96919500541687574",
+        "getPrice": "96171471013717589",
         "LIMIT": "2500000000000000000000000",
         "MAX_DOLLAR_APPRECIATION_TICKS": 1000,
         "MAX_DOLLAR_DEPRECIATION_TICKS": 1500,
@@ -1141,14 +1141,14 @@
         ],
         "decimals": 18,
         "DOMAIN_SEPARATOR": "0x0030eba518c077921487bde9523478fa8ba39b881d0372fd1cb104a3080bfcb0",
-        "equity": "3697786653742768046418014",
+        "equity": "3660148564717788064622587",
         "MIN_APPLICATION_PERIOD": 1209600,
         "MIN_FEE": "1000000000000000000000",
         "minterReserve": "8756246849242023867755759",
         "name": "Frankencoin",
         "reserve": "eth:0x1bA26788dfDe592fec8bcB0Eaff472a42BE341B2",
         "symbol": "ZCHF",
-        "totalSupply": "31990570926147464504822374"
+        "totalSupply": "31971252680168333665187598"
       },
       "implementationNames": {
         "eth:0xB58E61C3098d85632Df34EecfB899A1Ed80921cB": "Frankencoin"
@@ -1198,7 +1198,7 @@
         "paused": false,
         "PAUSER_ROLE": "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a",
         "symbol": "CHFAU",
-        "totalSupply": 42963863921656,
+        "totalSupply": 43013863921656,
         "UPGRADE_INTERFACE_VERSION": "5.0.0",
         "version": "1.0.0"
       },
@@ -3013,6 +3013,6 @@
     "MultiSigWallet": "0x14144aaeee81c9350f72a914c1b3534785e5c3ce4ee5aa6a2b2db44eca346f2c",
     "transporter/TokenPool": "0x32151072569e965287f6dde9deefc6e47dbb9fdd1f404c83312c29b57c3782f3"
   },
-  "usedBlockNumbers": { "ethereum": 25990081 },
+  "usedBlockNumbers": { "ethereum": 25997250 },
   "permissionsConfigHash": "0xa2fc3f10409954710b38c5176fdcce4440f566024fac62156013a0eff64fbe7e"
 }

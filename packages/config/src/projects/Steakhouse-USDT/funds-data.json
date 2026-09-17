@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-16T13:19:17.775Z",
+  "lastModified": "2026-09-17T13:13:31.235Z",
   "contracts": {
     "eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa": {
-      "lastFetched": "2026-09-16T13:19:16.293Z",
+      "lastFetched": "2026-09-17T13:13:30.625Z",
       "balances": {
         "tokens": [
           {
@@ -18,7 +18,7 @@
             "assetAddress": "0x0bffc1ae5e6391875205d1ce015819592109e25c",
             "symbol": "USDT",
             "name": "Tether USD",
-            "balance": "62900281438268530",
+            "balance": "60833069059793000",
             "decimals": 6,
             "usdValue": 0
           },
@@ -28,13 +28,13 @@
             "name": "HEX",
             "balance": "100000000",
             "decimals": 8,
-            "usdValue": 0.0011566225687305678
+            "usdValue": 0.001130962511595589
           },
           {
             "assetAddress": "0x2c84c0ad55d9cda95be48d1bb943ba1ff8e40a77",
             "symbol": "USDT",
             "name": "Tether USD",
-            "balance": "29571811393838972",
+            "balance": "36721812195519850",
             "decimals": 6,
             "usdValue": 0
           },
@@ -50,7 +50,7 @@
             "assetAddress": "0x3417c054742eb6889a30ad008afd226bd576024a",
             "symbol": "USDT",
             "name": "Tether USD",
-            "balance": "29571811393838972",
+            "balance": "36721812195519850",
             "decimals": 6,
             "usdValue": 0
           },
@@ -68,7 +68,7 @@
             "name": "Royal Cat",
             "balance": "1000000000000000000",
             "decimals": 18,
-            "usdValue": 0.0006413476173867783
+            "usdValue": 0.0006554766036871039
           },
           {
             "assetAddress": "0x6051c1354ccc51b4d561e43b02735deae64768b8",
@@ -100,7 +100,7 @@
             "name": "Steakhouse USDT",
             "balance": "1000000000000000000",
             "decimals": 18,
-            "usdValue": 1.1300552418470344
+            "usdValue": 1.130150703536336
           },
           {
             "assetAddress": "0xc80b4457fccd49e7c3a2f5566dd1b827d85f6c98",
@@ -116,7 +116,7 @@
             "name": "Tether USD",
             "balance": "38405905",
             "decimals": 6,
-            "usdValue": 38.3728759217
+            "usdValue": 38.372491862649994
           },
           {
             "assetAddress": "0xf9e1b5cc516d8a2a58a337ba6e0271e7ba7dc2f8",
@@ -127,8 +127,8 @@
             "usdValue": 0
           }
         ],
-        "totalUsdValue": 39.50472913373315,
-        "timestamp": "2026-09-16T13:19:16.794Z",
+        "totalUsdValue": 39.50442900530161,
+        "timestamp": "2026-09-17T13:13:30.856Z",
         "source": "debank"
       },
       "positions": {
@@ -141,169 +141,169 @@
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 29923352.458256066,
+                  "assetUsdValue": 29514590.128542345,
                   "debtUsdValue": 0,
-                  "netUsdValue": 29923352.458256066
+                  "netUsdValue": 29514590.128542345
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 29949408.443602,
-                    "price": 0.99913
+                    "amount": 29541472.868853,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 25993307.95292259,
+                  "assetUsdValue": 25739186.879381135,
                   "debtUsdValue": 0,
-                  "netUsdValue": 25993307.95292259
+                  "netUsdValue": 25739186.879381135
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 26015941.822308,
-                    "price": 0.99913
+                    "amount": 25762630.873476,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 19171229.628250413,
+                  "assetUsdValue": 19707051.196252126,
                   "debtUsdValue": 0,
-                  "netUsdValue": 19171229.628250413
+                  "netUsdValue": 19707051.196252126
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 19187923.121366,
-                    "price": 0.99913
+                    "amount": 19725000.947114,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 6265561.197441472,
+                  "assetUsdValue": 6215554.3565828195,
                   "debtUsdValue": 0,
-                  "netUsdValue": 6265561.197441472
+                  "netUsdValue": 6215554.3565828195
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 6271016.982216,
-                    "price": 0.99913
+                    "amount": 6221215.662836,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 1366921.1342796648,
+                  "assetUsdValue": 1969729.0378982138,
                   "debtUsdValue": 0,
-                  "netUsdValue": 1366921.1342796648
+                  "netUsdValue": 1969729.0378982138
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 1368111.39119,
-                    "price": 0.99913
+                    "amount": 1971523.123941,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 1837097.432962488,
+                  "assetUsdValue": 1349656.5125260549,
                   "debtUsdValue": 0,
-                  "netUsdValue": 1837097.432962488
+                  "netUsdValue": 1349656.5125260549
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 1838697.099439,
-                    "price": 0.99913
+                    "amount": 1350885.818621,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 1961192.6989435893,
+                  "assetUsdValue": 2002349.9696952803,
                   "debtUsdValue": 0,
-                  "netUsdValue": 1961192.6989435893
+                  "netUsdValue": 2002349.9696952803
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 1962900.422311,
-                    "price": 0.99913
+                    "amount": 2004173.767824,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 32068.182212932246,
+                  "assetUsdValue": 50585.047114494155,
                   "debtUsdValue": 0,
-                  "netUsdValue": 32068.182212932246
+                  "netUsdValue": 50585.047114494155
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 32096.105825,
-                    "price": 0.99913
+                    "amount": 50631.121435,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 473133.56886046194,
+                  "assetUsdValue": 468946.1240291421,
                   "debtUsdValue": 0,
-                  "netUsdValue": 473133.56886046194
+                  "netUsdValue": 468946.1240291421
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 473545.553492,
-                    "price": 0.99913
+                    "amount": 469373.25369,
+                    "price": 0.99909
                   }
                 ]
               },
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 0.03935672983,
+                  "assetUsdValue": 0.03031838514,
                   "debtUsdValue": 0,
-                  "netUsdValue": 0.03935672983
+                  "netUsdValue": 0.03031838514
                 },
                 "tokens": [
                   {
                     "symbol": "USDT",
                     "name": "Tether USD",
-                    "amount": 0.039391,
-                    "price": 0.99913
+                    "amount": 0.030346,
+                    "price": 0.99909
                   }
                 ]
               }
             ],
-            "totalUsdValue": 87023864.2934864
+            "totalUsdValue": 87017649.28233999
           }
         ],
-        "totalUsdValue": 87023864.2934864,
-        "timestamp": "2026-09-16T13:19:17.775Z",
+        "totalUsdValue": 87017649.28233999,
+        "timestamp": "2026-09-17T13:13:31.235Z",
         "source": "onchain/debank"
       }
     }

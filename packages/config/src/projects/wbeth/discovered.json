@@ -1,6 +1,6 @@
 {
   "name": "wbeth",
-  "timestamp": 1789562259,
+  "timestamp": 1789648585,
   "configHash": "0x7c603a3d49afd7918eae268f64c1b8687fba0d22931ea6409c6d1623be66f504",
   "entries": [
     {
@@ -56,23 +56,23 @@
         "$pastUpgrades": [],
         "$upgradeCount": 0,
         "admin": "eth:0xA3eE6926edcce93BacF05F4222c243c4d9F6d853",
-        "availableAllocateAmount": "1551833591640621882",
+        "availableAllocateAmount": "94341833592113279736",
         "blacklister": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "ethBackAddress": "eth:0x26ad6395DABF271fD9bFDC82d7377261930E6B86",
         "ethStaked": 0,
-        "getNeedRechargeEthAmount": "5658166407886720264",
+        "getNeedRechargeEthAmount": 0,
         "implementation": "eth:0x542059d658624DF6452b22B10302A15a6AB59f10",
         "lockTime": 864000,
         "MAX_LOOP_NUM": 1000,
         "MIN_LOCK_TIME": 172800,
-        "needEthAmount": "7209999999527342146",
+        "needEthAmount": 0,
         "nextIndex": 137,
         "operatorAddress": "eth:0x2B59215778e99035CF38663454eF1240a7AE70F5",
         "owner": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "paused": false,
         "pauser": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "rechargeAddress": "eth:0x3E4BD5FB2fCeF981BAFd1D164f838DFC31370Fb1",
-        "startAllocatedEthIndex": 136,
+        "startAllocatedEthIndex": 137,
         "WBETH_TOKEN_ADDRESS": "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1"
       },
       "implementationNames": {
@@ -164,7 +164,7 @@
         "decimals": 18,
         "DOMAIN_SEPARATOR": "0xd37a875f1ef2a63f2649b9d08b634c22faa1921cbcb1de62790e04176d134bab",
         "ethReceiver": "eth:0x26ad6395DABF271fD9bFDC82d7377261930E6B86",
-        "exchangeRate": "1106538593106000000",
+        "exchangeRate": "1106606667360000000",
         "implementation": "eth:0x9E021c9607bD3ADB7424D3b25a2D35763ff180BB",
         "masterMinter": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "minters": ["eth:0xb05a6449f383a1A43A172970858B97394FEcDAD6"],
@@ -488,6 +488,6 @@
     ]
   },
   "usedTemplates": {},
-  "usedBlockNumbers": { "ethereum": 25990081 },
+  "usedBlockNumbers": { "ethereum": 25997250 },
   "permissionsConfigHash": "0x56dcc208fc53dc38aeff2362dddbcae3eb6797d2a2d152fda8b2c784eb0cd3e2"
 }
