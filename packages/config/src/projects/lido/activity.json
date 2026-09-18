@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789648622,
-  "lastConsumedUpdateNotifierId": 591,
+  "lastReconciledAt": 1789733849,
+  "lastConsumedUpdateNotifierId": 597,
   "events": [
     {
       "timestamp": "2026-03-02T13:49:30.000Z",
@@ -32232,6 +32232,256 @@
       "entity": null,
       "id": "591:eth:0x50DA2d15B9b08588eB0512E8B22eE0D17Ba030Ee:contract-added",
       "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0x0De4Ea0184c2ad0BacA7183356Aea5B8d5Bf5c6e",
+      "contractName": "ValidatorsExitBusOracle",
+      "entity": null,
+      "id": "597:eth:0x0De4Ea0184c2ad0BacA7183356Aea5B8d5Bf5c6e:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getConsensusReport.hash",
+          "before": "0x330dd892abb609f50af70a76e805c966d0d1e1785ab5edf0e0a14585ed443483",
+          "after": "0x42a4319bb0aa582cb554634ae179310197ee6e74ac5540fe4cfd1c1d5da844ab"
+        },
+        {
+          "field": "values.getConsensusReport.refSlot",
+          "before": 15235199,
+          "after": 15240959
+        },
+        {
+          "field": "values.getConsensusReport.processingDeadlineTime",
+          "before": 1789663691,
+          "after": 1789732811
+        },
+        {
+          "field": "values.getProcessingState.dataHash",
+          "before": "0x330dd892abb609f50af70a76e805c966d0d1e1785ab5edf0e0a14585ed443483",
+          "after": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "field": "values.getProcessingState.dataFormat",
+          "before": 2,
+          "after": 0
+        },
+        {
+          "field": "values.getProcessingState.dataSubmitted",
+          "before": true,
+          "after": false
+        },
+        {
+          "field": "values.getProcessingState.currentFrameRefSlot",
+          "before": 15235199,
+          "after": 15242399
+        },
+        {
+          "field": "values.getProcessingState.processingDeadlineTime",
+          "before": 1789663691,
+          "after": 0
+        },
+        {
+          "field": "values.getLastProcessingRefSlot",
+          "before": 15235199,
+          "after": 15240959
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da",
+      "contractName": "Accounting",
+      "entity": null,
+      "id": "597:eth:0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalBondShares",
+          "before": "26949477078201407084368",
+          "after": "26960403304785852149623"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0x7d4E742018fb52E48b08BE73d041C18B21de6Fb5",
+      "contractName": "AccessControlledOCR2Aggregator",
+      "entity": null,
+      "id": "597:eth:0x7d4E742018fb52E48b08BE73d041C18B21de6Fb5:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestConfigDigestAndEpoch.epoch",
+          "before": 29478,
+          "after": 29951
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0x852deD011285fe67063a08005c71a85690503Cee",
+      "contractName": "AccountingOracle",
+      "entity": null,
+      "id": "597:eth:0x852deD011285fe67063a08005c71a85690503Cee:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCurrentFrame.refSlot",
+          "before": 15235199,
+          "after": 15242399
+        },
+        {
+          "field": "values.getCurrentFrame.refSlotTimestamp",
+          "before": 1789646411,
+          "after": 1789732811
+        },
+        {
+          "field": "values.getProcessingState.mainDataHash",
+          "before": "0xa330298a110a6da9f12c406a781e2930f3913b66197d107796c522941b0105de",
+          "after": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "field": "values.getProcessingState.extraDataHash",
+          "before": "0xa2093ff3874670c01cf63d8d1e641b40d4f0065211453740e51e14bf96fc47a8",
+          "after": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "field": "values.getProcessingState.extraDataFormat",
+          "before": 1,
+          "after": 0
+        },
+        {
+          "field": "values.getProcessingState.mainDataSubmitted",
+          "before": true,
+          "after": false
+        },
+        {
+          "field": "values.getProcessingState.extraDataSubmitted",
+          "before": true,
+          "after": false
+        },
+        {
+          "field": "values.getProcessingState.currentFrameRefSlot",
+          "before": 15235199,
+          "after": 15242399
+        },
+        {
+          "field": "values.getProcessingState.extraDataItemsCount",
+          "before": 2,
+          "after": 0
+        },
+        {
+          "field": "values.getProcessingState.processingDeadlineTime",
+          "before": 1789732811,
+          "after": 0
+        },
+        {
+          "field": "values.getProcessingState.extraDataItemsSubmitted",
+          "before": 2,
+          "after": 0
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0xAA568141c051f2D1132b110f8391F18D48E8D889",
+      "contractName": "BuybackAllocator",
+      "entity": null,
+      "id": "597:eth:0xAA568141c051f2D1132b110f8391F18D48E8D889:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.budgetUSD",
+          "before": "-545707661318084150369710",
+          "after": "-549576044084561216866004"
+        },
+        {
+          "field": "values.reserveAnchorTS",
+          "before": 1789689600,
+          "after": 1789776000
+        },
+        {
+          "field": "values.lastTotalRevenueUSD",
+          "before": "3182555677363831699260573",
+          "after": "3284407911830877566267984"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+      "contractName": "Liquid staked Ether 2.0 Token",
+      "isDependency": false,
+      "entity": null,
+      "id": "597:eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCurrentStakeLimit",
+          "before": "147902955706570000000000",
+          "after": "150000000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0xDa5F930cE326EB5205085D66c72A4E79d60cB8C1",
+      "contractName": "CuratedModule",
+      "entity": null,
+      "id": "597:eth:0xDa5F930cE326EB5205085D66c72A4E79d60cB8C1:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getTotalModuleStake",
+          "before": "147296006580693000000000",
+          "after": "148800011773165000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0xdA7dE2ECdDfccC6c3AF10108Db212ACBBf9EA83F",
+      "contractName": "CSModule",
+      "entity": null,
+      "id": "597:eth:0xdA7dE2ECdDfccC6c3AF10108Db212ACBBf9EA83F:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getTotalModuleStake",
+          "before": "807488000000000000000000",
+          "after": "807808000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 597,
+      "address": "eth:0xF573E9E3de1f86B085417ab294f56E7920B4e9Be",
+      "contractName": "DepositSecurityModule",
+      "entity": null,
+      "id": "597:eth:0xF573E9E3de1f86B085417ab294f56E7920B4e9Be:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getLastDepositBlock",
+          "before": 25997178,
+          "after": 26003858
+        },
+        {
+          "field": "values.isMinDepositDistancePassed.3",
+          "before": false,
+          "after": true
+        }
+      ]
     }
   ]
 }

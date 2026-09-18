@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789648679,
-  "lastConsumedUpdateNotifierId": 594,
+  "lastReconciledAt": 1789734027,
+  "lastConsumedUpdateNotifierId": 600,
   "events": [
     {
       "timestamp": "2026-03-26T08:10:03.000Z",
@@ -6002,6 +6002,85 @@
           "field": "values.getCurrentStakeLimit",
           "before": "150000000000000000000000",
           "after": "147902955706570000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 600,
+      "address": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+      "contractName": "Liquid staked Ether 2.0 Token",
+      "isDependency": true,
+      "entity": "Lido stETH",
+      "id": "600:eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCurrentStakeLimit",
+          "before": "147902955706570000000000",
+          "after": "150000000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 600,
+      "address": "eth:0xcd2eb13D6831d4602D80E5db9230A57596CDCA63",
+      "contractName": "EtherfiOFTAdapterUpgradeable",
+      "entity": null,
+      "id": "600:eth:0xcd2eb13D6831d4602D80E5db9230A57596CDCA63:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.layerZeroConfig.perEid.30417",
+          "after": {
+            "peer": "0x000000000000000000000000a3d68b74bf0528fdd07263c60d6488749044914b",
+            "sendLibrary": "eth:0xbB2Ea70C9E858123480642Cf96acbcCE1372dCe1",
+            "sendUlnConfig": {
+              "confirmations": "45",
+              "requiredDVNCount": 4,
+              "optionalDVNCount": 0,
+              "optionalDVNThreshold": 0,
+              "requiredDVNs": [
+                "eth:0x06559EE34D85a88317Bf0bfE307444116c631b67",
+                "eth:0x380275805876Ff19055EA900CDb2B46a94ecF20D",
+                "eth:0x589dEDbD617e0CBcB916A9223F4d1300c294236b",
+                "eth:0xa59BA433ac34D2927232918Ef5B2eaAfcF130BA5"
+              ],
+              "optionalDVNs": []
+            },
+            "executorConfig": {
+              "maxMessageSize": 10000,
+              "executor": "eth:0x173272739Bd7Aa6e4e214714048a9fE699453059"
+            },
+            "receiveLibrary": "eth:0xc02Ab410f0734EFa3F14628780e6e695156024C2",
+            "receiveLibraryIsDefault": false,
+            "receiveUlnConfig": {
+              "confirmations": "45",
+              "requiredDVNCount": 4,
+              "optionalDVNCount": 0,
+              "optionalDVNThreshold": 0,
+              "requiredDVNs": [
+                "eth:0x06559EE34D85a88317Bf0bfE307444116c631b67",
+                "eth:0x380275805876Ff19055EA900CDb2B46a94ecF20D",
+                "eth:0x589dEDbD617e0CBcB916A9223F4d1300c294236b",
+                "eth:0xa59BA433ac34D2927232918Ef5B2eaAfcF130BA5"
+              ],
+              "optionalDVNs": []
+            },
+            "inboundRateLimit": {
+              "limit": "1000000000000000000000",
+              "window": "14400"
+            },
+            "outboundRateLimit": {
+              "limit": "1000000000000000000000",
+              "window": "14400"
+            },
+            "enforcedOptions": {
+              "send": "0x00030100110100000000000000000000000000029810",
+              "sendAndCall": "0x00030100110100000000000000000000000000029810"
+            }
+          }
         }
       ]
     }

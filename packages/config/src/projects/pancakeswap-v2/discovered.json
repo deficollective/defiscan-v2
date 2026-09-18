@@ -1,6 +1,6 @@
 {
   "name": "pancakeswap-v2",
-  "timestamp": 1789648585,
+  "timestamp": 1789733730,
   "configHash": "0x5732b0677f5b274dafd02241565d5a8662e0c75d4d6cbce9ac9a2a9c2a4e7c3a",
   "entries": [
     {
@@ -29,7 +29,7 @@
         "name": "SyrupBar Token",
         "owner": "bnb:0x73feaa1eE314F8c655E354234017bE2193C9E24E",
         "symbol": "SYRUP",
-        "totalSupply": "583729012896837651498292393036"
+        "totalSupply": "583729012552472163006545865345"
       },
       "implementationNames": {
         "bnb:0x009cF7bC57584b7998236eff51b98A168DceA9B0": "SyrupBar"
@@ -60,7 +60,7 @@
         "name": "PancakeSwap Token",
         "owner": "bnb:0x73feaa1eE314F8c655E354234017bE2193C9E24E",
         "symbol": "Cake",
-        "totalSupply": "5328111959751051201610995531"
+        "totalSupply": "5357149407751051201610995531"
       },
       "implementationNames": {
         "bnb:0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82": "CakeToken"
@@ -290,7 +290,7 @@
       "sinceBlock": 6809737,
       "values": {
         "$immutable": true,
-        "allPairsLength": 3029759,
+        "allPairsLength": 3042743,
         "feeTo": "bnb:0x0ED943Ce24BaEBf257488771759F9BF482C39706",
         "feeToSetter": "bnb:0xcEba60280fb0ecd9A5A26A1552B90944770a4a0e",
         "INIT_CODE_PAIR_HASH": "0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5"
@@ -331,7 +331,7 @@
           "bnb:0xb30dF86dE0e1b321451809cCCEbF5651dfF7B900"
         ],
         "$threshold": 3,
-        "cakeBalance": "778806959597651884",
+        "cakeBalance": "2639768778806959597651884",
         "domainSeparator": "0xf8f7ab3acd5bc5eeb2183e1b5895e7df9bbd5033bdf506404d6f82893691875f",
         "getChainId": 56,
         "GnosisSafe_modules": [],
@@ -367,7 +367,7 @@
       "sinceBlock": 20372641,
       "values": {
         "$immutable": true,
-        "avgLockDuration": 32636091,
+        "avgLockDuration": 32635964,
         "BOOST_PRECISION": 1000000000000,
         "BOOST_RATIO_PRECISION": 100000,
         "BOOST_WEIGHT_PRECISION": 1000000000000,
@@ -779,6 +779,6 @@
   "usedTemplates": {
     "GnosisSafe": "0x12db59bec64fa8de67bbeb6a6e913f6c5ff1598c0a5fba90282afaf08e2a748c"
   },
-  "usedBlockNumbers": { "bsc": 122414538 },
+  "usedBlockNumbers": { "bsc": 122603693 },
   "permissionsConfigHash": "0x5670be767b6d00a670ffb09c50f5e3fdcc98a8ede113bfd8544c33652555be5b"
 }

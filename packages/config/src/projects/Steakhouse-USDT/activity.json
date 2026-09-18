@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789650811,
-  "lastConsumedUpdateNotifierId": 596,
+  "lastReconciledAt": 1789736395,
+  "lastConsumedUpdateNotifierId": 602,
   "events": [
     {
       "timestamp": "2026-06-08T12:07:58.000Z",
@@ -5551,6 +5551,59 @@
           "field": "values.getRate",
           "before": "1103785724317599268",
           "after": "1103861263087631409"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 602,
+      "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+      "contractName": "WeEthToEthExchangeRateAdapter",
+      "entity": null,
+      "id": "602:eth:0x4270E1817576bbA4b640466bE79A408Ef128F828:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.1",
+          "before": "1103861263087631409",
+          "after": "1103923637308678752"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 602,
+      "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+      "contractName": "DummyFeed",
+      "entity": null,
+      "id": "602:eth:0xc3866d726C204C0836E0677A31973c649888973D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.startedAt",
+          "before": 1789648571,
+          "after": 1789733711
+        },
+        {
+          "field": "values.latestRoundData.updatedAt",
+          "before": 1789648571,
+          "after": 1789733711
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 602,
+      "address": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "contractName": "Wrapped eETH Token",
+      "entity": null,
+      "id": "602:eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getRate",
+          "before": "1103861263087631409",
+          "after": "1103923637308678752"
         }
       ]
     }
