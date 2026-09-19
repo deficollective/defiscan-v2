@@ -1,6 +1,6 @@
 {
   "name": "ethena",
-  "timestamp": 1789733730,
+  "timestamp": 1789819066,
   "configHash": "0xc61cedf695d579cced5d8a9aa9f10d891df9f540bab9eee5d7e76ffd8be06199",
   "entries": [
     {
@@ -104,7 +104,7 @@
       "sinceBlock": 20713442,
       "values": {
         "$immutable": true,
-        "enaBalance": "19130367389044847022763317",
+        "enaBalance": "19135870012682867677511516",
         "stakingVault": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9"
       },
       "fieldMeta": {
@@ -155,7 +155,7 @@
         "owner": "eth:0xE8Dc0Fab349EA169283C48Ccfd09d797E6DB7c94",
         "pendingOwner": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "USDe",
-        "totalSupply": "4796195195157125133523503861"
+        "totalSupply": "4831646944438858533523503861"
       },
       "implementationNames": {
         "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3": "USDe"
@@ -318,7 +318,7 @@
       "values": {
         "$immutable": true,
         "stakingVault": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
-        "usdeBalance": "16523265239552101290245734"
+        "usdeBalance": "13912919628038089038181836"
       },
       "fieldMeta": {
         "usdeBalance": {
@@ -1290,8 +1290,8 @@
         ],
         "silo": "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A",
         "symbol": "sENA",
-        "totalAssets": "1274644278303158963498240301",
-        "totalSupply": "1251775156809433338327596783",
+        "totalAssets": "1273931945980009894404547920",
+        "totalSupply": "1251075604847612756994646960",
         "vestingAmount": "2822834000000000000000000",
         "vestingPeriod": 2592000
       },
@@ -2318,8 +2318,8 @@
           "salt": "0x0000000000000000000000000000000000000000000000000000000000000000",
           "extensions": []
         },
-        "getUnvestedAmount": "44431383013095238095238",
-        "lastDistributionTimestamp": 1789727963,
+        "getUnvestedAmount": "46605537101190476190476",
+        "lastDistributionTimestamp": 1789814423,
         "MAX_COOLDOWN_DURATION": 7776000,
         "name": "Staked USDe",
         "owner": "eth:0xE8Dc0Fab349EA169283C48Ccfd09d797E6DB7c94",
@@ -2331,8 +2331,8 @@
         ],
         "silo": "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425",
         "symbol": "sUSDe",
-        "totalAssets": "1327258447205838295146412396",
-        "totalSupply": "1062888008185231637262267000",
+        "totalAssets": "1330608198354543789170002224",
+        "totalSupply": "1065438710842434064951175216",
         "vestingAmount": "55510317142857142857143"
       },
       "fieldMeta": {
@@ -2599,7 +2599,7 @@
         "pendingOwner": "eth:0x0000000000000000000000000000000000000000",
         "STAKING_VAULT": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
         "USDE_TOKEN": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
-        "usdeBalance": "1054696025714285714285727"
+        "usdeBalance": "888165074285714285714298"
       },
       "fieldMeta": {
         "usdeBalance": {
@@ -3201,6 +3201,6 @@
     "global/ProxyAdmin": "0x7d24ef68050bed263f4cfd0471631d16b2f33814fbbd4e9aadf666c81bbf0c2d",
     "GnosisSafe": "0x12db59bec64fa8de67bbeb6a6e913f6c5ff1598c0a5fba90282afaf08e2a748c"
   },
-  "usedBlockNumbers": { "ethereum": 26004321 },
+  "usedBlockNumbers": { "ethereum": 26011409 },
   "permissionsConfigHash": "0xd791a1a9e95e60339bf48827adfaf3099c4249cce29c2a2c51af0802efe71959"
 }

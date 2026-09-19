@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789734271,
-  "lastConsumedUpdateNotifierId": 601,
+  "lastReconciledAt": 1789819212,
+  "lastConsumedUpdateNotifierId": 606,
   "events": [
     {
       "timestamp": "2026-04-25T08:12:54.000Z",
@@ -1956,6 +1956,53 @@
           "field": "values.totalSupply",
           "before": 371135586597837,
           "after": 388251881499047
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 606,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "606:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1349424872976782306976088885",
+          "after": "1342524872976782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 606,
+      "address": "eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF",
+      "contractName": "SupplyControl",
+      "entity": null,
+      "id": "606:eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getAllSupplyControllerAddresses.3",
+          "after": "eth:0x835e20DA02D830d6074Ca2341e2928f438121691"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 606,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "606:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 388251881499047,
+          "after": 354580386980216
         }
       ]
     }

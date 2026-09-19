@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-18T12:25:04.306Z",
+  "lastModified": "2026-09-19T12:00:23.244Z",
   "contracts": {
     "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55": {
-      "lastFetched": "2026-09-18T12:25:02.283Z",
+      "lastFetched": "2026-09-19T12:00:22.717Z",
       "balances": {
         "tokens": [
           {
@@ -12,11 +12,11 @@
             "name": "HEX",
             "balance": "100000000",
             "decimals": 8,
-            "usdValue": 0.0011257364907390206
+            "usdValue": 0.0012548302898116772
           }
         ],
-        "totalUsdValue": 0.0011257364907390206,
-        "timestamp": "2026-09-18T12:25:02.807Z",
+        "totalUsdValue": 0.0012548302898116772,
+        "timestamp": "2026-09-19T12:00:22.898Z",
         "source": "debank"
       },
       "positions": {
@@ -29,15 +29,15 @@
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 3.0769808174,
+                  "assetUsdValue": 3.0771408653999996,
                   "debtUsdValue": 0,
-                  "netUsdValue": 3.0769808174
+                  "netUsdValue": 3.0771408653999996
                 },
                 "tokens": [
                   {
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
-                    "amount": 3.076058,
+                    "amount": 3.076218,
                     "price": 1.0003
                   }
                 ]
@@ -171,11 +171,11 @@
                 ]
               }
             ],
-            "totalUsdValue": 3.0769808174
+            "totalUsdValue": 3.0771408653999996
           }
         ],
-        "totalUsdValue": 3.0769808174,
-        "timestamp": "2026-09-18T12:25:04.305Z",
+        "totalUsdValue": 3.0771408653999996,
+        "timestamp": "2026-09-19T12:00:23.244Z",
         "source": "onchain/debank"
       }
     }

@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-18T12:25:11.158Z",
+  "lastModified": "2026-09-19T12:00:27.792Z",
   "contracts": {
     "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1": {
-      "lastFetched": "2026-09-18T12:25:07.822Z",
+      "lastFetched": "2026-09-19T12:00:24.588Z",
       "balances": {
         "tokens": [
           {
@@ -12,7 +12,7 @@
             "name": "Royal Dog",
             "balance": "1000000000000000000",
             "decimals": 18,
-            "usdValue": 0.007299737261421086
+            "usdValue": 0.007698515913757382
           },
           {
             "assetAddress": "0x01995a697752266d8e748738aaa3f06464b8350b",
@@ -20,7 +20,7 @@
             "name": "CANA Holdings California Carbon Credits",
             "balance": "10000000000000000",
             "decimals": 18,
-            "usdValue": 0.25360038142752445
+            "usdValue": 0.2593350777600137
           },
           {
             "assetAddress": "0x059b2051bc369a52dfa4bcbaa77388483279320c",
@@ -52,7 +52,7 @@
             "name": "HEX",
             "balance": "189500000000",
             "decimals": 8,
-            "usdValue": 2.133270649950444
+            "usdValue": 2.377903399193128
           },
           {
             "assetAddress": "0x3ab281cfad326e4e93c16d99ea51cb9db27fb198",
@@ -92,7 +92,7 @@
             "name": "ChainLink Token",
             "balance": "62849380000000000",
             "decimals": 18,
-            "usdValue": 0.74231402718
+            "usdValue": 0.7873141832599999
           },
           {
             "assetAddress": "0x57b9d10157f66d8c00a815b5e289a152dedbe7ed",
@@ -108,7 +108,7 @@
             "name": "Apu Apustaja",
             "balance": "1000000000000000000",
             "decimals": 18,
-            "usdValue": 0.000016487211147674404
+            "usdValue": 0.00001809589590695591
           },
           {
             "assetAddress": "0x6051c1354ccc51b4d561e43b02735deae64768b8",
@@ -124,7 +124,7 @@
             "name": "Mystery",
             "balance": "1.0578239447737357e+24",
             "decimals": 18,
-            "usdValue": 0.0006288726851282782
+            "usdValue": 0.0006652226242933059
           },
           {
             "assetAddress": "0x82866b4a71ba9d930fe338c386b6a45a7133eb36",
@@ -154,9 +154,9 @@
             "assetAddress": "0xa3e7833775a9cc022db2c72eb900378f90ce89b4",
             "symbol": "MALLY",
             "name": "Malamute.Finance",
-            "balance": "2095043826827792",
+            "balance": "2095056790346722",
             "decimals": 9,
-            "usdValue": 8.675745468601893e-7
+            "usdValue": 9.159974626327106e-7
           },
           {
             "assetAddress": "0xa4e4a48d2609d8a210876c594fe0087e310e088c",
@@ -180,7 +180,7 @@
             "name": "Wrapped Ether",
             "balance": "100000000000",
             "decimals": 18,
-            "usdValue": 0.00025037199999999995
+            "usdValue": 0.000263994
           },
           {
             "assetAddress": "0xc04323308419b10a5929ffcfd577f88629222222",
@@ -228,7 +228,7 @@
             "name": "Tether USD",
             "balance": "10",
             "decimals": 6,
-            "usdValue": 0.000009990800000000001
+            "usdValue": 0.0000099967
           },
           {
             "assetAddress": "0xdb99b0477574ac0b2d9c8cec56b42277da3fdb82",
@@ -242,28 +242,28 @@
             "assetAddress": "eth",
             "symbol": "ETH",
             "name": "ETH",
-            "balance": "1.414978346397979e+21",
+            "balance": "1.4149965961504303e+21",
             "decimals": 18,
-            "usdValue": 3542709.585443548
+            "usdValue": 3735506.114041367
           }
         ],
-        "totalUsdValue": 3542712.722834934,
-        "timestamp": "2026-09-18T12:25:08.092Z",
+        "totalUsdValue": 3735509.5472507686,
+        "timestamp": "2026-09-19T12:00:24.817Z",
         "source": "debank"
       },
       "tokenInfo": {
         "symbol": "wBETH",
         "name": "Wrapped Binance Beacon ETH",
         "decimals": 18,
-        "price": 2769.871456552732,
-        "totalSupply": "3175316724611129562586418",
-        "tokenValue": 8795219161.01488,
-        "timestamp": "2026-09-18T12:25:09.001Z",
+        "price": 2921.1565565470155,
+        "totalSupply": "3175316741101733924655345",
+        "tokenValue": 9275597317.382832,
+        "timestamp": "2026-09-19T12:00:25.778Z",
         "source": "debank"
       }
     },
     "eth:0x79973d557CD9dd87eb61E250cc2572c990e20196": {
-      "lastFetched": "2026-09-18T12:25:09.001Z",
+      "lastFetched": "2026-09-19T12:00:25.778Z",
       "balances": {
         "tokens": [
           {
@@ -336,7 +336,7 @@
             "name": "Wrapped Ether",
             "balance": "100000000000",
             "decimals": 18,
-            "usdValue": 0.000250392
+            "usdValue": 0.000263994
           },
           {
             "assetAddress": "eth",
@@ -344,11 +344,11 @@
             "name": "ETH",
             "balance": "103577532352507850000",
             "decimals": 18,
-            "usdValue": 259349.85480809148
+            "usdValue": 273438.4707586796
           }
         ],
-        "totalUsdValue": 259349.8550584835,
-        "timestamp": "2026-09-18T12:25:10.033Z",
+        "totalUsdValue": 273438.4710226736,
+        "timestamp": "2026-09-19T12:00:26.786Z",
         "source": "debank"
       }
     },
@@ -665,7 +665,7 @@
       "proxyAddress": "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1"
     },
     "eth:0xb05a6449f383a1A43A172970858B97394FEcDAD6": {
-      "lastFetched": "2026-09-18T12:25:10.034Z",
+      "lastFetched": "2026-09-19T12:00:26.786Z",
       "balances": {
         "tokens": [
           {
@@ -678,7 +678,7 @@
           }
         ],
         "totalUsdValue": 0,
-        "timestamp": "2026-09-18T12:25:11.157Z",
+        "timestamp": "2026-09-19T12:00:27.791Z",
         "source": "debank"
       }
     },
