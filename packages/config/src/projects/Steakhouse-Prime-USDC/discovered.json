@@ -1,6 +1,6 @@
 {
   "name": "Steakhouse-Prime-USDC",
-  "timestamp": 1789819066,
+  "timestamp": 1789906536,
   "configHash": "0xa8c27cb6281e66f665061b5e81687bcc0263387b10712d541dca9feb60c8cc41",
   "entries": [
     {
@@ -446,7 +446,7 @@
         "feedCap_0xd7818272B9e248357d13057AAb0B417aF31E817d": "200000000000000",
         "feeRecipient": "base:0x255c7705e8BB334DfCae438197f7C4297988085a",
         "guardian": "base:0x894d59017Ed0F8dcd8f2B6e89a3C26eF76876D33",
-        "lastTotalAssets": 20524208645164,
+        "lastTotalAssets": 20284826923766,
         "lostAssets": 0,
         "marketCap_oracle_0x663BECd10daE6C4A3Dcd89F1d76c1174199639B9": "1000000000000000",
         "marketCap_oracle_0x97FF9CbD7E77348b2B8FfBB883bF29452aD18295": "200000000000000",
@@ -536,8 +536,8 @@
         "supplyQueueLength": 6,
         "symbol": "steakUSDC",
         "timelock": 604800,
-        "totalAssets": 20524220097389,
-        "totalSupply": "19418414318613064195264652",
+        "totalAssets": 20284828115061,
+        "totalSupply": "19189766588018548848897981",
         "withdrawQueueLength": 6
       },
       "fieldMeta": {
@@ -1250,6 +1250,6 @@
     "morpho/MetaMorpho": "0xe0915107aa936a9fe6a482059f207ff899ea3a5e2baee3944223a6c6d35a96ce",
     "morpho/Morpho": "0xdbb54f2b25b761df9e05263570b2b0fcfef7676c541d7bdfa2974680fe1e3682"
   },
-  "usedBlockNumbers": { "base": 51514859 },
+  "usedBlockNumbers": { "base": 51558594 },
   "permissionsConfigHash": "0x2c1812bfd58630f117cb69a9a99d89c1ad0457c8e9d8665cb34550086547ac43"
 }

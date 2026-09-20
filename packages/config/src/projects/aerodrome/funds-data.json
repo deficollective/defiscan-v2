@@ -1,39 +1,39 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-19T11:59:47.421Z",
+  "lastModified": "2026-09-20T12:17:36.467Z",
   "contracts": {
     "base:0x940181a94A35A4569E4529A3CDfB74e38FD98631": {
-      "lastFetched": "2026-09-19T11:59:47.090Z",
+      "lastFetched": "2026-09-20T12:17:36.246Z",
       "tokenInfo": {
         "symbol": "AERO",
         "name": "Aerodrome",
         "decimals": 18,
-        "price": 0.6796931233565667,
+        "price": 0.6552112535956018,
         "totalSupply": "1983240735576791446735550579",
-        "tokenValue": 1347995089.9321642,
-        "timestamp": "2026-09-19T11:59:47.420Z",
+        "tokenValue": 1299441648.539133,
+        "timestamp": "2026-09-20T12:17:36.467Z",
         "source": "debank"
       }
     },
     "base:0x5e7BB104d84c7CB9B682AaC2F3d509f5F406809A": {
-      "lastFetched": "2026-09-19T11:59:46.852Z",
+      "lastFetched": "2026-09-20T12:17:35.916Z",
       "aggregate": {
-        "totalUsdValue": 212486111.48808125,
+        "totalUsdValue": 213567430.24403545,
         "contractCount": 0,
         "handlerName": "aerodrome-cl-factory",
         "breakdown": [],
-        "timestamp": "2026-09-19T11:59:46.997Z",
+        "timestamp": "2026-09-20T12:17:36.053Z",
         "source": "defillama-aerodrome-slipstream"
       }
     },
     "base:0x420DD381b31aEf6683db6B902084cB0FFECe40Da": {
-      "lastFetched": "2026-09-19T11:59:46.997Z",
+      "lastFetched": "2026-09-20T12:17:36.053Z",
       "aggregate": {
-        "totalUsdValue": 136678965.18705383,
+        "totalUsdValue": 134210755.12251873,
         "contractCount": 0,
         "handlerName": "aerodrome-v2-factory",
         "breakdown": [],
-        "timestamp": "2026-09-19T11:59:47.089Z",
+        "timestamp": "2026-09-20T12:17:36.246Z",
         "source": "defillama-aerodrome-v1"
       }
     }

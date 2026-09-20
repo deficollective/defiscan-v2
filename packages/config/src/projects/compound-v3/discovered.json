@@ -1,6 +1,6 @@
 {
   "name": "compound-v3",
-  "timestamp": 1789819066,
+  "timestamp": 1789906536,
   "configHash": "0xcb04f1e062cda6f12db17915df1b53b0162b47f0a618659b134079b931f014a7",
   "entries": [
     {
@@ -626,9 +626,9 @@
         "getBorrowRate": [
           475646879, 475646879, 475646879, 475646879, 475646879
         ],
-        "getReserves": 1234541027492,
+        "getReserves": 1235027688780,
         "getSupplyRate": [0, 0, 0, 0, 0],
-        "getUtilization": "802363840254094342",
+        "getUtilization": "792092863108601003",
         "governor": "eth:0x6d903f6003cca6255D85CcA4D3B5E5146dC33925",
         "isAbsorbPaused": false,
         "isBuyPaused": false,
@@ -643,8 +643,8 @@
         "supplyPerSecondInterestRateSlopeHigh": 101344495180,
         "supplyPerSecondInterestRateSlopeLow": 1141552511,
         "targetReserves": 20000000000000,
-        "totalBorrow": 141496402017445,
-        "totalSupply": 176349273503032,
+        "totalBorrow": 140645631150774,
+        "totalSupply": 177561573973337,
         "trackingIndexScale": 1000000000000000
       },
       "errors": {
@@ -818,7 +818,7 @@
         "getBorrowRate": [
           317097919, 317097919, 317097919, 317097919, 317097919
         ],
-        "getReserves": "22347085278001718047",
+        "getReserves": "22346564792354101736",
         "getSupplyRate": [0, 0, 0, 0, 0],
         "getUtilization": "131327395089382687",
         "governor": "eth:0x6d903f6003cca6255D85CcA4D3B5E5146dC33925",
@@ -835,8 +835,8 @@
         "supplyPerSecondInterestRateSlopeHigh": 8561643835,
         "supplyPerSecondInterestRateSlopeLow": 634195839,
         "targetReserves": "5000000000000000000000",
-        "totalBorrow": "21975303252322474705",
-        "totalSupply": "167312136573144840927",
+        "totalBorrow": "21976001587489770301",
+        "totalSupply": "167313355393959752834",
         "trackingIndexScale": 1000000000000000
       },
       "errors": {
@@ -1130,9 +1130,9 @@
         "getBorrowRate": [
           475646879, 475646879, 475646879, 475646879, 475646879
         ],
-        "getReserves": "427040261315449176074297",
+        "getReserves": "427066976283655261420310",
         "getSupplyRate": [0, 0, 0, 0, 0],
-        "getUtilization": "915025105083189688",
+        "getUtilization": "835533843612870661",
         "governor": "eth:0x6d903f6003cca6255D85CcA4D3B5E5146dC33925",
         "isAbsorbPaused": false,
         "isBuyPaused": false,
@@ -1147,8 +1147,8 @@
         "supplyPerSecondInterestRateSlopeHigh": 101344495180,
         "supplyPerSecondInterestRateSlopeLow": 1141552511,
         "targetReserves": "20000000000000000000000000",
-        "totalBorrow": "1613090773916284976829982",
-        "totalSupply": "1762887104003975121327880",
+        "totalBorrow": "1613492082654750220351171",
+        "totalSupply": "1931090052956323692143758",
         "trackingIndexScale": 1000000000000000
       },
       "errors": {
@@ -1262,8 +1262,8 @@
         "latestRoundData": {
           "roundId": 1,
           "answer": 100000000,
-          "startedAt": 1789819043,
-          "updatedAt": 1789819043,
+          "startedAt": 1789906511,
+          "updatedAt": 1789906511,
           "answeredInRound": 1
         },
         "version": 1
@@ -1295,10 +1295,10 @@
         "DOMAIN_SEPARATOR": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
         "name": "Wrapped liquid staked Ether 2.0",
         "stETH": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-        "stEthPerToken": "1244329774635371753",
+        "stEthPerToken": "1244406447835658845",
         "symbol": "wstETH",
-        "tokensPerStEth": "803645480791482179",
-        "totalSupply": "3721904943216695607147344"
+        "tokensPerStEth": "803595964758343881",
+        "totalSupply": "3721770495900323374480716"
       },
       "implementationNames": {
         "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0": "WstETH"
@@ -1410,7 +1410,7 @@
         "RECEIVE_WITH_AUTHORIZATION_TYPEHASH": "0xd099cc98ef71107a616c4f0f941f04c322d8e254fe26b3c6668db87aae413de8",
         "rescuer": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "USDC",
-        "totalSupply": "50023769466034114",
+        "totalSupply": "49854483198749590",
         "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267",
         "version": "2"
       },
@@ -1779,9 +1779,9 @@
         "getBorrowRate": [
           475646879, 475646879, 475646879, 475646879, 475646879
         ],
-        "getReserves": "900828800960231763070",
+        "getReserves": "900697769974694760208",
         "getSupplyRate": [0, 0, 0, 0, 0],
-        "getUtilization": "636308583517894554",
+        "getUtilization": "636295730200342349",
         "governor": "eth:0x6d903f6003cca6255D85CcA4D3B5E5146dC33925",
         "isAbsorbPaused": false,
         "isBuyPaused": false,
@@ -1796,8 +1796,8 @@
         "supplyPerSecondInterestRateSlopeHigh": 8561643835,
         "supplyPerSecondInterestRateSlopeLow": 634195839,
         "targetReserves": "5000000000000000000000",
-        "totalBorrow": "32145969965506188322402",
-        "totalSupply": "50519406547730278237397",
+        "totalBorrow": "32147705330034888699655",
+        "totalSupply": "50522924831962129495657",
         "trackingIndexScale": 1000000000000000
       },
       "errors": {
@@ -1957,7 +1957,7 @@
         "decimals": 18,
         "name": "Wrapped Ether",
         "symbol": "WETH",
-        "totalSupply": "2105190135012607571336683"
+        "totalSupply": "2109077038108438010659555"
       },
       "implementationNames": {
         "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": "WETH9"
@@ -2334,9 +2334,9 @@
         "getBorrowRate": [
           475646879, 475646879, 475646879, 475646879, 475646879
         ],
-        "getReserves": 8328049899425,
+        "getReserves": 8332511091445,
         "getSupplyRate": [0, 0, 0, 0, 0],
-        "getUtilization": "907061998653498468",
+        "getUtilization": "905974946776172144",
         "governor": "eth:0x6d903f6003cca6255D85CcA4D3B5E5146dC33925",
         "isAbsorbPaused": false,
         "isBuyPaused": false,
@@ -2351,8 +2351,8 @@
         "supplyPerSecondInterestRateSlopeHigh": 101344495180,
         "supplyPerSecondInterestRateSlopeLow": 1141552511,
         "targetReserves": 20000000000000,
-        "totalBorrow": 339445501750776,
-        "totalSupply": 374225223084415,
+        "totalBorrow": 339350841275480,
+        "totalSupply": 374569778135137,
         "trackingIndexScale": 1000000000000000
       },
       "errors": {
@@ -2547,8 +2547,8 @@
         "latestRoundData": {
           "roundId": 1,
           "answer": 100000000,
-          "startedAt": 1789819043,
-          "updatedAt": 1789819043,
+          "startedAt": 1789906511,
+          "updatedAt": 1789906511,
           "answeredInRound": 1
         },
         "version": 1
@@ -2617,7 +2617,7 @@
         "name": "USDS Stablecoin",
         "PERMIT_TYPEHASH": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
         "symbol": "USDS",
-        "totalSupply": "6562991673766753362297590412",
+        "totalSupply": "6582668744939036155034951072",
         "UPGRADE_INTERFACE_VERSION": "5.0.0",
         "version": "1"
       },
@@ -4453,6 +4453,6 @@
     "tokens/circle/USDC": "0x7263a38223ab636dc8a5aa9a09174968ffed892ce24134bf7e2407576d7fbbdb",
     "tokens/Lido/wstETH": "0xd55ccc93c3f52e654ebbffee9194b0b8a0d974753091db2a43a185679e002e88"
   },
-  "usedBlockNumbers": { "ethereum": 26011409 },
+  "usedBlockNumbers": { "ethereum": 26018658 },
   "permissionsConfigHash": "0xf6657653df511ab834f87e214d481b5e04d686c7b221f53514404a5267b18a5f"
 }

@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789819212,
-  "lastConsumedUpdateNotifierId": 606,
+  "lastReconciledAt": 1789906681,
+  "lastConsumedUpdateNotifierId": 611,
   "events": [
     {
       "timestamp": "2026-04-25T08:12:54.000Z",
@@ -2003,6 +2003,22 @@
           "field": "values.totalSupply",
           "before": 388251881499047,
           "after": 354580386980216
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 611,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "611:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 354580386980216,
+          "after": 354020534272387
         }
       ]
     }

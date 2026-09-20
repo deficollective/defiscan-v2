@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789821287,
-  "lastConsumedUpdateNotifierId": 607,
+  "lastReconciledAt": 1789908758,
+  "lastConsumedUpdateNotifierId": 612,
   "events": [
     {
       "timestamp": "2026-06-08T12:07:58.000Z",
@@ -5715,6 +5715,59 @@
           "field": "values.getRate",
           "before": "1103923637308678752",
           "after": "1103998120701548823"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 612,
+      "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+      "contractName": "WeEthToEthExchangeRateAdapter",
+      "entity": null,
+      "id": "612:eth:0x4270E1817576bbA4b640466bE79A408Ef128F828:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.1",
+          "before": "1103998120701548823",
+          "after": "1104060678783835370"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 612,
+      "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+      "contractName": "DummyFeed",
+      "entity": null,
+      "id": "612:eth:0xc3866d726C204C0836E0677A31973c649888973D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.startedAt",
+          "before": 1789819043,
+          "after": 1789906511
+        },
+        {
+          "field": "values.latestRoundData.updatedAt",
+          "before": 1789819043,
+          "after": 1789906511
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 612,
+      "address": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "contractName": "Wrapped eETH Token",
+      "entity": null,
+      "id": "612:eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getRate",
+          "before": "1103998120701548823",
+          "after": "1104060678783835370"
         }
       ]
     }

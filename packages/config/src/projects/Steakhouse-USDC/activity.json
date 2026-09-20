@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789819124,
-  "lastConsumedUpdateNotifierId": 604,
+  "lastReconciledAt": 1789906593,
+  "lastConsumedUpdateNotifierId": 609,
   "events": [
     {
       "timestamp": "2026-03-03T13:51:02.000Z",
@@ -12245,6 +12245,161 @@
           "field": "values.liquidityData",
           "before": "0x00000000000000000000000009d4214c03d01f49544c0448dbe3a27f768f2b34000000000000000000000000d3fd63209fa2d55b07a0f6db36c2f43900be309400000000000000000000000004c25d6b74d9f7dea952bbc6f427fd3d03581ab4000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000d99a8cec7e20000",
           "after": "0x"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 609,
+      "address": "eth:0x5E3aCa36fE2361e1866752AD74CB429F64CDcF1A",
+      "contractName": "MorphoMarketV1AdapterV2",
+      "entity": null,
+      "id": "609:eth:0x5E3aCa36fE2361e1866752AD74CB429F64CDcF1A:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.realAssets",
+          "before": "26615228367221774307780688",
+          "after": "26622897260042078559553670"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 609,
+      "address": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+      "contractName": "MetaMorpho",
+      "isDependency": false,
+      "entity": null,
+      "id": "609:eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.supplyQueue.8",
+          "before": "0x34377fc4f617c51818e92c79df31ff270c6a91bc94ad32e367fdf59b9f4ac5dd"
+        },
+        {
+          "field": "values.supplyQueue.9",
+          "after": "0x34377fc4f617c51818e92c79df31ff270c6a91bc94ad32e367fdf59b9f4ac5dd"
+        },
+        {
+          "field": "values.marketParams.9",
+          "before": {
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "770000000000000000",
+            "oracle": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411",
+            "marketId": "0x34377fc4f617c51818e92c79df31ff270c6a91bc94ad32e367fdf59b9f4ac5dd",
+            "loanToken": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "collateralToken": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee"
+          }
+        },
+        {
+          "field": "values.marketParams.10",
+          "after": {
+            "marketId": "0x34377fc4f617c51818e92c79df31ff270c6a91bc94ad32e367fdf59b9f4ac5dd",
+            "loanToken": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "collateralToken": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+            "oracle": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411",
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "770000000000000000"
+          }
+        },
+        {
+          "field": "values.marketOracles.9",
+          "before": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411"
+        },
+        {
+          "field": "values.marketOracles.10",
+          "after": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411"
+        },
+        {
+          "field": "values.withdrawQueue.9",
+          "before": "0x34377fc4f617c51818e92c79df31ff270c6a91bc94ad32e367fdf59b9f4ac5dd"
+        },
+        {
+          "field": "values.withdrawQueue.10",
+          "after": "0x34377fc4f617c51818e92c79df31ff270c6a91bc94ad32e367fdf59b9f4ac5dd"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 609,
+      "address": "eth:0xBEeF01b15dD31E55b4B0d6b6fD19D380c522cc24",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "609:eth:0xBEeF01b15dD31E55b4B0d6b6fD19D380c522cc24:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalAssets",
+          "before": 4000937,
+          "after": 4000955
+        },
+        {
+          "field": "values.previewDeposit.1",
+          "before": 999763555455,
+          "after": 999759057594
+        },
+        {
+          "field": "values.previewDeposit.2",
+          "before": 1999527110910,
+          "after": 1999518115188
+        },
+        {
+          "field": "values.previewDeposit.3",
+          "before": 2999290666365,
+          "after": 2999277172782
+        },
+        {
+          "field": "values.previewDeposit.4",
+          "before": 3999054221820,
+          "after": 3999036230376
+        },
+        {
+          "field": "values.convertToShares.1",
+          "before": 999763555455,
+          "after": 999759057594
+        },
+        {
+          "field": "values.convertToShares.2",
+          "before": 1999527110910,
+          "after": 1999518115188
+        },
+        {
+          "field": "values.convertToShares.3",
+          "before": 2999290666365,
+          "after": 2999277172782
+        },
+        {
+          "field": "values.convertToShares.4",
+          "before": 3999054221820,
+          "after": 3999036230376
+        },
+        {
+          "field": "values.previewWithdraw.1",
+          "before": 999763555456,
+          "after": 999759057595
+        },
+        {
+          "field": "values.previewWithdraw.2",
+          "before": 1999527110911,
+          "after": 1999518115189
+        },
+        {
+          "field": "values.previewWithdraw.3",
+          "before": 2999290666366,
+          "after": 2999277172783
+        },
+        {
+          "field": "values.previewWithdraw.4",
+          "before": 3999054221821,
+          "after": 3999036230377
+        },
+        {
+          "field": "values.accrueInterestView.0",
+          "before": 4000937,
+          "after": 4000955
         }
       ]
     }
