@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789906681,
-  "lastConsumedUpdateNotifierId": 611,
+  "lastReconciledAt": 1789999064,
+  "lastConsumedUpdateNotifierId": 617,
   "events": [
     {
       "timestamp": "2026-04-25T08:12:54.000Z",
@@ -2019,6 +2019,38 @@
           "field": "values.totalSupply",
           "before": 354580386980216,
           "after": 354020534272387
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-21T13:54:40.000Z",
+      "updateNotifierId": 617,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "617:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1342524872976782306976088885",
+          "after": "1333994004976782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-21T13:54:40.000Z",
+      "updateNotifierId": 617,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "617:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 354020534272387,
+          "after": 352427612540948
         }
       ]
     }
