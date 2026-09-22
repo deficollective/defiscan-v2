@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1781612810,
-  "lastConsumedUpdateNotifierId": 273,
+  "lastReconciledAt": 1790080984,
+  "lastConsumedUpdateNotifierId": 625,
   "events": [
     {
       "timestamp": "2026-05-04T09:33:39.000Z",
@@ -1210,6 +1210,67 @@
       "entity": "Pendle",
       "id": "273:eth:0xe8D28E2CA24BB16Fc7e6549eF937e05981d02606:contract-removed",
       "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 625,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "625:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.multisigThreshold",
+          "before": "5 of 9 (56%)",
+          "after": "6 of 10 (60%)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 625,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "625:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.0",
+          "after": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 625,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "625:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.threshold",
+      "type": "role-update",
+      "roleName": "Safe.threshold",
+      "changes": [
+        {
+          "field": "values.$threshold",
+          "before": 5,
+          "after": 6
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 625,
+      "address": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "625:eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f:contract-added",
+      "type": "contract-added"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Sentora-PYUSD",
-  "timestamp": 1789998880,
+  "timestamp": 1790080564,
   "configHash": "0x1b09a9018a0894b7cf71b3c581e31ff886f578a880b0e627b749096c4c984488",
   "entries": [
     {
@@ -20,7 +20,7 @@
         "BASE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "857048287756984449135898664588844880950",
+        "price": "861336586649586568814933525484100866514",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -48,7 +48,7 @@
         "BASE_FEED_2": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "861038207496774069680094909949945081186",
+        "price": "865417608010498176473844368677179791260",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -297,7 +297,7 @@
         "supplyQueueLength": 1,
         "symbol": "senPYUSD",
         "timelock": 259200,
-        "totalAssets": 3076931,
+        "totalAssets": 3077209,
         "totalSupply": "1506217082193105970",
         "withdrawQueue": [
           "0xf8c13c80ab8666c21fc5afa13105745cae7c1da13df596eb5054319f36655cc9",
@@ -348,7 +348,7 @@
         "BASE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "2734970924628028034594452759",
+        "price": "2742948332520684157948602842",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -376,7 +376,7 @@
         "BASE_FEED_2": "eth:0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "3018931965225440867182268862",
+        "price": "3027984703854584507048127133",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -464,7 +464,7 @@
         "BASE_FEED_2": "eth:0xa569d910839Ae8865Da8F8e70FfFb0cBA869F961",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "999824163798061961861623",
+        "price": "999918448445478986196189",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -492,7 +492,7 @@
         "BASE_FEED_2": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "856774032304902214112175177016176450588",
+        "price": "860948976572228388363101117248297766283",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -502,6 +502,11 @@
       "implementationNames": {
         "eth:0x4124b5Cb815A21E26fF86c8A6A0A074c7fa2Dd1D": "MorphoChainlinkOracleV2"
       }
+    },
+    {
+      "address": "eth:0x4C4EEC8ACaB0cE65076B82d84fcA263fE41BA35F",
+      "type": "EOA",
+      "proxyType": "EOA"
     },
     {
       "name": "WstETHPriceFeed",
@@ -519,11 +524,11 @@
         "decimals": 8,
         "description": "Custom price feed for wstETH / ETH",
         "latestRoundData": {
-          "roundId": "36893488147419104135",
-          "answer": 124434311,
-          "startedAt": 1789966262,
-          "updatedAt": 1789966283,
-          "answeredInRound": "36893488147419104135"
+          "roundId": "36893488147419104136",
+          "answer": 124470182,
+          "startedAt": 1790052685,
+          "updatedAt": 1790052707,
+          "answeredInRound": "36893488147419104136"
         },
         "stETHtoETHPriceFeed": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
         "stETHToETHPriceFeedDecimals": 18,
@@ -552,7 +557,7 @@
         "BASE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT": "eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
         "BASE_VAULT_CONVERSION_SAMPLE": "1000000000000000000",
-        "price": "1110133281639633320764880",
+        "price": "1110282035480362755137374",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -639,7 +644,7 @@
         "BASE_FEED_2": "eth:0xa569d910839Ae8865Da8F8e70FfFb0cBA869F961",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "999824163798061961861623",
+        "price": "999918448445478986196189",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -667,7 +672,7 @@
         "BASE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "853586442164649243576338751082976607705",
+        "price": "854851031622065218925928030893120708419",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -696,10 +701,10 @@
         "DOMAIN_SEPARATOR": "0xd4a8ff90a402dc7d4fcbf60f5488291263c743ccff180e139f47d139cedfd5fe",
         "name": "Wrapped liquid staked Ether 2.0",
         "stETH": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-        "stEthPerToken": "1244558067649087690",
+        "stEthPerToken": "1244633419602089156",
         "symbol": "wstETH",
-        "tokensPerStEth": "803498065694076849",
-        "totalSupply": "3719551312309013492020618"
+        "tokensPerStEth": "803449420729600235",
+        "totalSupply": "3723144560949479586799297"
       },
       "implementationNames": {
         "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0": "WstETH"
@@ -860,7 +865,7 @@
         "getChainId": 1,
         "GnosisSafe_modules": [],
         "multisigThreshold": "1 of 1 (100%)",
-        "nonce": 250,
+        "nonce": 253,
         "VERSION": "1.4.1"
       },
       "implementationNames": {
@@ -885,7 +890,7 @@
         "BASE_FEED_2": "eth:0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
         "BASE_VAULT": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT_CONVERSION_SAMPLE": 1,
-        "price": "3403242226111215997734448935",
+        "price": "3414152781654460759043793424",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -950,6 +955,39 @@
       }
     },
     {
+      "name": "Safe",
+      "address": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f",
+      "type": "Contract",
+      "template": "GnosisSafe",
+      "sourceHashes": [
+        "0xfe0725afd3cf2e5fb7627005a6bcf13ef7e35f78034eed2211edbffdb6a9aab5",
+        "0x7d388119a66f3eae147d748f86136f073d907d6b36f7e87e9363c4c7a2899a8a"
+      ],
+      "proxyType": "gnosis safe",
+      "ignoreInWatchMode": ["nonce"],
+      "sinceTimestamp": 1786045163,
+      "sinceBlock": 25698059,
+      "values": {
+        "$immutable": false,
+        "$implementation": "eth:0x41675C099F32341bf84BFc5382aF534df5C7461a",
+        "$members": [
+          "eth:0x4C4EEC8ACaB0cE65076B82d84fcA263fE41BA35F",
+          "eth:0xd757D6A02cD5af9AEF163D7eB8034f75ac22B553"
+        ],
+        "$threshold": 1,
+        "domainSeparator": "0xd721ed5ce20ad1295e25dea8f6087f00f5057c24bf88100c20c7d9bbec85a1a7",
+        "getChainId": 1,
+        "GnosisSafe_modules": [],
+        "multisigThreshold": "1 of 2 (50%)",
+        "nonce": 0,
+        "VERSION": "1.4.1"
+      },
+      "implementationNames": {
+        "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f": "SafeProxy",
+        "eth:0x41675C099F32341bf84BFc5382aF534df5C7461a": "Safe"
+      }
+    },
+    {
       "name": "PendleChainlinkOracle",
       "address": "eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE",
       "type": "Contract",
@@ -971,7 +1009,7 @@
           "roundId": 0,
           "answer": "1000000000000000000",
           "startedAt": 0,
-          "updatedAt": 1789998863,
+          "updatedAt": 1790080547,
           "answeredInRound": 0
         },
         "market": "eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194",
@@ -1010,13 +1048,13 @@
         "description": "Redstone Price Feed",
         "getDataFeedId": "0x4c4254435f46554e44414d454e54414c00000000000000000000000000000000",
         "getPriceFeedAdapter": "eth:0xd72a6BA4a87DDB33e801b3f1c7750b2d0911fC6C",
-        "latestAnswer": 100465542,
+        "latestAnswer": 100473801,
         "latestRound": 1,
         "latestRoundData": {
           "roundId": 1,
-          "answer": 100465542,
-          "startedAt": 1789976327,
-          "updatedAt": 1789976327,
+          "answer": 100473801,
+          "startedAt": 1790062739,
+          "updatedAt": 1790062739,
           "answeredInRound": 1
         },
         "version": 1
@@ -1079,7 +1117,7 @@
           "roundId": 0,
           "answer": "1000000000000000000",
           "startedAt": 0,
-          "updatedAt": 1789998863,
+          "updatedAt": 1790080547,
           "answeredInRound": 0
         },
         "market": "eth:0x8dAe8ECe668cf80d348873F23D456448E8694883",
@@ -1108,7 +1146,7 @@
         "BASE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT": "eth:0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b",
         "BASE_VAULT_CONVERSION_SAMPLE": 1000000,
-        "price": "1184014974728195870969187065559383917",
+        "price": "1184116031701636978474509179829336873",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -1136,6 +1174,7 @@
         "$immutable": false,
         "$implementation": "eth:0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552",
         "$members": [
+          "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f",
           "eth:0xe0aeb6811d33Df42A09066857CDaFca16b506086",
           "eth:0x84D3E4EE550DD5F99e76a548aC59a6BE1C8dCf79",
           "eth:0xC100c251bdD297A66795112f04356E6BA5f89D80",
@@ -1146,12 +1185,12 @@
           "eth:0x69FcEFDe2B48503d675181448B3D4272128bca9c",
           "eth:0x13cA8756E9470b71B8e998352c8741706217f963"
         ],
-        "$threshold": 5,
+        "$threshold": 6,
         "domainSeparator": "0xb5159d60f60933c0d8fbd0ca8bef1e90bdc6d80dbc43c0c749059d3793addb89",
         "getChainId": 1,
         "GnosisSafe_modules": [],
-        "multisigThreshold": "5 of 9 (56%)",
-        "nonce": 281,
+        "multisigThreshold": "6 of 10 (60%)",
+        "nonce": 282,
         "VERSION": "1.3.0"
       },
       "implementationNames": {
@@ -1198,7 +1237,7 @@
         ],
         "$upgradeCount": 3,
         "getUniqueSignersThreshold": 3,
-        "priceOfETH": "2730560586000000000000"
+        "priceOfETH": "2749544889000000000000"
       },
       "errors": {
         "extractTimestampsAndAssertAllAreEqual": "Processing error occurred.",
@@ -1208,6 +1247,11 @@
         "eth:0xd72a6BA4a87DDB33e801b3f1c7750b2d0911fC6C": "TransparentUpgradeableProxy",
         "eth:0x0C6C73865429e1D87b7B817B95bB1f38F2136529": "EthereumMultiFeedAdapterWithoutRoundsV3"
       }
+    },
+    {
+      "address": "eth:0xd757D6A02cD5af9AEF163D7eB8034f75ac22B553",
+      "type": "EOA",
+      "proxyType": "EOA"
     },
     {
       "address": "eth:0xe0aeb6811d33Df42A09066857CDaFca16b506086",
@@ -1231,7 +1275,7 @@
         "BASE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "BASE_VAULT": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
         "BASE_VAULT_CONVERSION_SAMPLE": "1000000000000000000",
-        "price": "1248988291445881586188186",
+        "price": "1249253463080291841026141",
         "QUOTE_FEED_1": "eth:0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "QUOTE_FEED_2": "eth:0x0000000000000000000000000000000000000000",
         "QUOTE_VAULT": "eth:0x0000000000000000000000000000000000000000",
@@ -2106,6 +2150,9 @@
       "function transferOwnership(address _to)",
       "function version() view returns (uint256)"
     ],
+    "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f": [
+      "constructor(address _singleton)"
+    ],
     "eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE": [
       "constructor(address _market, uint32 _twapDuration, uint8 _baseOracleType)",
       "error InvalidRoundId()",
@@ -2414,6 +2461,6 @@
     "Steakhouse-USDC/EACAggregatorProxy": "0x3ba2cbd9a884cdfea15efe908af481b5a5a9c747391c8580bd38b0f8b1603921",
     "tokens/Lido/wstETH": "0xd55ccc93c3f52e654ebbffee9194b0b8a0d974753091db2a43a185679e002e88"
   },
-  "usedBlockNumbers": { "ethereum": 26026312 },
-  "permissionsConfigHash": "0xc8c572e1bbecfbce8ad3ad6f6e88c43c5ba2dbc87c266366e7043057637a30e0"
+  "usedBlockNumbers": { "ethereum": 26033065 },
+  "permissionsConfigHash": "0x373124e0a80efb51f99b8379ef56f52efe2bf76d5ede8f9b97ea0a748ef76157"
 }

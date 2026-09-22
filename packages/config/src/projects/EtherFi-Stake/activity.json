@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789998996,
-  "lastConsumedUpdateNotifierId": 616,
+  "lastReconciledAt": 1790080786,
+  "lastConsumedUpdateNotifierId": 623,
   "events": [
     {
       "timestamp": "2026-03-26T08:10:03.000Z",
@@ -6098,6 +6098,40 @@
           "field": "values.getCurrentStakeLimit",
           "before": "150000000000000000000000",
           "after": "149777167837857390437137"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 623,
+      "address": "eth:0x308861A430be4cce5502d0A12724771Fc6DaF216",
+      "contractName": "LiquidityPool",
+      "isDependency": false,
+      "entity": null,
+      "id": "623:eth:0x308861A430be4cce5502d0A12724771Fc6DaF216:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.validatorSizeWei",
+          "before": "32000000000000000000",
+          "after": "1901000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 623,
+      "address": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+      "contractName": "Liquid staked Ether 2.0 Token",
+      "isDependency": true,
+      "entity": "Lido stETH",
+      "id": "623:eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCurrentStakeLimit",
+          "before": "149777167837857390437137",
+          "after": "150000000000000000000000"
         }
       ]
     }

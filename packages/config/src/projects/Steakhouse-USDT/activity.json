@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790001142,
-  "lastConsumedUpdateNotifierId": 618,
+  "lastReconciledAt": 1790083067,
+  "lastConsumedUpdateNotifierId": 626,
   "events": [
     {
       "timestamp": "2026-06-08T12:07:58.000Z",
@@ -5823,6 +5823,178 @@
           "after": "1104134938635970640"
         }
       ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 626,
+      "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+      "contractName": "WeEthToEthExchangeRateAdapter",
+      "entity": null,
+      "id": "626:eth:0x4270E1817576bbA4b640466bE79A408Ef128F828:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.1",
+          "before": "1104134938635970640",
+          "after": "1104208569618335386"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 626,
+      "address": "eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa",
+      "contractName": "MetaMorpho",
+      "isDependency": false,
+      "entity": null,
+      "id": "626:eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.supplyQueue.4",
+          "after": "0x3c5a244b778095e1e1b2e44b7c2ecc9bf4fda9cd85cc22740e09205a7a4bf510"
+        },
+        {
+          "field": "values.supplyQueue.6",
+          "before": "0x3c5a244b778095e1e1b2e44b7c2ecc9bf4fda9cd85cc22740e09205a7a4bf510"
+        },
+        {
+          "field": "values.marketParams.5",
+          "after": {
+            "marketId": "0x3c5a244b778095e1e1b2e44b7c2ecc9bf4fda9cd85cc22740e09205a7a4bf510",
+            "loanToken": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+            "collateralToken": "eth:0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "oracle": "eth:0xf1561bC4b3D1bA49053986Fb9ee88D4fE22d0Cf4",
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000"
+          }
+        },
+        {
+          "field": "values.marketParams.7",
+          "before": {
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000",
+            "oracle": "eth:0xf1561bC4b3D1bA49053986Fb9ee88D4fE22d0Cf4",
+            "marketId": "0x3c5a244b778095e1e1b2e44b7c2ecc9bf4fda9cd85cc22740e09205a7a4bf510",
+            "loanToken": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+            "collateralToken": "eth:0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+          }
+        },
+        {
+          "field": "values.marketOracles.5",
+          "after": "eth:0xf1561bC4b3D1bA49053986Fb9ee88D4fE22d0Cf4"
+        },
+        {
+          "field": "values.marketOracles.7",
+          "before": "eth:0xf1561bC4b3D1bA49053986Fb9ee88D4fE22d0Cf4"
+        },
+        {
+          "field": "values.withdrawQueue.5",
+          "after": "0x3c5a244b778095e1e1b2e44b7c2ecc9bf4fda9cd85cc22740e09205a7a4bf510"
+        },
+        {
+          "field": "values.withdrawQueue.7",
+          "before": "0x3c5a244b778095e1e1b2e44b7c2ecc9bf4fda9cd85cc22740e09205a7a4bf510"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 626,
+      "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+      "contractName": "DummyFeed",
+      "entity": null,
+      "id": "626:eth:0xc3866d726C204C0836E0677A31973c649888973D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.startedAt",
+          "before": 1789998863,
+          "after": 1790080547
+        },
+        {
+          "field": "values.latestRoundData.updatedAt",
+          "before": 1789998863,
+          "after": 1790080547
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 626,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "626:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.multisigThreshold",
+          "before": "5 of 9 (56%)",
+          "after": "6 of 10 (60%)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 626,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "626:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.0",
+          "after": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 626,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "626:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.threshold",
+      "type": "role-update",
+      "roleName": "Safe.threshold",
+      "changes": [
+        {
+          "field": "values.$threshold",
+          "before": 5,
+          "after": 6
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 626,
+      "address": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "contractName": "Wrapped eETH Token",
+      "entity": null,
+      "id": "626:eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getRate",
+          "before": "1104134938635970640",
+          "after": "1104208569618335386"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 626,
+      "address": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "626:eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f:contract-added",
+      "type": "contract-added"
     }
   ]
 }

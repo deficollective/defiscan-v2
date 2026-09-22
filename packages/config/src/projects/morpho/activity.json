@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1786523312,
-  "lastConsumedUpdateNotifierId": 408,
+  "lastReconciledAt": 1790080589,
+  "lastConsumedUpdateNotifierId": 619,
   "events": [
     {
       "timestamp": "2026-03-02T13:49:30.000Z",
@@ -83,6 +83,64 @@
           "after": "eth:0x8e104AFBf2F9C7b6018897A2D68088e2fdA63937"
         }
       ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 619,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "619:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.multisigThreshold",
+          "before": "5 of 9 (56%)",
+          "after": "6 of 10 (60%)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 619,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "619:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.0",
+          "after": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 619,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "619:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.threshold",
+      "type": "role-update",
+      "roleName": "Safe.threshold",
+      "changes": [
+        {
+          "field": "values.$threshold",
+          "before": 5,
+          "after": 6
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 619,
+      "address": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "619:eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f:contract-added",
+      "type": "contract-added"
     }
   ]
 }
