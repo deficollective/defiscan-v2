@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1788607105,
-  "lastConsumedUpdateNotifierId": 527,
+  "lastReconciledAt": 1790167585,
+  "lastConsumedUpdateNotifierId": 627,
   "events": [
     {
       "timestamp": "2026-03-02T13:49:30.000Z",
@@ -3524,6 +3524,49 @@
       "entity": null,
       "id": "527:eth:0xEa0b7d29C6e15cCD6D63428f30Dda9680D44e355:contract-added",
       "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 627,
+      "address": "eth:0x3E7d1eAB13ad0104d2750B8863b489D65364e32D",
+      "contractName": "EACAggregatorProxy",
+      "entity": null,
+      "id": "627:eth:0x3E7d1eAB13ad0104d2750B8863b489D65364e32D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.phaseId",
+          "before": 3,
+          "after": 4
+        },
+        {
+          "field": "values.aggregator",
+          "before": "eth:0x0d5F4aADf3fde31BBB55dB5F42C080F18aD54Df5",
+          "after": "eth:0x9c41663bB8d6800c8050E2Fbf98E86AD01c973e3"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 627,
+      "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+      "contractName": "EACAggregatorProxy",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "627:eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.phaseId",
+          "before": 3,
+          "after": 4
+        },
+        {
+          "field": "values.aggregator",
+          "before": "eth:0xc9E1a09622afdB659913fefE800fEaE5DBbFe9d7",
+          "after": "eth:0x54bCC589d9743E521c64233706FC8cB36D275b07"
+        }
+      ]
     }
   ]
 }

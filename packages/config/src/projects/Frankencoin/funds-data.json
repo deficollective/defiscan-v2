@@ -1,17 +1,17 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-22T12:39:08.112Z",
+  "lastModified": "2026-09-23T12:48:33.000Z",
   "contracts": {
     "eth:0xB58E61C3098d85632Df34EecfB899A1Ed80921cB": {
-      "lastFetched": "2026-09-22T12:38:59.760Z",
+      "lastFetched": "2026-09-23T12:48:24.692Z",
       "tokenInfo": {
         "symbol": "ZCHF",
         "name": "Frankencoin",
         "decimals": 18,
-        "price": 1.219855783501552,
-        "totalSupply": "29770977386383661923028898",
-        "tokenValue": 36316298.945274025,
-        "timestamp": "2026-09-22T12:39:00.321Z",
+        "price": 1.2172992127753686,
+        "totalSupply": "30766669432323917208275681",
+        "tokenValue": 37452242.4796879,
+        "timestamp": "2026-09-23T12:48:24.990Z",
         "source": "debank"
       }
     },
@@ -59,7 +59,7 @@
       }
     },
     "eth:0x1bA26788dfDe592fec8bcB0Eaff472a42BE341B2": {
-      "lastFetched": "2026-09-22T12:39:00.321Z",
+      "lastFetched": "2026-09-23T12:48:24.990Z",
       "balances": {
         "tokens": [
           {
@@ -68,7 +68,7 @@
             "name": "Frankencoin Pool Share",
             "balance": "14939483642983051000",
             "decimals": 18,
-            "usdValue": 22897.685853303883
+            "usdValue": 22793.58206531333
           },
           {
             "assetAddress": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
@@ -76,7 +76,7 @@
             "name": "HEX",
             "balance": "100000000",
             "decimals": 8,
-            "usdValue": 0.0012516449602219325
+            "usdValue": 0.0012686953343586508
           },
           {
             "assetAddress": "0x57b9d10157f66d8c00a815b5e289a152dedbe7ed",
@@ -90,13 +90,13 @@
             "assetAddress": "0xb58e61c3098d85632df34eecfb899a1ed80921cb",
             "symbol": "ZCHF",
             "name": "Frankencoin",
-            "balance": "1.1564212875307225e+25",
+            "balance": "1.1554035545157959e+25",
             "decimals": 18,
-            "usdValue": 14106671.95758663
+            "usdValue": 14064718.37349941
           }
         ],
-        "totalUsdValue": 14129569.644691579,
-        "timestamp": "2026-09-22T12:39:01.072Z",
+        "totalUsdValue": 14087511.956833418,
+        "timestamp": "2026-09-23T12:48:25.876Z",
         "source": "debank"
       },
       "positions": {
@@ -110,50 +110,50 @@
               {
                 "name": "Staked",
                 "stats": {
-                  "assetUsdValue": 22897.685853303876,
+                  "assetUsdValue": 22793.58206531333,
                   "debtUsdValue": 0,
-                  "netUsdValue": 22897.685853303876
+                  "netUsdValue": 22793.58206531333
                 },
                 "tokens": [
                   {
                     "symbol": "ZCHF",
                     "name": "Frankencoin",
-                    "amount": 18770.813864223273,
-                    "price": 1.219855783501552
+                    "amount": 18724.716015666636,
+                    "price": 1.2172992127753686
                   }
                 ]
               }
             ],
-            "totalUsdValue": 22897.685853303876
+            "totalUsdValue": 22793.58206531333
           }
         ],
-        "totalUsdValue": 22897.685853303876,
-        "timestamp": "2026-09-22T12:39:02.069Z",
+        "totalUsdValue": 22793.58206531333,
+        "timestamp": "2026-09-23T12:48:27.019Z",
         "source": "debank"
       }
     },
     "eth:0x7546762fdb1a6d9146b33960545C3f6394265219": {
-      "lastFetched": "2026-09-22T12:39:02.070Z",
+      "lastFetched": "2026-09-23T12:48:27.019Z",
       "aggregate": {
         "totalUsdValue": 0,
         "contractCount": 0,
         "handlerName": "frankencoin-mintinghub",
         "breakdown": [],
-        "timestamp": "2026-09-22T12:39:02.410Z",
+        "timestamp": "2026-09-23T12:48:27.284Z",
         "source": "frankencoin-api"
       }
     },
     "eth:0xDe12B620A8a714476A97EfD14E6F7180Ca653557": {
-      "lastFetched": "2026-09-22T12:39:02.410Z",
+      "lastFetched": "2026-09-23T12:48:27.284Z",
       "aggregate": {
-        "totalUsdValue": 72367714.41262828,
+        "totalUsdValue": 72479809.43579139,
         "contractCount": 69,
         "handlerName": "frankencoin-mintinghub",
         "breakdown": [
           {
             "address": "0xDc189AC81BEC4db551A0478334691D71109d9382",
             "name": "Position (cbBTC)",
-            "usdValue": 12903004.068611562
+            "usdValue": 12934305.14173934
           },
           {
             "address": "0xAB4F88DcF518dF5544C692088Bf6E754043967a9",
@@ -168,47 +168,47 @@
           {
             "address": "0x03299CA7Df3f594D24Bb66565919D95D9347Bbb9",
             "name": "Position (LsETH)",
-            "usdValue": 5409890.568071581
+            "usdValue": 5415092.919946662
           },
           {
             "address": "0x6880881AE5a79F0C2657162A0F64072C075A60Ce",
             "name": "Position (SPYon)",
-            "usdValue": 4220692.722521269
+            "usdValue": 4222065.99373981
           },
           {
             "address": "0x826C54287c0C1E2A4D0fbF81E2e734c85C48d3f4",
             "name": "Position (wstETH)",
-            "usdValue": 3675041.1269827466
+            "usdValue": 3684374.623131092
           },
           {
             "address": "0x194E0d684f1CC6d93843FEad521f3d54a5879F4e",
             "name": "Position (WBTC)",
-            "usdValue": 3462688.410980036
+            "usdValue": 3474009.098501887
           },
           {
             "address": "0x865762A0B70Aaa5EbAAd1cdc6B253ab02DE8158e",
             "name": "Position (cbBTC)",
-            "usdValue": 3440801.0849630833
+            "usdValue": 3449148.037797157
           },
           {
             "address": "0xaad88D7E720dF16D44e573cbeCc79eDB09Fb82F2",
             "name": "Position (wstETH)",
-            "usdValue": 3412294.4540229775
+            "usdValue": 3420960.6528608096
           },
           {
             "address": "0x8E2Dc1eD2ecF29def3a5c436455162d0639E2cf8",
             "name": "Position (WBTC)",
-            "usdValue": 3093220.41675636
+            "usdValue": 3103333.189728733
           },
           {
             "address": "0x0C80da34E508C7f618D0E3593945a39A11882223",
             "name": "Position (WBTC)",
-            "usdValue": 3007297.6274020164
+            "usdValue": 3017129.490014046
           },
           {
             "address": "0xc7DEe360F7816aFe697BE9B0Ba897e469e53eF19",
             "name": "Position (WBTC)",
-            "usdValue": 2564708.3994424785
+            "usdValue": 2573093.2897152184
           },
           {
             "address": "0x9FaBcDf8bc542B44569Dd66c2c408636297D6f7e",
@@ -218,62 +218,62 @@
           {
             "address": "0x801b3C232dCc8F75EE6a1f0BCCE29F16db1Cb44c",
             "name": "Position (LsETH)",
-            "usdValue": 1634545.262971498
+            "usdValue": 1636117.1024582172
           },
           {
             "address": "0xabe499cdb61a76a8bFAa49822035DbE9a04aEDCf",
             "name": "Position (WETH)",
-            "usdValue": 1309839.394112714
+            "usdValue": 1310645.5439572106
           },
           {
             "address": "0x7ae56A1bE4979A05E58F55634E0698d18C1bED99",
             "name": "Position (XAUt)",
-            "usdValue": 1038457.9055243576
+            "usdValue": 1035618.6000708765
           },
           {
             "address": "0xAC1814aB53a95d34686cB66Bff5E8E368A5CA6E2",
             "name": "Position (cbBTC)",
-            "usdValue": 923832.312349205
+            "usdValue": 926073.4139262395
           },
           {
             "address": "0xAe4bE19e25a10ce9B67d76DC2c8C774F4850B215",
             "name": "Position (LsETH)",
-            "usdValue": 876908.5447567969
+            "usdValue": 877751.8126112364
           },
           {
             "address": "0x5F2c10f779B7f0C44ee80128A3d7ac75B255bb95",
             "name": "Position (cbBTC)",
-            "usdValue": 860200.2712407708
+            "usdValue": 862287.0094492893
           },
           {
             "address": "0x0C98db77782c4CB8B96479719e695b524AFEAd59",
             "name": "Position (GNO)",
-            "usdValue": 753700.2003692714
+            "usdValue": 761915.8553185647
           },
           {
             "address": "0x3484c2aaF6Cb7c27AA68c89edCDAc878020A4DA7",
             "name": "Position (PAXG)",
-            "usdValue": 650144.1797406513
+            "usdValue": 647999.7704883625
           },
           {
             "address": "0x3132e6f2193C3f79C4Ba094B98Caa2A94CF92d79",
             "name": "Position (LsETH)",
-            "usdValue": 490578.2068569493
+            "usdValue": 491049.9650971952
           },
           {
             "address": "0x25BD3a5D6EE54f9Ec5536c6fF20C0685d953A70A",
             "name": "Position (XAUt)",
-            "usdValue": 216756.38786812627
+            "usdValue": 216163.74218564187
           },
           {
             "address": "0x1eEd91EeFA0dA607fA32088ad686fb8cA4254804",
             "name": "Position (cbBTC)",
-            "usdValue": 171994.3320231369
+            "usdValue": 172411.5687484446
           },
           {
             "address": "0xfB21462710937e6192F3F696D57E8F607ED66ec1",
             "name": "Position (WBTC)",
-            "usdValue": 171845.60448552345
+            "usdValue": 172407.42529048395
           },
           {
             "address": "0x88349cCd4D45d00E8AaAb64259Fa3F798da51680",
@@ -283,42 +283,42 @@
           {
             "address": "0x576736422FC0c22881312819bbd623EAcEFB350a",
             "name": "Position (wstETH)",
-            "usdValue": 120488.11717155133
+            "usdValue": 120794.1206525152
           },
           {
             "address": "0x72Bac4E2bc3826e4636125C1303e0C498801385c",
             "name": "Position (LsETH)",
-            "usdValue": 116512.32412852546
+            "usdValue": 116624.36671058385
           },
           {
             "address": "0x9cf4E932285474e72b82b288C4064054223bA502",
             "name": "Position (REALU)",
-            "usdValue": 100858.14676799999
+            "usdValue": 107456.13975599999
           },
           {
             "address": "0x0A93f7C5BbB1Ff74D19185D7a1E072Bc2a9969B9",
             "name": "Position (wstETH)",
-            "usdValue": 95544.24471264337
+            "usdValue": 95786.89828010267
           },
           {
             "address": "0x147b0288269F0ffc497A9A4A0ADb98BB5d2dFBBD",
             "name": "Position (LsETH)",
-            "usdValue": 91983.413785678
+            "usdValue": 92071.86845572409
           },
           {
             "address": "0x2Adf6E475fAaf211FBb5cE9F1CFed728f90a830A",
             "name": "Position (cbBTC)",
-            "usdValue": 89957.14828194122
+            "usdValue": 90175.37306601217
           },
           {
             "address": "0x73030cB6cF6dA2725765aFa947D30bDf96f7e182",
             "name": "Position (WETH)",
-            "usdValue": 79562.98913140332
+            "usdValue": 79611.95673125124
           },
           {
             "address": "0xc64C01e5D6e66f201a95Ad4AFd657AA260b0c811",
             "name": "Position (LsETH)",
-            "usdValue": 64388.3896499746
+            "usdValue": 64450.30791900687
           },
           {
             "address": "0x2abCf3f9112c0f6f84B826882Fc0A531fDADcf3A",
@@ -328,32 +328,32 @@
           {
             "address": "0xF7010368decaD9C8A3dE31212322D1bd3cf26e7D",
             "name": "Position (cbBTC)",
-            "usdValue": 61934.41952933549
+            "usdValue": 62084.664680348826
           },
           {
             "address": "0x07439d1d8a0542B096c33924840Cb7e8F7bC3c98",
             "name": "Position (ysyBOLD)",
-            "usdValue": 50056.76569778143
+            "usdValue": 50040.725411038606
           },
           {
             "address": "0x5eD0D010e20c262cc264AaF060fb9E3037Cd383E",
             "name": "Position (LsETH)",
-            "usdValue": 44271.06895661384
+            "usdValue": 44313.6416622352
           },
           {
             "address": "0xF4a7dDF7f17D66CeB60bC13d152e2501840FB327",
             "name": "Position (cbBTC)",
-            "usdValue": 43009.752921356354
+            "usdValue": 43114.0891995006
           },
           {
             "address": "0x0559c3E504C253Ec819FC2c05A9Fd7F6F6fa59cE",
             "name": "Position (LsETH)",
-            "usdValue": 42925.59309998307
+            "usdValue": 42966.871946004576
           },
           {
             "address": "0x3fe3B141A8462Cf3288fE9e707D2010b099dC738",
             "name": "Position (XAUt)",
-            "usdValue": 42671.273768733125
+            "usdValue": 42554.60386841842
           },
           {
             "address": "0x224Bc870A661cC77742d63B6C1Fe82dF1841e0D5",
@@ -363,67 +363,62 @@
           {
             "address": "0xb61cAAdE4ccef40f4E1f5755151e4C2874cA34b6",
             "name": "Position (SPYon)",
-            "usdValue": 40445.52462767734
+            "usdValue": 40458.68423879843
           },
           {
             "address": "0xDa2fC6cDb14792Ca763F853E2db3da007DB42099",
             "name": "Position (cbBTC)",
-            "usdValue": 37018.466634167096
+            "usdValue": 37108.2688015564
           },
           {
             "address": "0x9212FBD39814c1D7cC5521Ebadfd949dBb465551",
             "name": "Position (cbBTC)",
-            "usdValue": 34408.01084963083
+            "usdValue": 34491.48037797157
           },
           {
             "address": "0xf89D452E6A1dc1CA8F354f285F6522755e387a7E",
             "name": "Position (wstETH)",
-            "usdValue": 30618.440168825735
+            "usdValue": 30696.201772984627
           },
           {
             "address": "0x75E44F22eC31D8b60Cca06F6c26b3235F9449Fbd",
             "name": "Position (cbBTC)",
-            "usdValue": 23936.652735172716
-          },
-          {
-            "address": "0x295C5e1A760572C9FD8aa209140Bb1c5551F9922",
-            "name": "Position (ysyBOLD)",
-            "usdValue": 23769.826141343412
+            "usdValue": 23994.72005916283
           },
           {
             "address": "0xC862bDC0417eC73980ee79AAE0eEFDEA68f88615",
             "name": "Position (CRV)",
-            "usdValue": 21968.92673516156
-          },
-          {
-            "address": "0xFce9974A3C32510c059e7C3C799169B6E8aA3e9F",
-            "name": "Position (cbBTC)",
-            "usdValue": 19255.268238425382
+            "usdValue": 22093.65078470357
           },
           {
             "address": "0x253122D6a7Eda8beD15DA85438FcB58D8aB4de2f",
             "name": "Position (REALU)",
-            "usdValue": 18615.0519551472
+            "usdValue": 19832.8215276324
           },
           {
-            "address": "0x641845d30aC2F4D68E52b38c3Ea360f810f565b1",
-            "name": "Position (PAXG)",
-            "usdValue": 17337.178126417366
-          },
-          {
-            "address": "0x3f135Aad01BB848747134fFee8cab2a75AC3cDB3",
+            "address": "0xFce9974A3C32510c059e7C3C799169B6E8aA3e9F",
             "name": "Position (cbBTC)",
-            "usdValue": 17204.005424815416
+            "usdValue": 19301.979109476884
           },
           {
             "address": "0x76c642645EcC406D5f5178f661cF52d59A0dE5c4",
             "name": "Position (REALU)",
-            "usdValue": 16809.691128
+            "usdValue": 17909.356626
+          },
+          {
+            "address": "0x641845d30aC2F4D68E52b38c3Ea360f810f565b1",
+            "name": "Position (PAXG)",
+            "usdValue": 17279.993879689668
+          },
+          {
+            "address": "0x3f135Aad01BB848747134fFee8cab2a75AC3cDB3",
+            "name": "Position (cbBTC)",
+            "usdValue": 17245.740188985787
           },
           {
             "address": "0xe2652467ca01BC8DAdA914E35005c22a54167D23",
             "name": "Position (WETH)",
-            "usdValue": 16362.57294484066
+            "usdValue": 16372.643405153834
           },
           {
             "address": "0xC7f26582512B96445c0f7D625d0b55A2F14f0916",
@@ -433,75 +428,80 @@
           {
             "address": "0xc6d9e18A64b2a5CC9dF2D8cba4dd80FE0b7D56Cb",
             "name": "Position (PAXG)",
-            "usdValue": 12352.739415072374
+            "usdValue": 12311.995639278888
           },
           {
             "address": "0xc3751144758806eAbdc286d7FB22c45468043635",
             "name": "Position (WBTC)",
-            "usdValue": 11846.478275729736
+            "usdValue": 11885.208378723893
           },
           {
             "address": "0x0884620ac2c2F25d8f10F299ebb90619Fe1D43ba",
             "name": "Position (cbBTC)",
-            "usdValue": 11803.131356996602
+            "usdValue": 11831.76427656925
           },
           {
             "address": "0xb9BEf81e1C12205550D2c49Dde5046CE5784dB4f",
             "name": "Position (PAXG)",
-            "usdValue": 11125.266289462108
+            "usdValue": 11088.571161352502
           },
           {
             "address": "0xe8017Ad9a703BAaE37C23549B3B30841cAF3e873",
             "name": "Position (ysyBOLD)",
-            "usdValue": 10286.424973436282
+            "usdValue": 10283.12877153765
           },
           {
             "address": "0x7c7EEaf962DaA3ddCE19766F87307D304F53EC78",
             "name": "Position (cbBTC)",
-            "usdValue": 10001.091787372414
+            "usdValue": 10025.35318446487
+          },
+          {
+            "address": "0x295C5e1A760572C9FD8aa209140Bb1c5551F9922",
+            "name": "Position (ysyBOLD)",
+            "usdValue": 9593.652850374823
           },
           {
             "address": "0x7C047b3528e047dCBB5Ca4BF38039c7470d504a1",
             "name": "Position (PAXG)",
-            "usdValue": 8668.589063208683
-          },
-          {
-            "address": "0x5c81749B6c884560DAd0C002D7d4785941696c42",
-            "name": "Position (SPYon)",
-            "usdValue": 8597.70739772851
+            "usdValue": 8639.996939844834
           },
           {
             "address": "0x4dF8742FED85B9F42F552EAbd41beFe133a1D840",
             "name": "Position (WBTC)",
-            "usdValue": 8592.278935434333
+            "usdValue": 8620.369971468703
           },
           {
             "address": "0x422050f743582bf753b4D6BF571FA1808A9D70e6",
             "name": "Position (WBTC)",
-            "usdValue": 8592.278935434333
+            "usdValue": 8620.369971468703
+          },
+          {
+            "address": "0x5c81749B6c884560DAd0C002D7d4785941696c42",
+            "name": "Position (SPYon)",
+            "usdValue": 8600.504802062576
           },
           {
             "address": "0xE1b80ef4c29fA7D4e5F2D7EFFd98906DCA5C9360",
             "name": "Position (wstETH)",
-            "usdValue": 8530.736135057443
+            "usdValue": 8552.401632152025
           },
           {
             "address": "0x4173E7938F2dE77d567633eA9c93f16fb022e329",
             "name": "Position (WETH)",
-            "usdValue": 7113.6835148469445
+            "usdValue": 7118.061681273352
           },
           {
             "address": "0xB668994b7e07172830f34e06a0a354b2E7503A97",
             "name": "Position (WETH)",
-            "usdValue": 5490.978432484089
+            "usdValue": 5494.357893683207
           }
         ],
-        "timestamp": "2026-09-22T12:39:02.545Z",
+        "timestamp": "2026-09-23T12:48:27.414Z",
         "source": "frankencoin-api"
       }
     },
     "eth:0x27d9AD987BdE08a0d083ef7e0e4043C857A17B38": {
-      "lastFetched": "2026-09-22T12:39:02.545Z",
+      "lastFetched": "2026-09-23T12:48:27.414Z",
       "balances": {
         "tokens": [
           {
@@ -510,30 +510,30 @@
             "name": "HEX",
             "balance": "100000000",
             "decimals": 8,
-            "usdValue": 0.0012516449602219325
+            "usdValue": 0.0012686953343586508
           },
           {
             "assetAddress": "0xb58e61c3098d85632df34eecfb899a1ed80921cb",
             "symbol": "ZCHF",
             "name": "Frankencoin",
-            "balance": "1.2340261235890767e+25",
+            "balance": "1.168679129825721e+25",
             "decimals": 18,
-            "usdValue": 15053339.03852136
+            "usdValue": 14226321.847238531
           }
         ],
-        "totalUsdValue": 15053339.039773006,
-        "timestamp": "2026-09-22T12:39:03.155Z",
+        "totalUsdValue": 14226321.848507227,
+        "timestamp": "2026-09-23T12:48:28.026Z",
         "source": "debank"
       },
       "positions": {
         "protocols": [],
         "totalUsdValue": 0,
-        "timestamp": "2026-09-22T12:39:04.085Z",
+        "timestamp": "2026-09-23T12:48:28.997Z",
         "source": "debank"
       }
     },
     "eth:0x3BF301B0e2003E75A3e86AB82bD1EFF6A9dFB2aE": {
-      "lastFetched": "2026-09-22T12:39:04.085Z",
+      "lastFetched": "2026-09-23T12:48:28.997Z",
       "balances": {
         "tokens": [
           {
@@ -542,22 +542,22 @@
             "name": "Frankencoin",
             "balance": "1.701001e+22",
             "decimals": 18,
-            "usdValue": 20749.75907591923
+            "usdValue": 20706.271782301144
           }
         ],
-        "totalUsdValue": 20749.75907591923,
-        "timestamp": "2026-09-22T12:39:05.096Z",
+        "totalUsdValue": 20706.271782301144,
+        "timestamp": "2026-09-23T12:48:30.014Z",
         "source": "debank"
       },
       "positions": {
         "protocols": [],
         "totalUsdValue": 0,
-        "timestamp": "2026-09-22T12:39:06.076Z",
+        "timestamp": "2026-09-23T12:48:30.858Z",
         "source": "debank"
       }
     },
     "eth:0x3B71ba73299F925a837836160c3E1Fec74340403": {
-      "lastFetched": "2026-09-22T12:39:06.076Z",
+      "lastFetched": "2026-09-23T12:48:30.858Z",
       "balances": {
         "tokens": [
           {
@@ -566,16 +566,16 @@
             "name": "HEX",
             "balance": "100000000",
             "decimals": 8,
-            "usdValue": 0.0012516449602219325
+            "usdValue": 0.0012686953343586508
           }
         ],
-        "totalUsdValue": 0.0012516449602219325,
-        "timestamp": "2026-09-22T12:39:06.959Z",
+        "totalUsdValue": 0.0012686953343586508,
+        "timestamp": "2026-09-23T12:48:31.872Z",
         "source": "debank"
       }
     },
     "eth:0x7bbe8F18040aF0032f4C2435E7a76db6F1E346DF": {
-      "lastFetched": "2026-09-22T12:39:06.960Z",
+      "lastFetched": "2026-09-23T12:48:31.873Z",
       "balances": {
         "tokens": [
           {
@@ -588,7 +588,7 @@
           }
         ],
         "totalUsdValue": 0,
-        "timestamp": "2026-09-22T12:39:08.112Z",
+        "timestamp": "2026-09-23T12:48:32.999Z",
         "source": "debank"
       }
     }

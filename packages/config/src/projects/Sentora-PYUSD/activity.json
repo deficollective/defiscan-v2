@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790080984,
-  "lastConsumedUpdateNotifierId": 625,
+  "lastReconciledAt": 1790167901,
+  "lastConsumedUpdateNotifierId": 632,
   "events": [
     {
       "timestamp": "2026-05-04T09:33:39.000Z",
@@ -1271,6 +1271,28 @@
       "entity": null,
       "id": "625:eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f:contract-added",
       "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 632,
+      "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+      "contractName": "EACAggregatorProxy",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "632:eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.phaseId",
+          "before": 3,
+          "after": 4
+        },
+        {
+          "field": "values.aggregator",
+          "before": "eth:0xc9E1a09622afdB659913fefE800fEaE5DBbFe9d7",
+          "after": "eth:0x54bCC589d9743E521c64233706FC8cB36D275b07"
+        }
+      ]
     }
   ]
 }
