@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790167681,
-  "lastConsumedUpdateNotifierId": 629,
+  "lastReconciledAt": 1790253953,
+  "lastConsumedUpdateNotifierId": 635,
   "events": [
     {
       "timestamp": "2026-03-03T13:51:02.000Z",
@@ -12984,6 +12984,239 @@
           "field": "values.liquidityData",
           "before": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000007f39c581f595b53c5cb19bd0b3f8da6c935e2ca0000000000000000000000000e087ad7fe989cf63f8383579d160a20ee7e69f9f000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000",
           "after": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599000000000000000000000000dddd770badd886df3864029e4b377b5f6a2b6b83000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 635,
+      "address": "eth:0x5E3aCa36fE2361e1866752AD74CB429F64CDcF1A",
+      "contractName": "MorphoMarketV1AdapterV2",
+      "entity": null,
+      "id": "635:eth:0x5E3aCa36fE2361e1866752AD74CB429F64CDcF1A:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.realAssets",
+          "before": "27506294048013285911255278",
+          "after": "27516919575245538448912394"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 635,
+      "address": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+      "contractName": "MetaMorpho",
+      "isDependency": false,
+      "entity": null,
+      "id": "635:eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.supplyQueue.3",
+          "before": "0x7e585a933ffe8443c371b4f8cfeb4430f5f6a14c2f32a898c26662c67a1cb8b8"
+        },
+        {
+          "field": "values.supplyQueue.4",
+          "after": "0x7e585a933ffe8443c371b4f8cfeb4430f5f6a14c2f32a898c26662c67a1cb8b8"
+        },
+        {
+          "field": "values.supplyQueue.8",
+          "before": "0xbc99de6a88904cd0e69042ad6f266e63182801f030c636507c3caf590ffd84fe"
+        },
+        {
+          "field": "values.supplyQueue.9",
+          "after": "0xbc99de6a88904cd0e69042ad6f266e63182801f030c636507c3caf590ffd84fe"
+        },
+        {
+          "field": "values.marketParams.4",
+          "before": {
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000",
+            "oracle": "eth:0xe087AD7FE989cF63F8383579D160a20Ee7e69F9F",
+            "marketId": "0x7e585a933ffe8443c371b4f8cfeb4430f5f6a14c2f32a898c26662c67a1cb8b8",
+            "loanToken": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "collateralToken": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+          }
+        },
+        {
+          "field": "values.marketParams.5",
+          "after": {
+            "marketId": "0x7e585a933ffe8443c371b4f8cfeb4430f5f6a14c2f32a898c26662c67a1cb8b8",
+            "loanToken": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "collateralToken": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "oracle": "eth:0xe087AD7FE989cF63F8383579D160a20Ee7e69F9F",
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000"
+          }
+        },
+        {
+          "field": "values.marketParams.9",
+          "before": {
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000",
+            "oracle": "eth:0x9F983115741D0F7F2EAE07831415057AD3de34d2",
+            "marketId": "0xbc99de6a88904cd0e69042ad6f266e63182801f030c636507c3caf590ffd84fe",
+            "loanToken": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "collateralToken": "eth:0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+          }
+        },
+        {
+          "field": "values.marketParams.10",
+          "after": {
+            "marketId": "0xbc99de6a88904cd0e69042ad6f266e63182801f030c636507c3caf590ffd84fe",
+            "loanToken": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "collateralToken": "eth:0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
+            "oracle": "eth:0x9F983115741D0F7F2EAE07831415057AD3de34d2",
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000"
+          }
+        },
+        {
+          "field": "values.marketOracles.4",
+          "before": "eth:0xe087AD7FE989cF63F8383579D160a20Ee7e69F9F"
+        },
+        {
+          "field": "values.marketOracles.5",
+          "after": "eth:0xe087AD7FE989cF63F8383579D160a20Ee7e69F9F"
+        },
+        {
+          "field": "values.marketOracles.9",
+          "before": "eth:0x9F983115741D0F7F2EAE07831415057AD3de34d2"
+        },
+        {
+          "field": "values.marketOracles.10",
+          "after": "eth:0x9F983115741D0F7F2EAE07831415057AD3de34d2"
+        },
+        {
+          "field": "values.withdrawQueue.4",
+          "before": "0x7e585a933ffe8443c371b4f8cfeb4430f5f6a14c2f32a898c26662c67a1cb8b8"
+        },
+        {
+          "field": "values.withdrawQueue.5",
+          "after": "0x7e585a933ffe8443c371b4f8cfeb4430f5f6a14c2f32a898c26662c67a1cb8b8"
+        },
+        {
+          "field": "values.withdrawQueue.9",
+          "before": "0xbc99de6a88904cd0e69042ad6f266e63182801f030c636507c3caf590ffd84fe"
+        },
+        {
+          "field": "values.withdrawQueue.10",
+          "after": "0xbc99de6a88904cd0e69042ad6f266e63182801f030c636507c3caf590ffd84fe"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 635,
+      "address": "eth:0xBEeF01b15dD31E55b4B0d6b6fD19D380c522cc24",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "635:eth:0xBEeF01b15dD31E55b4B0d6b6fD19D380c522cc24:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalAssets",
+          "before": 4001005,
+          "after": 4001023
+        },
+        {
+          "field": "values.previewDeposit.1",
+          "before": 999746563748,
+          "after": 999742066040
+        },
+        {
+          "field": "values.previewDeposit.2",
+          "before": 1999493127496,
+          "after": 1999484132080
+        },
+        {
+          "field": "values.previewDeposit.3",
+          "before": 2999239691244,
+          "after": 2999226198120
+        },
+        {
+          "field": "values.previewDeposit.4",
+          "before": 3998986254992,
+          "after": 3998968264160
+        },
+        {
+          "field": "values.convertToShares.1",
+          "before": 999746563748,
+          "after": 999742066040
+        },
+        {
+          "field": "values.convertToShares.2",
+          "before": 1999493127496,
+          "after": 1999484132080
+        },
+        {
+          "field": "values.convertToShares.3",
+          "before": 2999239691244,
+          "after": 2999226198120
+        },
+        {
+          "field": "values.convertToShares.4",
+          "before": 3998986254992,
+          "after": 3998968264160
+        },
+        {
+          "field": "values.previewWithdraw.1",
+          "before": 999746563749,
+          "after": 999742066041
+        },
+        {
+          "field": "values.previewWithdraw.2",
+          "before": 1999493127497,
+          "after": 1999484132081
+        },
+        {
+          "field": "values.previewWithdraw.3",
+          "before": 2999239691245,
+          "after": 2999226198121
+        },
+        {
+          "field": "values.previewWithdraw.4",
+          "before": 3998986254993,
+          "after": 3998968264161
+        },
+        {
+          "field": "values.accrueInterestView.0",
+          "before": 4001005,
+          "after": 4001023
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 635,
+      "address": "eth:0xbeef0A65206ba55319851836c91f3Fd8864a2E39",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "635:eth:0xbeef0A65206ba55319851836c91f3Fd8864a2E39:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.liquidityData",
+          "before": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599000000000000000000000000dddd770badd886df3864029e4b377b5f6a2b6b83000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000",
+          "after": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000007f39c581f595b53c5cb19bd0b3f8da6c935e2ca0000000000000000000000000e087ad7fe989cf63f8383579d160a20ee7e69f9f000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 635,
+      "address": "eth:0xbeeff2C5bF38f90e3482a8b19F12E5a6D2FCa757",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "635:eth:0xbeeff2C5bF38f90e3482a8b19F12E5a6D2FCa757:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.liquidityData",
+          "before": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000cbb7c0000ab88b473b1f5afd9ef808440eed33bf000000000000000000000000a6d6950c9f177f1de7f7757fb33539e3ec60182a000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000",
+          "after": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000238a700ed6165261cf8b2e544ba797bc11e466ba0000000000000000000000000cb1928eca8783f05a07d9ae2afb33f38bfbeb78000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000cb2bba6f17b8000"
         }
       ]
     }

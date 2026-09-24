@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1787733205,
-  "lastConsumedUpdateNotifierId": 476,
+  "lastReconciledAt": 1790256142,
+  "lastConsumedUpdateNotifierId": 638,
   "events": [
     {
       "timestamp": "2026-05-19T10:45:21.000Z",
@@ -3898,6 +3898,23 @@
         {
           "field": "values.accessControl.FULL_RESTRICTED_STAKER_ROLE.members.921",
           "after": "eth:0x2086e50F05CfE209a650D8d6b04C95C7BD18A4da"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 638,
+      "address": "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3",
+      "contractName": "EthenaMinting",
+      "isDependency": false,
+      "entity": null,
+      "id": "638:eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.globalConfig.globalMaxRedeemPerBlock",
+          "before": "10000000000000000000000000",
+          "after": "20000000000000000000000000"
         }
       ]
     }

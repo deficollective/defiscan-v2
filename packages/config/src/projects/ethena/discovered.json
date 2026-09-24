@@ -1,6 +1,6 @@
 {
   "name": "ethena",
-  "timestamp": 1790167573,
+  "timestamp": 1790253886,
   "configHash": "0xc61cedf695d579cced5d8a9aa9f10d891df9f540bab9eee5d7e76ffd8be06199",
   "entries": [
     {
@@ -66,7 +66,7 @@
         "getChainId": 1,
         "GnosisSafe_modules": [],
         "multisigThreshold": "5 of 10 (50%)",
-        "nonce": 727,
+        "nonce": 731,
         "VERSION": "1.3.0"
       },
       "implementationNames": {
@@ -104,7 +104,7 @@
       "sinceBlock": 20713442,
       "values": {
         "$immutable": true,
-        "enaBalance": "34610760658503633677464109",
+        "enaBalance": "59065323054061321811336226",
         "stakingVault": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9"
       },
       "fieldMeta": {
@@ -155,7 +155,7 @@
         "owner": "eth:0xE8Dc0Fab349EA169283C48Ccfd09d797E6DB7c94",
         "pendingOwner": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "USDe",
-        "totalSupply": "4897760252030897073523503861"
+        "totalSupply": "4896842976860237753523503861"
       },
       "implementationNames": {
         "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3": "USDe"
@@ -318,7 +318,7 @@
       "values": {
         "$immutable": true,
         "stakingVault": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
-        "usdeBalance": "18404236134872687920727779"
+        "usdeBalance": "18876138305872362582766621"
       },
       "fieldMeta": {
         "usdeBalance": {
@@ -1290,8 +1290,8 @@
         ],
         "silo": "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A",
         "symbol": "sENA",
-        "totalAssets": "1254983824636381158696684424",
-        "totalSupply": "1232467442578418621738922239",
+        "totalAssets": "1228945816561127539004084892",
+        "totalSupply": "1206896597287530444719339343",
         "vestingAmount": "2822834000000000000000000",
         "vestingPeriod": 2592000
       },
@@ -2318,8 +2318,8 @@
           "salt": "0x0000000000000000000000000000000000000000000000000000000000000000",
           "extensions": []
         },
-        "getUnvestedAmount": "41401444869047619047619",
-        "lastDistributionTimestamp": 1790160227,
+        "getUnvestedAmount": "41655867155952380952381",
+        "lastDistributionTimestamp": 1790246687,
         "MAX_COOLDOWN_DURATION": 7776000,
         "name": "Staked USDe",
         "owner": "eth:0xE8Dc0Fab349EA169283C48Ccfd09d797E6DB7c94",
@@ -2331,8 +2331,8 @@
         ],
         "silo": "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425",
         "symbol": "sUSDe",
-        "totalAssets": "1336568809318298578113529419",
-        "totalSupply": "1069672865841630730923074771",
+        "totalAssets": "1330218151830433702421668204",
+        "totalSupply": "1064457402639419700916902696",
         "vestingAmount": "55510317142857142857143"
       },
       "fieldMeta": {
@@ -2521,7 +2521,7 @@
         "getDomainSeparator": "0xc4e859a2ad9827930f83695f76c902ef7a7dc112c15b6e056f48dae3abbffc53",
         "globalConfig": {
           "globalMaxMintPerBlock": "200000000000000000000000000",
-          "globalMaxRedeemPerBlock": "10000000000000000000000000"
+          "globalMaxRedeemPerBlock": "20000000000000000000000000"
         },
         "owner": "eth:0xE8Dc0Fab349EA169283C48Ccfd09d797E6DB7c94",
         "pendingDefaultAdmin": "eth:0x0000000000000000000000000000000000000000",
@@ -2599,7 +2599,7 @@
         "pendingOwner": "eth:0x0000000000000000000000000000000000000000",
         "STAKING_VAULT": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
         "USDE_TOKEN": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
-        "usdeBalance": "222041268571428571428582"
+        "usdeBalance": "55510317142857142857153"
       },
       "fieldMeta": {
         "usdeBalance": {
@@ -3201,6 +3201,6 @@
     "global/ProxyAdmin": "0x7d24ef68050bed263f4cfd0471631d16b2f33814fbbd4e9aadf666c81bbf0c2d",
     "GnosisSafe": "0x12db59bec64fa8de67bbeb6a6e913f6c5ff1598c0a5fba90282afaf08e2a748c"
   },
-  "usedBlockNumbers": { "ethereum": 26040265 },
+  "usedBlockNumbers": { "ethereum": 26047396 },
   "permissionsConfigHash": "0xd791a1a9e95e60339bf48827adfaf3099c4249cce29c2a2c51af0802efe71959"
 }

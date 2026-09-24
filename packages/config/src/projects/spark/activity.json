@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790167882,
-  "lastConsumedUpdateNotifierId": 631,
+  "lastReconciledAt": 1790254059,
+  "lastConsumedUpdateNotifierId": 637,
   "events": [
     {
       "timestamp": "2026-04-25T08:12:54.000Z",
@@ -2115,6 +2115,70 @@
           "field": "values.totalSupply",
           "before": 350077778383950,
           "after": 344568368900169
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 637,
+      "address": "eth:0x24C392CDbF32Cf911B258981a66d5541d85269ce",
+      "contractName": "Chronicle_BTC_USD_3",
+      "isDependency": true,
+      "entity": "Chronicle",
+      "id": "637:eth:0x24C392CDbF32Cf911B258981a66d5541d85269ce:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.authed.2",
+          "after": "eth:0xD4C5694cA1272a3d66236d45694f5777EcC94eF3"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 637,
+      "address": "eth:0x46ef0071b1E2fF6B42d36e5A177EA43Ae5917f4E",
+      "contractName": "Chronicle_ETH_USD_3",
+      "isDependency": true,
+      "entity": "Chronicle",
+      "id": "637:eth:0x46ef0071b1E2fF6B42d36e5A177EA43Ae5917f4E:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.authed.2",
+          "after": "eth:0xD4C5694cA1272a3d66236d45694f5777EcC94eF3"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 637,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "637:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1357860165976782306976088885",
+          "after": "1313470776379982306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 637,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "637:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 344568368900169,
+          "after": 353077202234890
         }
       ]
     }
