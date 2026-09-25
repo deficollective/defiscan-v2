@@ -1,6 +1,6 @@
 {
   "name": "ethena",
-  "timestamp": 1790253886,
+  "timestamp": 1790340376,
   "configHash": "0xc61cedf695d579cced5d8a9aa9f10d891df9f540bab9eee5d7e76ffd8be06199",
   "entries": [
     {
@@ -104,7 +104,7 @@
       "sinceBlock": 20713442,
       "values": {
         "$immutable": true,
-        "enaBalance": "59065323054061321811336226",
+        "enaBalance": "67992021637980689062512921",
         "stakingVault": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9"
       },
       "fieldMeta": {
@@ -155,7 +155,7 @@
         "owner": "eth:0xE8Dc0Fab349EA169283C48Ccfd09d797E6DB7c94",
         "pendingOwner": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "USDe",
-        "totalSupply": "4896842976860237753523503861"
+        "totalSupply": "4903958331263181503523503861"
       },
       "implementationNames": {
         "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3": "USDe"
@@ -291,7 +291,7 @@
         "getChainId": 1,
         "GnosisSafe_modules": [],
         "multisigThreshold": "3 of 10 (30%)",
-        "nonce": 173,
+        "nonce": 174,
         "VERSION": "1.3.0"
       },
       "implementationNames": {
@@ -318,7 +318,7 @@
       "values": {
         "$immutable": true,
         "stakingVault": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
-        "usdeBalance": "18876138305872362582766621"
+        "usdeBalance": "20084938242005045859145881"
       },
       "fieldMeta": {
         "usdeBalance": {
@@ -1252,7 +1252,12 @@
               "eth:0x7eC0359DfeF0730056fc20EAF6f174fEd730C45D",
               "eth:0x315D2827438B289415Dc8fdDD527a16C2fde6290",
               "eth:0x2E9950A6E9Ae2E2681fc65F7d231487500d153A3",
-              "eth:0x2086e50F05CfE209a650D8d6b04C95C7BD18A4da"
+              "eth:0x2086e50F05CfE209a650D8d6b04C95C7BD18A4da",
+              "eth:0xe7B9bb1801860463fce227cD3A14a8c4072c755F",
+              "eth:0x9DBe3be87Abae0d9DE757DdB362A0aE9fA4099c8",
+              "eth:0x9a3A64aD58a4fe6Cf792a3DBa20141FCdcAe9791",
+              "eth:0xc1A60d96040b6238079a4e47A3CAaC0845cDe880",
+              "eth:0xCC8f712Eb2d35cdB33520ac2BbFfbcd3923c5d8D"
             ]
           }
         },
@@ -1290,8 +1295,8 @@
         ],
         "silo": "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A",
         "symbol": "sENA",
-        "totalAssets": "1228945816561127539004084892",
-        "totalSupply": "1206896597287530444719339343",
+        "totalAssets": "1220540781546152275056606653",
+        "totalSupply": "1198642361809483530799930953",
         "vestingAmount": "2822834000000000000000000",
         "vestingPeriod": 2592000
       },
@@ -2295,7 +2300,12 @@
               "eth:0x7eC0359DfeF0730056fc20EAF6f174fEd730C45D",
               "eth:0x315D2827438B289415Dc8fdDD527a16C2fde6290",
               "eth:0x2E9950A6E9Ae2E2681fc65F7d231487500d153A3",
-              "eth:0x2086e50F05CfE209a650D8d6b04C95C7BD18A4da"
+              "eth:0x2086e50F05CfE209a650D8d6b04C95C7BD18A4da",
+              "eth:0xe7B9bb1801860463fce227cD3A14a8c4072c755F",
+              "eth:0x9DBe3be87Abae0d9DE757DdB362A0aE9fA4099c8",
+              "eth:0x9a3A64aD58a4fe6Cf792a3DBa20141FCdcAe9791",
+              "eth:0xc1A60d96040b6238079a4e47A3CAaC0845cDe880",
+              "eth:0xCC8f712Eb2d35cdB33520ac2BbFfbcd3923c5d8D"
             ]
           }
         },
@@ -2318,8 +2328,8 @@
           "salt": "0x0000000000000000000000000000000000000000000000000000000000000000",
           "extensions": []
         },
-        "getUnvestedAmount": "41655867155952380952381",
-        "lastDistributionTimestamp": 1790246687,
+        "getUnvestedAmount": "44337482616071428571428",
+        "lastDistributionTimestamp": 1790333123,
         "MAX_COOLDOWN_DURATION": 7776000,
         "name": "Staked USDe",
         "owner": "eth:0xE8Dc0Fab349EA169283C48Ccfd09d797E6DB7c94",
@@ -2331,9 +2341,9 @@
         ],
         "silo": "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425",
         "symbol": "sUSDe",
-        "totalAssets": "1330218151830433702421668204",
-        "totalSupply": "1064457402639419700916902696",
-        "vestingAmount": "55510317142857142857143"
+        "totalAssets": "1323752356138093359988562124",
+        "totalSupply": "1059146726739426748656422194",
+        "vestingAmount": "59215335714285714285714"
       },
       "fieldMeta": {
         "rewarderRoleMembers": {
@@ -2599,7 +2609,7 @@
         "pendingOwner": "eth:0x0000000000000000000000000000000000000000",
         "STAKING_VAULT": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
         "USDE_TOKEN": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
-        "usdeBalance": "55510317142857142857153"
+        "usdeBalance": "1125091378571428571428582"
       },
       "fieldMeta": {
         "usdeBalance": {
@@ -3201,6 +3211,6 @@
     "global/ProxyAdmin": "0x7d24ef68050bed263f4cfd0471631d16b2f33814fbbd4e9aadf666c81bbf0c2d",
     "GnosisSafe": "0x12db59bec64fa8de67bbeb6a6e913f6c5ff1598c0a5fba90282afaf08e2a748c"
   },
-  "usedBlockNumbers": { "ethereum": 26047396 },
+  "usedBlockNumbers": { "ethereum": 26054555 },
   "permissionsConfigHash": "0xd791a1a9e95e60339bf48827adfaf3099c4249cce29c2a2c51af0802efe71959"
 }

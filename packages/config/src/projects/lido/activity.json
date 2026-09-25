@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790253927,
-  "lastConsumedUpdateNotifierId": 634,
+  "lastReconciledAt": 1790340488,
+  "lastConsumedUpdateNotifierId": 640,
   "events": [
     {
       "timestamp": "2026-03-02T13:49:30.000Z",
@@ -35165,6 +35165,828 @@
           "after": "6193690519892094817"
         }
       ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x0De4Ea0184c2ad0BacA7183356Aea5B8d5Bf5c6e",
+      "contractName": "ValidatorsExitBusOracle",
+      "entity": null,
+      "id": "640:eth:0x0De4Ea0184c2ad0BacA7183356Aea5B8d5Bf5c6e:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getConsensusReport.hash",
+          "before": "0x64af86fbd0a4b251a6c06b6cbae3301399fc48a45088a6e5b9ba485ea3089fba",
+          "after": "0x3377202b55f49d6b283722dc7442b21c8929b57d9150172dc0d936c3f82f10bd"
+        },
+        {
+          "field": "values.getConsensusReport.refSlot",
+          "before": 15285599,
+          "after": 15292799
+        },
+        {
+          "field": "values.getConsensusReport.processingDeadlineTime",
+          "before": 1790268491,
+          "after": 1790354891
+        },
+        {
+          "field": "values.getProcessingState.dataHash",
+          "before": "0x64af86fbd0a4b251a6c06b6cbae3301399fc48a45088a6e5b9ba485ea3089fba",
+          "after": "0x3377202b55f49d6b283722dc7442b21c8929b57d9150172dc0d936c3f82f10bd"
+        },
+        {
+          "field": "values.getProcessingState.currentFrameRefSlot",
+          "before": 15285599,
+          "after": 15292799
+        },
+        {
+          "field": "values.getProcessingState.processingDeadlineTime",
+          "before": 1790268491,
+          "after": 1790354891
+        },
+        {
+          "field": "values.getLastProcessingRefSlot",
+          "before": 15285599,
+          "after": 15292799
+        },
+        {
+          "field": "values.getTotalRequestsProcessed",
+          "before": 152076,
+          "after": 152237
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x147f8d3cf3004FAf9Bf94E88B54b6C06De507be9",
+      "contractName": "OracleReportSanityChecker",
+      "entity": null,
+      "id": "640:eth:0x147f8d3cf3004FAf9Bf94E88B54b6C06De507be9:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getReportDataCount",
+          "before": 64,
+          "after": 65
+        },
+        {
+          "field": "values.lastReportTimestamp",
+          "before": 1790251211,
+          "after": 1790337611
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x17be979344f2c2cC806229a532D92f8742C10462",
+      "contractName": "ConsolidationGateway",
+      "entity": null,
+      "id": "640:eth:0x17be979344f2c2cC806229a532D92f8742C10462:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getConsolidationRequestLimitFullInfo.prevConsolidationRequestsLimit",
+          "before": 22,
+          "after": 18
+        },
+        {
+          "field": "values.getConsolidationRequestLimitFullInfo.currentConsolidationRequestsLimit",
+          "before": 202,
+          "after": 158
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x367d23c756599c20DCc8D6943F4976E8F88D60d7",
+      "contractName": "FeeDistributor",
+      "entity": null,
+      "id": "640:eth:0x367d23c756599c20DCc8D6943F4976E8F88D60d7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.pendingSharesToDistribute",
+          "before": "2499532973191683146",
+          "after": "3803584937213045468"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x3FC2C71579D80790Aaa3fc7Be8B66ac39dC57374",
+      "contractName": "TopUpGateway",
+      "entity": null,
+      "id": "640:eth:0x3FC2C71579D80790Aaa3fc7Be8B66ac39dC57374:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getLastTopUpTimestamp",
+          "before": 1790253839,
+          "after": 1790340239
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da",
+      "contractName": "Accounting",
+      "entity": null,
+      "id": "640:eth:0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalBondShares",
+          "before": "26986516469327654305105",
+          "after": "26987556088215101900152"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x6220212a33a87Ed7Cc386B67eB2c393974F28C38",
+      "contractName": "StakingRevenueSource",
+      "entity": null,
+      "id": "640:eth:0x6220212a33a87Ed7Cc386B67eB2c393974F28C38:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.lastReportTimestamp",
+          "before": 1790251211,
+          "after": 1790337611
+        },
+        {
+          "field": "values.pendingRevenueStEth",
+          "before": "41428789027769254720",
+          "after": "42208599269882421871"
+        },
+        {
+          "field": "values.getCumulativeRevenueUSD",
+          "before": "3939840184385157974885978",
+          "after": "4049338823316777286442684"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x7d4E742018fb52E48b08BE73d041C18B21de6Fb5",
+      "contractName": "AccessControlledOCR2Aggregator",
+      "entity": null,
+      "id": "640:eth:0x7d4E742018fb52E48b08BE73d041C18B21de6Fb5:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestConfigDigestAndEpoch.epoch",
+          "before": 32831,
+          "after": 33322
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x852deD011285fe67063a08005c71a85690503Cee",
+      "contractName": "AccountingOracle",
+      "entity": null,
+      "id": "640:eth:0x852deD011285fe67063a08005c71a85690503Cee:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCurrentFrame.refSlot",
+          "before": 15285599,
+          "after": 15292799
+        },
+        {
+          "field": "values.getCurrentFrame.refSlotTimestamp",
+          "before": 1790251211,
+          "after": 1790337611
+        },
+        {
+          "field": "values.getConsensusReport.hash",
+          "before": "0x6e70dcc9329970d71eb2427cf6d05591034813c91762b760340b081198dd4f4f",
+          "after": "0xc83def4fd11136ab044642f8cdd393da38568b3c9e741a6c22846c1289f28ecb"
+        },
+        {
+          "field": "values.getConsensusReport.refSlot",
+          "before": 15285599,
+          "after": 15292799
+        },
+        {
+          "field": "values.getConsensusReport.processingDeadlineTime",
+          "before": 1790337611,
+          "after": 1790424011
+        },
+        {
+          "field": "values.getProcessingState.mainDataHash",
+          "before": "0x6e70dcc9329970d71eb2427cf6d05591034813c91762b760340b081198dd4f4f",
+          "after": "0xc83def4fd11136ab044642f8cdd393da38568b3c9e741a6c22846c1289f28ecb"
+        },
+        {
+          "field": "values.getProcessingState.extraDataHash",
+          "before": "0x98c551cc6df9d35fcd80e73299cc0e5ad1e13dd08beb4422d5facc212fb45152",
+          "after": "0xddb7401837f72edfdc1797ce58df4457138bc7cb053f79587e91cba78a6a1db4"
+        },
+        {
+          "field": "values.getProcessingState.currentFrameRefSlot",
+          "before": 15285599,
+          "after": 15292799
+        },
+        {
+          "field": "values.getProcessingState.processingDeadlineTime",
+          "before": 1790337611,
+          "after": 1790424011
+        },
+        {
+          "field": "values.getLastProcessingRefSlot",
+          "before": 15285599,
+          "after": 15292799
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x902D64c93F6595339aA46105627a085591051aFb",
+      "contractName": "HashConsensus",
+      "entity": null,
+      "id": "640:eth:0x902D64c93F6595339aA46105627a085591051aFb:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getMembers.addresses.0",
+          "before": "eth:0x73181107c8D9ED4ce0bbeF7A0b4ccf3320C41d12",
+          "after": "eth:0xC4f2704273598d51A0ec76A31C12553ec8f5A891"
+        },
+        {
+          "field": "values.getMembers.addresses.1",
+          "before": "eth:0x4118DAD7f348A4063bD15786c299De2f3B1333F3",
+          "after": "eth:0xE75A431A98487DC69A14Bdd13d858E3238e9C1b3"
+        },
+        {
+          "field": "values.getMembers.addresses.2",
+          "before": "eth:0x404335BcE530400a5814375E7Ec1FB55fAff3eA2",
+          "after": "eth:0xc77d0Bf3AA4778E36a89CDC8bbc9c34d8060637d"
+        },
+        {
+          "field": "values.getMembers.addresses.3",
+          "before": "eth:0x8dB977C13CAA938BC58464bFD622DF0570564b78",
+          "after": "eth:0xc7442d4d8F3FfEa0fA4a18Ad3062c8137cE21749"
+        },
+        {
+          "field": "values.getMembers.addresses.4",
+          "before": "eth:0x007DE4a5F7bc37E2F26c0cb2E8A95006EE9B89b5",
+          "after": "eth:0x56B3eA8016Da18C6E8CD8135492d242F0dE0DBBC"
+        },
+        {
+          "field": "values.getMembers.addresses.5",
+          "before": "eth:0xc79F702202E3A6B0B6310B537E786B9ACAA19BAf",
+          "after": "eth:0x4E3F2DEeb59eB9a205D82D17647b3e56422e0FEe"
+        },
+        {
+          "field": "values.getMembers.addresses.6",
+          "before": "eth:0x61c91ECd902EB56e314bB2D5c5C07785444Ea1c8",
+          "after": "eth:0xd524101C3c40f71Fce7B9312D299603880a06Bdb"
+        },
+        {
+          "field": "values.getMembers.addresses.7",
+          "before": "eth:0xe57B3792aDCc5da47EF4fF588883F0ee0c9835C9",
+          "after": "eth:0x99Cd2EF33040879D40BBC77Df81863D97f13C64d"
+        },
+        {
+          "field": "values.getMembers.addresses.8",
+          "before": "eth:0x042a9e5acCfa17e28300F1b5967f20891E973922",
+          "after": "eth:0x5e8Ed9f10307eD6FA793A347e4D0f407D00B9C6f"
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.0",
+          "before": 15163647,
+          "after": 0
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.1",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.2",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.3",
+          "before": 15163647,
+          "after": 0
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.4",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.5",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.6",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.7",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getMembers.lastReportedRefSlots.8",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getFastLaneMembers.addresses.0",
+          "before": "eth:0x8dB977C13CAA938BC58464bFD622DF0570564b78",
+          "after": "eth:0xc7442d4d8F3FfEa0fA4a18Ad3062c8137cE21749"
+        },
+        {
+          "field": "values.getFastLaneMembers.addresses.1",
+          "before": "eth:0x007DE4a5F7bc37E2F26c0cb2E8A95006EE9B89b5",
+          "after": "eth:0x56B3eA8016Da18C6E8CD8135492d242F0dE0DBBC"
+        },
+        {
+          "field": "values.getFastLaneMembers.addresses.2",
+          "before": "eth:0xc79F702202E3A6B0B6310B537E786B9ACAA19BAf",
+          "after": "eth:0x4E3F2DEeb59eB9a205D82D17647b3e56422e0FEe"
+        },
+        {
+          "field": "values.getFastLaneMembers.addresses.3",
+          "before": "eth:0x61c91ECd902EB56e314bB2D5c5C07785444Ea1c8",
+          "after": "eth:0xd524101C3c40f71Fce7B9312D299603880a06Bdb"
+        },
+        {
+          "field": "values.getFastLaneMembers.addresses.4",
+          "before": "eth:0xe57B3792aDCc5da47EF4fF588883F0ee0c9835C9",
+          "after": "eth:0x99Cd2EF33040879D40BBC77Df81863D97f13C64d"
+        },
+        {
+          "field": "values.getFastLaneMembers.lastReportedRefSlots.0",
+          "before": 15163647,
+          "after": 0
+        },
+        {
+          "field": "values.getFastLaneMembers.lastReportedRefSlots.1",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getFastLaneMembers.lastReportedRefSlots.2",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getFastLaneMembers.lastReportedRefSlots.3",
+          "before": 15264447,
+          "after": 0
+        },
+        {
+          "field": "values.getFastLaneMembers.lastReportedRefSlots.4",
+          "before": 15264447,
+          "after": 0
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x9895F0F17cc1d1891b6f18ee0b483B6f221b37Bb",
+      "contractName": "ACL",
+      "entity": null,
+      "id": "640:eth:0x9895F0F17cc1d1891b6f18ee0b483B6f221b37Bb:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.permissions.eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84.0x33969636f1fbf3d7d062d4de4a08e7bd3c46606ec28b3a4398d2665be559b921.entities.1",
+          "after": "eth:0xFE5986E06210aC1eCC1aDCafc0cc7f8D63B3F977"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xAA568141c051f2D1132b110f8391F18D48E8D889",
+      "contractName": "BuybackAllocator",
+      "entity": null,
+      "id": "640:eth:0xAA568141c051f2D1132b110f8391F18D48E8D889:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.budgetUSD",
+          "before": "-550626907807421012557007",
+          "after": "-550672088341611356778654"
+        },
+        {
+          "field": "values.reserveAnchorTS",
+          "before": 1790294400,
+          "after": 1790380800
+        },
+        {
+          "field": "values.lastTotalRevenueUSD",
+          "before": "3939840184385157974885978",
+          "after": "4049338823316777286442684"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xC1d0b3DE6792Bf6b4b37EccdcC24e45978Cfd2Eb",
+      "contractName": "LidoLocator",
+      "entity": null,
+      "id": "640:eth:0xC1d0b3DE6792Bf6b4b37EccdcC24e45978Cfd2Eb:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$pastUpgrades.12",
+          "after": [
+            "2026-09-25T12:27:47.000Z",
+            "0x2aac8dd013e5284a39a08c3ca463862aa22b06b3c1253390a4fc806d0bca6a9e",
+            [
+              "eth:0x60E09F1791F1168d0450E4F100616B4a3F95119C"
+            ]
+          ]
+        },
+        {
+          "field": "values.$upgradeCount",
+          "before": 12,
+          "after": 13
+        },
+        {
+          "field": "values.$implementation",
+          "before": "eth:0xF2Ffb952e129a63F0614Ff87126E1d4a494A2313",
+          "after": "eth:0x60E09F1791F1168d0450E4F100616B4a3F95119C"
+        },
+        {
+          "field": "values.depositSecurityModule",
+          "before": "eth:0xF573E9E3de1f86B085417ab294f56E7920B4e9Be",
+          "after": "eth:0x39BB5d491e98A44D1bfe8047A737a81E296a63E0"
+        },
+        {
+          "field": "values.proxy__getImplementation",
+          "before": "eth:0xF2Ffb952e129a63F0614Ff87126E1d4a494A2313",
+          "after": "eth:0x60E09F1791F1168d0450E4F100616B4a3F95119C"
+        },
+        {
+          "field": "implementationNames.eth:0xF2Ffb952e129a63F0614Ff87126E1d4a494A2313",
+          "before": "LidoLocator"
+        },
+        {
+          "field": "implementationNames.eth:0x60E09F1791F1168d0450E4F100616B4a3F95119C",
+          "after": "LidoLocator"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xDa5F930cE326EB5205085D66c72A4E79d60cB8C1",
+      "contractName": "CuratedModule",
+      "entity": null,
+      "id": "640:eth:0xDa5F930cE326EB5205085D66c72A4E79d60cB8C1:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getNonce",
+          "before": 534,
+          "after": 550
+        },
+        {
+          "field": "values.getTotalModuleStake",
+          "before": "478680752764332000000000",
+          "after": "566113157664106000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xF573E9E3de1f86B085417ab294f56E7920B4e9Be",
+      "contractName": "DepositSecurityModule",
+      "entity": null,
+      "id": "640:eth:0xF573E9E3de1f86B085417ab294f56E7920B4e9Be:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xFdDf38947aFB03C621C71b06C9C70bce73f12999",
+      "contractName": "StakingRouter",
+      "isDependency": false,
+      "entity": null,
+      "id": "640:eth:0xFdDf38947aFB03C621C71b06C9C70bce73f12999:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getTotalModulesValidatorsBalance",
+          "before": "9444975487163635000000000",
+          "after": "9454630087995031000000000"
+        },
+        {
+          "field": "values.getStakingFeeAggregateDistribution.modulesFee",
+          "before": "3806309480107905178",
+          "after": "3811905884556013985"
+        },
+        {
+          "field": "values.getStakingFeeAggregateDistribution.treasuryFee",
+          "before": "6193690519892094817",
+          "after": "6188094115443986012"
+        },
+        {
+          "field": "values.getStakingFeeAggregateDistributionE4Precision.modulesFee",
+          "before": 380,
+          "after": 381
+        },
+        {
+          "field": "values.getStakingFeeAggregateDistributionE4Precision.treasuryFee",
+          "before": 619,
+          "after": 618
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x031E597BcF680f1f2293b119b4b2B14096B15497",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0x031E597BcF680f1f2293b119b4b2B14096B15497:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x035AcCF7E230f32028a1134134A035dda567C86e",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x035AcCF7E230f32028a1134134A035dda567C86e:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x1E8518cd5835B6775F902e1451a3Dd7b02EB3e8A",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x1E8518cd5835B6775F902e1451a3Dd7b02EB3e8A:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x2E6e175F57D7a18b3CA5490844034600FC18EF83",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x2E6e175F57D7a18b3CA5490844034600FC18EF83:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x35506190Ca6df385aA6Bc4a970646dd4f49426c1",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0x35506190Ca6df385aA6Bc4a970646dd4f49426c1:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x39BB5d491e98A44D1bfe8047A737a81E296a63E0",
+      "contractName": "DepositSecurityModule",
+      "entity": null,
+      "id": "640:eth:0x39BB5d491e98A44D1bfe8047A737a81E296a63E0:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x3d49967d09637B83E465Cc32b1C5d968e3d34eA8",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x3d49967d09637B83E465Cc32b1C5d968e3d34eA8:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x3F7c24Cc2C91E8BEb20498E61b51a696ffb2AbA5",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x3F7c24Cc2C91E8BEb20498E61b51a696ffb2AbA5:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x48D10eaec45e330003E62115e56d2A05F29eca70",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x48D10eaec45e330003E62115e56d2A05F29eca70:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x4E3F2DEeb59eB9a205D82D17647b3e56422e0FEe",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0x4E3F2DEeb59eB9a205D82D17647b3e56422e0FEe:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x56B3eA8016Da18C6E8CD8135492d242F0dE0DBBC",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0x56B3eA8016Da18C6E8CD8135492d242F0dE0DBBC:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x5e8Ed9f10307eD6FA793A347e4D0f407D00B9C6f",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0x5e8Ed9f10307eD6FA793A347e4D0f407D00B9C6f:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x6057526Da2Dc9Bd23a3C6F1b15C74De2D7593378",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x6057526Da2Dc9Bd23a3C6F1b15C74De2D7593378:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x60D78785B763374bd552F5cE270da77781C6066C",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x60D78785B763374bd552F5cE270da77781C6066C:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x6A22d74a816662078f2371A7138E7614874cd61d",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0x6A22d74a816662078f2371A7138E7614874cd61d:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x772E9D0387671Ce641f17FD1fCFB3a9cE8ED05fB",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x772E9D0387671Ce641f17FD1fCFB3a9cE8ED05fB:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x84225B558e224dc6C38f4eda1d3591fE6b5E34aa",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x84225B558e224dc6C38f4eda1d3591fE6b5E34aa:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x915F0Fa50E1af761B113b41c79ab33Bf4734C36E",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0x915F0Fa50E1af761B113b41c79ab33Bf4734C36E:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x9462A9FfF5646d0b6517D8eac49de49277e89dB9",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0x9462A9FfF5646d0b6517D8eac49de49277e89dB9:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0x99Cd2EF33040879D40BBC77Df81863D97f13C64d",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0x99Cd2EF33040879D40BBC77Df81863D97f13C64d:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xaB61339Cb8A5BBED2dEaC4D2c6E71B912919aBdB",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0xaB61339Cb8A5BBED2dEaC4D2c6E71B912919aBdB:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xC4f2704273598d51A0ec76A31C12553ec8f5A891",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0xC4f2704273598d51A0ec76A31C12553ec8f5A891:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xc7442d4d8F3FfEa0fA4a18Ad3062c8137cE21749",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0xc7442d4d8F3FfEa0fA4a18Ad3062c8137cE21749:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xc77d0Bf3AA4778E36a89CDC8bbc9c34d8060637d",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0xc77d0Bf3AA4778E36a89CDC8bbc9c34d8060637d:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xce0F8F5019856D79840F9463b5D05c44c7d9B791",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0xce0F8F5019856D79840F9463b5D05c44c7d9B791:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xd524101C3c40f71Fce7B9312D299603880a06Bdb",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0xd524101C3c40f71Fce7B9312D299603880a06Bdb:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xDc1579636686C082fc3b00B9EB25259A110D0C44",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0xDc1579636686C082fc3b00B9EB25259A110D0C44:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xe387Ba1d5C9f6306eCe9ac949C7fB6233dD5411E",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0xe387Ba1d5C9f6306eCe9ac949C7fB6233dD5411E:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xE75A431A98487DC69A14Bdd13d858E3238e9C1b3",
+      "contractName": "DelegationContract",
+      "entity": null,
+      "id": "640:eth:0xE75A431A98487DC69A14Bdd13d858E3238e9C1b3:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 640,
+      "address": "eth:0xFcBC1BB96b3F521fe7BFD1E2E309eC032F078fDE",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "640:eth:0xFcBC1BB96b3F521fe7BFD1E2E309eC032F078fDE:contract-added",
+      "type": "contract-added"
     }
   ]
 }

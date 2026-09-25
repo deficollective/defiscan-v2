@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-24T12:47:53.067Z",
+  "lastModified": "2026-09-25T12:54:03.778Z",
   "contracts": {
     "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55": {
-      "lastFetched": "2026-09-24T12:47:52.446Z",
+      "lastFetched": "2026-09-25T12:54:01.977Z",
       "balances": {
         "tokens": [
           {
@@ -12,11 +12,11 @@
             "name": "HEX",
             "balance": "100000000",
             "decimals": 8,
-            "usdValue": 0.0011669089146380846
+            "usdValue": 0.001115531374269348
           }
         ],
-        "totalUsdValue": 0.0011669089146380846,
-        "timestamp": "2026-09-24T12:47:52.688Z",
+        "totalUsdValue": 0.001115531374269348,
+        "timestamp": "2026-09-25T12:54:02.607Z",
         "source": "debank"
       },
       "positions": {
@@ -29,16 +29,16 @@
               {
                 "name": "Supply",
                 "stats": {
-                  "assetUsdValue": 3.0784405649999997,
+                  "assetUsdValue": 3.0796700654999998,
                   "debtUsdValue": 0,
-                  "netUsdValue": 3.0784405649999997
+                  "netUsdValue": 3.0796700654999998
                 },
                 "tokens": [
                   {
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
-                    "amount": 3.077825,
-                    "price": 1.0002
+                    "amount": 3.078131,
+                    "price": 1.0005
                   }
                 ]
               },
@@ -54,7 +54,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 1.0002
+                    "price": 1.0005
                   }
                 ]
               },
@@ -70,7 +70,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 1.0002
+                    "price": 1.0005
                   }
                 ]
               },
@@ -86,7 +86,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 1.0002
+                    "price": 1.0005
                   }
                 ]
               },
@@ -102,7 +102,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 1.0002
+                    "price": 1.0005
                   }
                 ]
               },
@@ -118,7 +118,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 1.0002
+                    "price": 1.0005
                   }
                 ]
               },
@@ -134,7 +134,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 1.0002
+                    "price": 1.0005
                   }
                 ]
               },
@@ -150,7 +150,7 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 1.0002
+                    "price": 1.0005
                   }
                 ]
               },
@@ -166,16 +166,16 @@
                     "symbol": "PYUSD",
                     "name": "PayPal USD",
                     "amount": 0,
-                    "price": 1.0002
+                    "price": 1.0005
                   }
                 ]
               }
             ],
-            "totalUsdValue": 3.0784405649999997
+            "totalUsdValue": 3.0796700654999998
           }
         ],
-        "totalUsdValue": 3.0784405649999997,
-        "timestamp": "2026-09-24T12:47:53.067Z",
+        "totalUsdValue": 3.0796700654999998,
+        "timestamp": "2026-09-25T12:54:03.778Z",
         "source": "onchain/debank"
       }
     }

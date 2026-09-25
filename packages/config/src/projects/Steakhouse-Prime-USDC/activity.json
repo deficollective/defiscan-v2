@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1789213144,
-  "lastConsumedUpdateNotifierId": 567,
+  "lastReconciledAt": 1790340554,
+  "lastConsumedUpdateNotifierId": 642,
   "events": [
     {
       "timestamp": "2026-04-30T09:26:35.000Z",
@@ -1373,6 +1373,94 @@
         {
           "field": "values.allocators.5",
           "after": "base:0x7a175FDD0727228C66A985928C9b27104b964E8d"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 642,
+      "address": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+      "contractName": "MetaMorphoV1_1",
+      "isDependency": false,
+      "entity": null,
+      "id": "642:base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.supplyQueue.1",
+          "before": "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda"
+        },
+        {
+          "field": "values.supplyQueue.3",
+          "before": "0x1c21c59df9db44bf6f645d854ee710a8ca17b479451447e9f56758aee10a2fad"
+        },
+        {
+          "field": "values.supplyQueue.3",
+          "after": "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda"
+        },
+        {
+          "field": "values.supplyQueue.4",
+          "after": "0x1c21c59df9db44bf6f645d854ee710a8ca17b479451447e9f56758aee10a2fad"
+        },
+        {
+          "field": "values.marketParams.1",
+          "before": {
+            "irm": "base:0x46415998764C29aB2a25CbeA6254146D50D22687",
+            "lltv": "860000000000000000",
+            "oracle": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4",
+            "marketId": "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda",
+            "loanToken": "base:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "collateralToken": "base:0x4200000000000000000000000000000000000006"
+          }
+        },
+        {
+          "field": "values.marketParams.3",
+          "before": {
+            "irm": "base:0x46415998764C29aB2a25CbeA6254146D50D22687",
+            "lltv": "860000000000000000",
+            "oracle": "base:0xb40d93F44411D8C09aD17d7F88195eF9b05cCD96",
+            "marketId": "0x1c21c59df9db44bf6f645d854ee710a8ca17b479451447e9f56758aee10a2fad",
+            "loanToken": "base:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "collateralToken": "base:0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22"
+          }
+        },
+        {
+          "field": "values.marketParams.3",
+          "after": {
+            "marketId": "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda",
+            "loanToken": "base:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "collateralToken": "base:0x4200000000000000000000000000000000000006",
+            "oracle": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4",
+            "irm": "base:0x46415998764C29aB2a25CbeA6254146D50D22687",
+            "lltv": "860000000000000000"
+          }
+        },
+        {
+          "field": "values.marketParams.4",
+          "after": {
+            "marketId": "0x1c21c59df9db44bf6f645d854ee710a8ca17b479451447e9f56758aee10a2fad",
+            "loanToken": "base:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "collateralToken": "base:0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22",
+            "oracle": "base:0xb40d93F44411D8C09aD17d7F88195eF9b05cCD96",
+            "irm": "base:0x46415998764C29aB2a25CbeA6254146D50D22687",
+            "lltv": "860000000000000000"
+          }
+        },
+        {
+          "field": "values.marketOracles.1",
+          "before": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4"
+        },
+        {
+          "field": "values.marketOracles.3",
+          "before": "base:0xb40d93F44411D8C09aD17d7F88195eF9b05cCD96"
+        },
+        {
+          "field": "values.marketOracles.3",
+          "after": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4"
+        },
+        {
+          "field": "values.marketOracles.4",
+          "after": "base:0xb40d93F44411D8C09aD17d7F88195eF9b05cCD96"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790256142,
-  "lastConsumedUpdateNotifierId": 638,
+  "lastReconciledAt": 1790342916,
+  "lastConsumedUpdateNotifierId": 645,
   "events": [
     {
       "timestamp": "2026-05-19T10:45:21.000Z",
@@ -3915,6 +3915,70 @@
           "field": "values.globalConfig.globalMaxRedeemPerBlock",
           "before": "10000000000000000000000000",
           "after": "20000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 645,
+      "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+      "contractName": "StakedENA",
+      "isDependency": false,
+      "entity": null,
+      "id": "645:eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.accessControl.BLACKLISTED_ROLE.members.873",
+          "after": "eth:0xe7B9bb1801860463fce227cD3A14a8c4072c755F"
+        },
+        {
+          "field": "values.accessControl.BLACKLISTED_ROLE.members.874",
+          "after": "eth:0x9DBe3be87Abae0d9DE757DdB362A0aE9fA4099c8"
+        },
+        {
+          "field": "values.accessControl.BLACKLISTED_ROLE.members.875",
+          "after": "eth:0x9a3A64aD58a4fe6Cf792a3DBa20141FCdcAe9791"
+        },
+        {
+          "field": "values.accessControl.BLACKLISTED_ROLE.members.876",
+          "after": "eth:0xc1A60d96040b6238079a4e47A3CAaC0845cDe880"
+        },
+        {
+          "field": "values.accessControl.BLACKLISTED_ROLE.members.877",
+          "after": "eth:0xCC8f712Eb2d35cdB33520ac2BbFfbcd3923c5d8D"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 645,
+      "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+      "contractName": "Staked USDe Token",
+      "isDependency": false,
+      "entity": null,
+      "id": "645:eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.accessControl.FULL_RESTRICTED_STAKER_ROLE.members.922",
+          "after": "eth:0xe7B9bb1801860463fce227cD3A14a8c4072c755F"
+        },
+        {
+          "field": "values.accessControl.FULL_RESTRICTED_STAKER_ROLE.members.923",
+          "after": "eth:0x9DBe3be87Abae0d9DE757DdB362A0aE9fA4099c8"
+        },
+        {
+          "field": "values.accessControl.FULL_RESTRICTED_STAKER_ROLE.members.924",
+          "after": "eth:0x9a3A64aD58a4fe6Cf792a3DBa20141FCdcAe9791"
+        },
+        {
+          "field": "values.accessControl.FULL_RESTRICTED_STAKER_ROLE.members.925",
+          "after": "eth:0xc1A60d96040b6238079a4e47A3CAaC0845cDe880"
+        },
+        {
+          "field": "values.accessControl.FULL_RESTRICTED_STAKER_ROLE.members.926",
+          "after": "eth:0xCC8f712Eb2d35cdB33520ac2BbFfbcd3923c5d8D"
         }
       ]
     }

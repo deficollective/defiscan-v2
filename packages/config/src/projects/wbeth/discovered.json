@@ -1,6 +1,6 @@
 {
   "name": "wbeth",
-  "timestamp": 1790253886,
+  "timestamp": 1790340376,
   "configHash": "0x7c603a3d49afd7918eae268f64c1b8687fba0d22931ea6409c6d1623be66f504",
   "entries": [
     {
@@ -164,7 +164,7 @@
         "decimals": 18,
         "DOMAIN_SEPARATOR": "0xd37a875f1ef2a63f2649b9d08b634c22faa1921cbcb1de62790e04176d134bab",
         "ethReceiver": "eth:0x26ad6395DABF271fD9bFDC82d7377261930E6B86",
-        "exchangeRate": "1107079175252000000",
+        "exchangeRate": "1107145788205000000",
         "implementation": "eth:0x9E021c9607bD3ADB7424D3b25a2D35763ff180BB",
         "masterMinter": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "minters": ["eth:0xb05a6449f383a1A43A172970858B97394FEcDAD6"],
@@ -488,6 +488,6 @@
     ]
   },
   "usedTemplates": {},
-  "usedBlockNumbers": { "ethereum": 26047396 },
+  "usedBlockNumbers": { "ethereum": 26054555 },
   "permissionsConfigHash": "0x56dcc208fc53dc38aeff2362dddbcae3eb6797d2a2d152fda8b2c784eb0cd3e2"
 }
