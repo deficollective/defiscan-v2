@@ -1,6 +1,6 @@
 {
   "name": "liquity-v1",
-  "timestamp": 1790340376,
+  "timestamp": 1790424900,
   "configHash": "0x2859c2cde70b1ec26c7618b0ae6c7a92bf23e1144ee93bc57ae998c451f84980",
   "entries": [
     {
@@ -83,7 +83,7 @@
         "DECIMAL_PRECISION": "1000000000000000000",
         "ETHUSD_TELLOR_REQ_ID": 1,
         "isOwner": false,
-        "lastGoodPrice": "2685172473590000000000",
+        "lastGoodPrice": "2691402052430000000000",
         "MAX_PRICE_DEVIATION_FROM_PREVIOUS_ROUND": "500000000000000000",
         "MAX_PRICE_DIFFERENCE_BETWEEN_ORACLES": "50000000000000000",
         "NAME": "PriceFeed",
@@ -122,7 +122,7 @@
         "lusdToken": "eth:0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
         "NAME": "LQTYStaking",
         "owner": "eth:0x0000000000000000000000000000000000000000",
-        "totalLQTYStaked": "54712692202377569658559501",
+        "totalLQTYStaked": "54622692202377569658559501",
         "troveManagerAddress": "eth:0xA39739EF8b0231DbFA0DcdA07d7e29faAbCf4bb2"
       },
       "implementationNames": {
@@ -214,10 +214,10 @@
         "DECIMAL_PRECISION": "1000000000000000000",
         "defaultPool": "eth:0x0000000000000000000000000000000000000000",
         "getETH": "591651253906872736381",
-        "getTotalLUSDDeposits": "7568018282132959205891041",
+        "getTotalLUSDDeposits": "7568104764235443181819691",
         "isOwner": false,
         "lastETHError_Offset": "14452840112584956861931264",
-        "lastLQTYError": "4137934944608951978651333",
+        "lastLQTYError": "4510054160390711267500504",
         "lastLUSDLossError_Offset": "10296099677808650302564214",
         "LUSD_GAS_COMPENSATION": "200000000000000000000",
         "lusdToken": "eth:0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
@@ -377,11 +377,11 @@
         "DECIMAL_PRECISION": "1000000000000000000",
         "defaultPool": "eth:0x896a3F03176f05CFbb4f006BfCd8723F2B0D741C",
         "getBorrowingRate": 5000000005582426,
-        "getBorrowingRateWithDecay": 5000000004490896,
+        "getBorrowingRateWithDecay": 5000000001156735,
         "getEntireSystemColl": "72391219540031034053071",
         "getEntireSystemDebt": "26160997845549183486435490",
         "getRedemptionRate": 5000000005582426,
-        "getRedemptionRateWithDecay": 5000000004490896,
+        "getRedemptionRateWithDecay": 5000000001156735,
         "getTroveOwnersCount": 70,
         "isOwner": false,
         "L_ETH": 0,
@@ -426,7 +426,7 @@
       "sinceBlock": 12178590,
       "values": {
         "$immutable": true,
-        "getTellorCurrentValue": [[true, 2725355000, 1790335499]],
+        "getTellorCurrentValue": [[true, 2688224999, 1790422415]],
         "tellor": "eth:0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0"
       },
       "implementationNames": {
@@ -496,7 +496,7 @@
         "owner": "eth:0x0000000000000000000000000000000000000000",
         "SECONDS_IN_ONE_MINUTE": 60,
         "stabilityPoolAddress": "eth:0x66017D22b0f8556afDd19FC67041899Eb65a21bb",
-        "totalLQTYIssued": "31281134506347517248000000"
+        "totalLQTYIssued": "31282633657473329856000000"
       },
       "implementationNames": {
         "eth:0xD8c9D9071123a059C6E0A945cF0e0c82b508d816": "CommunityIssuance"
@@ -1178,6 +1178,6 @@
     "liquity-v2/TroveManager_all": "0x5f9ec16b9ba7d92fb18836c540310dd648c6ffb953a61fe31ddb3a2ac51a172f",
     "Steakhouse-USDC/EACAggregatorProxy": "0x3ba2cbd9a884cdfea15efe908af481b5a5a9c747391c8580bd38b0f8b1603921"
   },
-  "usedBlockNumbers": { "ethereum": 26054555 },
+  "usedBlockNumbers": { "ethereum": 26061559 },
   "permissionsConfigHash": "0x726d49aa0832b7c4a72d3cf75e803b81705e103f430ff37486c5f4acc0606d71"
 }

@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790080786,
-  "lastConsumedUpdateNotifierId": 623,
+  "lastReconciledAt": 1790425272,
+  "lastConsumedUpdateNotifierId": 650,
   "events": [
     {
       "timestamp": "2026-03-26T08:10:03.000Z",
@@ -6134,6 +6134,358 @@
           "after": "150000000000000000000000"
         }
       ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705",
+      "contractName": "EtherFiAdmin",
+      "entity": null,
+      "id": "650:eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$pastUpgrades.6",
+          "after": [
+            "2026-09-25T14:59:11.000Z",
+            "0x6a586a6e6ff829746c75f63317f5bda559191c3fac5240220ea45fae3023ea1d",
+            [
+              "eth:0x841fA691AA6E30E97c817608F90111701a3D0Ac8"
+            ]
+          ]
+        },
+        {
+          "field": "values.$upgradeCount",
+          "before": 6,
+          "after": 7
+        },
+        {
+          "field": "values.$implementation",
+          "before": "eth:0x5b083DDe26FBA0E43940b2e161FCd129903FC27d",
+          "after": "eth:0x841fA691AA6E30E97c817608F90111701a3D0Ac8"
+        },
+        {
+          "field": "values.getImplementation",
+          "before": "eth:0x5b083DDe26FBA0E43940b2e161FCd129903FC27d",
+          "after": "eth:0x841fA691AA6E30E97c817608F90111701a3D0Ac8"
+        },
+        {
+          "field": "sourceHashes.1",
+          "before": "0xad90449ee10cda733473392ea7986058b9f5f51b958b302a49a648aa20be7bfb",
+          "after": "0x246334053cefc0c24c53f886044690d25fcdadd4591905e2992ae9e3d64edeea"
+        },
+        {
+          "field": "implementationNames.eth:0x5b083DDe26FBA0E43940b2e161FCd129903FC27d",
+          "before": "EtherFiAdmin"
+        },
+        {
+          "field": "implementationNames.eth:0x841fA691AA6E30E97c817608F90111701a3D0Ac8",
+          "after": "EtherFiAdmin"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x25e821b7197B146F7713C3b89B6A4D83516B912d",
+      "contractName": "StakingManager",
+      "entity": null,
+      "id": "650:eth:0x25e821b7197B146F7713C3b89B6A4D83516B912d:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$pastUpgrades.10",
+          "after": [
+            "2026-09-25T14:59:11.000Z",
+            "0x6a586a6e6ff829746c75f63317f5bda559191c3fac5240220ea45fae3023ea1d",
+            [
+              "eth:0x6515B41BDcf83BE5543B88591BC0bC34d844c9c2"
+            ]
+          ]
+        },
+        {
+          "field": "values.$upgradeCount",
+          "before": 10,
+          "after": 11
+        },
+        {
+          "field": "values.implementation",
+          "before": "eth:0x556Db8c611FE63e694413F718d795f976dcF5881",
+          "after": "eth:0x73Df4a005332525fB0A0B2cf067352a9b706f233"
+        },
+        {
+          "field": "values.$implementation",
+          "before": "eth:0x66e1C53e846eF3E9f3722591868AfcFfB7f39800",
+          "after": "eth:0x6515B41BDcf83BE5543B88591BC0bC34d844c9c2"
+        },
+        {
+          "field": "sourceHashes.1",
+          "before": "0xe236b707bc06a797531f85bd2a88995cda428fc64f5848c8bc83433eb4e57bed",
+          "after": "0x0c380298f4176750ee6bf68c17d361621e0d9867123bda9c52c077ccc357a888"
+        },
+        {
+          "field": "implementationNames.eth:0x66e1C53e846eF3E9f3722591868AfcFfB7f39800",
+          "before": "StakingManager"
+        },
+        {
+          "field": "implementationNames.eth:0x6515B41BDcf83BE5543B88591BC0bC34d844c9c2",
+          "after": "StakingManager"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x3c55986Cfee455E2533F4D29006634EcF9B7c03F",
+      "contractName": "UpgradeableBeacon",
+      "entity": null,
+      "id": "650:eth:0x3c55986Cfee455E2533F4D29006634EcF9B7c03F:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.implementation",
+          "before": "eth:0x556Db8c611FE63e694413F718d795f976dcF5881",
+          "after": "eth:0x73Df4a005332525fB0A0B2cf067352a9b706f233"
+        },
+        {
+          "field": "description",
+          "before": "A beacon with an upgradeable implementation currently set as eth:0x556Db8c611FE63e694413F718d795f976dcF5881. Beacon proxy contracts pointing to this beacon will all use its implementation.",
+          "after": "A beacon with an upgradeable implementation currently set as eth:0x73Df4a005332525fB0A0B2cf067352a9b706f233. Beacon proxy contracts pointing to this beacon will all use its implementation."
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x556Db8c611FE63e694413F718d795f976dcF5881",
+      "contractName": "EtherFiNode",
+      "entity": null,
+      "id": "650:eth:0x556Db8c611FE63e694413F718d795f976dcF5881:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x670F3818Fe5B1144e361A9A44EcbEA8231cCD32a",
+      "contractName": "EtherFiNode",
+      "entity": null,
+      "id": "650:eth:0x670F3818Fe5B1144e361A9A44EcbEA8231cCD32a:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$pastUpgrades.14",
+          "after": [
+            "2026-09-25T14:59:11.000Z",
+            "0x6a586a6e6ff829746c75f63317f5bda559191c3fac5240220ea45fae3023ea1d",
+            [
+              "eth:0x73Df4a005332525fB0A0B2cf067352a9b706f233"
+            ]
+          ]
+        },
+        {
+          "field": "values.$upgradeCount",
+          "before": 14,
+          "after": 15
+        },
+        {
+          "field": "values.$implementation",
+          "before": "eth:0x556Db8c611FE63e694413F718d795f976dcF5881",
+          "after": "eth:0x73Df4a005332525fB0A0B2cf067352a9b706f233"
+        },
+        {
+          "field": "values.CONSOLIDATION_REQUEST_PREDEPLOY",
+          "after": "eth:0x0000BBdDc7CE488642fb579F8B00f3a590007251"
+        },
+        {
+          "field": "values.getConsolidationRequestFee",
+          "after": 1
+        },
+        {
+          "field": "values.getWithdrawalRequestFee",
+          "after": 1
+        },
+        {
+          "field": "values.WITHDRAWAL_REQUEST_PREDEPLOY",
+          "after": "eth:0x00000961Ef480Eb55e80D19ad83579A64c007002"
+        },
+        {
+          "field": "sourceHashes.1",
+          "before": "0xa0aa0127986f06e796a4feb46a1ef2cc7d6cfc6354b30da75d9d3d8c72b5a310",
+          "after": "0x3ce5b30b241aeff112d65a3e1d13ff18c1fe3c0e2f23807c3e2557a6def69e7f"
+        },
+        {
+          "field": "implementationNames.eth:0x556Db8c611FE63e694413F718d795f976dcF5881",
+          "before": "EtherFiNode"
+        },
+        {
+          "field": "implementationNames.eth:0x73Df4a005332525fB0A0B2cf067352a9b706f233",
+          "after": "EtherFiNode"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x8B71140AD2e5d1E7018d2a7f8a288BD3CD38916F",
+      "contractName": "EtherFiNodesManager",
+      "entity": null,
+      "id": "650:eth:0x8B71140AD2e5d1E7018d2a7f8a288BD3CD38916F:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$pastUpgrades.18",
+          "after": [
+            "2026-09-25T14:59:11.000Z",
+            "0x6a586a6e6ff829746c75f63317f5bda559191c3fac5240220ea45fae3023ea1d",
+            [
+              "eth:0x020016Fa077515451975712595EB3e984907ad3b"
+            ]
+          ]
+        },
+        {
+          "field": "values.$upgradeCount",
+          "before": 18,
+          "after": 19
+        },
+        {
+          "field": "values.$implementation",
+          "before": "eth:0xcF5928EA7d7F164ec868cEdA7a69E08a102B5e05",
+          "after": "eth:0x020016Fa077515451975712595EB3e984907ad3b"
+        },
+        {
+          "field": "sourceHashes.1",
+          "before": "0x99653d71cfe1f698124a60b8b35427e63c952e9bbf95a3ad0564ff1ce43c3bd3",
+          "after": "0xd6f54f76da91de98f612c23ffb16eef84ea334c14e22ea0d5ec04690abe6ee1d"
+        },
+        {
+          "field": "implementationNames.eth:0xcF5928EA7d7F164ec868cEdA7a69E08a102B5e05",
+          "before": "EtherFiNodesManager"
+        },
+        {
+          "field": "implementationNames.eth:0x020016Fa077515451975712595EB3e984907ad3b",
+          "after": "EtherFiNodesManager"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0xD789870beA40D056A4d26055d0bEFcC8755DA146",
+      "contractName": "EtherfiL1SyncPoolETH",
+      "entity": null,
+      "id": "650:eth:0xD789870beA40D056A4d26055d0bEFcC8755DA146:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.layerZeroConfig.perEid.30183",
+          "after": {
+            "peer": "0x000000000000000000000000823106e745a62d0c2fc4d27644c62ade946d9cca",
+            "sendLibrary": "eth:0xbB2Ea70C9E858123480642Cf96acbcCE1372dCe1",
+            "sendUlnConfig": {
+              "confirmations": "10",
+              "requiredDVNCount": 2,
+              "optionalDVNCount": 0,
+              "optionalDVNThreshold": 0,
+              "requiredDVNs": [
+                "eth:0x589dEDbD617e0CBcB916A9223F4d1300c294236b",
+                "eth:0xa59BA433ac34D2927232918Ef5B2eaAfcF130BA5"
+              ],
+              "optionalDVNs": []
+            },
+            "executorConfig": {
+              "maxMessageSize": 10000,
+              "executor": "eth:0x173272739Bd7Aa6e4e214714048a9fE699453059"
+            },
+            "receiveLibrary": "eth:0xc02Ab410f0734EFa3F14628780e6e695156024C2",
+            "receiveLibraryIsDefault": false,
+            "receiveUlnConfig": {
+              "confirmations": "45",
+              "requiredDVNCount": 4,
+              "optionalDVNCount": 0,
+              "optionalDVNThreshold": 0,
+              "requiredDVNs": [
+                "eth:0x380275805876Ff19055EA900CDb2B46a94ecF20D",
+                "eth:0x589dEDbD617e0CBcB916A9223F4d1300c294236b",
+                "eth:0xa4fE5A5B9A846458a70Cd0748228aED3bF65c2cd",
+                "eth:0xa59BA433ac34D2927232918Ef5B2eaAfcF130BA5"
+              ],
+              "optionalDVNs": []
+            }
+          }
+        },
+        {
+          "field": "values.layerZeroConfig.perEid.30214",
+          "after": {
+            "peer": "0x000000000000000000000000750cf0fd3bc891d8d864b732bc4ad340096e5e68",
+            "sendLibrary": "eth:0xbB2Ea70C9E858123480642Cf96acbcCE1372dCe1",
+            "sendUlnConfig": {
+              "confirmations": "15",
+              "requiredDVNCount": 1,
+              "optionalDVNCount": 0,
+              "optionalDVNThreshold": 0,
+              "requiredDVNs": [
+                "eth:0x747C741496a507E4B404b50463e691A8d692f6Ac"
+              ],
+              "optionalDVNs": []
+            },
+            "executorConfig": {
+              "maxMessageSize": 10000,
+              "executor": "eth:0x173272739Bd7Aa6e4e214714048a9fE699453059"
+            },
+            "receiveLibrary": "eth:0xc02Ab410f0734EFa3F14628780e6e695156024C2",
+            "receiveLibraryIsDefault": false,
+            "receiveUlnConfig": {
+              "confirmations": "45",
+              "requiredDVNCount": 4,
+              "optionalDVNCount": 0,
+              "optionalDVNThreshold": 0,
+              "requiredDVNs": [
+                "eth:0x380275805876Ff19055EA900CDb2B46a94ecF20D",
+                "eth:0x589dEDbD617e0CBcB916A9223F4d1300c294236b",
+                "eth:0xa4fE5A5B9A846458a70Cd0748228aED3bF65c2cd",
+                "eth:0xa59BA433ac34D2927232918Ef5B2eaAfcF130BA5"
+              ],
+              "optionalDVNs": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x00000961Ef480Eb55e80D19ad83579A64c007002",
+      "contractName": "",
+      "entity": null,
+      "id": "650:eth:0x00000961Ef480Eb55e80D19ad83579A64c007002:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x0000BBdDc7CE488642fb579F8B00f3a590007251",
+      "contractName": "",
+      "entity": null,
+      "id": "650:eth:0x0000BBdDc7CE488642fb579F8B00f3a590007251:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x73Df4a005332525fB0A0B2cf067352a9b706f233",
+      "contractName": "EtherFiNode",
+      "entity": null,
+      "id": "650:eth:0x73Df4a005332525fB0A0B2cf067352a9b706f233:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 650,
+      "address": "eth:0x747C741496a507E4B404b50463e691A8d692f6Ac",
+      "contractName": "DeadDVN",
+      "entity": null,
+      "id": "650:eth:0x747C741496a507E4B404b50463e691A8d692f6Ac:contract-added",
+      "type": "contract-added"
     }
   ]
 }

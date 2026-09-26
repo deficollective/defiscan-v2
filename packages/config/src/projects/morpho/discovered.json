@@ -1,6 +1,6 @@
 {
   "name": "morpho",
-  "timestamp": 1790340376,
+  "timestamp": 1790424900,
   "configHash": "0x222700c296f1e8c80bb20f6aee8f956a64705b86d921f06ae4126a0c70d2eae5",
   "entries": [
     {
@@ -363,7 +363,7 @@
         "decimals": 18,
         "name": "Wrapped Ether",
         "symbol": "WETH",
-        "totalSupply": "2077558238569184578070110"
+        "totalSupply": "2058304598530431366381677"
       },
       "implementationNames": {
         "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": "WETH9"
@@ -927,6 +927,6 @@
     "morpho/Morpho": "0xdbb54f2b25b761df9e05263570b2b0fcfef7676c541d7bdfa2974680fe1e3682",
     "tokens": "0x9cb0edfecd174d91d81f651ad52d7c288ec44b877a0e2f8ad0ff293a553bfe30"
   },
-  "usedBlockNumbers": { "ethereum": 26054555 },
+  "usedBlockNumbers": { "ethereum": 26061559 },
   "permissionsConfigHash": "0xabbb2cab8e3a4b72b99aa52587a28eac0b2ad1a16a5b992881db6cdac98e7f61"
 }
