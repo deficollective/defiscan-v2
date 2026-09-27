@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790425065,
-  "lastConsumedUpdateNotifierId": 647,
+  "lastReconciledAt": 1790513974,
+  "lastConsumedUpdateNotifierId": 654,
   "events": [
     {
       "timestamp": "2026-03-02T13:49:30.000Z",
@@ -36297,6 +36297,364 @@
           "field": "values.getTotalModuleStake",
           "before": "809184000000000000000000",
           "after": "810112000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x0De4Ea0184c2ad0BacA7183356Aea5B8d5Bf5c6e",
+      "contractName": "ValidatorsExitBusOracle",
+      "entity": null,
+      "id": "654:eth:0x0De4Ea0184c2ad0BacA7183356Aea5B8d5Bf5c6e:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getConsensusReport.hash",
+          "before": "0x1045d0c84efbdf15f230f9c509e1c2a6b44a5d8b97e4a7cfc22eaabf8f1919bc",
+          "after": "0x29e61cd8c02d3c8f69f1a8dced608653696acc1ef23f2571ce17e688b4b11523"
+        },
+        {
+          "field": "values.getConsensusReport.refSlot",
+          "before": 15298559,
+          "after": 15307199
+        },
+        {
+          "field": "values.getConsensusReport.processingDeadlineTime",
+          "before": 1790424011,
+          "after": 1790527691
+        },
+        {
+          "field": "values.getProcessingState.dataHash",
+          "before": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "after": "0x29e61cd8c02d3c8f69f1a8dced608653696acc1ef23f2571ce17e688b4b11523"
+        },
+        {
+          "field": "values.getProcessingState.dataFormat",
+          "before": 0,
+          "after": 2
+        },
+        {
+          "field": "values.getProcessingState.dataSubmitted",
+          "before": false,
+          "after": true
+        },
+        {
+          "field": "values.getProcessingState.currentFrameRefSlot",
+          "before": 15299999,
+          "after": 15307199
+        },
+        {
+          "field": "values.getProcessingState.processingDeadlineTime",
+          "before": 0,
+          "after": 1790527691
+        },
+        {
+          "field": "values.getLastProcessingRefSlot",
+          "before": 15298559,
+          "after": 15307199
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x147f8d3cf3004FAf9Bf94E88B54b6C06De507be9",
+      "contractName": "OracleReportSanityChecker",
+      "entity": null,
+      "id": "654:eth:0x147f8d3cf3004FAf9Bf94E88B54b6C06De507be9:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getReportDataCount",
+          "before": 65,
+          "after": 67
+        },
+        {
+          "field": "values.lastReportTimestamp",
+          "before": 1790337611,
+          "after": 1790510411
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x17be979344f2c2cC806229a532D92f8742C10462",
+      "contractName": "ConsolidationGateway",
+      "entity": null,
+      "id": "654:eth:0x17be979344f2c2cC806229a532D92f8742C10462:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getConsolidationRequestLimitFullInfo.prevConsolidationRequestsLimit",
+          "before": 21,
+          "after": 11
+        },
+        {
+          "field": "values.getConsolidationRequestLimitFullInfo.currentConsolidationRequestsLimit",
+          "before": 153,
+          "after": 145
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x367d23c756599c20DCc8D6943F4976E8F88D60d7",
+      "contractName": "FeeDistributor",
+      "entity": null,
+      "id": "654:eth:0x367d23c756599c20DCc8D6943F4976E8F88D60d7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.pendingSharesToDistribute",
+          "before": "3803584937213045468",
+          "after": "6896070268949155693"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x3FC2C71579D80790Aaa3fc7Be8B66ac39dC57374",
+      "contractName": "TopUpGateway",
+      "entity": null,
+      "id": "654:eth:0x3FC2C71579D80790Aaa3fc7Be8B66ac39dC57374:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getLastTopUpTimestamp",
+          "before": 1790423975,
+          "after": 1790512067
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da",
+      "contractName": "Accounting",
+      "entity": null,
+      "id": "654:eth:0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalBondShares",
+          "before": "26988506424354769297851",
+          "after": "27002896612560989126640"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x6220212a33a87Ed7Cc386B67eB2c393974F28C38",
+      "contractName": "StakingRevenueSource",
+      "entity": null,
+      "id": "654:eth:0x6220212a33a87Ed7Cc386B67eB2c393974F28C38:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.lastReportTimestamp",
+          "before": 1790337611,
+          "after": 1790510411
+        },
+        {
+          "field": "values.pendingRevenueStEth",
+          "before": 0,
+          "after": "40262194610373441263"
+        },
+        {
+          "field": "values.getCumulativeRevenueUSD",
+          "before": "4163982245610424283916344",
+          "after": "4272882602238569182332523"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x7d4E742018fb52E48b08BE73d041C18B21de6Fb5",
+      "contractName": "AccessControlledOCR2Aggregator",
+      "entity": null,
+      "id": "654:eth:0x7d4E742018fb52E48b08BE73d041C18B21de6Fb5:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestConfigDigestAndEpoch.epoch",
+          "before": 33792,
+          "after": 34272
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0x852deD011285fe67063a08005c71a85690503Cee",
+      "contractName": "AccountingOracle",
+      "entity": null,
+      "id": "654:eth:0x852deD011285fe67063a08005c71a85690503Cee:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCurrentFrame.refSlot",
+          "before": 15299999,
+          "after": 15307199
+        },
+        {
+          "field": "values.getCurrentFrame.refSlotTimestamp",
+          "before": 1790424011,
+          "after": 1790510411
+        },
+        {
+          "field": "values.getConsensusReport.hash",
+          "before": "0xc83def4fd11136ab044642f8cdd393da38568b3c9e741a6c22846c1289f28ecb",
+          "after": "0x1109e6b766a0748640d91b9fd4d334c92c3300dc740e4e05e3dd453acb75a1bb"
+        },
+        {
+          "field": "values.getConsensusReport.refSlot",
+          "before": 15292799,
+          "after": 15307199
+        },
+        {
+          "field": "values.getConsensusReport.processingDeadlineTime",
+          "before": 1790424011,
+          "after": 1790596811
+        },
+        {
+          "field": "values.getProcessingState.mainDataHash",
+          "before": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "after": "0x1109e6b766a0748640d91b9fd4d334c92c3300dc740e4e05e3dd453acb75a1bb"
+        },
+        {
+          "field": "values.getProcessingState.extraDataHash",
+          "before": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "after": "0x1a0f4790063025caaa35c41bc0efa3f11e7a5899314c88e9eb910a2903897785"
+        },
+        {
+          "field": "values.getProcessingState.extraDataFormat",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "field": "values.getProcessingState.mainDataSubmitted",
+          "before": false,
+          "after": true
+        },
+        {
+          "field": "values.getProcessingState.extraDataSubmitted",
+          "before": false,
+          "after": true
+        },
+        {
+          "field": "values.getProcessingState.currentFrameRefSlot",
+          "before": 15299999,
+          "after": 15307199
+        },
+        {
+          "field": "values.getProcessingState.extraDataItemsCount",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "field": "values.getProcessingState.processingDeadlineTime",
+          "before": 0,
+          "after": 1790596811
+        },
+        {
+          "field": "values.getProcessingState.extraDataItemsSubmitted",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "field": "values.getLastProcessingRefSlot",
+          "before": 15292799,
+          "after": 15307199
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0xAA568141c051f2D1132b110f8391F18D48E8D889",
+      "contractName": "BuybackAllocator",
+      "entity": null,
+      "id": "654:eth:0xAA568141c051f2D1132b110f8391F18D48E8D889:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.budgetUSD",
+          "before": "-548144877194787858041824",
+          "after": "-548489198880715408833734"
+        },
+        {
+          "field": "values.reserveAnchorTS",
+          "before": 1790467200,
+          "after": 1790553600
+        },
+        {
+          "field": "values.lastTotalRevenueUSD",
+          "before": "4163982245610424283916344",
+          "after": "4272882602238569182332523"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0xDa5F930cE326EB5205085D66c72A4E79d60cB8C1",
+      "contractName": "CuratedModule",
+      "entity": null,
+      "id": "654:eth:0xDa5F930cE326EB5205085D66c72A4E79d60cB8C1:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getNonce",
+          "before": 559,
+          "after": 565
+        },
+        {
+          "field": "values.getTotalModuleStake",
+          "before": "660847639744941000000000",
+          "after": "750287912522252000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 654,
+      "address": "eth:0xFdDf38947aFB03C621C71b06C9C70bce73f12999",
+      "contractName": "StakingRouter",
+      "isDependency": false,
+      "entity": null,
+      "id": "654:eth:0xFdDf38947aFB03C621C71b06C9C70bce73f12999:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getTotalModulesValidatorsBalance",
+          "before": "9454630087995031000000000",
+          "after": "9480578895958079000000000"
+        },
+        {
+          "field": "values.getStakingFeeAggregateDistribution.modulesFee",
+          "before": "3811905884556013985",
+          "after": "3821377581110094741"
+        },
+        {
+          "field": "values.getStakingFeeAggregateDistribution.treasuryFee",
+          "before": "6188094115443986012",
+          "after": "6178622418889905255"
+        },
+        {
+          "field": "values.getStakingFeeAggregateDistributionE4Precision.modulesFee",
+          "before": 381,
+          "after": 382
+        },
+        {
+          "field": "values.getStakingFeeAggregateDistributionE4Precision.treasuryFee",
+          "before": 618,
+          "after": 617
         }
       ]
     }
