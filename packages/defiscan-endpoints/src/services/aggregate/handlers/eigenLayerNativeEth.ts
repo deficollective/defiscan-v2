@@ -43,10 +43,15 @@ export class EigenLayerNativeEthHandler implements AggregateHandler {
 
     const data = (await response.json()) as DefiLlamaProtocolResponse
 
-    // Use the most recent tokensInUsd snapshot
-    const tokensInUsd = data.tokensInUsd ?? []
-    const latest = tokensInUsd.at(-1)
-    const wethUsd = latest?.tokens?.['WETH'] ?? 0
+    // Use the most recent tokensInUsd snapshot. Fail loudly if the WETH entry
+    // is missing, so a DeFiLlama format change can't silently zero ~all of TVS.
+    const latest = (data.tokensInUsd ?? []).at(-1)
+    const wethUsd = latest?.tokens?.['WETH']
+    if (typeof wethUsd !== 'number' || !Number.isFinite(wethUsd)) {
+      throw new Error(
+        `DeFiLlama ${DEFILLAMA_SLUG} response has no WETH entry in the latest tokensInUsd snapshot`,
+      )
+    }
 
     return {
       contract_address: contractAddress.toString(),
