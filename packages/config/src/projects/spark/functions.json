@@ -4334,7 +4334,7 @@
         }
       ]
     },
-    "eth:0x9Ad87668d49ab69EEa0AF091de970EF52b0D5178": {
+    "eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699": {
       "functions": [
         {
           "functionName": "doCall",
@@ -4342,16 +4342,16 @@
           "score": "critical",
           "ownerDefinitions": [
             {
-              "path": "$self.accessControl.CONTROLLER.members"
+              "path": "$self.accessControl.ALLOCATOR_ROLE.members"
             },
             {
               "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
             }
           ],
-          "timestamp": "2026-04-23T10:48:47.774Z",
+          "timestamp": "2026-06-09T00:00:00.000Z",
           "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-04-23T10:48:47.774Z"
+            "author": "daily-activity-handler",
+            "date": "2026-06-09T00:00:00.000Z"
           }
         },
         {
@@ -4360,52 +4360,34 @@
           "score": "critical",
           "ownerDefinitions": [
             {
-              "path": "$self.accessControl.CONTROLLER.members"
+              "path": "$self.accessControl.ALLOCATOR_ROLE.members"
             },
             {
               "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
             }
           ],
-          "timestamp": "2026-04-23T10:48:47.779Z",
+          "timestamp": "2026-06-09T00:00:00.000Z",
           "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-04-23T10:48:47.779Z"
+            "author": "daily-activity-handler",
+            "date": "2026-06-09T00:00:00.000Z"
           }
         },
         {
-          "functionName": "doDelegateCall",
+          "functionName": "removeAllocator",
           "isPermissioned": true,
           "score": "critical",
           "ownerDefinitions": [
             {
-              "path": "$self.accessControl.CONTROLLER.members"
+              "path": "$self.accessControl.FREEZER_ROLE.members"
             },
             {
               "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
             }
           ],
-          "timestamp": "2026-04-23T10:48:47.785Z",
+          "timestamp": "2026-06-09T00:00:00.000Z",
           "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-04-23T10:48:47.785Z"
-          }
-        },
-        {
-          "functionName": "removeController",
-          "isPermissioned": true,
-          "score": "critical",
-          "ownerDefinitions": [
-            {
-              "path": "$self.accessControl.FREEZER.members"
-            },
-            {
-              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
-            }
-          ],
-          "timestamp": "2026-04-23T10:48:47.790Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-04-23T10:48:47.790Z"
+            "author": "daily-activity-handler",
+            "date": "2026-06-09T00:00:00.000Z"
           }
         },
         {
@@ -4417,10 +4399,10 @@
               "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
             }
           ],
-          "timestamp": "2026-04-23T09:48:07.088Z",
+          "timestamp": "2026-06-09T00:00:00.000Z",
           "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-04-23T09:48:07.088Z"
+            "author": "daily-activity-handler",
+            "date": "2026-06-09T00:00:00.000Z"
           }
         },
         {
@@ -4432,10 +4414,10 @@
               "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
             }
           ],
-          "timestamp": "2026-04-23T09:48:07.101Z",
+          "timestamp": "2026-06-09T00:00:00.000Z",
           "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-04-23T09:48:07.101Z"
+            "author": "daily-activity-handler",
+            "date": "2026-06-09T00:00:00.000Z"
           }
         }
       ]

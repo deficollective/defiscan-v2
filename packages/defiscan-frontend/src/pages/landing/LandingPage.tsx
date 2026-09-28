@@ -279,103 +279,6 @@ export function LandingPage() {
         </section>
       )}
 
-      {/* Why This Matters Section */}
-      <section className="border-b border-border/60">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 py-12 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <div>
-              <p className="text-[10px] font-bold text-accent uppercase tracking-[1.5px] mb-4">
-                Why This Matters
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-text-primary tracking-heading-2">
-                Access Control Is the Leading Exploit Vector
-              </h2>
-              <p className="mt-4 text-text-secondary leading-relaxed">
-                Counterparty risk in DeFi is real and measurable. Exploits
-                targeting access control mechanisms — compromised admin keys,
-                governance attacks, and privilege escalation — have grown to
-                become the single largest category of losses in the ecosystem.
-              </p>
-              <p className="mt-4 text-text-secondary leading-relaxed">
-                Unlike code vulnerabilities that get patched, access control
-                risks are structural. They persist as long as privileged roles
-                exist. Understanding who holds these privileges, under what
-                constraints, and with what safeguards is essential for anyone
-                with capital at risk.
-              </p>
-            </div>
-            <AccessControlStat />
-          </div>
-        </div>
-      </section>
-
-      {/* The Trust Posture / Methodology Section */}
-      <section className="bg-bg-muted">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 py-12 md:py-20">
-          <p className="text-[10px] font-bold text-accent uppercase tracking-[1.5px] mb-4">
-            Risk Assessment
-          </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-text-primary tracking-heading-2">
-                The Risk Radar
-              </h2>
-              <p className="mt-4 text-text-secondary leading-relaxed">
-                Each protocol is assessed across five dimensions of counterparty
-                risk. The Risk Radar gives you a multi-dimensional view of where
-                trust is placed — and where it could be exploited.
-              </p>
-
-              <div className="mt-8 space-y-5">
-                {methodologyItems.map((item) => (
-                  <div key={item.title} className="flex items-start gap-3">
-                    <div className="size-10 rounded bg-accent-tint-light flex items-center justify-center shrink-0">
-                      <item.icon className="h-5 w-5 text-accent-dark" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-text-primary">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-text-secondary mt-0.5">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex justify-center">
-              <div className="w-full max-w-md aspect-square">
-                <ResponsiveContainer width="100%" height="100%">
-                  <RadarChart
-                    data={trustPostureData}
-                    cx="50%"
-                    cy="50%"
-                    outerRadius="60%"
-                  >
-                    <PolarGrid gridType="circle" stroke="rgba(37,99,235,0.1)" />
-                    <PolarAngleAxis
-                      dataKey="axis"
-                      tick={{ fontSize: 10, fill: '#64748b', fontWeight: 600, letterSpacing: '1px' }}
-                    />
-                    <Radar
-                      dataKey="value"
-                      stroke="#2563eb"
-                      strokeOpacity={0.8}
-                      fill="#2563eb"
-                      fillOpacity={0.1}
-                      strokeWidth={3}
-                      dot={{ fill: '#2563eb', stroke: 'none', r: 5, fillOpacity: 1 }}
-                    />
-                  </RadarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Recent Reports Carousel */}
       <section className="mx-auto max-w-7xl px-4 md:px-8 py-12 md:py-20">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-10">
@@ -408,9 +311,13 @@ export function LandingPage() {
             )}
             <Link
               to="/gallery"
-              className="text-sm font-medium text-accent hover:text-accent-dark transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-accent-dark text-white text-sm font-bold tracking-[1px] hover:bg-blue-800 transition-colors shadow-[0px_4px_6px_-1px_rgba(37,99,235,0.2),0px_2px_4px_-2px_rgba(37,99,235,0.2)]"
             >
-              Browse Gallery &rarr;
+              Browse Gallery
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </Link>
           </div>
         </div>
@@ -508,6 +415,103 @@ export function LandingPage() {
             </div>
           </div>
         )}
+      </section>
+
+      {/* Why This Matters Section */}
+      <section className="border-b border-border/60">
+        <div className="mx-auto max-w-7xl px-4 md:px-8 py-12 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div>
+              <p className="text-[10px] font-bold text-accent uppercase tracking-[1.5px] mb-4">
+                Why This Matters
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary tracking-heading-2">
+                Access Control Is the Leading Exploit Vector
+              </h2>
+              <p className="mt-4 text-text-secondary leading-relaxed">
+                Counterparty risk in DeFi is real and measurable. Exploits
+                targeting access control mechanisms — compromised admin keys,
+                governance attacks, and privilege escalation — have grown to
+                become the single largest category of losses in the ecosystem.
+              </p>
+              <p className="mt-4 text-text-secondary leading-relaxed">
+                Unlike code vulnerabilities that get patched, access control
+                risks are structural. They persist as long as privileged roles
+                exist. Understanding who holds these privileges, under what
+                constraints, and with what safeguards is essential for anyone
+                with capital at risk.
+              </p>
+            </div>
+            <AccessControlStat />
+          </div>
+        </div>
+      </section>
+
+      {/* The Trust Posture / Methodology Section */}
+      <section className="bg-bg-muted">
+        <div className="mx-auto max-w-7xl px-4 md:px-8 py-12 md:py-20">
+          <p className="text-[10px] font-bold text-accent uppercase tracking-[1.5px] mb-4">
+            Risk Assessment
+          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary tracking-heading-2">
+                The Risk Radar
+              </h2>
+              <p className="mt-4 text-text-secondary leading-relaxed">
+                Each protocol is assessed across five dimensions of counterparty
+                risk. The Risk Radar gives you a multi-dimensional view of where
+                trust is placed — and where it could be exploited.
+              </p>
+
+              <div className="mt-8 space-y-5">
+                {methodologyItems.map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <div className="size-10 rounded bg-accent-tint-light flex items-center justify-center shrink-0">
+                      <item.icon className="h-5 w-5 text-accent-dark" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-text-primary">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-text-secondary mt-0.5">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="w-full max-w-md aspect-square">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadarChart
+                    data={trustPostureData}
+                    cx="50%"
+                    cy="50%"
+                    outerRadius="60%"
+                  >
+                    <PolarGrid gridType="circle" stroke="rgba(37,99,235,0.1)" />
+                    <PolarAngleAxis
+                      dataKey="axis"
+                      tick={{ fontSize: 10, fill: '#64748b', fontWeight: 600, letterSpacing: '1px' }}
+                    />
+                    <Radar
+                      dataKey="value"
+                      stroke="#2563eb"
+                      strokeOpacity={0.8}
+                      fill="#2563eb"
+                      fillOpacity={0.1}
+                      strokeWidth={3}
+                      dot={{ fill: '#2563eb', stroke: 'none', r: 5, fillOpacity: 1 }}
+                    />
+                  </RadarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Onchain Evidence Section */}

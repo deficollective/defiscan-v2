@@ -1,5 +1,5 @@
 import { addressesEqual, normalizeChainAddress } from './addressUtils'
-import type { EnhancedGraph } from './enhancedTraversal'
+import { type EnhancedGraph, enhancedEdgeKey } from './enhancedTraversal'
 import {
   isUpgradeFunction,
   type AdminDetail,
@@ -12,6 +12,16 @@ import {
   type Impact,
   type ReachableContract,
 } from './types'
+
+/** Minimum of the defined values; undefined (uncapped) if none are defined. */
+function minDefined(...vals: (number | undefined)[]): number | undefined {
+  let result: number | undefined = undefined
+  for (const v of vals) {
+    if (v === undefined) continue
+    result = result === undefined ? v : Math.min(result, v)
+  }
+  return result
+}
 
 /**
  * CapitalAnalysisCalculator combines enhanced graph traversal with funds data
@@ -31,6 +41,11 @@ export class CapitalAnalysisCalculator {
   private contractNameMap: Map<string, string>
   private implToProxy: Map<string, string>
   private resolvedImpactCaps: Map<string, number>
+  // Edge-centric caps resolved to USD, keyed by enhancedEdgeKey. A relationship
+  // cap that bounds the forward capital a specific edge propagates (set by a
+  // setEdgeCap/setOutgoingCap/setIncomingCap override rule). Folded into the
+  // per-edge cap alongside function-intrinsic caps (min wins).
+  private resolvedEdgeCaps: Map<string, number>
   // Maps a proxy (normalized) to the set of its implementation addresses.
   // Used to look up function metadata that is stored at an impl address when
   // the caller is iterating by proxy (shared-impl patterns like Aave AToken).
@@ -55,6 +70,7 @@ export class CapitalAnalysisCalculator {
     implToProxy?: Map<string, string>,
     resolvedImpactCaps?: Map<string, number>,
     proxyToImpls?: Map<string, Set<string>>,
+    resolvedEdgeCaps?: Map<string, number>,
   ) {
     this.enhancedGraph = enhancedGraph
     this.fundsData = fundsData
@@ -63,6 +79,7 @@ export class CapitalAnalysisCalculator {
     this.implToProxy = implToProxy ?? new Map()
     this.resolvedImpactCaps = resolvedImpactCaps ?? new Map()
     this.proxyToImpls = proxyToImpls ?? new Map()
+    this.resolvedEdgeCaps = resolvedEdgeCaps ?? new Map()
 
     this.functionsByContract = new Map()
     for (const [addr, entry] of Object.entries(functionsData.contracts ?? {})) {
@@ -289,6 +306,12 @@ export class CapitalAnalysisCalculator {
       if (!edges) continue
 
       for (const edge of edges) {
+        // Honor scope: 'backward' edges are governance-only — they don't
+        // propagate forward capital reach (the principled over-flare fix:
+        // ownership stays real for chains, but Pool reaching setX doesn't
+        // flare to everything Pool owns).
+        if (edge.scope === 'backward') continue
+
         const isCallGraph = edge.edgeType === 'callgraph'
         const isDependency = edge.edgeType === 'dependency'
 
@@ -322,6 +345,12 @@ export class CapitalAnalysisCalculator {
           ownerAddress,
         )
 
+        // Edge-centric cap: a relationship cap on this specific edge (set by a
+        // setEdgeCap/setOutgoingCap/setIncomingCap override rule), resolved to
+        // USD upstream and keyed by the stable enhancedEdgeKey. Folded in with
+        // the same min semantics as function caps.
+        const edgeCap = this.resolvedEdgeCaps.get(enhancedEdgeKey(edge))
+
         // Per-edge effective cap when landing at the target contract.
         // A pure view call cannot move funds, so its contribution to
         // fund-drain potential is 0 regardless of any cap chain. That makes
@@ -330,9 +359,7 @@ export class CapitalAnalysisCalculator {
         // issue) while also honoring "view-only reaches are not at risk".
         const edgeReachCap = isViewCall
           ? 0
-          : newPathCap !== undefined || targetFuncCap !== undefined
-            ? Math.min(newPathCap ?? Infinity, targetFuncCap ?? Infinity)
-            : undefined
+          : minDefined(newPathCap, targetFuncCap, edgeCap)
 
         // Resolve implementation addresses to proxy for the output map,
         // so we don't create separate entries for proxy and implementation.
@@ -363,12 +390,9 @@ export class CapitalAnalysisCalculator {
         }
 
         // BFS queue uses original addresses for correct edge lookup. We
-        // propagate the combined source+target cap so edges leaving the
-        // target inherit target's cap without needing a second lookup.
-        const propagatedPathCap =
-          newPathCap !== undefined || targetFuncCap !== undefined
-            ? Math.min(newPathCap ?? Infinity, targetFuncCap ?? Infinity)
-            : undefined
+        // propagate the combined source+target+edge cap so edges leaving the
+        // target inherit this path's tightest cap without a second lookup.
+        const propagatedPathCap = minDefined(newPathCap, targetFuncCap, edgeCap)
         queue.push({
           contract: edge.targetContract,
           function: edge.targetFunction,

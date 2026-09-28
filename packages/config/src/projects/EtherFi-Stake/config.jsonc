@@ -12,7 +12,42 @@
     },
     // External: Lido stETH
     "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
-      "ignoreRelatives": ["$implementation","appId","DOMAIN_SEPARATOR","eip712Domain","getEIP712StETH","getEVMScriptRegistry","getLidoLocator","getRecoveryVault","getTreasury","getWithdrawalCredentials","implementation","kernel","PAUSE_ROLE","RESUME_ROLE","STAKING_CONTROL_ROLE","STAKING_PAUSE_ROLE","UNSAFE_CHANGE_DEPOSITED_VALIDATORS_ROLE"]
+      "ignoreRelatives": [
+        "$implementation",
+        "appId",
+        "DOMAIN_SEPARATOR",
+        "eip712Domain",
+        "getEIP712StETH",
+        "getEVMScriptRegistry",
+        "getLidoLocator",
+        "getRecoveryVault",
+        "getTreasury",
+        "getWithdrawalCredentials",
+        "implementation",
+        "kernel",
+        "PAUSE_ROLE",
+        "RESUME_ROLE",
+        "STAKING_CONTROL_ROLE",
+        "STAKING_PAUSE_ROLE",
+        "UNSAFE_CHANGE_DEPOSITED_VALIDATORS_ROLE"
+      ],
+      "ignoreInWatchMode": [
+        "getBalanceStats",
+        "getBeaconStat",
+        "getBufferedEther",
+        "getDepositableEther",
+        "getDepositsReserve",
+        "getExternalEther",
+        "getExternalShares",
+        "getFeeDistribution",
+        "getMaxMintableExternalShares",
+        "getStakeLimitFullInfo",
+        "getTotalELRewardsCollected",
+        "getTotalPooledEther",
+        "getTotalShares",
+        "getWithdrawalsReserve",
+        "totalSupply"
+      ]
     },
     // External: Ethereum DepositContract
     "eth:0x00000000219ab540356cBB839Cbe05303d7705Fa": {
@@ -89,7 +124,57 @@
     },
     // EnumerableRoles: RoleRegistry
     "eth:0x62247D29B4B9BECf4BB73E0c722cf6445cfC7cE9": {
-      "fields": { "roles": { "handler": { "type": "enumerableRoles", "flatDir": "src/projects/EtherFi-Stake/.flat" } } }
+      "fields": {
+        "roles": {
+          "handler": {
+            "type": "enumerableRoles",
+            "flatDir": "src/projects/EtherFi-Stake/.flat",
+            "roleNames": {
+              "0xfd643c72710c63c0180259aba6b2d05451e3591a24e58b62239378085726f783": "CANCELLER_ROLE",
+              "0x59b1404ad25e8c17457226c70c543149f101046883c2bdefdfea50a4030afba5": "CONSOLIDATION_REQUEST_LIMIT_ID",
+              "0x06b452e947f709c0549c7a2e857f0d57f53a00c27bb826a3340a48774a76512f": "EETH_OPERATING_ADMIN_ROLE",
+              "0xa2a38b453c00b96e25a6611741c0fa71b17f9f21f28c0d5e77c008a31c1949ba": "ETHERFI_NODES_MANAGER_ADMIN_ROLE",
+              "0x25f713693dd3e84995d0d9964722b195ad1b60efe6253e8fa19b8e74f9a6602a": "ETHERFI_NODES_MANAGER_CALL_FORWARDER_ROLE",
+              "0x59182b0a43541702fc3e73f22a962f8f868277e76091a99c516d2982b9df2f90": "ETHERFI_NODES_MANAGER_EIGENLAYER_ADMIN_ROLE",
+              "0x623ac534141a3de3d1e20f924b4a3b115aa68dc5b00452321cda0323932459ab": "ETHERFI_NODES_MANAGER_EL_CONSOLIDATION_ROLE",
+              "0x140ee46da08400488949dfb48bdfc7c0502610f6a6203d169743d6b9e776a0be": "ETHERFI_NODES_MANAGER_EL_TRIGGER_EXIT_ROLE",
+              "0x8c7b9778e52066fde8fbd3e25c5180a9726e067622ca2cb96db1c1225b4c827b": "ETHERFI_NODES_MANAGER_LEGACY_LINKER_ROLE",
+              "0xf2c32172f8adc08057d18fb6422b871bd95592f20a6ab72ebf7963209047f50c": "ETHERFI_NODES_MANAGER_POD_PROVER_ROLE",
+              "0xf63b1ce674d2cec0dbfcdcc7e504ce31a335c457c363b9fafb6ca524addf1775": "ETHERFI_ORACLE_EXECUTOR_ADMIN_ROLE",
+              "0xe9d356a03911100a5418b1829f363128136c30112754cb3dbe73b1674abe2ac8": "ETHERFI_ORACLE_EXECUTOR_TASK_MANAGER_ROLE",
+              "0xb56db3e3aaf390cabc1ed5bc88c1fb620c033c618c569e3902254bcef71cf54c": "ETHERFI_RATE_LIMITER_ADMIN_ROLE",
+              "0x1fa5f863eb8a62c868fa7eb98a4e47ded14913e6885050cfd9090d04516345b0": "ETHERFI_REDEMPTION_MANAGER_ADMIN_ROLE",
+              "0xd8aa0f3194971a2a116679f7c2090f6939c8d4e01a2a8d7e41d55e5351469e63": "EXECUTOR_ROLE",
+              "0x7cb3a0475ce334f2e554cd4068801a846aec977f481e2a4593747d2681f19880": "EXIT_REQUEST_LIMIT_ID",
+              "0x485191a2ef18512555bd4426d18a716ce8e98c80ec2de16394dcf86d7d91bc80": "FINALIZE_ROLE",
+              "0x4fb62203ff7abbe51d8c53865ac09965620ebfa150bfb9e0d3c26869f5c43935": "IMPLICIT_FEE_CLAIMER_ROLE",
+              "0x0e8d94121b3383f03d9ae60b39295aa793469d7230d51a3f62cbf47cd45481d9": "LIQUIDITY_POOL_ADMIN_ROLE",
+              "0xc6ace799356a5a236ccaa6708c68b77b7de838b1700b6e0c40f48a1407a5eef0": "LIQUIDITY_POOL_VALIDATOR_APPROVER_ROLE",
+              "0x20e7d93f475a4a8dd621285797dd2d68da59e4450b89aea5ca9bf079e95c1db5": "LIQUIDITY_POOL_VALIDATOR_CREATOR_ROLE",
+              "0xbe882725f03f148e7c5a5e63ec45f182f7dcdb6bb8b92311ade5a6d138e0ee0f": "MANAGE_TOKEN_URI_ROLE",
+              "0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6": "MINTER_ROLE",
+              "0x68e79a7bf1e0bc45d0a330c573bc367f9cf464fd326078812f301165fbda4ef1": "ORACLE_ROLE",
+              "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a": "PAUSER_ROLE",
+              "0x139c2898040ef16910dc9f44dc697df79363da767d8bc92f2e310312b816e46d": "PAUSE_ROLE",
+              "0x756a7536f06e7e4456636342cf02e0825db97b9bbbcbe5142795cc76b4eeea14": "PRIORITY_WITHDRAWAL_QUEUE_ADMIN_ROLE",
+              "0x39730a843a472e74e79db13c62de74d1602801e7cfce5acb9837f64a50ff5f4b": "PRIORITY_WITHDRAWAL_QUEUE_REQUEST_MANAGER_ROLE",
+              "0x9fad9ee19c69fc6a5f3a9ebfef13b0ed2faeb808252a4bb01f970bb4012ffa15": "PRIORITY_WITHDRAWAL_QUEUE_WHITELIST_MANAGER_ROLE",
+              "0xb09aa5aeb3702cfd50b6b62bc4532604938f21248a27a1d5ca736082b6819cc1": "PROPOSER_ROLE",
+              "0xe6ff4398839854a2087720a46165c7be195bc9de6f7a3c5a977d3b6917b76af2": "PROTOCOL_PAUSER",
+              "0xb72d40a29b0ca5ab6e0b32830618dfdcae56fae676396ff1f7c3fede659935c8": "PROTOCOL_UNPAUSER",
+              "0x2fc10cc8ae19568712f7a176fb4978616a610650813c9d05326c34abb62749c7": "RESUME_ROLE",
+              "0xeb260b9ff913fc1877c5f4dad9a2de53d4add5c5bf95e630342a54ad228cdb5f": "STAKING_MANAGER_ADMIN_ROLE",
+              "0xa9e662c125cda0e0d367a277c57f51ca0b3a9ddb823ca7717301532d10b2b0f8": "STAKING_MANAGER_NODE_CREATOR_ROLE",
+              "0xcae8f60415c61e4b3a46975038089b058a1a802ec6912db2cb8b95d5d09dcb74": "STAKING_MANAGER_VALIDATOR_INVALIDATOR_ROLE",
+              "0x5f58e3a2316349923ce3780f8d587db2d72378aed66a8261c916544fa6846ca5": "TIMELOCK_ADMIN_ROLE",
+              "0x427da25fe773164f88948d3e215c94b6554e2ed5e5f203a821c9f2f6131cf75a": "UNPAUSER_ROLE",
+              "0x720837b54cbf988e535e1d4cd78ea8b86135f54e35e9bd90ec3979114c84f124": "UNRESTAKING_LIMIT_ID",
+              "0xfeab26ff201be143cb96161bb5c9224b5761f7085c44d6677299b1cfc2153cd7": "WEETH_OPERATING_ADMIN_ROLE",
+              "0xdf341d2a9af804fa0099198f83a0a0611aa273a03b36d576993f914e695dff2a": "WITHDRAW_REQUEST_NFT_ADMIN_ROLE"
+            }
+          }
+        }
+      }
     },
     // AccessControl + LayerZero OApp config: EtherfiOFTAdapterUpgradeable (weETH OFT)
     "eth:0xcd2eb13D6831d4602D80E5db9230A57596CDCA63": {
@@ -175,7 +260,17 @@
     },
     // LiquidityPool
     "eth:0x308861A430be4cce5502d0A12724771Fc6DaF216": {
-      "ignoreInWatchMode": ["amountForShare", "ethAmountLockedForWithdrawal", "getTotalPooledEther", "numPendingDeposits", "sharesForAmount", "sharesForWithdrawalAmount", "totalValueInLp", "totalValueOutOfLp"]
+      "ignoreInWatchMode": [
+        "amountForShare",
+        "amountPerShareCeil",
+        "ethAmountLockedForWithdrawal",
+        "getTotalPooledEther",
+        "numPendingDeposits",
+        "sharesForAmount",
+        "sharesForWithdrawalAmount",
+        "totalValueInLp",
+        "totalValueOutOfLp"
+      ]
     },
     // PriorityWithdrawalQueue
     "eth:0x35e7D6feF6f72aDd3c3e39dEc6d9CCc29e3345FA": {
@@ -183,7 +278,25 @@
     },
     // WithdrawRequestNFT
     "eth:0x7d5706f6ef3F89B3951E23e557CDFBC3239D4E2c": {
-      "ignoreInWatchMode": ["aggregateSumOfEEthShare", "currentRequestIdToScanFromForShareRemainder", "getApproved", "getClaimableAmount", "getEEthRemainderAmount", "getRequest", "isFinalized", "isScanOfShareRemainderCompleted", "isValid", "lastFinalizedRequestId", "lastRequestIdToScanUntilForShareRemainder", "nextRequestId", "ownerOf", "tokenURI", "totalRemainderEEthShares"]
+      "ignoreInWatchMode": [
+        "aggregateSumOfEEthShare",
+        "currentRequestIdToScanFromForShareRemainder",
+        "ethAmountLockedForWithdrawal",
+        "finalizationRatesLength",
+        "getApproved",
+        "getClaimableAmount",
+        "getEEthRemainderAmount",
+        "getRequest",
+        "isFinalized",
+        "isScanOfShareRemainderCompleted",
+        "isValid",
+        "lastFinalizedRequestId",
+        "lastRequestIdToScanUntilForShareRemainder",
+        "nextRequestId",
+        "ownerOf",
+        "tokenURI",
+        "totalRemainderEEthShares"
+      ]
     },
     // Wrapped eETH Token (weETH)
     "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee": {

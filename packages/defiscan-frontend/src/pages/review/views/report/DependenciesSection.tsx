@@ -94,10 +94,6 @@ export function DependenciesSection({ review, onShowMore }: DependenciesSectionP
       : dependencies.reduce((s, d) => s + depFunds(d), 0)
   const atRiskPct = impactPct(totalAtRisk, totalTvs)
   const displayedGroups = entityGroups.slice(0, 3)
-  const maxGroupFunds = Math.max(
-    ...entityGroups.map(([entity, ds]) => getGroupFunds(entity, ds)),
-    0,
-  )
 
   return (
     <div className="bg-bg-card border border-border rounded-lg p-5 sm:p-[33px] flex flex-col gap-6">
@@ -146,7 +142,8 @@ export function DependenciesSection({ review, onShowMore }: DependenciesSectionP
             const groupFunds = getGroupFunds(entity, deps)
             const groupLabel =
               entity ?? (namedEntities.length > 0 ? 'Other' : 'Unknown')
-            const barWidth = maxGroupFunds > 0 ? (groupFunds / maxGroupFunds) * 100 : 0
+            const barWidth =
+              totalTvs > 0 ? Math.min(100, (groupFunds / totalTvs) * 100) : 0
             const mitigations = aggregateMitigationsByImpact(
               deps.flatMap((d) => d.functions ?? []),
             )

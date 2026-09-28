@@ -16,6 +16,48 @@
   "maxDepth": 11,
   "maxAddresses": 600,
   "overrides": {
+    // --- External oracle rate providers (RATIO_PROVIDER of the *PriceCapAdapter family).
+    //     Un-pruned from the adapters so each surfaces as an oracle dependency node, but leaf-pruned
+    //     here so discovery does NOT recurse into the external protocol trees (Lido, Renzo, Ethena,
+    //     Stader, ether.fi, StakeWise, Maker, Lombard) — that recursion blows past maxAddresses.
+    "eth:0x1b293DC39F94157fA0D1D36d7e0090C8B8B8c13F": {
+      // eBTC AccountantWithRateProviders (ether.fi)
+      "ignoreRelatives": ["authority", "base", "owner", "vault"]
+    },
+    "eth:0x2A261e60FB14586B474C208b1B7AC6D0f5000306": {
+      // osETH OsTokenVaultController (StakeWise)
+      "ignoreRelatives": ["keeper", "owner", "pendingOwner", "treasury"]
+    },
+    "eth:0x349A73444b1a310BAe67ef67973022020d70020d": {
+      // rsETH LRTOracle (Kelp)
+      "ignoreRelatives": ["$admin", "$implementation", "lrtConfig"]
+    },
+    "eth:0x74a09653A083691711cF8215a6ab074BB4e99ef5": {
+      // ezETH RestakeManager (Renzo)
+      "ignoreRelatives": [
+        "$admin", "$implementation", "collateralTokens", "delegationManager", "depositQueue",
+        "ezETH", "operatorDelegators", "renzoOracle", "riskOracleMiddleware", "roleManager", "strategyManager"
+      ]
+    },
+    "eth:0xcf5EA1b38380f6aF39068375516Daf40Ed70D299": {
+      // ETHx StaderStakePoolsManager (Stader)
+      "ignoreRelatives": ["$admin", "$implementation", "staderConfig"]
+    },
+    "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
+      // stETH Lido (RATIO_PROVIDER of WstETHPriceCapAdapter)
+      "ignoreRelatives": [
+        "$implementation", "getEIP712StETH", "getEVMScriptRegistry", "getLidoLocator",
+        "getRecoveryVault", "getTreasury", "implementation", "kernel"
+      ]
+    },
+    "eth:0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7": {
+      // sDAI Pot (MakerDAO/Sky DSR)
+      "ignoreRelatives": ["vat", "vow"]
+    },
+    "eth:0x1De9fcfeDF3E51266c188ee422fbA1c7860DA0eF": {
+      // LBTC StakedLBTCOracle (Lombard)
+      "ignoreRelatives": ["$admin", "$implementation", "consortium", "owner", "pendingOwner", "token"]
+    },
     "eth:0x0a16f2FCC0D44FaE41cc54e079281D84A363bECD": {
       "ignoreMethods": [
         "getAllReservesTokens"
@@ -4249,8 +4291,7 @@
     // --- AaveOracle price-feed sources (external leaf nodes) ---
     "eth:0x03bB418e89B75407585f8198178f253DA3216218": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",
@@ -4323,15 +4364,17 @@
     },
     "eth:0x2b86D519eF34f8Adfc9349CDeA17c09Aa9dB60E2": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
-        "description",
-        "getRatio",
-        "latestAnswer",
         "MINIMUM_SNAPSHOT_DELAY",
-        "SECONDS_PER_YEAR"
+        "SECONDS_PER_YEAR",
+        "description",
+        "getMaxRatioGrowthPerSecond",
+        "getRatio",
+        "getSnapshotRatio",
+        "getSnapshotTimestamp",
+        "latestAnswer"
       ]
     },
     "eth:0x36964C0579D02E0a5AaAb89E24Cf8d7CDF3549EE": {
@@ -4356,15 +4399,17 @@
     },
     "eth:0x42bc86f2f08419280a99d8fbEa4672e7c30a86ec": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
-        "description",
-        "getRatio",
-        "latestAnswer",
         "MINIMUM_SNAPSHOT_DELAY",
-        "SECONDS_PER_YEAR"
+        "SECONDS_PER_YEAR",
+        "description",
+        "getMaxRatioGrowthPerSecond",
+        "getRatio",
+        "getSnapshotRatio",
+        "getSnapshotTimestamp",
+        "latestAnswer"
       ]
     },
     "eth:0x44Bb2a64bAf94210B583338D3D97b1e8288Bd478": {
@@ -4464,15 +4509,17 @@
     },
     "eth:0x6929706c42d637DF5Ebf7F0BcfF2aF47F84Ea69D": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
-        "description",
-        "getRatio",
-        "latestAnswer",
         "MINIMUM_SNAPSHOT_DELAY",
-        "SECONDS_PER_YEAR"
+        "SECONDS_PER_YEAR",
+        "description",
+        "getMaxRatioGrowthPerSecond",
+        "getRatio",
+        "getSnapshotRatio",
+        "getSnapshotTimestamp",
+        "latestAnswer"
       ]
     },
     "eth:0x6A196A7B498C4EFBFEfB55364106EC80CceF0C3F": {
@@ -4515,8 +4562,7 @@
     },
     "eth:0x7292C95A5f6A501a9c4B34f6393e221F2A0139c3": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",
@@ -4566,8 +4612,7 @@
     },
     "eth:0x85968026294b8f8Fb86d6bF3Cda079f9376aD05A": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",
@@ -4579,28 +4624,32 @@
     },
     "eth:0x87625393534d5C102cADB66D37201dF24cc26d4C": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
-        "description",
-        "getRatio",
-        "latestAnswer",
         "MINIMUM_SNAPSHOT_DELAY",
-        "SECONDS_PER_YEAR"
+        "SECONDS_PER_YEAR",
+        "description",
+        "getMaxRatioGrowthPerSecond",
+        "getRatio",
+        "getSnapshotRatio",
+        "getSnapshotTimestamp",
+        "latestAnswer"
       ]
     },
     "eth:0x889399C34461b25d70d43931e6cE9E40280E617B": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
-        "description",
-        "getRatio",
-        "latestAnswer",
         "MINIMUM_SNAPSHOT_DELAY",
-        "SECONDS_PER_YEAR"
+        "SECONDS_PER_YEAR",
+        "description",
+        "getMaxRatioGrowthPerSecond",
+        "getRatio",
+        "getSnapshotRatio",
+        "getSnapshotTimestamp",
+        "latestAnswer"
       ]
     },
     "eth:0x8B17C02d22EE7D6B8D6829ceB710A458de41E84a": {
@@ -4676,8 +4725,7 @@
     },
     "eth:0x982aC260B5a4e5bCAb6A437e79168390cFbDe70D": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",
@@ -4804,15 +4852,17 @@
     },
     "eth:0xF3d49021fF3bbBFDfC1992A4b09E5D1d141D044C": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
-        "description",
-        "getRatio",
-        "latestAnswer",
         "MINIMUM_SNAPSHOT_DELAY",
-        "SECONDS_PER_YEAR"
+        "SECONDS_PER_YEAR",
+        "description",
+        "getMaxRatioGrowthPerSecond",
+        "getRatio",
+        "getSnapshotRatio",
+        "getSnapshotTimestamp",
+        "latestAnswer"
       ]
     },
     "eth:0xF77f2537dba4ffD60f77fACdfB2c1706364fA03d": {
@@ -4879,8 +4929,7 @@
     },
     "eth:0xc7Ad695ac0ae38Ae308640897E51468977A862a2": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",
@@ -4897,15 +4946,17 @@
     },
     "eth:0xd7b163B671f8cE9379DF8Ff7F75fA72Ccec1841c": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
-        "description",
-        "getRatio",
-        "latestAnswer",
         "MINIMUM_SNAPSHOT_DELAY",
-        "SECONDS_PER_YEAR"
+        "SECONDS_PER_YEAR",
+        "description",
+        "getMaxRatioGrowthPerSecond",
+        "getRatio",
+        "getSnapshotRatio",
+        "getSnapshotTimestamp",
+        "latestAnswer"
       ]
     },
     "eth:0xdF2917806E30300537aEB49A7663062F4d1F2b5F": {
@@ -4916,8 +4967,7 @@
     },
     "eth:0xe1D97bF61901B075E9626c8A2340a7De385861Ef": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",
@@ -4949,8 +4999,7 @@
     },
     "eth:0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",
@@ -4962,8 +5011,7 @@
     },
     "eth:0xf83B85205241c3BCCA0a09D32FaE65c16e0CF236": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",
@@ -4975,8 +5023,7 @@
     },
     "eth:0xf8c04B50499872A5B5137219DEc0F791f7f620D0": {
       "ignoreRelatives": [
-        "ACL_MANAGER",
-        "RATIO_PROVIDER"
+        "ACL_MANAGER"
       ],
       "ignoreInWatchMode": [
         "description",

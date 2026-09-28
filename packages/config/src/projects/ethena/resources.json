@@ -1,0 +1,147 @@
+{
+  "resources": [
+    {
+      "type": "website",
+      "url": "https://ethena.fi"
+    },
+    {
+      "type": "frontend",
+      "url": "https://app.ethena.fi",
+      "frontendSubtype": "official"
+    },
+    {
+      "type": "docs",
+      "url": "https://docs.ethena.fi"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/ethena-labs"
+    },
+    {
+      "type": "x",
+      "url": "https://x.com/ethena"
+    },
+    {
+      "type": "other",
+      "url": "https://gov.ethenafoundation.com",
+      "label": "Governance Forum"
+    },
+    {
+      "type": "defiscan-v1",
+      "url": "https://v1.defiscan.info/protocols/ethena/usde"
+    },
+    {
+      "url": "https://github.com/ethena-labs/ethena-minting-client",
+      "type": "frontend",
+      "label": "Self-hostable Minting Client",
+      "frontendSubtype": "self-hosted"
+    }
+  ],
+  "audits": [
+    {
+      "author": "Zellic",
+      "date": "2023-07",
+      "scope": "v1 contracts",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FGZbd1DrrG3YmnTlJnTHa%2FEthena%20-%20Zellic%20Audit%20Report%20Draft.pdf?alt=media&token=2e65890c-6724-49b7-97f4-6d2223ba086e"
+    },
+    {
+      "author": "Quantstamp",
+      "date": "2023-10",
+      "scope": "v1 contracts",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2F17Ucep7IYMBZ6mAHGLyw%2FEthena%20Final%20Report%20%281%29.pdf?alt=media&token=51a6a101-516e-4984-8360-14daf860a961"
+    },
+    {
+      "author": "Spearbit",
+      "date": "2023-10",
+      "scope": "v1 contracts",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FsX7xO54StGnS6RlZM0Qa%2FSpearbit%20_Ethena_v2_Final_report-ethena__1_.pdf?alt=media&token=d0968065-7e4d-4661-b53f-a1d5181c30bd"
+    },
+    {
+      "author": "Pashov Audit Group",
+      "date": "2023-10",
+      "scope": "v1 contracts",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FzUZDAQ77jrhUOIMqFka9%2FEthena-security-review%20%281%29.pdf?alt=media&token=0358ec8b-36fe-4166-a159-2c782a9f8d40"
+    },
+    {
+      "author": "Code4rena",
+      "date": "2023-10",
+      "scope": "v1 contracts",
+      "url": "https://code4rena.com/reports/2023-10-ethena"
+    },
+    {
+      "author": "Pashov Audit Group",
+      "date": "2023-12",
+      "scope": "ENA & LP staking",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FBCV8xxvUneCO2WlUk2KS%2FEthena-security-review%20%281%29.pdf?alt=media&token=c552507e-b245-43b7-8cc6-cd51a6a92005"
+    },
+    {
+      "author": "Pashov Audit Group",
+      "date": "2024-05",
+      "scope": "v2 contracts",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FJHbdthPqKCPoZFzrpryW%2Fv2-audit.pdf?alt=media&token=68bbdbae-4fcf-4e90-ad20-8c4d6a5a29a0"
+    },
+    {
+      "author": "Chaos Labs",
+      "date": "2024-05",
+      "scope": "LST market risk",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FS8e4wljMcMDkw6fMcnby%2FChaos%20Labs%20-%20Ethena%20LST%20Market%20Risk%20Analysis%20%281%29.pdf?alt=media&token=071b4952-5995-4805-8904-2e617176396e"
+    },
+    {
+      "author": "Chaos Labs",
+      "date": "2024-05",
+      "scope": "Perpetual risk assessment",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FXx0DNbv33KWqybLS4HvU%2FChaos%20Labs%20-%20Ethena%20Perpetual%20Assessment%20Report%20Final.pdf?alt=media&token=0d167789-ee8b-4135-9ebd-d5e07033aa48"
+    },
+    {
+      "author": "Chaos Labs",
+      "date": "2024-05",
+      "scope": "USDe on-chain liquidity",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FxB8Qp1VgHy3GN2aJ57JO%2FChaos_Labs___USDe_On_chain_Liquidity_Assessment.pdf?alt=media&token=636dddfd-9861-4378-9f1e-d59c85bf2aca"
+    },
+    {
+      "author": "Pashov Audit Group",
+      "date": "2024-09",
+      "scope": "Staked ENA (sENA)",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FtqsJW7hPQMXv80sibsUK%2FEthena%20x%20Pashov%20-%20SENA%20Audit%20Report.pdf?alt=media&token=9b05cbba-cd3f-4252-9940-ba35b5408b9c"
+    },
+    {
+      "author": "Quantstamp",
+      "date": "2024-10",
+      "scope": "USDtb contracts",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2FuyJ6FDS2CVacoHv303Cw%2FEthena%20x%20Quantstamp%20-%20USTB.pdf?alt=media&token=df9b8f23-54bc-4879-8016-096b966124cc"
+    },
+    {
+      "author": "Cyfrin",
+      "date": "2024-10",
+      "scope": "USDtb contracts",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2Fd7jvu5NZ9eh8thYYRBmP%2FEthena%20x%20Cyfrin%20-%20USTB.pdf?alt=media&token=9d693945-8baf-4373-bb4c-12cdee038db2"
+    },
+    {
+      "author": "Pashov Audit Group",
+      "date": "2024-10",
+      "scope": "USDtb contracts",
+      "url": "https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsBsPyff5ft3inFy9jyjt%2Fuploads%2Fvjn1dqCWVE3YWhLFTFFU%2FEthena%20x%20Pashov%20-%20USTB.pdf?alt=media&token=b0e93bf7-e95d-44df-8c25-270e21ec2582"
+    },
+    {
+      "author": "Code4rena",
+      "date": "2024-11",
+      "scope": "USDtb invitational",
+      "url": "https://code4rena.com/reports/2024-11-ethena-labs"
+    },
+    {
+      "author": "Cyfrin",
+      "date": "2025-05",
+      "scope": "Timelock",
+      "url": "https://github.com/Cyfrin/cyfrin-audit-reports/blob/main/reports/2025-05-16-cyfrin-ethena-timelock-v2.0.pdf"
+    },
+    {
+      "author": "Immunefi",
+      "date": "2024-04",
+      "scope": "Bug Bounty Program",
+      "url": "https://immunefi.com/bug-bounty/ethena/",
+      "bounty": 3000000
+    }
+  ],
+  "linesOfCode": 10919,
+  "lastModified": "2026-05-18T10:14:09.040Z"
+}

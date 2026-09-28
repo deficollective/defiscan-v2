@@ -1,0 +1,1809 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-05-18T12:05:52.198Z",
+  "contracts": {
+    "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3": {
+      "functions": [
+        {
+          "functionName": "transferAdmin",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "SingleAdminAccessControl two-step pattern: this call only sets _pendingDefaultAdmin; the new admin only takes effect after they call acceptAdmin themselves. The current admin retains all powers until acceptAdmin is invoked. notAdmin modifier ensures DEFAULT_ADMIN_ROLE cannot be granted via grantRole."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.305Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.305Z"
+          }
+        },
+        {
+          "functionName": "setGlobalMaxMintPerBlock",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Updates a configuration parameter consulted on subsequent mint/redeem operations. No effect on USDe already minted or on collateral already held by the protocol."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.029Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.029Z"
+          }
+        },
+        {
+          "functionName": "setGlobalMaxRedeemPerBlock",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Updates a configuration parameter consulted on subsequent mint/redeem operations. No effect on USDe already minted or on collateral already held by the protocol."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.040Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.040Z"
+          }
+        },
+        {
+          "functionName": "removeSupportedAsset",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Removes an asset from the supported-collateral list. Existing USDe and existing custodian holdings of that asset are untouched; only blocks the asset from being used in future mint/redeem orders."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.078Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.078Z"
+          }
+        },
+        {
+          "functionName": "removeCustodianAddress",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Removes a wallet from the whitelisted-custodian list. Funds already sent to that custodian are untouched; only blocks future transferToCustody calls to that address."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.085Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.085Z"
+          }
+        },
+        {
+          "functionName": "removeWhitelistedBenefactor",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Removes a benefactor from the whitelist. Their existing collateral deposits and USDe holdings are unaffected; only blocks them from initiating new mint/redeem orders."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.094Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.094Z"
+          }
+        },
+        {
+          "functionName": "addCustodianAddress",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only-enabler",
+              "description": "Whitelists a wallet for future transferToCustody calls. Cannot move funds itself — the extraction happens in transferToCustody, which is bounded by the EthenaMinting buffer balance. The wallet is a setup parameter; existing custodian transfers and protocol balances are unaffected."
+            }
+          ],
+          "timestamp": "2026-05-11T11:41:08.830Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:41:08.830Z"
+          }
+        },
+        {
+          "functionName": "addWhitelistedBenefactor",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Whitelists an address to act as benefactor in mint/redeem orders. No fund movement; only enables the address to submit future orders."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.114Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.114Z"
+          }
+        },
+        {
+          "functionName": "addSupportedAsset",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Whitelists a new collateral asset with associated mint/redeem caps and token type. No effect on existing positions; the new asset can only be used in future mint orders."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.101Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.101Z"
+          }
+        },
+        {
+          "functionName": "setMaxMintPerBlock",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Updates a configuration parameter consulted on subsequent mint/redeem operations. No effect on USDe already minted or on collateral already held by the protocol."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.047Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.047Z"
+          }
+        },
+        {
+          "functionName": "setMaxRedeemPerBlock",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Updates a configuration parameter consulted on subsequent mint/redeem operations. No effect on USDe already minted or on collateral already held by the protocol."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.056Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.056Z"
+          }
+        },
+        {
+          "functionName": "setTokenType",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Updates a configuration parameter consulted on subsequent mint/redeem operations. No effect on USDe already minted or on collateral already held by the protocol."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.071Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.071Z"
+          }
+        },
+        {
+          "functionName": "setStablesDeltaLimit",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Updates a configuration parameter consulted on subsequent mint/redeem operations. No effect on USDe already minted or on collateral already held by the protocol."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.063Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.063Z"
+          }
+        },
+        {
+          "functionName": "grantRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "non-admin-roles-only",
+              "description": "notAdmin modifier blocks DEFAULT_ADMIN_ROLE from being granted. Can grant MINTER/REDEEMER (require benefactor-signed orders + per-block caps), COLLATERAL_MANAGER (sends only to whitelisted custodians, bounded by buffer), or GATEKEEPER (defensive role with no extraction surface). The granted role alone cannot extract funds without additional admin-controlled setup (malicious benefactor or custodian)."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.361Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.361Z"
+          }
+        },
+        {
+          "functionName": "revokeRole",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-management-only",
+              "description": "notAdmin modifier blocks revocation of DEFAULT_ADMIN_ROLE. Only revokes operational roles (MINTER/REDEEMER/COLLATERAL_MANAGER/GATEKEEPER); revoking these prevents future operations but does not extract or freeze any existing funds."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.015Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.015Z"
+          }
+        },
+        {
+          "functionName": "mint",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.MINTER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "per-block-bounded",
+              "description": "MINTER_ROLE EOAs (currently 20 operational bots) alone CANNOT mint USDe freely — they can only execute orders signed by whitelisted benefactors, with on-chain collateral pulled via safeTransferFrom from the benefactor, routed to whitelisted custodians. Per call capped at globalConfig.globalMaxMintPerBlock (200M USDe today) and tokenConfig[asset].maxMintPerBlock. For stable collateral assets the USDe:collateral ratio is locked 1:1 by verifyStablesLimit (stablesDeltaLimit currently = 0 bps). Unbounded extraction requires DEFAULT_ADMIN to add malicious benefactor + malicious custodian + grant MINTER_ROLE; or bypassed entirely via USDe.setMinter.",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3",
+                  "fieldName": "globalConfig.globalMaxMintPerBlock"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-18T12:05:52.047Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T12:05:52.047Z"
+          }
+        },
+        {
+          "functionName": "mintWETH",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.MINTER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "per-block-bounded",
+              "description": "MINTER_ROLE EOAs (currently 20 operational bots) alone CANNOT mint USDe freely — they can only execute orders signed by whitelisted benefactors, with on-chain collateral pulled via safeTransferFrom from the benefactor, routed to whitelisted custodians. Per call capped at globalConfig.globalMaxMintPerBlock (200M USDe today) and tokenConfig[asset].maxMintPerBlock. For stable collateral assets the USDe:collateral ratio is locked 1:1 by verifyStablesLimit (stablesDeltaLimit currently = 0 bps). Unbounded extraction requires DEFAULT_ADMIN to add malicious benefactor + malicious custodian + grant MINTER_ROLE; or bypassed entirely via USDe.setMinter.",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3",
+                  "fieldName": "globalConfig.globalMaxMintPerBlock"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-18T12:05:52.154Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T12:05:52.154Z"
+          }
+        },
+        {
+          "functionName": "redeem",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.REDEEMER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "per-block-bounded",
+              "description": "REDEEMER_ROLE EOAs alone CANNOT redeem USDe freely — they can only execute orders signed by whitelisted benefactors, burning USDe from the benefactor (who must have approved EthenaMinting) and releasing collateral to the benefactor-approved beneficiary. Per call capped at globalConfig.globalMaxRedeemPerBlock (10M USDe today) and tokenConfig[asset].maxRedeemPerBlock. Unbounded extraction requires DEFAULT_ADMIN compromise to add a malicious benefactor that signs over their existing USDe balance to an attacker beneficiary.",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3",
+                  "fieldName": "globalConfig.globalMaxRedeemPerBlock"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-18T12:05:52.198Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T12:05:52.198Z"
+          }
+        },
+        {
+          "functionName": "transferToCustody",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.COLLATERAL_MANAGER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "bounded-by-buffer",
+              "description": "Transfers an asset from the EthenaMinting buffer to a wallet in the _custodianAddresses whitelist. Cannot send to arbitrary addresses. Bounded per call by the contracts own balance of the requested asset (USDT $31M + USDC $31M + USDtb $31M + PYUSD ~$0 currently, total buffer ~$92M). Drain requires either compromised whitelisted custodians, or compromised DEFAULT_ADMIN adding a malicious custodian via addCustodianAddress first."
+            }
+          ],
+          "timestamp": "2026-05-11T11:41:25.254Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:41:25.254Z"
+          }
+        },
+        {
+          "functionName": "disableMintRedeem",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.GATEKEEPER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "redeem-lock",
+              "description": "Gatekeeper sets globalMaxMintPerBlock and globalMaxRedeemPerBlock to 0, halting all future EthenaMinting mints and redeems block-by-block. Blocks the USDe → collateral exit path for existing holders for the duration; USDe remains transferable and stakeable and a DEX exit remains. No funds are extracted or devalued. Recoverable by DEFAULT_ADMIN_ROLE (Dev Multisig) calling setGlobalMaxMintPerBlock / setGlobalMaxRedeemPerBlock to restore the caps.",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+                  "fieldName": "totalSupply"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-18T10:07:30.608Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:07:30.608Z"
+          }
+        },
+        {
+          "functionName": "removeMinterRole",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.GATEKEEPER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-management-only",
+              "description": "Removes the specified operational role from an account. Blocks the account from future role-gated calls; does not extract or freeze any funds."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.169Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.169Z"
+          }
+        },
+        {
+          "functionName": "removeRedeemerRole",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.GATEKEEPER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-management-only",
+              "description": "Removes the specified operational role from an account. Blocks the account from future role-gated calls; does not extract or freeze any funds."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.177Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.177Z"
+          }
+        },
+        {
+          "functionName": "removeCollateralManagerRole",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.GATEKEEPER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-management-only",
+              "description": "Removes the specified operational role from an account. Blocks the account from future role-gated calls; does not extract or freeze any funds."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:09.185Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:09.185Z"
+          }
+        },
+        {
+          "functionName": "acceptAdmin",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.pendingDefaultAdmin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "Receives the DEFAULT_ADMIN_ROLE handover initiated by the current admin via transferAdmin. Only the _pendingDefaultAdmin address can call this; the current admin can revert by calling transferAdmin with a new pending address before acceptance."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.334Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.334Z"
+          }
+        }
+      ]
+    },
+    "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497": {
+      "functions": [
+        {
+          "functionName": "transferAdmin",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "SingleAdminAccessControl two-step pattern: this call only sets _pendingDefaultAdmin; the new admin only takes effect after they call acceptAdmin themselves. The current admin retains all powers until acceptAdmin is invoked. notAdmin modifier ensures DEFAULT_ADMIN_ROLE cannot be granted via grantRole."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.316Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.316Z"
+          }
+        },
+        {
+          "functionName": "grantRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "non-admin-roles-only",
+              "description": "notAdmin modifier blocks DEFAULT_ADMIN_ROLE from being granted. Can grant REWARDER (deposit-only role), BLACKLIST_MANAGER (per-user freeze, no extraction), or STAKER_ROLE variants (apply restriction to a user). None of these grantable roles can extract funds; redistributeLockedAmount requires DEFAULT_ADMIN itself."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.370Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.370Z"
+          }
+        },
+        {
+          "functionName": "revokeRole",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-management-only",
+              "description": "notAdmin modifier blocks revocation of DEFAULT_ADMIN_ROLE. Only revokes operational roles (REWARDER/BLACKLIST_MANAGER/etc.); revoking these prevents future operations but does not extract or freeze any existing funds."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:40.233Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:40.233Z"
+          }
+        },
+        {
+          "functionName": "rescueTokens",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "mistakenly-sent-only",
+              "description": "Guarded by require(token != asset()): cannot rescue USDe (the underlying staked asset). Only moves tokens accidentally sent to the contract; existing staker deposits and yield are untouched."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:40.244Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:40.244Z"
+          }
+        },
+        {
+          "functionName": "redistributeLockedAmount",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "blacklist-bounded",
+              "description": "Burns the sUSDe balance of a FULL_RESTRICTED_STAKER and mints it to an arbitrary recipient (or to address(0) to send back into the vesting pool). Limited to users that admin has previously blacklisted via addToBlacklist. Bounded per call by the targeted user's sUSDe balance."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:40.274Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:40.274Z"
+          }
+        },
+        {
+          "functionName": "setCooldownDuration",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "valueRange",
+              "description": "Capped at MAX_COOLDOWN_DURATION = 7,776,000 seconds (90 days). Bounded by require(duration <= MAX_COOLDOWN_DURATION).",
+              "valueRange": {
+                "max": {
+                  "mode": "hardcoded",
+                  "value": "7776000"
+                },
+                "unit": "seconds"
+              }
+            },
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "New cooldown duration only applies to cooldownAssets/cooldownShares calls made after the change. Cooldowns already in flight (with cooldownEnd already set) are not extended."
+            }
+          ],
+          "timestamp": "2026-05-13T11:30:01.798Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-13T11:30:01.798Z"
+          }
+        },
+        {
+          "functionName": "transferInRewards",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.REWARDER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "deposit-only",
+              "description": "Transfers USDe from the caller into the vault as new rewards, then schedules linear vesting over vestingPeriod. Caller funds the vault; no extraction surface."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:40.265Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:40.265Z"
+          }
+        },
+        {
+          "functionName": "addToBlacklist",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.BLACKLIST_MANAGER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "per-user-freeze",
+              "description": "Grants FULL_RESTRICTED_STAKER_ROLE or SOFT_RESTRICTED_STAKER_ROLE to an address, blocking the target from transferring or withdrawing their sUSDe. Per call bounded to one address; targeted user's deposits are frozen until removed from blacklist. Enables subsequent redistributeLockedAmount which can extract those funds."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:40.283Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:40.283Z"
+          }
+        },
+        {
+          "functionName": "removeFromBlacklist",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.BLACKLIST_MANAGER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "unfreeze-only",
+              "description": "Removes blacklist role from an address, restoring their ability to transfer/withdraw sUSDe. No extraction surface; only unfreezes previously-frozen funds."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:40.292Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:40.292Z"
+          }
+        },
+        {
+          "functionName": "acceptAdmin",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.pendingDefaultAdmin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "Receives the DEFAULT_ADMIN_ROLE handover initiated by the current admin via transferAdmin. Only the _pendingDefaultAdmin address can call this; the current admin can revert by calling transferAdmin with a new pending address before acceptance."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.345Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.345Z"
+          }
+        }
+      ]
+    },
+    "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9": {
+      "functions": [
+        {
+          "functionName": "upgradeTo",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.$admin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "proxy-admin-controlled",
+              "description": "Callable only via the TransparentUpgradeableProxy admin slot ($admin), which is set to the ProxyAdmin contract. Effectively governed by the ProxyAdmin owner (5-of-10 GnosisSafe). Replaces the sENA implementation logic — a malicious implementation could drain the entire sENA vault (currently capped at the silo balance via the EnaSilo.withdraw fieldRef cap, but a new impl could bypass that)."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.865Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.865Z"
+          }
+        },
+        {
+          "functionName": "upgradeToAndCall",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.$admin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "proxy-admin-controlled",
+              "description": "Callable only via the TransparentUpgradeableProxy admin slot ($admin), which is set to the ProxyAdmin contract. Effectively governed by the ProxyAdmin owner (5-of-10 GnosisSafe). Replaces the sENA implementation logic — a malicious implementation could drain the entire sENA vault (currently capped at the silo balance via the EnaSilo.withdraw fieldRef cap, but a new impl could bypass that)."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.875Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.875Z"
+          }
+        },
+        {
+          "functionName": "changeAdmin",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.$admin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "proxy-admin-controlled",
+              "description": "Callable only via the TransparentUpgradeableProxy admin slot ($admin), which is set to the ProxyAdmin contract. Effectively governed by the ProxyAdmin owner (5-of-10 GnosisSafe). Replaces the sENA implementation logic — a malicious implementation could drain the entire sENA vault (currently capped at the silo balance via the EnaSilo.withdraw fieldRef cap, but a new impl could bypass that)."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.885Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.885Z"
+          }
+        }
+      ]
+    },
+    "eth:0x7fD57b46aE1a7b14f6940508381877Ee03e1018B": {
+      "functions": [
+        {
+          "functionName": "transferAdmin",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "SingleAdminAccessControl two-step pattern: this call only sets _pendingDefaultAdmin; the new admin only takes effect after they call acceptAdmin themselves. The current admin retains all powers until acceptAdmin is invoked. notAdmin modifier ensures DEFAULT_ADMIN_ROLE cannot be granted via grantRole."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.325Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.325Z"
+          }
+        },
+        {
+          "functionName": "grantRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "non-admin-roles-only",
+              "description": "notAdmin modifier blocks DEFAULT_ADMIN_ROLE from being granted. Can grant REWARDER (deposit-only role), BLACKLIST_MANAGER (per-user freeze, no extraction), or STAKER_ROLE variants (apply restriction to a user). None of these grantable roles can extract funds; redistributeLockedAmount requires DEFAULT_ADMIN itself."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.378Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.378Z"
+          }
+        },
+        {
+          "functionName": "revokeRole",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-management-only",
+              "description": "notAdmin modifier blocks revocation of DEFAULT_ADMIN_ROLE. Only revokes operational roles (REWARDER/BLACKLIST_MANAGER/etc.); revoking these prevents future operations but does not extract or freeze any existing funds."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:58.418Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:58.418Z"
+          }
+        },
+        {
+          "functionName": "rescueTokens",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "mistakenly-sent-only",
+              "description": "Guarded by require(token != asset()): cannot rescue ENA (the underlying staked asset). Only moves tokens accidentally sent to the contract; existing staker deposits and yield are untouched."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:58.425Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:58.425Z"
+          }
+        },
+        {
+          "functionName": "redistributeLockedAmount",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "blacklist-bounded",
+              "description": "Burns the sENA balance of a BLACKLISTED user and mints it to an arbitrary recipient (or to address(0) to send back into the vesting pool). Limited to users admin has previously blacklisted via addToBlacklist. Bounded per call by the targeted user's sENA balance."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:58.454Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:58.454Z"
+          }
+        },
+        {
+          "functionName": "setCooldownDuration",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "valueRange",
+              "description": "Capped at MAX_COOLDOWN_DURATION = 7,776,000 seconds (90 days). Bounded by require(duration <= MAX_COOLDOWN_DURATION).",
+              "valueRange": {
+                "max": {
+                  "mode": "hardcoded",
+                  "value": "7776000"
+                },
+                "unit": "seconds"
+              }
+            },
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "New cooldown duration only applies to cooldownAssets/cooldownShares calls made after the change. Cooldowns already in flight are not extended."
+            }
+          ],
+          "timestamp": "2026-05-13T11:30:01.801Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-13T11:30:01.801Z"
+          }
+        },
+        {
+          "functionName": "updateVestingPeriod",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "valueRange",
+              "description": "Capped at MAX_VESTING_PERIOD = 7,776,000 seconds (90 days). Bounded by require(newVestingPeriod <= MAX_VESTING_PERIOD).",
+              "valueRange": {
+                "max": {
+                  "mode": "hardcoded",
+                  "value": "7776000"
+                },
+                "unit": "seconds"
+              }
+            },
+            {
+              "type": "other",
+              "label": "future-only",
+              "description": "Changes how long subsequent reward distributions vest. Already-vesting rewards continue under the original period; no effect on existing staker balances."
+            }
+          ],
+          "timestamp": "2026-05-13T11:30:01.804Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-13T11:30:01.804Z"
+          }
+        },
+        {
+          "functionName": "initialize",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "init-one-shot",
+              "description": "Guarded by initializer modifier; can only be called once on the proxy. Already executed at deployment."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:58.474Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:58.474Z"
+          }
+        },
+        {
+          "functionName": "transferInRewards",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.REWARDER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "deposit-only",
+              "description": "Transfers ENA from the caller into the vault as new rewards, then schedules linear vesting over vestingPeriod. Caller funds the vault; no extraction surface."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:58.447Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:58.447Z"
+          }
+        },
+        {
+          "functionName": "addToBlacklist",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.BLACKLIST_MANAGER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "per-user-freeze",
+              "description": "Grants BLACKLISTED_ROLE to an address (excluding the contract owner via notOwner modifier), blocking the target from transferring or withdrawing their sENA. Per call bounded to one address; enables subsequent redistributeLockedAmount."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:58.461Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:58.461Z"
+          }
+        },
+        {
+          "functionName": "removeFromBlacklist",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.BLACKLIST_MANAGER_ROLE.members"
+            },
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "unfreeze-only",
+              "description": "Removes BLACKLISTED_ROLE from an address, restoring their ability to transfer/withdraw sENA. No extraction surface."
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:58.468Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:58.468Z"
+          }
+        },
+        {
+          "functionName": "acceptAdmin",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.pendingDefaultAdmin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "Receives the DEFAULT_ADMIN_ROLE handover initiated by the current admin via transferAdmin. Only the _pendingDefaultAdmin address can call this; the current admin can revert by calling transferAdmin with a new pending address before acceptance."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:35.353Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:35.353Z"
+          }
+        }
+      ]
+    },
+    "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3": {
+      "functions": [
+        {
+          "functionName": "setMinter",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "unlimited-issuance-authority",
+              "description": "Replaces the address allowed to call USDe.mint. Single biggest risk in the protocol. The current minter (EthenaMinting at 0xe349...62D3) enforces: per-block caps (200M USDe globalMaxMintPerBlock), per-asset caps, benefactor-signed EIP-712/1271 orders, whitelist of benefactors and custodians, real on-chain collateral pull. None of these survive a setMinter call — a replacement minter has NO on-chain constraints and could mint unlimited USDe to any address, diluting the entire $3.98B USDe market cap. Only the USDe owner (5-of-10 GnosisSafe) can call this; renounceOwnership reverts so this authority cannot be discarded."
+            }
+          ],
+          "timestamp": "2026-05-11T11:51:34.941Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:51:34.941Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "Ownable2Step pattern: this call only sets pendingOwner; the new owner takes effect only after they call acceptOwnership. The current owner retains all authority until acceptance. renounceOwnership reverts on this contract — ownership cannot be discarded."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.826Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.826Z"
+          }
+        },
+        {
+          "functionName": "mint",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.minter"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "single-minter-gate",
+              "description": "Mints USDe to an arbitrary address. msg.sender == minter check; USDe.minter is currently set to EthenaMinting (0xe349...62D3), which enforces per-block caps (200M USDe), benefactor-signed orders, route whitelisting, and real on-chain collateral transfer. No EOA can call this function directly today. If USDe.setMinter is called by the owner (5/10 GnosisSafe) to replace minter with an attacker-controlled contract, ALL those constraints are bypassed and this function becomes an unlimited mint."
+            }
+          ],
+          "timestamp": "2026-05-11T11:51:34.932Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:51:34.932Z"
+          }
+        },
+        {
+          "functionName": "acceptOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.pendingOwner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "Receives the Ownable2Step ownership handover initiated by the current owner. Only the address set as pendingOwner can call this; the current owner can revert by calling transferOwnership with a new pending address before acceptance."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.837Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.837Z"
+          }
+        }
+      ]
+    },
+    "eth:0x57e114B691Db790C35207b2e685D4A43181e6061": {
+      "functions": [
+        {
+          "functionName": "mint",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "delay",
+              "description": "MINT_WAIT_PERIOD = 31,536,000 seconds (1 year) must elapse between any two successful mint calls (require block.timestamp - lastMintTimestamp >= MINT_WAIT_PERIOD).",
+              "delaySeconds": 31536000
+            },
+            {
+              "type": "relativeValue",
+              "description": "Mint amount per call is capped at MAX_INFLATION = 10% of totalSupply (require amount <= totalSupply * 10 / 100).",
+              "maxChangePercent": 10
+            }
+          ],
+          "timestamp": "2026-05-11T09:59:23.076Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T09:59:23.076Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "Ownable2Step pattern: this call only sets pendingOwner; the new owner takes effect only after they call acceptOwnership. The current owner retains all authority until acceptance. renounceOwnership reverts on this contract — ownership cannot be discarded."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.846Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.846Z"
+          }
+        },
+        {
+          "functionName": "acceptOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.pendingOwner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-transfer",
+              "description": "Receives the Ownable2Step ownership handover initiated by the current owner. Only the address set as pendingOwner can call this; the current owner can revert by calling transferOwnership with a new pending address before acceptance."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.855Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.855Z"
+          }
+        }
+      ]
+    },
+    "eth:0xf849D7792Ff9b30A57656ee10a2776bCb49F4Fe4": {
+      "functions": [
+        {
+          "functionName": "changeProxyAdmin",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "proxy-admin-controlled",
+              "description": "Re-points the sENA proxy admin to a new address. After the call, the new admin can perform upgrade / upgradeToAndCall directly on the proxy without going through this ProxyAdmin. Effectively transfers full upgrade authority."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.910Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.910Z"
+          }
+        },
+        {
+          "functionName": "upgrade",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "proxy-admin-controlled",
+              "description": "Owner-gated wrapper that calls upgradeTo / upgradeToAndCall on the StakedENA proxy. Effective bound is the sENA implementation — a malicious upgrade could rewrite all sENA logic, draining staked ENA. ProxyAdmin owner is the 5-of-10 GnosisSafe."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.893Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.893Z"
+          }
+        },
+        {
+          "functionName": "upgradeAndCall",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "proxy-admin-controlled",
+              "description": "Owner-gated wrapper that calls upgradeTo / upgradeToAndCall on the StakedENA proxy. Effective bound is the sENA implementation — a malicious upgrade could rewrite all sENA logic, draining staked ENA. ProxyAdmin owner is the 5-of-10 GnosisSafe."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.902Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.902Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "freeze-by-renounce",
+              "description": "Renounces ownership to the zero address. After the call, the sENA proxy can no longer be upgraded — the implementation is effectively locked. Reversible only by a deploy of a new ProxyAdmin (which would require the proxy admin pointer to be moved, which itself requires the current ProxyAdmin owner)."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.927Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.927Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "two-step-or-renounce",
+              "description": "Standard Ownable transfer. Combined with renounceOwnership, the GnosisSafe could permanently disable upgrades by transferring to the zero address (this ProxyAdmin uses single-step Ownable, no acceptance required)."
+            }
+          ],
+          "timestamp": "2026-05-11T11:40:55.919Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T11:40:55.919Z"
+          }
+        }
+      ]
+    },
+    "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425": {
+      "functions": [
+        {
+          "functionName": "withdraw",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.stakingVault"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "vault-controlled",
+              "description": "Callable only by the StakedUSDeV2 vault (immutable stakingVault). Used during the user unstake flow: after cooldown expiry, sUSDe.unstake() calls this to return user USDe. Bounded by the silo's own USDe balance. Risk is contingent on the vault itself being compromised.",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425",
+                  "fieldName": "usdeBalance"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-11T10:04:10.550Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T10:04:10.550Z"
+          }
+        }
+      ]
+    },
+    "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A": {
+      "functions": [
+        {
+          "functionName": "withdraw",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.stakingVault"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "vault-controlled",
+              "description": "Callable only by the StakedENA vault (immutable stakingVault). Used during the user unstake flow. Bounded by the silo's own ENA balance. Risk is contingent on the vault itself being compromised.",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A",
+                  "fieldName": "enaBalance"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-11T10:04:10.560Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-11T10:04:10.560Z"
+          }
+        }
+      ]
+    },
+    "eth:0xf2fa332bD83149c66b09B45670bCe64746C6b439": {
+      "functions": [
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "always-reverts",
+              "description": "Overridden to revert unconditionally with CantRenounceOwnership — owner cannot abandon the role even if they try."
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.390Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.390Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "bounded-by-self-balance",
+              "description": "Starts Ownable2Step handoff to a pending owner who must call acceptOwnership. A hostile new owner only gains the rescueTokens drain path, bounded by USDe currently held by this contract (does not touch sUSDe vault or USDe minting authority).",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xf2fa332bD83149c66b09B45670bCe64746C6b439",
+                  "fieldName": "usdeBalance"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.404Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.404Z"
+          }
+        },
+        {
+          "functionName": "acceptOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.pendingOwner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "bounded-by-self-balance",
+              "description": "Completes Ownable2Step handoff (pendingOwner is zero today, so no transfer is currently pending). Worst case after completion is the rescueTokens drain bounded by USDe currently held.",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xf2fa332bD83149c66b09B45670bCe64746C6b439",
+                  "fieldName": "usdeBalance"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.413Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.413Z"
+          }
+        },
+        {
+          "functionName": "transferInRewards",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.operator"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "push-only-to-vault",
+              "description": "Operator can only push USDe from this contract into the sUSDe vault, where it vests to stakers over the 8h reward cycle. Destination is hardcoded to STAKING_VAULT and amount must satisfy USDE_TOKEN.balanceOf(this) >= amount; no destination control or theft surface."
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.422Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.422Z"
+          }
+        },
+        {
+          "functionName": "rescueTokens",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "bounded-by-self-balance",
+              "description": "Owner can sweep any ERC20 (or ETH, though this contract never holds ETH) from this contract to an arbitrary address. Drainable surface is bounded by USDe currently held; sUSDe vault deposits and USDe global supply are untouched.",
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xf2fa332bD83149c66b09B45670bCe64746C6b439",
+                  "fieldName": "usdeBalance"
+                },
+                "unit": {
+                  "kind": "token",
+                  "tokenAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.431Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.431Z"
+          }
+        },
+        {
+          "functionName": "setMintingContract",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "config-pointer",
+              "description": "Updates the mintContract pointer used by future approveToMintContract / setOperator calls. Does not move funds itself; existing token approvals on the previous mintContract remain in place until separately revoked."
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.442Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.442Z"
+          }
+        },
+        {
+          "functionName": "approveToMintContract",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "future-config",
+              "description": "Grants max ERC20 approval from this contract to the current mintContract (today the legit EthenaMinting). A redirected mintContract would still require chaining with setMintingContract; owner already has a more direct drain via rescueTokens, so this function adds no new extraction surface."
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.453Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.453Z"
+          }
+        },
+        {
+          "functionName": "revokeApprovals",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "DoS-only",
+              "description": "Owner revokes ERC20 approvals from a non-mintContract target (the current mintContract is explicitly blocked by an InvalidAddressCurrentMintContract guard). Worst case is revoking the USDe→sUSDe approval set in the constructor, breaking future transferInRewards calls until re-approved — no fund movement."
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.465Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.465Z"
+          }
+        },
+        {
+          "functionName": "setOperator",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "rotation-only",
+              "description": "Rotates the operator EOA and re-delegates the signer on mintContract. The new operator can only call transferInRewards (push-only to STAKING_VAULT); no extraction surface granted by rotation."
+            }
+          ],
+          "timestamp": "2026-05-18T10:02:01.478Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-18T10:02:01.478Z"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,128 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1778519071,
-  "lastConsumedUpdateNotifierId": 184,
-  "events": []
+  "lastReconciledAt": 1789130953,
+  "lastConsumedUpdateNotifierId": 563,
+  "events": [
+    {
+      "timestamp": "2026-05-15T09:55:14.000Z",
+      "updateNotifierId": 196,
+      "address": "bnb:0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652",
+      "contractName": "MasterChefV2",
+      "entity": null,
+      "id": "196:bnb:0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSpecialAllocPoint",
+          "before": 54400,
+          "after": 54399
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-30T07:41:58.000Z",
+      "updateNotifierId": 226,
+      "address": "bnb:0xeCc90d54B10ADd1ab746ABE7E83abe178B72aa9E",
+      "contractName": "GnosisSafeL2",
+      "entity": null,
+      "id": "226:bnb:0xeCc90d54B10ADd1ab746ABE7E83abe178B72aa9E:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.1",
+          "before": "bnb:0xA7C61cCD45795694F80FC55bf6109e093641550b",
+          "after": "bnb:0x7766f6a776c046703263a5C84a5E684aBECD9a75"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-01T12:47:12.000Z",
+      "updateNotifierId": 229,
+      "address": "bnb:0xcEba60280fb0ecd9A5A26A1552B90944770a4a0e",
+      "contractName": "GnosisSafeL2",
+      "entity": null,
+      "id": "229:bnb:0xcEba60280fb0ecd9A5A26A1552B90944770a4a0e:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.1",
+          "before": "bnb:0xA7C61cCD45795694F80FC55bf6109e093641550b",
+          "after": "bnb:0x7766f6a776c046703263a5C84a5E684aBECD9a75"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-07T10:12:53.000Z",
+      "updateNotifierId": 242,
+      "address": "bnb:0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652",
+      "contractName": "MasterChefV2",
+      "entity": null,
+      "id": "242:bnb:0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSpecialAllocPoint",
+          "before": 54399,
+          "after": 54398
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-13T10:10:25.000Z",
+      "updateNotifierId": 260,
+      "address": "bnb:0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652",
+      "contractName": "MasterChefV2",
+      "entity": null,
+      "id": "260:bnb:0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSpecialAllocPoint",
+          "before": 54398,
+          "after": 54397
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-11T12:12:20.000Z",
+      "updateNotifierId": 563,
+      "address": "bnb:0x0ED943Ce24BaEBf257488771759F9BF482C39706",
+      "contractName": "",
+      "entity": null,
+      "id": "563:bnb:0x0ED943Ce24BaEBf257488771759F9BF482C39706:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$pastUpgrades.10",
+          "after": [
+            "2026-09-10T13:38:19.000Z",
+            "0x7ec317f82ccce86125946394345e9e383db35560503234aa9e47ff87dd146cdb",
+            [
+              "bnb:0x3C637e7766C465a7C030b09205Ca75f5443fb5E4"
+            ]
+          ]
+        },
+        {
+          "field": "values.$upgradeCount",
+          "before": 10,
+          "after": 11
+        },
+        {
+          "field": "values.$implementation",
+          "before": "bnb:0x83DDF44b78eAc75479601C091192Fd9B763C9767",
+          "after": "bnb:0x3C637e7766C465a7C030b09205Ca75f5443fb5E4"
+        },
+        {
+          "field": "implementationNames.bnb:0x83DDF44b78eAc75479601C091192Fd9B763C9767",
+          "before": ""
+        },
+        {
+          "field": "implementationNames.bnb:0x3C637e7766C465a7C030b09205Ca75f5443fb5E4",
+          "after": ""
+        }
+      ]
+    }
+  ]
 }

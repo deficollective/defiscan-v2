@@ -116,6 +116,22 @@ export class EnumerableRolesHandler implements Handler {
         hashToName.set(hash.toLowerCase(), name)
       }
 
+      // Fail loudly instead of silently degrading to hash-keyed roles. When
+      // `flatDir` is configured but the scan found nothing AND no `roleNames`
+      // fallback is set, every role would fall back to a raw-hash key, which
+      // silently breaks `@<contract>.roles.<NAME>` owner paths downstream.
+      // This is the CI scenario where `.flat/` was never checked out.
+      if (this.definition.flatDir !== undefined && hashToName.size === 0) {
+        return {
+          field: this.field,
+          error:
+            `flatDir "${this.definition.flatDir}" yielded no role constants ` +
+            'and no roleNames fallback is configured — roles would be keyed by ' +
+            'raw hash, breaking role-name owner paths. Restore the .flat/ ' +
+            'sources or populate roleNames (run /sync-role-names).',
+        }
+      }
+
       // Step 2: Discover ALL role hashes from RoleSet events
       const roleHashes = new Set<string>()
 

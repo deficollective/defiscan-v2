@@ -26,7 +26,8 @@ const DEP_BAR_COLORS = [
 ]
 
 export function DependencyCards({ review, forceExpanded }: DependencyCardsProps) {
-  const { dependencies } = review
+  const { dependencies, totals } = review
+  const totalTvs = totals.totalCapitalAtRisk + (totals.totalTokenValue ?? 0)
   const [expandedDeps, setExpandedDeps] = useState<Set<string>>(new Set())
 
   if (dependencies.length === 0) {
@@ -145,6 +146,7 @@ export function DependencyCards({ review, forceExpanded }: DependencyCardsProps)
               title={groupTitle}
               deps={depsWithFunds}
               groupTotal={groupTotal}
+              totalTvs={totalTvs}
               expandedSet={expandedDeps}
               onToggle={toggleDep}
               forceExpanded={forceExpanded}
@@ -160,6 +162,7 @@ function DepDistributionChart({
   title,
   deps,
   groupTotal,
+  totalTvs,
   expandedSet,
   onToggle,
   forceExpanded,
@@ -167,12 +170,11 @@ function DepDistributionChart({
   title: string | undefined
   deps: { dep: CompiledDependency; fundsAtRisk: number }[]
   groupTotal: number
+  totalTvs: number
   expandedSet: Set<string>
   onToggle: (key: string) => void
   forceExpanded?: boolean
 }) {
-  const maxFunds = Math.max(...deps.map((d) => d.fundsAtRisk), 0)
-
   return (
     <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
       {title && (
@@ -183,7 +185,7 @@ function DepDistributionChart({
       <div className="space-y-3">
         {deps.map(({ dep, fundsAtRisk }, index) => {
           const percentage =
-            maxFunds > 0 ? (fundsAtRisk / maxFunds) * 100 : 0
+            totalTvs > 0 ? Math.min(100, (fundsAtRisk / totalTvs) * 100) : 0
           const expandKey = `dep-${dep.address}`
           const isExpanded = forceExpanded || expandedSet.has(expandKey)
 

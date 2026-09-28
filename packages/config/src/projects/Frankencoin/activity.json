@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1778147385,
-  "lastConsumedUpdateNotifierId": 163,
+  "lastReconciledAt": 1790514021,
+  "lastConsumedUpdateNotifierId": 656,
   "events": [
     {
       "timestamp": "2026-04-21T09:00:35.000Z",
@@ -122,6 +122,3982 @@
       "entity": null,
       "id": "147:eth:0xEAFBa0d16D6a0Ff3C6c5d0A46ca7b8fbFf21A9d3:contract-added",
       "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-05-14T09:42:53.000Z",
+      "updateNotifierId": 190,
+      "address": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+      "contractName": "RMNRemote",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "190:eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.0",
+          "after": "0x00000000000000005ffb1764e3994092"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-15T09:55:14.000Z",
+      "updateNotifierId": 192,
+      "address": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+      "contractName": "RMNRemote",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "192:eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.0",
+          "before": "0x00000000000000005ffb1764e3994092"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-02T11:26:54.000Z",
+      "updateNotifierId": 230,
+      "address": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+      "contractName": "RMNRemote",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "230:eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.0",
+          "after": "0x0000000000000000bd144f4f304a39fb"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-03T12:33:06.000Z",
+      "updateNotifierId": 232,
+      "address": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+      "contractName": "RMNRemote",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "232:eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.0",
+          "before": "0x0000000000000000bd144f4f304a39fb"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-22T12:59:33.000Z",
+      "updateNotifierId": 288,
+      "address": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+      "contractName": "RMNRemote",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "288:eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.0",
+          "after": "0x0000000000000000e48c37ec27730186"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-26T10:30:37.000Z",
+      "updateNotifierId": 300,
+      "address": "eth:0x9359cd75549DaE00Cdd8D22297BC9B13FbBe4B79",
+      "contractName": "BurnMintTokenPool",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "300:eth:0x9359cd75549DaE00Cdd8D22297BC9B13FbBe4B79:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.inboundRateLimit_BSC.capacity",
+          "before": "100000000000000000000000",
+          "after": "110000000000000000000000"
+        },
+        {
+          "field": "values.inboundRateLimit_Base.capacity",
+          "before": "500000000000000000000000",
+          "after": "550000000000000000000000"
+        },
+        {
+          "field": "values.inboundRateLimit_Gnosis.capacity",
+          "before": "500000000000000000000000",
+          "after": "550000000000000000000000"
+        },
+        {
+          "field": "values.inboundRateLimit_Polygon.capacity",
+          "before": "200000000000000000000000",
+          "after": "220000000000000000000000"
+        },
+        {
+          "field": "values.inboundRateLimit_Arbitrum.capacity",
+          "before": "200000000000000000000000",
+          "after": "220000000000000000000000"
+        },
+        {
+          "field": "values.inboundRateLimit_Optimism.capacity",
+          "before": "100000000000000000000000",
+          "after": "110000000000000000000000"
+        },
+        {
+          "field": "values.inboundRateLimit_Avalanche.capacity",
+          "before": "100000000000000000000000",
+          "after": "110000000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-01T10:51:05.000Z",
+      "updateNotifierId": 320,
+      "address": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+      "contractName": "RMNRemote",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "320:eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.1",
+          "after": "0x00000000000000007d7fb61c44d0106a"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 330,
+      "address": "eth:0x79d4f0232A66c4c91b89c76362016A1707CFBF4f",
+      "contractName": "VNXCToken",
+      "isDependency": true,
+      "entity": "VCHF",
+      "id": "330:eth:0x79d4f0232A66c4c91b89c76362016A1707CFBF4f:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$admin",
+          "before": "eth:0xC8bB8eDa94931cA2F20EF43eA7dBD58E68400400",
+          "after": "eth:0x817f8AFEE1A758FAF4492F4844B08DCB57658165"
+        },
+        {
+          "field": "values.minterRoleId",
+          "before": 0,
+          "after": 2
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 330,
+      "address": "eth:0x79d4f0232A66c4c91b89c76362016A1707CFBF4f",
+      "contractName": "VNXCToken",
+      "isDependency": true,
+      "entity": "VCHF",
+      "id": "330:eth:0x79d4f0232A66c4c91b89c76362016A1707CFBF4f:role:owner",
+      "type": "role-update",
+      "roleName": "owner",
+      "changes": [
+        {
+          "field": "values.owner",
+          "before": "eth:0xCdB3867935247049e87c38eA270edD305D84c9AE",
+          "after": "eth:0x45a149f42FF0B77D148d05904Dd7577dF36A545a"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 330,
+      "address": "eth:0xC8bB8eDa94931cA2F20EF43eA7dBD58E68400400",
+      "contractName": "VNXProxyAdmin",
+      "isDependency": true,
+      "entity": "VCHF",
+      "id": "330:eth:0xC8bB8eDa94931cA2F20EF43eA7dBD58E68400400:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 330,
+      "address": "eth:0xCdB3867935247049e87c38eA270edD305D84c9AE",
+      "contractName": "VNXManager",
+      "isDependency": true,
+      "entity": "VCHF",
+      "id": "330:eth:0xCdB3867935247049e87c38eA270edD305D84c9AE:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 330,
+      "address": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+      "contractName": "RMNRemote",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "330:eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.2",
+          "after": "0x0000000000000000475f3a7c1964d249"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 330,
+      "address": "eth:0x2B535Eb09Fc06431B8C69782E2c2D3A1a175114b",
+      "contractName": "VNXManager",
+      "entity": null,
+      "id": "330:eth:0x2B535Eb09Fc06431B8C69782E2c2D3A1a175114b:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 330,
+      "address": "eth:0x817f8AFEE1A758FAF4492F4844B08DCB57658165",
+      "contractName": "VNXProxyAdmin",
+      "entity": null,
+      "id": "330:eth:0x817f8AFEE1A758FAF4492F4844B08DCB57658165:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-05T09:47:34.000Z",
+      "updateNotifierId": 377,
+      "address": "eth:0x411dE17f12D1A34ecC7F45f49844626267c75e81",
+      "contractName": "ARMProxy",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "377:eth:0x411dE17f12D1A34ecC7F45f49844626267c75e81:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getARM",
+          "before": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+          "after": "eth:0x0B047953451A207743fB62541B21199b95190602"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-05T09:47:34.000Z",
+      "updateNotifierId": 377,
+      "address": "eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20",
+      "contractName": "RMNRemote",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "377:eth:0xe8464c353210Cc398A45dB2454FBc5BCd25fFf20:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-08-05T09:47:34.000Z",
+      "updateNotifierId": 377,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "377:eth:0x0B047953451A207743fB62541B21199b95190602:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-05T09:47:34.000Z",
+      "updateNotifierId": 377,
+      "address": "eth:0xD9aB1714Df2b5d0011B22f6D94812e7813Fa5795",
+      "contractName": "RBACTimelock",
+      "entity": null,
+      "id": "377:eth:0xD9aB1714Df2b5d0011B22f6D94812e7813Fa5795:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-06T09:49:22.000Z",
+      "updateNotifierId": 383,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "383:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.3",
+          "after": "0x000000000000000079f596d02e784cb8"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-07T08:24:04.000Z",
+      "updateNotifierId": 388,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "388:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.4",
+          "after": "0x00000000000000000687338b8d6a3d21"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-20T07:51:29.000Z",
+      "updateNotifierId": 441,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "441:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.5",
+          "after": "0x0000000000000000f34569c8a112927e"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0xB58E61C3098d85632Df34EecfB899A1Ed80921cB",
+      "contractName": "Frankencoin",
+      "isDependency": false,
+      "entity": null,
+      "id": "447:eth:0xB58E61C3098d85632Df34EecfB899A1Ed80921cB:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.activeMinters.11",
+          "after": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "447:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0x1a9C8182C09F50C8318d769245beA52c32BE35BC",
+      "contractName": "Timelock",
+      "entity": null,
+      "id": "447:eth:0x1a9C8182C09F50C8318d769245beA52c32BE35BC:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+      "contractName": "Uniswap Token",
+      "entity": null,
+      "id": "447:eth:0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0x1F98431c8aD98523631AE4a59f267346ea31F984",
+      "contractName": "UniswapV3Factory",
+      "entity": null,
+      "id": "447:eth:0x1F98431c8aD98523631AE4a59f267346ea31F984:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0x408ED6354d4973f66138C91495F2f2FCbd8724C3",
+      "contractName": "GovernorBravoDelegator",
+      "entity": null,
+      "id": "447:eth:0x408ED6354d4973f66138C91495F2f2FCbd8724C3:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0x53a328F4086d7C0F1Fa19e594c9b842125263026",
+      "contractName": "GovernorBravoDelegate",
+      "entity": null,
+      "id": "447:eth:0x53a328F4086d7C0F1Fa19e594c9b842125263026:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0x8746159D385f84CB550ab5aE015c0dDf6909b8f2",
+      "contractName": "AmplifiedPosition",
+      "entity": null,
+      "id": "447:eth:0x8746159D385f84CB550ab5aE015c0dDf6909b8f2:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "447:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "447:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0xC6CDE7C39eB2f0F0095F41570af89eFC2C1Ea828",
+      "contractName": "MultiSigWallet",
+      "entity": null,
+      "id": "447:eth:0xC6CDE7C39eB2f0F0095F41570af89eFC2C1Ea828:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0xd697A61D5FB4e076125e0bE647f902b02bb3A0F1",
+      "contractName": "TetherToken",
+      "entity": null,
+      "id": "447:eth:0xd697A61D5FB4e076125e0bE647f902b02bb3A0F1:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "contractName": "Tether USD Token",
+      "entity": null,
+      "id": "447:eth:0xdAC17F958D2ee523a2206206994597C13D831ec7:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0xf2371551Fe3937Db7c750f4DfABe5c2fFFdcBf5A",
+      "contractName": "V3OpenFeeAdapter",
+      "entity": null,
+      "id": "447:eth:0xf2371551Fe3937Db7c750f4DfABe5c2fFFdcBf5A:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-21T07:54:02.000Z",
+      "updateNotifierId": 447,
+      "address": "eth:0xf38521f130fcCF29dB1961597bc5d2B60F995f85",
+      "contractName": "TokenJar",
+      "entity": null,
+      "id": "447:eth:0xf38521f130fcCF29dB1961597bc5d2B60F995f85:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-22T07:41:17.000Z",
+      "updateNotifierId": 454,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "454:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1200,
+          "after": 1218
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-22T07:41:17.000Z",
+      "updateNotifierId": 454,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "454:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274067,
+          "after": -274093
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88693995090986069477653",
+          "after": "88579263134279599942406"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400163676696381189280215990105",
+          "after": "6400169430321252835700271162085"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22140220803984,
+          "after": -22163703750084
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1787297159,
+          "after": 1787382839
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "14353896998584741561",
+          "after": "14985715603313282860"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 1,
+          "after": 84738
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "190998972191500447352798267407122616116300",
+          "after": "191126274030047018015747793237657231106376"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "291194260624500196532863689607",
+          "after": "291316648997848432796989391534"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-22T07:41:17.000Z",
+      "updateNotifierId": 454,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "454:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "99290763732953468",
+          "after": "99034050625612955"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-22T07:41:17.000Z",
+      "updateNotifierId": 454,
+      "address": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "contractName": "Tether USD Token",
+      "entity": null,
+      "id": "454:eth:0xdAC17F958D2ee523a2206206994597C13D831ec7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "90306400739085274",
+          "after": "88306400739085274"
+        },
+        {
+          "field": "values._totalSupply",
+          "before": "90306400739085274",
+          "after": "88306400739085274"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-23T07:43:26.000Z",
+      "updateNotifierId": 460,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "460:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1218,
+          "after": 1225
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-23T07:43:26.000Z",
+      "updateNotifierId": 460,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "460:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274093,
+          "after": -274100
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88579263134279599942406",
+          "after": "88549925615847781844388"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400169430321252835700271162085",
+          "after": "6400174942843371442379743443925"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22163703750084,
+          "after": -22186698493428
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1787382839,
+          "after": 1787466731
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "14985715603313282860",
+          "after": "15569395936020273924"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 84738,
+          "after": 24448
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "191126274030047018015747793237657231106376",
+          "after": "191231381894682805757606628411644799044322"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "291316648997848432796989391534",
+          "after": "291438584835623276555627401384"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-23T07:43:26.000Z",
+      "updateNotifierId": 460,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "460:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "99034050625612955",
+          "after": "98968461185256639"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-24T08:05:22.000Z",
+      "updateNotifierId": 464,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "464:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1225,
+          "after": 1233
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-24T08:05:22.000Z",
+      "updateNotifierId": 464,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "464:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274100,
+          "after": -274118
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88549925615847781844388",
+          "after": "88469276919446836434208"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400174942843371442379743443925",
+          "after": "6400178899603286408951842159056"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22186698493428,
+          "after": -22211551927920
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1787466731,
+          "after": 1787557403
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "15569395936020273924",
+          "after": "17817120795764186470"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 24448,
+          "after": 108649
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "191231381894682805757606628411644799044322",
+          "after": "191386215628853434421423818562924389621081"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "291438584835623276555627401384",
+          "after": "291605744071037736994357195742"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-24T08:05:22.000Z",
+      "updateNotifierId": 464,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "464:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98968461185256639",
+          "after": "98788268088896035"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-25T07:55:02.000Z",
+      "updateNotifierId": 470,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "470:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.6",
+          "after": "0x00000000000000005263f862d62c318d"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-25T07:55:02.000Z",
+      "updateNotifierId": 470,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "470:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1233,
+          "after": 1243
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-25T07:55:02.000Z",
+      "updateNotifierId": 470,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "470:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274118,
+          "after": -274132
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88469276919446836434208",
+          "after": "88405927816731099396797"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400178899603286408951842159056",
+          "after": "6400184548072179055554451326479"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22211551927920,
+          "after": -22235377413084
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1787557403,
+          "after": 1787644319
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "17817120795764186470",
+          "after": "18815703020291360861"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 108649,
+          "after": 1
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "191386215628853434421423818562924389621081",
+          "after": "191545309129845128875838273923348485494189"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "291605744071037736994357195742",
+          "after": "291783677330352876975813418208"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-25T07:55:02.000Z",
+      "updateNotifierId": 470,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "470:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98788268088896035",
+          "after": "98646842550840904"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-25T07:55:02.000Z",
+      "updateNotifierId": 470,
+      "address": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "contractName": "Tether USD Token",
+      "entity": null,
+      "id": "470:eth:0xdAC17F958D2ee523a2206206994597C13D831ec7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "88306400739085274",
+          "after": "88306390736352788"
+        },
+        {
+          "field": "values._totalSupply",
+          "before": "88306400739085274",
+          "after": "88306390736352788"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T07:56:06.000Z",
+      "updateNotifierId": 475,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "475:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1243,
+          "after": 1248
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T07:56:06.000Z",
+      "updateNotifierId": 475,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "475:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274132,
+          "after": -274130
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88405927816731099396797",
+          "after": "88414234825425090037635"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400184548072179055554451326479",
+          "after": "6400190223569846295141934179553"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22235377413084,
+          "after": -22258548836964
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1787644319,
+          "after": 1787728847
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "18815703020291360861",
+          "after": "19342016131321231175"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 1,
+          "after": 139915
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "191545309129845128875838273923348485494189",
+          "after": "191628700226566011518342764409461357655380"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "291783677330352876975813418208",
+          "after": "291890200508362725890568159723"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T07:56:06.000Z",
+      "updateNotifierId": 475,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "475:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98646842550840904",
+          "after": "98665382001734730"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-27T18:16:53.000Z",
+      "updateNotifierId": 480,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "480:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.2",
+          "before": "0x0000000000000000475f3a7c1964d249",
+          "after": "0x00000000000000005263f862d62c318d"
+        },
+        {
+          "field": "values.getCursedSubjects.6",
+          "before": "0x00000000000000005263f862d62c318d"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-27T18:16:53.000Z",
+      "updateNotifierId": 480,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "480:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1248,
+          "after": 1258
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-27T18:16:53.000Z",
+      "updateNotifierId": 480,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "480:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274130,
+          "after": -274148
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88414234825425090037635",
+          "after": "88337881267735568452137"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400190223569846295141934179553",
+          "after": "6400198497736273790132914739004"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22258548836964,
+          "after": -22292985145872
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1787728847,
+          "after": 1787854463
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "19342016131321231175",
+          "after": "20167836910185093574"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 139915,
+          "after": 23001
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "191628700226566011518342764409461357655380",
+          "after": "191769930784184860535753406906363982074824"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "291890200508362725890568159723",
+          "after": "292041370973702204847836036218"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-27T18:16:53.000Z",
+      "updateNotifierId": 480,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "480:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98665382001734730",
+          "after": "98495042914412915"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-28T19:26:57.000Z",
+      "updateNotifierId": 485,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "485:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1258,
+          "after": 1265
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-28T19:26:57.000Z",
+      "updateNotifierId": 485,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "485:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274148,
+          "after": -274188
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88337881267735568452137",
+          "after": "88161451176518817904165"
+        },
+        {
+          "field": "values.liquidity",
+          "before": "5066621175382182213",
+          "after": "7185231015788500692"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400198497736273790132914739004",
+          "after": "6400204228541693507880669264470"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22292985145872,
+          "after": -22317402625560
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1787854463,
+          "after": 1787943527
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "20167836910185093574",
+          "after": "21815663963003176793"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 23001,
+          "after": 14482
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "191769930784184860535753406906363982074824",
+          "after": "191951466471392297459020540310439382430463"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "292041370973702204847836036218",
+          "after": "292209846073506554799457034395"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-28T19:26:57.000Z",
+      "updateNotifierId": 485,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "485:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98495042914412915",
+          "after": "98102003465628161"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-29T13:10:48.000Z",
+      "updateNotifierId": 490,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "490:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1265,
+          "after": 1266
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-29T13:10:48.000Z",
+      "updateNotifierId": 490,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "490:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274188,
+          "after": -274191
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88161451176518817904165",
+          "after": "88145928367994735168395"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400204228541693507880669264470",
+          "after": "6400207144738876330708668346861"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22317402625560,
+          "after": -22334966093976
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1787943527,
+          "after": 1788007583
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "21815663963003176793",
+          "after": "22288817380623525786"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 14482,
+          "after": 155456
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "191951466471392297459020540310439382430463",
+          "after": "191993876517170827643323087313459608978705"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "292209846073506554799457034395",
+          "after": "292257356971616634811279502241"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-29T13:10:48.000Z",
+      "updateNotifierId": 490,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "490:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98102003465628161",
+          "after": "98067460373788066"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-30T12:47:35.000Z",
+      "updateNotifierId": 494,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "494:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1266,
+          "after": 1268
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-30T12:47:35.000Z",
+      "updateNotifierId": 494,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "494:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274191,
+          "after": -274192
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88145928367994735168395",
+          "after": "88140736886616216417122"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400207144738876330708668346861",
+          "after": "6400210730426555565420962840182"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22334966093976,
+          "after": -22358070204132
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788007583,
+          "after": 1788091847
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "22288817380623525786",
+          "after": "22687064387032481654"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 155456,
+          "after": 7339
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "191993876517170827643323087313459608978705",
+          "after": "192048287372552143780618252856532183473433"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "292257356971616634811279502241",
+          "after": "292323070174011680679880625908"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-30T12:47:35.000Z",
+      "updateNotifierId": 494,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "494:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98067460373788066",
+          "after": "98055909065378184"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 498,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "498:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.6",
+          "after": "0x00000000000000001435840d10d50ab8"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 498,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "498:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1268,
+          "after": 1274
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 498,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "498:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274192,
+          "after": -274179
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88140736886616216417122",
+          "after": "88197970406034575161946"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400210730426555565420962840182",
+          "after": "6400215114946136355925944042453"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22358070204132,
+          "after": -22384257781104
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788091847,
+          "after": 1788187355
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "22687064387032481654",
+          "after": "23094677219010242784"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 7339,
+          "after": 30444
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "192048287372552143780618252856532183473433",
+          "after": "192106199272231343519985764761658413796362"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "292323070174011680679880625908",
+          "after": "292413158040665775869222477253"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 498,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "498:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98055909065378184",
+          "after": "98183294132856243"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-01T12:35:21.000Z",
+      "updateNotifierId": 504,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "504:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1274,
+          "after": 1277
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-01T12:35:21.000Z",
+      "updateNotifierId": 504,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "504:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274179,
+          "after": -274200
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88197970406034575161946",
+          "after": "88106715749208151086141"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400215114946136355925944042453",
+          "after": "6400218346956855906897028378664"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22384257781104,
+          "after": -22405433555376
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788187355,
+          "after": 1788264587
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "23094677219010242784",
+          "after": "24125727879628211361"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 30444,
+          "after": 613
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "192106199272231343519985764761658413796362",
+          "after": "192226163794568818182584841678577854829987"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "292413158040665775869222477253",
+          "after": "292532315430697924963663650477"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-01T12:35:21.000Z",
+      "updateNotifierId": 504,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "504:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98183294132856243",
+          "after": "97980227153622811"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-02T12:08:28.000Z",
+      "updateNotifierId": 511,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "511:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1277,
+          "after": 1281
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-02T12:08:28.000Z",
+      "updateNotifierId": 511,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "511:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274200,
+          "after": -274248
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88106715749208151086141",
+          "after": "87897406757033005812780"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400218346956855906897028378664",
+          "after": "6400222286453305989675765059743"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22405433555376,
+          "after": -22428754575180
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788264587,
+          "after": 1788349631
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "24125727879628211361",
+          "after": "26197179720340490639"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 613,
+          "after": 12395
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "192226163794568818182584841678577854829987",
+          "after": "192514310126070540061927289483123186655418"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "292532315430697924963663650477",
+          "after": "292820162645097877114050286763"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-02T12:08:28.000Z",
+      "updateNotifierId": 511,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "511:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97980227153622811",
+          "after": "97515250504772479"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-03T12:07:13.000Z",
+      "updateNotifierId": 517,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "517:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1281,
+          "after": 1284
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-03T12:07:13.000Z",
+      "updateNotifierId": 517,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "517:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274248,
+          "after": -274210
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87897406757033005812780",
+          "after": "88061112607292856322925"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400222286453305989675765059743",
+          "after": "6400226162342236725067571522873"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22428754575180,
+          "after": -22452438741120
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788349631,
+          "after": 1788435995
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "26197179720340490639",
+          "after": "26516447511162382667"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 12395,
+          "after": 8620
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "192514310126070540061927289483123186655418",
+          "after": "192559670337580971357370253515971196544866"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "292820162645097877114050286763",
+          "after": "292928824302239815920233899789"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-03T12:07:13.000Z",
+      "updateNotifierId": 517,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "517:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97515250504772479",
+          "after": "97878826260020055"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-03T12:07:13.000Z",
+      "updateNotifierId": 517,
+      "address": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "contractName": "Tether USD Token",
+      "entity": null,
+      "id": "517:eth:0xdAC17F958D2ee523a2206206994597C13D831ec7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "88306390736352788",
+          "after": "88306226684053103"
+        },
+        {
+          "field": "values._totalSupply",
+          "before": "88306390736352788",
+          "after": "88306226684053103"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-04T12:09:10.000Z",
+      "updateNotifierId": 523,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "523:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1284,
+          "after": 1289
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-04T12:09:10.000Z",
+      "updateNotifierId": 523,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "523:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274210,
+          "after": -274197
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88061112607292856322925",
+          "after": "88120118117253264835757"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400226162342236725067571522873",
+          "after": "6400229960739862508697034820236"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22452438741120,
+          "after": -22476000326520
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788435995,
+          "after": 1788521927
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "26516447511162382667",
+          "after": "31318828278500050258"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 8620,
+          "after": 69086
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "192559670337580971357370253515971196544866",
+          "after": "192730654375645218843076784991265396471554"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "292928824302239815920233899789",
+          "after": "293159692434744184217035174884"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-04T12:09:10.000Z",
+      "updateNotifierId": 523,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "523:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97878826260020055",
+          "after": "98010037978611693"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-05T11:18:10.000Z",
+      "updateNotifierId": 530,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "530:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1289,
+          "after": 1292
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-05T11:18:10.000Z",
+      "updateNotifierId": 530,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "530:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274197,
+          "after": -274205
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88120118117253264835757",
+          "after": "88084463462056000287840"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400229960739862508697034820236",
+          "after": "6400233279231692536595436540992"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22476000326520,
+          "after": -22497408213312
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788521927,
+          "after": 1788599999
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "31318828278500050258",
+          "after": "32761280126655376886"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 69086,
+          "after": 326615
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "192730654375645218843076784991265396471554",
+          "after": "192897971390949915303176504419904569052740"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "293159692434744184217035174884",
+          "after": "293355025496374838718732977148"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-05T11:18:10.000Z",
+      "updateNotifierId": 530,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "530:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98010037978611693",
+          "after": "97930741508757840"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-06T11:41:20.000Z",
+      "updateNotifierId": 536,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "536:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1292,
+          "after": 1294
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-06T11:41:20.000Z",
+      "updateNotifierId": 536,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "536:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274205,
+          "after": -274197
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88084463462056000287840",
+          "after": "88118547524753436988986"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400233279231692536595436540992",
+          "after": "6400237335359751030791033901366"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22497408213312,
+          "after": -22523077114536
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788599999,
+          "after": 1788693611
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "32761280126655376886",
+          "after": "5227975098935613431"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 326615,
+          "after": 2037427
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "192897971390949915303176504419904569052740",
+          "after": "193674015828529975791700015023678839761491"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "293355025496374838718732977148",
+          "after": "294325464388511308484567278599"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-06T11:41:20.000Z",
+      "updateNotifierId": 536,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "536:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97930741508757840",
+          "after": "98006544282460566"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 541,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "541:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1294,
+          "after": 1298
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 541,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "541:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274197,
+          "after": -274188
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88118547524753436988986",
+          "after": "88160477056333985817051"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400237335359751030791033901366",
+          "after": "6400240938602860037970697632426"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22523077114536,
+          "after": -22548870185616
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788693611,
+          "after": 1788787679
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "5227975098935613431",
+          "after": "7344372480077747036"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 2037427,
+          "after": 2479147
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "193674015828529975791700015023678839761491",
+          "after": "194832095132099733206903011714667784642659"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "294325464388511308484567278599",
+          "after": "295770784926392632917971981382"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 541,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "541:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98006544282460566",
+          "after": "98099835565428668"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 541,
+      "address": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "contractName": "Tether USD Token",
+      "entity": null,
+      "id": "541:eth:0xdAC17F958D2ee523a2206206994597C13D831ec7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "88306226684053103",
+          "after": "88306028997331899"
+        },
+        {
+          "field": "values._totalSupply",
+          "before": "88306226684053103",
+          "after": "88306028997331899"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-08T12:10:19.000Z",
+      "updateNotifierId": 546,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "546:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1298,
+          "after": 1300
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-08T12:10:19.000Z",
+      "updateNotifierId": 546,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "546:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274188,
+          "after": -274229
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88160477056333985817051",
+          "after": "87980864733671498715444"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400240938602860037970697632426",
+          "after": "6400244458707683012339863046480"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22548870185616,
+          "after": -22571195894484
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788787679,
+          "after": 1788869099
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "7344372480077747036",
+          "after": "1162418751045059702"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 2479147,
+          "after": 1117507
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "194832095132099733206903011714667784642659",
+          "after": "195630365068455146986961987761140472396895"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "295770784926392632917971981382",
+          "after": "296699999931336048194380283258"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-08T12:10:19.000Z",
+      "updateNotifierId": 546,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "546:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "98099835565428668",
+          "after": "97700518523207805"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-09T12:20:26.000Z",
+      "updateNotifierId": 551,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "551:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1300,
+          "after": 1304
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-09T12:20:26.000Z",
+      "updateNotifierId": 551,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "551:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274229,
+          "after": -274222
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87980864733671498715444",
+          "after": "88010986459490069385867"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400244458707683012339863046480",
+          "after": "6400248592009502811332040190593"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22571195894484,
+          "after": -22595130711792
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788869099,
+          "after": 1788956387
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "1162418751045059702",
+          "after": "2174461038016385348"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 1117507,
+          "after": 136637
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "195630365068455146986961987761140472396895",
+          "after": "195730166305765898000669732120541568932268"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "296699999931336048194380283258",
+          "after": "296833094373945843401072022003"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-09T12:20:26.000Z",
+      "updateNotifierId": 551,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "551:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97700518523207805",
+          "after": "97767428800055242"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-10T12:14:29.000Z",
+      "updateNotifierId": 556,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "556:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1304,
+          "after": 1307
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-10T12:14:29.000Z",
+      "updateNotifierId": 556,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "556:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274222,
+          "after": -274221
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88010986459490069385867",
+          "after": "88012634952651804162271"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400248592009502811332040190593",
+          "after": "6400252471814141851421976403363"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22595130711792,
+          "after": -22617595239240
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1788956387,
+          "after": 1789038311
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "2174461038016385348",
+          "after": "2829443035129653926"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 136637,
+          "after": 240925
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "195730166305765898000669732120541568932268",
+          "after": "195822871198322802765028331576148055232972"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "296833094373945843401072022003",
+          "after": "296948147592818435229139409594"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-10T12:14:29.000Z",
+      "updateNotifierId": 556,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "556:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97767428800055242",
+          "after": "97771091307514625"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-11T12:12:20.000Z",
+      "updateNotifierId": 561,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "561:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1307,
+          "after": 1311
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-11T12:12:20.000Z",
+      "updateNotifierId": 561,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "561:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274221,
+          "after": -274254
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "88012634952651804162271",
+          "after": "87867537447935707045798"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400252471814141851421976403363",
+          "after": "6400256630911600392372382084001"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22617595239240,
+          "after": -22641783108360
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789038311,
+          "after": 1789126511
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "2829443035129653926",
+          "after": "3798653140703166989"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 240925,
+          "after": 63
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "195822871198322802765028331576148055232972",
+          "after": "195956974095057457147922183766867439879226"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "296948147592818435229139409594",
+          "after": "297066526877266774123061774531"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-11T12:12:20.000Z",
+      "updateNotifierId": 561,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "561:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97771091307514625",
+          "after": "97448986473393707"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-12T11:38:02.000Z",
+      "updateNotifierId": 568,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "568:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1311,
+          "after": 1317
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-12T11:38:02.000Z",
+      "updateNotifierId": 568,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "568:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274254,
+          "after": -274278
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87867537447935707045798",
+          "after": "87764099824986241198399"
+        },
+        {
+          "field": "values.liquidity",
+          "before": "7185231015788500692",
+          "after": "7221241155902564515"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400256630911600392372382084001",
+          "after": "6400269939414971855658781642194"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22641783108360,
+          "after": -22665322214016
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789126511,
+          "after": 1789212335
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "3798653140703166989",
+          "after": "5362654311645990860"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 63,
+          "after": 83275
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "195956974095057457147922183766867439879226",
+          "after": "196127356532415060113799974435168226811668"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297066526877266774123061774531",
+          "after": "297242440434855712513358232080"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-12T11:38:02.000Z",
+      "updateNotifierId": 568,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "568:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97448986473393707",
+          "after": "97219687717778075"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-12T11:38:02.000Z",
+      "updateNotifierId": 568,
+      "address": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "contractName": "Tether USD Token",
+      "entity": null,
+      "id": "568:eth:0xdAC17F958D2ee523a2206206994597C13D831ec7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "88306028997331899",
+          "after": "88305985017331899"
+        },
+        {
+          "field": "values._totalSupply",
+          "before": "88306028997331899",
+          "after": "88305985017331899"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 573,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "573:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1317,
+          "after": 1319
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 573,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "573:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274278,
+          "after": -274286
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87764099824986241198399",
+          "after": "87730881771363963211711"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400269939414971855658781642194",
+          "after": "6400274143210502972287643789558"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22665322214016,
+          "after": -22689803185044
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789212335,
+          "after": 1789301591
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "5362654311645990860",
+          "after": "5966377351787463255"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 83275,
+          "after": 5381
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196127356532415060113799974435168226811668",
+          "after": "196212703206468227646116583799333101295776"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297242440434855712513358232080",
+          "after": "297336679035178528389214592635"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 573,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "573:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97219687717778075",
+          "after": "97146107799676874"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-14T13:54:43.000Z",
+      "updateNotifierId": 578,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "578:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1319,
+          "after": 1322
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-14T13:54:43.000Z",
+      "updateNotifierId": 578,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "578:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274286,
+          "after": -274309
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87730881771363963211711",
+          "after": "87627275127830932416185"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400274143210502972287643789558",
+          "after": "6400278459714942317115105172883"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22689803185044,
+          "after": -22714959818232
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789301591,
+          "after": 1789393307
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "5966377351787463255",
+          "after": "7834263141293658536"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 5381,
+          "after": 4485
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196212703206468227646116583799333101295776",
+          "after": "196461666816222791735013133323679237168418"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297336679035178528389214592635",
+          "after": "297608621820732731647133599752"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-14T13:54:43.000Z",
+      "updateNotifierId": 578,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "578:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "97146107799676874",
+          "after": "96916791992318687"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 583,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "583:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1322,
+          "after": 1326
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 583,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "583:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274309,
+          "after": -274307
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87627275127830932416185",
+          "after": "87637811619351506490197"
+        },
+        {
+          "field": "values.liquidity",
+          "before": "7221241155902564515",
+          "after": "86547060830705683018"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400278459714942317115105172883",
+          "after": "6400281075472269948907703643639"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22714959818232,
+          "after": -22737421736796
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789393307,
+          "after": 1789475195
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "7834263141293658536",
+          "after": "9157489644662686464"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 4485,
+          "after": 15824
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196461666816222791735013133323679237168418",
+          "after": "196522399814825850360236688257833156096688"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297608621820732731647133599752",
+          "after": "297686435914504674189383070364"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 583,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "583:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96916791992318687",
+          "after": "96940100359466945"
+        },
+        {
+          "field": "values.totalBorrowed",
+          "before": 0,
+          "after": "428033237690287067168437"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-16T12:37:39.000Z",
+      "updateNotifierId": 588,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "588:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1326,
+          "after": 1331
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-16T12:37:39.000Z",
+      "updateNotifierId": 588,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "588:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274307,
+          "after": -274309
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87637811619351506490197",
+          "after": "87628499586140088540432"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400281075472269948907703643639",
+          "after": "6400281385735401714767216837495"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22737421736796,
+          "after": -22759067914524
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789475195,
+          "after": 1789554107
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "9157489644662686464",
+          "after": "9828746213980118897"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 15824,
+          "after": 111044
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196522399814825850360236688257833156096688",
+          "after": "196530317476223920363188198464722769242390"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297686435914504674189383070364",
+          "after": "297693122920100285678393824957"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-16T12:37:39.000Z",
+      "updateNotifierId": 588,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "588:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96940100359466945",
+          "after": "96919500541687574"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-17T12:36:25.000Z",
+      "updateNotifierId": 593,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "593:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1331,
+          "after": 1336
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-17T12:36:25.000Z",
+      "updateNotifierId": 593,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "593:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274309,
+          "after": -274386
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87628499586140088540432",
+          "after": "87289684010830737061148"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400281385735401714767216837495",
+          "after": "6400281756343202812824770994661"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22759067914524,
+          "after": -22784928684132
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789554107,
+          "after": 1789648367
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "9828746213980118897",
+          "after": "19571151192723550477"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 111044,
+          "after": 184207
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196530317476223920363188198464722769242390",
+          "after": "196645231902913254270001062863668866172152"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297693122920100285678393824957",
+          "after": "297723926129425126370028794401"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-17T12:36:25.000Z",
+      "updateNotifierId": 593,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "593:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96919500541687574",
+          "after": "96171471013717589"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 599,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "599:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.7",
+          "after": "0x00000000000000001da16cb81c6fa538"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 599,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "599:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1336,
+          "after": 1340
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 599,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "599:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274386,
+          "after": -274385
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87289684010830737061148",
+          "after": "87296860680312409480258"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400281756343202812824770994661",
+          "after": "6400282091140523830242518200194"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22784928684132,
+          "after": -22808292990624
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789648367,
+          "after": 1789733519
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "19571151192723550477",
+          "after": "20467254628965477018"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 184207,
+          "after": 1
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196645231902913254270001062863668866172152",
+          "after": "196655801696804471132406221726339110858648"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297723926129425126370028794401",
+          "after": "297739071859007049575091271734"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 599,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "599:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96171471013717589",
+          "after": "96187285465137814"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 605,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "605:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getCursedSubjects.7",
+          "before": "0x00000000000000001da16cb81c6fa538"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 605,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "605:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1340,
+          "after": 1344
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 605,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "605:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274385,
+          "after": -274388
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87296860680312409480258",
+          "after": "87282671834215218229068"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400282091140523830242518200194",
+          "after": "6400282376085696298301819800069"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22808292990624,
+          "after": -22828180376316
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789733519,
+          "after": 1789805999
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "20467254628965477018",
+          "after": "22391056722233016898"
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196655801696804471132406221726339110858648",
+          "after": "196675421621302211975552389535691229279684"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297739071859007049575091271734",
+          "after": "297758317054270190533877783373"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 605,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "605:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96187285465137814",
+          "after": "96156020293260046"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 605,
+      "address": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "contractName": "Tether USD Token",
+      "entity": null,
+      "id": "605:eth:0xdAC17F958D2ee523a2206206994597C13D831ec7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "88305985017331899",
+          "after": "88304342264551152"
+        },
+        {
+          "field": "values._totalSupply",
+          "before": "88305985017331899",
+          "after": "88304342264551152"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 610,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "610:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1344,
+          "after": 1346
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 610,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "610:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274388,
+          "after": -274389
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87282671834215218229068",
+          "after": "87280167203623094090878"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400282376085696298301819800069",
+          "after": "6400282761130924148237873202606"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22828180376316,
+          "after": -22855051741932
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789805999,
+          "after": 1789903931
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "22391056722233016898",
+          "after": "22480503479468621338"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 1,
+          "after": 7080
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196675421621302211975552389535691229279684",
+          "after": "196676476671143537218561632641815533713028"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297758317054270190533877783373",
+          "after": "297758790638826206469910626455"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 610,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "610:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96156020293260046",
+          "after": "96150501858740963"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-21T13:54:40.000Z",
+      "updateNotifierId": 615,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "615:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1346,
+          "after": 1351
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-21T13:54:40.000Z",
+      "updateNotifierId": 615,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "615:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274389,
+          "after": -274380
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87280167203623094090878",
+          "after": "87318348886882690502383"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400282761130924148237873202606",
+          "after": "6400283106355275597567869863105"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22855051741932,
+          "after": -22879144039524
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789903931,
+          "after": 1789991735
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "22480503479468621338",
+          "after": "22816610307420416165"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 7080,
+          "after": 1
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196676476671143537218561632641815533713028",
+          "after": "196680441146396282534761284923395939107097"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297758790638826206469910626455",
+          "after": "297775904128338937585524657876"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-21T13:54:40.000Z",
+      "updateNotifierId": 615,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "615:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96150501858740963",
+          "after": "96234644479589491"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 622,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "622:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1351,
+          "after": 1355
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 622,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "622:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274380,
+          "after": -274334
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87318348886882690502383",
+          "after": "87517008899914435925250"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400283106355275597567869863105",
+          "after": "6400283431847370510722805641902"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22879144039524,
+          "after": -22901861553480
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1789991735,
+          "after": 1790074535
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "22816610307420416165",
+          "after": "29410958783348418378"
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196680441146396282534761284923395939107097",
+          "after": "196754971214471567297033447658521586930281"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297775904128338937585524657876",
+          "after": "297931043444861707266912924068"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 622,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "622:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96234644479589491",
+          "after": "96673033978400367"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 630,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "630:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1355,
+          "after": 1358
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 630,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "630:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274334,
+          "after": -274355
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87517008899914435925250",
+          "after": "87425251833522365350011"
+        },
+        {
+          "field": "values.liquidity",
+          "before": "86547060830705683018",
+          "after": "264311281158414366835"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400283431847370510722805641902",
+          "after": "6400283623938953715694638788839"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22901861553480,
+          "after": -22927282851936
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1790074535,
+          "after": 1790167199
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "29410958783348418378",
+          "after": "35325093832691076908"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 1,
+          "after": 40674
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196754971214471567297033447658521586930281",
+          "after": "196781634084463388861987737048107750418534"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297931043444861707266912924068",
+          "after": "297933984921034748035843996855"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 630,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "630:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96673033978400367",
+          "after": "96470426873508759"
+        },
+        {
+          "field": "values.totalBorrowed",
+          "before": "428033237690287067168437",
+          "after": "1399248197250305916017810"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 636,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "636:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1358,
+          "after": 1361
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 636,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "636:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274355,
+          "after": -274384
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87425251833522365350011",
+          "after": "87299378456298815409113"
+        },
+        {
+          "field": "values.liquidity",
+          "before": "264311281158414366835",
+          "after": "264324899015212976503"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400283623938953715694638788839",
+          "after": "6400283732593527895287232073894"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22927282851936,
+          "after": -22950438324504
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1790167199,
+          "after": 1790251595
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "35325093832691076908",
+          "after": "44874905979699891146"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 40674,
+          "after": 455211
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196781634084463388861987737048107750418534",
+          "after": "196818517904321406853604881862504523709349"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297933984921034748035843996855",
+          "after": "297938280389492460727251853286"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 636,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "636:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96470426873508759",
+          "after": "96192833924224390"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 643,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "643:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1361,
+          "after": 1366
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 643,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "643:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274384,
+          "after": -274415
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87299378456298815409113",
+          "after": "87164534446942452569592"
+        },
+        {
+          "field": "values.liquidity",
+          "before": "264324899015212976503",
+          "after": "184999079340409858000"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400283732593527895287232073894",
+          "after": "6400283854942928883502359726931"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22950438324504,
+          "after": -22974452753892
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1790251595,
+          "after": 1790339111
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "44874905979699891146",
+          "after": "53328400358555590789"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 455211,
+          "after": 130862
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196818517904321406853604881862504523709349",
+          "after": "196856662854089503785553288881901793183975"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297938280389492460727251853286",
+          "after": "297941079240042896820765932147"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 643,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "643:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "96192833924224390",
+          "after": "95895901460346576"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 649,
+      "address": "eth:0x0B047953451A207743fB62541B21199b95190602",
+      "contractName": "RMN",
+      "entity": null,
+      "id": "649:eth:0x0B047953451A207743fB62541B21199b95190602:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getAllAuthorizedCallers.1",
+          "after": "eth:0x2acE0735C229a2cD12C86C734bE48007578E1200"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 649,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "649:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1366,
+          "after": 1368
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 649,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "649:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274415,
+          "after": -274414
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87164534446942452569592",
+          "after": "87168512278802780143127"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400283854942928883502359726931",
+          "after": "6400284000135699631545640953086"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22974452753892,
+          "after": -22996113985908
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1790339111,
+          "after": 1790418047
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "53328400358555590789",
+          "after": "53708833248158503334"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 130862,
+          "after": 88834
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196856662854089503785553288881901793183975",
+          "after": "196858762128387357667435395207836440014613"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297941079240042896820765932147",
+          "after": "297944901500064283274898183855"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 649,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "649:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "95895901460346576",
+          "after": "95904654251343702"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 656,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "656:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1368,
+          "after": 1370
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 656,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "656:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274414,
+          "after": -274418
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87168512278802780143127",
+          "after": "87151232904059278040024"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400284000135699631545640953086",
+          "after": "6400284163516193562378168717756"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -22996113985908,
+          "after": -23020488775008
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1790418047,
+          "after": 1790506871
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "53708833248158503334",
+          "after": "54731512662034774234"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 88834,
+          "after": 82621
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196858762128387357667435395207836440014613",
+          "after": "196864405396010027197488336296982005218368"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297944901500064283274898183855",
+          "after": "297946164439522760990889566947"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 656,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "656:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "95904654251343702",
+          "after": "95866635747485757"
+        }
+      ]
     }
   ]
 }

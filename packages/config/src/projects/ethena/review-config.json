@@ -1,0 +1,243 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-05-18T12:25:02.297Z",
+  "publishedAt": "2026-05-08T15:30:00.000Z",
+  "verified": true,
+  "protocolSlug": "ethena",
+  "protocolName": "Ethena",
+  "tokenName": "USDe",
+  "chain": "Ethereum",
+  "projectType": "stablecoin",
+  "description": "Ethena issues USDe, a synthetic dollar backed primarily by delta-hedged perpetual futures positions on ETH and BTC plus a small on-chain stablecoin buffer. Users (whitelisted benefactors) deposit collateral via EthenaMinting and receive USDe; staking USDe in the sUSDe vault accrues funding rate and basis trade yield. The protocol is non-upgradeable for USDe, EthenaMinting and the sUSDe vault, but the sENA governance staking vault is a TransparentUpgradeableProxy controlled by a ProxyAdmin. The most consequential trust assumption is that {{usdeMarketCap}} of USDe is backed primarily by off-chain CEX custodian accounts (Copper, Binance, OKX) that cannot be tracked on-chain — only {{totalProtocolCapital}} sits on-chain as a stablecoin buffer in EthenaMinting. Governance operates through Snapshot signaling and a 5-of-10 GnosisSafe with no on-chain timelock.",
+  "admins": {
+    "eth:0x3B0AAf6e6fCd4a7cEEf8c92C32DFeA9E64dC1862": {
+      "name": "Ethena Protocol Owner (5-of-10 GnosisSafe)",
+      "description": "Holds DEFAULT_ADMIN_ROLE on EthenaMinting, sUSDe, and sENA, COLLATERAL_MANAGER_ROLE on EthenaMinting, and is the Ownable owner of USDe, ENA, and the StakedENA ProxyAdmin. Can grant operational roles, change per-block mint/redeem caps, add or remove custodians, transfer collateral to whitelisted custodian wallets, upgrade the sENA implementation, replace USDe's minter address (which would remove all per-block mint caps), and blacklist users in the staking vaults. Controls {{gnosisSafeReachableCapital}} of reachable on-chain TVS and {{gnosisSafeReachableTokenValue}} of USDe + ENA token value."
+    },
+    "eth:0x0000000000000000000000000000000000000000": {
+      "name": "Zero Address (Renounced)",
+      "description": "Appears as pendingOwner on USDe and ENA when no ownership transfer is in flight. No functional permission."
+    },
+    "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3": {
+      "name": "EthenaMinting (Immutable Minter Contract)",
+      "description": "The only address allowed to call USDe.mint. Not a human-controlled admin: an immutable contract whose mint flow requires off-chain EIP-712 signatures from whitelisted benefactors and is bounded by globalConfig.globalMaxMintPerBlock (200M USDe per block) and per-asset caps. Replacing this minter requires a USDe.setMinter call from the GnosisSafe owner."
+    },
+    "eth:0x49e9f81A5cE0d492799c14049aEF12Df7BC955fE": {
+      "name": "Ethena Blacklist Manager (EOA, sUSDe + sENA)",
+      "description": "EOA holding BLACKLIST_MANAGER_ROLE on both sUSDe and sENA. Can call addToBlacklist / removeFromBlacklist on either vault to freeze transfers and withdrawals for specific users. Combined with the GnosisSafe's redistributeLockedAmount, this becomes an extraction path against the blacklisted user's deposits. Cannot blacklist the contract owner (notOwner modifier on sENA)."
+    },
+    "eth:0x21F9236e8EE76474284FE8cdE6EcE6c8D19D781e": {
+      "name": "Ethena Blacklist Manager (EOA, sUSDe only)",
+      "description": "EOA holding BLACKLIST_MANAGER_ROLE on sUSDe. Same scope as 0x49e9... but limited to the sUSDe vault."
+    },
+    "eth:0xAB9110d36B030bAe812CD3BB7B9dE805A64AA7dC": {
+      "name": "Ethena Gatekeeper (EOA)",
+      "description": "EOA holding GATEKEEPER_ROLE on EthenaMinting. Two effects: (1) emergency redeem-DoS via disableMintRedeem (zeroes globalMaxMintPerBlock and globalMaxRedeemPerBlock, blocking the USDe → collateral exit path for the duration; bounded by USDe total supply but recoverable by DEFAULT_ADMIN restoring the caps), and (2) revoke MINTER_ROLE, REDEEMER_ROLE, or COLLATERAL_MANAGER_ROLE from any account. Cannot mint, redeem, or extract collateral itself."
+    },
+    "eth:0x0F566cC38677239Bed459047065925654b6d5BD9": {
+      "name": "Ethena Gatekeeper (EOA)",
+      "description": "EOA holding GATEKEEPER_ROLE on EthenaMinting. Same scope as 0xAB91..."
+    },
+    "eth:0x496011675b197CC136B48BC19D848FE26D3a8996": {
+      "name": "Ethena Gatekeeper (EOA)",
+      "description": "EOA holding GATEKEEPER_ROLE on EthenaMinting. Same scope as 0xAB91..."
+    },
+    "eth:0xb6ECaE7413A3E78a3e10f15aFE3066e79566CCA3": {
+      "name": "Ethena Gatekeeper (EOA)",
+      "description": "EOA holding GATEKEEPER_ROLE on EthenaMinting. Same scope as 0xAB91..."
+    },
+    "eth:0x71E4f98e8f20C88112489de3DDEd4489802a3A87": {
+      "name": "Ethena Rewarder (GnosisSafe, sUSDe + sENA)",
+      "description": "GnosisSafeProxy (implementation 0xd9Db270c...) holding REWARDER_ROLE on both sUSDe and sENA. Can call transferInRewards on either vault, which moves USDe (or ENA on sENA) from the safe's own balance into the vault as new rewards on a vesting schedule. Depositing role only; no extraction surface."
+    },
+    "eth:0xf2fa332bD83149c66b09B45670bCe64746C6b439": {
+      "name": "StakingRewardsDistributorV1",
+      "description": "Holds REWARDER_ROLE on sUSDe and pushes rewards into the vault via transferInRewards. Owned by the Ethena Admin multisig (0x3B0A...) with a separate operator EOA (0xe388...) authorised to call transferInRewards; admin functions (transferOwnership, setMintingContract, approveToMintContract, revokeApprovals, setOperator, rescueTokens) gated on owner."
+    },
+    "eth:0xdeDc15Fa923D4e147875C63C0a97F85F178dfE96": {
+      "name": "Ethena Rewarder (GnosisSafe, sENA)",
+      "description": "GnosisSafeProxy holding REWARDER_ROLE on sENA. Same scope as 0x71E4... but limited to sENA."
+    },
+    "eth:0xD0899998CCEB5B3df5cdcFaAdd43e53B8e1d553e": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "One of 20 EOA operators holding both MINTER_ROLE and REDEEMER_ROLE on EthenaMinting. Executes benefactor-signed orders to mint USDe in exchange for collateral and redeem USDe back to collateral. Each call is bounded by globalConfig.globalMaxMintPerBlock (200M USDe) / globalMaxRedeemPerBlock (10M USDe) and requires a valid EIP-712 signature from a whitelisted benefactor — the operator alone cannot issue or redeem USDe."
+    },
+    "eth:0x655a1B0124b39B2d7C7F62a99627a891faD93B7B": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x03984DDEF40850bB9862Ec09037853630d7b6Ae4": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x950c886CC6B9d420455985c3D31090AA060e96C8": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0xcD992cFB025014C01EBc2f2311c3F87aA8411d9c": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x7d69817Ea29244504c1A97B66E2C990F25DF7599": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x6F1d2df2ACc5f2dA3167Ad1967b648207cfC63DB": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x661Ca83074b8Ec630825D4604455325499F951a1": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x64004ae464f49C30a188C34E01B0dC66c8bEb21E": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x24bE9948466FEcEB22A9B77b19e404F2119fb962": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x6FD5ffEe1220b0458c2114d6ce7fB4dE2BC8fEE6": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x9b6889199627f78470EA230cC7Df974239e0a5e5": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x0B23d23939A1731289EAA04f62BA1dd4Ecdd5c7d": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0xb229D6dB056750E22499191156Bf4c3654DF3826": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x4d394F45dFaDef5522759c511702Db97690A5C12": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0xA22C29b20f9Be2C809979Ed606b24Fe5286AC8F2": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x57093ffEdC2F49Eb3a5A11b63C0f4Ca1B75C5CB7": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0xc3309fDDFC8297c39A38d5D872a37222f98DAd37": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x57FefB75863cc64fECF11ac99d7A5b60EBE0080f": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x71C95AAA22696d745E378486b769eE47cA23797c": {
+      "name": "Ethena Mint/Redeem Operator (EOA)",
+      "description": "Mint/Redeem operator EOA on EthenaMinting. Same scope as 0xD089..."
+    },
+    "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497": {
+      "name": "StakedUSDeV2 (sUSDe Vault, Immutable)",
+      "description": "The sUSDe vault is the only address authorized to call USDeSilo.withdraw, used during the user unstake flow after the cooldown period. Not a human admin: an immutable ERC4626-style contract whose own permission surface is described separately."
+    },
+    "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9": {
+      "name": "StakedENA (sENA Vault, Upgradeable Proxy)",
+      "description": "The sENA vault is the only address authorized to call EnaSilo.withdraw, used during the user unstake flow. Implemented as a TransparentUpgradeableProxy controlled by ProxyAdmin (0xf849...), whose owner is the 5-of-10 GnosisSafe — meaning a sENA implementation swap is a GnosisSafe action."
+    },
+    "eth:0xf849D7792Ff9b30A57656ee10a2776bCb49F4Fe4": {
+      "name": "StakedENA ProxyAdmin",
+      "description": "Owns the StakedENA TransparentUpgradeableProxy. Can call upgrade / upgradeAndCall / changeProxyAdmin on the sENA proxy, which replaces or repoints the sENA implementation logic. Owned by the 5-of-10 GnosisSafe."
+    },
+    "eth:0xe3880B792F6F0f8795CbAACd92E7Ca78F5d3646e": {
+      "name": "StakingRewardsDistributorV1 Operator (EOA)",
+      "description": "EOA authorised by StakingRewardsDistributorV1.owner (Dev Multisig) to call transferInRewards on the distributor. Push-only: can only move USDe currently held by the distributor into the sUSDe vault as new rewards (hardcoded destination, no destination control, no theft surface). Owner can rotate via setOperator at any time."
+    }
+  },
+  "dependencies": {},
+  "funds": {
+    "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497": {
+      "name": "StakedUSDeV2 (sUSDe Vault)",
+      "description": "ERC4626 vault holding {{susdeVaultBalance}} of USDe deposited by sUSDe stakers. Withdrawals are gated by a configurable cooldown (currently 24 hours, max 90 days) after which USDe is released via USDeSilo."
+    },
+    "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9": {
+      "name": "StakedENA (sENA Vault)",
+      "description": "ERC4626 vault holding {{senaVaultBalance}} of ENA deposited by sENA stakers. Cooldown configurable up to 90 days; reward distributions vest over an admin-configurable period (max 90 days)."
+    },
+    "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425": {
+      "name": "USDeSilo",
+      "description": "Holds {{usdeSiloBalance}} of USDe set aside during the sUSDe cooldown period. Only the sUSDe vault contract can withdraw from the silo, which it does to release matured cooldowns to users."
+    },
+    "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A": {
+      "name": "EnaSilo",
+      "description": "Holds {{enaSiloBalance}} of ENA set aside during the sENA cooldown period. Only the sENA vault contract can withdraw from the silo."
+    },
+    "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3": {
+      "name": "EthenaMinting (Stablecoin Buffer)",
+      "description": "Holds {{ethenaMintingBuffer}} in USDT, USDC, USDtb, and PYUSD as the on-chain settlement buffer between benefactor deposits and CEX custodian wallets. Represents only a fraction of total USDe backing; the bulk of collateral (delta-hedged ETH/BTC perpetuals + spot) is held off-chain in CEX custodian accounts (Copper, Binance, OKX) and is not visible on-chain."
+    },
+    "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3": {
+      "name": "USDe Token",
+      "description": "USDe is Ethena's synthetic dollar. Outstanding supply has a market value of {{usdeMarketCap}}, of which roughly half ({{susdeStakedUsde}}) currently sits in the sUSDe vault and {{usdeSiloUsde}} in the USDeSilo cooldown queue — both are accounted for inside the USDe total supply, not as separate balances. Mint authority is restricted to EthenaMinting (a single immutable minter), which can only be changed by the USDe owner (5-of-10 GnosisSafe)."
+    }
+  },
+  "sections": {
+    "codeAndAudits": {
+      "title": "Code & Audits",
+      "description": "Smart contract analysis and audit history",
+      "subsections": [
+        {
+          "title": "Contracts",
+          "content": [
+            {
+              "type": "dataTable",
+              "dataSource": "project.contracts",
+              "columns": [
+                {
+                  "field": "name",
+                  "header": "Name"
+                },
+                {
+                  "field": "address",
+                  "header": "Address",
+                  "format": "address"
+                },
+                {
+                  "field": "proxyType",
+                  "header": "Proxy Type",
+                  "format": "badge"
+                }
+              ],
+              "filters": {
+                "excludeExternal": true
+              }
+            }
+          ]
+        },
+        {
+          "title": "Audits",
+          "content": [
+            {
+              "type": "text",
+              "content": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "dataKeys": {
+    "totalProtocolCapital": "v2score.inventory.admins.totalCapitalAtRisk",
+    "gnosisSafeReachableCapital": "v2score.inventory.admins.breakdown[\"eth:0x3B0AAf6e6fCd4a7cEEf8c92C32DFeA9E64dC1862\"].totalReachableCapital",
+    "gnosisSafeReachableTokenValue": "v2score.inventory.admins.breakdown[\"eth:0x3B0AAf6e6fCd4a7cEEf8c92C32DFeA9E64dC1862\"].totalReachableTokenValue",
+    "susdeVaultBalance": "fundsdata.contracts[\"eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497\"].balances.totalUsdValue",
+    "senaVaultBalance": "fundsdata.contracts[\"eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9\"].balances.totalUsdValue",
+    "usdeSiloBalance": "fundsdata.contracts[\"eth:0x7FC7c91D556B400AFa565013E3F32055a0713425\"].balances.totalUsdValue",
+    "enaSiloBalance": "fundsdata.contracts[\"eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A\"].balances.totalUsdValue",
+    "ethenaMintingBuffer": "fundsdata.contracts[\"eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3\"].balances.totalUsdValue",
+    "usdeMarketCap": "fundsdata.contracts[\"eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3\"].tokenInfo.tokenValue",
+    "susdeStakedUsde": "fundsdata.contracts[\"eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497\"].balances.totalUsdValue",
+    "usdeSiloUsde": "fundsdata.contracts[\"eth:0x7FC7c91D556B400AFa565013E3F32055a0713425\"].balances.totalUsdValue"
+  }
+}

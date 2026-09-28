@@ -1,0 +1,121 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-06-04T06:43:37.799145Z",
+  "rules": [
+    {
+      "id": "e49ac71d-8742-479e-8575-62553d2c45e4",
+      "type": "addEdge",
+      "from": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61.acceptCap",
+      "to": "base:0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb.extSloads",
+      "edgeType": "callgraph"
+    },
+    {
+      "id": "gauntletusdcprime-timelock-submitGuardian-owner",
+      "type": "setEdgeMitigation",
+      "from": "base:0x5a4E19842e09000a582c20A4f524C26Fb48Dd4D0",
+      "to": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61.submitGuardian",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitGuardian execution",
+          "delayRef": {
+            "contractAddress": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(owner\u2192submitGuardian) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "gauntletusdcprime-timelock-submitTimelock-owner",
+      "type": "setEdgeMitigation",
+      "from": "base:0x5a4E19842e09000a582c20A4f524C26Fb48Dd4D0",
+      "to": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61.submitTimelock",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitTimelock execution",
+          "delayRef": {
+            "contractAddress": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(owner\u2192submitTimelock) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "gauntletusdcprime-timelock-submitCap-curator",
+      "type": "setEdgeMitigation",
+      "from": "base:0x9E33faAE38ff641094fa68c65c2cE600b3410585",
+      "to": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61.submitCap",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitCap execution",
+          "delayRef": {
+            "contractAddress": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(curator\u2192submitCap) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "gauntletusdcprime-timelock-submitCap-owner",
+      "type": "setEdgeMitigation",
+      "from": "base:0x5a4E19842e09000a582c20A4f524C26Fb48Dd4D0",
+      "to": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61.submitCap",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitCap execution",
+          "delayRef": {
+            "contractAddress": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(owner\u2192submitCap) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "gauntletusdcprime-timelock-submitMarketRemoval-curator",
+      "type": "setEdgeMitigation",
+      "from": "base:0x9E33faAE38ff641094fa68c65c2cE600b3410585",
+      "to": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61.submitMarketRemoval",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitMarketRemoval execution",
+          "delayRef": {
+            "contractAddress": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(curator\u2192submitMarketRemoval) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "gauntletusdcprime-timelock-submitMarketRemoval-owner",
+      "type": "setEdgeMitigation",
+      "from": "base:0x5a4E19842e09000a582c20A4f524C26Fb48Dd4D0",
+      "to": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61.submitMarketRemoval",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitMarketRemoval execution",
+          "delayRef": {
+            "contractAddress": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(owner\u2192submitMarketRemoval) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    }
+  ]
+}

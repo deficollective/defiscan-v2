@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-06-03T14:20:46.012773Z",
+  "rules": [
+    {
+      "id": "steakhouseprimeusdc-timelock-curator",
+      "type": "setEdgeMitigation",
+      "from": "base:0x827e86072B06674a077f592A531dcE4590aDeCdB",
+      "to": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2.submitCap",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "7-day MetaMorpho timelock delay before submitCap execution",
+          "delayRef": {
+            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "7-day MetaMorpho timelock on the (curator\u2192submitCap) edge. MetaMorpho 7-day timelock \u2014 anchored on the (owner\u2192submitCap) permission edge so it appears in the curator/owner admin view but does NOT propagate as a spurious 7d delay onto Morpho/Chainlink dependencies. Replaces the function-level mitigation on submitCap, which was treated as global by getMitigationsForOwner and incorrectly tagged downstream view-reads. See docs/developers/designs/edge-centric-constraints.md."
+    },
+    {
+      "id": "steakhouseprimeusdc-timelock-owner",
+      "type": "setEdgeMitigation",
+      "from": "base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD",
+      "to": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2.submitCap",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "7-day MetaMorpho timelock delay before submitCap execution",
+          "delayRef": {
+            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "7-day MetaMorpho timelock on the (owner\u2192submitCap) edge. MetaMorpho 7-day timelock \u2014 anchored on the (owner\u2192submitCap) permission edge so it appears in the curator/owner admin view but does NOT propagate as a spurious 7d delay onto Morpho/Chainlink dependencies. Replaces the function-level mitigation on submitCap, which was treated as global by getMitigationsForOwner and incorrectly tagged downstream view-reads. See docs/developers/designs/edge-centric-constraints.md."
+    },
+    {
+      "id": "steakhouseprimeusdc-timelock-submitTimelock-owner",
+      "type": "setEdgeMitigation",
+      "from": "base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD",
+      "to": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2.submitTimelock",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "7-day MetaMorpho timelock delay before submitTimelock execution",
+          "delayRef": {
+            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "7-day MetaMorpho timelock anchored on the (owner\u2192submitTimelock) permission edge."
+    },
+    {
+      "id": "steakhouseprimeusdc-timelock-submitGuardian-owner",
+      "type": "setEdgeMitigation",
+      "from": "base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD",
+      "to": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2.submitGuardian",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "7-day MetaMorpho timelock delay before submitGuardian execution",
+          "delayRef": {
+            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "7-day MetaMorpho timelock anchored on the (owner\u2192submitGuardian) permission edge."
+    },
+    {
+      "id": "steakhouseprimeusdc-timelock-submitMarketRemoval-curator",
+      "type": "setEdgeMitigation",
+      "from": "base:0x827e86072B06674a077f592A531dcE4590aDeCdB",
+      "to": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2.submitMarketRemoval",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "7-day MetaMorpho timelock delay before submitMarketRemoval execution",
+          "delayRef": {
+            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "7-day MetaMorpho timelock anchored on the (curator\u2192submitMarketRemoval) permission edge."
+    },
+    {
+      "id": "steakhouseprimeusdc-timelock-submitMarketRemoval-owner",
+      "type": "setEdgeMitigation",
+      "from": "base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD",
+      "to": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2.submitMarketRemoval",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "7-day MetaMorpho timelock delay before submitMarketRemoval execution",
+          "delayRef": {
+            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "7-day MetaMorpho timelock anchored on the (owner\u2192submitMarketRemoval) permission edge."
+    }
+  ]
+}

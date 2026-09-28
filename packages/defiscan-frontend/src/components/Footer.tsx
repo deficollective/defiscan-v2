@@ -26,7 +26,7 @@ export function Footer() {
           </FooterLink>
           <div className="flex items-center gap-3 md:ml-0 md:border-border/15 md:border-l md:pl-2">
             <FooterIconLink
-              href="https://x.com/deficollective"
+              href="https://x.com/defiscan_info"
               label="X (Twitter)"
             >
               <XIcon className="h-4 w-4" />

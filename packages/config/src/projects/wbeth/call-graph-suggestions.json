@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "suggestions": [
+    {
+      "id": "demo-remove",
+      "status": "pending",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T07:24:46.613Z",
+      "rule": {
+        "id": "r-demo-remove",
+        "type": "removeEdge",
+        "from": "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1.moveToUnwrapAddress",
+        "to": "eth:0x79973d557CD9dd87eb61E250cc2572c990e20196.moveFromWrapContract",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "RED highlight demo — proposes removing the real call WrapTokenV3ETH.moveToUnwrapAddress → UnwrapTokenV1ETH.moveFromWrapContract. Focus this to see the existing edge turn red."
+    },
+    {
+      "id": "demo-add",
+      "status": "pending",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T07:24:46.613Z",
+      "rule": {
+        "id": "r-demo-add",
+        "type": "addEdge",
+        "from": "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1.moveToUnwrapAddress",
+        "to": "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1.__demo_added_call__",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "GREEN highlight demo — proposes adding a (synthetic) call from WrapTokenV3ETH.moveToUnwrapAddress. Focus this to see a green proposed edge injected into the trace."
+    }
+  ]
+}

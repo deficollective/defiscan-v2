@@ -1,0 +1,151 @@
+{
+  "$schema": "../../../../discovery/schemas/config.v2.schema.json",
+  "name": "Steakhouse-USDT",
+  "import": ["../globalConfig.jsonc"],
+  "initialAddresses": ["eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa"],
+  "maxAddresses": 100,
+  "maxDepth": 3,
+  "overrides": {
+    // Underlying asset (USDT) — never want to walk into the token graph
+    "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7": {
+      "ignoreDiscovery": true
+    },
+    // sUSDS (Sky Savings USDS) — collateral of one Morpho market, read by its oracle
+    // adapter. Leafing it here cuts the entire Sky/Maker tree (USDS, UsdsJoin, Vat, Vow)
+    // that's otherwise dragged in purely as a collateral-price reference, and removes the
+    // sUSDS/Vow array-overflow errors. The Chainlink feeds in the adapter are kept.
+    "eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD": {
+      "ignoreDiscovery": true
+    },
+    "eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa": {
+      "ignoreMethods": [
+        "convertToShares",
+        "convertToAssets",
+        "previewDeposit",
+        "previewMint",
+        "previewRedeem",
+        "previewWithdraw"
+      ],
+      "fields": {
+        "supplyQueue": {
+          "handler": {
+            "type": "array",
+            "method": "supplyQueue",
+            "length": "{{ supplyQueueLength }}"
+          }
+        },
+        "withdrawQueue": {
+          "handler": {
+            "type": "array",
+            "method": "withdrawQueue",
+            "length": "{{ withdrawQueueLength }}"
+          }
+        },
+        "marketParams": {
+          "handler": {
+            "type": "morphoMarkets",
+            "morphoAddressField": "MORPHO",
+            "queueField": "withdrawQueue",
+            "ignoreRelative": true
+          }
+        },
+        "marketOracles": {
+          "handler": {
+            "type": "morphoMarkets",
+            "extractField": "oracle",
+            "sourceField": "marketParams"
+          }
+        },
+        "allocators": {
+          "handler": {
+            "type": "event",
+            "select": "allocator",
+            "add": {
+              "event": "SetIsAllocator",
+              "where": ["=", "#isAllocator", true]
+            },
+            "remove": {
+              "event": "SetIsAllocator",
+              "where": ["!=", "#isAllocator", true]
+            }
+          }
+        },
+        "MAX_TIMELOCK": {
+          "handler": { "type": "hardcoded", "value": 1209600 },
+          "description": "Maximum timelock delay (2 weeks)"
+        },
+        "MIN_TIMELOCK": {
+          "handler": { "type": "hardcoded", "value": 86400 },
+          "description": "Minimum timelock delay (1 day)"
+        },
+        "MAX_QUEUE_LENGTH": {
+          "handler": { "type": "hardcoded", "value": 30 },
+          "description": "Maximum number of markets in supply/withdraw queue"
+        },
+        "MAX_FEE": {
+          "handler": { "type": "hardcoded", "value": "500000000000000000" },
+          "description": "Maximum fee (50%, represented as 0.5e18)"
+        },
+        "fee": { "severity": "HIGH" },
+        // Per-feed cap (sum of caps across markets consuming this feed). Only this feed's
+        // market ($10M cap) is below the ~$91M vault TVS, so it's the one place a per-feed
+        // cap actually bounds impact. queueField=withdrawQueue aggregates the full universe.
+        "feedCap_0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6", "queueField": "withdrawQueue" }
+        }
+      },
+      "ignoreInWatchMode": ["totalAssets", "totalSupply", "lastTotalAssets", "feedCap_0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6"]
+    },
+    // Oracle price reads tick every Chainlink heartbeat — ignore in watch mode so the
+    // monitor doesn't fire on every price update. Deviation/challenge state, thresholds,
+    // and durations on the MetaOracleDeviationTimelock stay watched (they signal real events).
+    "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4": { "ignoreInWatchMode": ["price"] },
+    "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8": { "ignoreInWatchMode": ["price"] },
+    "eth:0x0C426d174FC88B7A25d59945Ab2F7274Bf7B4C79": { "ignoreInWatchMode": ["price"] },
+    "eth:0x0E053750DFA4E809E5f7b119832C799c2aA138ac": { "ignoreInWatchMode": ["price"] },
+    "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831": { "ignoreInWatchMode": ["price"] },
+    "eth:0xc7d1FE3fBe90e8f755250CA3Ce4d2aE50873d9dc": { "ignoreInWatchMode": ["price"] },
+    "eth:0xe087AD7FE989cF63F8383579D160a20Ee7e69F9F": { "ignoreInWatchMode": ["price"] },
+    "eth:0x008bF4B1cDA0cc9f0e882E0697f036667652E1ef": { "ignoreInWatchMode": ["price"] },
+    "eth:0x95DB30fAb9A3754e42423000DF27732CB2396992": { "ignoreInWatchMode": ["price"] },
+    "eth:0x9F983115741D0F7F2EAE07831415057AD3de34d2": {
+      "ignoreInWatchMode": ["backupPrice", "getDeviation", "price", "primaryPrice"]
+    },
+    "eth:0xf1561bC4b3D1bA49053986Fb9ee88D4fE22d0Cf4": {
+      "ignoreInWatchMode": ["backupPrice", "getDeviation", "price", "primaryPrice"]
+    },
+    "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79": {
+      "ignoreInWatchMode": [
+        "latestRoundData"
+      ]
+    },
+    "eth:0xD703c55B871D999eA5435aC3721B19296Ac249D1": {
+      "ignoreInWatchMode": [
+        "backupPrice",
+        "getDeviation",
+        "price",
+        "primaryPrice"
+      ]
+    },
+    "eth:0xd87B4a9de5b184a469942339508dD485e8eeeAd7": {
+      "ignoreInWatchMode": [
+        "price"
+      ]
+    },
+    "eth:0xdee9c016bd52b0A99A78790A9bf8410662A3d1e3": {
+      "ignoreInWatchMode": [
+        "price"
+      ]
+    },
+    "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411": {
+      "ignoreInWatchMode": [
+        "price"
+      ]
+    },
+    "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee": {
+      "ignoreInWatchMode": [
+        "totalSupply"
+      ]
+    }
+  }
+}

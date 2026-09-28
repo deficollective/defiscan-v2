@@ -1,0 +1,9 @@
+{
+  "framework": "Aragon OSx",
+  "voteExecution": "onchain",
+  "votingUnit": "Vault shares",
+  "proposalRequirements": "Held by vault depositors via the Aragon guardian DAO",
+  "votingProcess": "An Aragon OSx DAO of vault depositors is the guardian and can veto the owner/curator's 7-day timelocked actions.",
+  "proposalPeriod": { "kind": "fixed", "value": "7 Days" },
+  "executionDelay": { "kind": "fixed", "value": "None" }
+}

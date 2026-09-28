@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1776514222,
-  "lastConsumedUpdateNotifierId": 109,
+  "lastReconciledAt": 1787384526,
+  "lastConsumedUpdateNotifierId": 452,
   "events": [
     {
       "timestamp": "2026-03-02T13:49:30.000Z",
@@ -856,6 +856,24 @@
           "field": "values.$members.8",
           "before": "eth:0x3F7b49F03375Aa588B828A5FfbAac5727fb8202d",
           "after": "eth:0xD66336eA98cE0da67f25934E7cC230D4226292a0"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-22T07:41:17.000Z",
+      "updateNotifierId": 452,
+      "address": "eth:0x21f73D42Eb58Ba49dDB685dc29D3bF5c0f0373CA",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": null,
+      "id": "452:eth:0x21f73D42Eb58Ba49dDB685dc29D3bF5c0f0373CA:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.4",
+          "before": "eth:0x47A1dD4E277530fffb5B5f70A43CCbD542F54e17",
+          "after": "eth:0x80D46daD5A5450a3611CD1d7F9110AEdFA55bfF6"
         }
       ]
     }

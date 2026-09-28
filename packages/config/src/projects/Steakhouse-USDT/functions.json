@@ -1,0 +1,556 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-06-02T09:22:31.029Z",
+  "contracts": {
+    "eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa": {
+      "functions": [
+        {
+          "functionName": "setCurator",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.828Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.828Z"
+          }
+        },
+        {
+          "functionName": "setIsAllocator",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.830Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.830Z"
+          }
+        },
+        {
+          "functionName": "setSkimRecipient",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.835Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.835Z"
+          }
+        },
+        {
+          "functionName": "setFeeRecipient",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.837Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.837Z"
+          }
+        },
+        {
+          "functionName": "setFee",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "valueRange",
+              "description": "Maximum fee is 50%",
+              "valueRange": {
+                "min": {
+                  "mode": "hardcoded",
+                  "value": "0"
+                },
+                "max": {
+                  "mode": "hardcoded",
+                  "value": "50"
+                },
+                "unit": "%"
+              },
+              "mitigatedField": {
+                "contractAddress": "eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa",
+                "fieldName": "fee"
+              }
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.839Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.839Z"
+          }
+        },
+        {
+          "functionName": "submitTimelock",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "valueRange",
+              "description": "Timelock can only be set in [1, 14] days",
+              "valueRange": {
+                "min": "1",
+                "max": "14",
+                "unit": "Days"
+              }
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.847Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.847Z"
+          }
+        },
+        {
+          "functionName": "submitGuardian",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.849Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.849Z"
+          }
+        },
+        {
+          "functionName": "submitCap",
+          "isPermissioned": true,
+          "score": "unscored",
+          "ownerDefinitions": [
+            {
+              "path": "$self.curator"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "dependencies": [
+            {
+              "contractAddress": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79"
+            },
+            {
+              "contractAddress": "eth:0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46"
+            },
+            {
+              "contractAddress": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23"
+            },
+            {
+              "contractAddress": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+            },
+            {
+              "contractAddress": "eth:0x3E7d1eAB13ad0104d2750B8863b489D65364e32D"
+            },
+            {
+              "contractAddress": "eth:0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6"
+            },
+            {
+              "contractAddress": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD"
+            },
+            {
+              "contractAddress": "eth:0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9"
+            },
+            {
+              "contractAddress": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2"
+            },
+            {
+              "contractAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "This feed prices a single Morpho market with a $10M supply cap; exposure under a feed failure is bounded by that cap, well below total vault TVS.",
+              "scopedTo": {
+                "address": "eth:0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa",
+                  "fieldName": "feedCap_0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-06-02T09:22:31.018Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:22:31.018Z"
+          }
+        },
+        {
+          "functionName": "submitMarketRemoval",
+          "isPermissioned": true,
+          "score": "unscored",
+          "ownerDefinitions": [
+            {
+              "path": "$self.curator"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.852Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.852Z"
+          }
+        },
+        {
+          "functionName": "setSupplyQueue",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.allocators"
+            },
+            {
+              "path": "$self.curator"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.854Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.854Z"
+          }
+        },
+        {
+          "functionName": "updateWithdrawQueue",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.allocators"
+            },
+            {
+              "path": "$self.curator"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.856Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.856Z"
+          }
+        },
+        {
+          "functionName": "reallocate",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.allocators"
+            },
+            {
+              "path": "$self.curator"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.858Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.858Z"
+          }
+        },
+        {
+          "functionName": "revokePendingTimelock",
+          "isPermissioned": true,
+          "ownerDefinitions": [
+            {
+              "path": "$self.guardian"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Veto-only",
+              "description": "Only revokes pending owner/curator submissions during the timelock window. Cannot extract funds or initiate state changes.",
+              "scopedTo": {
+                "address": "eth:0xaeC761545Fd135db6d04D27C92BCB3951668c67F",
+                "type": "admin"
+              }
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.860Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.860Z"
+          }
+        },
+        {
+          "functionName": "revokePendingGuardian",
+          "isPermissioned": true,
+          "ownerDefinitions": [
+            {
+              "path": "$self.guardian"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Veto-only",
+              "description": "Only revokes pending owner/curator submissions during the timelock window. Cannot extract funds or initiate state changes.",
+              "scopedTo": {
+                "address": "eth:0xaeC761545Fd135db6d04D27C92BCB3951668c67F",
+                "type": "admin"
+              }
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.861Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.861Z"
+          }
+        },
+        {
+          "functionName": "revokePendingCap",
+          "isPermissioned": true,
+          "ownerDefinitions": [
+            {
+              "path": "$self.curator"
+            },
+            {
+              "path": "$self.guardian"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Veto-only",
+              "description": "Only revokes pending owner/curator submissions during the timelock window. Cannot extract funds or initiate state changes.",
+              "scopedTo": {
+                "address": "eth:0xaeC761545Fd135db6d04D27C92BCB3951668c67F",
+                "type": "admin"
+              }
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.863Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.863Z"
+          }
+        },
+        {
+          "functionName": "revokePendingMarketRemoval",
+          "isPermissioned": true,
+          "ownerDefinitions": [
+            {
+              "path": "$self.curator"
+            },
+            {
+              "path": "$self.guardian"
+            },
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Veto-only",
+              "description": "Only revokes pending owner/curator submissions during the timelock window. Cannot extract funds or initiate state changes.",
+              "scopedTo": {
+                "address": "eth:0xaeC761545Fd135db6d04D27C92BCB3951668c67F",
+                "type": "admin"
+              }
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.864Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.864Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.866Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.866Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "timestamp": "2026-06-02T09:15:22.868Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:15:22.868Z"
+          }
+        },
+        {
+          "functionName": "acceptCap",
+          "isPermissioned": false,
+          "dependencies": [
+            {
+              "contractAddress": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79"
+            },
+            {
+              "contractAddress": "eth:0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46"
+            },
+            {
+              "contractAddress": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23"
+            },
+            {
+              "contractAddress": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+            },
+            {
+              "contractAddress": "eth:0x3E7d1eAB13ad0104d2750B8863b489D65364e32D"
+            },
+            {
+              "contractAddress": "eth:0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6"
+            },
+            {
+              "contractAddress": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD"
+            },
+            {
+              "contractAddress": "eth:0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9"
+            },
+            {
+              "contractAddress": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2"
+            },
+            {
+              "contractAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "This feed prices a single Morpho market with a $10M supply cap; exposure under a feed failure is bounded by that cap, well below total vault TVS.",
+              "scopedTo": {
+                "address": "eth:0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa",
+                  "fieldName": "feedCap_0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-06-02T09:22:31.026Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:22:31.026Z"
+          }
+        }
+      ]
+    },
+    "eth:0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb": {
+      "functions": [
+        {
+          "functionName": "liquidate",
+          "isPermissioned": false,
+          "dependencies": [
+            {
+              "contractAddress": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79"
+            },
+            {
+              "contractAddress": "eth:0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46"
+            },
+            {
+              "contractAddress": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23"
+            },
+            {
+              "contractAddress": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+            },
+            {
+              "contractAddress": "eth:0x3E7d1eAB13ad0104d2750B8863b489D65364e32D"
+            },
+            {
+              "contractAddress": "eth:0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6"
+            },
+            {
+              "contractAddress": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD"
+            },
+            {
+              "contractAddress": "eth:0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9"
+            },
+            {
+              "contractAddress": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2"
+            },
+            {
+              "contractAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A"
+            }
+          ],
+          "timestamp": "2026-06-02T09:22:31.029Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T09:22:31.029Z"
+          }
+        }
+      ]
+    }
+  }
+}

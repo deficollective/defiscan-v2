@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1776179253,
-  "lastConsumedUpdateNotifierId": 58,
+  "lastReconciledAt": 1790080589,
+  "lastConsumedUpdateNotifierId": 619,
   "events": [
     {
       "timestamp": "2026-03-02T13:49:30.000Z",
@@ -49,6 +49,98 @@
           "after": "tokens"
         }
       ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 326,
+      "address": "eth:0xF057afeEc22E220f47AD4220871364e9E828b2e9",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "326:eth:0xF057afeEc22E220f47AD4220871364e9E828b2e9:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.2",
+          "before": "eth:0x1b30044ED3a4dCEEEfEAcE47E2d0a3648A10d63f",
+          "after": "eth:0x24277191F9A21A2dD519c3cE2837653b93D9B358"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-12T08:28:14.000Z",
+      "updateNotifierId": 408,
+      "address": "eth:0xF057afeEc22E220f47AD4220871364e9E828b2e9",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "408:eth:0xF057afeEc22E220f47AD4220871364e9E828b2e9:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.5",
+          "before": "eth:0xB93B521e8766e57C3A806b07F483Dba2A2d98ac5",
+          "after": "eth:0x8e104AFBf2F9C7b6018897A2D68088e2fdA63937"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 619,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "619:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.multisigThreshold",
+          "before": "5 of 9 (56%)",
+          "after": "6 of 10 (60%)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 619,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "619:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.0",
+          "after": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 619,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "619:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.threshold",
+      "type": "role-update",
+      "roleName": "Safe.threshold",
+      "changes": [
+        {
+          "field": "values.$threshold",
+          "before": 5,
+          "after": 6
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 619,
+      "address": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "619:eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f:contract-added",
+      "type": "contract-added"
     }
   ]
 }

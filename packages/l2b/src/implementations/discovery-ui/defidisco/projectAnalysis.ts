@@ -17,12 +17,14 @@ import {
 } from './addressUtils'
 import { getCallGraphData } from './callGraph'
 import { CapitalAnalysisCalculator } from './capitalAnalysis'
+import { getEdgeOverrideRules } from './callGraphOverrides'
 import { getContractTags } from './contractTags'
 import {
   buildEnhancedGraph,
   buildIndices,
   deduplicateTerminals,
   type EnhancedGraph,
+  enhancedEdgeKey,
   traverse,
   type TraversalContext,
 } from './enhancedTraversal'
@@ -34,6 +36,7 @@ import {
   resolveOwnersFromDiscovered,
 } from './functions'
 import { getFundsData } from './fundsData'
+import { mitigationDedupKey } from './mitigationUtils'
 import { DiscoveredDataAccess } from './ownerResolution'
 import {
   isUpgradeFunction,
@@ -75,6 +78,10 @@ export interface AdminEntry {
   isExternal: boolean
   isGovernance: boolean
   entity: string | null
+  /** Gnosis Safe signing threshold (`values.$threshold`), when the admin is a multisig. */
+  multisigThreshold?: number
+  /** Gnosis Safe owner count (`values.$members.length`), when the admin is a multisig. */
+  multisigSize?: number
   functions: AdminFunctionEntry[]
   totalDirectCapital: number
   totalDirectTokenValue: number
@@ -203,7 +210,17 @@ function resolveImpactCap(
   } else {
     try {
       const contract = dataAccess.findContract(cap.value.contractAddress)
-      const raw = dataAccess.getValuesObject(contract)[cap.value.fieldName]
+      // Walk dotted paths so nested fields (e.g. `globalConfig.globalMaxMintPerBlock`) resolve.
+      const values = dataAccess.getValuesObject(contract)
+      const raw = cap.value.fieldName
+        .split('.')
+        .reduce<unknown>(
+          (acc, part) =>
+            acc !== undefined && acc !== null
+              ? (acc as Record<string, unknown>)[part]
+              : undefined,
+          values,
+        )
       if (raw === undefined) {
         console.warn(
           `[impactCap] Field "${cap.value.fieldName}" not found on contract ${cap.value.contractAddress}`,
@@ -257,6 +274,24 @@ function resolveImpactCap(
   }
 
   return usd * multiplier
+}
+
+/**
+ * Normalized edge identity, mirroring enhancedEdgeKey but checksum/prefix-tolerant
+ * on both endpoints — so an edge-mitigation lookup built from graph edges matches
+ * a lookup computed from (owner, contract, function) inputs regardless of form.
+ */
+function normalizedEdgeKey(
+  sourceContract: string,
+  sourceFunction: string | undefined,
+  targetContract: string,
+  targetFunction: string,
+  edgeType: string,
+): string {
+  const from = sourceFunction
+    ? `${normalizeChainAddress(sourceContract)}.${sourceFunction}`
+    : normalizeChainAddress(sourceContract)
+  return `${from}|${normalizeChainAddress(targetContract)}.${targetFunction}|${edgeType}`
 }
 
 /**
@@ -473,6 +508,8 @@ export class ProjectAnalysis {
   private _mitigationsLookup: Map<string, Mitigation[]> | null = null
   private _transitiveMitigationsLookup: Map<string, Mitigation[]> | null = null
   private _resolvedImpactCaps: Map<string, number> | null = null
+  private _resolvedEdgeCaps: Map<string, number> | null = null
+  private _edgeMitigationsLookup: Map<string, Mitigation[]> | null = null
 
   constructor(
     paths: DiscoveryPaths,
@@ -618,6 +655,7 @@ export class ProjectAnalysis {
         this.functionsData,
         dataAccess,
         this.discovered,
+        getEdgeOverrideRules(this.paths, this.projectName),
       )
       this._enhancedGraph = buildIndices(edges)
     }
@@ -634,6 +672,7 @@ export class ProjectAnalysis {
         this.implToProxyMap,
         this.resolvedImpactCaps,
         this.proxyToImplsSharedMap,
+        this.resolvedEdgeCaps,
       )
     }
     return this._capitalCalculator
@@ -644,6 +683,20 @@ export class ProjectAnalysis {
       this._resolvedImpactCaps = this.buildResolvedImpactCaps()
     }
     return this._resolvedImpactCaps
+  }
+
+  private get resolvedEdgeCaps(): Map<string, number> {
+    if (!this._resolvedEdgeCaps) {
+      this._resolvedEdgeCaps = this.buildResolvedEdgeCaps()
+    }
+    return this._resolvedEdgeCaps
+  }
+
+  private get edgeMitigationsLookup(): Map<string, Mitigation[]> {
+    if (!this._edgeMitigationsLookup) {
+      this._edgeMitigationsLookup = this.buildEdgeMitigationsLookup()
+    }
+    return this._edgeMitigationsLookup
   }
 
   private get mitigationsLookup(): Map<string, Mitigation[]> {
@@ -889,10 +942,31 @@ export class ProjectAnalysis {
 
     const admins: AdminEntry[] = []
 
+    // Discovery entry lookup for structured multisig metadata
+    // (`$threshold` / `$members`) read straight off Gnosis Safe entries.
+    const entryByAddress = new Map<
+      string,
+      (typeof this.discovered.entries)[number]
+    >()
+    for (const entry of this.discovered.entries ?? []) {
+      entryByAddress.set(normalizeChainAddress(entry.address), entry)
+    }
+
     for (const admin of adminsMap.values()) {
       const tag = this.tagsByAddress.get(
         normalizeChainAddress(admin.adminAddress),
       )
+
+      const adminEntry = entryByAddress.get(
+        normalizeChainAddress(admin.adminAddress),
+      )
+      const thresholdRaw = adminEntry?.values?.['$threshold']
+      const membersRaw = adminEntry?.values?.['$members']
+      const multisigThreshold =
+        typeof thresholdRaw === 'number' ? thresholdRaw : undefined
+      const multisigSize = Array.isArray(membersRaw)
+        ? membersRaw.length
+        : undefined
 
       // Run capital analysis if possible
       let capitalData: {
@@ -970,6 +1044,8 @@ export class ProjectAnalysis {
         isExternal: tag?.isExternal ?? false,
         isGovernance: tag?.isGovernance ?? false,
         entity: tag?.entity ?? null,
+        multisigThreshold,
+        multisigSize,
         functions,
         totalDirectCapital: capitalData?.totalDirectCapital ?? 0,
         totalDirectTokenValue: capitalData?.totalDirectTokenValue ?? 0,
@@ -1320,6 +1396,7 @@ export class ProjectAnalysis {
       this.functionsData,
       dataAccess,
       this.discovered,
+      getEdgeOverrideRules(this.paths, this.projectName),
     )
     const graph = buildIndices(edges)
 
@@ -1599,6 +1676,61 @@ export class ProjectAnalysis {
     return caps
   }
 
+  /**
+   * Resolve edge-centric impact caps (set by setEdgeCap/setOutgoingCap/
+   * setIncomingCap override rules) to USD, keyed by the stable enhancedEdgeKey.
+   * Consumed by CapitalAnalysisCalculator.traverseForward, which folds them into
+   * each edge's effective cap alongside function-intrinsic caps (min wins).
+   * The raw ImpactCap is attached to the edge by applyEdgeOverrides inside
+   * buildEnhancedGraph; here we resolve it against discovered + funds data.
+   */
+  private buildResolvedEdgeCaps(): Map<string, number> {
+    const caps = new Map<string, number>()
+    const dataAccess = new DiscoveredDataAccess(this.discovered)
+    for (const edges of this.enhancedGraph.forwardIndex.values()) {
+      for (const edge of edges) {
+        if (!edge.cap) continue
+        const normalized = normalizeImpactCap(edge.cap)
+        if (!normalized) continue
+        const capUsd = resolveImpactCap(normalized, dataAccess, this.fundsData)
+        if (capUsd === undefined) continue
+        const key = enhancedEdgeKey(edge)
+        const existing = caps.get(key)
+        // Multiple cap rules on one edge: tightest (min) wins.
+        if (existing === undefined || capUsd < existing) caps.set(key, capUsd)
+      }
+    }
+    return caps
+  }
+
+  /**
+   * Collect edge-centric mitigations (set by setEdgeMitigation rules and
+   * attached to edges inside buildEnhancedGraph), keyed by a NORMALIZED edge
+   * identity so lookups by (owner, contract, function) match regardless of
+   * checksum/prefix form. Consumed by getMitigationsForOwner (direct, on the
+   * owner→function permission edge) and collectDownstreamScopedMitigations
+   * (transitive, on callgraph/dependency edges).
+   */
+  private buildEdgeMitigationsLookup(): Map<string, Mitigation[]> {
+    const lookup = new Map<string, Mitigation[]>()
+    for (const edges of this.enhancedGraph.forwardIndex.values()) {
+      for (const edge of edges) {
+        if (!edge.mitigations || edge.mitigations.length === 0) continue
+        const key = normalizedEdgeKey(
+          edge.sourceContract,
+          edge.sourceFunction,
+          edge.targetContract,
+          edge.targetFunction,
+          edge.edgeType,
+        )
+        const existing = lookup.get(key)
+        if (existing) existing.push(...edge.mitigations)
+        else lookup.set(key, [...edge.mitigations])
+      }
+    }
+    return lookup
+  }
+
   private buildMitigationsLookup(): Map<string, Mitigation[]> {
     const lookup = new Map<string, Mitigation[]>()
     if (!this.functionsData?.contracts) return lookup
@@ -1854,6 +1986,13 @@ export class ProjectAnalysis {
           }
         }
 
+        // Edge-centric mitigations attached to this downstream callgraph/
+        // dependency edge propagate like global downstream mitigations — they
+        // bound any caller reaching through the edge.
+        if (edge.mitigations) {
+          for (const m of edge.mitigations) collected.push(m)
+        }
+
         // Continue BFS with updated path
         const newPathContracts = new Set(pathContracts)
         newPathContracts.add(targetNorm)
@@ -1919,22 +2058,35 @@ export class ProjectAnalysis {
           return filtered.length > 0 ? filtered : undefined
         })()
       : undefined
-    if (!filteredDirect && !filteredTransitive) return undefined
-    const concatenated = !filteredDirect
-      ? filteredTransitive!
-      : !filteredTransitive
-        ? filteredDirect
-        : [...filteredDirect, ...filteredTransitive]
+    // Edge-centric mitigations on the owner→function permission edge — the
+    // relationship-level counterpart to a scopedTo function mitigation. The
+    // edge only exists for this owner→function pair, so it's intrinsically
+    // scoped (no owner filtering needed).
+    const edgeMits = this.edgeMitigationsLookup.get(
+      normalizedEdgeKey(
+        ownerAddress,
+        undefined,
+        contractAddress,
+        functionName,
+        'permission',
+      ),
+    )
 
-    // Dedupe across direct + transitive. The transitive lookup can echo the
-    // direct mitigations when a function's call graph resolves back to the
-    // same (contract, function) pair (e.g. heuristic mis-resolution), or when
-    // a researcher legitimately repeats a description on a downstream
-    // function. Same key as collectDownstreamScopedMitigations.
+    if (!filteredDirect && !filteredTransitive && !edgeMits) return undefined
+    const concatenated: Mitigation[] = [
+      ...(filteredDirect ?? []),
+      ...(filteredTransitive ?? []),
+      ...(edgeMits ?? []),
+    ]
+
+    // Dedupe by VISIBLE IDENTITY (shared mitigationDedupKey). This both removes
+    // the transitive-echo of direct mitigations AND collapses an edge-centric
+    // mitigation that is visibly identical to a function mitigation, so they
+    // never render (or count) twice. Mirrors the frontend badge dedup.
     const seenKey = new Set<string>()
     const merged: Mitigation[] = []
     for (const m of concatenated) {
-      const key = `${m.type}:${m.description}:${m.scopedTo?.address ?? ''}`
+      const key = mitigationDedupKey(m)
       if (seenKey.has(key)) continue
       seenKey.add(key)
       merged.push(m)
@@ -1952,6 +2104,20 @@ export class ProjectAnalysis {
             this.fundsData,
           )
         }
+      }
+      // Resolve delayRef → delaySeconds for any delay mitigation that hasn't
+      // been resolved yet. Function-level delay mitigations are pre-resolved
+      // in buildMergedMitigations; edge mitigations (set by setEdgeMitigation
+      // rules) bypass that path and arrive here with delayRef but no
+      // delaySeconds. Mirror the same resolution so admin-view badges render
+      // a correct value (e.g. "7d" instead of an empty badge).
+      if (m.type === 'delay' && m.delayRef && m.delaySeconds === undefined) {
+        const resolved = resolveDelayFromDiscovered(
+          this.paths,
+          this.projectName,
+          m.delayRef,
+        )
+        if (resolved.isResolved) m.delaySeconds = resolved.seconds
       }
     }
     return merged

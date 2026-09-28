@@ -49,9 +49,16 @@ RUN pnpm turbo run build --filter='!@l2beat/token-backend' --filter='!@l2beat/ba
 # so we ignore the exit code and verify the entry point below.
 RUN cd packages/backend && npx tsc -p tsconfig.build.json --noEmitOnError false || true
 
-# Fetch flat sources (required for discovery)
+# Fetch flat sources (best-effort prefetch of L2BEAT's upstream project caches).
+# This downloads one large gzipped payload from an external backend and can drop
+# mid-stream (ERR_STREAM_PREMATURE_CLOSE). DeFiDisco's own projects regenerate
+# their .flat dirs from explorers at discover time, so a transient failure here
+# must not break the image build: retry with backoff, then continue regardless.
 WORKDIR packages/l2b/
-RUN node cli.js fetch-flat-sources -q -y
+RUN node cli.js fetch-flat-sources -q -y \
+    || (echo "retrying in 15s..." && sleep 15 && node cli.js fetch-flat-sources -q -y) \
+    || (echo "retrying in 30s..." && sleep 30 && node cli.js fetch-flat-sources -q -y) \
+    || echo "WARNING: fetch-flat-sources failed after retries; continuing without upstream flat caches."
 WORKDIR ../..
 
 # Verify the monitor entry point was built

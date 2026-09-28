@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-04-21T10:06:21.153Z",
+  "lastModified": "2026-05-19T20:59:35.150Z",
   "contracts": {
     "eth:0x0000aeB716a0DF7A9A1AAd119b772644Bc089dA8": {
       "address": "eth:0x0000aeB716a0DF7A9A1AAd119b772644Bc089dA8",
@@ -25,7 +25,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "checkSignatures",
@@ -46,7 +47,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "execTransaction",
@@ -79,7 +81,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "setGuard",
@@ -100,10 +103,78 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:11.440Z"
+      "generatedAt": "2026-05-19T20:57:37.823Z"
+    },
+    "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4": {
+      "address": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+      "name": "MorphoChainlinkOracleV2",
+      "externalCalls": [
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:57:52.111Z"
     },
     "eth:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD": {
       "address": "eth:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD",
@@ -128,7 +199,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "checkSignatures",
@@ -149,7 +221,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "execTransaction",
@@ -182,7 +255,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "setGuard",
@@ -203,10 +277,78 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:11.444Z"
+      "generatedAt": "2026-05-19T20:57:53.034Z"
+    },
+    "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8": {
+      "address": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+      "name": "MorphoChainlinkOracleV2",
+      "externalCalls": [
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:58:18.162Z"
     },
     "eth:0x0F948CBa8231Db7898ef36A4212581Ad7b1B4580": {
       "address": "eth:0x0F948CBa8231Db7898ef36A4212581Ad7b1B4580",
@@ -273,15 +415,15 @@
           "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:11.447Z"
+      "generatedAt": "2026-05-19T20:58:18.166Z"
     },
     "eth:0x255c7705e8BB334DfCae438197f7C4297988085a": {
       "address": "eth:0x255c7705e8BB334DfCae438197f7C4297988085a",
-      "name": "GnosisSafe",
+      "name": "Safe",
       "externalCalls": [
         {
           "callerFunction": "checkNSignatures",
-          "storageVariable": "TMP_330",
+          "storageVariable": "TMP_355",
           "interfaceType": "ISignatureValidator",
           "calledFunction": "isValidSignature",
           "resolvedAddress": "eth:0x21f73D42Eb58Ba49dDB685dc29D3bF5c0f0373CA",
@@ -298,11 +440,12 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "checkSignatures",
-          "storageVariable": "TMP_330",
+          "storageVariable": "TMP_355",
           "interfaceType": "ISignatureValidator",
           "calledFunction": "isValidSignature",
           "resolvedAddress": "eth:0x21f73D42Eb58Ba49dDB685dc29D3bF5c0f0373CA",
@@ -319,23 +462,24 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "execTransaction",
-          "storageVariable": "TMP_253",
+          "storageVariable": "TMP_275",
           "interfaceType": "Guard",
           "calledFunction": "checkTransaction"
         },
         {
           "callerFunction": "execTransaction",
-          "storageVariable": "TMP_277",
+          "storageVariable": "TMP_299",
           "interfaceType": "Guard",
           "calledFunction": "checkAfterExecution"
         },
         {
           "callerFunction": "execTransaction",
-          "storageVariable": "TMP_330",
+          "storageVariable": "TMP_355",
           "interfaceType": "ISignatureValidator",
           "calledFunction": "isValidSignature",
           "resolvedAddress": "eth:0x21f73D42Eb58Ba49dDB685dc29D3bF5c0f0373CA",
@@ -352,10 +496,775 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "setGuard",
+          "storageVariable": "TMP_2",
+          "interfaceType": "Guard",
+          "calledFunction": "supportsInterface",
+          "resolvedAddress": "eth:0x9E9110cFd24cd851ea5bc73a27975B33E308f9e1",
+          "resolvedContractName": "MorphoHelper",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 50,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x9E9110cFd24cd851ea5bc73a27975B33E308f9e1",
+              "contractName": "MorphoHelper"
+            },
+            {
+              "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
+              "contractName": "DAO"
+            }
+          ],
+          "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:11.453Z"
+      "generatedAt": "2026-05-19T20:58:19.088Z"
+    },
+    "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A": {
+      "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+      "name": "EACAggregatorProxy",
+      "externalCalls": [
+        {
+          "callerFunction": "decimals",
+          "storageVariable": "REF_48",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+              "contractName": "WeEthToEthExchangeRateAdapter"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+              "contractName": "MetaMorpho"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "description",
+          "storageVariable": "REF_52",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "description",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+              "contractName": "WeEthToEthExchangeRateAdapter"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getAnswer",
+          "storageVariable": "aggregator",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getAnswer",
+          "resolvedAddress": "eth:0x5e2420cACE3650622f62B2713B2B3727FC8bCDd1",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getRoundData",
+          "storageVariable": "REF_39",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getRoundData",
+          "storageVariable": "_roundId",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getTimestamp",
+          "storageVariable": "aggregator",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getTimestamp",
+          "resolvedAddress": "eth:0x5e2420cACE3650622f62B2713B2B3727FC8bCDd1",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestAnswer",
+          "storageVariable": "REF_28",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestAnswer",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestAnswer",
+          "storageVariable": "REF_0",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestAnswer",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestRound",
+          "storageVariable": "REF_37",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRound",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestRound",
+          "storageVariable": "REF_9",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRound",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestRoundData",
+          "storageVariable": "REF_41",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+              "contractName": "WeEthToEthExchangeRateAdapter"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestRoundData",
+          "storageVariable": "REF_13",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+              "contractName": "WeEthToEthExchangeRateAdapter"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestTimestamp",
+          "storageVariable": "REF_30",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestTimestamp",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestTimestamp",
+          "storageVariable": "REF_2",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestTimestamp",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "proposedGetRoundData",
+          "storageVariable": "proposedAggregator",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "proposedLatestRoundData",
+          "storageVariable": "proposedAggregator",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "proposedLatestRoundData",
+          "storageVariable": "ac",
+          "interfaceType": "AccessControllerInterface",
+          "calledFunction": "hasAccess",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "variable-chain",
+          "resolutionConfidence": 100,
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "version",
+          "storageVariable": "REF_50",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "version",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:58:28.156Z"
+    },
+    "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828": {
+      "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+      "name": "WeEthToEthExchangeRateAdapter",
+      "externalCalls": [
+        {
+          "callerFunction": "latestRoundData",
+          "storageVariable": "WEETH",
+          "interfaceType": "IWeEth",
+          "calledFunction": "getRate",
+          "resolvedAddress": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:58:30.017Z"
     },
     "eth:0x48F7E36EB6B826B2dF4B2E630B62Cd25e89E40e2": {
       "address": "eth:0x48F7E36EB6B826B2dF4B2E630B62Cd25e89E40e2",
@@ -412,7 +1321,7 @@
           "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:11.456Z"
+      "generatedAt": "2026-05-19T20:58:30.024Z"
     },
     "eth:0x827e86072B06674a077f592A531dcE4590aDeCdB": {
       "address": "eth:0x827e86072B06674a077f592A531dcE4590aDeCdB",
@@ -437,7 +1346,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "checkSignatures",
@@ -458,7 +1368,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "execTransaction",
@@ -491,7 +1402,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": false
         },
         {
           "callerFunction": "setGuard",
@@ -512,10 +1424,803 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:11.460Z"
+      "generatedAt": "2026-05-19T20:58:30.943Z"
+    },
+    "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831": {
+      "address": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+      "name": "MorphoChainlinkOracleV2",
+      "externalCalls": [
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:58:33.558Z"
+    },
+    "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2": {
+      "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+      "name": "EACAggregatorProxy",
+      "externalCalls": [
+        {
+          "callerFunction": "decimals",
+          "storageVariable": "REF_48",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+              "contractName": "WeEthToEthExchangeRateAdapter"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+              "contractName": "MetaMorpho"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "description",
+          "storageVariable": "REF_52",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "description",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+              "contractName": "WeEthToEthExchangeRateAdapter"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getAnswer",
+          "storageVariable": "aggregator",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getAnswer",
+          "resolvedAddress": "eth:0x6f3F8d82694d52E6B6171A7b26A88c9554e7999b",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getRoundData",
+          "storageVariable": "REF_39",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getRoundData",
+          "storageVariable": "_roundId",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getTimestamp",
+          "storageVariable": "aggregator",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getTimestamp",
+          "resolvedAddress": "eth:0x6f3F8d82694d52E6B6171A7b26A88c9554e7999b",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestAnswer",
+          "storageVariable": "REF_28",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestAnswer",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestAnswer",
+          "storageVariable": "REF_0",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestAnswer",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestRound",
+          "storageVariable": "REF_37",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRound",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestRound",
+          "storageVariable": "REF_9",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRound",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestRoundData",
+          "storageVariable": "REF_41",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+              "contractName": "WeEthToEthExchangeRateAdapter"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestRoundData",
+          "storageVariable": "REF_13",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+              "contractName": "WeEthToEthExchangeRateAdapter"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestTimestamp",
+          "storageVariable": "REF_30",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestTimestamp",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "latestTimestamp",
+          "storageVariable": "REF_2",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestTimestamp",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "proposedGetRoundData",
+          "storageVariable": "proposedAggregator",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "getRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "proposedLatestRoundData",
+          "storageVariable": "proposedAggregator",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "proposedLatestRoundData",
+          "storageVariable": "ac",
+          "interfaceType": "AccessControllerInterface",
+          "calledFunction": "hasAccess",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "variable-chain",
+          "resolutionConfidence": 100,
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "version",
+          "storageVariable": "REF_50",
+          "interfaceType": "AggregatorV2V3Interface",
+          "calledFunction": "version",
+          "resolvedAddress": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+              "contractName": "WstETHPriceFeed"
+            },
+            {
+              "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+              "contractName": "DummyFeed"
+            },
+            {
+              "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+              "contractName": "EACAggregatorProxy"
+            },
+            {
+              "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+              "contractName": "EACAggregatorProxy"
+            }
+          ],
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:58:38.374Z"
     },
     "eth:0x9E9110cFd24cd851ea5bc73a27975B33E308f9e1": {
       "address": "eth:0x9E9110cFd24cd851ea5bc73a27975B33E308f9e1",
@@ -592,12 +2297,20 @@
           "storageVariable": "TMP_697",
           "interfaceType": "IOracle",
           "calledFunction": "price",
-          "resolvedAddress": "eth:0x0F948CBa8231Db7898ef36A4212581Ad7b1B4580",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
           "resolvedContractName": "MorphoChainlinkOracleV2",
           "resolutionType": "optimistic",
           "resolutionHeuristic": "function-signature",
           "resolutionConfidence": 30,
           "resolutionCandidates": [
+            {
+              "address": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
+            {
+              "address": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
             {
               "address": "eth:0x0F948CBa8231Db7898ef36A4212581Ad7b1B4580",
               "contractName": "MorphoChainlinkOracleV2"
@@ -607,12 +2320,32 @@
               "contractName": "ChainlinkOracle"
             },
             {
+              "address": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
+            {
+              "address": "eth:0x9F983115741D0F7F2EAE07831415057AD3de34d2",
+              "contractName": "MetaOracleDeviationTimelock"
+            },
+            {
+              "address": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
+            {
               "address": "eth:0xA6D6950c9F177F1De7f7757FB33539e3Ec60182a",
               "contractName": "MorphoChainlinkOracleV2"
             },
             {
               "address": "eth:0xDddd770BADd886dF3864029e4B377B5F6a2B6b83",
               "contractName": "ChainlinkOracle"
+            },
+            {
+              "address": "eth:0xe087AD7FE989cF63F8383579D160a20Ee7e69F9F",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
+            {
+              "address": "eth:0xf1561bC4b3D1bA49053986Fb9ee88D4fE22d0Cf4",
+              "contractName": "MetaOracleDeviationTimelock"
             }
           ],
           "isViewCall": true
@@ -908,7 +2641,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": true
         },
         {
           "callerFunction": "vaultPosition",
@@ -963,7 +2697,375 @@
           "isViewCall": false
         }
       ],
-      "generatedAt": "2026-04-21T10:06:16.280Z"
+      "generatedAt": "2026-05-19T20:58:41.149Z"
+    },
+    "eth:0x9F983115741D0F7F2EAE07831415057AD3de34d2": {
+      "address": "eth:0x9F983115741D0F7F2EAE07831415057AD3de34d2",
+      "name": "MetaOracleDeviationTimelock",
+      "externalCalls": [
+        {
+          "callerFunction": "acceptChallenge",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "acceptChallenge",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "acceptHealing",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "acceptHealing",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "backupPrice",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "canAcceptChallenge",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "canAcceptChallenge",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "canAcceptHealing",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "canAcceptHealing",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "challenge",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "challenge",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getDeviation",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getDeviation",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "heal",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "heal",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "initialize",
+          "storageVariable": "_primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
+            {
+              "address": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+              "contractName": "MorphoChainlinkOracleV2"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "initialize",
+          "storageVariable": "_backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
+            {
+              "address": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+              "contractName": "MorphoChainlinkOracleV2"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "isDeviant",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "isDeviant",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "currentOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "primaryPrice",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "revokeChallenge",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "revokeChallenge",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "revokeHealing",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "revokeHealing",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x0acdC416C592a592Edf2E64b178aA8d4d47e05A8",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:58:44.381Z"
+    },
+    "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411": {
+      "address": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411",
+      "name": "MorphoChainlinkOracleV2",
+      "externalCalls": [
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+          "resolvedContractName": "WeEthToEthExchangeRateAdapter",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+          "resolvedContractName": "DummyFeed",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:58:46.972Z"
     },
     "eth:0xA6D6950c9F177F1De7f7757FB33539e3Ec60182a": {
       "address": "eth:0xA6D6950c9F177F1De7f7757FB33539e3Ec60182a",
@@ -1030,7 +3132,7 @@
           "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:16.289Z"
+      "generatedAt": "2026-05-19T20:58:46.977Z"
     },
     "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d": {
       "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
@@ -1055,7 +3157,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": true
         },
         {
           "callerFunction": "grantWithCondition",
@@ -1076,7 +3179,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": true
         },
         {
           "callerFunction": "hasPermission",
@@ -1088,7 +3192,6 @@
           "resolutionType": "optimistic",
           "resolutionHeuristic": "function-signature",
           "resolutionConfidence": 99,
-          "callerIsView": true,
           "isViewCall": true
         },
         {
@@ -1101,7 +3204,6 @@
           "resolutionType": "optimistic",
           "resolutionHeuristic": "function-signature",
           "resolutionConfidence": 99,
-          "callerIsView": true,
           "isViewCall": true
         },
         {
@@ -1133,7 +3235,8 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": true
         },
         {
           "callerFunction": "upgradeToAndCall",
@@ -1154,10 +3257,11 @@
               "address": "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d",
               "contractName": "DAO"
             }
-          ]
+          ],
+          "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:16.308Z"
+      "generatedAt": "2026-05-19T20:58:47.908Z"
     },
     "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB": {
       "address": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
@@ -2524,7 +4628,13 @@
           "isViewCall": false
         }
       ],
-      "generatedAt": "2026-04-21T10:06:16.415Z"
+      "generatedAt": "2026-05-19T20:59:02.768Z"
+    },
+    "eth:0xc3866d726C204C0836E0677A31973c649888973D": {
+      "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+      "name": "DummyFeed",
+      "externalCalls": [],
+      "generatedAt": "2026-05-19T20:59:25.334Z"
     },
     "eth:0xDddd770BADd886dF3864029e4B377B5F6a2B6b83": {
       "address": "eth:0xDddd770BADd886dF3864029e4B377B5F6a2B6b83",
@@ -2581,7 +4691,375 @@
           "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:16.421Z"
+      "generatedAt": "2026-05-19T20:59:25.337Z"
+    },
+    "eth:0xe087AD7FE989cF63F8383579D160a20Ee7e69F9F": {
+      "address": "eth:0xe087AD7FE989cF63F8383579D160a20Ee7e69F9F",
+      "name": "MorphoChainlinkOracleV2",
+      "externalCalls": [
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+          "resolvedContractName": "WstETHPriceFeed",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "BASE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+          "resolvedContractName": "EACAggregatorProxy",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_VAULT",
+          "interfaceType": "IERC4626",
+          "calledFunction": "convertToAssets",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_1",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "QUOTE_FEED_2",
+          "interfaceType": "AggregatorV3Interface",
+          "calledFunction": "latestRoundData",
+          "resolvedAddress": "eth:0x0000000000000000000000000000000000000000",
+          "resolutionType": "deterministic",
+          "callerIsView": true,
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:59:33.608Z"
+    },
+    "eth:0xf1561bC4b3D1bA49053986Fb9ee88D4fE22d0Cf4": {
+      "address": "eth:0xf1561bC4b3D1bA49053986Fb9ee88D4fE22d0Cf4",
+      "name": "MetaOracleDeviationTimelock",
+      "externalCalls": [
+        {
+          "callerFunction": "acceptChallenge",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "acceptChallenge",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "acceptHealing",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "acceptHealing",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "backupPrice",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "canAcceptChallenge",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "canAcceptChallenge",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "canAcceptHealing",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "canAcceptHealing",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "challenge",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "challenge",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getDeviation",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "getDeviation",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "heal",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "heal",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "initialize",
+          "storageVariable": "_primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
+            {
+              "address": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+              "contractName": "MorphoChainlinkOracleV2"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "initialize",
+          "storageVariable": "_backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+              "contractName": "MorphoChainlinkOracleV2"
+            },
+            {
+              "address": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+              "contractName": "MorphoChainlinkOracleV2"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "isDeviant",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "isDeviant",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "currentOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "price",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "primaryPrice",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "revokeChallenge",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "revokeChallenge",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "revokeHealing",
+          "storageVariable": "primaryOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x8c9464D99512Dcd6f80BE72aAc20dafD9Ea2C831",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "revokeHealing",
+          "storageVariable": "backupOracle",
+          "interfaceType": "IOracle",
+          "calledFunction": "price",
+          "resolvedAddress": "eth:0x09dbf9502d43445b33883837a51D06Fc9B9CdEC4",
+          "resolvedContractName": "MorphoChainlinkOracleV2",
+          "resolutionType": "deterministic",
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-19T20:59:33.917Z"
     },
     "eth:0xfd32fA2ca22c76dD6E550706Ad913FC6CE91c75D": {
       "address": "eth:0xfd32fA2ca22c76dD6E550706Ad913FC6CE91c75D",
@@ -2688,7 +5166,7 @@
           "isViewCall": true
         }
       ],
-      "generatedAt": "2026-04-21T10:06:21.152Z"
+      "generatedAt": "2026-05-19T20:59:35.148Z"
     }
   }
 }

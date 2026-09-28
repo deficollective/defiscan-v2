@@ -145,6 +145,13 @@ export async function getMonitorRow(
 
 export interface DeleteRowOptions {
   addToIgnoreWatchMode: boolean
+  /**
+   * Skip the per-row review recompile. Batch callers cleaning up many rows
+   * should set this and recompile each touched project once at the end —
+   * the compile is by far the most expensive step and its result only
+   * depends on the final state of the files, not on each intermediate row.
+   */
+  skipRecompile?: boolean
 }
 
 export async function deleteMonitorRow(
@@ -188,7 +195,9 @@ export async function deleteMonitorRow(
   }
 
   // 4. Recompile review
-  const recompile = safeCompile(paths, row.projectId)
+  const recompile = opts.skipRecompile
+    ? null
+    : safeCompile(paths, row.projectId)
 
   return {
     rowDeleted: true,
@@ -202,6 +211,8 @@ export async function deleteMonitorRow(
 
 export interface StripFieldsOptions {
   addToIgnoreWatchMode: boolean
+  /** See {@link DeleteRowOptions.skipRecompile}. */
+  skipRecompile?: boolean
 }
 
 export async function stripMonitorFields(
@@ -276,7 +287,9 @@ export async function stripMonitorFields(
   }
 
   // Recompile review
-  const recompile = safeCompile(paths, row.projectId)
+  const recompile = opts.skipRecompile
+    ? null
+    : safeCompile(paths, row.projectId)
 
   return {
     rowDeleted,

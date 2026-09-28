@@ -1,6 +1,6 @@
 {
   "name": "Gauntlet-USDC-Prime",
-  "timestamp": 1778579383,
+  "timestamp": 1790513935,
   "configHash": "0x2f7d2bf12bfbfafcc93154502188422448af32fcf114b0517596498c0bf382e2",
   "entries": [
     {
@@ -30,11 +30,6 @@
     },
     {
       "address": "base:0x30E7c016fC702cDe9A50720a469d418490b7b652",
-      "type": "EOA",
-      "proxyType": "EOA"
-    },
-    {
-      "address": "base:0x47A1dD4E277530fffb5B5f70A43CCbD542F54e17",
       "type": "EOA",
       "proxyType": "EOA"
     },
@@ -78,7 +73,7 @@
         "getChainId": 8453,
         "GnosisSafe_modules": [],
         "multisigThreshold": "4 of 7 (57%)",
-        "nonce": 153,
+        "nonce": 156,
         "VERSION": "1.3.0"
       },
       "implementationNames": {
@@ -100,11 +95,11 @@
       "values": {
         "$immutable": true,
         "accessController": "base:0x0000000000000000000000000000000000000000",
-        "aggregator": "base:0x0E3Dc8A6A86D2F6F5F67B373a047C267FB1fc3E6",
+        "aggregator": "base:0xe5ec87a39445b8D5b751b116802A53C5ae7e9Df1",
         "decimals": 8,
         "description": "BTC / USD",
         "owner": "base:0xf0Db7318A51a21C413CaDd4AbDC1E8a500fE5B1b",
-        "phaseId": 2,
+        "phaseId": 3,
         "proposedAggregator": "base:0x0000000000000000000000000000000000000000",
         "version": 6
       },
@@ -197,6 +192,11 @@
       }
     },
     {
+      "address": "base:0x80D46daD5A5450a3611CD1d7F9110AEdFA55bfF6",
+      "type": "EOA",
+      "proxyType": "EOA"
+    },
+    {
       "address": "base:0x80eFDeE7F82d0F2aBF3bF29A9A85edF0B42C9e19",
       "type": "EOA",
       "proxyType": "EOA"
@@ -230,7 +230,7 @@
         "getChainId": 8453,
         "GnosisSafe_modules": [],
         "multisigThreshold": "2 of 6 (33%)",
-        "nonce": 62,
+        "nonce": 68,
         "VERSION": "1.3.0"
       },
       "implementationNames": {
@@ -283,7 +283,7 @@
         "getChainId": 8453,
         "GnosisSafe_modules": [],
         "multisigThreshold": "3 of 7 (43%)",
-        "nonce": 175,
+        "nonce": 197,
         "VERSION": "1.4.1"
       },
       "implementationNames": {
@@ -471,7 +471,7 @@
         "feedCap_64c911996D3c6aC71f9b455B1E8E7266BcbD848F": "750000000000000",
         "feeRecipient": "base:0x82C30B9DB2e3B92ACe4E1593B32890dCf8612D03",
         "guardian": "base:0x7084bF4dB6c21e1834dD6482f6056a39A33584cD",
-        "lastTotalAssets": 352176412778818,
+        "lastTotalAssets": 415274590010209,
         "marketCap_oracle_663BECd10daE6C4A3Dcd89F1d76c1174199639B9": "750000000000000",
         "marketOracles": [
           "base:0x663BECd10daE6C4A3Dcd89F1d76c1174199639B9",
@@ -516,8 +516,8 @@
         "supplyQueueLength": 2,
         "symbol": "gtUSDCp",
         "timelock": 604800,
-        "totalAssets": 352176427526182,
-        "totalSupply": "321631660556874641136239819",
+        "totalAssets": 415274593424425,
+        "totalSupply": "373132656003991562146325953",
         "withdrawQueueLength": 8
       },
       "fieldMeta": {
@@ -557,7 +557,7 @@
           "base:0x80eFDeE7F82d0F2aBF3bF29A9A85edF0B42C9e19",
           "base:0x05724B9C8C1dDE1b2f659d7c0676ff63f6d5E781",
           "base:0xD66336eA98cE0da67f25934E7cC230D4226292a0",
-          "base:0x47A1dD4E277530fffb5B5f70A43CCbD542F54e17",
+          "base:0x80D46daD5A5450a3611CD1d7F9110AEdFA55bfF6",
           "base:0xFdE996F00E42b33bdE7C640786333623aCC3f298",
           "base:0x7052cB84079905400ea52B635cAb6a275fDA8823",
           "base:0xb7F0643D4ca8c296564Ce335062833e1afa3Afdb"
@@ -569,7 +569,7 @@
           "base:0xf3c72D97A5Dcf0449e89BBCE1A0581d8d15c0237"
         ],
         "multisigThreshold": "4 of 9 (44%)",
-        "nonce": 326,
+        "nonce": 376,
         "VERSION": "1.3.0"
       },
       "implementationNames": {
@@ -1079,6 +1079,6 @@
     "morpho/Morpho": "0xdbb54f2b25b761df9e05263570b2b0fcfef7676c541d7bdfa2974680fe1e3682",
     "Steakhouse-USDC/EACAggregatorProxy": "0x3ba2cbd9a884cdfea15efe908af481b5a5a9c747391c8580bd38b0f8b1603921"
   },
-  "usedBlockNumbers": { "base": 45893689 },
-  "permissionsConfigHash": "0xf9463efddf7d3a9200331d65ef01997844cdf031fa7b8fee82b9e542e48dbe27"
+  "usedBlockNumbers": { "base": 51862294 },
+  "permissionsConfigHash": "0xfc454b1ab38f4c2fe0176c26aa51c02484136638d53be3e38acddcef8165f68e"
 }

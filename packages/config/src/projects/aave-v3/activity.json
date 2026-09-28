@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1778518648,
-  "lastConsumedUpdateNotifierId": 176,
+  "lastReconciledAt": 1779735068,
+  "lastConsumedUpdateNotifierId": 218,
   "events": [
     {
       "timestamp": "2026-05-04T09:33:39.000Z",
@@ -310,6 +310,263 @@
           "field": "values.maxMintAmountPerDay",
           "before": "5000000000000000000000",
           "after": "10000000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x013E2C7567b6231e865BB9273F8c7656103611c0",
+      "contractName": "ACLManager",
+      "entity": null,
+      "id": "188:eth:0x013E2C7567b6231e865BB9273F8c7656103611c0:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.accessControl.RISK_ADMIN_ROLE.members.3",
+          "before": "eth:0x52E652182b22C41d0202bB8D834982F43B12Cd21"
+        },
+        {
+          "field": "values.accessControl.RISK_ADMIN_ROLE.members.4",
+          "before": "eth:0xCc18Be380838956aad41FD22466085eD66aaBB46"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x1B3bD355c43d2247946b8e0889d4b4e701bf430d",
+      "contractName": "AaveDiscountRateAgent",
+      "entity": null,
+      "id": "188:eth:0x1B3bD355c43d2247946b8e0889d4b4e701bf430d:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x2Fe367d6F8a755Ca22EfAE7F29004f9b5fA868e8",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "188:eth:0x2Fe367d6F8a755Ca22EfAE7F29004f9b5fA868e8:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.multisigThreshold",
+          "before": "1 of 5 (20%)",
+          "after": "1 of 2 (50%)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x2Fe367d6F8a755Ca22EfAE7F29004f9b5fA868e8",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "188:eth:0x2Fe367d6F8a755Ca22EfAE7F29004f9b5fA868e8:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.0",
+          "before": "eth:0x33A2B191f57BB8429D593b543F6d119c3E4E8e00"
+        },
+        {
+          "field": "values.$members.1",
+          "before": "eth:0x4c0BC1D2FEb1933103144970Fc0Ed0A1dA99cB83"
+        },
+        {
+          "field": "values.$members.3",
+          "before": "eth:0xCAC616Fffb687cBDDD250b2aE6F672449462985C"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x4F2858d4A4e4464b34Aa4a22C41B2Ef540a59BF4",
+      "contractName": "AaveEModeAgent",
+      "entity": null,
+      "id": "188:eth:0x4F2858d4A4e4464b34Aa4a22C41B2Ef540a59BF4:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x52E652182b22C41d0202bB8D834982F43B12Cd21",
+      "contractName": "AaveRatesAgent",
+      "entity": null,
+      "id": "188:eth:0x52E652182b22C41d0202bB8D834982F43B12Cd21:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+      "contractName": "Executor",
+      "isDependency": false,
+      "entity": null,
+      "id": "188:eth:0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "receivedPermissions.9",
+          "before": {
+            "via": [
+              {
+                "address": "eth:0xD26dcF055E16ed3048a17b37006082779CF0297c"
+              }
+            ],
+            "from": "eth:0x95E3015c67EF62B866cC28ca5A9AB5017A55e336",
+            "role": "admin",
+            "permission": "upgrade"
+          }
+        },
+        {
+          "field": "directlyReceivedPermissions.6",
+          "before": {
+            "from": "eth:0xD26dcF055E16ed3048a17b37006082779CF0297c",
+            "role": ".owner",
+            "permission": "act"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x7ABB46C690C52E919687D19ebF89C81A6136C1F2",
+      "contractName": "RiskOracle",
+      "entity": null,
+      "id": "188:eth:0x7ABB46C690C52E919687D19ebF89C81A6136C1F2:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0x95E3015c67EF62B866cC28ca5A9AB5017A55e336",
+      "contractName": "AgentHub",
+      "isDependency": false,
+      "entity": null,
+      "id": "188:eth:0x95E3015c67EF62B866cC28ca5A9AB5017A55e336:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0xc2aaCf6553D20d1e9d78E365AAba8032af9c85b0",
+      "contractName": "ACLManager",
+      "entity": null,
+      "id": "188:eth:0xc2aaCf6553D20d1e9d78E365AAba8032af9c85b0:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.accessControl.RISK_ADMIN_ROLE.members.3",
+          "before": "eth:0x4F2858d4A4e4464b34Aa4a22C41B2Ef540a59BF4"
+        },
+        {
+          "field": "values.accessControl.RISK_ADMIN_ROLE.members.4",
+          "before": "eth:0x1B3bD355c43d2247946b8e0889d4b4e701bf430d"
+        },
+        {
+          "field": "values.accessControl.RISK_ADMIN_ROLE.members.5",
+          "before": "eth:0xdA626E64f34f24e0236E0C9cD2F11ce4549a08c6"
+        },
+        {
+          "field": "values.accessControl.RISK_ADMIN_ROLE.members.6",
+          "before": "eth:0xCc18Be380838956aad41FD22466085eD66aaBB46"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0xCc18Be380838956aad41FD22466085eD66aaBB46",
+      "contractName": "AaveCapoAgent",
+      "entity": null,
+      "id": "188:eth:0xCc18Be380838956aad41FD22466085eD66aaBB46:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0xD26dcF055E16ed3048a17b37006082779CF0297c",
+      "contractName": "ProxyAdmin",
+      "entity": null,
+      "id": "188:eth:0xD26dcF055E16ed3048a17b37006082779CF0297c:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-05-13T09:54:50.000Z",
+      "updateNotifierId": 188,
+      "address": "eth:0xdA626E64f34f24e0236E0C9cD2F11ce4549a08c6",
+      "contractName": "AaveRatesAgent",
+      "entity": null,
+      "id": "188:eth:0xdA626E64f34f24e0236E0C9cD2F11ce4549a08c6:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-05-15T09:55:14.000Z",
+      "updateNotifierId": 194,
+      "address": "eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7",
+      "contractName": "rsETH Token",
+      "isDependency": true,
+      "entity": "Kelp",
+      "id": "194:eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.paused",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-16T09:00:20.000Z",
+      "updateNotifierId": 198,
+      "address": "eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7",
+      "contractName": "rsETH Token",
+      "isDependency": true,
+      "entity": "Kelp",
+      "id": "198:eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.maxMintAmountPerDay",
+          "before": "10000000000000000000000",
+          "after": "5000000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-17T09:14:10.000Z",
+      "updateNotifierId": 200,
+      "address": "eth:0xc2aaCf6553D20d1e9d78E365AAba8032af9c85b0",
+      "contractName": "ACLManager",
+      "entity": null,
+      "id": "200:eth:0xc2aaCf6553D20d1e9d78E365AAba8032af9c85b0:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.accessControl.FLASH_BORROWER_ROLE.members.12",
+          "after": "eth:0xdeCC46a4b09162F5369c5C80383AAa9159bCf192"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-25T18:47:07.000Z",
+      "updateNotifierId": 218,
+      "address": "eth:0x42bc86f2f08419280a99d8fbEa4672e7c30a86ec",
+      "contractName": "SUSDePriceCapAdapter",
+      "entity": null,
+      "id": "218:eth:0x42bc86f2f08419280a99d8fbEa4672e7c30a86ec:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getMaxYearlyGrowthRatePercent",
+          "before": 5000,
+          "after": 1117
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1778582556,
-  "lastConsumedUpdateNotifierId": 186,
+  "lastReconciledAt": 1787854776,
+  "lastConsumedUpdateNotifierId": 481,
   "events": [
     {
       "timestamp": "2026-04-30T09:26:35.000Z",
@@ -20,20 +20,42 @@
       ]
     },
     {
-      "timestamp": "2026-05-12T09:49:43.000Z",
-      "updateNotifierId": 186,
-      "address": "base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61",
-      "contractName": "MetaMorpho",
-      "isDependency": false,
-      "entity": null,
-      "id": "186:base:0xeE8F4eC5672F09119b96Ab6fB59C27E1b7e44b61:data-change",
+      "timestamp": "2026-08-19T07:49:48.000Z",
+      "updateNotifierId": 436,
+      "address": "base:0xf0Db7318A51a21C413CaDd4AbDC1E8a500fE5B1b",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "436:base:0xf0Db7318A51a21C413CaDd4AbDC1E8a500fE5B1b:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.5",
+          "before": "base:0x47A1dD4E277530fffb5B5f70A43CCbD542F54e17",
+          "after": "base:0x80D46daD5A5450a3611CD1d7F9110AEdFA55bfF6"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-27T18:16:53.000Z",
+      "updateNotifierId": 481,
+      "address": "base:0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F",
+      "contractName": "EACAggregatorProxy",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "481:base:0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F:data-change",
       "type": "data-change",
       "changes": [
         {
-          "field": "errors",
-          "before": {
-            "totalAssets": "Processing error occurred."
-          }
+          "field": "values.phaseId",
+          "before": 2,
+          "after": 3
+        },
+        {
+          "field": "values.aggregator",
+          "before": "base:0x0E3Dc8A6A86D2F6F5F67B373a047C267FB1fc3E6",
+          "after": "base:0xe5ec87a39445b8D5b751b116802A53C5ae7e9Df1"
         }
       ]
     }

@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-05-26T16:44:39.040Z",
+  "rules": [
+    {
+      "id": "r-stata-init-pool-remove",
+      "type": "removeEdge",
+      "from": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.initialize",
+      "to": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.POOL",
+      "edgeType": "callgraph",
+      "note": "StataTokenV2.__ERC4626StataToken_init_unchained (StataTokenV2.sol:2211) calls `IAToken(newAToken).POOL()`, where `newAToken` is the init parameter (the aToken), not the StataTokenV2 itself. Slither resolved the edge to the StataToken's own address (self). discovered.json for this StataToken (0x0bfc9d54) gives aToken = 0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8, which is also a resolution candidate — the self-pick is wrong. (Re-verified present in the regenerated call graph.)"
+    },
+    {
+      "id": "r-stata-init-pool-add",
+      "type": "addEdge",
+      "from": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.initialize",
+      "to": "eth:0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8.POOL",
+      "edgeType": "callgraph",
+      "note": "Corrected target for StataTokenV2.sol:2211 `IAToken(newAToken).POOL()`. `newAToken` is this StataToken's aToken; discovered.json (0x0bfc9d54).values.aToken = 0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8 (an ATokenInstance, present in the candidate list and exposing POOL())."
+    },
+    {
+      "id": "r-stata-permit-remove",
+      "type": "removeEdge",
+      "from": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.depositWithPermit",
+      "to": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.permit",
+      "edgeType": "callgraph",
+      "note": "StataTokenV2.depositWithPermit (StataTokenV2.sol:2246-2249) calls `IERC20Permit(assetToDeposit).permit(...)` where `assetToDeposit = depositToAave ? asset() : aToken()` — i.e. the underlying asset or the aToken, never the StataTokenV2 itself. Slither resolved the edge to the StataToken's own address (self), which is wrong. (The other two StataTokens, 0x7Bc348 and 0xD4fa2D, correctly resolved this same call to their aToken. Re-verified present in the regenerated call graph.)"
+    },
+    {
+      "id": "r-stata-permit-add",
+      "type": "addEdge",
+      "from": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.depositWithPermit",
+      "to": "eth:0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8.permit",
+      "edgeType": "callgraph",
+      "note": "Corrected target for StataTokenV2.sol:2249 `IERC20Permit(assetToDeposit).permit(...)`. The in-scope dynamic branch `assetToDeposit = aToken()` resolves to this StataToken's aToken; discovered.json (0x0bfc9d54).values.aToken = 0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8, an ATokenInstance that supports EIP-2612 permit. (The other branch, `asset()` = WETH, is out of scope and has no permit.)"
+    },
+    {
+      "id": "r-roles-unwrap-exectxfrommodule",
+      "type": "removeEdge",
+      "from": "eth:0x1D5579B363806CCecc35115ab8F56EECf6610ea9.execTransactionFromModule",
+      "to": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0.unwrap",
+      "edgeType": "callgraph",
+      "note": "Zodiac Roles.sol:715 `adapter.unwrap(to, value, data, operation)` — `adapter` is an `ITransactionUnwrapper` read from the `unwrappers` mapping (Roles.sol:347/362, set via setTransactionUnwrapper), a Zodiac calldata-unwrapper, NOT a token. Slither's function-signature heuristic (confidence 30) matched the name `unwrap` to wstETH 0x7f39C581 (which has an unrelated ERC20 unwrap). The real target is the configured adapter, dynamically keyed by (to, selector); no fixed token target exists. False positive. (Re-verified present in the regenerated call graph.)"
+    },
+    {
+      "id": "r-roles-unwrap-exectxfrommodulereturndata",
+      "type": "removeEdge",
+      "from": "eth:0x1D5579B363806CCecc35115ab8F56EECf6610ea9.execTransactionFromModuleReturnData",
+      "to": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0.unwrap",
+      "edgeType": "callgraph",
+      "note": "Same false positive as execTransactionFromModule: Roles.sol:715 `adapter.unwrap(...)` targets a Zodiac ITransactionUnwrapper from the `unwrappers` mapping, not wstETH 0x7f39C581. Heuristic name-match on `unwrap`, confidence 30. (Re-verified present in the regenerated call graph.)"
+    },
+    {
+      "id": "r-roles-unwrap-exectxwithrole",
+      "type": "removeEdge",
+      "from": "eth:0x1D5579B363806CCecc35115ab8F56EECf6610ea9.execTransactionWithRole",
+      "to": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0.unwrap",
+      "edgeType": "callgraph",
+      "note": "Same false positive: Roles.sol:715 `adapter.unwrap(...)` targets a Zodiac ITransactionUnwrapper from the `unwrappers` mapping, not wstETH 0x7f39C581. Heuristic name-match on `unwrap`, confidence 30. (Re-verified present in the regenerated call graph.)"
+    },
+    {
+      "id": "r-roles-unwrap-exectxwithrolereturndata",
+      "type": "removeEdge",
+      "from": "eth:0x1D5579B363806CCecc35115ab8F56EECf6610ea9.execTransactionWithRoleReturnData",
+      "to": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0.unwrap",
+      "edgeType": "callgraph",
+      "note": "Same false positive: Roles.sol:715 `adapter.unwrap(...)` targets a Zodiac ITransactionUnwrapper from the `unwrappers` mapping, not wstETH 0x7f39C581. Heuristic name-match on `unwrap`, confidence 30. (Re-verified present in the regenerated call graph.)"
+    },
+    {
+      "id": "r-pool-overflare-backward",
+      "type": "setOutgoingScope",
+      "node": "eth:0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
+      "edgeType": "permission",
+      "scope": "backward",
+      "note": "PoolInstance owns mint/burn/mintToTreasury/transferUnderlyingTo/handleRepayment on every aToken and debt token across all markets (528 outgoing permission edges to 132 token contracts). Following these FORWARD flared the full ~20B market token value onto every admin that merely reaches a Pool/PoolConfigurator setter (RiskSteward, config setters, stewards) even though those setters cannot move the tokens. Scoping Pool outgoing permission edges to backward keeps the ownership chains intact for governance/who-controls-what, but removes the spurious forward capital flare. Genuinely powerful admins (ProxyAdmin/Executor) retain reach via their own direct upgradeTo edges. Verified: RiskSteward 19B->33K, stewards 19B->197M, totals/union unchanged (~20B)."
+    }
+  ]
+}

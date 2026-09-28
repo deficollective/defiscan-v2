@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-04-08T15:24:18.421Z",
+  "lastModified": "2026-06-02T19:46:58.115Z",
   "contracts": {
     "eth:0x3c55986Cfee455E2533F4D29006634EcF9B7c03F": {
       "functions": [
@@ -786,7 +786,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.401Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "completeQueuedETHWithdrawals",
@@ -800,7 +801,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.406Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "queueWithdrawals",
@@ -814,7 +816,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.410Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "completeQueuedWithdrawals",
@@ -828,7 +831,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.416Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "sweepFunds",
@@ -856,7 +860,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.423Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "requestConsolidation",
@@ -885,7 +890,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.440Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "forwardExternalCall",
@@ -899,7 +905,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.449Z"
-          }
+          },
+          "score": "no-impact"
         }
       ]
     },
@@ -1419,7 +1426,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:03.644Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "executeValidatorApprovalTask",
@@ -1433,7 +1441,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:03.648Z"
-          }
+          },
+          "score": "no-impact"
         }
       ]
     },
@@ -2000,7 +2009,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:03.861Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "batchApproveRegistration",
@@ -4462,7 +4472,8 @@
               "description": "Rate limited via EtherFiRateLimiter (UNRESTAKING_LIMIT_ID)",
               "label": "Rate Limit"
             }
-          ]
+          ],
+          "score": "no-impact"
         },
         {
           "functionName": "completeQueuedETHWithdrawals",
@@ -4476,7 +4487,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.891Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "queueWithdrawals",
@@ -4497,7 +4509,8 @@
               "description": "Rate limited via EtherFiRateLimiter (UNRESTAKING_LIMIT_ID)",
               "label": "Rate Limit"
             }
-          ]
+          ],
+          "score": "no-impact"
         },
         {
           "functionName": "completeQueuedWithdrawals",
@@ -4511,7 +4524,8 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.900Z"
-          }
+          },
+          "score": "no-impact"
         },
         {
           "functionName": "startCheckpoint",
@@ -4555,7 +4569,15 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.919Z"
-          }
+          },
+          "score": "no-impact",
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Allowlisted calls",
+              "description": "Calls can only be forwarded to (caller, selector, target) combinations explicitly whitelisted on-chain by the admin role. The current whitelist permits only EigenLayer delegation management (delegateTo, redelegate, undelegate on DelegationManager) and EigenLayer reward claiming (processClaim on RewardsCoordinator) — no whitelisted call targets a fund-holding contract or can move principal to the caller."
+            }
+          ]
         },
         {
           "functionName": "forwardEigenPodCall",
@@ -4569,7 +4591,15 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-03-24T10:31:04.923Z"
-          }
+          },
+          "score": "no-impact",
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Allowlisted calls",
+              "description": "Calls can only be forwarded to EigenPod method selectors explicitly whitelisted on-chain by the admin role. The current whitelist permits only EigenLayer checkpoint and withdrawal-credential proof methods (startCheckpoint, verifyCheckpointProofs, verifyWithdrawalCredentials), which are accounting operations that move no funds."
+            }
+          ]
         },
         {
           "functionName": "requestExecutionLayerTriggeredWithdrawal",
@@ -4590,7 +4620,8 @@
               "description": "Rate limited via EtherFiRateLimiter (EXIT_REQUEST_LIMIT_ID)",
               "label": "Rate Limit"
             }
-          ]
+          ],
+          "score": "no-impact"
         },
         {
           "functionName": "requestConsolidation",
@@ -5512,10 +5543,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.299Z",
+          "timestamp": "2026-06-02T19:46:57.967Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.299Z"
+            "date": "2026-06-02T19:46:57.967Z"
           }
         },
         {
@@ -5526,10 +5557,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.304Z",
+          "timestamp": "2026-06-02T19:46:57.997Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.304Z"
+            "date": "2026-06-02T19:46:57.997Z"
           }
         },
         {
@@ -5540,10 +5571,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.310Z",
+          "timestamp": "2026-06-02T19:46:58.025Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.310Z"
+            "date": "2026-06-02T19:46:58.025Z"
           }
         },
         {
@@ -5554,10 +5585,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.315Z",
+          "timestamp": "2026-06-02T19:46:57.853Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.315Z"
+            "date": "2026-06-02T19:46:57.853Z"
           }
         },
         {
@@ -5568,10 +5599,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.321Z",
+          "timestamp": "2026-06-02T19:46:57.880Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.321Z"
+            "date": "2026-06-02T19:46:57.880Z"
           }
         },
         {
@@ -5582,10 +5613,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.328Z",
+          "timestamp": "2026-06-02T19:46:57.915Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.328Z"
+            "date": "2026-06-02T19:46:57.915Z"
           }
         },
         {
@@ -5596,10 +5627,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.333Z",
+          "timestamp": "2026-06-02T19:46:57.941Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.333Z"
+            "date": "2026-06-02T19:46:57.941Z"
           }
         },
         {
@@ -5610,10 +5641,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.339Z",
+          "timestamp": "2026-06-02T19:46:57.795Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.339Z"
+            "date": "2026-06-02T19:46:57.795Z"
           }
         },
         {
@@ -5624,10 +5655,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.345Z",
+          "timestamp": "2026-06-02T19:46:57.824Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.345Z"
+            "date": "2026-06-02T19:46:57.824Z"
           }
         },
         {
@@ -5638,10 +5669,10 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.349Z",
+          "timestamp": "2026-06-02T19:46:57.736Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.349Z"
+            "date": "2026-06-02T19:46:57.736Z"
           }
         },
         {
@@ -5652,10 +5683,42 @@
               "path": "$self.owner"
             }
           ],
-          "timestamp": "2026-03-24T10:31:05.354Z",
+          "timestamp": "2026-06-02T19:46:57.767Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-24T10:31:05.354Z"
+            "date": "2026-06-02T19:46:57.767Z"
+          }
+        },
+        {
+          "functionName": "lzReceive",
+          "isPermissioned": true,
+          "ownerDefinitions": [
+            {
+              "path": "$self.endpoint"
+            }
+          ],
+          "timestamp": "2026-06-02T19:46:58.058Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T19:46:58.058Z"
+          }
+        },
+        {
+          "functionName": "onMessageReceived",
+          "isPermissioned": true,
+          "timestamp": "2026-06-02T19:46:58.087Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T19:46:58.087Z"
+          }
+        },
+        {
+          "functionName": "initialize",
+          "isPermissioned": true,
+          "timestamp": "2026-06-02T19:46:58.115Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-02T19:46:58.115Z"
           }
         }
       ]

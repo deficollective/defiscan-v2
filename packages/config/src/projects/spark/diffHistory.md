@@ -1,3 +1,53 @@
+Generated with discovered.json: 0x9beb0668017baca04641a3dea8d269a1352a03b5
+
+# Diff at Tue, 09 Jun 2026 12:58:14 GMT:
+
+- author: emduc (<emilien.duc@gmail.com>)
+- comparing to: main@cdb925b4999f54d824aa86d3303b1b5650b97c17 block: 1781001705
+- current timestamp: 1781001705
+
+## Description
+
+Discovery rerun on the same block number with only config-related changes.
+
+## Config/verification related changes
+
+Following changes come from updates made to the config file,
+or/and contracts becoming verified, not from differences found during
+discovery. Values are for block 1781001705 (main branch discovery), not current.
+
+```diff
+-   Status: DELETED
+    contract GnosisSafe (eth:0x8076807464DaC94Ac8Aa1f7aF31b58F73bD88A27)
+    +++ description: None
+```
+
+```diff
+    contract ALMProxyFreezable (eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699) {
+    +++ description: None
+      values.accessControl:
++        {"DEFAULT_ADMIN_ROLE":{"adminRole":"DEFAULT_ADMIN_ROLE","members":["eth:0x3300f198988e4C9C63F75dF86De36421f06af8c4"]},"ALLOCATOR_ROLE":{"adminRole":"DEFAULT_ADMIN_ROLE","members":["eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB","eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795"]},"FREEZER_ROLE":{"adminRole":"DEFAULT_ADMIN_ROLE","members":["eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431"]}}
+    }
+```
+
+```diff
++   Status: CREATED
+    contract Safe (eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB)
+    +++ description: None
+```
+
+```diff
++   Status: CREATED
+    contract Safe (eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795)
+    +++ description: None
+```
+
+```diff
++   Status: CREATED
+    contract Safe (eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431)
+    +++ description: None
+```
+
 Generated with discovered.json: 0x69067e71000c564f873e9fd646fc122c00466a08
 
 # Diff at Fri, 24 Apr 2026 10:04:58 GMT:

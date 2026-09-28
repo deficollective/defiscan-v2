@@ -1,6 +1,6 @@
 {
   "name": "wbeth",
-  "timestamp": 1778579383,
+  "timestamp": 1790513935,
   "configHash": "0x7c603a3d49afd7918eae268f64c1b8687fba0d22931ea6409c6d1623be66f504",
   "entries": [
     {
@@ -56,7 +56,7 @@
         "$pastUpgrades": [],
         "$upgradeCount": 0,
         "admin": "eth:0xA3eE6926edcce93BacF05F4222c243c4d9F6d853",
-        "availableAllocateAmount": "9061926712725900834",
+        "availableAllocateAmount": "94341833592113279736",
         "blacklister": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "ethBackAddress": "eth:0x26ad6395DABF271fD9bFDC82d7377261930E6B86",
         "ethStaked": 0,
@@ -66,13 +66,13 @@
         "MAX_LOOP_NUM": 1000,
         "MIN_LOCK_TIME": 172800,
         "needEthAmount": 0,
-        "nextIndex": 123,
+        "nextIndex": 137,
         "operatorAddress": "eth:0x2B59215778e99035CF38663454eF1240a7AE70F5",
         "owner": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "paused": false,
         "pauser": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "rechargeAddress": "eth:0x3E4BD5FB2fCeF981BAFd1D164f838DFC31370Fb1",
-        "startAllocatedEthIndex": 123,
+        "startAllocatedEthIndex": 137,
         "WBETH_TOKEN_ADDRESS": "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1"
       },
       "implementationNames": {
@@ -164,7 +164,7 @@
         "decimals": 18,
         "DOMAIN_SEPARATOR": "0xd37a875f1ef2a63f2649b9d08b634c22faa1921cbcb1de62790e04176d134bab",
         "ethReceiver": "eth:0x26ad6395DABF271fD9bFDC82d7377261930E6B86",
-        "exchangeRate": "1097391632133000000",
+        "exchangeRate": "1107289090711000000",
         "implementation": "eth:0x9E021c9607bD3ADB7424D3b25a2D35763ff180BB",
         "masterMinter": "eth:0x099d699C07Bbc8eE6eB5703746063E04B2aA62A7",
         "minters": ["eth:0xb05a6449f383a1A43A172970858B97394FEcDAD6"],
@@ -178,7 +178,7 @@
         "RECEIVE_WITH_AUTHORIZATION_TYPEHASH": "0xd099cc98ef71107a616c4f0f941f04c322d8e254fe26b3c6668db87aae413de8",
         "rescuer": "eth:0x0000000000000000000000000000000000000000",
         "symbol": "wBETH",
-        "totalSupply": "3174800489509137998952277",
+        "totalSupply": "3175330371566850172523614",
         "TRANSFER_WITH_AUTHORIZATION_TYPEHASH": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267",
         "version": "2"
       },
@@ -488,6 +488,6 @@
     ]
   },
   "usedTemplates": {},
-  "usedBlockNumbers": { "ethereum": 25078246 },
+  "usedBlockNumbers": { "ethereum": 26068945 },
   "permissionsConfigHash": "0x56dcc208fc53dc38aeff2362dddbcae3eb6797d2a2d152fda8b2c784eb0cd3e2"
 }

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-04-20T07:22:25.140Z",
+  "lastModified": "2026-06-28T11:33:36.157Z",
   "contracts": {
     "eth:0xfFA96D84dEF2EA035c7AB153D8B991128e3d72fD": {
       "functions": [
@@ -2006,7 +2006,7 @@
             {
               "type": "other",
               "label": "excess only",
-              "description": "Can only recover stETH shares in excess of totalBondShares() \u2014 node operator bond funds are protected from recovery."
+              "description": "Can only recover stETH shares in excess of totalBondShares() — node operator bond funds are protected from recovery."
             }
           ],
           "timestamp": "2026-03-30T14:54:26.424Z",
@@ -3002,6 +3002,26 @@
             {
               "path": "$self.$admin"
             }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Consensus primitive",
+              "description": "The Ethereum Beacon Chain DepositContract is an immutable, admin-less Ethereum protocol contract. Calling deposit() on it is a one-way commitment of ETH to the consensus layer, not custody. A failure or compromise of this contract would be a failure of Ethereum itself, so it introduces no additional fund-loss surface to the protocol.",
+              "scopedTo": {
+                "address": "eth:0x00000000219ab540356cBB839Cbe05303d7705Fa",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "hardcoded",
+                  "amount": 0
+                },
+                "unit": {
+                  "kind": "usd"
+                }
+              }
+            }
           ]
         },
         {
@@ -3014,6 +3034,26 @@
           "ownerDefinitions": [
             {
               "path": "$self.$admin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Consensus primitive",
+              "description": "The Ethereum Beacon Chain DepositContract is an immutable, admin-less Ethereum protocol contract. Calling deposit() on it is a one-way commitment of ETH to the consensus layer, not custody. A failure or compromise of this contract would be a failure of Ethereum itself, so it introduces no additional fund-loss surface to the protocol.",
+              "scopedTo": {
+                "address": "eth:0x00000000219ab540356cBB839Cbe05303d7705Fa",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "hardcoded",
+                  "amount": 0
+                },
+                "unit": {
+                  "kind": "usd"
+                }
+              }
             }
           ]
         },
@@ -7923,6 +7963,172 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-04-20T07:22:25.140Z"
+          }
+        }
+      ]
+    },
+    "eth:0x294825c2764c7D412dc32d87E2242c4f1D989AF3": {
+      "functions": [
+        {
+          "functionName": "unguaranteedDepositToBeaconChain",
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Consensus primitive",
+              "description": "The Ethereum Beacon Chain DepositContract is an immutable, admin-less Ethereum protocol contract. Calling deposit() on it is a one-way commitment of ETH to the consensus layer, not custody. A failure or compromise of this contract would be a failure of Ethereum itself, so it introduces no additional fund-loss surface to the protocol.",
+              "scopedTo": {
+                "address": "eth:0x00000000219ab540356cBB839Cbe05303d7705Fa",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "hardcoded",
+                  "amount": 0
+                },
+                "unit": {
+                  "kind": "usd"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
+      "functions": [
+        {
+          "functionName": "deposit",
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Consensus primitive",
+              "description": "The Ethereum Beacon Chain DepositContract is an immutable, admin-less Ethereum protocol contract. Calling deposit() on it is a one-way commitment of ETH to the consensus layer, not custody. A failure or compromise of this contract would be a failure of Ethereum itself, so it introduces no additional fund-loss surface to the protocol.",
+              "scopedTo": {
+                "address": "eth:0x00000000219ab540356cBB839Cbe05303d7705Fa",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "hardcoded",
+                  "amount": 0
+                },
+                "unit": {
+                  "kind": "usd"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "eth:0x6019CB557978296BA3C08a7B73225C0975DFB2F7": {
+      "functions": [
+        {
+          "functionName": "registerPauser",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.ADMIN"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "bounded pause authority",
+              "description": "Admin (Lido DAO Agent) sets which address may pause each registered target. A registered pauser's only power is pause(), which triggers a hard-capped auto-expiring pause (<=60d); it cannot move funds, change parameters, or upgrade. No committed-fund path."
+            }
+          ],
+          "timestamp": "2026-06-28T11:04:16.175Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-28T11:04:16.175Z"
+          }
+        },
+        {
+          "functionName": "setPauseDuration",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.ADMIN"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "bounded 5-60d",
+              "description": "Sets the pause length applied on trigger; require-bounded to [MIN 5d, MAX 60d] immutables, so even the maximum value yields a temporary auto-expiring pause. No fund path."
+            }
+          ],
+          "timestamp": "2026-06-28T11:04:16.205Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-28T11:04:16.205Z"
+          }
+        },
+        {
+          "functionName": "setHeartbeatInterval",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.ADMIN"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "liveness-window only",
+              "description": "Sets the heartbeat window pausers must maintain to remain authorized; require-bounded to [30d, 3yr]. Affects only pauser liveness, never funds."
+            }
+          ],
+          "timestamp": "2026-06-28T11:04:16.227Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-28T11:04:16.227Z"
+          }
+        },
+        {
+          "functionName": "pause",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.corePauserCommittee"
+            },
+            {
+              "path": "$self.csmPauserCommittee"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "time-bounded pause <=60d, auto-expiring",
+              "description": "Calls target.pauseFor() on one registered target - a temporary auto-expiring pause hard-capped at 60d, single-use (pauser unregistered after). Temporarily halts the target but cannot drain, devalue, or permanently lock funds; operations resume automatically on expiry. Callable only by the registered pauser committee for that target."
+            }
+          ],
+          "timestamp": "2026-06-28T11:33:36.157Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-28T11:33:36.157Z"
+          }
+        },
+        {
+          "functionName": "heartbeat",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "liveness self-update",
+              "description": "A registered pauser refreshes its own heartbeat expiry to remain authorized. Touches only the caller's liveness timestamp; no fund path."
+            }
+          ],
+          "timestamp": "2026-06-28T11:04:16.260Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-06-28T11:04:16.260Z"
           }
         }
       ]

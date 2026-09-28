@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1778518918,
-  "lastConsumedUpdateNotifierId": 181,
+  "lastReconciledAt": 1790514095,
+  "lastConsumedUpdateNotifierId": 657,
   "events": [
     {
       "timestamp": "2026-04-25T08:12:54.000Z",
@@ -189,6 +189,2092 @@
           "field": "values.delay",
           "before": 86400,
           "after": 172800
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-15T09:55:14.000Z",
+      "updateNotifierId": 195,
+      "address": "eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7",
+      "contractName": "rsETH Token",
+      "isDependency": true,
+      "entity": "Kelp",
+      "id": "195:eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.paused",
+          "before": true,
+          "after": false
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-16T09:00:20.000Z",
+      "updateNotifierId": 199,
+      "address": "eth:0x349A73444b1a310BAe67ef67973022020d70020d",
+      "contractName": "LRTOracle",
+      "isDependency": true,
+      "entity": "Kelp",
+      "id": "199:eth:0x349A73444b1a310BAe67ef67973022020d70020d:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.paused",
+          "before": true,
+          "after": false
+        },
+        {
+          "field": "values.feePeriodStartTime",
+          "before": 1776470400,
+          "after": 1778889600
+        },
+        {
+          "field": "values.maxFeeMintAmountPerDay",
+          "before": "200000000000000000000",
+          "after": "20000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-16T09:00:20.000Z",
+      "updateNotifierId": 199,
+      "address": "eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7",
+      "contractName": "rsETH Token",
+      "isDependency": true,
+      "entity": "Kelp",
+      "id": "199:eth:0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.maxMintAmountPerDay",
+          "before": "10000000000000000000000",
+          "after": "5000000000000000000000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-26T16:47:02.000Z",
+      "updateNotifierId": 220,
+      "address": "eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
+      "contractName": "Savings USDS Token",
+      "isDependency": true,
+      "entity": "Sky",
+      "id": "220:eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.ssr",
+          "before": "1000000001136785036595443334",
+          "after": "1000000001121484774769253326"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T10:41:45.000Z",
+      "updateNotifierId": 246,
+      "address": "eth:0x4C1341636721b8B687647920B2E9481f3AB1F2eE",
+      "contractName": "CapAutomator",
+      "entity": null,
+      "id": "246:eth:0x4C1341636721b8B687647920B2E9481f3AB1F2eE:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.accessControl.UPDATE_ROLE.members.0",
+          "before": "eth:0x9Ad87668d49ab69EEa0AF091de970EF52b0D5178",
+          "after": "eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T10:41:45.000Z",
+      "updateNotifierId": 246,
+      "address": "eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "246:eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-09T10:41:45.000Z",
+      "updateNotifierId": 246,
+      "address": "eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "246:eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-09T10:41:45.000Z",
+      "updateNotifierId": 246,
+      "address": "eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "246:eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-09T10:41:45.000Z",
+      "updateNotifierId": 246,
+      "address": "eth:0x9Ad87668d49ab69EEa0AF091de970EF52b0D5178",
+      "contractName": "ALMProxyFreezable",
+      "entity": null,
+      "id": "246:eth:0x9Ad87668d49ab69EEa0AF091de970EF52b0D5178:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-09T10:41:45.000Z",
+      "updateNotifierId": 246,
+      "address": "eth:0x8076807464DaC94Ac8Aa1f7aF31b58F73bD88A27",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "246:eth:0x8076807464DaC94Ac8Aa1f7aF31b58F73bD88A27:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-09T10:41:45.000Z",
+      "updateNotifierId": 246,
+      "address": "eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699",
+      "contractName": "ALMProxyFreezable",
+      "entity": null,
+      "id": "246:eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 250,
+      "address": "eth:0x8076807464DaC94Ac8Aa1f7aF31b58F73bD88A27",
+      "contractName": "GnosisSafe",
+      "entity": null,
+      "id": "250:eth:0x8076807464DaC94Ac8Aa1f7aF31b58F73bD88A27:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 250,
+      "address": "eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699",
+      "contractName": "ALMProxyFreezable",
+      "entity": null,
+      "id": "250:eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.accessControl",
+          "after": {
+            "DEFAULT_ADMIN_ROLE": {
+              "adminRole": "DEFAULT_ADMIN_ROLE",
+              "members": [
+                "eth:0x3300f198988e4C9C63F75dF86De36421f06af8c4"
+              ]
+            },
+            "ALLOCATOR_ROLE": {
+              "adminRole": "DEFAULT_ADMIN_ROLE",
+              "members": [
+                "eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB",
+                "eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795"
+              ]
+            },
+            "FREEZER_ROLE": {
+              "adminRole": "DEFAULT_ADMIN_ROLE",
+              "members": [
+                "eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 250,
+      "address": "eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "250:eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 250,
+      "address": "eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "250:eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 250,
+      "address": "eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "250:eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 332,
+      "address": "eth:0x74a09653A083691711cF8215a6ab074BB4e99ef5",
+      "contractName": "RestakeManager",
+      "isDependency": true,
+      "entity": "Renzo",
+      "id": "332:eth:0x74a09653A083691711cF8215a6ab074BB4e99ef5:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "errors",
+          "before": {
+            "operatorDelegators": "Processing error occurred."
+          }
+        },
+        {
+          "field": "values.operatorDelegators.0",
+          "before": "eth:0xbAf5f3A05BD7Af6f3a0BBA207803bf77e2657c8F"
+        },
+        {
+          "field": "values.operatorDelegators.1",
+          "before": "eth:0x0B1981a9Fcc24A445dE15141390d3E46DA0e425c"
+        },
+        {
+          "field": "values.operatorDelegators.2",
+          "before": "eth:0x125B367C16C5858f11e12948404F7a1371a0FDa3"
+        },
+        {
+          "field": "values.operatorDelegators.3",
+          "before": "eth:0x78524bEeAc12368e600457478738c233f436e9f6"
+        },
+        {
+          "field": "values.operatorDelegators.1",
+          "after": "eth:0x125B367C16C5858f11e12948404F7a1371a0FDa3"
+        },
+        {
+          "field": "values.getOperatorDelegatorsLength",
+          "before": 5,
+          "after": 2
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 332,
+      "address": "eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
+      "contractName": "Savings USDS Token",
+      "isDependency": true,
+      "entity": "Sky",
+      "id": "332:eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.ssr",
+          "before": "1000000001121484774769253326",
+          "after": "1000000001096988989836188433"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 332,
+      "address": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "contractName": "Wrapped eETH Token",
+      "isDependency": true,
+      "entity": "Ether.fi",
+      "id": "332:eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.$admin",
+          "before": "eth:0x9f26d4C958fD811A1F59B01B86Be7dFFc9d20761",
+          "after": "eth:0x0000000000000000000000000000000000000000"
+        },
+        {
+          "field": "values.$pastUpgrades.4",
+          "after": [
+            "2026-07-14T20:36:23.000Z",
+            "0xc9c80e5bc8a3f2eedfca80030eba7a5531bcb23774ca9da3e29a591032570314",
+            [
+              "eth:0xA6Ca0607190d03CF16fe6F2865Cf40c3D160ccf3"
+            ]
+          ]
+        },
+        {
+          "field": "values.$upgradeCount",
+          "before": 4,
+          "after": 5
+        },
+        {
+          "field": "values.$implementation",
+          "before": "eth:0x2d10683E941275D502173053927AD6066e6aFd6B",
+          "after": "eth:0xA6Ca0607190d03CF16fe6F2865Cf40c3D160ccf3"
+        },
+        {
+          "field": "values.getImplementation",
+          "before": "eth:0x2d10683E941275D502173053927AD6066e6aFd6B",
+          "after": "eth:0xA6Ca0607190d03CF16fe6F2865Cf40c3D160ccf3"
+        },
+        {
+          "field": "values.WEETH_OPERATING_ADMIN_ROLE",
+          "before": "0xfeab26ff201be143cb96161bb5c9224b5761f7085c44d6677299b1cfc2153cd7"
+        },
+        {
+          "field": "values.blacklister",
+          "after": "eth:0x5585996E7cFE95f2D99e61168B8b35C66Ff99B18"
+        },
+        {
+          "field": "values.MAX_PAUSE_DURATION",
+          "after": 2592000
+        },
+        {
+          "field": "values.MIN_PAUSE_DURATION",
+          "after": 28800
+        },
+        {
+          "field": "values.paused",
+          "after": false
+        },
+        {
+          "field": "values.pausedUntil",
+          "after": 0
+        },
+        {
+          "field": "values.PAUSER_UNTIL_COOLDOWN",
+          "after": 604800
+        },
+        {
+          "field": "values.pauseUntilDuration",
+          "after": 28800
+        },
+        {
+          "field": "sourceHashes.1",
+          "before": "0xa60e51e0bc8885db84dc7c6232cc588bd546d5ad25e35334d2b4a61b87f22d1b",
+          "after": "0x8f9f0bbe69024f1095c5db134efded31966dba87612b2bcf944e27bfce271eda"
+        },
+        {
+          "field": "implementationNames.eth:0x2d10683E941275D502173053927AD6066e6aFd6B",
+          "before": "WeETH"
+        },
+        {
+          "field": "implementationNames.eth:0xA6Ca0607190d03CF16fe6F2865Cf40c3D160ccf3",
+          "after": "WeETH"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 332,
+      "address": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "contractName": "Wrapped eETH Token",
+      "isDependency": true,
+      "entity": "Ether.fi",
+      "id": "332:eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee:role:owner",
+      "type": "role-update",
+      "roleName": "owner",
+      "changes": [
+        {
+          "field": "values.owner",
+          "before": "eth:0x9f26d4C958fD811A1F59B01B86Be7dFFc9d20761"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 332,
+      "address": "eth:0x5585996E7cFE95f2D99e61168B8b35C66Ff99B18",
+      "contractName": "Blacklister",
+      "entity": null,
+      "id": "332:eth:0x5585996E7cFE95f2D99e61168B8b35C66Ff99B18:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-07-27T10:49:14.000Z",
+      "updateNotifierId": 332,
+      "address": "eth:0x62247D29B4B9BECf4BB73E0c722cf6445cfC7cE9",
+      "contractName": "RoleRegistry",
+      "entity": null,
+      "id": "332:eth:0x62247D29B4B9BECf4BB73E0c722cf6445cfC7cE9:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0x8105f69D9C41644c6A0803fDA7D03Aa70996cFD9",
+      "contractName": "AaveOracle",
+      "entity": null,
+      "id": "499:eth:0x8105f69D9C41644c6A0803fDA7D03Aa70996cFD9:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.assetSources.eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+          "after": "eth:0x42a03F81dd8A1cEcD746dc262e4d1CD9fD39F777"
+        },
+        {
+          "field": "values.assetSources.eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+          "after": "eth:0x42a03F81dd8A1cEcD746dc262e4d1CD9fD39F777"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987",
+      "contractName": "Pool",
+      "entity": null,
+      "id": "499:eth:0xC13e21B648A5Ee794902342038FF3aDAB66BE987:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getReservesList.18",
+          "after": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D"
+        },
+        {
+          "field": "values.getReservesList.19",
+          "after": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD"
+        },
+        {
+          "field": "values.getReservesCount",
+          "before": 18,
+          "after": 20
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0xFc21d6d146E6086B8359705C8b28512a983db0cb",
+      "contractName": "AaveProtocolDataProvider",
+      "entity": null,
+      "id": "499:eth:0xFc21d6d146E6086B8359705C8b28512a983db0cb:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getAllATokens.18",
+          "after": {
+            "symbol": "spUSDG",
+            "tokenAddress": "eth:0x6f335538257ef440F3c51e925a5C820f722a1F9F"
+          }
+        },
+        {
+          "field": "values.getAllATokens.19",
+          "after": {
+            "symbol": "spRLUSD",
+            "tokenAddress": "eth:0x59275Fb72c8004F44BA44432e25082932Fd677f1"
+          }
+        },
+        {
+          "field": "values.getAllReservesTokens.18",
+          "after": {
+            "symbol": "USDG",
+            "tokenAddress": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D"
+          }
+        },
+        {
+          "field": "values.getAllReservesTokens.19",
+          "after": {
+            "symbol": "RLUSD",
+            "tokenAddress": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0x147BdE4F997f0d4C7544ED0C55eAcf1E5E6bf9c4",
+      "contractName": "OFTWrapper",
+      "entity": null,
+      "id": "499:eth:0x147BdE4F997f0d4C7544ED0C55eAcf1E5E6bf9c4:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0x59275Fb72c8004F44BA44432e25082932Fd677f1",
+      "contractName": "AToken",
+      "entity": null,
+      "id": "499:eth:0x59275Fb72c8004F44BA44432e25082932Fd677f1:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0x6f335538257ef440F3c51e925a5C820f722a1F9F",
+      "contractName": "AToken",
+      "entity": null,
+      "id": "499:eth:0x6f335538257ef440F3c51e925a5C820f722a1F9F:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "499:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0x9036566eAa5F83E0b9E1161C6c602b0Adf997654",
+      "contractName": "TimelockController",
+      "entity": null,
+      "id": "499:eth:0x9036566eAa5F83E0b9E1161C6c602b0Adf997654:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF",
+      "contractName": "SupplyControl",
+      "entity": null,
+      "id": "499:eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-08-31T15:04:19.000Z",
+      "updateNotifierId": 499,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "499:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-01T12:35:21.000Z",
+      "updateNotifierId": 505,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "505:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1343048389520019556976088885",
+          "after": "1343628062520019556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-01T12:35:21.000Z",
+      "updateNotifierId": 505,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "505:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 413964656077205,
+          "after": 404584662981481
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-02T12:08:28.000Z",
+      "updateNotifierId": 513,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "513:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1343628062520019556976088885",
+          "after": "1353800057310019556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-02T12:08:28.000Z",
+      "updateNotifierId": 513,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "513:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 404584662981481,
+          "after": 391760809846936
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-03T12:07:13.000Z",
+      "updateNotifierId": 519,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "519:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1353800057310019556976088885",
+          "after": "1351141408310019556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-03T12:07:13.000Z",
+      "updateNotifierId": 519,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "519:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 391760809846936,
+          "after": 382158960521133
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-04T12:09:10.000Z",
+      "updateNotifierId": 525,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "525:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1351141408310019556976088885",
+          "after": "1365917319020019556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-04T12:09:10.000Z",
+      "updateNotifierId": 525,
+      "address": "eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
+      "contractName": "Savings USDS Token",
+      "isDependency": true,
+      "entity": "Sky",
+      "id": "525:eth:0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.ssr",
+          "before": "1000000001096988989836188433",
+          "after": "1000000001121484774769253326"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-04T12:09:10.000Z",
+      "updateNotifierId": 525,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "525:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 382158960521133,
+          "after": 385092231894128
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-05T11:18:10.000Z",
+      "updateNotifierId": 532,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "532:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1365917319020019556976088885",
+          "after": "1376746517020019556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-05T11:18:10.000Z",
+      "updateNotifierId": 532,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "532:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 385092231894128,
+          "after": 385408388405562
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-06T11:41:20.000Z",
+      "updateNotifierId": 537,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "537:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1376746517020019556976088885",
+          "after": "1378110131870019556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-06T11:41:20.000Z",
+      "updateNotifierId": 537,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "537:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 385408388405562,
+          "after": 379940190241727
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 542,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "542:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1378110131870019556976088885",
+          "after": "1378110133882005556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-07T13:30:16.000Z",
+      "updateNotifierId": 542,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "542:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 379940190241727,
+          "after": 352998406286250
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-08T12:10:19.000Z",
+      "updateNotifierId": 547,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "547:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1378110133882005556976088885",
+          "after": "1402610133856031556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-08T12:10:19.000Z",
+      "updateNotifierId": 547,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "547:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 352998406286250,
+          "after": 358037364942876
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-09T12:20:26.000Z",
+      "updateNotifierId": 552,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "552:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1402610133856031556976088885",
+          "after": "1398904572856031556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-09T12:20:26.000Z",
+      "updateNotifierId": 552,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "552:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 358037364942876,
+          "after": 379325420296835
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-10T12:14:29.000Z",
+      "updateNotifierId": 557,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "557:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1398904572856031556976088885",
+          "after": "1388204572856031556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-10T12:14:29.000Z",
+      "updateNotifierId": 557,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "557:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 379325420296835,
+          "after": 375342253387125
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-11T12:12:20.000Z",
+      "updateNotifierId": 562,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "562:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1388204572856031556976088885",
+          "after": "1373732627856031556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-11T12:12:20.000Z",
+      "updateNotifierId": 562,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "562:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 375342253387125,
+          "after": 377822793592389
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-12T11:38:02.000Z",
+      "updateNotifierId": 569,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "569:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1373732627856031556976088885",
+          "after": "1369732627856031556976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-12T11:38:02.000Z",
+      "updateNotifierId": 569,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "569:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 377822793592389,
+          "after": 361019157045374
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x6605aa120fe8b656482903E7757BaBF56947E45E",
+      "contractName": "StarGuard",
+      "entity": null,
+      "id": "574:eth:0x6605aa120fe8b656482903E7757BaBF56947E45E:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.spellData.tag",
+          "before": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "after": "0xb3b1f22f29ef3d269404004599f13b840e45ec98909ac3de529e27c155bed088"
+        },
+        {
+          "field": "values.spellData.addr",
+          "before": "eth:0x0000000000000000000000000000000000000000",
+          "after": "eth:0x7602cc457786c06778258A0b004f2D66c54386fC"
+        },
+        {
+          "field": "values.spellData.deadline",
+          "before": 0,
+          "after": 1789908131
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "574:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1369732627856031556976088885",
+          "after": "1369732626356782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "574:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 361019157045374,
+          "after": 359991654453241
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x026a5B6114431d8F3eF2fA0E1B2EDdDccA9c540E",
+      "contractName": "StableDebtToken",
+      "entity": null,
+      "id": "574:eth:0x026a5B6114431d8F3eF2fA0E1B2EDdDccA9c540E:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x071FC8FE1E689fFF1788C2f0eECeCbDf276CA8b6",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x071FC8FE1E689fFF1788C2f0eECeCbDf276CA8b6:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x18905dc04Cb800F300DD91D4370E7B3A38Fe7642",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x18905dc04Cb800F300DD91D4370E7B3A38Fe7642:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x2169004F6f1aC7c474C9a2bE27CA810142c273C8",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x2169004F6f1aC7c474C9a2bE27CA810142c273C8:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x21783460499b5a4b2fEA8c9c9B7833420aE5a560",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x21783460499b5a4b2fEA8c9c9B7833420aE5a560:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x2222B9B71be0cda50B045832D50b7a451a5271A0",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x2222B9B71be0cda50B045832D50b7a451a5271A0:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x3254F7cd0565aA67eEdC86c2fB608BE48d5cCd78",
+      "contractName": "AaveV3ConfigEngine",
+      "entity": null,
+      "id": "574:eth:0x3254F7cd0565aA67eEdC86c2fB608BE48d5cCd78:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x3322e32917a72d361925Cfb4BeadEB9457f68f6B",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x3322e32917a72d361925Cfb4BeadEB9457f68f6B:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x34C32840FEE7c35df280BC9fd347265FB9700B7B",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x34C32840FEE7c35df280BC9fd347265FB9700B7B:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x3961E687503a669f2805aB362F1bdC8bfCb8b21d",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x3961E687503a669f2805aB362F1bdC8bfCb8b21d:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x3A5a2f948E846772a798F80EF1f91BA35ED10f7e",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x3A5a2f948E846772a798F80EF1f91BA35ED10f7e:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x40357a28192a36d39c6451C6B9b22aAc76477C2C",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x40357a28192a36d39c6451C6B9b22aAc76477C2C:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x4911bdae39CBaFcb034280D9bc30d17dB8744594",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x4911bdae39CBaFcb034280D9bc30d17dB8744594:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x4fCDe79651BE00d5e50196B84Aa03d938EA1177a",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x4fCDe79651BE00d5e50196B84Aa03d938EA1177a:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x534020e030c774aF1313129B64092307d2D29ef2",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x534020e030c774aF1313129B64092307d2D29ef2:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x5d4704d1764c4D9eC85578a2B61222A2d1a7819A",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x5d4704d1764c4D9eC85578a2B61222A2d1a7819A:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6",
+      "contractName": "AToken",
+      "entity": null,
+      "id": "574:eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x6A3B88379f8d3961fCCBBfA691Ea0574a63fcefE",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x6A3B88379f8d3961fCCBBfA691Ea0574a63fcefE:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x6FE85B948d84652A3c178a4a3ff512e7926914c4",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x6FE85B948d84652A3c178a4a3ff512e7926914c4:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x7602cc457786c06778258A0b004f2D66c54386fC",
+      "contractName": "SparkEthereum_20260910",
+      "entity": null,
+      "id": "574:eth:0x7602cc457786c06778258A0b004f2D66c54386fC:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x868210181cc67EE60514EA8fC022209669b62d8C",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x868210181cc67EE60514EA8fC022209669b62d8C:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x86C71796CcDB31c3997F8Ec5C2E3dB3e9e40b985",
+      "contractName": "VariableDebtToken",
+      "entity": null,
+      "id": "574:eth:0x86C71796CcDB31c3997F8Ec5C2E3dB3e9e40b985:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x9A56C59453a2fBAe01Ba46045441490e5C7a664d",
+      "contractName": "Beacon",
+      "entity": null,
+      "id": "574:eth:0x9A56C59453a2fBAe01Ba46045441490e5C7a664d:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0x9f622D74FD49fe7204805B14824eF01B1Cf04333",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0x9f622D74FD49fe7204805B14824eF01B1Cf04333:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xa23d4484B2c18DC9FdA6450D314E1c56200a06fF",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0xa23d4484B2c18DC9FdA6450D314E1c56200a06fF:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xcd1770b2c1EFAE831E59Ab0078683Dc0B633a9E8",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0xcd1770b2c1EFAE831E59Ab0078683Dc0B633a9E8:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xd5042E22C404c90bA80c35d35b2780460606211C",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0xd5042E22C404c90bA80c35d35b2780460606211C:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xE621D9f81c93562f2FA8B210324e80BD0B33D096",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0xE621D9f81c93562f2FA8B210324e80BD0B33D096:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xe94A71345C2774f48fE1D6FEa23FdCf906668897",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0xe94A71345C2774f48fE1D6FEa23FdCf906668897:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xfD1b981580bFcdF0C96860fDA9e79E10Df6A538b",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0xfD1b981580bFcdF0C96860fDA9e79E10Df6A538b:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xFD599A7C7d9Ac9BeA25C3e9FB7E5D9a7B6A9cD8B",
+      "contractName": "",
+      "entity": null,
+      "id": "574:eth:0xFD599A7C7d9Ac9BeA25C3e9FB7E5D9a7B6A9cD8B:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-13T12:44:06.000Z",
+      "updateNotifierId": 574,
+      "address": "eth:0xfE57e187EF6285e90d7049e6a21571aa47cF11a2",
+      "contractName": "V3RateStrategyFactory",
+      "entity": null,
+      "id": "574:eth:0xfE57e187EF6285e90d7049e6a21571aa47cF11a2:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-14T13:54:43.000Z",
+      "updateNotifierId": 579,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "579:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1369732626356782306976088885",
+          "after": "1369290789356782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-14T13:54:43.000Z",
+      "updateNotifierId": 579,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "579:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 359991654453241,
+          "after": 365169268822373
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x026a5B6114431d8F3eF2fA0E1B2EDdDccA9c540E",
+      "contractName": "StableDebtToken",
+      "entity": null,
+      "id": "584:eth:0x026a5B6114431d8F3eF2fA0E1B2EDdDccA9c540E:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x071FC8FE1E689fFF1788C2f0eECeCbDf276CA8b6",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x071FC8FE1E689fFF1788C2f0eECeCbDf276CA8b6:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x18905dc04Cb800F300DD91D4370E7B3A38Fe7642",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x18905dc04Cb800F300DD91D4370E7B3A38Fe7642:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x2169004F6f1aC7c474C9a2bE27CA810142c273C8",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x2169004F6f1aC7c474C9a2bE27CA810142c273C8:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x21783460499b5a4b2fEA8c9c9B7833420aE5a560",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x21783460499b5a4b2fEA8c9c9B7833420aE5a560:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x2222B9B71be0cda50B045832D50b7a451a5271A0",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x2222B9B71be0cda50B045832D50b7a451a5271A0:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x3254F7cd0565aA67eEdC86c2fB608BE48d5cCd78",
+      "contractName": "AaveV3ConfigEngine",
+      "entity": null,
+      "id": "584:eth:0x3254F7cd0565aA67eEdC86c2fB608BE48d5cCd78:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x3322e32917a72d361925Cfb4BeadEB9457f68f6B",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x3322e32917a72d361925Cfb4BeadEB9457f68f6B:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x34C32840FEE7c35df280BC9fd347265FB9700B7B",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x34C32840FEE7c35df280BC9fd347265FB9700B7B:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x3961E687503a669f2805aB362F1bdC8bfCb8b21d",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x3961E687503a669f2805aB362F1bdC8bfCb8b21d:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x3A5a2f948E846772a798F80EF1f91BA35ED10f7e",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x3A5a2f948E846772a798F80EF1f91BA35ED10f7e:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x40357a28192a36d39c6451C6B9b22aAc76477C2C",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x40357a28192a36d39c6451C6B9b22aAc76477C2C:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x4911bdae39CBaFcb034280D9bc30d17dB8744594",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x4911bdae39CBaFcb034280D9bc30d17dB8744594:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x4fCDe79651BE00d5e50196B84Aa03d938EA1177a",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x4fCDe79651BE00d5e50196B84Aa03d938EA1177a:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x534020e030c774aF1313129B64092307d2D29ef2",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x534020e030c774aF1313129B64092307d2D29ef2:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x5d4704d1764c4D9eC85578a2B61222A2d1a7819A",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x5d4704d1764c4D9eC85578a2B61222A2d1a7819A:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6",
+      "contractName": "AToken",
+      "entity": null,
+      "id": "584:eth:0x6175ddEc3B9b38c88157C10A01ed4A3fa8639cC6:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x6605aa120fe8b656482903E7757BaBF56947E45E",
+      "contractName": "StarGuard",
+      "entity": null,
+      "id": "584:eth:0x6605aa120fe8b656482903E7757BaBF56947E45E:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.spellData.tag",
+          "before": "0xb3b1f22f29ef3d269404004599f13b840e45ec98909ac3de529e27c155bed088",
+          "after": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "field": "values.spellData.addr",
+          "before": "eth:0x7602cc457786c06778258A0b004f2D66c54386fC",
+          "after": "eth:0x0000000000000000000000000000000000000000"
+        },
+        {
+          "field": "values.spellData.deadline",
+          "before": 1789908131,
+          "after": 0
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x6A3B88379f8d3961fCCBBfA691Ea0574a63fcefE",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x6A3B88379f8d3961fCCBBfA691Ea0574a63fcefE:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x6FE85B948d84652A3c178a4a3ff512e7926914c4",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x6FE85B948d84652A3c178a4a3ff512e7926914c4:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x7602cc457786c06778258A0b004f2D66c54386fC",
+      "contractName": "SparkEthereum_20260910",
+      "entity": null,
+      "id": "584:eth:0x7602cc457786c06778258A0b004f2D66c54386fC:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "584:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1369290789356782306976088885",
+          "after": "1355915898256782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x868210181cc67EE60514EA8fC022209669b62d8C",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x868210181cc67EE60514EA8fC022209669b62d8C:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x86C71796CcDB31c3997F8Ec5C2E3dB3e9e40b985",
+      "contractName": "VariableDebtToken",
+      "entity": null,
+      "id": "584:eth:0x86C71796CcDB31c3997F8Ec5C2E3dB3e9e40b985:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x9A56C59453a2fBAe01Ba46045441490e5C7a664d",
+      "contractName": "Beacon",
+      "entity": null,
+      "id": "584:eth:0x9A56C59453a2fBAe01Ba46045441490e5C7a664d:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0x9f622D74FD49fe7204805B14824eF01B1Cf04333",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0x9f622D74FD49fe7204805B14824eF01B1Cf04333:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xa23d4484B2c18DC9FdA6450D314E1c56200a06fF",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0xa23d4484B2c18DC9FdA6450D314E1c56200a06fF:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xcd1770b2c1EFAE831E59Ab0078683Dc0B633a9E8",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0xcd1770b2c1EFAE831E59Ab0078683Dc0B633a9E8:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xd5042E22C404c90bA80c35d35b2780460606211C",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0xd5042E22C404c90bA80c35d35b2780460606211C:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "584:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 365169268822373,
+          "after": 361384261134792
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xE621D9f81c93562f2FA8B210324e80BD0B33D096",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0xE621D9f81c93562f2FA8B210324e80BD0B33D096:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xe94A71345C2774f48fE1D6FEa23FdCf906668897",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0xe94A71345C2774f48fE1D6FEa23FdCf906668897:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xfD1b981580bFcdF0C96860fDA9e79E10Df6A538b",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0xfD1b981580bFcdF0C96860fDA9e79E10Df6A538b:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xFD599A7C7d9Ac9BeA25C3e9FB7E5D9a7B6A9cD8B",
+      "contractName": "",
+      "entity": null,
+      "id": "584:eth:0xFD599A7C7d9Ac9BeA25C3e9FB7E5D9a7B6A9cD8B:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-15T12:40:28.000Z",
+      "updateNotifierId": 584,
+      "address": "eth:0xfE57e187EF6285e90d7049e6a21571aa47cF11a2",
+      "contractName": "V3RateStrategyFactory",
+      "entity": null,
+      "id": "584:eth:0xfE57e187EF6285e90d7049e6a21571aa47cF11a2:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-16T12:37:39.000Z",
+      "updateNotifierId": 589,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "589:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1355915898256782306976088885",
+          "after": "1345792893256782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-16T12:37:39.000Z",
+      "updateNotifierId": 589,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "589:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 361384261134792,
+          "after": 384730073200420
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-17T12:36:25.000Z",
+      "updateNotifierId": 595,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "595:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1345792893256782306976088885",
+          "after": "1343349395256782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-17T12:36:25.000Z",
+      "updateNotifierId": 595,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "595:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 384730073200420,
+          "after": 371135586597837
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 601,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "601:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1343349395256782306976088885",
+          "after": "1349424872976782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-18T12:15:30.000Z",
+      "updateNotifierId": 601,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "601:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 371135586597837,
+          "after": 388251881499047
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 606,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "606:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1349424872976782306976088885",
+          "after": "1342524872976782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 606,
+      "address": "eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF",
+      "contractName": "SupplyControl",
+      "entity": null,
+      "id": "606:eth:0x9a7164112029b81c07636AB7b59fA813E0883BBF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getAllSupplyControllerAddresses.3",
+          "after": "eth:0x835e20DA02D830d6074Ca2341e2928f438121691"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-19T11:57:46.000Z",
+      "updateNotifierId": 606,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "606:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 388251881499047,
+          "after": 354580386980216
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-20T12:15:36.000Z",
+      "updateNotifierId": 611,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "611:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 354580386980216,
+          "after": 354020534272387
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-21T13:54:40.000Z",
+      "updateNotifierId": 617,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "617:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1342524872976782306976088885",
+          "after": "1333994004976782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-21T13:54:40.000Z",
+      "updateNotifierId": 617,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "617:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 354020534272387,
+          "after": 352427612540948
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 624,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "624:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1333994004976782306976088885",
+          "after": "1345935165976782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 624,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "624:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 352427612540948,
+          "after": 350077778383950
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 631,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "631:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1345935165976782306976088885",
+          "after": "1357860165976782306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 631,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "631:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 350077778383950,
+          "after": 344568368900169
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 637,
+      "address": "eth:0x24C392CDbF32Cf911B258981a66d5541d85269ce",
+      "contractName": "Chronicle_BTC_USD_3",
+      "isDependency": true,
+      "entity": "Chronicle",
+      "id": "637:eth:0x24C392CDbF32Cf911B258981a66d5541d85269ce:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.authed.2",
+          "after": "eth:0xD4C5694cA1272a3d66236d45694f5777EcC94eF3"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 637,
+      "address": "eth:0x46ef0071b1E2fF6B42d36e5A177EA43Ae5917f4E",
+      "contractName": "Chronicle_ETH_USD_3",
+      "isDependency": true,
+      "entity": "Chronicle",
+      "id": "637:eth:0x46ef0071b1E2fF6B42d36e5A177EA43Ae5917f4E:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.authed.2",
+          "after": "eth:0xD4C5694cA1272a3d66236d45694f5777EcC94eF3"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 637,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "637:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1357860165976782306976088885",
+          "after": "1313470776379982306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-24T12:44:46.000Z",
+      "updateNotifierId": 637,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "637:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 344568368900169,
+          "after": 353077202234890
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 644,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "644:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1313470776379982306976088885",
+          "after": "1338970777189982306976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-25T12:46:16.000Z",
+      "updateNotifierId": 644,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "644:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 353077202234890,
+          "after": 339240215836545
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 651,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "651:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1338970777189982306976088885",
+          "after": "1390360827245178916976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-26T12:15:00.000Z",
+      "updateNotifierId": 651,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "651:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 339240215836545,
+          "after": 326178427089601
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 657,
+      "address": "eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
+      "contractName": "StablecoinUpgradeableV2",
+      "entity": null,
+      "id": "657:eth:0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "1390360827245178916976088885",
+          "after": "1391764656799753156976088885"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-27T12:58:55.000Z",
+      "updateNotifierId": 657,
+      "address": "eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D",
+      "contractName": "USDG",
+      "entity": null,
+      "id": "657:eth:0xe343167631d89B6Ffc58B88d6b7fB0228795491D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": 326178427089601,
+          "after": 334145618362480
         }
       ]
     }

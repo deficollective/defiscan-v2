@@ -81,6 +81,7 @@ function sortAdminsByRisk(admins: CompiledAdmin[]): CompiledAdmin[] {
 
 export function AdminCards({ review, forceExpanded }: AdminCardsProps) {
   const { admins, totals } = review
+  const totalTvs = totals.totalCapitalAtRisk + (totals.totalTokenValue ?? 0)
   const [expandedAdmins, setExpandedAdmins] = useState<Set<string>>(new Set())
 
   if (admins.length === 0) {
@@ -175,6 +176,7 @@ export function AdminCards({ review, forceExpanded }: AdminCardsProps) {
           subtitle="These are the entities that a person or group of people can directly control."
           admins={humanControlled}
           totalCapital={humanTotal}
+          totalTvs={totalTvs}
           expandedSet={expandedAdmins}
           onToggle={toggleAdmin}
           forceExpanded={forceExpanded}
@@ -189,6 +191,7 @@ export function AdminCards({ review, forceExpanded }: AdminCardsProps) {
             subtitle="These are onchain governance contracts that manage protocol changes through different voting mechanisms."
             admins={governance}
             totalCapital={govTotal}
+            totalTvs={totalTvs}
             expandedSet={expandedAdmins}
             onToggle={toggleAdmin}
             forceExpanded={forceExpanded}
@@ -204,6 +207,7 @@ function AdminDistributionChart({
   subtitle,
   admins,
   totalCapital,
+  totalTvs,
   expandedSet,
   onToggle,
   forceExpanded,
@@ -212,12 +216,11 @@ function AdminDistributionChart({
   subtitle: string
   admins: CompiledAdmin[]
   totalCapital: number
+  totalTvs: number
   expandedSet: Set<string>
   onToggle: (key: string) => void
   forceExpanded?: boolean
 }) {
-  const maxCapital = Math.max(...admins.map((a) => a.totalReachableCapital), 0)
-
   return (
     <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
       <h3 className="text-base font-semibold text-text-primary mb-1">
@@ -227,7 +230,9 @@ function AdminDistributionChart({
       <div className="space-y-3">
         {admins.map((admin, index) => {
           const percentage =
-            maxCapital > 0 ? (admin.totalReachableCapital / maxCapital) * 100 : 0
+            totalTvs > 0
+              ? Math.min(100, (admin.totalReachableCapital / totalTvs) * 100)
+              : 0
           const expandKey = `admin-${admin.address}`
           const isExpanded = forceExpanded || expandedSet.has(expandKey)
 

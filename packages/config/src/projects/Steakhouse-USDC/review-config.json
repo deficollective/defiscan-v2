@@ -29,8 +29,8 @@
       "description": "Morpho protocol helper contract with allocator permissions. Can update withdrawal queues and execute reallocations as part of the vault's automated management system. This is an internal protocol contract that facilitates automated capital deployment."
     },
     "eth:0x0000aeB716a0DF7A9A1AAd119b772644Bc089dA8": {
-      "name": "Guardian 1/6 Multisig",
-      "description": "Low-threshold guardian multisig (1-of-6, 17% approval required) with emergency powers to revoke pending governance changes. Can revoke pending timelock updates (revokePendingTimelock), guardian changes (revokePendingGuardian), cap modifications (revokePendingCap), and market removals (revokePendingMarketRemoval). This provides a rapid response mechanism to cancel potentially harmful governance proposals during their timelock period."
+      "name": "Guardian 1/7 Multisig",
+      "description": "Low-threshold guardian multisig (1-of-7, 14% approval required) with emergency powers to revoke pending governance changes. Can revoke pending timelock updates (revokePendingTimelock), guardian changes (revokePendingGuardian), cap modifications (revokePendingCap), and market removals (revokePendingMarketRemoval). This provides a rapid response mechanism to cancel potentially harmful governance proposals during their timelock period."
     },
     "eth:0xaa0500198B4425DfC4E272FbE42C8E64E21fc03d": {
       "name": "Governance DAO",

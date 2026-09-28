@@ -1,3 +1,109 @@
+Generated with discovered.json: 0x301ca5d24fdf206fc3c8f92e8410ccc015967bb6
+
+# Diff at Mon, 15 Jun 2026 14:56:41 GMT:
+
+- author: emduc (<emilien.duc@gmail.com>)
+- comparing to: main@c68dd26f42ab7fedc18e9102ab05e88a330f08a4 block: 1781529942
+- current timestamp: 1781529942
+
+## Description
+
+Discovery rerun on the same block number with only config-related changes.
+
+## Config/verification related changes
+
+Following changes come from updates made to the config file,
+or/and contracts becoming verified, not from differences found during
+discovery. Values are for block 1781529942 (main branch discovery), not current.
+
+```diff
+-   Status: DELETED
+    contract PendleMarketV7 (eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract PendleYieldContractFactoryUpg (eth:0x3E6EBa46AbC5ab18ED95F6667d8B2fd4020E4637)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract PendleYieldToken (eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract PendleGaugeControllerUpg (eth:0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract PendlePYLpOracle (eth:0x5542be50420E88dd7D5B4a3D488FA6ED82F6DAc2)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract PendlePrincipalToken (eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract  (eth:0x601cECFf9CfFd14Ccb8A7084b40Ee576c2470abf)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract PendleChainlinkOracleFactory (eth:0x6502cda86f9110f3655512237C9FF2B9CE247c69)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract PendleMarketFactoryV7Upg (eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract  (eth:0x6e6F4CAB945859D66C78aF3d9917002e94bfa4E9)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract Pendle Token (eth:0x808507121B80c02388fAd14726482e061B8da827)
+    +++ description: None
+```
+
+```diff
+-   Status: DELETED
+    contract Safe (eth:0x8119EC16F0573B7dAc7C0CB94EB504FB32456ee1)
+    +++ description: None
+```
+
+```diff
+    contract ProxyAdmin (eth:0xA28c08f165116587D4F3E708743B4dEe155c5E64) {
+    +++ description: None
+      directlyReceivedPermissions:
+-        [{"permission":"upgrade","from":"eth:0x3E6EBa46AbC5ab18ED95F6667d8B2fd4020E4637","role":"admin"},{"permission":"upgrade","from":"eth:0x5542be50420E88dd7D5B4a3D488FA6ED82F6DAc2","role":"admin"},{"permission":"upgrade","from":"eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f","role":"admin"},{"permission":"upgrade","from":"eth:0x9a9Fa8338dd5E5B2188006f1Cd2Ef26d921650C2","role":"admin"}]
+      receivedPermissions:
++        [{"permission":"upgrade","from":"eth:0x9a9Fa8338dd5E5B2188006f1Cd2Ef26d921650C2","role":"admin"}]
+    }
+```
+
+```diff
+-   Status: DELETED
+    contract PendleLiquidityIncentivesMultisig (eth:0xe8D28E2CA24BB16Fc7e6549eF937e05981d02606)
+    +++ description: None
+```
+
 Generated with discovered.json: 0xba6d500f04316f3d155b4392d3aa3c9b8a0ea9df
 
 # Diff at Thu, 30 Apr 2026 10:15:38 GMT:

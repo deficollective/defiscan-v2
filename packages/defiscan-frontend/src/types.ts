@@ -128,6 +128,10 @@ export interface CompiledAdmin {
   description: string
   adminType: string
   isGovernance: boolean
+  /** Gnosis Safe signing threshold (`values.$threshold`), when the admin is a multisig. */
+  multisigThreshold?: number
+  /** Gnosis Safe owner count (`values.$members.length`), when the admin is a multisig. */
+  multisigSize?: number
   functions: CompiledAdminFunction[]
   totalDirectCapital: number
   totalDirectTokenValue: number

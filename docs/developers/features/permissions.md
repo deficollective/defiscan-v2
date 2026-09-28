@@ -40,6 +40,31 @@ The handler automatically detects roles from `RoleGranted` / `RoleRevoked` event
 - `$self.accessControl.DEFAULT_ADMIN_ROLE` — entire role object (admin + members)
 - `@kernel.accessControl.PAUSER_ROLE.members` — role in another contract
 
+## EnumerableRoles Support (`roleNames`)
+
+Some protocols use a custom enumerable-roles registry instead of OpenZeppelin `AccessControl`. The `enumerableRoles` handler (`EnumerableRolesHandler.ts`) discovers role hashes from `RoleSet` events, queries `roleHolders(bytes32)` for each, and stores the result under `values.<field>` (typically `values.roles`).
+
+```jsonc
+"fields": {
+  "roles": {
+    "handler": {
+      "type": "enumerableRoles",
+      "flatDir": "src/projects/<Project>/.flat",
+      "roleNames": { "0x<hash>": "ROLE_NAME", ... }
+    }
+  }
+}
+```
+
+The `roles` map is keyed by **role name** when known, else by the **raw hash**. Names come from two sources, merged (`roleNames` wins):
+
+1. **`flatDir` source scan** — the handler scans the project's flattened Solidity (`.flat/`) for `bytes32 public constant NAME = keccak256("STRING")` and builds a hash→name map. Convenient for local dev, but `.flat/` is **gitignored**, so it is absent in CI / monitor runs.
+2. **`roleNames` config** — an explicit hash→name map in `config.jsonc`. This is the durable, CI-safe source of truth: it does not depend on `.flat/` being on disk.
+
+**Why this matters:** owner paths reference roles by name (`@roleRegistry.roles.LIQUIDITY_POOL_ADMIN_ROLE`). If a role stays hash-keyed (no name resolved), that path silently fails to resolve and the role's holders drop out of the admin analysis — holder data is still discovered, but the named path can't find it. To prevent silent degradation, when `flatDir` is set but the scan yields nothing **and** `roleNames` is empty, the handler now returns a field-level **error** instead of producing hash-keyed roles.
+
+Keep `roleNames` complete with the **`/sync-role-names`** skill — it scans `.flat/` for role constants, computes their keccak hashes, and merges any missing entries into `config.jsonc` (comment-preserving). Run it after discovering a new project that uses the handler, or after a protocol upgrade adds roles. The `roles` map values are Solidity constant names, so `functions.json` owner paths must use those exact names.
+
 ## Continuous Permission Monitoring
 
 Permission changes are detected automatically during monitor cycles. When the discovery diff is non-empty, the `PermissionResolver` re-resolves every owner path and compares the previous and current address sets. Added and removed owners are reported to the internal Discord channel.
@@ -185,6 +210,16 @@ Two helpers in [`packages/defiscan-frontend/src/pages/review/views/explorer/shar
 - **`aggregateMitigationsByImpact(functions)`** — the canonical entity-level utility. Used by every place that renders mitigation badges above an admin or dependency's function list (`AdminCards`, `AdminsSection`, `DependencyCards`, `DependenciesSection`, `MitigationsSummary` in explorer tabs). For each candidate function it computes a TVS impact = `directFundsUsd + directTokenValueUsd + Σ min(rc.usd, rc.effectiveCapUsd)` over `fundsAtRisk` reachable contracts. Mitigations whose only source functions all evaluate to $0 impact are dropped (otherwise no-op functions like `getReserveAToken` would parade their `future-only` mitigation up to the admin headline). The survivors are deduped via `mitigationDedupKey` and sorted by descending max-source-function impact, so the most informative badges land first when the overflow slicer trims for narrow cells.
 
 The plain `deduplicateMitigations()` (same key, no impact filter) is retained for the small number of non-aggregated call sites that already work in a per-function context where the impact filter is not appropriate.
+
+#### Edge-anchored mitigations & impact caps
+
+The principle: **anchor a constraint where it originates.** Function-intrinsic constraints (a `require` value-range, a rate limit, a reward budget — true for every caller) stay on the function. **Relationship constraints** (a timelock delay on the curator's path, a cap that only applies because of *who* calls) live on the edge, in `call-graph-overrides.json`, keyed by the stable `enhancedEdgeKey`. Full design + as-built notes in [docs/developers/designs/edge-centric-constraints.md](../designs/edge-centric-constraints.md).
+
+- **Edge mitigations** (`setEdgeMitigation` override rule, appended to `EnhancedEdge.mitigations`). Merged in [projectAnalysis.ts](../../../packages/l2b/src/implementations/discovery-ui/defidisco/projectAnalysis.ts) `getMitigationsForOwner` from the owner→function permission edge (the edge IS the scope — no owner filtering needed; this is the relationship-level counterpart to a `scopedTo` function mitigation) **plus** transitively in `collectDownstreamScopedMitigations` on callgraph/dependency edges. After the union with direct + transitive function mitigations, the merged set is deduped through **`mitigationDedupKey`** so an edge mitigation visibly identical to a function mitigation never renders or counts twice. The backend twin of the frontend's dedup key lives at [`mitigationUtils.ts`](../../../packages/l2b/src/implementations/discovery-ui/defidisco/mitigationUtils.ts) — keep them in sync.
+- **`delayRef` resolution on edge mitigations.** After merging, `getMitigationsForOwner` resolves `delayRef → delaySeconds` for any delay mitigation lacking `delaySeconds` (mirrors what `buildMergedMitigations` already does for function mitigations). Without this, edge mitigations carrying `{type:'delay', delayRef:{...}}` would surface as empty badges in admin views.
+- **Edge impact caps** (`setEdgeCap` / `setOutgoingCap` / `setIncomingCap`). Resolved to USD in `projectAnalysis.buildResolvedEdgeCaps` (keyed by `enhancedEdgeKey`) and folded per-edge in `capitalAnalysis.traverseForward` via `minDefined(sourcePathCap, targetFuncCap, edgeCap)` — same merge as function caps; a cap on a `scope:'backward'` edge is a no-op because the edge is skipped before the fold.
+
+**`func.delay` field caveat.** A separate top-level `delay: { contractAddress, fieldName }` on a function (distinct from the `mitigations[]` array) causes `buildMergedMitigations` to **auto-synthesize** a delay mitigation that propagates as a global mitigation to every dependency the function reaches. For caller-relationship timelocks (MetaMorpho's 7-day vault timelock on `submit*` functions, etc.) prefer **anchoring on the edge** and omitting `func.delay` — otherwise the synthesized mitigation leaks onto downstream dependency rows (Morpho Blue, Chainlink, …) as a spurious "7d delay" badge. See `/review-morpho-vault` Step 7c for the canonical pattern.
 
 ### Impact Cap
 

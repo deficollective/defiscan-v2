@@ -1,3 +1,203 @@
+Generated with discovered.json: 0x30bf7aea584f1d11d88061b384e1d6622038c8f8
+
+# Diff at Thu, 14 May 2026 17:09:36 GMT:
+
+- author: emduc (<emilien.duc@gmail.com>)
+- comparing to: main@bf5a31b9a7e4b87516c5a65c21a524847bac79a5 block: 1778751773
+- current timestamp: 1778751773
+
+## Description
+
+Discovery rerun on the same block number with only config-related changes.
+
+## Config/verification related changes
+
+Following changes come from updates made to the config file,
+or/and contracts becoming verified, not from differences found during
+discovery. Values are for block 1778751773 (main branch discovery), not current.
+
+```diff
+    contract AuctionManager (eth:0x00C452aFFee3a17d9Cecc1Bcd2B8d5C7635C4CB9) {
+    +++ description: None
+      values.admins.0:
++        "eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705"
+      values.admins.1:
++        "eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"
+      values.admins.2:
++        "eth:0x9f26d4C958fD811A1F59B01B86Be7dFFc9d20761"
+    }
+```
+
+```diff
+    contract EtherFiRestaker (eth:0x1B7a4C3797236A1C37f8741c0Be35c2c72736fFf) {
+    +++ description: None
+      values.admins.0:
++        "eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"
+    }
+```
+
+```diff
+    contract MembershipManager (eth:0x3d320286E014C3e1ce99Af6d6B00f0C1D63E3000) {
+    +++ description: None
+      values.admins.0:
++        "eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705"
+      values.admins.1:
++        "eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"
+      values.admins.2:
++        "eth:0x9f26d4C958fD811A1F59B01B86Be7dFFc9d20761"
+    }
+```
+
+```diff
+    contract EtherFiOracle (eth:0x57AaF0004C716388B21795431CD7D5f9D3Bb6a41) {
+    +++ description: None
+      values.admins.0:
++        "eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705"
+      values.admins.1:
++        "eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"
+      values.admins.2:
++        "eth:0x9f26d4C958fD811A1F59B01B86Be7dFFc9d20761"
+    }
+```
+
+```diff
+    contract RoleRegistry (eth:0x62247D29B4B9BECf4BB73E0c722cf6445cfC7cE9) {
+    +++ description: None
+      values.roles.0x0e8d94121b3383f03d9ae60b39295aa793469d7230d51a3f62cbf47cd45481d9:
+-        ["eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705","eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.0xf63b1ce674d2cec0dbfcdcc7e504ce31a335c457c363b9fafb6ca524addf1775:
+-        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.0xdf341d2a9af804fa0099198f83a0a0611aa273a03b36d576993f914e695dff2a:
+-        ["eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705","eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.0x1fa5f863eb8a62c868fa7eb98a4e47ded14913e6885050cfd9090d04516345b0:
+-        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.0xb72d40a29b0ca5ab6e0b32830618dfdcae56fae676396ff1f7c3fede659935c8:
+-        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC","eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705"]
+      values.roles.0xe6ff4398839854a2087720a46165c7be195bc9de6f7a3c5a977d3b6917b76af2:
+-        ["eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705","eth:0x9AF1298993DC1f397973C62A5D47a284CF76844D","eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.0xe9d356a03911100a5418b1829f363128136c30112754cb3dbe73b1674abe2ac8:
+-        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.0x4fb62203ff7abbe51d8c53865ac09965620ebfa150bfb9e0d3c26869f5c43935:
+-        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.0xa9e662c125cda0e0d367a277c57f51ca0b3a9ddb823ca7717301532d10b2b0f8:
+-        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a","eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.0xa2a38b453c00b96e25a6611741c0fa71b17f9f21f28c0d5e77c008a31c1949ba:
+-        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.0x25f713693dd3e84995d0d9964722b195ad1b60efe6253e8fa19b8e74f9a6602a:
+-        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a","eth:0x7835fB36A8143a014A2c381363cD1A4DeE586d2A"]
+      values.roles.0x59182b0a43541702fc3e73f22a962f8f868277e76091a99c516d2982b9df2f90:
+-        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a","eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F","eth:0x25e821b7197B146F7713C3b89B6A4D83516B912d"]
+      values.roles.0xc6ace799356a5a236ccaa6708c68b77b7de838b1700b6e0c40f48a1407a5eef0:
+-        ["eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705"]
+      values.roles.0x06b452e947f709c0549c7a2e857f0d57f53a00c27bb826a3340a48774a76512f:
+-        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.0x140ee46da08400488949dfb48bdfc7c0502610f6a6203d169743d6b9e776a0be:
+-        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.0xf2c32172f8adc08057d18fb6422b871bd95592f20a6ab72ebf7963209047f50c:
+-        ["eth:0x7835fB36A8143a014A2c381363cD1A4DeE586d2A"]
+      values.roles.0xeb260b9ff913fc1877c5f4dad9a2de53d4add5c5bf95e630342a54ad228cdb5f:
+-        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.0xb56db3e3aaf390cabc1ed5bc88c1fb620c033c618c569e3902254bcef71cf54c:
+-        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.0x20e7d93f475a4a8dd621285797dd2d68da59e4450b89aea5ca9bf079e95c1db5:
+-        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC","eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.0xcae8f60415c61e4b3a46975038089b058a1a802ec6912db2cb8b95d5d09dcb74:
+-        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.0x623ac534141a3de3d1e20f924b4a3b115aa68dc5b00452321cda0323932459ab:
+-        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC","eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.0x8c7b9778e52066fde8fbd3e25c5180a9726e067622ca2cb96db1c1225b4c827b:
+-        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.0x756a7536f06e7e4456636342cf02e0825db97b9bbbcbe5142795cc76b4eeea14:
+-        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.0x9fad9ee19c69fc6a5f3a9ebfef13b0ed2faeb808252a4bb01f970bb4012ffa15:
+-        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.0x39730a843a472e74e79db13c62de74d1602801e7cfce5acb9837f64a50ff5f4b:
+-        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.LIQUIDITY_POOL_ADMIN_ROLE:
++        ["eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705","eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.ETHERFI_ORACLE_EXECUTOR_ADMIN_ROLE:
++        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.WITHDRAW_REQUEST_NFT_ADMIN_ROLE:
++        ["eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705","eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.ETHERFI_REDEMPTION_MANAGER_ADMIN_ROLE:
++        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.PROTOCOL_UNPAUSER:
++        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC","eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705"]
+      values.roles.PROTOCOL_PAUSER:
++        ["eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705","eth:0x9AF1298993DC1f397973C62A5D47a284CF76844D","eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.ETHERFI_ORACLE_EXECUTOR_TASK_MANAGER_ROLE:
++        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.IMPLICIT_FEE_CLAIMER_ROLE:
++        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.STAKING_MANAGER_NODE_CREATOR_ROLE:
++        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a","eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.ETHERFI_NODES_MANAGER_ADMIN_ROLE:
++        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a"]
+      values.roles.ETHERFI_NODES_MANAGER_CALL_FORWARDER_ROLE:
++        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a","eth:0x7835fB36A8143a014A2c381363cD1A4DeE586d2A"]
+      values.roles.ETHERFI_NODES_MANAGER_EIGENLAYER_ADMIN_ROLE:
++        ["eth:0xcD425f44758a08BaAB3C4908f3e3dE5776e45d7a","eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F","eth:0x25e821b7197B146F7713C3b89B6A4D83516B912d"]
+      values.roles.LIQUIDITY_POOL_VALIDATOR_APPROVER_ROLE:
++        ["eth:0x0EF8fa4760Db8f5Cd4d993f3e3416f30f942D705"]
+      values.roles.EETH_OPERATING_ADMIN_ROLE:
++        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.ETHERFI_NODES_MANAGER_EL_TRIGGER_EXIT_ROLE:
++        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.ETHERFI_NODES_MANAGER_POD_PROVER_ROLE:
++        ["eth:0x7835fB36A8143a014A2c381363cD1A4DeE586d2A"]
+      values.roles.STAKING_MANAGER_ADMIN_ROLE:
++        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.ETHERFI_RATE_LIMITER_ADMIN_ROLE:
++        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.LIQUIDITY_POOL_VALIDATOR_CREATOR_ROLE:
++        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC","eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.STAKING_MANAGER_VALIDATOR_INVALIDATOR_ROLE:
++        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.ETHERFI_NODES_MANAGER_EL_CONSOLIDATION_ROLE:
++        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC","eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.ETHERFI_NODES_MANAGER_LEGACY_LINKER_ROLE:
++        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+      values.roles.PRIORITY_WITHDRAWAL_QUEUE_ADMIN_ROLE:
++        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.PRIORITY_WITHDRAWAL_QUEUE_WHITELIST_MANAGER_ROLE:
++        ["eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"]
+      values.roles.PRIORITY_WITHDRAWAL_QUEUE_REQUEST_MANAGER_ROLE:
++        ["eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"]
+    }
+```
+
+```diff
+    contract Liquifier (eth:0x9FFDF407cDe9a93c47611799DA23924Af3EF764F) {
+    +++ description: None
+      values.admins.0:
++        "eth:0x12582A27E5e19492b4FcD194a60F8f5e1aa31B0F"
+      values.admins.1:
++        "eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"
+      values.admins.2:
++        "eth:0x9f26d4C958fD811A1F59B01B86Be7dFFc9d20761"
+    }
+```
+
+```diff
+    contract MembershipNFT (eth:0xb49e4420eA6e35F98060Cd133842DbeA9c27e479) {
+    +++ description: None
+      values.admins.0:
++        "eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"
+      values.admins.1:
++        "eth:0x9f26d4C958fD811A1F59B01B86Be7dFFc9d20761"
+    }
+```
+
+```diff
+    contract NodeOperatorManager (eth:0xd5edf7730ABAd812247F6F54D7bd31a52554e35E) {
+    +++ description: None
+      values.admins.0:
++        "eth:0x2aCA71020De61bb532008049e1Bd41E451aE8AdC"
+      values.admins.1:
++        "eth:0x9f26d4C958fD811A1F59B01B86Be7dFFc9d20761"
+    }
+```
+
 Generated with discovered.json: 0x2344663d41b1d5d68e9aa03af2af09eeaefc44be
 
 # Diff at Wed, 22 Apr 2026 11:44:22 GMT:

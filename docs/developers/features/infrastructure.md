@@ -261,6 +261,8 @@ The Monitor Admin Dashboard (`/ui/monitor-admin`) is a researcher cleanup UI for
 
 Both mutations optionally take `addToIgnoreWatchMode` and promote the stripped field names into `overrides[address].ignoreInWatchMode` in `config.jsonc` via `jsonc-parser` (comment-preserving). Structural keys that are not valid `ignoreInWatchMode` entries (proxy escapes, `accessControl.*` subtrees) are skipped.
 
+Both mutations also take an optional `skipRecompile`. By default each call ends with a full review recompile for the row's project, which is correct for the dashboard's one-row-at-a-time flow but is the dominant cost in a bulk cleanup — the compile takes seconds while the mutation itself takes milliseconds. Batch callers (e.g. the `/daily-activity-handler` skill stripping dozens of rows across a handful of projects) should pass `skipRecompile: true` and then issue one `POST /api/projects/:project/compile-review` per touched project at the end. The compiled output depends only on the final state of `activity.json` / `config.jsonc`, not on each intermediate row, so the result is identical. When skipped, `MutationResult.recompile` is `null`.
+
 ### Cascade semantics
 
 | Action | DB effect | `activity.json` effect | `config.jsonc` effect (if toggle on) |

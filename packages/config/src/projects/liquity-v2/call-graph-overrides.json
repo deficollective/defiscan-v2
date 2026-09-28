@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-05-30T06:26:01.221Z",
+  "rules": [
+    {
+      "id": "liq-bulk-001",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x3400874305E1547020fb8e80eAF1308B757171Af",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393",
+      "edgeType": "callgraph",
+      "calledFunction": "name",
+      "note": "MetadataNFT \u2192 retarget .name from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-002",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x3400874305E1547020fb8e80eAF1308B757171Af",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393",
+      "edgeType": "callgraph",
+      "calledFunction": "symbol",
+      "note": "MetadataNFT \u2192 retarget .symbol from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-003",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x362f822dF79790C8077e61110484Fffa48F682A1",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "edgeType": "callgraph",
+      "calledFunction": "name",
+      "note": "MetadataNFT \u2192 retarget .name from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-004",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x362f822dF79790C8077e61110484Fffa48F682A1",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "edgeType": "callgraph",
+      "calledFunction": "symbol",
+      "note": "MetadataNFT \u2192 retarget .symbol from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-005",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x372ABD1810eAF23Cb9D941BbE7596DFb2c46BC65",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "edgeType": "callgraph",
+      "calledFunction": "transferFrom",
+      "note": "BorrowerOperations \u2192 retarget .transferFrom from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-006",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x9B36C3B16299D68c79F174df7e728E35b6AF4A12",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "edgeType": "callgraph",
+      "calledFunction": "name",
+      "note": "MetadataNFT \u2192 retarget .name from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-007",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x9B36C3B16299D68c79F174df7e728E35b6AF4A12",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "edgeType": "callgraph",
+      "calledFunction": "symbol",
+      "note": "MetadataNFT \u2192 retarget .symbol from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-008",
+      "type": "setOutgoingTarget",
+      "from": "eth:0xa741A32f9dcFe6aDBa088fD0f97e90742d7d5DA3",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "edgeType": "callgraph",
+      "calledFunction": "transferFrom",
+      "note": "BorrowerOperations \u2192 retarget .transferFrom from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-009",
+      "type": "setOutgoingTarget",
+      "from": "eth:0xe8119fC02953B27a1b48D2573855738485A17329",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "edgeType": "callgraph",
+      "calledFunction": "transferFrom",
+      "note": "BorrowerOperations \u2192 retarget .transferFrom from TroveNFT to collToken (selector-collision; rule ordered first so the per-market sweep below does not capture it)."
+    },
+    {
+      "id": "liq-bulk-010",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x372ABD1810eAF23Cb9D941BbE7596DFb2c46BC65",
+      "fromTarget": "eth:0x14d8d8011df2b396ed2bbc4959bb73250324f386",
+      "toTarget": "eth:0xA25269E41BD072513849F2E64Ad221e84f3063F4",
+      "edgeType": "callgraph",
+      "note": "BorrowerOperations \u2192 bulk-retarget every call to wrong-market SortedTroves (4 called fns) \u2192 own-market SortedTroves."
+    },
+    {
+      "id": "liq-bulk-011",
+      "type": "setOutgoingTarget",
+      "from": "eth:0x7bcb64B2c9206a5B699eD43363f6F98D4776Cf5A",
+      "fromTarget": "eth:0x5cc5cefd034fdc4728d487a72ca58a410cddcd6b",
+      "toTarget": "eth:0xD4558240d50C2E219a21c9d25afD513Bb6e5B1A0",
+      "edgeType": "callgraph",
+      "note": "TroveManager \u2192 bulk-retarget every call to wrong-market DefaultPool (3 called fns) \u2192 own-market DefaultPool."
+    },
+    {
+      "id": "liq-bulk-012",
+      "type": "setOutgoingTarget",
+      "from": "eth:0xA2895d6A3bf110561Dfe4b71cA539d84e1928B22",
+      "fromTarget": "eth:0x5cc5cefd034fdc4728d487a72ca58a410cddcd6b",
+      "toTarget": "eth:0xD796e1648526400386CC4d12FA05E5F11e6a22A1",
+      "edgeType": "callgraph",
+      "note": "TroveManager \u2192 bulk-retarget every call to wrong-market DefaultPool (3 called fns) \u2192 own-market DefaultPool."
+    },
+    {
+      "id": "liq-bulk-013",
+      "type": "setOutgoingTarget",
+      "from": "eth:0xa741A32f9dcFe6aDBa088fD0f97e90742d7d5DA3",
+      "fromTarget": "eth:0x14d8d8011df2b396ed2bbc4959bb73250324f386",
+      "toTarget": "eth:0x84eb85a8C25049255614F0536Bea8F31682e86F1",
+      "edgeType": "callgraph",
+      "note": "BorrowerOperations \u2192 bulk-retarget every call to wrong-market SortedTroves (7 called fns) \u2192 own-market SortedTroves."
+    },
+    {
+      "id": "liq-bulk-014",
+      "type": "setOutgoingTarget",
+      "from": "eth:0xa741A32f9dcFe6aDBa088fD0f97e90742d7d5DA3",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0x857aECeBF75f1012DC18E15020C97096aeA31b04",
+      "edgeType": "callgraph",
+      "note": "BorrowerOperations \u2192 bulk-retarget every call to wrong-market TroveNFT (1 called fns) \u2192 own-market TroveNFT."
+    },
+    {
+      "id": "liq-bulk-015",
+      "type": "setOutgoingTarget",
+      "from": "eth:0xa741A32f9dcFe6aDBa088fD0f97e90742d7d5DA3",
+      "fromTarget": "eth:0x7bcb64b2c9206a5b699ed43363f6f98d4776cf5a",
+      "toTarget": "eth:0xA2895d6A3bf110561Dfe4b71cA539d84e1928B22",
+      "edgeType": "callgraph",
+      "note": "BorrowerOperations \u2192 bulk-retarget every call to wrong-market TroveManager (18 called fns) \u2192 own-market TroveManager."
+    },
+    {
+      "id": "liq-bulk-016",
+      "type": "setOutgoingTarget",
+      "from": "eth:0xe8119fC02953B27a1b48D2573855738485A17329",
+      "fromTarget": "eth:0x1a0fc0b843afd9140267d25d4e575cb37a838013",
+      "toTarget": "eth:0x7ae430E25b67f19B431e1D1Dc048a5BCF24C0873",
+      "edgeType": "callgraph",
+      "note": "BorrowerOperations \u2192 bulk-retarget every call to wrong-market TroveNFT (1 called fns) \u2192 own-market TroveNFT."
+    },
+    {
+      "id": "liq-bulk-017",
+      "type": "setOutgoingTarget",
+      "from": "eth:0xe8119fC02953B27a1b48D2573855738485A17329",
+      "fromTarget": "eth:0x7bcb64b2c9206a5b699ed43363f6f98d4776cf5a",
+      "toTarget": "eth:0xb2B2ABEb5C357a234363FF5D180912D319e3e19e",
+      "edgeType": "callgraph",
+      "note": "BorrowerOperations \u2192 bulk-retarget every call to wrong-market TroveManager (18 called fns) \u2192 own-market TroveManager."
+    }
+  ]
+}

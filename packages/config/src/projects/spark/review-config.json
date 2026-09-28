@@ -28,21 +28,17 @@
       "name": "SparkLend Freezer 3/5 Multisig",
       "description": "A 3-of-5 GnosisSafe that owns SparkLendFreezerMom and can instantly freeze or pause any SparkLend market without waiting for the 24-hour governance delay. Through SparkLendFreezerMom it calls `setReserveFreeze`, `setReservePause`, `freezeAllMarkets`, and `pauseAllMarkets`, blocking new borrows/supplies on all 22 reachable contracts (covering {{freezerMultisigReachableCapital}} in reachable capital). It cannot drain funds, only halt market activity."
     },
-    "eth:0x8076807464DaC94Ac8Aa1f7aF31b58F73bD88A27": {
-      "name": "Emission Admin 2/3 Multisig",
-      "description": "A 2-of-3 GnosisSafe registered as the emission admin on the EmissionManager. It configures reward distribution parameters — `configureAssets`, `setTransferStrategy`, `setRewardOracle`, `setDistributionEnd`, `setEmissionPerSecond` — affecting a limited reward-distribution scope ({{emissionMultisigReachableCapital}} in reachable capital). Cannot affect collateral or debt markets."
-    },
     "eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB": {
-      "name": "ALM Controller 1/2 Multisig",
-      "description": "A 1-of-2 Safe registered as a controller on ALMProxyFreezable, giving it `doCall`, `doCallWithValue`, and `doDelegateCall` — the ability to execute arbitrary calls and delegatecalls from the ALM proxy. The ALM proxy is a controller on 23 downstream contracts reaching {{almController12ReachableCapital}} in capital; the 1-of-2 threshold means a single signer can trigger these calls."
+      "name": "ALM Allocator 1/2 Multisig",
+      "description": "A 1-of-2 Safe holding the ALLOCATOR_ROLE on ALMProxyFreezable, giving it `doCall` and `doCallWithValue` — the ability to execute arbitrary calls from the ALM proxy. The ALM proxy reaches {{almController12ReachableCapital}} in downstream capital; the 1-of-2 threshold means a single signer can trigger these calls."
     },
     "eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795": {
-      "name": "ALM Controller 2/5 Multisig",
-      "description": "A 2-of-5 Safe registered as a second controller on ALMProxyFreezable with the same arbitrary-call powers as the 1/2 Safe — `doCall`, `doCallWithValue`, `doDelegateCall` — reaching {{almController25ReachableCapital}} in downstream capital. Two signers out of five are sufficient."
+      "name": "ALM Allocator 2/5 Multisig",
+      "description": "A 2-of-5 Safe holding the ALLOCATOR_ROLE on ALMProxyFreezable with the same arbitrary-call powers as the 1/2 Safe — `doCall`, `doCallWithValue` — reaching {{almController25ReachableCapital}} in downstream capital. Two signers out of five are sufficient."
     },
     "eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431": {
-      "name": "ALM Controller Manager 1/4 Multisig",
-      "description": "A 1-of-4 Safe that can call `removeController` on ALMProxyFreezable, removing the other ALM multisigs from the controller set. A single signer is sufficient to execute this action, affecting {{almManagerReachableCapital}} in reachable capital."
+      "name": "ALM Freezer 2/4 Multisig",
+      "description": "A 2-of-4 Safe holding the FREEZER_ROLE on ALMProxyFreezable. It can call `removeAllocator` to revoke an allocator multisig from the ALM, affecting {{almManagerReachableCapital}} in reachable capital. Two signers out of four are required."
     },
     "eth:0x237e3985dD7E373F2ec878EC1Ac48A228Cf2e7a3": {
       "name": "SparkLendFreezerMom (Emergency Freeze Contract)",
@@ -68,9 +64,9 @@
       "name": "Pool (AToken Mint/Burn)",
       "description": "The upgradeable SparkLend Pool contract. Its implementation is set by PoolAddressesProvider, so it is governed by SubProxy via upgrade. Internally it is the only contract allowed to `mint`/`burn`/`transferUnderlyingTo` on ATokens — the standard Aave V3 architecture. Direct capital: {{poolDirectCapital}}."
     },
-    "eth:0x9Ad87668d49ab69EEa0AF091de970EF52b0D5178": {
+    "eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699": {
       "name": "ALMProxyFreezable",
-      "description": "The ALM execution proxy. It can call CapAutomator's `execSupply`/`execBorrow`/`exec` entry points, and serves as the contract through which the three ALM multisigs execute arbitrary calls. Protocol-internal — the real authority belongs to its controller multisigs."
+      "description": "The ALM execution proxy (deployed 2026-06-09, replacing 0x9Ad8…5178). It is the contract through which the ALM allocator multisigs execute arbitrary calls via `doCall`/`doCallWithValue`. Protocol-internal — the real authority belongs to its ALLOCATOR_ROLE allocator multisigs, with FREEZER_ROLE able to revoke them and SubProxy (Sky governance) as DEFAULT_ADMIN_ROLE."
     },
     "eth:0x09e05fF6142F2f9de8B6B65855A1d56B6cfE4c58": {
       "name": "ESM (Emergency Shutdown Module)",
@@ -354,7 +350,6 @@
     "subProxyDirectCapital": "v2score.inventory.admins.breakdown[\"eth:0x3300f198988e4C9C63F75dF86De36421f06af8c4\"].totalDirectCapital",
     "subProxyReachableCapital": "v2score.inventory.admins.breakdown[\"eth:0x3300f198988e4C9C63F75dF86De36421f06af8c4\"].totalReachableCapital",
     "freezerMultisigReachableCapital": "v2score.inventory.admins.breakdown[\"eth:0x44efFc473e81632B12486866AA1678edbb7BEeC3\"].totalReachableCapital",
-    "emissionMultisigReachableCapital": "v2score.inventory.admins.breakdown[\"eth:0x8076807464DaC94Ac8Aa1f7aF31b58F73bD88A27\"].totalReachableCapital",
     "almController12ReachableCapital": "v2score.inventory.admins.breakdown[\"eth:0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB\"].totalReachableCapital",
     "almController25ReachableCapital": "v2score.inventory.admins.breakdown[\"eth:0x8Cc0Cb0cfB6B7e548cfd395B833c05C346534795\"].totalReachableCapital",
     "almManagerReachableCapital": "v2score.inventory.admins.breakdown[\"eth:0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431\"].totalReachableCapital",

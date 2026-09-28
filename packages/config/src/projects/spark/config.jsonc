@@ -178,14 +178,17 @@
         "rewardsVaultWstETHBalance"
       ]
     },
-    "eth:0x9Ad87668d49ab69EEa0AF091de970EF52b0D5178": {
+    // ALMProxyFreezable (replaced 0x9Ad8…5178 on 2026-06-09). Different role model:
+    // ALLOCATOR_ROLE / FREEZER_ROLE (distinct hashes from the old CONTROLLER / FREEZER).
+    // accessControl handler enumerates the new controller set so owner paths resolve.
+    "eth:0xe5c6318456a7Cb6f74f93B4eee4616dB5fcef699": {
       "fields": {
         "accessControl": {
           "handler": {
             "type": "accessControl",
             "roleNames": {
-              "0x70546d1c92f8c2132ae23a23f5177aa8526356051c7510df99f50e012d221529": "CONTROLLER",
-              "0x0ac42a08299cbc4428ec38ad4a8e7d7440779fbbb20ea90bd10c094a406cfa6f": "FREEZER"
+              "0x68bf109b95a5c15fb2bb99041323c27d15f8675e11bf7420a1cd6ad64c394f46": "ALLOCATOR_ROLE",
+              "0x92de27771f92d6942691d73358b3a4673e4880de8356f8f2cf452be87e02d363": "FREEZER_ROLE"
             }
           }
         }
@@ -572,8 +575,14 @@
         }
       },
       "ignoreInWatchMode": [
+        "currentPeriodMintedFeeAmount",
+        "feePeriodStartTime",
         "getCurrentPeriodStartTime",
-        "getNextDailyLimitResetTimestamp"
+        "getNextDailyLimitResetTimestamp",
+        "highestRsethPrice",
+        "remainingDailyFeeMintLimit",
+        "rsETHPrice",
+        "sparkRsETHPoolBalance"
       ]
     },
     "eth:0xFDdf8D19D092839A26b31365c927cA236B5086cf": {

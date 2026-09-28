@@ -108,6 +108,16 @@
         "marketCap_oracle_0x4124b5Cb815A21E26fF86c8A6A0A074c7fa2Dd1D": {
           "handler": { "type": "metaMorphoCap", "mode": "market", "marketId": "0xbe50eed784490d6c32f398902b55eb5e1bd5af89e1f554993ad5fea899be090b" }
         },
+        // Pendle SY / Pendle PT / WETH markets (added June 2026)
+        "marketCap_oracle_0x007db14ca0d171fA583955fEF3917B2b9A95CF18": {
+          "handler": { "type": "metaMorphoCap", "mode": "market", "marketId": "0xe51f9aaad25d0e755429cf77076b3c2d37cb1228ed81f8a5482f2102c220eef5" }
+        },
+        "marketCap_oracle_0x7560CaC78c21F882d33355C45a44835653f69ec2": {
+          "handler": { "type": "metaMorphoCap", "mode": "market", "marketId": "0x80fea13225f27a1f4798c35d89e791711f963ed74eb3a86bcaffe28143095e94" }
+        },
+        "marketCap_oracle_0x1FcB6213410b0a97496189ab704A014af4FDbEBc": {
+          "handler": { "type": "metaMorphoCap", "mode": "market", "marketId": "0x631e64ae8498821a5605bd3c14e253ffbf207f87411e2aeffc91a32a126cc13d" }
+        },
         // Per-feed caps: SUM of caps across markets that consume this Chainlink/RedStone feed
         // queueField=withdrawQueue so the cap aggregation considers the full universe (the handler skips oracle=0x0)
         "feedCap_0x2665701293fCbEB223D11A08D826563EDcCE423A": {
@@ -145,6 +155,9 @@
         },
         "feedCap_0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23": {
           "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23", "queueField": "withdrawQueue" }
+        },
+        "feedCap_0xb131D953712DB127308ef07fCe30c2aCe465bbcE": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0xb131D953712DB127308ef07fCe30c2aCe465bbcE", "queueField": "withdrawQueue" }
         }
       },
       "ignoreInWatchMode": [
@@ -169,7 +182,11 @@
         "feedCap_0xa569d910839Ae8865Da8F8e70FfFb0cBA869F961",
         "feedCap_0xb415eAA355D8440ac7eCB602D3fb67ccC1f0bc81",
         "feedCap_0xfF30586cD0F29eD462364C7e81375FC0C71219b1",
-        "feedCap_0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23"
+        "feedCap_0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+        "marketCap_oracle_0x007db14ca0d171fA583955fEF3917B2b9A95CF18",
+        "marketCap_oracle_0x7560CaC78c21F882d33355C45a44835653f69ec2",
+        "marketCap_oracle_0x1FcB6213410b0a97496189ab704A014af4FDbEBc",
+        "feedCap_0xb131D953712DB127308ef07fCe30c2aCe465bbcE"
       ]
     },
     // === Chainlink EACAggregatorProxy: tighter prune than the shared template ===
@@ -201,6 +218,8 @@
     "eth:0x9f02D619a875B0CA383D21772e136fC18B637916": { "ignoreRelatives": ["BASE_VAULT", "QUOTE_VAULT"], "ignoreInWatchMode": ["price"] },
     "eth:0xc8043d248551Ed19B33cbc89dCCd69148c827039": { "ignoreRelatives": ["BASE_VAULT", "QUOTE_VAULT"], "ignoreInWatchMode": ["price"] },
     "eth:0xE6212D05cB5aF3C821Fef1C1A233a678724F9E7E": { "ignoreRelatives": ["BASE_VAULT", "QUOTE_VAULT"], "ignoreInWatchMode": ["price"] },
+    "eth:0x7560CaC78c21F882d33355C45a44835653f69ec2": { "ignoreRelatives": ["BASE_VAULT", "QUOTE_VAULT"], "ignoreInWatchMode": ["price"] },
+    "eth:0x1FcB6213410b0a97496189ab704A014af4FDbEBc": { "ignoreRelatives": ["BASE_VAULT", "QUOTE_VAULT"], "ignoreInWatchMode": ["price"] },
     // Lido WstETHPriceFeed and Pendle Chainlink adapter
     "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79": { "ignoreInWatchMode": ["latestAnswer", "latestRoundData"] },
     "eth:0xC6Be540fF8A71B413b4E56C00B4B4Ea31cc396dd": { "ignoreInWatchMode": ["latestAnswer", "latestRoundData", "price"] },
@@ -209,6 +228,12 @@
     "eth:0x3de0ff76E8b528C092d47b9DaC775931cef80F49": { "ignoreDiscovery": true },
     "eth:0x30775B422b9c7415349855346352FAA61fD97E41": { "ignoreDiscovery": true },
     "eth:0xBF98480425A29197e5d99D003017f63a1e595D02": { "ignoreDiscovery": true },
+    // Pendle PT (market 11) and SY (market 10) collateral leaves
+    "eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb": { "ignoreDiscovery": true },
+    "eth:0x73E0C0d45E048D25Fc26Fa3159b0aA04BfA4Db98": { "ignoreDiscovery": true },
+    // Pendle Chainlink oracle adapter (BASE_FEED of market 11's MorphoChainlinkOracleV2) — prune onward
+    // factory/market edges so PendleMarketV7 and the full Pendle market graph aren't pulled into discovery
+    "eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE": { "ignoreRelatives": ["factory", "market"], "ignoreInWatchMode": ["latestRoundData"] },
     "eth:0x2A73e899389cABa2a2f648BaBA35e67f5C00EFee": { "ignoreRelatives": ["owner"] },
     "eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f": { "ignoreRelatives": ["owner", "treasury"] },
     "eth:0x9a9Fa8338dd5E5B2188006f1Cd2Ef26d921650C2": { "ignoreRelatives": ["owner"] },
@@ -259,9 +284,8 @@
       ]
     },
     "eth:0x007db14ca0d171fA583955fEF3917B2b9A95CF18": {
-      "ignoreInWatchMode": [
-        "price"
-      ]
+      "ignoreRelatives": ["BASE_VAULT", "QUOTE_VAULT"],
+      "ignoreInWatchMode": ["price"]
     }
   }
 }

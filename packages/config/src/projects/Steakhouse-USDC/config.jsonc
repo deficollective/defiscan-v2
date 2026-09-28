@@ -17,6 +17,13 @@
     "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0": {
       "ignoreDiscovery": true
     },
+    // weETH (EtherFi) — collateral leaf for the weETH/USDC market. Cuts off the
+    // entire EtherFi protocol tree (timelock, role registry, liquidity pool,
+    // staking manager, oracle, redemption manager, etc.) plus the Lido stETH /
+    // Coinbase cbETH / Curve Vyper pools EtherFi pulls in internally.
+    "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee": {
+      "ignoreDiscovery": true
+    },
     "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB": {
       "ignoreMethods": [
         "convertToShares",
@@ -24,8 +31,7 @@
         "previewDeposit",
         "previewMint",
         "previewRedeem",
-        "previewWithdraw",
-        "withdrawQueue"
+        "previewWithdraw"
       ],
       "fields": {
         "supplyQueue": {
@@ -35,10 +41,18 @@
             "length": "{{ supplyQueueLength }}"
           }
         },
+        "withdrawQueue": {
+          "handler": {
+            "type": "array",
+            "method": "withdrawQueue",
+            "length": "{{ withdrawQueueLength }}"
+          }
+        },
         "marketParams": {
           "handler": {
             "type": "morphoMarkets",
             "morphoAddressField": "MORPHO",
+            "queueField": "withdrawQueue",
             "ignoreRelative": true
           }
         },
@@ -93,9 +107,49 @@
         },
         "fee": {
           "severity": "HIGH"
+        },
+        // Per-feed caps: SUM of caps across markets that consume this Chainlink feed.
+        // queueField=withdrawQueue so the cap aggregation considers the full universe (the handler skips oracle=0x0).
+        "feedCap_0x86392dC19c0b719886221c78AB11eb8Cf5c52812": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0x86392dC19c0b719886221c78AB11eb8Cf5c52812", "queueField": "withdrawQueue" }
+        },
+        "feedCap_0x986b5E1e1755e3C2440e960477f25201B0a8bbD4": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0x986b5E1e1755e3C2440e960477f25201B0a8bbD4", "queueField": "withdrawQueue" }
+        },
+        "feedCap_0xc0053f3FBcCD593758258334Dfce24C2A9A673aD": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0xc0053f3FBcCD593758258334Dfce24C2A9A673aD", "queueField": "withdrawQueue" }
+        },
+        "feedCap_0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6", "queueField": "withdrawQueue" }
+        },
+        "feedCap_0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c", "queueField": "withdrawQueue" }
+        },
+        "feedCap_0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23", "queueField": "withdrawQueue" }
+        },
+        "feedCap_0x4F67e4d9BD67eFa28236013288737D39AeF48e79": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0x4F67e4d9BD67eFa28236013288737D39AeF48e79", "queueField": "withdrawQueue" }
+        },
+        // WeEthToEthExchangeRateAdapter — BASE_FEED_1 of the weETH/USDC market oracle.
+        // Mirrors the WstETHPriceFeed pattern so the weETH-rate dependency edge inherits a cap.
+        "feedCap_0x4270E1817576bbA4b640466bE79A408Ef128F828": {
+          "handler": { "type": "metaMorphoCap", "mode": "feed", "feed": "0x4270E1817576bbA4b640466bE79A408Ef128F828", "queueField": "withdrawQueue" }
         }
       },
-      "ignoreInWatchMode": ["totalAssets", "totalSupply", "lastTotalAssets"]
+      "ignoreInWatchMode": [
+        "totalAssets",
+        "totalSupply",
+        "lastTotalAssets",
+        "feedCap_0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+        "feedCap_0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+        "feedCap_0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+        "feedCap_0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+        "feedCap_0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+        "feedCap_0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+        "feedCap_0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+        "feedCap_0x4270E1817576bbA4b640466bE79A408Ef128F828"
+      ]
     },
     "eth:0x4a3411ac2948B33c69666B35cc6d055B27Ea84f1": {
       "ignoreMethods": ["getTransmitters"]
@@ -104,14 +158,33 @@
       "ignoreRelatives": ["aggregator"]
     },
     "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23": {
-      "ignoreMethods": ["proposedAggregator"],
-      "ignoreRelatives": ["aggregator"]
+      "ignoreMethods": ["proposedAggregator", "getAnswer", "getTimestamp"],
+      "ignoreRelatives": [
+        "aggregator"
+      ],
+      "ignoreInWatchMode": [
+        "getAnswer",
+        "latestAnswer"
+      ]
     },
     "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812": {
       "ignoreRelatives": ["aggregator"]
     },
     "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD": {
       "ignoreRelatives": ["aggregator"]
+    },
+    // weETH/ETH exchange rate adapter (Morpho-side feed for the weETH market).
+    // Only relative is the WEETH token, which is already ignoreDiscovery above.
+    "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828": {
+      "ignoreInWatchMode": ["latestRoundData"]
+    },
+    // MorphoChainlinkOracleV2 for the weETH market.
+    "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411": {
+      "ignoreInWatchMode": ["price"]
+    },
+    // DummyFeed used as QUOTE_FEED_1 in the new oracle (immutable internal stub).
+    "eth:0xc3866d726C204C0836E0677A31973c649888973D": {
+      "ignoreInWatchMode": ["latestRoundData", "getPrice"]
     },
     "eth:0xA6D6950c9F177F1De7f7757FB33539e3Ec60182a": {
       "ignoreMethods": ["price"]
@@ -162,6 +235,285 @@
         "getDeviation",
         "price",
         "primaryPrice"
+      ]
+    },
+    "eth:0x5F7827FDeb7c20b443265Fc2F40845B715385Ff2": {
+      "ignoreInWatchMode": [
+        "totalSupply"
+      ]
+    },
+    "eth:0x758aaF09e1147e68c01Ca397d12293aB744C6161": {
+      "ignoreInWatchMode": [
+        "accrueInterestView",
+        "convertToShares",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets"
+      ]
+    },
+    "eth:0x89816d51bcB9bD2DE97719Adaa9eFaaC32653E86": {
+      "ignoreInWatchMode": [
+        "accrueInterestView",
+        "convertToShares",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets"
+      ]
+    },
+    "eth:0xbeef003C68896c7D2c3c60d363e8d71a49Ab2bf9": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeef003E31546C7210687f1A7b40d096BE83ec58": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeef0046fcab1dE47E41fB75BB3dC4Dfc94108E3": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "lastUpdate",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeef009FF4FB1727297BF2526806F4A73E4b99aD": {
+      "ignoreInWatchMode": [
+        "accrueInterestView",
+        "totalAssets"
+      ]
+    },
+    "eth:0xbEEF00A59B577423653A1526c7009bdE103F542B": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeef04cCAfe3FB25dEc704afe592e846B8C7fd06": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "lastUpdate",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeef088055857739C12CD3765F20b7679Def0f51": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeef0969cfF911265AbCA9542d61c32146336104": {
+      "ignoreInWatchMode": [
+        "accrueInterestView",
+        "convertToShares",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets"
+      ]
+    },
+    "eth:0xbeef099Cc772cfe744a2864BD1dfBD401F6a617D": {
+      "ignoreInWatchMode": [
+        "accrueInterestView",
+        "convertToShares",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets"
+      ]
+    },
+    "eth:0xbeef0A65206ba55319851836c91f3Fd8864a2E39": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeef0C075Da5D01112AE5cF34d257074fB5DDB2f": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "lastUpdate",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeef0c68466183937a22e1F414E8789a45032302": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "lastUpdate",
+        "totalAssets"
+      ]
+    },
+    "eth:0xbeeff07d991C04CD640DE9F15C08ba59c4FEDEb7": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xBEeFf08E1887A11D91B9Ca68c133c08Ae3c4B44f": {
+      "ignoreInWatchMode": [
+        "accrueInterestView",
+        "totalAssets"
+      ]
+    },
+    "eth:0xbeeFf0956ACb02E6F203e83D6eaE357A1d7d116C": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xBEEFF0DeaC1aBa71EF0D88C4291354eb92ef4589": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeeff2C5bF38f90e3482a8b19F12E5a6D2FCa757": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeeffABcd0dB09589Dd21854aa760C52aB4bf04F": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "lastUpdate",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xbeEFfc7b7d0604b4afB92628a8E4B09dc01d008A": {
+      "ignoreInWatchMode": [
+        "accrueInterestView",
+        "totalAssets"
+      ]
+    },
+    "eth:0xBEEFFF7e4EedD83A4a4aB53A68D03eC77C9a57a8": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xBEEFFF9291CB0898ae42626C662f3175d4B69F7F": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xBEEFFFDE1CABD3d8A3cd4fd5e04DbA51B9D4Ac39": {
+      "ignoreInWatchMode": [
+        "_totalAssets",
+        "accrueInterestView",
+        "convertToShares",
+        "lastUpdate",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets",
+        "totalSupply"
+      ]
+    },
+    "eth:0xD703c55B871D999eA5435aC3721B19296Ac249D1": {
+      "ignoreInWatchMode": [
+        "backupPrice",
+        "getDeviation",
+        "price",
+        "primaryPrice"
+      ]
+    },
+    "eth:0xd87B4a9de5b184a469942339508dD485e8eeeAd7": {
+      "ignoreInWatchMode": [
+        "price"
+      ]
+    },
+    "eth:0xdee9c016bd52b0A99A78790A9bf8410662A3d1e3": {
+      "ignoreInWatchMode": [
+        "price"
+      ]
+    },
+    "eth:0xF3EFa46246d319381F5E7023Ae83F9C23C11b0F6": {
+      "ignoreInWatchMode": [
+        "price"
+      ]
+    },
+    "eth:0xFe1456aa6d05c050BB922092B6C99eC8bAfd4e70": {
+      "ignoreInWatchMode": [
+        "accrueInterestView",
+        "convertToShares",
+        "previewDeposit",
+        "previewWithdraw",
+        "totalAssets"
       ]
     }
   }

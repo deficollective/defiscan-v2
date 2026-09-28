@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-06-04T06:43:37.799145Z",
+  "rules": [
+    {
+      "id": "sentorapyusd-timelock-submitTimelock-owner",
+      "type": "setEdgeMitigation",
+      "from": "eth:0xe8C9C99EcaD0686A14A00d8521c572281E938008",
+      "to": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55.submitTimelock",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitTimelock execution",
+          "delayRef": {
+            "contractAddress": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(owner\u2192submitTimelock) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "sentorapyusd-timelock-submitGuardian-owner",
+      "type": "setEdgeMitigation",
+      "from": "eth:0xe8C9C99EcaD0686A14A00d8521c572281E938008",
+      "to": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55.submitGuardian",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitGuardian execution",
+          "delayRef": {
+            "contractAddress": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(owner\u2192submitGuardian) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "sentorapyusd-timelock-submitCap-curator",
+      "type": "setEdgeMitigation",
+      "from": "eth:0x9e396dE3312D373b87F9BD8763fb48184b42aac0",
+      "to": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55.submitCap",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitCap execution",
+          "delayRef": {
+            "contractAddress": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(curator\u2192submitCap) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "sentorapyusd-timelock-submitCap-owner",
+      "type": "setEdgeMitigation",
+      "from": "eth:0xe8C9C99EcaD0686A14A00d8521c572281E938008",
+      "to": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55.submitCap",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitCap execution",
+          "delayRef": {
+            "contractAddress": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(owner\u2192submitCap) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "sentorapyusd-timelock-submitMarketRemoval-curator",
+      "type": "setEdgeMitigation",
+      "from": "eth:0x9e396dE3312D373b87F9BD8763fb48184b42aac0",
+      "to": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55.submitMarketRemoval",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitMarketRemoval execution",
+          "delayRef": {
+            "contractAddress": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(curator\u2192submitMarketRemoval) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    },
+    {
+      "id": "sentorapyusd-timelock-submitMarketRemoval-owner",
+      "type": "setEdgeMitigation",
+      "from": "eth:0xe8C9C99EcaD0686A14A00d8521c572281E938008",
+      "to": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55.submitMarketRemoval",
+      "edgeType": "permission",
+      "mitigations": [
+        {
+          "type": "delay",
+          "description": "Vault timelock delay before submitMarketRemoval execution",
+          "delayRef": {
+            "contractAddress": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55",
+            "fieldName": "timelock"
+          }
+        }
+      ],
+      "note": "(owner\u2192submitMarketRemoval) edge \u2014 anchors the vault timelock on the relationship, not the function."
+    }
+  ]
+}

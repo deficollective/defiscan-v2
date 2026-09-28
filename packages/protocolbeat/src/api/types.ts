@@ -910,6 +910,151 @@ export interface ExternalCall {
   resolutionCandidates?: ResolutionCandidate[] // All matches when multiple found
 }
 
+// Enhanced graph edges (call-graph walker). Mirrors the backend
+// EnhancedGraphEdge / ApiEnhancedGraphEdgesResponse in enhancedTraversal.ts.
+export type EnhancedEdgeKind = 'permission' | 'callgraph' | 'dependency'
+
+export interface EnhancedGraphEdge {
+  /** Stable semantic identity: `${from}|${to}|${edgeType}`. */
+  key: string
+  sourceContract: string
+  sourceFunction?: string
+  sourceName: string
+  targetContract: string
+  targetFunction: string
+  targetName: string
+  edgeType: EnhancedEdgeKind
+  isViewCall?: boolean
+}
+
+// Call-graph edge override rules. Mirrors the backend EdgeOverrideRule union in
+// callGraphOverrides.ts. Adding a rule type = add a variant here + a handler in
+// both the backend engine and the frontend applyRulesToCallEdges.
+interface EdgeRuleBase {
+  id: string
+  note?: string
+  enabled?: boolean
+}
+/** Which traversal directions an edge participates in. 'backward' = governance-
+ *  only (real ownership, no forward capital flare — the over-flare fix). */
+export type EdgeScope = 'forward' | 'backward' | 'both'
+export interface AddEdgeRule extends EdgeRuleBase {
+  type: 'addEdge'
+  from: string
+  to: string
+  edgeType: EnhancedEdgeKind
+}
+export interface RemoveEdgeRule extends EdgeRuleBase {
+  type: 'removeEdge'
+  from: string
+  to: string
+  edgeType: EnhancedEdgeKind
+}
+export interface SetEdgeScopeRule extends EdgeRuleBase {
+  type: 'setEdgeScope'
+  from: string
+  to: string
+  edgeType: EnhancedEdgeKind
+  scope: EdgeScope
+}
+export interface SetOutgoingScopeRule extends EdgeRuleBase {
+  type: 'setOutgoingScope'
+  node: string
+  edgeType?: EnhancedEdgeKind
+  scope: EdgeScope
+}
+export interface SetIncomingScopeRule extends EdgeRuleBase {
+  type: 'setIncomingScope'
+  node: string
+  edgeType?: EnhancedEdgeKind
+  scope: EdgeScope
+}
+/** Edge-centric impact cap (relationship cap): bounds the forward capital this
+ *  edge propagates. Folded into the per-edge cap (min) in capital analysis. */
+export interface SetEdgeCapRule extends EdgeRuleBase {
+  type: 'setEdgeCap'
+  from: string
+  to: string
+  edgeType: EnhancedEdgeKind
+  cap: ImpactCap
+}
+export interface SetOutgoingCapRule extends EdgeRuleBase {
+  type: 'setOutgoingCap'
+  node: string
+  edgeType?: EnhancedEdgeKind
+  cap: ImpactCap
+}
+export interface SetIncomingCapRule extends EdgeRuleBase {
+  type: 'setIncomingCap'
+  node: string
+  edgeType?: EnhancedEdgeKind
+  cap: ImpactCap
+}
+/** Bulk retarget: rewrite the *target contract* of every edge `from → fromTarget`
+ *  (optionally restricted to a `calledFunction`) to `toTarget`. One rule
+ *  collapses dozens of (removeEdge + addEdge) pairs in multi-instance protocols. */
+export interface SetOutgoingTargetRule extends EdgeRuleBase {
+  type: 'setOutgoingTarget'
+  from: string
+  fromTarget: string
+  toTarget: string
+  edgeType: EnhancedEdgeKind
+  calledFunction?: string
+}
+/** Edge-centric mitigations (relationship-level): appended to the matched edge,
+ *  merged into the function's effective mitigations for that owner. */
+export interface SetEdgeMitigationRule extends EdgeRuleBase {
+  type: 'setEdgeMitigation'
+  from: string
+  to: string
+  edgeType: EnhancedEdgeKind
+  mitigations: Mitigation[]
+}
+export type EdgeOverrideRule =
+  | AddEdgeRule
+  | RemoveEdgeRule
+  | SetEdgeScopeRule
+  | SetOutgoingScopeRule
+  | SetIncomingScopeRule
+  | SetEdgeCapRule
+  | SetOutgoingCapRule
+  | SetIncomingCapRule
+  | SetEdgeMitigationRule
+  | SetOutgoingTargetRule
+
+export interface ApiCallGraphOverridesResponse {
+  version: string
+  lastModified: string
+  rules: EdgeOverrideRule[]
+}
+
+// Agent-proposed override rules pending researcher review. Mirrors the backend
+// callGraphSuggestions.ts. Stored in a separate file analysis never reads.
+export type SuggestionStatus = 'pending' | 'accepted' | 'rejected'
+export interface RuleSuggestion {
+  id: string
+  rule: EdgeOverrideRule
+  reasoning: string
+  status: SuggestionStatus
+  createdBy?: string
+  createdAt: string
+  reviewedAt?: string
+}
+export interface ApiCallGraphSuggestionsResponse {
+  version: string
+  suggestions: RuleSuggestion[]
+}
+
+export interface ApiEnhancedGraphEdgesResponse {
+  version: string
+  lastModified: string
+  edges: EnhancedGraphEdge[]
+  /** Override rules currently on disk. */
+  appliedRules: EdgeOverrideRule[]
+  /** Ids of enabled rules that matched no edge — stale cuts to re-verify. */
+  unmatchedRuleIds: string[]
+}
+
 export interface ApiAIModelsResponse {
   key: string
   config: {

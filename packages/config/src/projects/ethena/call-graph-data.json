@@ -1,0 +1,1307 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-05-11T11:17:43.914Z",
+  "contracts": {
+    "eth:0x3B0AAf6e6fCd4a7cEEf8c92C32DFeA9E64dC1862": {
+      "address": "eth:0x3B0AAf6e6fCd4a7cEEf8c92C32DFeA9E64dC1862",
+      "name": "GnosisSafe",
+      "externalCalls": [
+        {
+          "callerFunction": "checkNSignatures",
+          "storageVariable": "TMP_330",
+          "interfaceType": "ISignatureValidator",
+          "calledFunction": "isValidSignature"
+        },
+        {
+          "callerFunction": "checkSignatures",
+          "storageVariable": "TMP_330",
+          "interfaceType": "ISignatureValidator",
+          "calledFunction": "isValidSignature"
+        },
+        {
+          "callerFunction": "execTransaction",
+          "storageVariable": "TMP_253",
+          "interfaceType": "Guard",
+          "calledFunction": "checkTransaction"
+        },
+        {
+          "callerFunction": "execTransaction",
+          "storageVariable": "TMP_277",
+          "interfaceType": "Guard",
+          "calledFunction": "checkAfterExecution"
+        },
+        {
+          "callerFunction": "execTransaction",
+          "storageVariable": "TMP_330",
+          "interfaceType": "ISignatureValidator",
+          "calledFunction": "isValidSignature"
+        }
+      ],
+      "generatedAt": "2026-05-11T11:17:43.867Z"
+    },
+    "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A": {
+      "address": "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A",
+      "name": "EnaSilo",
+      "externalCalls": [
+        {
+          "callerFunction": "withdraw",
+          "storageVariable": "_ENA",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+          "resolvedContractName": "StakedENA",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95
+        }
+      ],
+      "generatedAt": "2026-05-11T11:17:43.869Z"
+    },
+    "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3": {
+      "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+      "name": "USDe Token",
+      "externalCalls": [],
+      "generatedAt": "2026-05-11T11:17:43.873Z"
+    },
+    "eth:0x57e114B691Db790C35207b2e685D4A43181e6061": {
+      "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+      "name": "ENA Token",
+      "externalCalls": [],
+      "generatedAt": "2026-05-11T11:17:43.878Z"
+    },
+    "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425": {
+      "address": "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425",
+      "name": "USDeSilo",
+      "externalCalls": [
+        {
+          "callerFunction": "withdraw",
+          "storageVariable": "_USDE",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+          "resolvedContractName": "Staked USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": false
+        }
+      ],
+      "generatedAt": "2026-05-11T11:17:43.879Z"
+    },
+    "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9": {
+      "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+      "name": "StakedENA",
+      "externalCalls": [
+        {
+          "callerFunction": "convertToAssets",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "convertToShares",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "cooldownAssets",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "cooldownShares",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "deposit",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "maxWithdraw",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "mint",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "previewDeposit",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "previewMint",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "previewRedeem",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "previewWithdraw",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "redeem",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "redistributeLockedAmount",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "totalAssets",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "totalAssets",
+          "storageVariable": "TMP_478",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "unstake",
+          "storageVariable": "silo",
+          "interfaceType": "EnaSilo",
+          "calledFunction": "withdraw",
+          "resolvedAddress": "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A",
+          "resolvedContractName": "EnaSilo",
+          "resolutionType": "deterministic",
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "withdraw",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20Upgradeable",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+          "resolvedContractName": "ENA Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x57e114B691Db790C35207b2e685D4A43181e6061",
+              "contractName": "ENA Token"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            }
+          ],
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-11T11:17:43.890Z"
+    },
+    "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497": {
+      "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+      "name": "Staked USDe Token",
+      "externalCalls": [
+        {
+          "callerFunction": "convertToAssets",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "convertToShares",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "cooldownAssets",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "cooldownAssets",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "cooldownShares",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "cooldownShares",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "deposit",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "deposit",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "transferFrom",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "maxWithdraw",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "mint",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "mint",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "transferFrom",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "previewDeposit",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "previewMint",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "previewRedeem",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "previewWithdraw",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "redeem",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "redeem",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "redistributeLockedAmount",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "rescueTokens",
+          "storageVariable": "token",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "totalAssets",
+          "storageVariable": "TMP_460",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "totalAssets",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "transferInRewards",
+          "storageVariable": "TMP_423",
+          "interfaceType": "IERC20",
+          "calledFunction": "transferFrom",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "unstake",
+          "storageVariable": "silo",
+          "interfaceType": "USDeSilo",
+          "calledFunction": "withdraw",
+          "resolvedAddress": "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425",
+          "resolvedContractName": "USDeSilo",
+          "resolutionType": "deterministic",
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "withdraw",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "balanceOf",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "withdraw",
+          "storageVariable": "_asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 70,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+              "contractName": "USDe Token"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        }
+      ],
+      "generatedAt": "2026-05-11T11:17:43.901Z"
+    },
+    "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3": {
+      "address": "eth:0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3",
+      "name": "EthenaMinting",
+      "externalCalls": [
+        {
+          "callerFunction": "mint",
+          "storageVariable": "usde",
+          "interfaceType": "IUSDe",
+          "calledFunction": "mint",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "deterministic",
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "mint",
+          "storageVariable": "TMP_219",
+          "interfaceType": "IERC1271",
+          "calledFunction": "isValidSignature"
+        },
+        {
+          "callerFunction": "mint",
+          "storageVariable": "TMP_264",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "mint",
+          "storageVariable": "collateralAsset",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "mint",
+          "storageVariable": "token",
+          "interfaceType": "IERC20",
+          "calledFunction": "transferFrom",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "mintWETH",
+          "storageVariable": "usde",
+          "interfaceType": "IUSDe",
+          "calledFunction": "mint",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "deterministic",
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "mintWETH",
+          "storageVariable": "TMP_219",
+          "interfaceType": "IERC1271",
+          "calledFunction": "isValidSignature"
+        },
+        {
+          "callerFunction": "mintWETH",
+          "storageVariable": "TMP_264",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "mintWETH",
+          "storageVariable": "collateralAsset",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "mintWETH",
+          "storageVariable": "WETH",
+          "interfaceType": "IWETH9",
+          "calledFunction": "withdraw",
+          "resolvedAddress": "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A",
+          "resolvedContractName": "EnaSilo",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "function-signature",
+          "resolutionConfidence": 30,
+          "resolutionCandidates": [
+            {
+              "address": "eth:0x4655B6A10C83D6bEfF1DC7116436cFD8b4F8d48A",
+              "contractName": "EnaSilo"
+            },
+            {
+              "address": "eth:0x7FC7c91D556B400AFa565013E3F32055a0713425",
+              "contractName": "USDeSilo"
+            },
+            {
+              "address": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+              "contractName": "StakedENA"
+            },
+            {
+              "address": "eth:0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+              "contractName": "Staked USDe Token"
+            }
+          ],
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "mintWETH",
+          "storageVariable": "token",
+          "interfaceType": "IERC20",
+          "calledFunction": "transferFrom",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "redeem",
+          "storageVariable": "usde",
+          "interfaceType": "IUSDe",
+          "calledFunction": "burnFrom",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "deterministic",
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "redeem",
+          "storageVariable": "TMP_219",
+          "interfaceType": "IERC1271",
+          "calledFunction": "isValidSignature"
+        },
+        {
+          "callerFunction": "redeem",
+          "storageVariable": "TMP_264",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "redeem",
+          "storageVariable": "collateralAsset",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "redeem",
+          "storageVariable": "asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "transferToCustody",
+          "storageVariable": "asset",
+          "interfaceType": "IERC20",
+          "calledFunction": "transfer",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": false
+        },
+        {
+          "callerFunction": "verifyOrder",
+          "storageVariable": "TMP_219",
+          "interfaceType": "IERC1271",
+          "calledFunction": "isValidSignature",
+          "callerIsView": true,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "verifyOrder",
+          "storageVariable": "TMP_264",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "verifyOrder",
+          "storageVariable": "collateralAsset",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "verifyStablesLimit",
+          "storageVariable": "TMP_264",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        },
+        {
+          "callerFunction": "verifyStablesLimit",
+          "storageVariable": "collateralAsset",
+          "interfaceType": "IERC20Metadata",
+          "calledFunction": "decimals",
+          "resolvedAddress": "eth:0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+          "resolvedContractName": "USDe Token",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "discovered-values-scan",
+          "resolutionConfidence": 95,
+          "isViewCall": true
+        }
+      ],
+      "generatedAt": "2026-05-11T11:17:43.910Z"
+    },
+    "eth:0xf849D7792Ff9b30A57656ee10a2776bCb49F4Fe4": {
+      "address": "eth:0xf849D7792Ff9b30A57656ee10a2776bCb49F4Fe4",
+      "name": "ProxyAdmin",
+      "externalCalls": [
+        {
+          "callerFunction": "changeProxyAdmin",
+          "storageVariable": "proxy",
+          "interfaceType": "ITransparentUpgradeableProxy",
+          "calledFunction": "changeAdmin",
+          "resolvedAddress": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+          "resolvedContractName": "StakedENA",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "interface-name",
+          "resolutionConfidence": 90
+        },
+        {
+          "callerFunction": "upgrade",
+          "storageVariable": "proxy",
+          "interfaceType": "ITransparentUpgradeableProxy",
+          "calledFunction": "upgradeTo",
+          "resolvedAddress": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+          "resolvedContractName": "StakedENA",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "interface-name",
+          "resolutionConfidence": 90
+        },
+        {
+          "callerFunction": "upgradeAndCall",
+          "storageVariable": "proxy",
+          "interfaceType": "ITransparentUpgradeableProxy",
+          "calledFunction": "upgradeToAndCall",
+          "resolvedAddress": "eth:0x8bE3460A480c80728a8C4D7a5D5303c85ba7B3b9",
+          "resolvedContractName": "StakedENA",
+          "resolutionType": "optimistic",
+          "resolutionHeuristic": "interface-name",
+          "resolutionConfidence": 90
+        }
+      ],
+      "generatedAt": "2026-05-11T11:17:43.913Z"
+    }
+  }
+}

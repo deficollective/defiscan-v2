@@ -42,6 +42,14 @@ export function Header() {
             <Link to="/about" className={navClass('/about')}>
               About
             </Link>
+            <a
+              href="https://v1.defiscan.info"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium transition-colors tracking-[-0.35px] text-text-muted hover:text-accent"
+            >
+              V1
+            </a>
           </nav>
         </div>
 

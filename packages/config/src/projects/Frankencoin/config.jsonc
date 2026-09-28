@@ -134,6 +134,11 @@
       "ignoreInWatchMode": [
         "totalSupply"
       ]
+    },
+    "eth:0x3e445ff4ddDf0ff8aE7458c9746eD80bD664F6C1": {
+      "ignoreInWatchMode": [
+        "minted"
+      ]
     }
   }
 }

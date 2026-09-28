@@ -21,8 +21,8 @@
       "description": "Aragon OSx DAO (v1.4.0) installed as the vault guardian. Has emergency veto power over every timelocked change initiated by the owner: can revoke pending timelock updates (revokePendingTimelock), guardian replacements (revokePendingGuardian), market cap changes (revokePendingCap), and market removals (revokePendingMarketRemoval). Cannot initiate any change itself; acts as a pure cancel-only check on owner actions during their 7-day delay window."
     },
     "base:0x0000aeB716a0DF7A9A1AAd119b772644Bc089dA8": {
-      "name": "Allocator 1/5 Multisig",
-      "description": "Designated allocator multisig (1-of-5 threshold, 20% approval) with permissions to manage supply and withdrawal queues (setSupplyQueue, updateWithdrawQueue) and execute reallocations (reallocate). Reallocations are bounded to markets that already have a non-zero cap submitted via the timelocked submitCap path, so the allocator cannot move funds into unapproved markets."
+      "name": "Allocator 1/6 Multisig",
+      "description": "Designated allocator multisig (1-of-6 threshold, 17% approval) with permissions to manage supply and withdrawal queues (setSupplyQueue, updateWithdrawQueue) and execute reallocations (reallocate). Reallocations are bounded to markets that already have a non-zero cap submitted via the timelocked submitCap path, so the allocator cannot move funds into unapproved markets."
     },
     "base:0xfeed46c11F57B7126a773EeC6ae9cA7aE1C03C9a": {
       "name": "Allocator EOA (0xfeed...c9a)",

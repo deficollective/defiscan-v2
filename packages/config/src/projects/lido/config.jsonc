@@ -12,6 +12,28 @@
   "defidisco": { "scanPermissions": false },
   "maxAddresses": 400,
   "overrides": {
+    // CircuitBreaker: surface the registered pauser committees so pause()'s owners resolve.
+    // getPauser(pausable) returns the GnosisSafe authorized to pause that target. Two distinct
+    // committees (the former GateSeal sealing committees) split the pausables — protocol-core vs
+    // Community Staking — so query one representative pausable each (VaultHub, CSAccounting).
+    "eth:0x6019CB557978296BA3C08a7B73225C0975DFB2F7": {
+      "fields": {
+        "corePauserCommittee": {
+          "handler": {
+            "type": "call",
+            "method": "function getPauser(address) view returns (address)",
+            "args": ["0x1d201BE093d847f6446530Efb0E8Fb426d176709"]
+          }
+        },
+        "csmPauserCommittee": {
+          "handler": {
+            "type": "call",
+            "method": "function getPauser(address) view returns (address)",
+            "args": ["0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da"]
+          }
+        }
+      }
+    },
     // === External protocol contamination (EasyTrack-allowed treasury payout tokens) ===
     // DAI, USDT, USDC, sUSDS are allowed payment tokens for the DAO — not Lido contracts.
     // sUSDS pulls in the whole Sky/Maker dependency chain (UsdsJoin → Vat/Vow/USDS) so we cut all four.
@@ -59,7 +81,24 @@
             "value": "eth:0x9895F0F17cc1d1891b6f18ee0b483B6f221b37Bb"
           }
         }
-      }
+      },
+      "ignoreInWatchMode": [
+        "getBalanceStats",
+        "getBeaconStat",
+        "getBufferedEther",
+        "getDepositableEther",
+        "getDepositsReserve",
+        "getExternalEther",
+        "getExternalShares",
+        "getFeeDistribution",
+        "getMaxMintableExternalShares",
+        "getStakeLimitFullInfo",
+        "getTotalELRewardsCollected",
+        "getTotalPooledEther",
+        "getTotalShares",
+        "getWithdrawalsReserve",
+        "totalSupply"
+      ]
     },
     "eth:0xf73a1260d222f447210581DDf212D915c09a3249": {
       "fields": {
@@ -129,7 +168,8 @@
       ]
     },
     "eth:0xCE0425301C85c5Ea2A0873A2dEe44d78E02D2316": {
-      "ignoreMethods": ["canSchedule", "canExecute"]
+      "ignoreMethods": ["canSchedule", "canExecute"],
+      "ignoreInWatchMode": ["getProposalsCount"]
     },
     "eth:0xA8F14D033f377779274Ae016584a05bF14Dccaf8": {
       "ignoreInWatchMode": ["getRageQuitSupport", "getSignallingEscrowDetails"]
@@ -272,6 +312,83 @@
     "eth:0x165813A31446a98c84E20Dda8C101BB3C8228e1c": {
       "ignoreInWatchMode": [
         "getRageQuitSupport"
+      ]
+    },
+    "eth:0x68267f3D310E9f0FF53a37c141c90B738E1133c2": {
+      "ignoreInWatchMode": [
+        "getPeriodState",
+        "spendableBalance"
+      ]
+    },
+    "eth:0x3B525F4c059F246Ca4aa995D21087204F30c9E2F": {
+      "ignoreInWatchMode": [
+        "getPeriodState",
+        "spendableBalance"
+      ]
+    },
+    "eth:0xDAdC4C36cD8F468A398C25d0D8aaf6A928B47Ab4": {
+      "ignoreInWatchMode": [
+        "getPeriodState",
+        "spendableBalance"
+      ]
+    },
+    "eth:0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da": {
+      "ignoreInWatchMode": [
+        "getBond",
+        "getBondSummary",
+        "getBondSummaryShares",
+        "getClaimableBondShares",
+        "getNodeOperatorBondInfo"
+      ]
+    },
+    "eth:0x7C2a1E25cA6D778eCaEBC8549371062487846aAF": {
+      "ignoreInWatchMode": [
+        "estimateTradeOutputFromCurrentBalance"
+      ]
+    },
+    "eth:0xf4F6A03E3dbf0aA22083be80fDD340943d275Ea5": {
+      "ignoreInWatchMode": [
+        "estimateTradeOutputFromCurrentBalance"
+      ]
+    },
+    "eth:0xFdDf38947aFB03C621C71b06C9C70bce73f12999": {
+      "ignoreInWatchMode": [
+        "getAllNodeOperatorDigests",
+        "getAllStakingModuleDigests",
+        "getModuleValidatorsBalance",
+        "getStakingModule",
+        "getStakingModuleActiveValidatorsCount",
+        "getStakingModuleNonce",
+        "getStakingModuleStateAccounting",
+        "getStakingModuleStateDeposits",
+        "getStakingModuleSummary",
+        "getStakingModules",
+        "getStakingRewardsDistribution"
+      ]
+    },
+    "eth:0x2F91e3A8C5d6593bf4F8403fCfeCcd62dF59f6F6": {
+      "ignoreInWatchMode": [
+        "getBond",
+        "getBondSummary",
+        "getBondSummaryShares",
+        "getClaimableBondShares",
+        "getNodeOperatorBondInfo"
+      ]
+    },
+    "eth:0xDa5F930cE326EB5205085D66c72A4E79d60cB8C1": {
+      "ignoreInWatchMode": [
+        "getDepositAllocationTargets",
+        "getNodeOperator",
+        "getNodeOperatorBalance",
+        "getNodeOperatorSummary",
+        "getNodeOperatorWeightAndExternalStake",
+        "getStakingModuleSummary",
+        "getTopUpAllocationTargets"
+      ]
+    },
+    "eth:0xA64b339eebD3dC3De848298B6a140955932901d8": {
+      "ignoreInWatchMode": [
+        "getNodeOperatorWeightAndExternalStake"
       ]
     },
   }

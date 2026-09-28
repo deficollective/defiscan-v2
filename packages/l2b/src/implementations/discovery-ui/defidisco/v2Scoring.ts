@@ -14,6 +14,7 @@ import {
   stripChainPrefix,
 } from './addressUtils'
 import { getCallGraphData } from './callGraph'
+import { getEdgeOverrideRules } from './callGraphOverrides'
 import { CapitalAnalysisCalculator } from './capitalAnalysis'
 import { getContractTags } from './contractTags'
 import { buildEnhancedGraph, buildIndices } from './enhancedTraversal'
@@ -515,6 +516,7 @@ class AdminInventoryModule {
         data.functions,
         dataAccess,
         discovered,
+        getEdgeOverrideRules(data.paths, data.projectName),
       )
       const enhancedGraph = buildIndices(edges)
 

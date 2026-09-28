@@ -240,7 +240,7 @@
   "dependencies": {
     "eth:0x00000000219ab540356cbb839cbe05303d7705fa": {
       "name": "Ethereum Beacon Chain DepositContract",
-      "description": "The canonical Ethereum 2.0 deposit contract used by Lido to stake ETH with validators. The DepositSecurityModule and each Lido V3 StakingVault call deposit() to stake ETH; DepositSecurityModule also reads get_deposit_root() to verify deposit data integrity. This is an immutable Ethereum protocol contract — if it fails or is compromised, Lido cannot process new deposits."
+      "description": "The canonical Ethereum 2.0 deposit contract used by Lido to stake ETH with validators. The DepositSecurityModule and each Lido V3 StakingVault call deposit() to stake ETH; DepositSecurityModule also reads get_deposit_root() to verify deposit data integrity. The contract is immutable, has no admin, and was deployed by the Ethereum Foundation as part of the consensus layer — calling deposit() on it is a one-way commitment of ETH to consensus, not a custody transfer to a third party. A failure or compromise of this contract would be a failure of Ethereum itself, so this dependency carries no incremental fund-loss surface for Lido beyond Ethereum's own consensus risk; the worst case is that Lido cannot process new deposits."
     },
     "eth:0x000f3df6d732807ef1319fb7b8bb8522d0beac02": {
       "name": "EIP-4788 BEACON_ROOTS Predeploy",

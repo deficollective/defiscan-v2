@@ -1,0 +1,133 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-06-02T09:30:00.000Z",
+  "protocolSlug": "Steakhouse-USDT",
+  "protocolName": "Steakhouse USDT",
+  "tokenName": "steakUSDT",
+  "chain": "Ethereum",
+  "projectType": "lending",
+  "verified": false,
+  "description": "Steakhouse USDT is an immutable MetaMorpho (v1) ERC4626 vault, curated by Steakhouse Financial, that supplies depositor USDT into a curated set of Morpho Blue lending markets ({{vaultPositions}} currently deployed across wstETH, WBTC, BTC, gold, ETH, DAI and cbBTC collateral). A 5-of-8 owner multisig holds the powerful roles (fee, curator, guardian, ownership) while a 2-of-6 curator multisig sets per-market caps and queues; all caps and timelock/guardian changes are gated by a 7-day timelock. An Aragon OSx DAO of vault depositors acts as guardian and can veto pending changes. Collateral pricing depends entirely on Chainlink feeds read through Morpho Blue.",
+  "admins": {
+    "eth:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD": {
+      "name": "Owner (5-of-8 Multisig)",
+      "description": "Holds every owner-gated role on the vault: setFee (capped at 50% of yield), setCurator, setIsAllocator, setFeeRecipient, setSkimRecipient, submitTimelock, submitGuardian, and transferOwnership/renounceOwnership. Can also submit and accept market caps. transferOwnership and renounceOwnership are uncapped and critical; all parameter changes flow through the 7-day timelock and can be vetoed by the guardian. Reaches {{ownerCapital}} of vault capital."
+    },
+    "eth:0x827e86072B06674a077f592A531dcE4590aDeCdB": {
+      "name": "Curator (2-of-6 Multisig)",
+      "description": "Steakhouse Financial curator multisig. Submits/removes per-market supply caps (submitCap, submitMarketRemoval) and manages the supply/withdraw queues and reallocation. Cap and market-removal changes are 7-day timelocked and guardian-vetoable; reallocation can only move funds into markets that already have a non-zero cap. Reaches {{curatorCapital}} of vault capital, bounded by per-market caps."
+    },
+    "eth:0xfeed46c11F57B7126a773EeC6ae9cA7aE1C03C9a": {
+      "name": "Allocator (EOA)",
+      "description": "Allocator EOA that can call setSupplyQueue, updateWithdrawQueue and reallocate. These only rebalance funds across markets that already have a curator-approved cap, so the role carries no direct fund-extraction power (scored no-impact)."
+    },
+    "eth:0x29d4CDFee8F533af8529A9e1517b580E022874f7": {
+      "name": "Allocator (1-of-5 Multisig)",
+      "description": "Secondary allocator multisig with the same reallocation-only powers (setSupplyQueue, updateWithdrawQueue, reallocate). Bounded by existing per-market caps; no direct fund-extraction power (scored no-impact)."
+    },
+    "eth:0xaeC761545Fd135db6d04D27C92BCB3951668c67F": {
+      "name": "Guardian (Aragon OSx DAO)",
+      "description": "Aragon OSx guardian DAO whose voting power is held by vault depositors proportional to their deposit. Its only powers are vetoes (revokePendingTimelock, revokePendingGuardian, revokePendingCap, revokePendingMarketRemoval) executed during the 7-day timelock window. It cannot move funds or initiate changes, but its veto reach spans the entire vault ({{guardianCapital}}); a compromised or inactive guardian removes the depositor backstop against malicious owner/curator submissions."
+    }
+  },
+  "dependencies": {
+    "eth:0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb": {
+      "name": "Morpho Blue",
+      "description": "The Morpho Blue singleton lending protocol. The vault supplies all depositor USDT into permissionless Morpho markets and holds its entire {{vaultPositions}} as supply positions here. Bad-debt accounting and liquidations on Morpho Blue directly determine whether the vault's positions are recoverable."
+    },
+    "eth:0xfd32fA2ca22c76dD6E550706Ad913FC6CE91c75D": {
+      "name": "Morpho PublicAllocator",
+      "description": "Shared Morpho allocator the curator has whitelisted as an allocator, letting third parties rebalance liquidity across the vault's markets within curator-set flow caps. No direct fund-extraction power."
+    },
+    "eth:0x9E9110cFd24cd851ea5bc73a27975B33E308f9e1": {
+      "name": "MorphoHelper",
+      "description": "Morpho periphery helper contract whitelisted as an allocator; used for reallocation across the vault's markets, bounded by existing per-market caps."
+    },
+    "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c": {
+      "name": "Chainlink BTC / USD Feed",
+      "description": "Chainlink BTC/USD price feed used by the oracle adapters of the vault's BTC-collateral markets. A manipulated or stale value could misprice those markets and enable bad debt up to their deployed supply."
+    },
+    "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD": {
+      "name": "Chainlink ETH / USD Feed",
+      "description": "Chainlink ETH/USD price feed feeding the ETH-denominated collateral markets via their MorphoChainlinkOracleV2 adapters."
+    },
+    "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79": {
+      "name": "wstETH / ETH Price Feed",
+      "description": "Custom wstETH/ETH exchange-rate price feed (built on Chainlink) used to price the wstETH-collateral markets."
+    },
+    "eth:0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46": {
+      "name": "Chainlink USDT / ETH Feed",
+      "description": "Chainlink USDT/ETH price feed used as a quote feed in the wstETH market oracle stack."
+    },
+    "eth:0x3E7d1eAB13ad0104d2750B8863b489D65364e32D": {
+      "name": "Chainlink USDT / USD Feed",
+      "description": "Chainlink USDT/USD price feed used as the quote feed across several of the vault's market oracle adapters."
+    },
+    "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23": {
+      "name": "Chainlink WBTC / BTC Feed",
+      "description": "Chainlink WBTC/BTC proof-of-reserve-style price feed combined with BTC/USD to price WBTC collateral."
+    },
+    "eth:0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9": {
+      "name": "Chainlink DAI / USD Feed",
+      "description": "Chainlink DAI/USD price feed used by the DAI-collateral market's oracle adapter."
+    },
+    "eth:0x2665701293fCbEB223D11A08D826563EDcCE423A": {
+      "name": "Chainlink cbBTC / USD Feed",
+      "description": "Chainlink cbBTC/USD price feed used inside the MetaOracleDeviationTimelock-wrapped cbBTC market oracle."
+    },
+    "eth:0x91D32e6f01d6473b596f54c6E304e06d774f86b2": {
+      "name": "Chainlink BTC / USD Feed (deviation-wrapped)",
+      "description": "Chainlink BTC/USD price feed consumed inside the MetaOracleDeviationTimelock primary/current oracle; the deviation guard adds a delay before large price moves are accepted."
+    },
+    "eth:0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6": {
+      "name": "Chainlink XAU / USD Feed",
+      "description": "Chainlink gold (XAU/USD) price feed for the vault's single gold-collateral market. That market's supply cap is the lowest in the vault, so a failure of this feed is bounded to a small fraction of total vault TVS rather than the full deposit base."
+    },
+    "eth:0x21f73D42Eb58Ba49dDB685dc29D3bF5c0f0373CA": {
+      "name": "Chainlink Feed Admin (Multisig)",
+      "description": "Owner multisig of the Chainlink aggregator proxies; can repoint the underlying aggregators. Operated by Chainlink, outside the vault's or curator's control."
+    }
+  },
+  "funds": {
+    "eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa": {
+      "name": "Steakhouse USDT Vault (USDT)",
+      "description": "Holds {{vaultPositions}} of depositor USDT supplied into Morpho Blue lending markets across wstETH, WBTC, BTC, gold, ETH, DAI and cbBTC collateral. This is the vault's entire TVS."
+    }
+  },
+  "sections": {
+    "codeAndAudits": {
+      "title": "Code & Audits",
+      "description": "Smart contract analysis and audit history",
+      "subsections": [
+        {
+          "title": "Contracts",
+          "content": [
+            {
+              "type": "dataTable",
+              "dataSource": "project.contracts",
+              "columns": [
+                { "field": "name", "header": "Name" },
+                { "field": "address", "header": "Address", "format": "address" },
+                { "field": "proxyType", "header": "Proxy Type", "format": "badge" }
+              ],
+              "filters": { "excludeExternal": true }
+            }
+          ]
+        },
+        {
+          "title": "Audits",
+          "content": [
+            { "type": "text", "content": "" }
+          ]
+        }
+      ]
+    }
+  },
+  "dataKeys": {
+    "vaultPositions": "fundsdata.contracts[\"eth:0xbEef047a543E45807105E51A8BBEFCc5950fcfBa\"].positions.totalUsdValue",
+    "totalCapitalAtRisk": "v2score.inventory.admins.totalCapitalAtRisk",
+    "ownerCapital": "v2score.inventory.admins.breakdown[\"eth:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD\"].totalReachableCapital",
+    "curatorCapital": "v2score.inventory.admins.breakdown[\"eth:0x827e86072B06674a077f592A531dcE4590aDeCdB\"].totalReachableCapital",
+    "guardianCapital": "v2score.inventory.admins.breakdown[\"eth:0xaeC761545Fd135db6d04D27C92BCB3951668c67F\"].totalReachableCapital"
+  }
+}

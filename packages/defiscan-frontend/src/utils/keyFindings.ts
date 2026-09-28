@@ -64,7 +64,7 @@ function detectImmutability(review: CompiledReview): KeyFinding | null {
 
   if (isProtocolCodeImmutable(review)) {
     return {
-      type: 'positive',
+      type: 'info',
       title: 'Immutable code',
       detail:
         'Every protocol contract is deployed as immutable bytecode. Admins can still write to on-chain parameters exposed by these contracts, but they cannot change the code itself.',

@@ -1,3 +1,29 @@
+Generated with discovered.json: 0xf521e8fd6c7715629e37798519fca3133cec9eb8
+
+# Diff at Sun, 28 Jun 2026 11:17:19 GMT:
+
+- author: emduc (<emilien.duc@gmail.com>)
+- comparing to: main@9078511f71b7a9aead2d40ed58a434e57289ea65 block: 1782553051
+- current timestamp: 1782553051
+
+## Description
+
+Discovery rerun on the same block number with only config-related changes.
+
+## Config/verification related changes
+
+Following changes come from updates made to the config file,
+or/and contracts becoming verified, not from differences found during
+discovery. Values are for block 1782553051 (main branch discovery), not current.
+
+```diff
+    contract CircuitBreaker (eth:0x6019CB557978296BA3C08a7B73225C0975DFB2F7) {
+    +++ description: None
+      errors:
++        {"corePauserCommittee":"Processing error occurred.","csmPauserCommittee":"Processing error occurred."}
+    }
+```
+
 Generated with discovered.json: 0xb16742593002bad62a5586b06d42d4631fb1febd
 
 # Diff at Mon, 20 Apr 2026 13:35:16 GMT:

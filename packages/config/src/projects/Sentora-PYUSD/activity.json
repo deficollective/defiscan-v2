@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1778519063,
-  "lastConsumedUpdateNotifierId": 183,
+  "lastReconciledAt": 1790167901,
+  "lastConsumedUpdateNotifierId": 632,
   "events": [
     {
       "timestamp": "2026-05-04T09:33:39.000Z",
@@ -239,6 +239,1060 @@
       "entity": null,
       "id": "172:eth:0x007db14ca0d171fA583955fEF3917B2b9A95CF18:contract-added",
       "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55",
+      "contractName": "MetaMorphoV1_1",
+      "isDependency": false,
+      "entity": null,
+      "id": "251:eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.marketParams.11",
+          "after": {
+            "marketId": "0x80fea13225f27a1f4798c35d89e791711f963ed74eb3a86bcaffe28143095e94",
+            "loanToken": "eth:0x6c3ea9036406852006290770BEdFcAbA0e23A0e8",
+            "collateralToken": "eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb",
+            "oracle": "eth:0x7560CaC78c21F882d33355C45a44835653f69ec2",
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "915000000000000000"
+          }
+        },
+        {
+          "field": "values.marketOracles.11",
+          "after": "eth:0x7560CaC78c21F882d33355C45a44835653f69ec2"
+        },
+        {
+          "field": "values.withdrawQueue.11",
+          "after": "0x80fea13225f27a1f4798c35d89e791711f963ed74eb3a86bcaffe28143095e94"
+        },
+        {
+          "field": "values.withdrawQueueLength",
+          "before": 11,
+          "after": 12
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0xA28c08f165116587D4F3E708743B4dEe155c5E64",
+      "contractName": "ProxyAdmin",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "251:eth:0xA28c08f165116587D4F3E708743B4dEe155c5E64:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "receivedPermissions",
+          "before": [
+            {
+              "from": "eth:0x9a9Fa8338dd5E5B2188006f1Cd2Ef26d921650C2",
+              "role": "admin",
+              "permission": "upgrade"
+            }
+          ]
+        },
+        {
+          "field": "directlyReceivedPermissions",
+          "after": [
+            {
+              "permission": "upgrade",
+              "from": "eth:0x3E6EBa46AbC5ab18ED95F6667d8B2fd4020E4637",
+              "role": "admin"
+            },
+            {
+              "permission": "upgrade",
+              "from": "eth:0x5542be50420E88dd7D5B4a3D488FA6ED82F6DAc2",
+              "role": "admin"
+            },
+            {
+              "permission": "upgrade",
+              "from": "eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f",
+              "role": "admin"
+            },
+            {
+              "permission": "upgrade",
+              "from": "eth:0x9a9Fa8338dd5E5B2188006f1Cd2Ef26d921650C2",
+              "role": "admin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194",
+      "contractName": "PendleMarketV7",
+      "entity": null,
+      "id": "251:eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x3E6EBa46AbC5ab18ED95F6667d8B2fd4020E4637",
+      "contractName": "PendleYieldContractFactoryUpg",
+      "entity": null,
+      "id": "251:eth:0x3E6EBa46AbC5ab18ED95F6667d8B2fd4020E4637:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2",
+      "contractName": "PendleYieldToken",
+      "entity": null,
+      "id": "251:eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57",
+      "contractName": "PendleGaugeControllerUpg",
+      "entity": null,
+      "id": "251:eth:0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x5542be50420E88dd7D5B4a3D488FA6ED82F6DAc2",
+      "contractName": "PendlePYLpOracle",
+      "entity": null,
+      "id": "251:eth:0x5542be50420E88dd7D5B4a3D488FA6ED82F6DAc2:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb",
+      "contractName": "PendlePrincipalToken",
+      "entity": null,
+      "id": "251:eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x601cECFf9CfFd14Ccb8A7084b40Ee576c2470abf",
+      "contractName": "",
+      "entity": null,
+      "id": "251:eth:0x601cECFf9CfFd14Ccb8A7084b40Ee576c2470abf:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x6502cda86f9110f3655512237C9FF2B9CE247c69",
+      "contractName": "PendleChainlinkOracleFactory",
+      "entity": null,
+      "id": "251:eth:0x6502cda86f9110f3655512237C9FF2B9CE247c69:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f",
+      "contractName": "PendleMarketFactoryV7Upg",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "251:eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x6e6F4CAB945859D66C78aF3d9917002e94bfa4E9",
+      "contractName": "",
+      "entity": null,
+      "id": "251:eth:0x6e6F4CAB945859D66C78aF3d9917002e94bfa4E9:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x7560CaC78c21F882d33355C45a44835653f69ec2",
+      "contractName": "MorphoChainlinkOracleV2",
+      "entity": null,
+      "id": "251:eth:0x7560CaC78c21F882d33355C45a44835653f69ec2:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x808507121B80c02388fAd14726482e061B8da827",
+      "contractName": "Pendle Token",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "251:eth:0x808507121B80c02388fAd14726482e061B8da827:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0x8119EC16F0573B7dAc7C0CB94EB504FB32456ee1",
+      "contractName": "Safe",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "251:eth:0x8119EC16F0573B7dAc7C0CB94EB504FB32456ee1:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE",
+      "contractName": "PendleChainlinkOracle",
+      "entity": null,
+      "id": "251:eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-10T11:04:49.000Z",
+      "updateNotifierId": 251,
+      "address": "eth:0xe8D28E2CA24BB16Fc7e6549eF937e05981d02606",
+      "contractName": "PendleLiquidityIncentivesMultisig",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "251:eth:0xe8D28E2CA24BB16Fc7e6549eF937e05981d02606:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-12T11:05:50.000Z",
+      "updateNotifierId": 255,
+      "address": "eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194",
+      "contractName": "PendleMarketV7",
+      "entity": null,
+      "id": "255:eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values._storage.totalPt",
+          "before": "1912346090025923753130555",
+          "after": "1770835563707707784098080"
+        },
+        {
+          "field": "values._storage.totalSy",
+          "before": "6140854995418120096133178",
+          "after": "6234977895144229683838409"
+        },
+        {
+          "field": "values._storage.observationIndex",
+          "before": 72,
+          "after": 5
+        },
+        {
+          "field": "values._storage.lastLnImpliedRate",
+          "before": "43767449668030732",
+          "after": "42177847491209563"
+        },
+        {
+          "field": "values.totalSupply",
+          "before": "3148633252410477680778448",
+          "after": "3140582153126076716815980"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": "135042321848716462644096",
+          "after": "186659942392618039546332"
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1779957407,
+          "after": 1781169431
+        },
+        {
+          "field": "values.observations.1.1",
+          "before": "136165789122943828495992",
+          "after": "187932320238667525989648"
+        },
+        {
+          "field": "values.observations.1.0",
+          "before": 1779984035,
+          "after": 1781199587
+        },
+        {
+          "field": "values.observations.2.1",
+          "before": "138053499464564899499688",
+          "after": "188596674273434827885200"
+        },
+        {
+          "field": "values.observations.2.0",
+          "before": 1780028783,
+          "after": 1781215331
+        },
+        {
+          "field": "values.observations.3.1",
+          "before": "138302256734010923689728",
+          "after": "189417777628270103067600"
+        },
+        {
+          "field": "values.observations.3.0",
+          "before": 1780034663,
+          "after": 1781234879
+        },
+        {
+          "field": "values.observations.4.1",
+          "before": "139129275717777042849204",
+          "after": "189712946187177853073760"
+        },
+        {
+          "field": "values.observations.4.0",
+          "before": 1780054211,
+          "after": 1781241875
+        },
+        {
+          "field": "values.lastRewardBlock",
+          "before": 25284838,
+          "after": 25299277
+        },
+        {
+          "field": "values.totalActiveSupply",
+          "before": "3148633252410477680778448",
+          "after": "3140582153126076716815980"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-12T11:05:50.000Z",
+      "updateNotifierId": 255,
+      "address": "eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2",
+      "contractName": "PendleYieldToken",
+      "entity": null,
+      "id": "255:eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.syReserve",
+          "before": "20108557896873287064535983",
+          "after": "19969164524380152486044218"
+        },
+        {
+          "field": "values.totalSupply",
+          "before": "24788278590465336039803706",
+          "after": "24617729385276495390694534"
+        },
+        {
+          "field": "values.pyIndexStored",
+          "before": "1234905059259941152",
+          "after": "1235194362460295921"
+        },
+        {
+          "field": "values.pyIndexLastUpdatedBlock",
+          "before": 25286163,
+          "after": 25300491
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-12T11:05:50.000Z",
+      "updateNotifierId": 255,
+      "address": "eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb",
+      "contractName": "PendlePrincipalToken",
+      "entity": null,
+      "id": "255:eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "24788278590465336039803706",
+          "after": "24617729385276495390694534"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-12T11:05:50.000Z",
+      "updateNotifierId": 255,
+      "address": "eth:0x7560CaC78c21F882d33355C45a44835653f69ec2",
+      "contractName": "MorphoChainlinkOracleV2",
+      "entity": null,
+      "id": "255:eth:0x7560CaC78c21F882d33355C45a44835653f69ec2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.price",
+          "before": "991815130030864321494165",
+          "after": "991744513547310938907122"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-12T11:05:50.000Z",
+      "updateNotifierId": 255,
+      "address": "eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE",
+      "contractName": "PendleChainlinkOracle",
+      "entity": null,
+      "id": "255:eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.answer",
+          "before": "992409998884133677",
+          "after": "992914162532221931"
+        },
+        {
+          "field": "values.latestRoundData.updatedAt",
+          "before": 1781089475,
+          "after": 1781262323
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-13T10:10:25.000Z",
+      "updateNotifierId": 259,
+      "address": "eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194",
+      "contractName": "PendleMarketV7",
+      "entity": null,
+      "id": "259:eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values._storage.totalPt",
+          "before": "1770835563707707784098080",
+          "after": "1770835704750438212326763"
+        },
+        {
+          "field": "values._storage.totalSy",
+          "before": "6234977895144229683838409",
+          "after": "6234977781769151835215169"
+        },
+        {
+          "field": "values._storage.observationIndex",
+          "before": 5,
+          "after": 6
+        },
+        {
+          "field": "values._storage.lastLnImpliedRate",
+          "before": "42177847491209563",
+          "after": "42177849180508297"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-13T10:10:25.000Z",
+      "updateNotifierId": 259,
+      "address": "eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2",
+      "contractName": "PendleYieldToken",
+      "entity": null,
+      "id": "259:eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.syReserve",
+          "before": "19969164524380152486044218",
+          "after": "19969125666051623122413477"
+        },
+        {
+          "field": "values.pyIndexStored",
+          "before": "1235194362460295921",
+          "after": "1235306099684849858"
+        },
+        {
+          "field": "values.pyIndexLastUpdatedBlock",
+          "before": 25300491,
+          "after": 25307250
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-13T10:10:25.000Z",
+      "updateNotifierId": 259,
+      "address": "eth:0x7560CaC78c21F882d33355C45a44835653f69ec2",
+      "contractName": "MorphoChainlinkOracleV2",
+      "entity": null,
+      "id": "259:eth:0x7560CaC78c21F882d33355C45a44835653f69ec2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.price",
+          "before": "991744513547310938907122",
+          "after": "992466759672226976828720"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-13T10:10:25.000Z",
+      "updateNotifierId": 259,
+      "address": "eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE",
+      "contractName": "PendleChainlinkOracle",
+      "entity": null,
+      "id": "259:eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.answer",
+          "before": "992914162532221931",
+          "after": "993024507072848322"
+        },
+        {
+          "field": "values.latestRoundData.updatedAt",
+          "before": 1781262323,
+          "after": 1781345411
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-14T18:11:12.000Z",
+      "updateNotifierId": 264,
+      "address": "eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194",
+      "contractName": "PendleMarketV7",
+      "entity": null,
+      "id": "264:eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values._storage.totalPt",
+          "before": "1770835704750438212326763",
+          "after": "1726318658107374016499264"
+        },
+        {
+          "field": "values._storage.totalSy",
+          "before": "6234977781769151835215169",
+          "after": "6269818536449172158732422"
+        },
+        {
+          "field": "values._storage.observationIndex",
+          "before": 6,
+          "after": 15
+        },
+        {
+          "field": "values._storage.lastLnImpliedRate",
+          "before": "42177849180508297",
+          "after": "41641931467270807"
+        },
+        {
+          "field": "values.totalSupply",
+          "before": "3140582153126076716815980",
+          "after": "3140192429330728456856583"
+        },
+        {
+          "field": "values.lastRewardBlock",
+          "before": 25299277,
+          "after": 25308519
+        },
+        {
+          "field": "values.totalActiveSupply",
+          "before": "3140582153126076716815980",
+          "after": "3140192429330728456856583"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-14T18:11:12.000Z",
+      "updateNotifierId": 264,
+      "address": "eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55",
+      "contractName": "MetaMorphoV1_1",
+      "isDependency": false,
+      "entity": null,
+      "id": "264:eth:0x19b3cD7032B8C062E8d44EaCad661a0970DD8c55:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.marketParams.12",
+          "after": {
+            "marketId": "0x631e64ae8498821a5605bd3c14e253ffbf207f87411e2aeffc91a32a126cc13d",
+            "loanToken": "eth:0x6c3ea9036406852006290770BEdFcAbA0e23A0e8",
+            "collateralToken": "eth:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "oracle": "eth:0x1FcB6213410b0a97496189ab704A014af4FDbEBc",
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000"
+          }
+        },
+        {
+          "field": "values.marketOracles.12",
+          "after": "eth:0x1FcB6213410b0a97496189ab704A014af4FDbEBc"
+        },
+        {
+          "field": "values.withdrawQueue.12",
+          "after": "0x631e64ae8498821a5605bd3c14e253ffbf207f87411e2aeffc91a32a126cc13d"
+        },
+        {
+          "field": "values.withdrawQueueLength",
+          "before": 12,
+          "after": 13
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-14T18:11:12.000Z",
+      "updateNotifierId": 264,
+      "address": "eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2",
+      "contractName": "PendleYieldToken",
+      "entity": null,
+      "id": "264:eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.syReserve",
+          "before": "19969125666051623122413477",
+          "after": "20197724982513974090453984"
+        },
+        {
+          "field": "values.totalSupply",
+          "before": "24617729385276495390694534",
+          "after": "24902485960541941658856616"
+        },
+        {
+          "field": "values.pyIndexStored",
+          "before": "1235306099684849858",
+          "after": "1235474336240673836"
+        },
+        {
+          "field": "values.pyIndexLastUpdatedBlock",
+          "before": 25307250,
+          "after": 25317416
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-14T18:11:12.000Z",
+      "updateNotifierId": 264,
+      "address": "eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb",
+      "contractName": "PendlePrincipalToken",
+      "entity": null,
+      "id": "264:eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "24617729385276495390694534",
+          "after": "24902485960541941658856616"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-14T18:11:12.000Z",
+      "updateNotifierId": 264,
+      "address": "eth:0x7560CaC78c21F882d33355C45a44835653f69ec2",
+      "contractName": "MorphoChainlinkOracleV2",
+      "entity": null,
+      "id": "264:eth:0x7560CaC78c21F882d33355C45a44835653f69ec2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.price",
+          "before": "992466759672226976828720",
+          "after": "992664891853500264431952"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-14T18:11:12.000Z",
+      "updateNotifierId": 264,
+      "address": "eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE",
+      "contractName": "PendleChainlinkOracle",
+      "entity": null,
+      "id": "264:eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.answer",
+          "before": "993024507072848322",
+          "after": "993263976191455013"
+        },
+        {
+          "field": "values.latestRoundData.updatedAt",
+          "before": 1781345411,
+          "after": 1781460659
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-14T18:11:12.000Z",
+      "updateNotifierId": 264,
+      "address": "eth:0x1FcB6213410b0a97496189ab704A014af4FDbEBc",
+      "contractName": "MorphoChainlinkOracleV2",
+      "entity": null,
+      "id": "264:eth:0x1FcB6213410b0a97496189ab704A014af4FDbEBc:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-06-15T13:25:42.000Z",
+      "updateNotifierId": 267,
+      "address": "eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194",
+      "contractName": "PendleMarketV7",
+      "entity": null,
+      "id": "267:eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values._storage.totalPt",
+          "before": "1726318658107374016499264",
+          "after": "1721974449447180018961458"
+        },
+        {
+          "field": "values._storage.totalSy",
+          "before": "6269818536449172158732422",
+          "after": "6273311241711534957007331"
+        },
+        {
+          "field": "values._storage.observationIndex",
+          "before": 15,
+          "after": 16
+        },
+        {
+          "field": "values._storage.lastLnImpliedRate",
+          "before": "41641931467270807",
+          "after": "41588788268544837"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T13:25:42.000Z",
+      "updateNotifierId": 267,
+      "address": "eth:0x1FcB6213410b0a97496189ab704A014af4FDbEBc",
+      "contractName": "MorphoChainlinkOracleV2",
+      "entity": null,
+      "id": "267:eth:0x1FcB6213410b0a97496189ab704A014af4FDbEBc:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.price",
+          "before": "1663026393716951212530343078",
+          "after": "1815616350406156417278392290"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T13:25:42.000Z",
+      "updateNotifierId": 267,
+      "address": "eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2",
+      "contractName": "PendleYieldToken",
+      "entity": null,
+      "id": "267:eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.syReserve",
+          "before": "20197724982513974090453984",
+          "after": "22314843235982019303566389"
+        },
+        {
+          "field": "values.totalSupply",
+          "before": "24902485960541941658856616",
+          "after": "27518327072442652389626375"
+        },
+        {
+          "field": "values.pyIndexStored",
+          "before": "1235474336240673836",
+          "after": "1235560696512429246"
+        },
+        {
+          "field": "values.pyIndexLastUpdatedBlock",
+          "before": 25317416,
+          "after": 25322614
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T13:25:42.000Z",
+      "updateNotifierId": 267,
+      "address": "eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb",
+      "contractName": "PendlePrincipalToken",
+      "entity": null,
+      "id": "267:eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "24902485960541941658856616",
+          "after": "27518327072442652389626375"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T13:25:42.000Z",
+      "updateNotifierId": 267,
+      "address": "eth:0x7560CaC78c21F882d33355C45a44835653f69ec2",
+      "contractName": "MorphoChainlinkOracleV2",
+      "entity": null,
+      "id": "267:eth:0x7560CaC78c21F882d33355C45a44835653f69ec2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.price",
+          "before": "992664891853500264431952",
+          "after": "992655517385965224399372"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T13:25:42.000Z",
+      "updateNotifierId": 267,
+      "address": "eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE",
+      "contractName": "PendleChainlinkOracle",
+      "entity": null,
+      "id": "267:eth:0xb131D953712DB127308ef07fCe30c2aCe465bbcE:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.answer",
+          "before": "993263976191455013",
+          "after": "993363276732575879"
+        },
+        {
+          "field": "values.latestRoundData.updatedAt",
+          "before": 1781460659,
+          "after": 1781529923
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194",
+      "contractName": "PendleMarketV7",
+      "entity": null,
+      "id": "273:eth:0x177768caf9D0e036725A51D3f60d7E20F2D4D194:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x3E6EBa46AbC5ab18ED95F6667d8B2fd4020E4637",
+      "contractName": "PendleYieldContractFactoryUpg",
+      "entity": null,
+      "id": "273:eth:0x3E6EBa46AbC5ab18ED95F6667d8B2fd4020E4637:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2",
+      "contractName": "PendleYieldToken",
+      "entity": null,
+      "id": "273:eth:0x45A699A11A4a17fe0931EF3ceA4BFc3235e659F2:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57",
+      "contractName": "PendleGaugeControllerUpg",
+      "entity": null,
+      "id": "273:eth:0x47D74516B33eD5D70ddE7119A40839f6Fcc24e57:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x5542be50420E88dd7D5B4a3D488FA6ED82F6DAc2",
+      "contractName": "PendlePYLpOracle",
+      "entity": null,
+      "id": "273:eth:0x5542be50420E88dd7D5B4a3D488FA6ED82F6DAc2:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb",
+      "contractName": "PendlePrincipalToken",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "273:eth:0x5A19fa369F2895dCD8d2cEE62E4Ceae58eF92BBb:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x601cECFf9CfFd14Ccb8A7084b40Ee576c2470abf",
+      "contractName": "",
+      "entity": null,
+      "id": "273:eth:0x601cECFf9CfFd14Ccb8A7084b40Ee576c2470abf:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x6502cda86f9110f3655512237C9FF2B9CE247c69",
+      "contractName": "PendleChainlinkOracleFactory",
+      "entity": null,
+      "id": "273:eth:0x6502cda86f9110f3655512237C9FF2B9CE247c69:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f",
+      "contractName": "PendleMarketFactoryV7Upg",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "273:eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x6e6F4CAB945859D66C78aF3d9917002e94bfa4E9",
+      "contractName": "",
+      "entity": null,
+      "id": "273:eth:0x6e6F4CAB945859D66C78aF3d9917002e94bfa4E9:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x808507121B80c02388fAd14726482e061B8da827",
+      "contractName": "Pendle Token",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "273:eth:0x808507121B80c02388fAd14726482e061B8da827:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0x8119EC16F0573B7dAc7C0CB94EB504FB32456ee1",
+      "contractName": "Safe",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "273:eth:0x8119EC16F0573B7dAc7C0CB94EB504FB32456ee1:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0xA28c08f165116587D4F3E708743B4dEe155c5E64",
+      "contractName": "ProxyAdmin",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "273:eth:0xA28c08f165116587D4F3E708743B4dEe155c5E64:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "directlyReceivedPermissions",
+          "before": [
+            {
+              "from": "eth:0x3E6EBa46AbC5ab18ED95F6667d8B2fd4020E4637",
+              "role": "admin",
+              "permission": "upgrade"
+            },
+            {
+              "from": "eth:0x5542be50420E88dd7D5B4a3D488FA6ED82F6DAc2",
+              "role": "admin",
+              "permission": "upgrade"
+            },
+            {
+              "from": "eth:0x6d247b1c044fA1E22e6B04fA9F71Baf99EB29A9f",
+              "role": "admin",
+              "permission": "upgrade"
+            },
+            {
+              "from": "eth:0x9a9Fa8338dd5E5B2188006f1Cd2Ef26d921650C2",
+              "role": "admin",
+              "permission": "upgrade"
+            }
+          ]
+        },
+        {
+          "field": "receivedPermissions",
+          "after": [
+            {
+              "permission": "upgrade",
+              "from": "eth:0x9a9Fa8338dd5E5B2188006f1Cd2Ef26d921650C2",
+              "role": "admin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T12:23:22.000Z",
+      "updateNotifierId": 273,
+      "address": "eth:0xe8D28E2CA24BB16Fc7e6549eF937e05981d02606",
+      "contractName": "PendleLiquidityIncentivesMultisig",
+      "isDependency": true,
+      "entity": "Pendle",
+      "id": "273:eth:0xe8D28E2CA24BB16Fc7e6549eF937e05981d02606:contract-removed",
+      "type": "contract-removed"
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 625,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "625:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.multisigThreshold",
+          "before": "5 of 9 (56%)",
+          "after": "6 of 10 (60%)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 625,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "625:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.0",
+          "after": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 625,
+      "address": "eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+      "contractName": "GnosisSafe",
+      "isDependency": true,
+      "entity": "Morpho",
+      "id": "625:eth:0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa:role:Safe.threshold",
+      "type": "role-update",
+      "roleName": "Safe.threshold",
+      "changes": [
+        {
+          "field": "values.$threshold",
+          "before": 5,
+          "after": 6
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-22T12:36:04.000Z",
+      "updateNotifierId": 625,
+      "address": "eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "625:eth:0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f:contract-added",
+      "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-23T12:46:13.000Z",
+      "updateNotifierId": 632,
+      "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+      "contractName": "EACAggregatorProxy",
+      "isDependency": true,
+      "entity": "Chainlink",
+      "id": "632:eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.phaseId",
+          "before": 3,
+          "after": 4
+        },
+        {
+          "field": "values.aggregator",
+          "before": "eth:0xc9E1a09622afdB659913fefE800fEaE5DBbFe9d7",
+          "after": "eth:0x54bCC589d9743E521c64233706FC8cB36D275b07"
+        }
+      ]
     }
   ]
 }

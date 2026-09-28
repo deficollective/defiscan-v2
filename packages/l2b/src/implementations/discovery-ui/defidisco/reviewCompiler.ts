@@ -138,6 +138,10 @@ export interface CompiledAdmin {
   description: string
   adminType: string
   isGovernance: boolean
+  /** Gnosis Safe signing threshold (`values.$threshold`), when the admin is a multisig. */
+  multisigThreshold?: number
+  /** Gnosis Safe owner count (`values.$members.length`), when the admin is a multisig. */
+  multisigSize?: number
   functions: CompiledAdminFunction[]
   totalDirectCapital: number
   totalDirectTokenValue: number
@@ -503,6 +507,8 @@ export class ReviewCompiler {
         description: desc?.description ?? '',
         adminType: admin.type,
         isGovernance: admin.isGovernance,
+        multisigThreshold: admin.multisigThreshold,
+        multisigSize: admin.multisigSize,
         functions: admin.functions.map((f) => ({
           contractAddress: f.contractAddress,
           contractName: f.contractName,

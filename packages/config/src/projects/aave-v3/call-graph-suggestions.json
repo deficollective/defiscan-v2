@@ -1,0 +1,171 @@
+{
+  "version": "1.0",
+  "suggestions": [
+    {
+      "id": "demo-overflare",
+      "status": "rejected",
+      "createdBy": "over-flare-agent",
+      "createdAt": "2026-05-21T09:16:46.736Z",
+      "rule": {
+        "id": "r-demo-overflare",
+        "type": "setOutgoingScope",
+        "node": "eth:0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
+        "edgeType": "permission",
+        "scope": "backward"
+      },
+      "reasoning": "PoolInstance owns mint/burn/transfer on every aToken across all markets (hundreds of permission edges). An admin that merely reaches one Pool setter shouldn't have its capital reach flared to all of them. The ownership is real for governance chains, so scope it to governance-only (backward): keeps the aTokens' owner chains intact, removes the spurious forward capital flare.",
+      "reviewedAt": "2026-05-21T09:24:04.734Z"
+    },
+    {
+      "id": "demo-singlescope",
+      "status": "rejected",
+      "createdBy": "over-flare-agent",
+      "createdAt": "2026-05-21T09:16:46.736Z",
+      "rule": {
+        "id": "r-demo-single",
+        "type": "setEdgeScope",
+        "from": "eth:0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
+        "to": "eth:0x786dBff3f1292ae8F92ea68Cf93c30b34B1ed04B.mint",
+        "edgeType": "permission",
+        "scope": "backward"
+      },
+      "reasoning": "Single-edge example: scope just this one ownership edge (PoolInstance → VariableDebtTokenMainnetInstanceGHO.mint) to governance-only, instead of the whole contract.",
+      "reviewedAt": "2026-05-21T09:23:59.717Z"
+    },
+    {
+      "id": "demo-stale",
+      "status": "rejected",
+      "createdBy": "demo",
+      "createdAt": "2026-05-21T09:16:46.736Z",
+      "rule": {
+        "id": "r-demo-stale",
+        "type": "removeEdge",
+        "from": "eth:0x000000000000000000000000000000000000dEaD.ghost",
+        "to": "eth:0x000000000000000000000000000000000000bEEF.vanish",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "Demo of the stale flag: this edge no longer exists in the graph, so the card shows \"⚠ edge not present\".",
+      "reviewedAt": "2026-05-21T09:23:48.879Z"
+    },
+    {
+      "id": "acg-stata-init-pool-remove",
+      "rule": {
+        "id": "r-stata-init-pool-remove",
+        "type": "removeEdge",
+        "from": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.initialize",
+        "to": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.POOL",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "StataTokenV2.__ERC4626StataToken_init_unchained (StataTokenV2.sol:2211) calls `IAToken(newAToken).POOL()`, where `newAToken` is the init parameter (the aToken), not the StataTokenV2 itself. Slither resolved the edge to the StataToken's own address (self). discovered.json for this StataToken (0x0bfc9d54) gives aToken = 0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8, which is also a resolution candidate — the self-pick is wrong. (Re-verified present in the regenerated call graph.)",
+      "status": "accepted",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T08:30:57Z",
+      "reviewedAt": "2026-05-26T09:59:14.467Z"
+    },
+    {
+      "id": "acg-stata-init-pool-add",
+      "rule": {
+        "id": "r-stata-init-pool-add",
+        "type": "addEdge",
+        "from": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.initialize",
+        "to": "eth:0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8.POOL",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "Corrected target for StataTokenV2.sol:2211 `IAToken(newAToken).POOL()`. `newAToken` is this StataToken's aToken; discovered.json (0x0bfc9d54).values.aToken = 0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8 (an ATokenInstance, present in the candidate list and exposing POOL()).",
+      "status": "accepted",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T08:30:57Z",
+      "reviewedAt": "2026-05-26T09:59:18.564Z"
+    },
+    {
+      "id": "acg-stata-permit-remove",
+      "rule": {
+        "id": "r-stata-permit-remove",
+        "type": "removeEdge",
+        "from": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.depositWithPermit",
+        "to": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.permit",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "StataTokenV2.depositWithPermit (StataTokenV2.sol:2246-2249) calls `IERC20Permit(assetToDeposit).permit(...)` where `assetToDeposit = depositToAave ? asset() : aToken()` — i.e. the underlying asset or the aToken, never the StataTokenV2 itself. Slither resolved the edge to the StataToken's own address (self), which is wrong. (The other two StataTokens, 0x7Bc348 and 0xD4fa2D, correctly resolved this same call to their aToken. Re-verified present in the regenerated call graph.)",
+      "status": "accepted",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T08:30:57Z",
+      "reviewedAt": "2026-05-26T09:59:29.742Z"
+    },
+    {
+      "id": "acg-stata-permit-add",
+      "rule": {
+        "id": "r-stata-permit-add",
+        "type": "addEdge",
+        "from": "eth:0x0bfc9d54Fc184518A81162F8fB99c2eACa081202.depositWithPermit",
+        "to": "eth:0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8.permit",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "Corrected target for StataTokenV2.sol:2249 `IERC20Permit(assetToDeposit).permit(...)`. The in-scope dynamic branch `assetToDeposit = aToken()` resolves to this StataToken's aToken; discovered.json (0x0bfc9d54).values.aToken = 0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8, an ATokenInstance that supports EIP-2612 permit. (The other branch, `asset()` = WETH, is out of scope and has no permit.)",
+      "status": "accepted",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T08:30:57Z",
+      "reviewedAt": "2026-05-26T09:59:33.875Z"
+    },
+    {
+      "id": "acg-roles-unwrap-exectxfrommodule",
+      "rule": {
+        "id": "r-roles-unwrap-exectxfrommodule",
+        "type": "removeEdge",
+        "from": "eth:0x1D5579B363806CCecc35115ab8F56EECf6610ea9.execTransactionFromModule",
+        "to": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0.unwrap",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "Zodiac Roles.sol:715 `adapter.unwrap(to, value, data, operation)` — `adapter` is an `ITransactionUnwrapper` read from the `unwrappers` mapping (Roles.sol:347/362, set via setTransactionUnwrapper), a Zodiac calldata-unwrapper, NOT a token. Slither's function-signature heuristic (confidence 30) matched the name `unwrap` to wstETH 0x7f39C581 (which has an unrelated ERC20 unwrap). The real target is the configured adapter, dynamically keyed by (to, selector); no fixed token target exists. False positive. (Re-verified present in the regenerated call graph.)",
+      "status": "accepted",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T08:30:57Z",
+      "reviewedAt": "2026-05-26T09:59:38.135Z"
+    },
+    {
+      "id": "acg-roles-unwrap-exectxfrommodulereturndata",
+      "rule": {
+        "id": "r-roles-unwrap-exectxfrommodulereturndata",
+        "type": "removeEdge",
+        "from": "eth:0x1D5579B363806CCecc35115ab8F56EECf6610ea9.execTransactionFromModuleReturnData",
+        "to": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0.unwrap",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "Same false positive as execTransactionFromModule: Roles.sol:715 `adapter.unwrap(...)` targets a Zodiac ITransactionUnwrapper from the `unwrappers` mapping, not wstETH 0x7f39C581. Heuristic name-match on `unwrap`, confidence 30. (Re-verified present in the regenerated call graph.)",
+      "status": "accepted",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T08:30:57Z",
+      "reviewedAt": "2026-05-26T09:59:43.861Z"
+    },
+    {
+      "id": "acg-roles-unwrap-exectxwithrole",
+      "rule": {
+        "id": "r-roles-unwrap-exectxwithrole",
+        "type": "removeEdge",
+        "from": "eth:0x1D5579B363806CCecc35115ab8F56EECf6610ea9.execTransactionWithRole",
+        "to": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0.unwrap",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "Same false positive: Roles.sol:715 `adapter.unwrap(...)` targets a Zodiac ITransactionUnwrapper from the `unwrappers` mapping, not wstETH 0x7f39C581. Heuristic name-match on `unwrap`, confidence 30. (Re-verified present in the regenerated call graph.)",
+      "status": "accepted",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T08:30:57Z",
+      "reviewedAt": "2026-05-26T09:59:48.255Z"
+    },
+    {
+      "id": "acg-roles-unwrap-exectxwithrolereturndata",
+      "rule": {
+        "id": "r-roles-unwrap-exectxwithrolereturndata",
+        "type": "removeEdge",
+        "from": "eth:0x1D5579B363806CCecc35115ab8F56EECf6610ea9.execTransactionWithRoleReturnData",
+        "to": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0.unwrap",
+        "edgeType": "callgraph"
+      },
+      "reasoning": "Same false positive: Roles.sol:715 `adapter.unwrap(...)` targets a Zodiac ITransactionUnwrapper from the `unwrappers` mapping, not wstETH 0x7f39C581. Heuristic name-match on `unwrap`, confidence 30. (Re-verified present in the regenerated call graph.)",
+      "status": "accepted",
+      "createdBy": "audit-callgraph",
+      "createdAt": "2026-05-26T08:30:57Z",
+      "reviewedAt": "2026-05-26T09:59:58.793Z"
+    }
+  ]
+}

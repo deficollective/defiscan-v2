@@ -1,0 +1,13 @@
+{
+  "framework": "Snapshot",
+  "voteExecution": "offchain",
+  "votingUnit": "ENA",
+  "proposalRequirements": "-",
+  "votingProcess": "No on-chain delays, multisig holds all the rights.",
+  "proposalPeriod": {
+    "kind": "none"
+  },
+  "executionDelay": {
+    "kind": "none"
+  }
+}

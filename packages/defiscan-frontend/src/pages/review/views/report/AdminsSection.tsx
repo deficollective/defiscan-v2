@@ -115,7 +115,6 @@ export function AdminsSection({ review, onShowMore }: AdminsSectionProps) {
   const sortedByImpact = [...activeAdmins].sort(
     (a, b) => adminImpact(b) - adminImpact(a),
   )
-  const maxCapital = Math.max(...sortedByImpact.map(adminImpact), 0)
   // Sum per-admin reachable capital + token value across the displayed
   // (governance-excluded) set. Cross-admin dedup is not available for this
   // subset, so this can over-report when admins share reachable contracts —
@@ -152,7 +151,8 @@ export function AdminsSection({ review, onShowMore }: AdminsSectionProps) {
         <div className="flex flex-col gap-6">
           {displayedAdmins.map((admin) => {
             const rowImpact = adminImpact(admin)
-            const barWidth = maxCapital > 0 ? (rowImpact / maxCapital) * 100 : 0
+            const barWidth =
+              totalTvs > 0 ? Math.min(100, (rowImpact / totalTvs) * 100) : 0
             const rawAddress = stripChainPrefix(admin.address)
             const mitigations = aggregateMitigationsByImpact(
               admin.functions ?? [],

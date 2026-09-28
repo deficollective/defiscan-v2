@@ -109,10 +109,6 @@
               "path": "$self.owner"
             }
           ],
-          "delay": {
-            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-            "fieldName": "timelock"
-          },
           "mitigations": [
             {
               "type": "valueRange",
@@ -139,10 +135,6 @@
               "path": "$self.owner"
             }
           ],
-          "delay": {
-            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-            "fieldName": "timelock"
-          },
           "timestamp": "2026-04-28T07:57:59.435Z",
           "lastChangedBy": {
             "author": "unknown",
@@ -161,160 +153,7 @@
               "path": "$self.owner"
             }
           ],
-          "delay": {
-            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-            "fieldName": "timelock"
-          },
-          "dependencies": [
-            {
-              "contractAddress": "base:0x43a5C292A453A3bF3606fa856197f09D7B74251a"
-            },
-            {
-              "contractAddress": "base:0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F"
-            },
-            {
-              "contractAddress": "base:0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70"
-            },
-            {
-              "contractAddress": "base:0x7e860098F58bBFC8648a4311b374B1D669a2bc6B"
-            },
-            {
-              "contractAddress": "base:0x806b4Ac04501c29769051e42783cF04dCE41440b"
-            },
-            {
-              "contractAddress": "base:0xd7818272B9e248357d13057AAb0B417aF31E817d"
-            }
-          ],
-          "mitigations": [
-            {
-              "type": "delay",
-              "description": "Delay before execution",
-              "delayRef": {
-                "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-                "fieldName": "timelock"
-              }
-            },
-            {
-              "type": "other",
-              "label": "Per-market cap",
-              "description": "Prices the cbBTC market only. Capital exposure under feed failure is bounded by that market's USDC supply cap.",
-              "scopedTo": {
-                "address": "base:0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F",
-                "type": "dependency"
-              },
-              "impactCap": {
-                "value": {
-                  "mode": "fieldRef",
-                  "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-                  "fieldName": "feedCap_0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F"
-                },
-                "unit": {
-                  "kind": "scaler",
-                  "factor": "1e6"
-                }
-              }
-            },
-            {
-              "type": "other",
-              "label": "Per-market cap",
-              "description": "Quote feed shared across multiple markets. Exposure bounded by the sum of those markets' USDC supply caps.",
-              "scopedTo": {
-                "address": "base:0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
-                "type": "dependency"
-              },
-              "impactCap": {
-                "value": {
-                  "mode": "fieldRef",
-                  "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-                  "fieldName": "feedCap_0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70"
-                },
-                "unit": {
-                  "kind": "scaler",
-                  "factor": "1e6"
-                }
-              }
-            },
-            {
-              "type": "other",
-              "label": "Per-market cap",
-              "description": "USD reference feed shared across multiple markets. Exposure bounded by the sum of those markets' USDC supply caps.",
-              "scopedTo": {
-                "address": "base:0x7e860098F58bBFC8648a4311b374B1D669a2bc6B",
-                "type": "dependency"
-              },
-              "impactCap": {
-                "value": {
-                  "mode": "fieldRef",
-                  "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-                  "fieldName": "feedCap_0x7e860098F58bBFC8648a4311b374B1D669a2bc6B"
-                },
-                "unit": {
-                  "kind": "scaler",
-                  "factor": "1e6"
-                }
-              }
-            },
-            {
-              "type": "other",
-              "label": "Per-market cap",
-              "description": "Prices a single market only. Exposure bounded by that market's USDC supply cap.",
-              "scopedTo": {
-                "address": "base:0xd7818272B9e248357d13057AAb0B417aF31E817d",
-                "type": "dependency"
-              },
-              "impactCap": {
-                "value": {
-                  "mode": "fieldRef",
-                  "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-                  "fieldName": "feedCap_0xd7818272B9e248357d13057AAb0B417aF31E817d"
-                },
-                "unit": {
-                  "kind": "scaler",
-                  "factor": "1e6"
-                }
-              }
-            },
-            {
-              "type": "other",
-              "label": "Per-market cap",
-              "description": "Prices a single market only. Exposure bounded by that market's USDC supply cap.",
-              "scopedTo": {
-                "address": "base:0x43a5C292A453A3bF3606fa856197f09D7B74251a",
-                "type": "dependency"
-              },
-              "impactCap": {
-                "value": {
-                  "mode": "fieldRef",
-                  "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-                  "fieldName": "feedCap_0x43a5C292A453A3bF3606fa856197f09D7B74251a"
-                },
-                "unit": {
-                  "kind": "scaler",
-                  "factor": "1e6"
-                }
-              }
-            },
-            {
-              "type": "other",
-              "label": "Per-market cap",
-              "description": "Prices a single market only. Exposure bounded by that market's USDC supply cap.",
-              "scopedTo": {
-                "address": "base:0x806b4Ac04501c29769051e42783cF04dCE41440b",
-                "type": "dependency"
-              },
-              "impactCap": {
-                "value": {
-                  "mode": "fieldRef",
-                  "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-                  "fieldName": "feedCap_0x806b4Ac04501c29769051e42783cF04dCE41440b"
-                },
-                "unit": {
-                  "kind": "scaler",
-                  "factor": "1e6"
-                }
-              }
-            }
-          ],
+          "mitigations": [],
           "timestamp": "2026-04-28T14:14:10.424Z",
           "lastChangedBy": {
             "author": "unknown",
@@ -333,10 +172,6 @@
               "path": "$self.owner"
             }
           ],
-          "delay": {
-            "contractAddress": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
-            "fieldName": "timelock"
-          },
           "timestamp": "2026-04-28T07:57:59.464Z",
           "lastChangedBy": {
             "author": "unknown",

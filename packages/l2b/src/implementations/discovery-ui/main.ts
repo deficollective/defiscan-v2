@@ -60,7 +60,10 @@ import { detectPermissionsWithAI, combineSourceFiles } from './defidisco/aiPermi
 import { compareScoring } from './defidisco/compareScoring'
 import { ProjectAnalysis } from './defidisco/projectAnalysis'
 import { calculateV2Score } from './defidisco/v2Scoring'
-import { resolveEnhancedTraversal } from './defidisco/enhancedTraversal'
+import {
+  getEnhancedGraphEdges,
+  resolveEnhancedTraversal,
+} from './defidisco/enhancedTraversal'
 import { computeFunctionAnalysis } from './defidisco/functionAnalysis'
 import {
   getReviewConfig,
@@ -68,6 +71,16 @@ import {
   updateEntityDescription,
 } from './defidisco/reviewConfig'
 import { getAudits, getResources, updateAudits, updateResources } from './defidisco/resources'
+import {
+  getCallGraphOverrides,
+  updateCallGraphOverrides,
+} from './defidisco/callGraphOverrides'
+import {
+  acceptSuggestion,
+  addSuggestion,
+  getCallGraphSuggestions,
+  rejectSuggestion,
+} from './defidisco/callGraphSuggestions'
 import { getGovernance, updateGovernance } from './defidisco/governance'
 import { countLinesOfCode } from './defidisco/countLinesOfCode'
 import { ReviewCompiler } from './defidisco/reviewCompiler'
@@ -794,6 +807,123 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
     }
   })
 
+  // Call-graph edge overrides — researcher-authored rules that add/remove edges
+  // from the enhanced graph (see defidisco/callGraphOverrides.ts). Applied inside
+  // buildEnhancedGraph, so they feed capital/governance/dependency/mitigation
+  // analysis and survive call-graph regeneration.
+  app.get('/api/projects/:project/call-graph-overrides', (req, res) => {
+    const paramsValidation = projectParamsSchema.safeParse(req.params)
+    if (!paramsValidation.success) {
+      res.status(400).json({ errors: paramsValidation.message })
+      return
+    }
+    const { project } = paramsValidation.data
+
+    try {
+      res.json(getCallGraphOverrides(paths, project))
+    } catch (error) {
+      console.error('Error loading call-graph overrides:', error)
+      res.status(500).json({ error: 'Failed to load call-graph overrides' })
+    }
+  })
+
+  app.put('/api/projects/:project/call-graph-overrides', (req, res) => {
+    if (readonly) {
+      res.status(403).json({ error: 'Server is in readonly mode' })
+      return
+    }
+
+    const paramsValidation = projectParamsSchema.safeParse(req.params)
+    if (!paramsValidation.success) {
+      res.status(400).json({ errors: paramsValidation.message })
+      return
+    }
+    const { project } = paramsValidation.data
+
+    try {
+      // Body is the rules array (empty array / null deletes the file).
+      const rules = Array.isArray(req.body) ? req.body : (req.body?.rules ?? [])
+      updateCallGraphOverrides(paths, project, rules)
+      res.json({ success: true })
+    } catch (error) {
+      console.error('Error updating call-graph overrides:', error)
+      res.status(500).json({ error: 'Failed to update call-graph overrides' })
+    }
+  })
+
+  // Call-graph edge-override SUGGESTIONS — agent-proposed rules pending review.
+  // Stored in a separate file that buildEnhancedGraph never reads, so unreviewed
+  // suggestions can't affect analysis. Accept promotes the rule into the
+  // overrides file (the only thing analysis consumes).
+  app.get('/api/projects/:project/call-graph-suggestions', (req, res) => {
+    const v = projectParamsSchema.safeParse(req.params)
+    if (!v.success) {
+      res.status(400).json({ errors: v.message })
+      return
+    }
+    try {
+      res.json(getCallGraphSuggestions(paths, v.data.project))
+    } catch (error) {
+      console.error('Error loading call-graph suggestions:', error)
+      res.status(500).json({ error: 'Failed to load call-graph suggestions' })
+    }
+  })
+
+  // Add a suggestion (the agent path is usually a direct file write; this exists
+  // for parity / programmatic use). Body: { rule, reasoning, createdBy? }.
+  app.post('/api/projects/:project/call-graph-suggestions', (req, res) => {
+    if (readonly) {
+      res.status(403).json({ error: 'Server is in readonly mode' })
+      return
+    }
+    const v = projectParamsSchema.safeParse(req.params)
+    if (!v.success) {
+      res.status(400).json({ errors: v.message })
+      return
+    }
+    try {
+      const { rule, reasoning, createdBy } = req.body ?? {}
+      if (!rule || typeof reasoning !== 'string') {
+        res.status(400).json({ error: 'Body requires { rule, reasoning }' })
+        return
+      }
+      res.json(addSuggestion(paths, v.data.project, { rule, reasoning, createdBy }))
+    } catch (error) {
+      console.error('Error adding call-graph suggestion:', error)
+      res.status(500).json({ error: 'Failed to add call-graph suggestion' })
+    }
+  })
+
+  app.post(
+    '/api/projects/:project/call-graph-suggestions/:id/:action',
+    (req, res) => {
+      if (readonly) {
+        res.status(403).json({ error: 'Server is in readonly mode' })
+        return
+      }
+      const v = projectParamsSchema.safeParse(req.params)
+      if (!v.success) {
+        res.status(400).json({ errors: v.message })
+        return
+      }
+      const { id, action } = req.params
+      if (action !== 'accept' && action !== 'reject') {
+        res.status(400).json({ error: 'action must be accept or reject' })
+        return
+      }
+      try {
+        const result =
+          action === 'accept'
+            ? acceptSuggestion(paths, v.data.project, id)
+            : rejectSuggestion(paths, v.data.project, id)
+        res.json(result)
+      } catch (error) {
+        console.error(`Error on suggestion ${action}:`, error)
+        res.status(500).json({ error: `Failed to ${action} suggestion` })
+      }
+    },
+  )
+
   // Compile all reviews endpoint
   app.post('/api/compile-all-reviews', (_req, res) => {
     if (readonly) {
@@ -1067,6 +1197,31 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
     }
   })
 
+  // Enhanced graph edges endpoint — raw edge set (callgraph + permission +
+  // dependency) for the call-graph walker UI. Same edges buildEnhancedGraph
+  // feeds to capital/governance traversal, exposed read-only.
+  app.get('/api/projects/:project/enhanced-graph-edges', (req, res) => {
+    const paramsValidation = projectParamsSchema.safeParse(req.params)
+    if (!paramsValidation.success) {
+      res.status(400).json({ errors: paramsValidation.message })
+      return
+    }
+    const { project } = paramsValidation.data
+
+    try {
+      const response = getEnhancedGraphEdges(
+        paths,
+        configReader,
+        templateService,
+        project,
+      )
+      res.json(response)
+    } catch (error) {
+      console.error('Error building enhanced graph edges:', error)
+      res.status(500).json({ error: 'Failed to build enhanced graph edges' })
+    }
+  })
+
   // Function analysis endpoint (impact + dependencies)
   app.get('/api/projects/:project/function-analysis', (req, res) => {
     const paramsValidation = projectParamsSchema.safeParse(req.params)
@@ -1165,6 +1320,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
       return
     }
     const addToIgnoreWatchMode = Boolean(req.body?.addToIgnoreWatchMode)
+    const skipRecompile = Boolean(req.body?.skipRecompile)
     try {
       const result = await deleteMonitorRow(
         paths,
@@ -1172,7 +1328,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         configWriter,
         monitorAdminDb,
         id,
-        { addToIgnoreWatchMode },
+        { addToIgnoreWatchMode, skipRecompile },
       )
       res.json(result)
     } catch (error) {
@@ -1214,6 +1370,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
       return
     }
     const addToIgnoreWatchMode = Boolean(req.body?.addToIgnoreWatchMode)
+    const skipRecompile = Boolean(req.body?.skipRecompile)
     try {
       const result = await stripMonitorFields(
         paths,
@@ -1222,7 +1379,7 @@ export function runDiscoveryUi({ readonly }: { readonly: boolean }) {
         monitorAdminDb,
         id,
         fields,
-        { addToIgnoreWatchMode },
+        { addToIgnoreWatchMode, skipRecompile },
       )
       res.json(result)
     } catch (error) {

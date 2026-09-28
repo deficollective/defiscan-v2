@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-04-06T11:18:46.001Z",
+  "lastModified": "2026-05-17T14:18:18.837Z",
   "contracts": {
     "eth:0xbeef01735c132ada46aa9aa4c54623caa92a64cb": {
       "functions": [
@@ -58,10 +58,6 @@
               "path": "$self.owner"
             }
           ],
-          "delay": {
-            "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
-            "fieldName": "timelock"
-          },
           "mitigations": [
             {
               "type": "valueRange",
@@ -139,10 +135,6 @@
               "path": "$self.owner"
             }
           ],
-          "delay": {
-            "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
-            "fieldName": "timelock"
-          },
           "timestamp": "2026-03-11T16:15:07.869Z",
           "lastChangedBy": {
             "author": "unknown",
@@ -161,14 +153,208 @@
               "path": "$self.owner"
             }
           ],
-          "delay": {
-            "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
-            "fieldName": "timelock"
-          },
+          "mitigations": [],
           "timestamp": "2026-03-11T16:34:19.425Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-03-11T16:34:19.425Z"
+            "date": "2026-05-17T14:18:18.837Z"
+          }
+        },
+        {
+          "functionName": "acceptCap",
+          "isPermissioned": false,
+          "dependencies": [
+            {
+              "contractAddress": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812"
+            },
+            {
+              "contractAddress": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4"
+            },
+            {
+              "contractAddress": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD"
+            },
+            {
+              "contractAddress": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6"
+            },
+            {
+              "contractAddress": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+            },
+            {
+              "contractAddress": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23"
+            },
+            {
+              "contractAddress": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79"
+            },
+            {
+              "contractAddress": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "Capital exposure under this feed is bounded by the aggregate USDC supply caps of every Morpho Blue market that consumes it.",
+              "scopedTo": {
+                "address": "eth:0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+                  "fieldName": "feedCap_0x86392dC19c0b719886221c78AB11eb8Cf5c52812"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            },
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "Capital exposure under this feed is bounded by the aggregate USDC supply caps of every Morpho Blue market that consumes it.",
+              "scopedTo": {
+                "address": "eth:0x986b5E1e1755e3C2440e960477f25201B0a8bbD4",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+                  "fieldName": "feedCap_0x986b5E1e1755e3C2440e960477f25201B0a8bbD4"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            },
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "Capital exposure under this feed is bounded by the aggregate USDC supply caps of every Morpho Blue market that consumes it.",
+              "scopedTo": {
+                "address": "eth:0xc0053f3FBcCD593758258334Dfce24C2A9A673aD",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+                  "fieldName": "feedCap_0xc0053f3FBcCD593758258334Dfce24C2A9A673aD"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            },
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "Capital exposure under this feed is bounded by the aggregate USDC supply caps of every Morpho Blue market that consumes it.",
+              "scopedTo": {
+                "address": "eth:0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+                  "fieldName": "feedCap_0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            },
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "Capital exposure under this feed is bounded by the aggregate USDC supply caps of every Morpho Blue market that consumes it.",
+              "scopedTo": {
+                "address": "eth:0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+                  "fieldName": "feedCap_0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            },
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "Capital exposure under this feed is bounded by the aggregate USDC supply caps of every Morpho Blue market that consumes it.",
+              "scopedTo": {
+                "address": "eth:0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+                  "fieldName": "feedCap_0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            },
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "Capital exposure under this feed is bounded by the aggregate USDC supply caps of every Morpho Blue market that consumes it.",
+              "scopedTo": {
+                "address": "eth:0x4F67e4d9BD67eFa28236013288737D39AeF48e79",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+                  "fieldName": "feedCap_0x4F67e4d9BD67eFa28236013288737D39AeF48e79"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            },
+            {
+              "type": "other",
+              "label": "Per-market cap",
+              "description": "Capital exposure under this feed is bounded by the aggregate USDC supply caps of every Morpho Blue market that consumes it.",
+              "scopedTo": {
+                "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+                "type": "dependency"
+              },
+              "impactCap": {
+                "value": {
+                  "mode": "fieldRef",
+                  "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+                  "fieldName": "feedCap_0x4270E1817576bbA4b640466bE79A408Ef128F828"
+                },
+                "unit": {
+                  "kind": "scaler",
+                  "factor": "1e6"
+                }
+              }
+            }
+          ],
+          "timestamp": "2026-05-17T14:18:18.837Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-17T14:18:18.837Z"
           }
         },
         {
@@ -183,10 +369,6 @@
               "path": "$self.owner"
             }
           ],
-          "delay": {
-            "contractAddress": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
-            "fieldName": "timelock"
-          },
           "timestamp": "2026-03-11T16:28:47.450Z",
           "lastChangedBy": {
             "author": "unknown",
