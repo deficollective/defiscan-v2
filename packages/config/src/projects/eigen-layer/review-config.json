@@ -1,5 +1,6 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-05-13T11:17:10.000Z",
   "lastModified": "2026-09-28T10:41:02.000Z",
   "protocolSlug": "eigen-layer",
   "protocolName": "EigenLayer",
@@ -292,6 +293,5 @@
     "wBETHStrategyBalance": "fundsdata.contracts[\"eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184\"].balances.totalUsdValue",
     "nativeEthRestaking": "fundsdata.contracts[\"eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338\"].aggregate.totalUsdValue",
     "paymentVaultBalance": "fundsdata.contracts[\"eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05\"].balances.totalUsdValue"
-  },
-  "publishedAt": "2026-09-28T08:46:43.000Z"
+  }
 }
