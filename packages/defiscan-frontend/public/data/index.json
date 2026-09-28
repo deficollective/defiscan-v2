@@ -224,10 +224,10 @@
         "scoredFunctionCount": 220,
         "adminCount": 20,
         "dependencyCount": 12,
-        "totalCapitalAtRisk": 6826324013.429865,
+        "totalCapitalAtRisk": 7010702497.822348,
         "totalTokenValueAtRisk": 0,
         "totalTokenValue": 0,
-        "linesOfCode": 31389,
+        "linesOfCode": 31459,
         "verifiedContractCount": 82,
         "coverage": 100
       }
@@ -402,13 +402,13 @@
     }
   ],
   "globalTotals": {
-    "totalCapitalAtRisk": 16947083713.978123,
+    "totalCapitalAtRisk": 17131462198.370605,
     "totalTokenValueAtRisk": 67120286601.59861,
     "totalTokenValue": 67253240849.15064,
     "protocolsReviewed": 19,
     "totalContractCount": 1228,
     "totalAdminCount": 172,
-    "totalUpdateCount": 1732
+    "totalUpdateCount": 1736
   },
   "dependencies": [
     {
@@ -455,7 +455,7 @@
       "address": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
       "name": "Lido stETH Token",
       "entity": "Lido stETH",
-      "totalFundsAtRisk": 1232019233.2268655,
+      "totalFundsAtRisk": 926613102.1826837,
       "protocols": [
         {
           "slug": "EtherFi-Stake",
@@ -623,7 +623,7 @@
       "address": "eth:0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
       "name": "Coinbase cbETH Token",
       "entity": "Coinbase cbETH",
-      "totalFundsAtRisk": 312683008.89628905,
+      "totalFundsAtRisk": 312316940.8401486,
       "protocols": [
         {
           "slug": "EtherFi-Stake",
@@ -643,7 +643,7 @@
       "address": "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1",
       "name": "Curve WrapTokenV3ETH",
       "entity": "Curve",
-      "totalFundsAtRisk": 310442309.76195586,
+      "totalFundsAtRisk": 310178623.5280847,
       "protocols": [
         {
           "slug": "EtherFi-Stake",
@@ -808,22 +808,6 @@
       ]
     },
     {
-      "address": "eth:0xA35b1B31Ce002FBF2058D22F30f95D405200A15b",
-      "name": "Stader",
-      "entity": "Stader",
-      "totalFundsAtRisk": 197943068.8786384,
-      "protocols": [
-        {
-          "slug": "aave-v3",
-          "name": "Aave V3"
-        },
-        {
-          "slug": "eigen-layer",
-          "name": "EigenLayer"
-        }
-      ]
-    },
-    {
       "address": "eth:0xAd430500ECDa11E38C9bCB08a702274b94641112",
       "name": "Tellor Price Feed",
       "entity": "Tellor",
@@ -839,7 +823,7 @@
       "address": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393",
       "name": "Rocket Pool",
       "entity": "Rocket Pool",
-      "totalFundsAtRisk": 160021224.1826649,
+      "totalFundsAtRisk": 160527840.7386356,
       "protocols": [
         {
           "slug": "aave-v3",
@@ -856,6 +840,22 @@
         {
           "slug": "spark",
           "name": "Spark"
+        }
+      ]
+    },
+    {
+      "address": "eth:0xA35b1B31Ce002FBF2058D22F30f95D405200A15b",
+      "name": "Stader",
+      "entity": "Stader",
+      "totalFundsAtRisk": 141880926.26799807,
+      "protocols": [
+        {
+          "slug": "aave-v3",
+          "name": "Aave V3"
+        },
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     },
@@ -1028,22 +1028,6 @@
       ]
     },
     {
-      "address": "eth:0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38",
-      "name": "StakeWise",
-      "entity": "StakeWise",
-      "totalFundsAtRisk": 44553976.346343175,
-      "protocols": [
-        {
-          "slug": "aave-v3",
-          "name": "Aave V3"
-        },
-        {
-          "slug": "eigen-layer",
-          "name": "EigenLayer"
-        }
-      ]
-    },
-    {
       "address": "eth:0x536218f9E9Eb48863970252233c8F271f554C2d0",
       "name": "Chainlink rETH/ETH Price Feed",
       "entity": "Chainlink",
@@ -1052,6 +1036,22 @@
         {
           "slug": "liquity-v2",
           "name": "Liquity V2"
+        }
+      ]
+    },
+    {
+      "address": "eth:0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38",
+      "name": "StakeWise",
+      "entity": "StakeWise",
+      "totalFundsAtRisk": 40038767.291208915,
+      "protocols": [
+        {
+          "slug": "aave-v3",
+          "name": "Aave V3"
+        },
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     },
@@ -1180,18 +1180,6 @@
       ]
     },
     {
-      "address": "eth:0x8c1BEd5b9a0928467c9B1341Da1D7BD5e10b6549",
-      "name": "LsETH (Liquid Collective)",
-      "entity": "Liquid Collective",
-      "totalFundsAtRisk": 19274785.882904936,
-      "protocols": [
-        {
-          "slug": "eigen-layer",
-          "name": "EigenLayer"
-        }
-      ]
-    },
-    {
       "address": "eth:0xFDdf8D19D092839A26b31365c927cA236B5086cf",
       "name": "RETHExchangeRateOracle",
       "entity": null,
@@ -1207,7 +1195,7 @@
       "address": "eth:0xf951E335afb289353dc249e82926178EaC7DEd78",
       "name": "swETH (Swell)",
       "entity": "Swell",
-      "totalFundsAtRisk": 17667136.106260557,
+      "totalFundsAtRisk": 18109265.345457923,
       "protocols": [
         {
           "slug": "eigen-layer",
@@ -1219,7 +1207,19 @@
       "address": "eth:0xac3E018457B222d93114458476f3E3416Abbe38F",
       "name": "sfrxETH (Frax Finance)",
       "entity": "Frax Finance",
-      "totalFundsAtRisk": 6128443.639241644,
+      "totalFundsAtRisk": 8596911.384409586,
+      "protocols": [
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
+        }
+      ]
+    },
+    {
+      "address": "eth:0x856c4Efb76C1D1AE02e20CEB03A2A6a08b0b8dC3",
+      "name": "OETH (Origin Protocol)",
+      "entity": "Origin Protocol",
+      "totalFundsAtRisk": 4284890.967298023,
       "protocols": [
         {
           "slug": "eigen-layer",
@@ -1264,22 +1264,10 @@
       ]
     },
     {
-      "address": "eth:0x856c4Efb76C1D1AE02e20CEB03A2A6a08b0b8dC3",
-      "name": "OETH (Origin Protocol)",
-      "entity": "Origin Protocol",
-      "totalFundsAtRisk": 3388322.3673494174,
-      "protocols": [
-        {
-          "slug": "eigen-layer",
-          "name": "EigenLayer"
-        }
-      ]
-    },
-    {
       "address": "eth:0xd5F7838F5C461fefF7FE49ea5ebaF7728bB0ADfa",
       "name": "mETH (Mantle)",
       "entity": "Mantle",
-      "totalFundsAtRisk": 3044253.6926825126,
+      "totalFundsAtRisk": 2967190.4024607446,
       "protocols": [
         {
           "slug": "eigen-layer",
@@ -1291,7 +1279,19 @@
       "address": "eth:0xE95A203B1a91a908F9B9CE46459d101078c2c3cb",
       "name": "ankrETH (Ankr)",
       "entity": "Ankr",
-      "totalFundsAtRisk": 1237181.684916803,
+      "totalFundsAtRisk": 1507229.0148714243,
+      "protocols": [
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
+        }
+      ]
+    },
+    {
+      "address": "eth:0x8c1BEd5b9a0928467c9B1341Da1D7BD5e10b6549",
+      "name": "LsETH (Liquid Collective)",
+      "entity": "Liquid Collective",
+      "totalFundsAtRisk": 181071.0174700517,
       "protocols": [
         {
           "slug": "eigen-layer",
