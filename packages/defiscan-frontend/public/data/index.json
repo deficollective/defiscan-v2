@@ -56,7 +56,7 @@
         "scoredFunctionCount": 12,
         "adminCount": 4,
         "dependencyCount": 2,
-        "totalCapitalAtRisk": 328346861.7550799,
+        "totalCapitalAtRisk": 412334591.38179386,
         "totalTokenValueAtRisk": 0,
         "totalTokenValue": 0,
         "linesOfCode": 6004,
@@ -96,9 +96,9 @@
         "contractCount": 14,
         "permissionedFunctionCount": 18,
         "scoredFunctionCount": 16,
-        "adminCount": 5,
+        "adminCount": 7,
         "dependencyCount": 2,
-        "totalCapitalAtRisk": 452927084.34733564,
+        "totalCapitalAtRisk": 18184570.32112897,
         "totalTokenValueAtRisk": 0,
         "totalTokenValue": 0,
         "linesOfCode": 8190,
@@ -135,16 +135,16 @@
       "tokenName": "steakUSDT",
       "verified": false,
       "totals": {
-        "contractCount": 34,
+        "contractCount": 44,
         "permissionedFunctionCount": 18,
         "scoredFunctionCount": 12,
-        "adminCount": 5,
+        "adminCount": 7,
         "dependencyCount": 2,
-        "totalCapitalAtRisk": 90973054.0285703,
+        "totalCapitalAtRisk": 86636150.869251,
         "totalTokenValueAtRisk": 0,
         "totalTokenValue": 0,
         "linesOfCode": 7681,
-        "verifiedContractCount": 34,
+        "verifiedContractCount": 44,
         "coverage": 100
       }
     },
@@ -177,16 +177,16 @@
       "tokenName": "GHO",
       "verified": true,
       "totals": {
-        "contractCount": 494,
+        "contractCount": 503,
         "permissionedFunctionCount": 1208,
         "scoredFunctionCount": 1208,
         "adminCount": 29,
         "dependencyCount": 98,
-        "totalCapitalAtRisk": 49029983.17684212,
+        "totalCapitalAtRisk": 78928337.18044184,
         "totalTokenValueAtRisk": 20041553431.481884,
         "totalTokenValue": 20688347811.054787,
         "linesOfCode": 38915,
-        "verifiedContractCount": 494,
+        "verifiedContractCount": 503,
         "coverage": 100
       }
     },
@@ -203,9 +203,9 @@
         "scoredFunctionCount": 175,
         "adminCount": 4,
         "dependencyCount": 0,
-        "totalCapitalAtRisk": 304738141.0767306,
+        "totalCapitalAtRisk": 386565133.46619433,
         "totalTokenValueAtRisk": 0,
-        "totalTokenValue": 723320238.9412608,
+        "totalTokenValue": 1692071503.235895,
         "linesOfCode": 15990,
         "verifiedContractCount": 36,
         "coverage": 100
@@ -229,6 +229,27 @@
         "totalTokenValue": 180100000.00000003,
         "linesOfCode": 8966,
         "verifiedContractCount": 40,
+        "coverage": 100
+      }
+    },
+    {
+      "slug": "eigen-layer",
+      "name": "EigenLayer",
+      "chain": "Ethereum",
+      "projectType": "other",
+      "tokenName": "EIGEN",
+      "verified": false,
+      "totals": {
+        "contractCount": 82,
+        "permissionedFunctionCount": 279,
+        "scoredFunctionCount": 279,
+        "adminCount": 24,
+        "dependencyCount": 12,
+        "totalCapitalAtRisk": 7010702497.822348,
+        "totalTokenValueAtRisk": 0,
+        "totalTokenValue": 0,
+        "linesOfCode": 31459,
+        "verifiedContractCount": 82,
         "coverage": 100
       }
     },
@@ -345,16 +366,16 @@
       "tokenName": "SPK",
       "verified": true,
       "totals": {
-        "contractCount": 93,
-        "permissionedFunctionCount": 202,
-        "scoredFunctionCount": 198,
+        "contractCount": 102,
+        "permissionedFunctionCount": 201,
+        "scoredFunctionCount": 197,
         "adminCount": 8,
         "dependencyCount": 17,
-        "totalCapitalAtRisk": 3496799853.511101,
-        "totalTokenValueAtRisk": 208500000,
-        "totalTokenValue": 208500000,
+        "totalCapitalAtRisk": 5646894951.58135,
+        "totalTokenValueAtRisk": 243930000,
+        "totalTokenValue": 243930000,
         "linesOfCode": 14735,
-        "verifiedContractCount": 93,
+        "verifiedContractCount": 102,
         "coverage": 100
       }
     },
@@ -423,13 +444,13 @@
     }
   ],
   "globalTotals": {
-    "totalCapitalAtRisk": 11496234450.074905,
+    "totalCapitalAtRisk": 18506936947.89725,
     "totalTokenValueAtRisk": 62208437497.38191,
     "totalTokenValue": 62297132022.1261,
-    "protocolsReviewed": 20,
-    "totalContractCount": 1189,
-    "totalAdminCount": 192,
-    "totalUpdateCount": 1666
+    "protocolsReviewed": 21,
+    "totalContractCount": 1271,
+    "totalAdminCount": 216,
+    "totalUpdateCount": 1873
   },
   "dependencies": [
     {
@@ -716,7 +737,7 @@
       "address": "eth:0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
       "name": "Coinbase cbETH",
       "entity": "Coinbase cbETH",
-      "totalFundsAtRisk": 174484627.4213531,
+      "totalFundsAtRisk": 177714881.2758,
       "protocols": [
         {
           "slug": "EtherFi-Stake",
@@ -725,6 +746,10 @@
         {
           "slug": "aave-v3",
           "name": "Aave V3"
+        },
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     },
@@ -780,11 +805,15 @@
       "address": "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
       "name": "Lido stETH",
       "entity": "Lido stETH",
-      "totalFundsAtRisk": 174483589.74775213,
+      "totalFundsAtRisk": 792011145.1540909,
       "protocols": [
         {
           "slug": "EtherFi-Stake",
           "name": "ether.fi"
+        },
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     },
@@ -792,11 +821,15 @@
       "address": "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1",
       "name": "Curve WrapTokenV3ETH",
       "entity": "Curve",
-      "totalFundsAtRisk": 174483589.74775213,
+      "totalFundsAtRisk": 175576666.49949187,
       "protocols": [
         {
           "slug": "EtherFi-Stake",
           "name": "ether.fi"
+        },
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     },
@@ -916,7 +949,7 @@
       "address": "eth:0xae78736Cd615f374D3085123A210448E74Fc6393",
       "name": "Rocket Pool",
       "entity": "Rocket Pool",
-      "totalFundsAtRisk": 107391183.68393706,
+      "totalFundsAtRisk": 119505799.55800597,
       "protocols": [
         {
           "slug": "aave-v3",
@@ -929,6 +962,10 @@
         {
           "slug": "spark",
           "name": "Spark"
+        },
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     },
@@ -1248,11 +1285,15 @@
       "address": "eth:0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38",
       "name": "StakeWise",
       "entity": "StakeWise",
-      "totalFundsAtRisk": 29899391.677200682,
+      "totalFundsAtRisk": 34232392.77930286,
       "protocols": [
         {
           "slug": "aave-v3",
           "name": "Aave V3"
+        },
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     },
@@ -1800,11 +1841,15 @@
       "address": "eth:0xA35b1B31Ce002FBF2058D22F30f95D405200A15b",
       "name": "Stader",
       "entity": "Stader",
-      "totalFundsAtRisk": 1037.673600967855,
+      "totalFundsAtRisk": 141880823.7322421,
       "protocols": [
         {
           "slug": "aave-v3",
           "name": "Aave V3"
+        },
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     },
@@ -3417,6 +3462,78 @@
         {
           "slug": "aave-v3",
           "name": "Aave V3"
+        }
+      ]
+    },
+    {
+      "address": "eth:0xf951E335afb289353dc249e82926178EaC7DEd78",
+      "name": "swETH (Swell)",
+      "entity": "Swell",
+      "totalFundsAtRisk": 18109265.345457923,
+      "protocols": [
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
+        }
+      ]
+    },
+    {
+      "address": "eth:0xac3E018457B222d93114458476f3E3416Abbe38F",
+      "name": "sfrxETH (Frax Finance)",
+      "entity": "Frax Finance",
+      "totalFundsAtRisk": 8596911.384409586,
+      "protocols": [
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
+        }
+      ]
+    },
+    {
+      "address": "eth:0x856c4Efb76C1D1AE02e20CEB03A2A6a08b0b8dC3",
+      "name": "OETH (Origin Protocol)",
+      "entity": "Origin Protocol",
+      "totalFundsAtRisk": 4284890.967298023,
+      "protocols": [
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
+        }
+      ]
+    },
+    {
+      "address": "eth:0xd5F7838F5C461fefF7FE49ea5ebaF7728bB0ADfa",
+      "name": "mETH (Mantle)",
+      "entity": "Mantle",
+      "totalFundsAtRisk": 2967190.4024607446,
+      "protocols": [
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
+        }
+      ]
+    },
+    {
+      "address": "eth:0xE95A203B1a91a908F9B9CE46459d101078c2c3cb",
+      "name": "ankrETH (Ankr)",
+      "entity": "Ankr",
+      "totalFundsAtRisk": 1507229.0148714243,
+      "protocols": [
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
+        }
+      ]
+    },
+    {
+      "address": "eth:0x8c1BEd5b9a0928467c9B1341Da1D7BD5e10b6549",
+      "name": "LsETH (Liquid Collective)",
+      "entity": "Liquid Collective",
+      "totalFundsAtRisk": 181071.0174700517,
+      "protocols": [
+        {
+          "slug": "eigen-layer",
+          "name": "EigenLayer"
         }
       ]
     }

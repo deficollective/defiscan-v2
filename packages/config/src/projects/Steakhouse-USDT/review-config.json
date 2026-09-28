@@ -1,5 +1,6 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-06-07T16:14:14.000Z",
   "lastModified": "2026-06-02T09:30:00.000Z",
   "protocolSlug": "Steakhouse-USDT",
   "protocolName": "Steakhouse USDT",
@@ -106,18 +107,34 @@
               "type": "dataTable",
               "dataSource": "project.contracts",
               "columns": [
-                { "field": "name", "header": "Name" },
-                { "field": "address", "header": "Address", "format": "address" },
-                { "field": "proxyType", "header": "Proxy Type", "format": "badge" }
+                {
+                  "field": "name",
+                  "header": "Name"
+                },
+                {
+                  "field": "address",
+                  "header": "Address",
+                  "format": "address"
+                },
+                {
+                  "field": "proxyType",
+                  "header": "Proxy Type",
+                  "format": "badge"
+                }
               ],
-              "filters": { "excludeExternal": true }
+              "filters": {
+                "excludeExternal": true
+              }
             }
           ]
         },
         {
           "title": "Audits",
           "content": [
-            { "type": "text", "content": "" }
+            {
+              "type": "text",
+              "content": ""
+            }
           ]
         }
       ]

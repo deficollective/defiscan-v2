@@ -16,6 +16,7 @@ import {
   AerodromeClFactoryHandler,
   AerodromeV2FactoryHandler,
   AggregateService,
+  EigenLayerNativeEthHandler,
   FrankencoinMintinghubHandler,
   PancakeswapV2FactoryHandler,
   UniswapV2FactoryHandler,
@@ -115,6 +116,7 @@ export function createDefiscanServer(
     [
       new AerodromeClFactoryHandler(),
       new AerodromeV2FactoryHandler(),
+      new EigenLayerNativeEthHandler(),
       new UniswapV2FactoryHandler(config.thegraph.apiKey),
       new UniswapV3FactoryHandler(),
       new FrankencoinMintinghubHandler(),

@@ -2,6 +2,7 @@ export { AggregateService } from './AggregateService'
 export {
   AerodromeClFactoryHandler,
   AerodromeV2FactoryHandler,
+  EigenLayerNativeEthHandler,
   FrankencoinMintinghubHandler,
   PancakeswapV2FactoryHandler,
   UniswapV2FactoryHandler,

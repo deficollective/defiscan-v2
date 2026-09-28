@@ -1,0 +1,1726 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-09-28T11:28:43.532Z",
+  "rules": [
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.completeQueuedWithdrawal",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.withdrawSharesAsTokens",
+      "edgeType": "callgraph",
+      "id": "r-acg-001",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.completeQueuedWithdrawal calls shareManager.withdrawSharesAsTokens through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements withdrawSharesAsTokens. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.completeQueuedWithdrawal",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.addShares",
+      "edgeType": "callgraph",
+      "id": "r-acg-002",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.completeQueuedWithdrawal calls shareManager.addShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements addShares. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.completeQueuedWithdrawals",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.withdrawSharesAsTokens",
+      "edgeType": "callgraph",
+      "id": "r-acg-003",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.completeQueuedWithdrawals calls shareManager.withdrawSharesAsTokens through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements withdrawSharesAsTokens. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.completeQueuedWithdrawals",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.addShares",
+      "edgeType": "callgraph",
+      "id": "r-acg-004",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.completeQueuedWithdrawals calls shareManager.addShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements addShares. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.getWithdrawableShares",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.stakerDepositShares",
+      "edgeType": "callgraph",
+      "id": "r-acg-005",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.getWithdrawableShares calls shareManager.stakerDepositShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements stakerDepositShares. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.queueWithdrawals",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.removeDepositShares",
+      "edgeType": "callgraph",
+      "id": "r-acg-006",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.queueWithdrawals calls shareManager.removeDepositShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements removeDepositShares. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.redelegate",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.removeDepositShares",
+      "edgeType": "callgraph",
+      "id": "r-acg-007",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.redelegate calls shareManager.removeDepositShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements removeDepositShares. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.slashOperatorShares",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.increaseBurnOrRedistributableShares",
+      "edgeType": "callgraph",
+      "id": "r-acg-008",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.slashOperatorShares calls shareManager.increaseBurnOrRedistributableShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements increaseBurnOrRedistributableShares. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.undelegate",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.removeDepositShares",
+      "edgeType": "callgraph",
+      "id": "r-acg-009",
+      "note": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.undelegate calls shareManager.removeDepositShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements removeDepositShares. Slither only kept the StrategyManager target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5.getGeneratorReferenceTimestamp",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.latestReferenceTimestamp",
+      "edgeType": "callgraph",
+      "id": "r-acg-010",
+      "note": "OperatorTableUpdater.getCertificateVerifier(curveType) (line 221) returns bn254CertificateVerifier for BN254 and ecdsaCertificateVerifier for ECDSA. OperatorTableUpdater.getGeneratorReferenceTimestamp calls latestReferenceTimestamp on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes latestReferenceTimestamp. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5.updateOperatorTable",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.isReferenceTimestampSet",
+      "edgeType": "callgraph",
+      "id": "r-acg-011",
+      "note": "OperatorTableUpdater.getCertificateVerifier(curveType) (line 221) returns bn254CertificateVerifier for BN254 and ecdsaCertificateVerifier for ECDSA. OperatorTableUpdater.updateOperatorTable calls isReferenceTimestampSet on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes isReferenceTimestampSet. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5.updateOperatorTable",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.latestReferenceTimestamp",
+      "edgeType": "callgraph",
+      "id": "r-acg-012",
+      "note": "OperatorTableUpdater.getCertificateVerifier(curveType) (line 221) returns bn254CertificateVerifier for BN254 and ecdsaCertificateVerifier for ECDSA. OperatorTableUpdater.updateOperatorTable calls latestReferenceTimestamp on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes latestReferenceTimestamp. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.createTask",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.latestReferenceTimestamp",
+      "edgeType": "callgraph",
+      "id": "r-acg-013",
+      "note": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.createTask calls latestReferenceTimestamp on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes latestReferenceTimestamp. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.createTask",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.maxOperatorTableStaleness",
+      "edgeType": "callgraph",
+      "id": "r-acg-014",
+      "note": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.createTask calls maxOperatorTableStaleness on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes maxOperatorTableStaleness. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.registerExecutorOperatorSet",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.getOperatorSetOwner",
+      "edgeType": "callgraph",
+      "id": "r-acg-015",
+      "note": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.registerExecutorOperatorSet calls getOperatorSetOwner on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes getOperatorSetOwner. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.setExecutorOperatorSetTaskConfig",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.getOperatorSetOwner",
+      "edgeType": "callgraph",
+      "id": "r-acg-016",
+      "note": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.setExecutorOperatorSetTaskConfig calls getOperatorSetOwner on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes getOperatorSetOwner. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.submitResult",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.verifyCertificate",
+      "edgeType": "callgraph",
+      "id": "r-acg-017",
+      "note": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.submitResult calls verifyCertificate on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes verifyCertificate. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.submitResult",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.verifyCertificateProportion",
+      "edgeType": "callgraph",
+      "id": "r-acg-018",
+      "note": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.submitResult calls verifyCertificateProportion on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes verifyCertificateProportion. Slither only kept the BN254 target."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7.withdraw",
+      "to": "eth:0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-019",
+      "note": "EigenStrategy._afterWithdrawal (line 87): if token == EIGEN it approves and wraps bEIGEN into EIGEN, then calls token.safeTransfer(recipient, amount). The transfer can therefore run on EIGEN as well as on bEIGEN. Slither only kept the bEIGEN transfer."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createAVSRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-020",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createAVSRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-021",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createEigenDARewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-022",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createEigenDARewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createEigenDARewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-023",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createEigenDARewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createOperatorDirectedAVSRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-024",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createOperatorDirectedAVSRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-025",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createOperatorDirectedOperatorSetRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-026",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createOperatorDirectedOperatorSetRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-027",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createRewardsForAllEarners",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-028",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createRewardsForAllEarners has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createRewardsForAllSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-029",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createRewardsForAllSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createTotalStakeRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-030",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createTotalStakeRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createTotalStakeRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-031",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createTotalStakeRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createUniqueStakeRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-032",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createUniqueStakeRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.createUniqueStakeRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-033",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createUniqueStakeRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.processClaim",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-034",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.processClaim has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.processClaims",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-035",
+      "note": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.processClaims has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0.createAVSRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-036",
+      "note": "EigenDAServiceManager uses rewardsSubmissions[i].token / operatorDirectedRewardsSubmissions[i].token from the call input (lines 460-517). EigenDAServiceManager.createAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0.createAVSRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.increaseAllowance",
+      "edgeType": "callgraph",
+      "id": "r-acg-037",
+      "note": "EigenDAServiceManager uses rewardsSubmissions[i].token / operatorDirectedRewardsSubmissions[i].token from the call input (lines 460-517). EigenDAServiceManager.createAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.increaseAllowance is a guess among 11 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0.createOperatorDirectedAVSRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-038",
+      "note": "EigenDAServiceManager uses rewardsSubmissions[i].token / operatorDirectedRewardsSubmissions[i].token from the call input (lines 460-517). EigenDAServiceManager.createOperatorDirectedAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0.createOperatorDirectedAVSRewardsSubmission",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.increaseAllowance",
+      "edgeType": "callgraph",
+      "id": "r-acg-039",
+      "note": "EigenDAServiceManager uses rewardsSubmissions[i].token / operatorDirectedRewardsSubmissions[i].token from the call input (lines 460-517). EigenDAServiceManager.createOperatorDirectedAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.increaseAllowance is a guess among 11 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x53cC2D82E08370Fe1e44a96f69CEc7d5b54ae868.recoverTokens",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-040",
+      "note": "EigenPod.recoverTokens loops over the tokenList argument and calls tokenList[i].safeTransfer (line 359). EigenPod.recoverTokens has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05.withdrawERC20",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-041",
+      "note": "PaymentVault.withdrawERC20(IERC20 _token, uint256 _amount) transfers the _token argument (line 107). PaymentVault.withdrawERC20 has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.createTask",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-042",
+      "note": "TaskMailbox transfers taskConfig.feeToken, which each AVS sets in its own executor operator set config (lines 162-255). TaskMailbox.createTask has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.refundFee",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-043",
+      "note": "TaskMailbox transfers taskConfig.feeToken, which each AVS sets in its own executor operator set config (lines 162-255). TaskMailbox.refundFee has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.submitResult",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-044",
+      "note": "TaskMailbox transfers taskConfig.feeToken, which each AVS sets in its own executor operator set config (lines 162-255). TaskMailbox.submitResult has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A.depositIntoStrategy",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-045",
+      "note": "StrategyManager._depositIntoStrategy(staker, strategy, IERC20 token, amount) calls token.safeTransferFrom with the token argument (line 305). StrategyManager.depositIntoStrategy has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A.depositIntoStrategyWithSignature",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transferFrom",
+      "edgeType": "callgraph",
+      "id": "r-acg-046",
+      "note": "StrategyManager._depositIntoStrategy(staker, strategy, IERC20 token, amount) calls token.safeTransferFrom with the token argument (line 305). StrategyManager.depositIntoStrategyWithSignature has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x8F6be4A906376bB4481E78cBF6FC783Cc0f8D1Ce.initialize",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.decimals",
+      "edgeType": "callgraph",
+      "id": "r-acg-047",
+      "note": "StrategyBase is the beacon implementation used by factory-deployed strategies. Its underlyingToken is set per strategy in initialize(_underlyingToken), and the implementation itself is never initialized. StrategyBase.initialize has no fixed token, so the edge to bEIGEN.decimals is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x8F6be4A906376bB4481E78cBF6FC783Cc0f8D1Ce.withdraw",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-048",
+      "note": "StrategyBase is the beacon implementation used by factory-deployed strategies. Its underlyingToken is set per strategy in initialize(_underlyingToken), and the implementation itself is never initialized. StrategyBase.withdraw has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0xc946787cFd6c155886C673BF9815C841c1718903.initialize",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.decimals",
+      "edgeType": "callgraph",
+      "id": "r-acg-049",
+      "note": "DurationVaultStrategy is the beacon implementation for duration vaults. Its underlying token is set per vault at initialize, and the implementation itself is never initialized. DurationVaultStrategy.initialize has no fixed token, so the edge to bEIGEN.decimals is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0xc946787cFd6c155886C673BF9815C841c1718903.withdraw",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.transfer",
+      "edgeType": "callgraph",
+      "id": "r-acg-050",
+      "note": "DurationVaultStrategy is the beacon implementation for duration vaults. Its underlying token is set per vault at initialize, and the implementation itself is never initialized. DurationVaultStrategy.withdraw has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39.deregisterFromOperatorSets",
+      "to": "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D.deregisterOperator",
+      "edgeType": "callgraph",
+      "id": "r-acg-051",
+      "note": "AllocationManager.deregisterFromOperatorSets calls getAVSRegistrar(params.avs).deregisterOperator (lines 206/236). getAVSRegistrar reads _avsRegistrar[avs] (line 804), which every AVS sets for itself, so there is no fixed target. The EigenDA StakeRegistry was picked from 4 candidates by function signature only."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39.registerForOperatorSets",
+      "to": "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D.registerOperator",
+      "edgeType": "callgraph",
+      "id": "r-acg-052",
+      "note": "AllocationManager.registerForOperatorSets calls getAVSRegistrar(params.avs).registerOperator (lines 206/236). getAVSRegistrar reads _avsRegistrar[avs] (line 804), which every AVS sets for itself, so there is no fixed target. The EigenDA StakeRegistry was picked from 4 candidates by function signature only."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x002721B4790d97dC140a049936aA710152Ba92D5.setGuard",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.supportsInterface",
+      "edgeType": "callgraph",
+      "id": "r-acg-053",
+      "note": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x218B5eC7482e072F6D47feb0463B3297eFb4bA56.setGuard",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.supportsInterface",
+      "edgeType": "callgraph",
+      "id": "r-acg-054",
+      "note": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x338477FfaF63c04AC06048787f910671eC914B34.setGuard",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.supportsInterface",
+      "edgeType": "callgraph",
+      "id": "r-acg-055",
+      "note": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x461854d84Ee845F905e0eCf6C288DDEEb4A9533F.setGuard",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.supportsInterface",
+      "edgeType": "callgraph",
+      "id": "r-acg-056",
+      "note": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x7F68e9C17D22005688b8E6968fCe31e32B4B03d1.setGuard",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.supportsInterface",
+      "edgeType": "callgraph",
+      "id": "r-acg-057",
+      "note": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x942eaF324971440384e4cA0ffA39fC3bb369D67d.setGuard",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.supportsInterface",
+      "edgeType": "callgraph",
+      "id": "r-acg-058",
+      "note": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0xfD636E8EB3839cE82A58936b795043Da7DB0c734.setGuard",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.supportsInterface",
+      "edgeType": "callgraph",
+      "id": "r-acg-059",
+      "note": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x0BAAc79acD45A023E19345c352d8a7a83C4e5656.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-060",
+      "note": "ProtocolRegistry.pauseAll (line 74) only calls IPausable(addr).pauseAll() on addresses in its own _deployments set with config.pausable && !config.deprecated. getAllDeployments() returns 36 entries on-chain, and the EigenDA RegistryCoordinator is not one of them."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-061",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists AllocationManager (0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-062",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists AVSDirectory (0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-063",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists DelegationManager (0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-064",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists RewardsCoordinator (0x7750d328b314EfFa365A0402CcfD489B80B0adda) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-065",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyManager (0x858646372CC42E1A627fcE94aa7A7033e7CF075A) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-066",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists EigenPodManager (0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-067",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists EigenStrategy (0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-068",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyFactory (0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-069",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists CrossChainRegistry (0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-070",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists OperatorTableUpdater (0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x93c4b944D05dfe6df7645A86cd2206016c51564D.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-071",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x93c4b944D05dfe6df7645A86cd2206016c51564D) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-072",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-073",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-074",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-075",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0xa4C637e0F704745D182e4D38cAb7E7485321d059.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-076",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0xa4C637e0F704745D182e4D38cAb7E7485321d059) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x57ba429517c3473B6d34CA9aCd56c0e735b94c02.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-077",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x57ba429517c3473B6d34CA9aCd56c0e735b94c02) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-078",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-079",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x7CA911E83dabf90C90dD3De5411a10F1A6112184) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-080",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0xAe60d8180437b5C34bB956822ac2710972584473.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-081",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0xAe60d8180437b5C34bB956822ac2710972584473) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x298aFB19A105D59E74658C4C334Ff360BadE6dd2.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-082",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x298aFB19A105D59E74658C4C334Ff360BadE6dd2) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.pauseAll",
+      "to": "eth:0x619F988b4EA2f896ED068d84cE6F52550d6acE84.pauseAll",
+      "edgeType": "callgraph",
+      "id": "r-acg-083",
+      "note": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists EmissionsController (0x619F988b4EA2f896ED068d84cE6F52550d6acE84) with pausable=true, deprecated=false."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-084",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444, so this ProxyAdmin cannot reach it."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-085",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-086",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. TaskMailbox (0x132b466d9d5723531F68797519DfED701aC2C749) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-087",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AVSDirectory (0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-088",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-089",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-090",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PermissionController (0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-091",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ProtocolRegistry (0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x298aFB19A105D59E74658C4C334Ff360BadE6dd2.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-092",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x298aFB19A105D59E74658C4C334Ff360BadE6dd2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-093",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. DelegationManager (0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-094",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BN254CertificateVerifier (0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-095",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-096",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. KeyRegistrar (0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-097",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. OperatorTableUpdater (0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x57ba429517c3473B6d34CA9aCd56c0e735b94c02.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-098",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x57ba429517c3473B6d34CA9aCd56c0e735b94c02) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-099",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyFactory (0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x619F988b4EA2f896ED068d84cE6F52550d6acE84.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-100",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EmissionsController (0x619F988b4EA2f896ED068d84cE6F52550d6acE84) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-101",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RewardsCoordinator (0x7750d328b314EfFa365A0402CcfD489B80B0adda) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-102",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x7CA911E83dabf90C90dD3De5411a10F1A6112184) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-103",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyManager (0x858646372CC42E1A627fcE94aa7A7033e7CF075A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-104",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-105",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenPodManager (0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-106",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. CrossChainRegistry (0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x93c4b944D05dfe6df7645A86cd2206016c51564D.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-107",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x93c4b944D05dfe6df7645A86cd2206016c51564D) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-108",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AllocationManager (0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-109",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0xa4C637e0F704745D182e4D38cAb7E7485321d059.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-110",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xa4C637e0F704745D182e4D38cAb7E7485321d059) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-111",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenStrategy (0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0xAe60d8180437b5C34bB956822ac2710972584473.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-112",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xAe60d8180437b5C34bB956822ac2710972584473) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-113",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ECDSACertificateVerifier (0xd0930ee96D07de4F9d493c259232222e46B6EC25) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-114",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. Eigen Token (0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.changeProxyAdmin",
+      "to": "eth:0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-115",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ReleaseManager (0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-116",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444, so this ProxyAdmin cannot reach it."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-117",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-118",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. TaskMailbox (0x132b466d9d5723531F68797519DfED701aC2C749) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-119",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AVSDirectory (0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-120",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-121",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-122",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PermissionController (0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-123",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ProtocolRegistry (0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x298aFB19A105D59E74658C4C334Ff360BadE6dd2.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-124",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x298aFB19A105D59E74658C4C334Ff360BadE6dd2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-125",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. DelegationManager (0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-126",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BN254CertificateVerifier (0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-127",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-128",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. KeyRegistrar (0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-129",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. OperatorTableUpdater (0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x57ba429517c3473B6d34CA9aCd56c0e735b94c02.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-130",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x57ba429517c3473B6d34CA9aCd56c0e735b94c02) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-131",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyFactory (0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x619F988b4EA2f896ED068d84cE6F52550d6acE84.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-132",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EmissionsController (0x619F988b4EA2f896ED068d84cE6F52550d6acE84) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-133",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RewardsCoordinator (0x7750d328b314EfFa365A0402CcfD489B80B0adda) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-134",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x7CA911E83dabf90C90dD3De5411a10F1A6112184) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-135",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyManager (0x858646372CC42E1A627fcE94aa7A7033e7CF075A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-136",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-137",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenPodManager (0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-138",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. CrossChainRegistry (0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x93c4b944D05dfe6df7645A86cd2206016c51564D.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-139",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x93c4b944D05dfe6df7645A86cd2206016c51564D) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-140",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AllocationManager (0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-141",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0xa4C637e0F704745D182e4D38cAb7E7485321d059.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-142",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xa4C637e0F704745D182e4D38cAb7E7485321d059) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-143",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenStrategy (0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0xAe60d8180437b5C34bB956822ac2710972584473.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-144",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xAe60d8180437b5C34bB956822ac2710972584473) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-145",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ECDSACertificateVerifier (0xd0930ee96D07de4F9d493c259232222e46B6EC25) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-146",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. Eigen Token (0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgrade",
+      "to": "eth:0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-147",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ReleaseManager (0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-148",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444, so this ProxyAdmin cannot reach it."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-149",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x132b466d9d5723531F68797519DfED701aC2C749.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-150",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. TaskMailbox (0x132b466d9d5723531F68797519DfED701aC2C749) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-151",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AVSDirectory (0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-152",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-153",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-154",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PermissionController (0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-155",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ProtocolRegistry (0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x298aFB19A105D59E74658C4C334Ff360BadE6dd2.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-156",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x298aFB19A105D59E74658C4C334Ff360BadE6dd2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-157",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. DelegationManager (0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-158",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BN254CertificateVerifier (0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-159",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-160",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. KeyRegistrar (0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-161",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. OperatorTableUpdater (0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x57ba429517c3473B6d34CA9aCd56c0e735b94c02.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-162",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x57ba429517c3473B6d34CA9aCd56c0e735b94c02) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-163",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyFactory (0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x619F988b4EA2f896ED068d84cE6F52550d6acE84.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-164",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EmissionsController (0x619F988b4EA2f896ED068d84cE6F52550d6acE84) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-165",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RewardsCoordinator (0x7750d328b314EfFa365A0402CcfD489B80B0adda) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-166",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x7CA911E83dabf90C90dD3De5411a10F1A6112184) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-167",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyManager (0x858646372CC42E1A627fcE94aa7A7033e7CF075A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-168",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-169",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenPodManager (0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-170",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. CrossChainRegistry (0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x93c4b944D05dfe6df7645A86cd2206016c51564D.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-171",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x93c4b944D05dfe6df7645A86cd2206016c51564D) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-172",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AllocationManager (0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-173",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0xa4C637e0F704745D182e4D38cAb7E7485321d059.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-174",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xa4C637e0F704745D182e4D38cAb7E7485321d059) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-175",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenStrategy (0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0xAe60d8180437b5C34bB956822ac2710972584473.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-176",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xAe60d8180437b5C34bB956822ac2710972584473) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-177",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ECDSACertificateVerifier (0xd0930ee96D07de4F9d493c259232222e46B6EC25) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-178",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. Eigen Token (0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444.upgradeAndCall",
+      "to": "eth:0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-179",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ReleaseManager (0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-180",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BLSApkRegistry (0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0x0BAAc79acD45A023E19345c352d8a7a83C4e5656.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-181",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RegistryCoordinator (0x0BAAc79acD45A023E19345c352d8a7a83C4e5656) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0x130d8EA0052B45554e4C99079B84df292149Bd5E.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-182",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EjectionManager (0x130d8EA0052B45554e4C99079B84df292149Bd5E) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-183",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. SocketRegistry (0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0x78cb05379a3b66E5227f2C1496432D7FFE794Fad.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-184",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDADisperserRegistry (0x78cb05379a3b66E5227f2C1496432D7FFE794Fad) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-185",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAServiceManager (0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-186",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PaymentVault (0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-187",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. IndexRegistry (0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-188",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDARelayRegistry (0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.changeProxyAdmin",
+      "to": "eth:0xdb4c89956eEa6F606135E7d366322F2bDE609F15.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-189",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAThresholdRegistry (0xdb4c89956eEa6F606135E7d366322F2bDE609F15) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-190",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BLSApkRegistry (0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0x0BAAc79acD45A023E19345c352d8a7a83C4e5656.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-191",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RegistryCoordinator (0x0BAAc79acD45A023E19345c352d8a7a83C4e5656) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0x130d8EA0052B45554e4C99079B84df292149Bd5E.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-192",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EjectionManager (0x130d8EA0052B45554e4C99079B84df292149Bd5E) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-193",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. SocketRegistry (0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0x78cb05379a3b66E5227f2C1496432D7FFE794Fad.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-194",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDADisperserRegistry (0x78cb05379a3b66E5227f2C1496432D7FFE794Fad) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-195",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAServiceManager (0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-196",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PaymentVault (0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-197",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. IndexRegistry (0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-198",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDARelayRegistry (0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgrade",
+      "to": "eth:0xdb4c89956eEa6F606135E7d366322F2bDE609F15.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-199",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAThresholdRegistry (0xdb4c89956eEa6F606135E7d366322F2bDE609F15) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-200",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BLSApkRegistry (0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0x0BAAc79acD45A023E19345c352d8a7a83C4e5656.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-201",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RegistryCoordinator (0x0BAAc79acD45A023E19345c352d8a7a83C4e5656) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0x130d8EA0052B45554e4C99079B84df292149Bd5E.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-202",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EjectionManager (0x130d8EA0052B45554e4C99079B84df292149Bd5E) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-203",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. SocketRegistry (0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0x78cb05379a3b66E5227f2C1496432D7FFE794Fad.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-204",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDADisperserRegistry (0x78cb05379a3b66E5227f2C1496432D7FFE794Fad) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-205",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAServiceManager (0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-206",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PaymentVault (0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-207",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. IndexRegistry (0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-208",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDARelayRegistry (0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x8247EF5705d3345516286B72bFE6D690197C2E99.upgradeAndCall",
+      "to": "eth:0xdb4c89956eEa6F606135E7d366322F2bDE609F15.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-209",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAThresholdRegistry (0xdb4c89956eEa6F606135E7d366322F2bDE609F15) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9.changeProxyAdmin",
+      "to": "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-210",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9, so this ProxyAdmin cannot reach it."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9.changeProxyAdmin",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.changeAdmin",
+      "edgeType": "callgraph",
+      "id": "r-acg-211",
+      "note": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BackingEigen (0x83E9115d334D248Ce39a6f36144aEaB5b3456e75) has 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 1 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9.upgrade",
+      "to": "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-212",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9, so this ProxyAdmin cannot reach it."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9.upgrade",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.upgradeTo",
+      "edgeType": "callgraph",
+      "id": "r-acg-213",
+      "note": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BackingEigen (0x83E9115d334D248Ce39a6f36144aEaB5b3456e75) has 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 1 proxies this ProxyAdmin upgrades."
+    },
+    {
+      "type": "removeEdge",
+      "from": "eth:0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9.upgradeAndCall",
+      "to": "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-214",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9, so this ProxyAdmin cannot reach it."
+    },
+    {
+      "type": "addEdge",
+      "from": "eth:0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9.upgradeAndCall",
+      "to": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75.upgradeToAndCall",
+      "edgeType": "callgraph",
+      "id": "r-acg-215",
+      "note": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BackingEigen (0x83E9115d334D248Ce39a6f36144aEaB5b3456e75) has 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 1 proxies this ProxyAdmin upgrades."
+    }
+  ]
+}

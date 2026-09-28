@@ -1,0 +1,297 @@
+{
+  "version": "1.0",
+  "publishedAt": "2026-05-13T11:17:10.000Z",
+  "lastModified": "2026-09-28T10:41:02.000Z",
+  "protocolSlug": "eigen-layer",
+  "protocolName": "EigenLayer",
+  "tokenName": "EIGEN",
+  "chain": "Ethereum",
+  "projectType": "other",
+  "verified": false,
+  "description": "EigenLayer is a restaking protocol on Ethereum. Users deposit liquid staking tokens such as stETH, ETHx and mETH into strategy contracts, or point their validators' withdrawal credentials at EigenPods, and that stake then secures Actively Validated Services (AVSs). The core contracts sit behind upgradeable proxies. Core upgrades go through a 10-day timelock, and bEIGEN upgrades go through a separate 24-day timelock. The EIGEN token itself is upgraded on the 10-day path. A 1-of-7 Pauser Multisig can pause every strategy without any delay, freezing {{totalCapitalAtRisk}} in restaked LSTs and EIGEN, and it can also pause native ETH restaking through EigenPodManager. Only the Executor Multisig can unpause. It is a 1-of-2 Safe whose two signers are the 10-day Timelock and the 9-of-13 Community Multisig. Every supported LST is a direct dependency, so a failure or compromise of one of those token contracts affects the strategy that holds it.",
+  "admins": {
+    "eth:0x5050389572f2d220ad927CcbeA0D406831012390": {
+      "name": "EigenLayer Pauser Multisig (1-of-7)",
+      "description": "Can call pause() and pauseAll() on all 13 strategies (the 12 StrategyBaseTVLLimits pools and the EIGEN Strategy), on DelegationManager, StrategyManager, AllocationManager, RewardsCoordinator, AVSDirectory, and on the other contracts that use the EigenLayer PauserRegistry. A pause blocks deposits and withdrawals on the affected contracts until the Executor Multisig, the only unpauser, lifts it. The Operations Multisig and the Executor Multisig are registered pausers as well. Capital that can be frozen this way: {{pauserMultisigCapital}}."
+    },
+    "eth:0xBE1685C81aA44FF9FB319dD389addd9374383e90": {
+      "name": "EigenLayer Operations Multisig (3-of-6)",
+      "description": "Holds PROPOSER_ROLE and CANCELLER_ROLE on both timelocks (the 10-day core timelock and the 24-day bEIGEN timelock), and is a pauser in both the EigenLayer and EigenDA PauserRegistries. It owns RewardsCoordinator, EmissionsController, StrategyFactory, CrossChainRegistry, OperatorTableUpdater and TaskMailbox, and it is the proofTimestampSetter on EigenPodManager. That lets it change the rewards updater, fee recipient and activation delay, add or remove deposit-whitelisted strategies through StrategyFactory, and set the Pectra fork timestamp that EigenPods use to validate proofs for all native restakers ({{nativeEthRestaking}}). Its detected reach of {{operationsMultisigCapital}} comes from the strategies it can pause. It has no direct upgrade rights. Upgrades it proposes wait 10 days in the timelock, and the Protocol Council executes them."
+    },
+    "eth:0x369e6F597e22EaB55fFb173C6d9cD234BD699111": {
+      "name": "EigenLayer Executor Multisig (1-of-2)",
+      "description": "The only unpauser for EigenLayer, and the direct owner of StrategyManager, EigenPodManager, AVSDirectory, the EIGEN and bEIGEN tokens, and all three UpgradeableBeacons (EigenPod, StrategyBase and DurationVaultStrategy). It also owns the main EigenLayer ProxyAdmin (0x8b9566), which upgrades all 31 core proxies, including DelegationManager, StrategyManager, AllocationManager, EigenPodManager, EmissionsController, RewardsCoordinator and the 12 StrategyBaseTVLLimits pools. Through the EigenPod beacon (0x5a2a4F) it could install an implementation that forges or blocks withdrawal proofs for every native restaker, which puts the full {{nativeEthRestaking}} of natively restaked ETH in scope. The detected reach of {{owningMultisigCapital}} only counts the LST and EIGEN strategies, because native ETH is tracked through an aggregate figure and the engine does not attribute it automatically. The 1-of-2 threshold looks weak, but neither signer is a person. EigenLayer's docs call this Safe the Executor Multisig, and its two signers are the 10-day TimelockController (0xC06Fd4) and the 9-of-13 Community Multisig (0xFEA470). So every action needs either a timelocked proposal, queued by the Operations Multisig or the Protocol Council and executed by the Protocol Council after 10 days, or an emergency action signed by 9 of the 13 Community Multisig members, which skips the timelock."
+    },
+    "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129": {
+      "name": "ProtocolRegistry (Pauser)",
+      "description": "A registry of EigenLayer deployments that is also a pauser in the EigenLayer PauserRegistry. Its pauseAll() pauses every contract listed in the registry in one call. On-chain role checks show the Pauser Multisig (1-of-7, 0x505038) as the only PAUSER_ROLE holder and the Executor Multisig (0x369e6F) as DEFAULT_ADMIN_ROLE. The registry therefore adds a second route for the same 1-of-7 multisig to pause the protocol, and no new party. Capital it can reach: {{protocolRegistryCapital}}."
+    },
+    "eth:0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647": {
+      "name": "StrategyFactory",
+      "description": "Deploys new strategies as beacon proxies and is the strategyWhitelister on StrategyManager. As an admin, its only power is adding strategies to the StrategyManager deposit whitelist or removing them, on behalf of its owner, the Operations Multisig. Removing a strategy stops new deposits, while existing balances and withdrawals keep working."
+    },
+    "eth:0x218B5eC7482e072F6D47feb0463B3297eFb4bA56": {
+      "name": "EIGEN Incentive Council (3-of-5 Multisig)",
+      "description": "The incentiveCouncil of the EmissionsController. It adds and updates the distributions that decide where the weekly EIGEN emissions go across AVSs and strategies. It also receives any EIGEN left in the EmissionsController when sweep() is called. Anyone can call sweep(), and the tokens always go to the council. The RewardsCoordinator sends its protocol fee share to this Safe as well."
+    },
+    "eth:0x130d8EA0052B45554e4C99079B84df292149Bd5E": {
+      "name": "EigenDA EjectionManager",
+      "description": "EigenDA contract that removes operators from quorums by calling ejectOperator() on the RegistryCoordinator, within configured rate limits. The EigenDA Operations Multisig owns it. Ejection changes who participates in EigenDA quorums and leaves restaked balances and withdrawal rights untouched."
+    },
+    "eth:0x002721B4790d97dC140a049936aA710152Ba92D5": {
+      "name": "EigenDA Operations Multisig (2-of-4)",
+      "description": "Owns EigenDAServiceManager, the RegistryCoordinator and the other EigenDA contracts. It sets quorum parameters, the churn approver, the ejector, the staleStakesForbidden flag, batch confirmers and the rewards initiator. It also owns the EigenDA ProxyAdmin (0x8247EF), which upgrades the 11 EigenDA proxies, and PaymentVault, whose balance ({{paymentVaultBalance}}) it can withdraw to itself. It has no access to restaked LST balances."
+    },
+    "eth:0x0BAAc79acD45A023E19345c352d8a7a83C4e5656": {
+      "name": "EigenDA RegistryCoordinator",
+      "description": "EigenDA contract that registers and deregisters operators in the BLSApkRegistry, IndexRegistry, StakeRegistry and SocketRegistry when they join or leave quorums. No person controls it directly. It acts on operator calls and follows on-chain quorum and ejection rules."
+    },
+    "eth:0x8ED83c6Bb12E441Ca2C3a544F525d4a3Fb6484D8": {
+      "name": "EigenDA Batch Confirmer (EOA)",
+      "description": "One of three EOAs listed as batchConfirmers in EigenDAServiceManager. It calls confirmBatch() to confirm EigenDA data availability. This is an EigenDA operations role and it has no effect on restaked balances or LST withdrawals."
+    },
+    "eth:0x5A49Bf6c5690E22dFff3eB37F7dd18254eC361ED": {
+      "name": "EigenDA Batch Confirmer (EOA)",
+      "description": "One of three EOAs listed as batchConfirmers in EigenDAServiceManager. It calls confirmBatch() to confirm EigenDA data availability. This is an EigenDA operations role and it has no effect on restaked balances or LST withdrawals."
+    },
+    "eth:0x454Ef2f69f91527856E06659f92a66f464C1ca4e": {
+      "name": "EigenDA Batch Confirmer (EOA)",
+      "description": "One of three EOAs listed as batchConfirmers in EigenDAServiceManager. It calls confirmBatch() to confirm EigenDA data availability. This is an EigenDA operations role and it has no effect on restaked balances or LST withdrawals."
+    },
+    "eth:0x178eeeA9E0928dA2153A1d7951FBe30CF8371b8A": {
+      "name": "EigenLayer Rewards Initiator Multisig (3-of-4)",
+      "description": "The rewardsInitiator on EigenDAServiceManager. It creates AVS rewards submissions and operator-directed reward submissions for EigenDA operators, paid from its own balance. It has no effect on restaking deposits or LST balances."
+    },
+    "eth:0x942eaF324971440384e4cA0ffA39fC3bb369D67d": {
+      "name": "EigenLayer bEIGEN Owning Multisig (1-of-2)",
+      "description": "Owns the ProxyAdmin (0x3f5Ab2) behind the BackingEigen (bEIGEN) token, so it can upgrade bEIGEN, the token that backs EIGEN 1:1. Its two signers are the 24-day bEIGEN TimelockController (0x738130) and the 9-of-13 Community Multisig (0xFEA470), so a bEIGEN upgrade waits 24 days unless the Community Multisig acts in an emergency. Minting rights (setIsMinter) and transfer restrictions on bEIGEN belong to the token owner, which is the Executor Multisig."
+    },
+    "eth:0x461854d84Ee845F905e0eCf6C288DDEEb4A9533F": {
+      "name": "EigenLayer Protocol Council (3-of-5)",
+      "description": "The Protocol Council Safe. According to the Eigen Foundation it has two Eigen Foundation representatives and three external security members. It is a proposer on both timelocks (10-day core and 24-day bEIGEN) and the only address with EXECUTOR_ROLE on either, so it executes every timelocked upgrade once the delay has passed, whoever queued it. It owns no protocol contract directly and acts only through the timelocks."
+    },
+    "eth:0xD2Ee81Cf07B12140C793FcE5B26313CDd9d78eA8": {
+      "name": "EigenDA Ejector (EOA)",
+      "description": "One of three ejectors in the EigenDA EjectionManager. It calls ejectOperators() to remove EigenDA operators that break ejection thresholds, within the EjectionManager rate limits. This is an EigenDA operations role and it has no effect on restaked balances."
+    },
+    "eth:0x8642473a123FE33b0aaE90bD8604eA1029417236": {
+      "name": "EigenDA Ejector (EOA)",
+      "description": "One of three ejectors in the EigenDA EjectionManager. It calls ejectOperators() to remove EigenDA operators that break ejection thresholds, within the EjectionManager rate limits. This is an EigenDA operations role and it has no effect on restaked balances."
+    },
+    "eth:0x338477FfaF63c04AC06048787f910671eC914B34": {
+      "name": "EigenDA Multisig (3-of-8)",
+      "description": "One of three ejectors in the EigenDA EjectionManager. It calls ejectOperators() to remove EigenDA operators that break ejection thresholds, within the EjectionManager rate limits. This is an EigenDA operations role and it has no access to restaked LST balances."
+    },
+    "eth:0x0000000000000000000000000000000000000000": {
+      "name": "Zero Address (Renounced)",
+      "description": "The EigenPod and DurationVaultStrategy implementation contracts store the zero address in their owner-style fields (podOwner, proofSubmitter, vaultAdmin), because implementations are never initialized. Each deployed EigenPod has its own user as owner, so this entry reflects the unused implementation storage and grants nobody any control."
+    },
+    "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5": {
+      "name": "OperatorTableUpdater",
+      "description": "Manages the operator tables that BN254CertificateVerifier and ECDSACertificateVerifier use for cross-chain certificate checks. Only its owner, the Operations Multisig, and the configured generator can update the global operator-table root. It has no access to restaked LST balances."
+    },
+    "eth:0x604238AB35438f7c46066Aae988FB07CF98f0256": {
+      "name": "RewardsCoordinator Updater (EOA)",
+      "description": "The EOA set as rewardsUpdater on the RewardsCoordinator. It submits distribution roots with submitRoot and can disable a root with disableRoot before it activates. A new root becomes claimable 7 days after submission, and during that window the updater can still disable it. It has no direct access to restaked LSTs."
+    },
+    "eth:0xFEA47018D632A77bA579846c840d5706705Dc598": {
+      "name": "EigenLayer Community Multisig (9-of-13)",
+      "description": "A 9-of-13 Safe made up of members of the Ethereum community, as listed by the Eigen Foundation. It holds TIMELOCK_ADMIN_ROLE on both timelocks, so it can grant or remove proposer, executor and canceller roles there with no delay. It is also one of the two signers on the Executor Multisig and on the bEIGEN Owning Multisig, which lets it act on either of them in an emergency without waiting for a timelock."
+    },
+    "eth:0xC06Fd4F821eaC1fF1ae8067b36342899b57BAa2d": {
+      "name": "EigenLayer Timelock (10-day)",
+      "description": "The core timelock, with a minimum delay of 10 days. It is one of the two signers on the Executor Multisig, which owns the main ProxyAdmin, so normal core upgrades pass through here. It holds TIMELOCK_ADMIN_ROLE on itself, so it can change its own roles, but only through an operation that has waited out the delay."
+    },
+    "eth:0x738130BC8eADe1Bc65A9c056DEa636835896bc53": {
+      "name": "EigenLayer bEIGEN Timelock (24-day)",
+      "description": "The bEIGEN timelock, with a minimum delay of 24 days. It is one of the two signers on the bEIGEN Owning Multisig, so normal bEIGEN upgrades pass through here. It holds TIMELOCK_ADMIN_ROLE on itself, so it can change its own roles, but only through an operation that has waited out the delay."
+    }
+  },
+  "dependencies": {
+    "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
+      "name": "stETH (Lido)",
+      "description": "The stETH strategy holds users' Lido staked ether, {{stethStrategyBalance}} of restaked LSTs. EigenLayer calls balanceOf() and transfer() on stETH for deposits and withdrawals, so a stETH upgrade or freeze would hit every user with stETH restaked on EigenLayer."
+    },
+    "eth:0xA35b1B31Ce002FBF2058D22F30f95D405200A15b": {
+      "name": "ETHx (Stader)",
+      "description": "The ETHx strategy holds Stader's liquid staking token, {{ethxStrategyBalance}} of restaked assets. EigenLayer calls balanceOf() and transfer() on ETHx. A problem in the ETHx contract, or a governance action on it by Stader, would affect restakers in this strategy."
+    },
+    "eth:0xd5F7838F5C461fefF7FE49ea5ebaF7728bB0ADfa": {
+      "name": "mETH (Mantle)",
+      "description": "Mantle's staked ETH, held in the mETH strategy and worth {{mETHStrategyBalance}}. The strategy uses the standard ERC-20 interface for balance checks and transfers."
+    },
+    "eth:0x8c1BEd5b9a0928467c9B1341Da1D7BD5e10b6549": {
+      "name": "LsETH (Liquid Collective)",
+      "description": "Liquid Collective's LsETH, held in its own strategy and worth {{lsETHStrategyBalance}}. The strategy uses balanceOf() and transfer(). LsETH checks every transfer against the deny list in its AllowlistV1 contract, and a denied sender or receiver makes the transfer revert."
+    },
+    "eth:0xf951E335afb289353dc249e82926178EaC7DEd78": {
+      "name": "swETH (Swell)",
+      "description": "Swell's liquid staked ether, held in its own strategy and worth {{swETHStrategyBalance}}. Swell's AccessControlManager administers swETH. The strategy uses the standard ERC-20 interface for deposits and withdrawals."
+    },
+    "eth:0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38": {
+      "name": "osETH (Stakewise)",
+      "description": "Stakewise's osETH, held in the osETH strategy and worth {{osETHStrategyBalance}}. The strategy uses balanceOf() and transfer()."
+    },
+    "eth:0xac3E018457B222d93114458476f3E3416Abbe38F": {
+      "name": "sfrxETH (Frax Finance)",
+      "description": "Frax's staked frxETH, held in the sfrxETH strategy and worth {{sfrxETHStrategyBalance}}. sfrxETH is an ERC-4626 vault over frxETH with no upgrade mechanism, so the main risk comes from frxETH and Frax governance upstream. The strategy uses the ERC-20 interface."
+    },
+    "eth:0xBe9895146f7AF43049ca1c1AE358B0541Ea49704": {
+      "name": "cbETH (Coinbase)",
+      "description": "Coinbase's wrapped staked ETH, held in the cbETH strategy and worth {{cbETHStrategyBalance}}. cbETH is built on the Centre FiatToken design used by USDC, with owner, pauser, blacklister and master minter roles held by Coinbase. The strategy uses the ERC-20 interface."
+    },
+    "eth:0x856c4Efb76C1D1AE02e20CEB03A2A6a08b0b8dC3": {
+      "name": "OETH (Origin Protocol)",
+      "description": "Origin Ether, held in the OETH strategy and worth {{oETHStrategyBalance}}. Origin Protocol's governor and vault administer OETH. The strategy uses the ERC-20 interface."
+    },
+    "eth:0xae78736Cd615f374D3085123A210448E74Fc6393": {
+      "name": "rETH (Rocket Pool)",
+      "description": "Rocket Pool's rETH, held in the rETH strategy and worth {{rETHStrategyBalance}}. The strategy uses the ERC-20 interface for deposits and withdrawals."
+    },
+    "eth:0xE95A203B1a91a908F9B9CE46459d101078c2c3cb": {
+      "name": "ankrETH (Ankr)",
+      "description": "Ankr's staked ETH, held in the ankrETH strategy and worth {{ankrETHStrategyBalance}}. The strategy uses the ERC-20 interface."
+    },
+    "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1": {
+      "name": "wBETH (Binance)",
+      "description": "Binance's Wrapped Beacon ETH, held in its own strategy and worth {{wBETHStrategyBalance}}. The strategy uses balanceOf() and transfer() for deposits and withdrawals. Binance controls the token centrally and holds its owner, pauser and oracle roles."
+    }
+  },
+  "funds": {
+    "eth:0x93c4b944D05dfe6df7645A86cd2206016c51564D": {
+      "name": "stETH Strategy",
+      "description": "Holds {{stethStrategyBalance}} of restaked stETH, the largest single strategy by TVS. Users restake Lido staked ether here to secure AVSs and earn restaking rewards. The 1-of-7 Pauser Multisig can pause it, which blocks deposits and withdrawals."
+    },
+    "eth:0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d": {
+      "name": "ETHx Strategy",
+      "description": "Holds {{ethxStrategyBalance}} of restaked ETHx from Stader, the second-largest strategy by TVS. It is a standard StrategyBaseTVLLimits pool with the same pause and upgrade controls as the other strategies."
+    },
+    "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7": {
+      "name": "EIGEN Strategy",
+      "description": "Holds {{eigenStrategyBalance}} of restaked bEIGEN, the token behind EIGEN. Users who restake EIGEN here take part in EigenLayer's native token security model. The same pause and upgrade controls apply as for the LST strategies."
+    },
+    "eth:0x298aFB19A105D59E74658C4C334Ff360BadE6dd2": {
+      "name": "mETH Strategy",
+      "description": "Holds {{mETHStrategyBalance}} of restaked mETH (Mantle staked ETH). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0xAe60d8180437b5C34bB956822ac2710972584473": {
+      "name": "LsETH Strategy",
+      "description": "Holds {{lsETHStrategyBalance}} of restaked LsETH (Liquid Collective). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6": {
+      "name": "swETH Strategy",
+      "description": "Holds {{swETHStrategyBalance}} of restaked swETH (Swell). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0x57ba429517c3473B6d34CA9aCd56c0e735b94c02": {
+      "name": "osETH Strategy",
+      "description": "Holds {{osETHStrategyBalance}} of restaked osETH (Stakewise). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6": {
+      "name": "sfrxETH Strategy",
+      "description": "Holds {{sfrxETHStrategyBalance}} of restaked sfrxETH (Frax Finance). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc": {
+      "name": "cbETH Strategy",
+      "description": "Holds {{cbETHStrategyBalance}} of restaked cbETH (Coinbase wrapped staked ETH). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0xa4C637e0F704745D182e4D38cAb7E7485321d059": {
+      "name": "OETH Strategy",
+      "description": "Holds {{oETHStrategyBalance}} of restaked OETH (Origin Protocol). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2": {
+      "name": "rETH Strategy",
+      "description": "Holds {{rETHStrategyBalance}} of restaked rETH (Rocket Pool). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff": {
+      "name": "ankrETH Strategy",
+      "description": "Holds {{ankrETHStrategyBalance}} of restaked ankrETH (Ankr). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184": {
+      "name": "wBETH Strategy",
+      "description": "Holds {{wBETHStrategyBalance}} of restaked wBETH (Binance wrapped beacon ETH). It is a StrategyBaseTVLLimits pool under the standard EigenLayer pause and upgrade controls."
+    },
+    "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338": {
+      "name": "EigenPodManager (Native ETH Restaking)",
+      "description": "Tracks {{nativeEthRestaking}} of ETH restaked natively by validators whose withdrawal credentials point to EigenPods. The figure comes from DeFiLlama's EigenLayer adapter. The ETH itself sits on the beacon chain, so no on-chain token balance shows it. EigenPods only receive ETH when validators make partial or full withdrawals."
+    },
+    "eth:0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83": {
+      "name": "EIGEN Token",
+      "description": "EigenLayer's governance and intersubjective work token. Each EIGEN is minted by wrapping one bEIGEN. Its owner, the Executor Multisig, can change transfer restrictions, and the token is upgraded through the main EigenLayer ProxyAdmin on the 10-day timelock path."
+    },
+    "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75": {
+      "name": "bEIGEN Token (BackingEigen)",
+      "description": "The backing token for EIGEN. Every wrapped EIGEN is backed by one bEIGEN held in the EIGEN contract, and bEIGEN is also restaked directly through the EIGEN Strategy. Its owner, the Executor Multisig, grants minting rights with setIsMinter(). Upgrades go through a separate ProxyAdmin owned by the bEIGEN Owning Multisig, on the 24-day timelock path."
+    },
+    "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05": {
+      "name": "PaymentVault (EigenDA payments)",
+      "description": "Collects the native ETH that users deposit for EigenDA on-demand payments, currently {{paymentVaultBalance}}. Its owner, the EigenDA Operations Multisig (2-of-4), can withdraw ETH or any ERC-20 with withdraw and withdrawERC20. Both functions always send to owner(), so the most that can leave is the vault's own balance."
+    }
+  },
+  "sections": {
+    "codeAndAudits": {
+      "title": "Code & Audits",
+      "description": "Smart contract analysis and audit history",
+      "subsections": [
+        {
+          "title": "Contracts",
+          "content": [
+            {
+              "type": "dataTable",
+              "dataSource": "project.contracts",
+              "columns": [
+                {
+                  "field": "name",
+                  "header": "Name"
+                },
+                {
+                  "field": "address",
+                  "header": "Address",
+                  "format": "address"
+                },
+                {
+                  "field": "proxyType",
+                  "header": "Proxy Type",
+                  "format": "badge"
+                }
+              ],
+              "filters": {
+                "excludeExternal": true
+              }
+            }
+          ]
+        },
+        {
+          "title": "Audits",
+          "content": [
+            {
+              "type": "text",
+              "content": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "dataKeys": {
+    "totalCapitalAtRisk": "v2score.inventory.admins.totalCapitalAtRisk",
+    "pauserMultisigCapital": "v2score.inventory.admins.breakdown[\"eth:0x5050389572f2d220ad927CcbeA0D406831012390\"].totalDirectCapital",
+    "operationsMultisigCapital": "v2score.inventory.admins.breakdown[\"eth:0xBE1685C81aA44FF9FB319dD389addd9374383e90\"].totalDirectCapital",
+    "owningMultisigCapital": "v2score.inventory.admins.breakdown[\"eth:0x369e6F597e22EaB55fFb173C6d9cD234BD699111\"].totalDirectCapital",
+    "protocolRegistryCapital": "v2score.inventory.admins.breakdown[\"eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129\"].totalDirectCapital",
+    "stethStrategyBalance": "fundsdata.contracts[\"eth:0x93c4b944D05dfe6df7645A86cd2206016c51564D\"].balances.totalUsdValue",
+    "ethxStrategyBalance": "fundsdata.contracts[\"eth:0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d\"].balances.totalUsdValue",
+    "eigenStrategyBalance": "fundsdata.contracts[\"eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7\"].balances.totalUsdValue",
+    "mETHStrategyBalance": "fundsdata.contracts[\"eth:0x298aFB19A105D59E74658C4C334Ff360BadE6dd2\"].balances.totalUsdValue",
+    "lsETHStrategyBalance": "fundsdata.contracts[\"eth:0xAe60d8180437b5C34bB956822ac2710972584473\"].balances.totalUsdValue",
+    "swETHStrategyBalance": "fundsdata.contracts[\"eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6\"].balances.totalUsdValue",
+    "osETHStrategyBalance": "fundsdata.contracts[\"eth:0x57ba429517c3473B6d34CA9aCd56c0e735b94c02\"].balances.totalUsdValue",
+    "sfrxETHStrategyBalance": "fundsdata.contracts[\"eth:0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6\"].balances.totalUsdValue",
+    "cbETHStrategyBalance": "fundsdata.contracts[\"eth:0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc\"].balances.totalUsdValue",
+    "oETHStrategyBalance": "fundsdata.contracts[\"eth:0xa4C637e0F704745D182e4D38cAb7E7485321d059\"].balances.totalUsdValue",
+    "rETHStrategyBalance": "fundsdata.contracts[\"eth:0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2\"].balances.totalUsdValue",
+    "ankrETHStrategyBalance": "fundsdata.contracts[\"eth:0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff\"].balances.totalUsdValue",
+    "wBETHStrategyBalance": "fundsdata.contracts[\"eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184\"].balances.totalUsdValue",
+    "nativeEthRestaking": "fundsdata.contracts[\"eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338\"].aggregate.totalUsdValue",
+    "paymentVaultBalance": "fundsdata.contracts[\"eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05\"].balances.totalUsdValue"
+  }
+}

@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-01T00:00:00.000Z",
   "lastModified": "2026-04-15T00:00:00.000Z",
   "protocolSlug": "uniswap-v2",
   "protocolName": "Uniswap V2",
   "tokenName": "UNI",
   "chain": "Ethereum",
   "projectType": "dex",
+  "verified": true,
   "description": "Uniswap V2 is an automated market maker (AMM) DEX that uses constant-product (x*y=k) liquidity pools for permissionless token swaps on Ethereum. All 9 protocol contracts are immutable with no upgradeability. Governance (GovernorBravo with a 48-hour Timelock) exists but controls only the protocol fee switch via FeeToSetter and FeeTo — it cannot modify the core swap or liquidity logic. Total liquidity across all pairs is {{uniswapV2TotalLiquidity}}.",
   "admins": {
     "eth:0x1a9c8182c09f50c8318d769245bea52c32be35bc": {
@@ -72,6 +74,5 @@
   "dataKeys": {
     "uniswapV2TotalLiquidity": "fundsdata.contracts[\"eth:0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f\"].aggregate.totalUsdValue",
     "uniswapV2PairCount": "fundsdata.contracts[\"eth:0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f\"].aggregate.contractCount"
-  },
-  "publishedAt": "2026-04-01T00:00:00.000Z"
+  }
 }

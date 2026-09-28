@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-01T00:00:00.000Z",
   "lastModified": "2026-04-15T00:00:00.000Z",
   "protocolSlug": "Frankencoin",
   "protocolName": "Frankencoin",
   "tokenName": "ZCHF",
   "chain": "Ethereum",
   "projectType": "stablecoin",
+  "verified": true,
   "description": "Frankencoin is a collateral-backed stablecoin (ZCHF) pegged to the Swiss Franc, where users open positions by depositing collateral (WBTC, wstETH, cbBTC, LsETH, and others) via the MintingHub to mint ZCHF. All core protocol contracts are immutable with no admin upgrade keys. The system relies on a challenge mechanism for liquidations, a reserve pool (Equity/FPS) holding {{equityReserve}}, and StablecoinBridges to XCHF and VCHF for fiat-backed redemption. Chainlink CCIP infrastructure provides cross-chain bridging with burn/mint capabilities on the ZCHF token.",
   "admins": {
     "eth:0xDe12B620A8a714476A97EfD14E6F7180Ca653557": {
@@ -182,6 +184,5 @@
     "savingsLegacyBalance": "fundsdata.contracts[\"eth:0x3BF301B0e2003E75A3e86AB82bD1EFF6A9dFB2aE\"].balances.totalUsdValue",
     "vchfBridgeBalance": "fundsdata.contracts[\"eth:0x3B71ba73299F925a837836160c3E1Fec74340403\"].balances.totalUsdValue",
     "zchfMarketCap": "fundsdata.contracts[\"eth:0xB58E61C3098d85632Df34EecfB899A1Ed80921cB\"].tokenInfo.tokenValue"
-  },
-  "publishedAt": "2026-04-01T00:00:00.000Z"
+  }
 }

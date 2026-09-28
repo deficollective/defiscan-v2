@@ -1,0 +1,283 @@
+{
+  "version": "1.0",
+  "lastModified": "2026-09-28T11:19:36.000Z",
+  "contracts": {
+    "eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6": {
+      "lastFetched": "2026-09-28T09:06:46.407Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xf951e335afb289353dc249e82926178eac7ded78",
+            "symbol": "swETH",
+            "name": "swETH",
+            "balance": "6071415006217820170489",
+            "decimals": 18,
+            "usdValue": 18109265.345457923
+          }
+        ],
+        "totalUsdValue": 18109265.345457923,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff": {
+      "lastFetched": "2026-09-28T09:06:55.930Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xe95a203b1a91a908f9b9ce46459d101078c2c3cb",
+            "symbol": "ankrETH",
+            "name": "Ankr Staked ETH Token",
+            "balance": "462516141161197086551",
+            "decimals": 18,
+            "usdValue": 1507229.0148714243
+          }
+        ],
+        "totalUsdValue": 1507229.0148714243,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2": {
+      "lastFetched": "2026-09-28T09:07:05.606Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xae78736cd615f374d3085123a210448e74fc6393",
+            "symbol": "rETH",
+            "name": "Rocket Pool ETH Token",
+            "balance": "3910771273032553751797",
+            "decimals": 18,
+            "usdValue": 12114615.87406891
+          }
+        ],
+        "totalUsdValue": 12114615.87406891,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x298aFB19A105D59E74658C4C334Ff360BadE6dd2": {
+      "lastFetched": "2026-09-28T09:07:16.508Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa",
+            "symbol": "mETH",
+            "name": "mETH 1 Token",
+            "balance": "1022533120244679340927",
+            "decimals": 18,
+            "usdValue": 2967190.4024607446
+          }
+        ],
+        "totalUsdValue": 2967190.4024607446,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc": {
+      "lastFetched": "2026-09-28T09:07:26.088Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+            "symbol": "cbETH",
+            "name": "Coinbase Wrapped Staked ETH Token",
+            "balance": "1069804371594468427867",
+            "decimals": 18,
+            "usdValue": 3230253.8544468526
+          }
+        ],
+        "totalUsdValue": 3230253.8544468526,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x57ba429517c3473B6d34CA9aCd56c0e735b94c02": {
+      "lastFetched": "2026-09-28T09:07:35.754Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38",
+            "symbol": "osETH",
+            "name": "OsToken",
+            "balance": "1522560272717857452376",
+            "decimals": 18,
+            "usdValue": 4333001.1021021735
+          }
+        ],
+        "totalUsdValue": 4333001.1021021735,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184": {
+      "lastFetched": "2026-09-28T09:07:45.367Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xa2e3356610840701bdf5611a53974510ae27e2e1",
+            "symbol": "wBETH",
+            "name": "WrapTokenV3ETH",
+            "balance": "373388217754423166537",
+            "decimals": 18,
+            "usdValue": 1093076.7517397932
+          }
+        ],
+        "totalUsdValue": 1093076.7517397932,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6": {
+      "lastFetched": "2026-09-28T09:07:55.125Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xac3e018457b222d93114458476f3e3416abbe38f",
+            "symbol": "sfrxETH",
+            "name": "Staked Frax Ether Token",
+            "balance": "2777578739635134344789",
+            "decimals": 18,
+            "usdValue": 8596911.384409586
+          }
+        ],
+        "totalUsdValue": 8596911.384409586,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x93c4b944D05dfe6df7645A86cd2206016c51564D": {
+      "lastFetched": "2026-09-28T09:08:04.771Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+            "symbol": "stETH",
+            "name": "Liquid staked Ether 2.0 Token",
+            "balance": "233575305117515513976233",
+            "decimals": 18,
+            "usdValue": 617527555.4063388
+          }
+        ],
+        "totalUsdValue": 617527555.4063388,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d": {
+      "lastFetched": "2026-09-28T09:08:14.477Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0xa35b1b31ce002fbf2058d22f30f95d405200a15b",
+            "symbol": "ETHx",
+            "name": "ETHx Token",
+            "balance": "48899051510706701788220",
+            "decimals": 18,
+            "usdValue": 141879786.05864114
+          }
+        ],
+        "totalUsdValue": 141879786.05864114,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0xa4C637e0F704745D182e4D38cAb7E7485321d059": {
+      "lastFetched": "2026-09-28T09:08:23.952Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0x856c4efb76c1d1ae02e20ceb03a2a6a08b0b8dc3",
+            "symbol": "OETH",
+            "name": "OETH",
+            "balance": "1618224367218862597390",
+            "decimals": 18,
+            "usdValue": 4284890.967298023
+          }
+        ],
+        "totalUsdValue": 4284890.967298023,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0xAe60d8180437b5C34bB956822ac2710972584473": {
+      "lastFetched": "2026-09-28T09:08:33.605Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0x8c1bed5b9a0928467c9b1341da1d7bd5e10b6549",
+            "symbol": "LsETH",
+            "name": "Liquid Staked ETH Token",
+            "balance": "61325112462264335318",
+            "decimals": 18,
+            "usdValue": 181071.0174700517
+          }
+        ],
+        "totalUsdValue": 181071.0174700517,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7": {
+      "lastFetched": "2026-09-28T09:08:43.454Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "0x83e9115d334d248ce39a6f36144aeab5b3456e75",
+            "symbol": "bEIGEN",
+            "name": "BackingEigen",
+            "balance": "289836062937536081511552216",
+            "decimals": 18,
+            "usdValue": 74073511.70879348
+          }
+        ],
+        "totalUsdValue": 74073511.70879348,
+        "timestamp": "2026-09-28T08:51:57.000Z",
+        "source": "onchain-balanceOf(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    },
+    "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338": {
+      "lastFetched": "2026-09-28T09:08:54.093Z",
+      "aggregate": {
+        "totalUsdValue": 6120797906.57092,
+        "contractCount": 0,
+        "handlerName": "eigenlayer-native-eth",
+        "breakdown": [],
+        "timestamp": "2026-09-28T09:08:54.101Z",
+        "source": "defillama-eigenlayer-native-eth"
+      }
+    },
+    "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05": {
+      "lastFetched": "2026-09-28T09:08:54.108Z",
+      "balances": {
+        "tokens": [
+          {
+            "assetAddress": "eth",
+            "symbol": "ETH",
+            "name": "Ether",
+            "balance": "2351000000000000000",
+            "decimals": 18,
+            "usdValue": 6232.363328723874
+          }
+        ],
+        "totalUsdValue": 6232.363328723874,
+        "timestamp": "2026-09-28T09:26:09.000Z",
+        "source": "onchain-eth_getBalance(alchemy)+defillama-price"
+      },
+      "error": "Balances API returned 500: Internal Server Error"
+    }
+  }
+}

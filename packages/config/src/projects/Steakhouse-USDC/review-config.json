@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-01T00:00:00.000Z",
   "lastModified": "2026-04-15T00:00:00.000Z",
   "protocolSlug": "Steakhouse-USDC",
   "protocolName": "Steakhouse USDC",
   "tokenName": "steakUSDC",
   "chain": "Ethereum",
   "projectType": "yield",
+  "verified": true,
   "description": "Steakhouse USDC is a Morpho MetaMorpho vault that allocates USDC deposits across multiple lending markets on Morpho Blue to generate yield for depositors. The vault is managed by Steakhouse Financial in partnership with Morpho, with governance controls exercised through a combination of multisig wallets and a timelock-protected DAO. All vault operations depend on Morpho Blue for capital deployment and multiple Chainlink price feeds for collateral valuation across the underlying markets.",
   "admins": {
     "eth:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD": {
@@ -122,6 +124,5 @@
       ]
     }
   },
-  "dataKeys": {},
-  "publishedAt": "2026-04-01T00:00:00.000Z"
+  "dataKeys": {}
 }

@@ -1,5 +1,6 @@
 export { AerodromeClFactoryHandler } from './aerodromeClFactory'
 export { AerodromeV2FactoryHandler } from './aerodromeV2Factory'
+export { EigenLayerNativeEthHandler } from './eigenLayerNativeEth'
 export { FrankencoinMintinghubHandler } from './frankencoinMintinghub'
 export { PancakeswapV2FactoryHandler } from './pancakeswapV2Factory'
 export { UniswapV2FactoryHandler } from './uniswapV2Factory'

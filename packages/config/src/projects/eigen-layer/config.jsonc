@@ -1,0 +1,581 @@
+{
+  "$schema": "../../../../discovery/schemas/config.v2.schema.json",
+  "name": "eigen-layer",
+  "import": ["../globalConfig.jsonc"],
+  "initialAddresses": [
+    "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A",
+    "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A",
+    "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338",
+    "eth:0x135dda560e946695d6f155dacafc6f1f25c1f5af",
+    "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda",
+    "eth:0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5",
+    "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39",
+    "eth:0x619F988b4EA2f896ED068d84cE6F52550d6acE84"
+  ],
+  "names": {
+    "eth:0x369e6F597e22EaB55fFb173C6d9cD234BD699111": "EigenLayerExecutorMultisig",
+    "eth:0x461854d84Ee845F905e0eCf6C288DDEEb4A9533F": "EigenLayerProtocolCouncilMultisig",
+    "eth:0x218B5eC7482e072F6D47feb0463B3297eFb4bA56": "EigenIncentiveCouncilMultisig",
+    "eth:0x942eaF324971440384e4cA0ffA39fC3bb369D67d": "EigenLayerBeigenExecutorMultisig",
+    "eth:0xC06Fd4F821eaC1fF1ae8067b36342899b57BAa2d": "EigenLayerTimelock",
+    "eth:0x738130BC8eADe1Bc65A9c056DEa636835896bc53": "EigenLayerBeigenTimelock"
+  },
+  "maxAddresses": 150,
+  "maxDepth": 7,
+  "overrides": {
+    // ── Core protocol contracts ───────────────────────────────────────────────
+
+    // ProtocolRegistry — roles use EnumerableRoles handler with custom PAUSER_ROLE = 0x01000...
+    "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129": {
+      "fields": {
+        "accessControl": {
+          "handler": {
+            "type": "accessControl",
+            "roleNames": {
+              "0x0100000000000000000000000000000000000000000000000000000000000000": "PAUSER_ROLE"
+            }
+          }
+        }
+      },
+      "ignoreInWatchMode": ["DEFAULT_ADMIN_ROLE", "majorVersion", "PAUSER_ROLE", "totalDeployments", "version"]
+    },
+
+    // DelegationManager
+    "eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A": {
+      "ignoreInWatchMode": ["DELEGATION_APPROVAL_TYPEHASH", "domainSeparator", "version"]
+    },
+    // StrategyManager
+    "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A": {
+      "ignoreInWatchMode": [
+        "DEPOSIT_TYPEHASH",
+        "domainSeparator",
+        "version"
+      ]
+    },
+    // EigenPodManager
+    "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338": {
+      "ignoreInWatchMode": ["pectraForkTimestamp"]
+    },
+    // AVSDirectory
+    "eth:0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF": {
+      "ignoreInWatchMode": ["domainSeparator", "OPERATOR_AVS_REGISTRATION_TYPEHASH", "OPERATOR_SET_FORCE_DEREGISTRATION_TYPEHASH", "OPERATOR_SET_REGISTRATION_TYPEHASH", "version"]
+    },
+    // RewardsCoordinator — array overflow fix + watch field prune
+    "eth:0x7750d328b314EfFa365A0402CcfD489B80B0adda": {
+      "ignoreMethods": ["getDistributionRootAtIndex"],
+      "ignoreInWatchMode": ["CALCULATION_INTERVAL_SECONDS", "currRewardsCalculationEndTimestamp", "GENESIS_REWARDS_TIMESTAMP", "getDistributionRootsLength", "getCurrentClaimableDistributionRoot", "getCurrentDistributionRoot", "MAX_FUTURE_LENGTH", "MAX_RETROACTIVE_LENGTH", "MAX_REWARDS_DURATION"]
+    },
+    // PermissionController — no volatile fields
+    // AllocationManager — no volatile fields
+    // EmissionsController
+    "eth:0x619F988b4EA2f896ED068d84cE6F52550d6acE84": {
+      "ignoreInWatchMode": [
+        "EMISSIONS_EPOCH_LENGTH",
+        "EMISSIONS_INFLATION_RATE",
+        "EMISSIONS_START_TIME",
+        "MAX_TOTAL_WEIGHT",
+        "getCurrentEpoch",
+        "getTotalProcessableDistributions",
+        "isButtonPressable",
+        "lastTimeButtonPressable",
+        "nextTimeButtonPressable",
+        "totalWeight"
+      ]
+    },
+
+    // ── EigenDA contracts ─────────────────────────────────────────────────────
+
+    // EigenDAServiceManager — batchId/taskNumber already in template; add immutable constants
+    "eth:0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0": {
+      "ignoreInWatchMode": [
+        "BLOCK_STALE_MEASURE",
+        "STORE_DURATION_BLOCKS",
+        "THRESHOLD_DENOMINATOR",
+        "batchId"
+      ]
+    },
+    // OperatorTableUpdater — reference timestamps already ignored; add immutable constants + global root
+    "eth:0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5": {
+      "ignoreInWatchMode": [
+        "GENERATOR_GLOBAL_TABLE_ROOT",
+        "GENERATOR_MAX_STALENESS_PERIOD",
+        "GENERATOR_REFERENCE_TIMESTAMP",
+        "GLOBAL_TABLE_ROOT_CERT_TYPEHASH",
+        "MAX_BPS",
+        "OPERATOR_INFO_LEAF_SALT",
+        "OPERATOR_TABLE_LEAF_SALT",
+        "getCurrentGlobalTableRoot",
+        "getGeneratorReferenceTimestamp",
+        "getLatestReferenceTimestamp"
+      ]
+    },
+    // RegistryCoordinator — registeredOperators already ignored; add immutable hashes
+    "eth:0x0BAAc79acD45A023E19345c352d8a7a83C4e5656": {
+      "ignoreInWatchMode": ["numRegistries", "OPERATOR_CHURN_APPROVAL_TYPEHASH", "PUBKEY_REGISTRATION_TYPEHASH"]
+    },
+    // StakeRegistry
+    "eth:0x006124Ae7976137266feeBFb3F4D2BE4C073139D": {
+      "ignoreInWatchMode": ["MAX_WEIGHING_FUNCTION_LENGTH", "WEIGHTING_DIVISOR"]
+    },
+    // IndexRegistry
+    "eth:0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030": {
+      "ignoreInWatchMode": ["OPERATOR_DOES_NOT_EXIST_ID"]
+    },
+    // PaymentVault
+    "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05": {
+      "ignoreInWatchMode": ["lastPriceUpdateTime"]
+    },
+
+    // ── Multichain / other EigenLayer contracts ───────────────────────────────
+
+    // KeyRegistrar
+    "eth:0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4": {
+      "ignoreInWatchMode": ["BN254_KEY_REGISTRATION_TYPEHASH", "domainSeparator", "ECDSA_KEY_REGISTRATION_TYPEHASH", "version"]
+    },
+    // ── EIGEN + bEIGEN token contracts ────────────────────────────────────────
+
+    // BackingEigen (bEIGEN) — historical supply
+    "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75": {
+      "ignoreMethods": ["getPastTotalSupply"],
+      "ignoreInWatchMode": [
+        "CLOCK_MODE",
+        "DOMAIN_SEPARATOR",
+        "clock",
+        "decimals",
+        "eip712Domain",
+        "name",
+        "symbol",
+        "totalSupply",
+        "version"
+      ]
+    },
+    // Eigen Token — totalSupply already ignored by template
+    "eth:0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83": {
+      "ignoreInWatchMode": [
+        "CLOCK_MODE",
+        "DOMAIN_SEPARATOR",
+        "decimals",
+        "eip712Domain",
+        "name",
+        "symbol",
+        "totalSupply",
+        "version"
+      ]
+    },
+
+    // ── Timelocks ─────────────────────────────────────────────────────────────
+
+    // TimelockController (24-day delay)
+    "eth:0x738130BC8eADe1Bc65A9c056DEa636835896bc53": {
+      "ignoreInWatchMode": ["CANCELLER_ROLE", "DEFAULT_ADMIN_ROLE", "EXECUTOR_ROLE", "PROPOSER_ROLE", "TIMELOCK_ADMIN_ROLE"]
+    },
+    // TimelockController (10-day delay, eigenlayer/TimelockControllerOwning)
+    "eth:0xC06Fd4F821eaC1fF1ae8067b36342899b57BAa2d": {
+      "ignoreInWatchMode": ["CANCELLER_ROLE", "DEFAULT_ADMIN_ROLE", "EXECUTOR_ROLE", "PROPOSER_ROLE", "TIMELOCK_ADMIN_ROLE"]
+    },
+
+    // ── Strategy contracts ────────────────────────────────────────────────────
+
+    // EigenStrategy — array overflow + watch field prune
+    "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    // StrategyBase (beacon implementation)
+    "eth:0x8F6be4A906376bB4481E78cBF6FC783Cc0f8D1Ce": {
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    // DurationVaultStrategy (immutable)
+    "eth:0xc946787cFd6c155886C673BF9815C841c1718903": {
+      "ignoreInWatchMode": [
+        "explanation",
+        "metadataURI",
+        "totalShares",
+        "unlockTimestamp"
+      ]
+    },
+    // EigenPod (immutable beacon implementation — all operational fields are 0 here)
+    "eth:0x53cC2D82E08370Fe1e44a96f69CEc7d5b54ae868": {
+      "ignoreInWatchMode": ["activeValidatorCount", "currentCheckpointTimestamp", "getConsolidationRequestFee", "lastCheckpointTimestamp", "withdrawableRestakedExecutionLayerGwei"]
+    },
+    // StrategyBaseTVLLimits x12 — array overflow fixes + watch field prune
+    "eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x298aFB19A105D59E74658C4C334Ff360BadE6dd2": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x57ba429517c3473B6d34CA9aCd56c0e735b94c02": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x7CA911E83dabf90C90dD3De5411a10F1A6112184": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x93c4b944D05dfe6df7645A86cd2206016c51564D": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0xa4C637e0F704745D182e4D38cAb7E7485321d059": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+    "eth:0xAe60d8180437b5C34bB956822ac2710972584473": {
+      "ignoreMethods": ["sharesToUnderlying", "sharesToUnderlyingView", "underlyingToShares", "underlyingToSharesView"],
+      "ignoreInWatchMode": ["explanation", "totalShares"]
+    },
+
+    // ── Governance multisig Safe contracts ────────────────────────────────────
+    // domainSeparator/getChainId/multisigThreshold/VERSION are stable constants;
+    // nonce is already handled by the GnosisSafe template.
+
+    "eth:0x002721B4790d97dC140a049936aA710152Ba92D5": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0x178eeeA9E0928dA2153A1d7951FBe30CF8371b8A": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0x218B5eC7482e072F6D47feb0463B3297eFb4bA56": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0x338477FfaF63c04AC06048787f910671eC914B34": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0x369e6F597e22EaB55fFb173C6d9cD234BD699111": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0x461854d84Ee845F905e0eCf6C288DDEEb4A9533F": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0x5050389572f2d220ad927CcbeA0D406831012390": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0x942eaF324971440384e4cA0ffA39fC3bb369D67d": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0xA3464e1b86EE6941A600f9F69C61A47322af918F": {
+      "ignoreInWatchMode": ["domainSeparator", "getChainId", "multisigThreshold", "VERSION"]
+    },
+    "eth:0xBE1685C81aA44FF9FB319dD389addd9374383e90": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0xE15AFE000789160BE164D2FBA66EaDd6c6B81e7B": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0xFEA47018D632A77bA579846c840d5706705Dc598": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0xfD636E8EB3839cE82A58936b795043Da7DB0c734": {
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+
+    // ── External LST tokens ───────────────────────────────────────────────────
+    "eth:0xE95A203B1a91a908F9B9CE46459d101078c2c3cb": {
+      // Ankr Staked ETH (ankrETH)
+      "ignoreRelatives": ["$admin", "$implementation", "owner"],
+      "ignoreMethods": ["bondsToShares", "sharesToBonds"],
+      "ignoreInWatchMode": ["ratio"]
+    },
+    "eth:0xBe9895146f7AF43049ca1c1AE358B0541Ea49704": {
+      // Coinbase Wrapped Staked ETH (cbETH)
+      "ignoreRelatives": ["$admin", "$implementation", "admin", "blacklister", "implementation", "masterMinter", "oracle", "owner", "pauser", "rescuer"]
+    },
+    "eth:0x5E8422345238F34275888049021821E8E08CAa1f": {
+      // Frax Ether (frxETH)
+      "ignoreRelatives": ["minters_array", "nominatedOwner", "owner", "timelock_address"]
+    },
+    "eth:0x8c1BEd5b9a0928467c9B1341Da1D7BD5e10b6549": {
+      // LsETH — Liquid Collective
+      "ignoreRelatives": ["$admin", "$implementation", "getAdmin", "getAllowlist", "getCollector", "getCoverageFund", "getELFeeRecipient", "getKeeper", "getOperatorsRegistry", "getOracle", "getPendingAdmin", "getRedeemManager"],
+      "ignoreMethods": ["getFrameFirstEpochId", "isValidEpoch", "sharesFromUnderlyingBalance", "underlyingBalanceFromShares"],
+      "ignoreInWatchMode": ["getCurrentEpochId", "getTime"]
+    },
+    "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
+      // stETH — Lido
+      "ignoreMethods": ["getPooledEthByShares", "getPooledEthBySharesRoundUp", "getSharesByPooledEth"],
+      "ignoreRelatives": ["$implementation", "getEIP712StETH", "getEVMScriptRegistry", "getLidoLocator", "getRecoveryVault", "getTreasury", "implementation", "kernel"],
+      "ignoreInWatchMode": ["getBufferedEther", "getCurrentStakeLimit", "getMaxMintableExternalShares", "getStakeLimitFullInfo", "getTotalPooledEther", "getTotalShares", "getWithdrawalsReserve", "totalSupply"]
+    },
+    "eth:0xd5F7838F5C461fefF7FE49ea5ebaF7728bB0ADfa": {
+      // mETH — Mantle
+      "ignoreRelatives": ["$admin", "$implementation", "getBlockLists", "stakingContract", "unstakeRequestsManagerContract"],
+      "ignoreInWatchMode": ["totalSupply"]
+    },
+    "eth:0x856c4Efb76C1D1AE02e20CEB03A2A6a08b0b8dC3": {
+      // OETH — Origin Protocol
+      "ignoreRelatives": ["$admin", "$implementation", "admin", "governor", "implementation", "vaultAddress"],
+      "ignoreInWatchMode": ["nonRebasingSupply", "rebasingCredits", "rebasingCreditsHighres"]
+    },
+    "eth:0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38": {
+      // OsToken — Stakewise
+      "ignoreRelatives": ["owner", "pendingOwner"]
+    },
+    "eth:0xae78736Cd615f374D3085123A210448E74Fc6393": {
+      // Rocket Pool ETH (rETH) — Rocket Pool
+      "ignoreMethods": ["getEthValue", "getRethValue"],
+      "ignoreInWatchMode": ["getCollateralRate", "getTotalCollateral", "totalSupply"]
+    },
+    "eth:0xac3E018457B222d93114458476f3E3416Abbe38F": {
+      // Staked Frax Ether (sfrxETH) — Frax Finance
+      "ignoreRelatives": ["asset"],
+      "ignoreInWatchMode": ["pricePerShare", "totalAssets"]
+    },
+    "eth:0xA35b1B31Ce002FBF2058D22F30f95D405200A15b": {
+      // ETHx — Stader
+      "ignoreRelatives": ["$admin", "$implementation", "staderConfig"]
+    },
+    "eth:0xf951E335afb289353dc249e82926178EaC7DEd78": {
+      // swETH — Swell
+      "ignoreRelatives": ["$admin", "$implementation", "AccessControlManager"]
+    },
+    "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1": {
+      // wBETH (WrapTokenV3ETH) — Binance
+      "ignoreRelatives": ["_UNWRAP_ETH_ADDRESS", "$admin", "$implementation", "admin", "blacklister", "ethReceiver", "implementation", "masterMinter", "operator", "oracle", "owner", "pauser", "rescuer"]
+    },
+
+    // ── External Lido infrastructure ──────────────────────────────────────────
+    "eth:0xC1d0b3DE6792Bf6b4b37EccdcC24e45978Cfd2Eb": {
+      // LidoLocator
+      "ignoreRelatives": ["$admin", "$implementation", "accounting", "accountingOracle", "burner", "coreComponents", "depositSecurityModule", "elRewardsVault", "lazyOracle", "lido", "operatorGrid", "oracleDaemonConfig", "oracleReportComponents", "oracleReportSanityChecker", "postTokenRebaseReceiver", "predepositGuarantee", "proxy__getAdmin", "proxy__getImplementation", "stakingRouter", "treasury", "triggerableWithdrawalsGateway", "validatorExitDelayVerifier", "validatorsExitBusOracle", "vaultFactory", "vaultHub", "withdrawalQueue", "withdrawalVault", "wstETH"]
+    },
+    "eth:0x853cc0D5917f49B57B8e9F89e491F5E18919093A": {
+      // EVMScriptRegistry — Lido
+      "ignoreRelatives": ["$implementation", "getEVMScriptRegistry", "getRecoveryVault", "implementation", "kernel"]
+    },
+    "eth:0x3e40D73EB977Dc6a537aF587D48316feE66E9C8c": {
+      // Lido DAO Agent
+      "ignoreRelatives": ["$implementation", "designatedSigner", "getEVMScriptRegistry", "getRecoveryVault", "implementation", "kernel"]
+    },
+
+    // ── External Mantle / mETH infrastructure ────────────────────────────────
+    "eth:0xc26016f1166bE7b6c5611AAB104122E0f6c2aCE2": {
+      // Timelock — Mantle mETH
+      "ignoreRelatives": ["Canceller", "Executor", "Proposer", "timelockAdminAC"]
+    },
+    "eth:0x79973d557CD9dd87eb61E250cc2572c990e20196": {
+      // UnwrapTokenV1ETH — Binance wBETH
+      "ignoreRelatives": ["$admin", "$implementation", "admin", "blacklister", "ethBackAddress", "implementation", "operatorAddress", "owner", "pauser", "rechargeAddress", "WBETH_TOKEN_ADDRESS"],
+      "ignoreMethods": ["getWithdrawRequests"]
+    },
+    "eth:0xe3cBd06D7dadB3F4e6557bAb7EdD924CD1489E8f": {
+      // Staking (mETH) — Mantle
+      "ignoreRelatives": ["$admin", "$implementation", "depositContract", "liquidityBuffer", "mETH", "oracle", "pauser", "returnsAggregator", "unstakeRequestsManager", "withdrawalWallet"],
+      "ignoreMethods": ["ethToMETH", "mETHToETH", "unstakeRequestInfo"]
+    },
+    "eth:0x38fDF7b489316e03eD8754ad339cb5c4483FDcf9": {
+      // UnstakeRequestsManager — Mantle mETH
+      "ignoreRelatives": ["$admin", "$implementation", "mETH", "oracle", "stakingContract"],
+      "ignoreMethods": ["requestByID", "requestInfo"]
+    },
+    "eth:0x81720695e43A39C52557Ce6386feB3FAAC215f06": {
+      // ExchangeRateUpdater — Binance wBETH
+      "ignoreRelatives": ["owner", "tokenContract"]
+    },
+
+    // ── External Stader infrastructure ────────────────────────────────────────
+    "eth:0x4ABEF2263d5A5ED582FC9A9789a41D85b68d69DB": {
+      // StaderConfig — Stader
+      "ignoreRelatives": ["$admin", "$implementation", "getAdmin", "getAuctionContract", "getETHBalancePORFeedProxy", "getETHDepositContract", "getETHXSupplyPORFeedProxy", "getETHxToken", "getNodeELRewardVaultImplementation", "getOperatorRewardsCollector", "getPenaltyContract", "getPermissionedNodeRegistry", "getPermissionedPool", "getPermissionedSocializingPool", "getPermissionlessNodeRegistry", "getPermissionlessPool", "getPermissionlessSocializingPool", "getPoolSelector", "getPoolUtils", "getSDCollateral", "getSDIncentiveController", "getSDUtilityPool", "getStaderInsuranceFund", "getStaderOracle", "getStaderToken", "getStaderTreasury", "getStakePoolManager", "getUserWithdrawManager", "getValidatorWithdrawalVaultImplementation", "getVaultFactory"]
+    },
+
+    // ── External Swell infrastructure ─────────────────────────────────────────
+    "eth:0xb8FFC3Cd6e7Cf5a098A1c92F48009765B24088Dc": {
+      // Kernel (Aragon) — Lido DAO
+      "ignoreRelatives": ["$implementation", "acl", "getRecoveryVault", "implementation"]
+    },
+    "eth:0x9b37180d847B27ADC13C2277299045C1237Ae281": {
+      // ExchangeRateUpdater — Coinbase cbETH oracle
+      "ignoreRelatives": ["owner", "tokenContract"]
+    },
+    "eth:0x625087d72c762254a72CB22cC2ECa40da6b95EAC": {
+      // AccessControlManager — Swell
+      "ignoreRelatives": ["$admin", "$implementation", "DepositManager", "NodeOperatorRegistry", "SwellTreasury", "swETH", "swEXIT"]
+    },
+    "eth:0x25EAf579cA2255fAA5463c635eec28697b5b8846": {
+      // ProxyAdmin — Swell
+      "ignoreRelatives": ["owner"]
+    },
+
+    // ── External Origin Protocol ──────────────────────────────────────────────
+    "eth:0x39254033945AA2E4809Cc2977E7087BEE48bd7Ab": {
+      // OETHVault — Origin Protocol
+      "ignoreRelatives": ["$admin", "$implementation", "admin", "asset", "defaultStrategy", "getAllAssets", "getAllStrategies", "governor", "implementation", "oToken", "oUSD", "strategistAddr", "trusteeAddress"],
+      "ignoreMethods": ["withdrawalRequests"]
+    },
+
+    // ── External Liquid Collective (LsETH) infrastructure ────────────────────
+    "eth:0x3A5b4db174a3CC17d8cE40C5B04272737195151b": {
+      // Firewall 1 — Liquid Collective
+      "ignoreRelatives": ["destination", "executor", "getAdmin", "getPendingAdmin"]
+    },
+    "eth:0xd745A68c705F5aa75DFf528540678288ed2aD9eE": {
+      // Firewall 2 — Liquid Collective
+      "ignoreRelatives": ["destination", "executor", "getAdmin", "getPendingAdmin"]
+    },
+    "eth:0x895a57eD71025D51fe4080530A3489D92E230683": {
+      // OracleV1 — Liquid Collective
+      "ignoreRelatives": ["$admin", "$implementation", "getAdmin", "getOracleMembers", "getPendingAdmin", "getRiver"]
+    },
+    "eth:0x080b3a41390b357Ad7e8097644d1DEDf57AD3375": {
+      // RedeemManagerV1 — Liquid Collective
+      "ignoreRelatives": ["$admin", "$implementation", "getRiver"]
+    },
+    "eth:0xebc83Bb472b2816Ec5B5de8D34F0eFc9088BB2ce": {
+      // AllowlistV1 — Liquid Collective
+      "ignoreRelatives": ["$admin", "$implementation", "getAdmin", "getAllower", "getDenier", "getPendingAdmin"]
+    },
+    "eth:0x32Aac358b627B9FEaa971CC33304027A41e49a81": {
+      // CoverageFundV1 — Liquid Collective
+      "ignoreRelatives": ["$admin", "$implementation"]
+    },
+    "eth:0x7D16d2c4e96BCFC8f815E15b771aC847EcbDB48b": {
+      // ELFeeRecipientV1 — Liquid Collective
+      "ignoreRelatives": ["$admin", "$implementation"]
+    },
+    "eth:0x1235f1b60df026B2620e48E735C422425E06b725": {
+      // Unnamed proxy — Liquid Collective
+      "ignoreRelatives": ["$admin", "$implementation"]
+    },
+
+    // ── External miscellaneous ────────────────────────────────────────────────
+    "eth:0x67B12264Ca3e0037Fc7E22F2457b42643a04C86e": {
+      // ProxyAdmin — Stader ETHx
+      "ignoreRelatives": ["owner"]
+    },
+    "eth:0x7F68e9C17D22005688b8E6968fCe31e32B4B03d1": {
+      // 1/1 Safe — mylesoneil.eth, not EigenLayer
+      "ignoreRelatives": ["$implementation", "$members"],
+      "ignoreInWatchMode": [
+        "GnosisSafe_modules",
+        "VERSION",
+        "domainSeparator",
+        "getChainId",
+        "multisigThreshold",
+        "nonce"
+      ]
+    },
+    "eth:0x132b466d9d5723531F68797519DfED701aC2C749": {
+      "ignoreInWatchMode": [
+        "MAX_TASK_SLA"
+      ]
+    },
+    "eth:0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b": {
+      "ignoreInWatchMode": [
+        "getActiveGenerationReservationCount"
+      ]
+    },
+    "eth:0xd0930ee96D07de4F9d493c259232222e46B6EC25": {
+      "ignoreInWatchMode": [
+        "domainSeparator",
+        "version"
+      ]
+    }
+  }
+}

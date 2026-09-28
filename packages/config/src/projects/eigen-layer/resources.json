@@ -1,0 +1,212 @@
+{
+  "resources": [
+    {
+      "type": "website",
+      "url": "https://www.eigencloud.xyz"
+    },
+    {
+      "type": "frontend",
+      "url": "https://app.eigenlayer.xyz",
+      "frontendSubtype": "official"
+    },
+    {
+      "type": "docs",
+      "url": "https://docs.eigencloud.xyz/eigenlayer/overview/"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/Layr-Labs"
+    },
+    {
+      "type": "x",
+      "url": "https://x.com/eigencloud"
+    },
+    {
+      "type": "license",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/LICENSE",
+      "label": "BUSL-1.1",
+      "licenseScope": "Contracts"
+    },
+    {
+      "type": "other",
+      "url": "https://forum.eigenlayer.xyz",
+      "label": "Governance Forum"
+    }
+  ],
+  "audits": [
+    {
+      "author": "Consensys Diligence",
+      "date": "2023-03",
+      "scope": "M1 mainnet",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/M1%20Mainnet%20-%20Diligence%20-%20Mar%202023.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2023-05",
+      "scope": "M1 mainnet",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/M1%20Mainnet%20-%20Sigma%20Prime%20-%20May%202023.pdf"
+    },
+    {
+      "author": "Code4rena",
+      "date": "2023-04",
+      "scope": "M1 mainnet",
+      "url": "https://code4rena.com/reports/2023-04-eigenlayer"
+    },
+    {
+      "author": "Dedaub",
+      "date": "2024-02",
+      "scope": "M2 middleware",
+      "url": "https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/audits/M2%20Mainnet%20-%20Dedaub%20-%20Feb%202024.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2024-02",
+      "scope": "M2 mainnet",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/M2%20Mainnet%20-%20Sigma%20Prime%20-%20Feb%202024.pdf"
+    },
+    {
+      "author": "Cantina",
+      "date": "2024-04",
+      "scope": "M2 mainnet",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/M2%20Mainnet%20-%20Cantina%20-%20Apr%202024.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2024-05",
+      "scope": "RewardsCoordinator",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/RewardsCoordinator%20-%20Sigma%20Prime%20-%20May%202024.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2024-07",
+      "scope": "M4 mainnet",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/M4%20Mainnet%20(PEPE)%20-%20Sigma%20Prime%20-%20Jul%202024%20-%20Updated%20Aug%202025.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2024-08",
+      "scope": "M4 mainnet",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/M4%20Mainnet%20(PEPE)%20-%20Certora%20-%20Aug%202024.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2024-08",
+      "scope": "Permissionless strategies",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/Permissionless%20Strategies%20-%20Sigma%20Prime%20-%20Aug%202024.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2024-09",
+      "scope": "Token incentives",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/Token%20%2B%20Programmatic%20Incentives%20-%20Sigma%20Prime%20-%20Sep%202024.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2024-12",
+      "scope": "Rewards v2",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/Rewards%20v2%20-%20SigmaPrime%20-%20Dec%202024.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2024-12",
+      "scope": "Rewards v2 middleware",
+      "url": "https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/audits/Rewards%20v2%20-%20SigmaPrime%20-%20Dec%202024.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025-02",
+      "scope": "Slashing v1.0.0",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/V1.0.0%20(Slashing)%20-%20Certora%20-%20Feb%202025.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2025-02",
+      "scope": "Slashing v1.0.0",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/V1.0.0%20(Slashing)%20-%20Sigma%20Prime%20-%20Feb%202025.pdf"
+    },
+    {
+      "author": "Cantina",
+      "date": "2025-03",
+      "scope": "Slashing v1.0.0",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/V1.0.0%20(Slashing)%20-%20Cantina%20%20-%20March%202025.pdf"
+    },
+    {
+      "author": "Dedaub",
+      "date": "2025-04",
+      "scope": "Slashing middleware",
+      "url": "https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/audits/Slashing%20-%20Dedaub%20-%20April%202025.pdf"
+    },
+    {
+      "author": "Hexens",
+      "date": "2025-04",
+      "scope": "Slashing middleware",
+      "url": "https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/audits/Slashing%20-%20Hexens%20-%20April%202025.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025-06",
+      "scope": "V1.6.0",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/V1.6.0%20(MOOCOW)%20-%20Certora%20-%20June%202025.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025-07",
+      "scope": "Merkle contracts",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/EigenLayer%20Merkle%20-%20Certora%20-%20Security%20Assessment%20Final%20Report%20-%20July%202025.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025-07",
+      "scope": "Multichain pt1",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/EigenLayer%20Multichain%20PT1%20-%20Certora%20-%20Security%20Assessment%20Final%20Report2%20-%20July%202025.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025-07",
+      "scope": "Multichain pt2",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/EigenLayer%20Multichain%20pt2%20-%20Certora%20-%20Security%20Assessment%20Final%20Report%20-%20July%202025.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025-08",
+      "scope": "Hourglass pt1",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/EigenLayer%20Hourglass%20pt1%20-%20Certora%20-%20Security%20Assessment%20Final%20Report%20-%20August%202025.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025-08",
+      "scope": "Hourglass pt2",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/EigenLayer%20Hourglass%20pt2%20-%20Certora%20-%20Security%20Assessment%20Final%20Report%20-%20August%202025.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025",
+      "scope": "Duration vaults",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/Certora%20-%20Eigenlayer%20Duration%20Vaults.pdf"
+    },
+    {
+      "author": "Certora",
+      "date": "2025",
+      "scope": "Incentive council",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/Certora%20-%20Eigenlayer%20Incentive%20Council.pdf"
+    },
+    {
+      "author": "Sigma Prime",
+      "date": "2026-02",
+      "scope": "Rewards v2.2",
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/Rewards%20v2.2%20-%20Sigma%20Prime%20-%20Feb%202026.pdf"
+    },
+    {
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/Eigenlayer%20-%20Slashing%20UX%20Improvements%20Audit.pdf",
+      "author": "Certora",
+      "date": "2025-12"
+    },
+    {
+      "url": "https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/audits/Redistribution%20Slash%20Delay%20(v1.13.0)%20-%20Certora%20-%20May%202026.pdf",
+      "author": "Certora",
+      "date": "2026-05"
+    }
+  ],
+  "linesOfCode": 31459,
+  "lastModified": "2026-09-28T11:24:12.000Z"
+}
