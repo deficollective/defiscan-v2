@@ -11,9 +11,10 @@
         "id": "r-acg-001"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.completeQueuedWithdrawal calls shareManager.withdrawSharesAsTokens through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements withdrawSharesAsTokens. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.255Z"
     },
     {
       "id": "acg-eigen-002",
@@ -25,9 +26,10 @@
         "id": "r-acg-002"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.completeQueuedWithdrawal calls shareManager.addShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements addShares. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.266Z"
     },
     {
       "id": "acg-eigen-003",
@@ -39,9 +41,10 @@
         "id": "r-acg-003"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.completeQueuedWithdrawals calls shareManager.withdrawSharesAsTokens through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements withdrawSharesAsTokens. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.275Z"
     },
     {
       "id": "acg-eigen-004",
@@ -53,9 +56,10 @@
         "id": "r-acg-004"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.completeQueuedWithdrawals calls shareManager.addShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements addShares. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.283Z"
     },
     {
       "id": "acg-eigen-005",
@@ -67,9 +71,10 @@
         "id": "r-acg-005"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.getWithdrawableShares calls shareManager.stakerDepositShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements stakerDepositShares. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.291Z"
     },
     {
       "id": "acg-eigen-006",
@@ -81,9 +86,10 @@
         "id": "r-acg-006"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.queueWithdrawals calls shareManager.removeDepositShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements removeDepositShares. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.299Z"
     },
     {
       "id": "acg-eigen-007",
@@ -95,9 +101,10 @@
         "id": "r-acg-007"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.redelegate calls shareManager.removeDepositShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements removeDepositShares. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.308Z"
     },
     {
       "id": "acg-eigen-008",
@@ -109,9 +116,10 @@
         "id": "r-acg-008"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.slashOperatorShares calls shareManager.increaseBurnOrRedistributableShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements increaseBurnOrRedistributableShares. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.317Z"
     },
     {
       "id": "acg-eigen-009",
@@ -123,9 +131,10 @@
         "id": "r-acg-009"
       },
       "reasoning": "DelegationManager._getShareManager(strategy) (line 859) returns eigenPodManager when strategy == beaconChainETHStrategy and strategyManager otherwise. DelegationManager.undelegate calls shareManager.removeDepositShares through it, so the call can hit either contract. eigenPodManager() = 0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338 on-chain, and EigenPodManager implements removeDepositShares. Slither only kept the StrategyManager target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.325Z"
     },
     {
       "id": "acg-eigen-010",
@@ -137,9 +146,10 @@
         "id": "r-acg-010"
       },
       "reasoning": "OperatorTableUpdater.getCertificateVerifier(curveType) (line 221) returns bn254CertificateVerifier for BN254 and ecdsaCertificateVerifier for ECDSA. OperatorTableUpdater.getGeneratorReferenceTimestamp calls latestReferenceTimestamp on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes latestReferenceTimestamp. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.334Z"
     },
     {
       "id": "acg-eigen-011",
@@ -151,9 +161,10 @@
         "id": "r-acg-011"
       },
       "reasoning": "OperatorTableUpdater.getCertificateVerifier(curveType) (line 221) returns bn254CertificateVerifier for BN254 and ecdsaCertificateVerifier for ECDSA. OperatorTableUpdater.updateOperatorTable calls isReferenceTimestampSet on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes isReferenceTimestampSet. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.342Z"
     },
     {
       "id": "acg-eigen-012",
@@ -165,9 +176,10 @@
         "id": "r-acg-012"
       },
       "reasoning": "OperatorTableUpdater.getCertificateVerifier(curveType) (line 221) returns bn254CertificateVerifier for BN254 and ecdsaCertificateVerifier for ECDSA. OperatorTableUpdater.updateOperatorTable calls latestReferenceTimestamp on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes latestReferenceTimestamp. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.351Z"
     },
     {
       "id": "acg-eigen-013",
@@ -179,9 +191,10 @@
         "id": "r-acg-013"
       },
       "reasoning": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.createTask calls latestReferenceTimestamp on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes latestReferenceTimestamp. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.359Z"
     },
     {
       "id": "acg-eigen-014",
@@ -193,9 +206,10 @@
         "id": "r-acg-014"
       },
       "reasoning": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.createTask calls maxOperatorTableStaleness on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes maxOperatorTableStaleness. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.369Z"
     },
     {
       "id": "acg-eigen-015",
@@ -207,9 +221,10 @@
         "id": "r-acg-015"
       },
       "reasoning": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.registerExecutorOperatorSet calls getOperatorSetOwner on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes getOperatorSetOwner. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.377Z"
     },
     {
       "id": "acg-eigen-016",
@@ -221,9 +236,10 @@
         "id": "r-acg-016"
       },
       "reasoning": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.setExecutorOperatorSetTaskConfig calls getOperatorSetOwner on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes getOperatorSetOwner. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.385Z"
     },
     {
       "id": "acg-eigen-017",
@@ -235,9 +251,10 @@
         "id": "r-acg-017"
       },
       "reasoning": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.submitResult calls verifyCertificate on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes verifyCertificate. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.398Z"
     },
     {
       "id": "acg-eigen-018",
@@ -249,9 +266,10 @@
         "id": "r-acg-018"
       },
       "reasoning": "TaskMailbox._getCertificateVerifier(curveType) (line 329) returns BN254_CERTIFICATE_VERIFIER for BN254 and ECDSA_CERTIFICATE_VERIFIER for ECDSA. TaskMailbox.submitResult calls verifyCertificateProportion on the verifier picked by curve type, so it can reach either one. The ECDSA verifier is 0xd0930ee96D07de4F9d493c259232222e46B6EC25 on-chain and exposes verifyCertificateProportion. Slither only kept the BN254 target.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.406Z"
     },
     {
       "id": "acg-eigen-019",
@@ -263,9 +281,10 @@
         "id": "r-acg-019"
       },
       "reasoning": "EigenStrategy._afterWithdrawal (line 87): if token == EIGEN it approves and wraps bEIGEN into EIGEN, then calls token.safeTransfer(recipient, amount). The transfer can therefore run on EIGEN as well as on bEIGEN. Slither only kept the bEIGEN transfer.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.414Z"
     },
     {
       "id": "acg-eigen-020",
@@ -277,9 +296,10 @@
         "id": "r-acg-020"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.422Z"
     },
     {
       "id": "acg-eigen-021",
@@ -291,9 +311,10 @@
         "id": "r-acg-021"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.430Z"
     },
     {
       "id": "acg-eigen-022",
@@ -305,9 +326,10 @@
         "id": "r-acg-022"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createEigenDARewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.439Z"
     },
     {
       "id": "acg-eigen-023",
@@ -319,9 +341,10 @@
         "id": "r-acg-023"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createEigenDARewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.453Z"
     },
     {
       "id": "acg-eigen-024",
@@ -333,9 +356,10 @@
         "id": "r-acg-024"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.483Z"
     },
     {
       "id": "acg-eigen-025",
@@ -347,9 +371,10 @@
         "id": "r-acg-025"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.494Z"
     },
     {
       "id": "acg-eigen-026",
@@ -361,9 +386,10 @@
         "id": "r-acg-026"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.503Z"
     },
     {
       "id": "acg-eigen-027",
@@ -375,9 +401,10 @@
         "id": "r-acg-027"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.513Z"
     },
     {
       "id": "acg-eigen-028",
@@ -389,9 +416,10 @@
         "id": "r-acg-028"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createRewardsForAllEarners has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.524Z"
     },
     {
       "id": "acg-eigen-029",
@@ -403,9 +431,10 @@
         "id": "r-acg-029"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createRewardsForAllSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.538Z"
     },
     {
       "id": "acg-eigen-030",
@@ -417,9 +446,10 @@
         "id": "r-acg-030"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createTotalStakeRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.549Z"
     },
     {
       "id": "acg-eigen-031",
@@ -431,9 +461,10 @@
         "id": "r-acg-031"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createTotalStakeRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.562Z"
     },
     {
       "id": "acg-eigen-032",
@@ -445,9 +476,10 @@
         "id": "r-acg-032"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createUniqueStakeRewardsSubmission has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.574Z"
     },
     {
       "id": "acg-eigen-033",
@@ -459,9 +491,10 @@
         "id": "r-acg-033"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.createUniqueStakeRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.588Z"
     },
     {
       "id": "acg-eigen-034",
@@ -473,9 +506,10 @@
         "id": "r-acg-034"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.processClaim has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.606Z"
     },
     {
       "id": "acg-eigen-035",
@@ -487,9 +521,10 @@
         "id": "r-acg-035"
       },
       "reasoning": "RewardsCoordinator reads the token from the submission or claim input (rewardsSubmission.token.safeTransferFrom at lines 122-477, tokenLeaf.token.safeTransfer at line 519, fee transfers at 803/820 use the same token). RewardsCoordinator.processClaims has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.638Z"
     },
     {
       "id": "acg-eigen-036",
@@ -501,9 +536,10 @@
         "id": "r-acg-036"
       },
       "reasoning": "EigenDAServiceManager uses rewardsSubmissions[i].token / operatorDirectedRewardsSubmissions[i].token from the call input (lines 460-517). EigenDAServiceManager.createAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.655Z"
     },
     {
       "id": "acg-eigen-037",
@@ -515,9 +551,10 @@
         "id": "r-acg-037"
       },
       "reasoning": "EigenDAServiceManager uses rewardsSubmissions[i].token / operatorDirectedRewardsSubmissions[i].token from the call input (lines 460-517). EigenDAServiceManager.createAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.increaseAllowance is a guess among 11 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.670Z"
     },
     {
       "id": "acg-eigen-038",
@@ -529,9 +566,10 @@
         "id": "r-acg-038"
       },
       "reasoning": "EigenDAServiceManager uses rewardsSubmissions[i].token / operatorDirectedRewardsSubmissions[i].token from the call input (lines 460-517). EigenDAServiceManager.createOperatorDirectedAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.683Z"
     },
     {
       "id": "acg-eigen-039",
@@ -543,9 +581,10 @@
         "id": "r-acg-039"
       },
       "reasoning": "EigenDAServiceManager uses rewardsSubmissions[i].token / operatorDirectedRewardsSubmissions[i].token from the call input (lines 460-517). EigenDAServiceManager.createOperatorDirectedAVSRewardsSubmission has no fixed token, so the edge to bEIGEN.increaseAllowance is a guess among 11 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.698Z"
     },
     {
       "id": "acg-eigen-040",
@@ -557,9 +596,10 @@
         "id": "r-acg-040"
       },
       "reasoning": "EigenPod.recoverTokens loops over the tokenList argument and calls tokenList[i].safeTransfer (line 359). EigenPod.recoverTokens has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.724Z"
     },
     {
       "id": "acg-eigen-041",
@@ -571,9 +611,10 @@
         "id": "r-acg-041"
       },
       "reasoning": "PaymentVault.withdrawERC20(IERC20 _token, uint256 _amount) transfers the _token argument (line 107). PaymentVault.withdrawERC20 has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.740Z"
     },
     {
       "id": "acg-eigen-042",
@@ -585,9 +626,10 @@
         "id": "r-acg-042"
       },
       "reasoning": "TaskMailbox transfers taskConfig.feeToken, which each AVS sets in its own executor operator set config (lines 162-255). TaskMailbox.createTask has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.755Z"
     },
     {
       "id": "acg-eigen-043",
@@ -599,9 +641,10 @@
         "id": "r-acg-043"
       },
       "reasoning": "TaskMailbox transfers taskConfig.feeToken, which each AVS sets in its own executor operator set config (lines 162-255). TaskMailbox.refundFee has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.770Z"
     },
     {
       "id": "acg-eigen-044",
@@ -613,9 +656,10 @@
         "id": "r-acg-044"
       },
       "reasoning": "TaskMailbox transfers taskConfig.feeToken, which each AVS sets in its own executor operator set config (lines 162-255). TaskMailbox.submitResult has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.789Z"
     },
     {
       "id": "acg-eigen-045",
@@ -627,9 +671,10 @@
         "id": "r-acg-045"
       },
       "reasoning": "StrategyManager._depositIntoStrategy(staker, strategy, IERC20 token, amount) calls token.safeTransferFrom with the token argument (line 305). StrategyManager.depositIntoStrategy has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.819Z"
     },
     {
       "id": "acg-eigen-046",
@@ -641,9 +686,10 @@
         "id": "r-acg-046"
       },
       "reasoning": "StrategyManager._depositIntoStrategy(staker, strategy, IERC20 token, amount) calls token.safeTransferFrom with the token argument (line 305). StrategyManager.depositIntoStrategyWithSignature has no fixed token, so the edge to bEIGEN.transferFrom is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.833Z"
     },
     {
       "id": "acg-eigen-047",
@@ -655,9 +701,10 @@
         "id": "r-acg-047"
       },
       "reasoning": "StrategyBase is the beacon implementation used by factory-deployed strategies. Its underlyingToken is set per strategy in initialize(_underlyingToken), and the implementation itself is never initialized. StrategyBase.initialize has no fixed token, so the edge to bEIGEN.decimals is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.846Z"
     },
     {
       "id": "acg-eigen-048",
@@ -669,9 +716,10 @@
         "id": "r-acg-048"
       },
       "reasoning": "StrategyBase is the beacon implementation used by factory-deployed strategies. Its underlyingToken is set per strategy in initialize(_underlyingToken), and the implementation itself is never initialized. StrategyBase.withdraw has no fixed token, so the edge to bEIGEN.transfer is a guess among 14 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.864Z"
     },
     {
       "id": "acg-eigen-049",
@@ -683,9 +731,10 @@
         "id": "r-acg-049"
       },
       "reasoning": "DurationVaultStrategy is the beacon implementation for duration vaults. Its underlying token is set per vault at initialize, and the implementation itself is never initialized. DurationVaultStrategy.initialize has no fixed token, so the edge to bEIGEN.decimals is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.877Z"
     },
     {
       "id": "acg-eigen-050",
@@ -697,9 +746,10 @@
         "id": "r-acg-050"
       },
       "reasoning": "DurationVaultStrategy is the beacon implementation for duration vaults. Its underlying token is set per vault at initialize, and the implementation itself is never initialized. DurationVaultStrategy.withdraw has no fixed token, so the edge to bEIGEN.transfer is a guess among 2 candidates with no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.889Z"
     },
     {
       "id": "acg-eigen-051",
@@ -711,9 +761,10 @@
         "id": "r-acg-051"
       },
       "reasoning": "AllocationManager.deregisterFromOperatorSets calls getAVSRegistrar(params.avs).deregisterOperator (lines 206/236). getAVSRegistrar reads _avsRegistrar[avs] (line 804), which every AVS sets for itself, so there is no fixed target. The EigenDA StakeRegistry was picked from 4 candidates by function signature only.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.912Z"
     },
     {
       "id": "acg-eigen-052",
@@ -725,9 +776,10 @@
         "id": "r-acg-052"
       },
       "reasoning": "AllocationManager.registerForOperatorSets calls getAVSRegistrar(params.avs).registerOperator (lines 206/236). getAVSRegistrar reads _avsRegistrar[avs] (line 804), which every AVS sets for itself, so there is no fixed target. The EigenDA StakeRegistry was picked from 4 candidates by function signature only.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.934Z"
     },
     {
       "id": "acg-eigen-053",
@@ -739,9 +791,10 @@
         "id": "r-acg-053"
       },
       "reasoning": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.954Z"
     },
     {
       "id": "acg-eigen-054",
@@ -753,9 +806,10 @@
         "id": "r-acg-054"
       },
       "reasoning": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.968Z"
     },
     {
       "id": "acg-eigen-055",
@@ -767,9 +821,10 @@
         "id": "r-acg-055"
       },
       "reasoning": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.984Z"
     },
     {
       "id": "acg-eigen-056",
@@ -781,9 +836,10 @@
         "id": "r-acg-056"
       },
       "reasoning": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:40.997Z"
     },
     {
       "id": "acg-eigen-057",
@@ -795,9 +851,10 @@
         "id": "r-acg-057"
       },
       "reasoning": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.011Z"
     },
     {
       "id": "acg-eigen-058",
@@ -809,9 +866,10 @@
         "id": "r-acg-058"
       },
       "reasoning": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.024Z"
     },
     {
       "id": "acg-eigen-059",
@@ -823,9 +881,10 @@
         "id": "r-acg-059"
       },
       "reasoning": "Safe.setGuard(address guard) checks the guard passed in as an argument before storing it in GUARD_STORAGE_SLOT. The target is whatever address the Safe owners pass, so the edge to ProtocolRegistry.supportsInterface (picked from 5 candidates by signature) has no basis in the code.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.038Z"
     },
     {
       "id": "acg-eigen-060",
@@ -837,9 +896,10 @@
         "id": "r-acg-060"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) only calls IPausable(addr).pauseAll() on addresses in its own _deployments set with config.pausable && !config.deprecated. getAllDeployments() returns 36 entries on-chain, and the EigenDA RegistryCoordinator is not one of them.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.055Z"
     },
     {
       "id": "acg-eigen-061",
@@ -851,9 +911,10 @@
         "id": "r-acg-061"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists AllocationManager (0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.070Z"
     },
     {
       "id": "acg-eigen-062",
@@ -865,9 +926,10 @@
         "id": "r-acg-062"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists AVSDirectory (0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.087Z"
     },
     {
       "id": "acg-eigen-063",
@@ -879,9 +941,10 @@
         "id": "r-acg-063"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists DelegationManager (0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.102Z"
     },
     {
       "id": "acg-eigen-064",
@@ -893,9 +956,10 @@
         "id": "r-acg-064"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists RewardsCoordinator (0x7750d328b314EfFa365A0402CcfD489B80B0adda) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.114Z"
     },
     {
       "id": "acg-eigen-065",
@@ -907,9 +971,10 @@
         "id": "r-acg-065"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyManager (0x858646372CC42E1A627fcE94aa7A7033e7CF075A) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.131Z"
     },
     {
       "id": "acg-eigen-066",
@@ -921,9 +986,10 @@
         "id": "r-acg-066"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists EigenPodManager (0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.145Z"
     },
     {
       "id": "acg-eigen-067",
@@ -935,9 +1001,10 @@
         "id": "r-acg-067"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists EigenStrategy (0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.159Z"
     },
     {
       "id": "acg-eigen-068",
@@ -949,9 +1016,10 @@
         "id": "r-acg-068"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyFactory (0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.170Z"
     },
     {
       "id": "acg-eigen-069",
@@ -963,9 +1031,10 @@
         "id": "r-acg-069"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists CrossChainRegistry (0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.183Z"
     },
     {
       "id": "acg-eigen-070",
@@ -977,9 +1046,10 @@
         "id": "r-acg-070"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists OperatorTableUpdater (0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.197Z"
     },
     {
       "id": "acg-eigen-071",
@@ -991,9 +1061,10 @@
         "id": "r-acg-071"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x93c4b944D05dfe6df7645A86cd2206016c51564D) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.210Z"
     },
     {
       "id": "acg-eigen-072",
@@ -1005,9 +1076,10 @@
         "id": "r-acg-072"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.224Z"
     },
     {
       "id": "acg-eigen-073",
@@ -1019,9 +1091,10 @@
         "id": "r-acg-073"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.238Z"
     },
     {
       "id": "acg-eigen-074",
@@ -1033,9 +1106,10 @@
         "id": "r-acg-074"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.252Z"
     },
     {
       "id": "acg-eigen-075",
@@ -1047,9 +1121,10 @@
         "id": "r-acg-075"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.267Z"
     },
     {
       "id": "acg-eigen-076",
@@ -1061,9 +1136,10 @@
         "id": "r-acg-076"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0xa4C637e0F704745D182e4D38cAb7E7485321d059) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.283Z"
     },
     {
       "id": "acg-eigen-077",
@@ -1075,9 +1151,10 @@
         "id": "r-acg-077"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x57ba429517c3473B6d34CA9aCd56c0e735b94c02) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.304Z"
     },
     {
       "id": "acg-eigen-078",
@@ -1089,9 +1166,10 @@
         "id": "r-acg-078"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.318Z"
     },
     {
       "id": "acg-eigen-079",
@@ -1103,9 +1181,10 @@
         "id": "r-acg-079"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x7CA911E83dabf90C90dD3De5411a10F1A6112184) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.333Z"
     },
     {
       "id": "acg-eigen-080",
@@ -1117,9 +1196,10 @@
         "id": "r-acg-080"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.348Z"
     },
     {
       "id": "acg-eigen-081",
@@ -1131,9 +1211,10 @@
         "id": "r-acg-081"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0xAe60d8180437b5C34bB956822ac2710972584473) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.362Z"
     },
     {
       "id": "acg-eigen-082",
@@ -1145,9 +1226,10 @@
         "id": "r-acg-082"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists StrategyBaseTVLLimits (0x298aFB19A105D59E74658C4C334Ff360BadE6dd2) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.375Z"
     },
     {
       "id": "acg-eigen-083",
@@ -1159,9 +1241,10 @@
         "id": "r-acg-083"
       },
       "reasoning": "ProtocolRegistry.pauseAll (line 74) calls IPausable(addr).pauseAll() on every registered deployment flagged pausable and not deprecated. getAllDeployments() on-chain lists EmissionsController (0x619F988b4EA2f896ED068d84cE6F52550d6acE84) with pausable=true, deprecated=false.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.393Z"
     },
     {
       "id": "acg-eigen-084",
@@ -1173,9 +1256,10 @@
         "id": "r-acg-084"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444, so this ProxyAdmin cannot reach it.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.409Z"
     },
     {
       "id": "acg-eigen-085",
@@ -1187,9 +1271,10 @@
         "id": "r-acg-085"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.423Z"
     },
     {
       "id": "acg-eigen-086",
@@ -1201,9 +1286,10 @@
         "id": "r-acg-086"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. TaskMailbox (0x132b466d9d5723531F68797519DfED701aC2C749) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.437Z"
     },
     {
       "id": "acg-eigen-087",
@@ -1215,9 +1301,10 @@
         "id": "r-acg-087"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AVSDirectory (0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.454Z"
     },
     {
       "id": "acg-eigen-088",
@@ -1229,9 +1316,10 @@
         "id": "r-acg-088"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.470Z"
     },
     {
       "id": "acg-eigen-089",
@@ -1243,9 +1331,10 @@
         "id": "r-acg-089"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.487Z"
     },
     {
       "id": "acg-eigen-090",
@@ -1257,9 +1346,10 @@
         "id": "r-acg-090"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PermissionController (0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.498Z"
     },
     {
       "id": "acg-eigen-091",
@@ -1271,9 +1361,10 @@
         "id": "r-acg-091"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ProtocolRegistry (0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.516Z"
     },
     {
       "id": "acg-eigen-092",
@@ -1285,9 +1376,10 @@
         "id": "r-acg-092"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x298aFB19A105D59E74658C4C334Ff360BadE6dd2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.532Z"
     },
     {
       "id": "acg-eigen-093",
@@ -1299,9 +1391,10 @@
         "id": "r-acg-093"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. DelegationManager (0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.548Z"
     },
     {
       "id": "acg-eigen-094",
@@ -1313,9 +1406,10 @@
         "id": "r-acg-094"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BN254CertificateVerifier (0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.560Z"
     },
     {
       "id": "acg-eigen-095",
@@ -1327,9 +1421,10 @@
         "id": "r-acg-095"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.577Z"
     },
     {
       "id": "acg-eigen-096",
@@ -1341,9 +1436,10 @@
         "id": "r-acg-096"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. KeyRegistrar (0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.596Z"
     },
     {
       "id": "acg-eigen-097",
@@ -1355,9 +1451,10 @@
         "id": "r-acg-097"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. OperatorTableUpdater (0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.613Z"
     },
     {
       "id": "acg-eigen-098",
@@ -1369,9 +1466,10 @@
         "id": "r-acg-098"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x57ba429517c3473B6d34CA9aCd56c0e735b94c02) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.626Z"
     },
     {
       "id": "acg-eigen-099",
@@ -1383,9 +1481,10 @@
         "id": "r-acg-099"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyFactory (0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.642Z"
     },
     {
       "id": "acg-eigen-100",
@@ -1397,9 +1496,10 @@
         "id": "r-acg-100"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EmissionsController (0x619F988b4EA2f896ED068d84cE6F52550d6acE84) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.657Z"
     },
     {
       "id": "acg-eigen-101",
@@ -1411,9 +1511,10 @@
         "id": "r-acg-101"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RewardsCoordinator (0x7750d328b314EfFa365A0402CcfD489B80B0adda) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.669Z"
     },
     {
       "id": "acg-eigen-102",
@@ -1425,9 +1526,10 @@
         "id": "r-acg-102"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x7CA911E83dabf90C90dD3De5411a10F1A6112184) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.687Z"
     },
     {
       "id": "acg-eigen-103",
@@ -1439,9 +1541,10 @@
         "id": "r-acg-103"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyManager (0x858646372CC42E1A627fcE94aa7A7033e7CF075A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.702Z"
     },
     {
       "id": "acg-eigen-104",
@@ -1453,9 +1556,10 @@
         "id": "r-acg-104"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.722Z"
     },
     {
       "id": "acg-eigen-105",
@@ -1467,9 +1571,10 @@
         "id": "r-acg-105"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenPodManager (0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.736Z"
     },
     {
       "id": "acg-eigen-106",
@@ -1481,9 +1586,10 @@
         "id": "r-acg-106"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. CrossChainRegistry (0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.752Z"
     },
     {
       "id": "acg-eigen-107",
@@ -1495,9 +1601,10 @@
         "id": "r-acg-107"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x93c4b944D05dfe6df7645A86cd2206016c51564D) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.775Z"
     },
     {
       "id": "acg-eigen-108",
@@ -1509,9 +1616,10 @@
         "id": "r-acg-108"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AllocationManager (0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.798Z"
     },
     {
       "id": "acg-eigen-109",
@@ -1523,9 +1631,10 @@
         "id": "r-acg-109"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.825Z"
     },
     {
       "id": "acg-eigen-110",
@@ -1537,9 +1646,10 @@
         "id": "r-acg-110"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xa4C637e0F704745D182e4D38cAb7E7485321d059) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.841Z"
     },
     {
       "id": "acg-eigen-111",
@@ -1551,9 +1661,10 @@
         "id": "r-acg-111"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenStrategy (0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.859Z"
     },
     {
       "id": "acg-eigen-112",
@@ -1565,9 +1676,10 @@
         "id": "r-acg-112"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xAe60d8180437b5C34bB956822ac2710972584473) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.874Z"
     },
     {
       "id": "acg-eigen-113",
@@ -1579,9 +1691,10 @@
         "id": "r-acg-113"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ECDSACertificateVerifier (0xd0930ee96D07de4F9d493c259232222e46B6EC25) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.891Z"
     },
     {
       "id": "acg-eigen-114",
@@ -1593,9 +1706,10 @@
         "id": "r-acg-114"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. Eigen Token (0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.904Z"
     },
     {
       "id": "acg-eigen-115",
@@ -1607,9 +1721,10 @@
         "id": "r-acg-115"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ReleaseManager (0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.919Z"
     },
     {
       "id": "acg-eigen-116",
@@ -1621,9 +1736,10 @@
         "id": "r-acg-116"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444, so this ProxyAdmin cannot reach it.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.933Z"
     },
     {
       "id": "acg-eigen-117",
@@ -1635,9 +1751,10 @@
         "id": "r-acg-117"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.948Z"
     },
     {
       "id": "acg-eigen-118",
@@ -1649,9 +1766,10 @@
         "id": "r-acg-118"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. TaskMailbox (0x132b466d9d5723531F68797519DfED701aC2C749) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.968Z"
     },
     {
       "id": "acg-eigen-119",
@@ -1663,9 +1781,10 @@
         "id": "r-acg-119"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AVSDirectory (0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.982Z"
     },
     {
       "id": "acg-eigen-120",
@@ -1677,9 +1796,10 @@
         "id": "r-acg-120"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:41.997Z"
     },
     {
       "id": "acg-eigen-121",
@@ -1691,9 +1811,10 @@
         "id": "r-acg-121"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.010Z"
     },
     {
       "id": "acg-eigen-122",
@@ -1705,9 +1826,10 @@
         "id": "r-acg-122"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PermissionController (0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.025Z"
     },
     {
       "id": "acg-eigen-123",
@@ -1719,9 +1841,10 @@
         "id": "r-acg-123"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ProtocolRegistry (0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.047Z"
     },
     {
       "id": "acg-eigen-124",
@@ -1733,9 +1856,10 @@
         "id": "r-acg-124"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x298aFB19A105D59E74658C4C334Ff360BadE6dd2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.077Z"
     },
     {
       "id": "acg-eigen-125",
@@ -1747,9 +1871,10 @@
         "id": "r-acg-125"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. DelegationManager (0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.093Z"
     },
     {
       "id": "acg-eigen-126",
@@ -1761,9 +1886,10 @@
         "id": "r-acg-126"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BN254CertificateVerifier (0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.114Z"
     },
     {
       "id": "acg-eigen-127",
@@ -1775,9 +1901,10 @@
         "id": "r-acg-127"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.134Z"
     },
     {
       "id": "acg-eigen-128",
@@ -1789,9 +1916,10 @@
         "id": "r-acg-128"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. KeyRegistrar (0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.157Z"
     },
     {
       "id": "acg-eigen-129",
@@ -1803,9 +1931,10 @@
         "id": "r-acg-129"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. OperatorTableUpdater (0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.173Z"
     },
     {
       "id": "acg-eigen-130",
@@ -1817,9 +1946,10 @@
         "id": "r-acg-130"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x57ba429517c3473B6d34CA9aCd56c0e735b94c02) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.188Z"
     },
     {
       "id": "acg-eigen-131",
@@ -1831,9 +1961,10 @@
         "id": "r-acg-131"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyFactory (0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.207Z"
     },
     {
       "id": "acg-eigen-132",
@@ -1845,9 +1976,10 @@
         "id": "r-acg-132"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EmissionsController (0x619F988b4EA2f896ED068d84cE6F52550d6acE84) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.224Z"
     },
     {
       "id": "acg-eigen-133",
@@ -1859,9 +1991,10 @@
         "id": "r-acg-133"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RewardsCoordinator (0x7750d328b314EfFa365A0402CcfD489B80B0adda) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.243Z"
     },
     {
       "id": "acg-eigen-134",
@@ -1873,9 +2006,10 @@
         "id": "r-acg-134"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x7CA911E83dabf90C90dD3De5411a10F1A6112184) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.258Z"
     },
     {
       "id": "acg-eigen-135",
@@ -1887,9 +2021,10 @@
         "id": "r-acg-135"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyManager (0x858646372CC42E1A627fcE94aa7A7033e7CF075A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.276Z"
     },
     {
       "id": "acg-eigen-136",
@@ -1901,9 +2036,10 @@
         "id": "r-acg-136"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.289Z"
     },
     {
       "id": "acg-eigen-137",
@@ -1915,9 +2051,10 @@
         "id": "r-acg-137"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenPodManager (0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.309Z"
     },
     {
       "id": "acg-eigen-138",
@@ -1929,9 +2066,10 @@
         "id": "r-acg-138"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. CrossChainRegistry (0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.328Z"
     },
     {
       "id": "acg-eigen-139",
@@ -1943,9 +2081,10 @@
         "id": "r-acg-139"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x93c4b944D05dfe6df7645A86cd2206016c51564D) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.345Z"
     },
     {
       "id": "acg-eigen-140",
@@ -1957,9 +2096,10 @@
         "id": "r-acg-140"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AllocationManager (0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.361Z"
     },
     {
       "id": "acg-eigen-141",
@@ -1971,9 +2111,10 @@
         "id": "r-acg-141"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.375Z"
     },
     {
       "id": "acg-eigen-142",
@@ -1985,9 +2126,10 @@
         "id": "r-acg-142"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xa4C637e0F704745D182e4D38cAb7E7485321d059) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.403Z"
     },
     {
       "id": "acg-eigen-143",
@@ -1999,9 +2141,10 @@
         "id": "r-acg-143"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenStrategy (0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.418Z"
     },
     {
       "id": "acg-eigen-144",
@@ -2013,9 +2156,10 @@
         "id": "r-acg-144"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xAe60d8180437b5C34bB956822ac2710972584473) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.451Z"
     },
     {
       "id": "acg-eigen-145",
@@ -2027,9 +2171,10 @@
         "id": "r-acg-145"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ECDSACertificateVerifier (0xd0930ee96D07de4F9d493c259232222e46B6EC25) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.470Z"
     },
     {
       "id": "acg-eigen-146",
@@ -2041,9 +2186,10 @@
         "id": "r-acg-146"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. Eigen Token (0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.495Z"
     },
     {
       "id": "acg-eigen-147",
@@ -2055,9 +2201,10 @@
         "id": "r-acg-147"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ReleaseManager (0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.514Z"
     },
     {
       "id": "acg-eigen-148",
@@ -2069,9 +2216,10 @@
         "id": "r-acg-148"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444, so this ProxyAdmin cannot reach it.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.531Z"
     },
     {
       "id": "acg-eigen-149",
@@ -2083,9 +2231,10 @@
         "id": "r-acg-149"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.546Z"
     },
     {
       "id": "acg-eigen-150",
@@ -2097,9 +2246,10 @@
         "id": "r-acg-150"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. TaskMailbox (0x132b466d9d5723531F68797519DfED701aC2C749) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.563Z"
     },
     {
       "id": "acg-eigen-151",
@@ -2111,9 +2261,10 @@
         "id": "r-acg-151"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AVSDirectory (0x135DDa560e946695d6f155dACaFC6f1F25C1F5AF) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.577Z"
     },
     {
       "id": "acg-eigen-152",
@@ -2125,9 +2276,10 @@
         "id": "r-acg-152"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x13760F50a9d7377e4F20CB8CF9e4c26586c658ff) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.593Z"
     },
     {
       "id": "acg-eigen-153",
@@ -2139,9 +2291,10 @@
         "id": "r-acg-153"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x1BeE69b7dFFfA4E2d53C2a2Df135C388AD25dCD2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.612Z"
     },
     {
       "id": "acg-eigen-154",
@@ -2153,9 +2306,10 @@
         "id": "r-acg-154"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PermissionController (0x25E5F8B1E7aDf44518d35D5B2271f114e081f0E5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.633Z"
     },
     {
       "id": "acg-eigen-155",
@@ -2167,9 +2321,10 @@
         "id": "r-acg-155"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ProtocolRegistry (0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.664Z"
     },
     {
       "id": "acg-eigen-156",
@@ -2181,9 +2336,10 @@
         "id": "r-acg-156"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x298aFB19A105D59E74658C4C334Ff360BadE6dd2) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.685Z"
     },
     {
       "id": "acg-eigen-157",
@@ -2195,9 +2351,10 @@
         "id": "r-acg-157"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. DelegationManager (0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.702Z"
     },
     {
       "id": "acg-eigen-158",
@@ -2209,9 +2366,10 @@
         "id": "r-acg-158"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BN254CertificateVerifier (0x3F55654b2b2b86bB11bE2f72657f9C33bf88120A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.719Z"
     },
     {
       "id": "acg-eigen-159",
@@ -2223,9 +2381,10 @@
         "id": "r-acg-159"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x54945180dB7943c0ed0FEE7EdaB2Bd24620256bc) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.736Z"
     },
     {
       "id": "acg-eigen-160",
@@ -2237,9 +2396,10 @@
         "id": "r-acg-160"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. KeyRegistrar (0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.750Z"
     },
     {
       "id": "acg-eigen-161",
@@ -2251,9 +2411,10 @@
         "id": "r-acg-161"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. OperatorTableUpdater (0x5557E1fE3068A1e823cE5Dcd052c6C352E2617B5) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.769Z"
     },
     {
       "id": "acg-eigen-162",
@@ -2265,9 +2426,10 @@
         "id": "r-acg-162"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x57ba429517c3473B6d34CA9aCd56c0e735b94c02) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.790Z"
     },
     {
       "id": "acg-eigen-163",
@@ -2279,9 +2441,10 @@
         "id": "r-acg-163"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyFactory (0x5e4C39Ad7A3E881585e383dB9827EB4811f6F647) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.808Z"
     },
     {
       "id": "acg-eigen-164",
@@ -2293,9 +2456,10 @@
         "id": "r-acg-164"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EmissionsController (0x619F988b4EA2f896ED068d84cE6F52550d6acE84) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.824Z"
     },
     {
       "id": "acg-eigen-165",
@@ -2307,9 +2471,10 @@
         "id": "r-acg-165"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RewardsCoordinator (0x7750d328b314EfFa365A0402CcfD489B80B0adda) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.842Z"
     },
     {
       "id": "acg-eigen-166",
@@ -2321,9 +2486,10 @@
         "id": "r-acg-166"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x7CA911E83dabf90C90dD3De5411a10F1A6112184) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.856Z"
     },
     {
       "id": "acg-eigen-167",
@@ -2335,9 +2501,10 @@
         "id": "r-acg-167"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyManager (0x858646372CC42E1A627fcE94aa7A7033e7CF075A) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.873Z"
     },
     {
       "id": "acg-eigen-168",
@@ -2349,9 +2516,10 @@
         "id": "r-acg-168"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x8CA7A5d6f3acd3A7A8bC468a8CD0FB14B6BD28b6) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.890Z"
     },
     {
       "id": "acg-eigen-169",
@@ -2363,9 +2531,10 @@
         "id": "r-acg-169"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenPodManager (0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.905Z"
     },
     {
       "id": "acg-eigen-170",
@@ -2377,9 +2546,10 @@
         "id": "r-acg-170"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. CrossChainRegistry (0x9376A5863F2193cdE13e1aB7c678F22554E2Ea2b) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.922Z"
     },
     {
       "id": "acg-eigen-171",
@@ -2391,9 +2561,10 @@
         "id": "r-acg-171"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x93c4b944D05dfe6df7645A86cd2206016c51564D) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.934Z"
     },
     {
       "id": "acg-eigen-172",
@@ -2405,9 +2576,10 @@
         "id": "r-acg-172"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. AllocationManager (0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.950Z"
     },
     {
       "id": "acg-eigen-173",
@@ -2419,9 +2591,10 @@
         "id": "r-acg-173"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0x9d7eD45EE2E8FC5482fa2428f15C971e6369011d) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.964Z"
     },
     {
       "id": "acg-eigen-174",
@@ -2433,9 +2606,10 @@
         "id": "r-acg-174"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xa4C637e0F704745D182e4D38cAb7E7485321d059) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:42.980Z"
     },
     {
       "id": "acg-eigen-175",
@@ -2447,9 +2621,10 @@
         "id": "r-acg-175"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenStrategy (0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.001Z"
     },
     {
       "id": "acg-eigen-176",
@@ -2461,9 +2636,10 @@
         "id": "r-acg-176"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. StrategyBaseTVLLimits (0xAe60d8180437b5C34bB956822ac2710972584473) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.018Z"
     },
     {
       "id": "acg-eigen-177",
@@ -2475,9 +2651,10 @@
         "id": "r-acg-177"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ECDSACertificateVerifier (0xd0930ee96D07de4F9d493c259232222e46B6EC25) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.033Z"
     },
     {
       "id": "acg-eigen-178",
@@ -2489,9 +2666,10 @@
         "id": "r-acg-178"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. Eigen Token (0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.049Z"
     },
     {
       "id": "acg-eigen-179",
@@ -2503,9 +2681,10 @@
         "id": "r-acg-179"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. ReleaseManager (0xeDA3CAd031c0cf367cF3f517Ee0DC98F9bA80C8F) has 0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 31 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.065Z"
     },
     {
       "id": "acg-eigen-180",
@@ -2517,9 +2696,10 @@
         "id": "r-acg-180"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BLSApkRegistry (0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.081Z"
     },
     {
       "id": "acg-eigen-181",
@@ -2531,9 +2711,10 @@
         "id": "r-acg-181"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RegistryCoordinator (0x0BAAc79acD45A023E19345c352d8a7a83C4e5656) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.097Z"
     },
     {
       "id": "acg-eigen-182",
@@ -2545,9 +2726,10 @@
         "id": "r-acg-182"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EjectionManager (0x130d8EA0052B45554e4C99079B84df292149Bd5E) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.111Z"
     },
     {
       "id": "acg-eigen-183",
@@ -2559,9 +2741,10 @@
         "id": "r-acg-183"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. SocketRegistry (0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.128Z"
     },
     {
       "id": "acg-eigen-184",
@@ -2573,9 +2756,10 @@
         "id": "r-acg-184"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDADisperserRegistry (0x78cb05379a3b66E5227f2C1496432D7FFE794Fad) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.140Z"
     },
     {
       "id": "acg-eigen-185",
@@ -2587,9 +2771,10 @@
         "id": "r-acg-185"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAServiceManager (0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.154Z"
     },
     {
       "id": "acg-eigen-186",
@@ -2601,9 +2786,10 @@
         "id": "r-acg-186"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PaymentVault (0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.171Z"
     },
     {
       "id": "acg-eigen-187",
@@ -2615,9 +2801,10 @@
         "id": "r-acg-187"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. IndexRegistry (0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.186Z"
     },
     {
       "id": "acg-eigen-188",
@@ -2629,9 +2816,10 @@
         "id": "r-acg-188"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDARelayRegistry (0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.199Z"
     },
     {
       "id": "acg-eigen-189",
@@ -2643,9 +2831,10 @@
         "id": "r-acg-189"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAThresholdRegistry (0xdb4c89956eEa6F606135E7d366322F2bDE609F15) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.215Z"
     },
     {
       "id": "acg-eigen-190",
@@ -2657,9 +2846,10 @@
         "id": "r-acg-190"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BLSApkRegistry (0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.227Z"
     },
     {
       "id": "acg-eigen-191",
@@ -2671,9 +2861,10 @@
         "id": "r-acg-191"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RegistryCoordinator (0x0BAAc79acD45A023E19345c352d8a7a83C4e5656) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.241Z"
     },
     {
       "id": "acg-eigen-192",
@@ -2685,9 +2876,10 @@
         "id": "r-acg-192"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EjectionManager (0x130d8EA0052B45554e4C99079B84df292149Bd5E) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.255Z"
     },
     {
       "id": "acg-eigen-193",
@@ -2699,9 +2891,10 @@
         "id": "r-acg-193"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. SocketRegistry (0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.270Z"
     },
     {
       "id": "acg-eigen-194",
@@ -2713,9 +2906,10 @@
         "id": "r-acg-194"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDADisperserRegistry (0x78cb05379a3b66E5227f2C1496432D7FFE794Fad) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.283Z"
     },
     {
       "id": "acg-eigen-195",
@@ -2727,9 +2921,10 @@
         "id": "r-acg-195"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAServiceManager (0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.300Z"
     },
     {
       "id": "acg-eigen-196",
@@ -2741,9 +2936,10 @@
         "id": "r-acg-196"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PaymentVault (0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.313Z"
     },
     {
       "id": "acg-eigen-197",
@@ -2755,9 +2951,10 @@
         "id": "r-acg-197"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. IndexRegistry (0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.326Z"
     },
     {
       "id": "acg-eigen-198",
@@ -2769,9 +2966,10 @@
         "id": "r-acg-198"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDARelayRegistry (0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.338Z"
     },
     {
       "id": "acg-eigen-199",
@@ -2783,9 +2981,10 @@
         "id": "r-acg-199"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAThresholdRegistry (0xdb4c89956eEa6F606135E7d366322F2bDE609F15) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.351Z"
     },
     {
       "id": "acg-eigen-200",
@@ -2797,9 +2996,10 @@
         "id": "r-acg-200"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BLSApkRegistry (0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.362Z"
     },
     {
       "id": "acg-eigen-201",
@@ -2811,9 +3011,10 @@
         "id": "r-acg-201"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. RegistryCoordinator (0x0BAAc79acD45A023E19345c352d8a7a83C4e5656) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.375Z"
     },
     {
       "id": "acg-eigen-202",
@@ -2825,9 +3026,10 @@
         "id": "r-acg-202"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EjectionManager (0x130d8EA0052B45554e4C99079B84df292149Bd5E) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.384Z"
     },
     {
       "id": "acg-eigen-203",
@@ -2839,9 +3041,10 @@
         "id": "r-acg-203"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. SocketRegistry (0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.410Z"
     },
     {
       "id": "acg-eigen-204",
@@ -2853,9 +3056,10 @@
         "id": "r-acg-204"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDADisperserRegistry (0x78cb05379a3b66E5227f2C1496432D7FFE794Fad) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.424Z"
     },
     {
       "id": "acg-eigen-205",
@@ -2867,9 +3071,10 @@
         "id": "r-acg-205"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAServiceManager (0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.432Z"
     },
     {
       "id": "acg-eigen-206",
@@ -2881,9 +3086,10 @@
         "id": "r-acg-206"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. PaymentVault (0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.445Z"
     },
     {
       "id": "acg-eigen-207",
@@ -2895,9 +3101,10 @@
         "id": "r-acg-207"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. IndexRegistry (0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.456Z"
     },
     {
       "id": "acg-eigen-208",
@@ -2909,9 +3116,10 @@
         "id": "r-acg-208"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDARelayRegistry (0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.468Z"
     },
     {
       "id": "acg-eigen-209",
@@ -2923,9 +3131,10 @@
         "id": "r-acg-209"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. EigenDAThresholdRegistry (0xdb4c89956eEa6F606135E7d366322F2bDE609F15) has 0x8247EF5705d3345516286B72bFE6D690197C2E99 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 11 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.480Z"
     },
     {
       "id": "acg-eigen-210",
@@ -2937,9 +3146,10 @@
         "id": "r-acg-210"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9, so this ProxyAdmin cannot reach it.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.489Z"
     },
     {
       "id": "acg-eigen-211",
@@ -2951,9 +3161,10 @@
         "id": "r-acg-211"
       },
       "reasoning": "OZ ProxyAdmin.changeProxyAdmin(proxy, ...) calls proxy.changeAdmin() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BackingEigen (0x83E9115d334D248Ce39a6f36144aEaB5b3456e75) has 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 1 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.499Z"
     },
     {
       "id": "acg-eigen-212",
@@ -2965,9 +3176,10 @@
         "id": "r-acg-212"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9, so this ProxyAdmin cannot reach it.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.506Z"
     },
     {
       "id": "acg-eigen-213",
@@ -2979,9 +3191,10 @@
         "id": "r-acg-213"
       },
       "reasoning": "OZ ProxyAdmin.upgrade(proxy, ...) calls proxy.upgradeTo() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BackingEigen (0x83E9115d334D248Ce39a6f36144aEaB5b3456e75) has 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 1 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.514Z"
     },
     {
       "id": "acg-eigen-214",
@@ -2993,9 +3206,10 @@
         "id": "r-acg-214"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. The EIP-1967 admin slot of StakeRegistry (0x006124Ae7976137266feeBFb3F4D2BE4C073139D) is not 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9, so this ProxyAdmin cannot reach it.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.524Z"
     },
     {
       "id": "acg-eigen-215",
@@ -3007,9 +3221,10 @@
         "id": "r-acg-215"
       },
       "reasoning": "OZ ProxyAdmin.upgradeAndCall(proxy, ...) calls proxy.upgradeToAndCall() on the proxy passed in (ProxyAdmin line 63), and TransparentUpgradeableProxy only honours that call when msg.sender is the proxy's admin. BackingEigen (0x83E9115d334D248Ce39a6f36144aEaB5b3456e75) has 0x3f5Ab2D4418d38568705bFd6672630fCC3435CC9 in its EIP-1967 admin slot per discovered.json $admin, so it is one of the 1 proxies this ProxyAdmin upgrades.",
-      "status": "pending",
+      "status": "accepted",
       "createdBy": "audit-callgraph",
-      "createdAt": "2026-09-28T10:38:20.000Z"
+      "createdAt": "2026-09-28T10:38:20.000Z",
+      "reviewedAt": "2026-09-28T11:28:43.532Z"
     }
   ]
 }
