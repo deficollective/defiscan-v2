@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-28T10:40:48.000Z",
+  "lastModified": "2026-09-28T11:21:56.000Z",
   "contracts": {
     "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39": {
       "functions": [
@@ -718,6 +718,28 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "createEigenDARewardsSubmission",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.emissionsController"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "funded-by-caller",
+              "description": "Creates a rewards submission on behalf of an AVS. Only the EmissionsController can call it, and the EIGEN it distributes comes from the EmissionsController's own balance, so nothing is taken from restakers."
+            }
+          ],
+          "timestamp": "2026-09-28T11:21:56.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T11:21:56.000Z"
           }
         }
       ]
@@ -2560,6 +2582,28 @@
             "author": "unknown",
             "date": "2026-09-28T10:40:48.000Z"
           }
+        },
+        {
+          "functionName": "updateDelay",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "delay",
+              "description": "Only the timelock itself can call updateDelay, so the change has to be scheduled and wait out the current 24-day delay before it can run.",
+              "value": 2073600
+            }
+          ],
+          "timestamp": "2026-09-28T11:20:08.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T11:20:08.000Z"
+          }
         }
       ]
     },
@@ -2710,6 +2754,28 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "updateDelay",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "delay",
+              "description": "Only the timelock itself can call updateDelay, so the change has to be scheduled and wait out the current 10-day delay before it can run.",
+              "value": 864000
+            }
+          ],
+          "timestamp": "2026-09-28T11:20:08.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T11:20:08.000Z"
           }
         }
       ]

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-28T09:26:09.000Z",
+  "lastModified": "2026-09-28T11:19:36.000Z",
   "contracts": {
     "eth:0x0Fe4F44beE93503346A3Ac9EE5A26b130a5796d6": {
       "lastFetched": "2026-09-28T09:06:46.407Z",
@@ -260,44 +260,6 @@
         "source": "defillama-eigenlayer-native-eth"
       }
     },
-    "eth:0x509Aadb99487182b21fF4E9e7Eb362a9Ea8E8f40": {
-      "lastFetched": "2026-05-12T16:29:31.938Z",
-      "proxyAddress": "eth:0xaCB55C530Acdb2849e6d4f36992Cd8c9D50ED8F7",
-      "balances": {
-        "totalUsdValue": 83361945,
-        "tokens": [
-          {
-            "symbol": "bEIGEN",
-            "usdValue": 83361945
-          }
-        ]
-      }
-    },
-    "eth:0xB427E2Eb4Bb33eE3f1ee72dc9e347e8625a72230": {
-      "lastFetched": "2026-05-12T16:29:31.164Z",
-      "proxyAddress": "eth:0xAe60d8180437b5C34bB956822ac2710972584473",
-      "balances": {
-        "totalUsdValue": 20711442,
-        "tokens": [
-          {
-            "symbol": "LsETH",
-            "usdValue": 20711442
-          }
-        ]
-      }
-    },
-    "eth:0xF2b225815F70c9b327DC9db758A36c92A4279b17": {
-      "lastFetched": "2026-05-13T10:03:50.712Z",
-      "proxyAddress": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75"
-    },
-    "eth:0xd22dd829779ADBf3869fb224F703452f7F95E9dB": {
-      "lastFetched": "2026-05-13T10:03:51.476Z",
-      "proxyAddress": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338"
-    },
-    "eth:0x2C4A81e257381F87F5A5C4bd525116466D972E50": {
-      "lastFetched": "2026-05-13T10:03:49.736Z",
-      "proxyAddress": "eth:0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83"
-    },
     "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05": {
       "lastFetched": "2026-09-28T09:08:54.108Z",
       "balances": {
@@ -316,49 +278,6 @@
         "source": "onchain-eth_getBalance(alchemy)+defillama-price"
       },
       "error": "Balances API returned 500: Internal Server Error"
-    },
-    "eth:0x62242213E6FA34E943844f9B3124150EFb9CB0dD": {
-      "lastFetched": "2026-05-19T15:11:15.955Z",
-      "balances": {
-        "tokens": [
-          {
-            "assetAddress": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
-            "symbol": "HEX",
-            "name": "HEX",
-            "balance": "100000000",
-            "decimals": 8,
-            "usdValue": 0.0005633833555251946
-          },
-          {
-            "assetAddress": "0x82866b4a71ba9d930fe338c386b6a45a7133eb36",
-            "symbol": "QCORE",
-            "name": "QCORE.FINANCE",
-            "balance": "10000",
-            "decimals": 9,
-            "usdValue": 0
-          },
-          {
-            "assetAddress": "0xf2df8458130f00c94bcde2dd3f288cf608187f87",
-            "symbol": "FEAST",
-            "name": "FEAST.finance",
-            "balance": "1663097118143",
-            "decimals": 9,
-            "usdValue": 1.477151165945877e-07
-          },
-          {
-            "assetAddress": "eth",
-            "symbol": "ETH",
-            "name": "ETH",
-            "balance": "1522000000000000000",
-            "decimals": 18,
-            "usdValue": 3210.7351000000003
-          }
-        ],
-        "totalUsdValue": 3210.735663531071,
-        "timestamp": "2026-05-19T15:11:16.921Z",
-        "source": "debank"
-      },
-      "proxyAddress": "eth:0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05"
     }
   }
 }
