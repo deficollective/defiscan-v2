@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790340554,
-  "lastConsumedUpdateNotifierId": 642,
+  "lastReconciledAt": 1790608854,
+  "lastConsumedUpdateNotifierId": 661,
   "events": [
     {
       "timestamp": "2026-04-30T09:26:35.000Z",
@@ -1461,6 +1461,56 @@
         {
           "field": "values.marketOracles.4",
           "after": "base:0xb40d93F44411D8C09aD17d7F88195eF9b05cCD96"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-28T15:18:49.000Z",
+      "updateNotifierId": 661,
+      "address": "base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2",
+      "contractName": "MetaMorphoV1_1",
+      "isDependency": false,
+      "entity": null,
+      "id": "661:base:0xBEEFE94c8aD530842bfE7d8B397938fFc1cb83b2:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.supplyQueue.1",
+          "after": "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda"
+        },
+        {
+          "field": "values.supplyQueue.3",
+          "before": "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda"
+        },
+        {
+          "field": "values.marketParams.1",
+          "after": {
+            "marketId": "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda",
+            "loanToken": "base:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "collateralToken": "base:0x4200000000000000000000000000000000000006",
+            "oracle": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4",
+            "irm": "base:0x46415998764C29aB2a25CbeA6254146D50D22687",
+            "lltv": "860000000000000000"
+          }
+        },
+        {
+          "field": "values.marketParams.3",
+          "before": {
+            "irm": "base:0x46415998764C29aB2a25CbeA6254146D50D22687",
+            "lltv": "860000000000000000",
+            "oracle": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4",
+            "marketId": "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda",
+            "loanToken": "base:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "collateralToken": "base:0x4200000000000000000000000000000000000006"
+          }
+        },
+        {
+          "field": "values.marketOracles.1",
+          "after": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4"
+        },
+        {
+          "field": "values.marketOracles.3",
+          "before": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4"
         }
       ]
     }

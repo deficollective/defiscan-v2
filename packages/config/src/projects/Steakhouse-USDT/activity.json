@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790516174,
-  "lastConsumedUpdateNotifierId": 658,
+  "lastReconciledAt": 1790611219,
+  "lastConsumedUpdateNotifierId": 664,
   "events": [
     {
       "timestamp": "2026-06-08T12:07:58.000Z",
@@ -6338,6 +6338,119 @@
           "field": "values.getRate",
           "before": "1104482545836404348",
           "after": "1104557347435150105"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-28T15:18:49.000Z",
+      "updateNotifierId": 664,
+      "address": "eth:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "664:eth:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.0",
+          "after": "eth:0xC04F9610694a9E07e0d6a361bEC53ABeaDf9Cf9e"
+        },
+        {
+          "field": "values.$members.0",
+          "before": "eth:0xfc615395336aADe67fd853a0157001a215Ea1279",
+          "after": "eth:0x005398827D00c2951ffB52BD91164eF402bCF105"
+        },
+        {
+          "field": "values.$members.1",
+          "before": "eth:0xf83dB716A1Ff12F9005F98f678D8BE97B8Bc81d6",
+          "after": "eth:0x2E8c25A6f7f7f34666b998813aBF97D8B617f111"
+        },
+        {
+          "field": "values.$members.2",
+          "before": "eth:0x8AE8EE5ad6EaE89836B0070Ebc47AF06E3D7422b",
+          "after": "eth:0x5571A6fEf340a9D26f1428684B9e893EA84b46Ac"
+        },
+        {
+          "field": "values.$members.3",
+          "before": "eth:0xd2B8Dd0Fd51d80bF939047A9AAa55919112838E8",
+          "after": "eth:0x32E5Cb1a68761a0CFf88d4baa21e398422B5166E"
+        },
+        {
+          "field": "values.$members.4",
+          "before": "eth:0xd8bAA2606c4f0d121d4a08b0D83acF0Dee9dCA77",
+          "after": "eth:0x21C1e5Be991BF1544ca9759a601f66Dc60083f7d"
+        },
+        {
+          "field": "values.$members.5",
+          "before": "eth:0xcC771952fdE840E30C6802734e5ad20479c2959f",
+          "after": "eth:0x9A86713145F38cd688969c0ECc87B314b23254b2"
+        },
+        {
+          "field": "values.$members.6",
+          "before": "eth:0xE3fCEE6B6cd564E073346f71394f60eC9aDf5120",
+          "after": "eth:0xBC27046213d34D4A153cF57a48c74D74239e8968"
+        },
+        {
+          "field": "values.$members.7",
+          "before": "eth:0x0D61C8b6CA9669A36F351De3AE335e9689dd9C5b",
+          "after": "eth:0x394e6eF80c6F4Ad14a891A3987D8bD1387afA0b1"
+        },
+        {
+          "field": "values.$members.9",
+          "before": "eth:0x387Cde8598E1CBb297FDc5bAEbA5E5c5c2735344"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-28T15:18:49.000Z",
+      "updateNotifierId": 664,
+      "address": "eth:0x4270E1817576bbA4b640466bE79A408Ef128F828",
+      "contractName": "WeEthToEthExchangeRateAdapter",
+      "entity": null,
+      "id": "664:eth:0x4270E1817576bbA4b640466bE79A408Ef128F828:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.1",
+          "before": "1104557347435150105",
+          "after": "1104629834312256479"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-28T15:18:49.000Z",
+      "updateNotifierId": 664,
+      "address": "eth:0xc3866d726C204C0836E0677A31973c649888973D",
+      "contractName": "DummyFeed",
+      "entity": null,
+      "id": "664:eth:0xc3866d726C204C0836E0677A31973c649888973D:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.latestRoundData.startedAt",
+          "before": 1790513927,
+          "after": 1790608715
+        },
+        {
+          "field": "values.latestRoundData.updatedAt",
+          "before": 1790513927,
+          "after": 1790608715
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-28T15:18:49.000Z",
+      "updateNotifierId": 664,
+      "address": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "contractName": "Wrapped eETH Token",
+      "entity": null,
+      "id": "664:eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getRate",
+          "before": "1104557347435150105",
+          "after": "1104629834312256479"
         }
       ]
     }
