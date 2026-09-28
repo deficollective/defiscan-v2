@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-24T14:09:52.000Z",
   "lastModified": "2026-04-23T16:30:00.000Z",
   "protocolSlug": "spark",
   "protocolName": "Spark",
   "tokenName": "SPK",
   "chain": "Ethereum",
   "projectType": "lending",
+  "verified": true,
   "description": "Spark is a lending protocol built on an Aave V3 fork (SparkLend) with an integrated savings layer that routes deposits through the Sky (formerly MakerDAO) DAI Savings Rate (DSR) via the Pot contract. Governance decisions execute through the Sky governance stack — DSPause enforces a 24-hour delay before DSPauseProxy forwards calls to SubProxy, which holds admin rights on every SparkLend contract. An Asset Liability Management (ALM) layer controlled by three separate multisigs lets the protocol rebalance capital via arbitrary external calls. Price data comes from a mix of Chainlink, Chronicle, RedStone, and protocol-specific exchange-rate oracles for liquid staking and restaking tokens. The protocol currently secures {{totalCapitalAtRisk}} across SparkLend markets and the savings module.",
   "admins": {
     "eth:0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB": {
@@ -325,18 +327,34 @@
               "type": "dataTable",
               "dataSource": "project.contracts",
               "columns": [
-                { "field": "name", "header": "Name" },
-                { "field": "address", "header": "Address", "format": "address" },
-                { "field": "proxyType", "header": "Proxy Type", "format": "badge" }
+                {
+                  "field": "name",
+                  "header": "Name"
+                },
+                {
+                  "field": "address",
+                  "header": "Address",
+                  "format": "address"
+                },
+                {
+                  "field": "proxyType",
+                  "header": "Proxy Type",
+                  "format": "badge"
+                }
               ],
-              "filters": { "excludeExternal": true }
+              "filters": {
+                "excludeExternal": true
+              }
             }
           ]
         },
         {
           "title": "Audits",
           "content": [
-            { "type": "text", "content": "" }
+            {
+              "type": "text",
+              "content": ""
+            }
           ]
         }
       ]

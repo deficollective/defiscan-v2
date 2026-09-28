@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-01T00:00:00.000Z",
   "lastModified": "2026-04-15T00:00:00.000Z",
   "protocolSlug": "liquity-v2",
   "protocolName": "Liquity V2",
   "tokenName": "BOLD",
   "chain": "Ethereum",
   "projectType": "stablecoin",
+  "verified": true,
   "description": "Liquity V2 is an immutable borrowing protocol that lets users open collateralized debt positions (Troves) against wstETH, rETH, or WETH to mint BOLD, a USD-pegged stablecoin. All 44 smart contracts are deployed as immutable (non-upgradeable), and the protocol has no admin keys, timelocks, or governance-controlled parameters -- ownership of the BoldToken and Governance contracts is renounced to the zero address. The protocol relies on three Chainlink price feeds (ETH/USD, stETH/USD, rETH/ETH) and the wstETH and rETH token contracts for exchange rate conversions, making oracle liveness and accuracy the primary external risk factor. Total collateral held across all branches is {{totalProtocolCapital}}.",
   "admins": {
     "eth:0xa741A32f9dcFe6aDBa088fD0f97e90742d7d5DA3": {
@@ -144,6 +146,5 @@
     "rethStabilityPoolBalance": "fundsdata.contracts[\"eth:0xd442E41019B7F5C4dD78F50dc03726C446148695\"].balances.totalUsdValue",
     "boldMarketCap": "fundsdata.contracts[\"eth:0x6440f144b7e50D6a8439336510312d2F54beB01D\"].tokenInfo.tokenValue",
     "rethTroveManagerReachableCapital": "v2score.inventory.admins.breakdown[\"eth:0xb2B2ABEb5C357a234363FF5D180912D319e3e19e\"].totalReachableCapital"
-  },
-  "publishedAt": "2026-04-01T00:00:00.000Z"
+  }
 }

@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-28T15:43:28.000Z",
   "lastModified": "2026-04-28T16:50:00.000Z",
   "protocolSlug": "Gauntlet-USDC-Prime",
   "protocolName": "Gauntlet USDC Prime",
   "tokenName": "gtUSDCp",
   "chain": "Base",
   "projectType": "yield",
+  "verified": true,
   "description": "Gauntlet USDC Prime is a MetaMorpho ERC4626 vault that allocates USDC deposits across selected Morpho Blue lending markets, currently a single cbBTC/USDC market at 86% LLTV. The vault is immutable, with no upgrade path; all parameter changes flow through the MetaMorpho role hierarchy (owner, curator, guardian, allocators) under a 7-day timelock. Total deposits stand at {{vaultPositionsTotal}}, sourced from Morpho Blue lending positions priced via Chainlink BTC/USD. Gauntlet operates the owner, curator, and guardian roles via three independent multisigs of differing thresholds.",
   "admins": {
     "base:0x5a4E19842e09000a582c20A4f524C26Fb48Dd4D0": {
@@ -57,18 +59,34 @@
               "type": "dataTable",
               "dataSource": "project.contracts",
               "columns": [
-                { "field": "name", "header": "Name" },
-                { "field": "address", "header": "Address", "format": "address" },
-                { "field": "proxyType", "header": "Proxy Type", "format": "badge" }
+                {
+                  "field": "name",
+                  "header": "Name"
+                },
+                {
+                  "field": "address",
+                  "header": "Address",
+                  "format": "address"
+                },
+                {
+                  "field": "proxyType",
+                  "header": "Proxy Type",
+                  "format": "badge"
+                }
               ],
-              "filters": { "excludeExternal": true }
+              "filters": {
+                "excludeExternal": true
+              }
             }
           ]
         },
         {
           "title": "Audits",
           "content": [
-            { "type": "text", "content": "" }
+            {
+              "type": "text",
+              "content": ""
+            }
           ]
         }
       ]
