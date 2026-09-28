@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-28T15:43:28.000Z",
   "lastModified": "2026-04-28T00:00:00.000Z",
   "protocolSlug": "Steakhouse-Prime-USDC",
   "protocolName": "Steakhouse Prime USDC",
   "tokenName": "steakUSDC",
   "chain": "Base",
   "projectType": "yield",
+  "verified": true,
   "description": "Steakhouse Prime USDC is a Morpho MetaMorpho vault on Base that allocates USDC deposits across six Morpho Blue lending markets to generate yield for depositors. The vault is curated by Steakhouse Financial under the standardized MetaMorpho v1.1 contract, with a 7-day timelock on cap changes and an Aragon OSx DAO holding the guardian veto. Capital deployment relies entirely on Morpho Blue, and per-market collateral pricing depends on a fleet of Chainlink price feeds wrapped by MorphoChainlinkOracleV2 adapters.",
   "admins": {
     "base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD": {
@@ -117,18 +119,34 @@
               "type": "dataTable",
               "dataSource": "project.contracts",
               "columns": [
-                { "field": "name", "header": "Name" },
-                { "field": "address", "header": "Address", "format": "address" },
-                { "field": "proxyType", "header": "Proxy Type", "format": "badge" }
+                {
+                  "field": "name",
+                  "header": "Name"
+                },
+                {
+                  "field": "address",
+                  "header": "Address",
+                  "format": "address"
+                },
+                {
+                  "field": "proxyType",
+                  "header": "Proxy Type",
+                  "format": "badge"
+                }
               ],
-              "filters": { "excludeExternal": true }
+              "filters": {
+                "excludeExternal": true
+              }
             }
           ]
         },
         {
           "title": "Audits",
           "content": [
-            { "type": "text", "content": "" }
+            {
+              "type": "text",
+              "content": ""
+            }
           ]
         }
       ]

@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-01T00:00:00.000Z",
   "lastModified": "2026-04-28T15:08:48.535Z",
   "protocolSlug": "lido",
   "protocolName": "Lido",
   "tokenName": "stETH",
   "chain": "Ethereum",
   "projectType": "liquid-staking",
+  "verified": true,
   "description": "Lido is a liquid staking protocol that allows users to stake ETH and receive stETH, a rebasing liquid staking token representing their staked position. Governance operates through an Aragon-based DAO (LDO token voting) with a Dual Governance module that gives stETH holders veto power over DAO proposals via an EmergencyProtectedTimelock. The protocol manages {{totalCapitalAtRisk}} in capital, with oracle committees reporting validator balances and a guardian committee securing the deposit flow against front-running attacks. The Lido V3 (stVaults) upgrade adds a customizable staking layer where node operators and institutional users deploy individual StakingVaults coordinated by a central VaultHub, with per-vault Dashboards, an OperatorGrid for tiered collateralization, a PredepositGuarantee for validator security, and a LazyOracle that reconciles vault state via merkle proofs against the AccountingOracle. Key external dependency is the Ethereum Beacon Chain DepositContract.",
   "admins": {
     "eth:0x3e40d73eb977dc6a537af587d48316fee66e9c8c": {
@@ -326,6 +328,5 @@
     "withdrawalQueuePositions": "fundsdata.contracts[\"eth:0x889edc2edab5f40e902b864ad4d7ade8e412f9b1\"].positions.totalUsdValue",
     "stethBufferBalance": "fundsdata.contracts[\"eth:0xae7ab96520de3a18e5e111b5eaab095312d7fe84\"].balances.totalUsdValue",
     "ldoTokenBalance": "fundsdata.contracts[\"eth:0x5a98fcbea516cf06857215779fd812ca3bef1b32\"].balances.totalUsdValue"
-  },
-  "publishedAt": "2026-04-01T00:00:00.000Z"
+  }
 }

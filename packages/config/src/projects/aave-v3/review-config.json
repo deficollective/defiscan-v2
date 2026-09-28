@@ -1,12 +1,14 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-05-02T13:40:13.000Z",
   "lastModified": "2026-05-01T14:46:59.000Z",
   "protocolSlug": "aave-v3",
   "protocolName": "Aave V3",
   "tokenName": "GHO",
   "chain": "Ethereum",
   "projectType": "lending",
-  "description": "Aave V3 is a multi-pool overcollateralised lending market on Ethereum with four parallel deployments \u2014 Main, Lido, Prime/EtherFi, and Horizon RWA \u2014 each with its own Pool/PoolConfigurator/ACLManager triplet and a shared Aave Governance V3 root. Borrowers deposit collateral (ATokens) against which they take variable-rate debt (VariableDebtTokens), with valuations driven by Chainlink primary feeds and Aave-deployed CAPO adapters that bound liquid-staking and yield-bearing collateral ratios. The protocol is upgradeable: all pool implementations sit behind InitializableImmutableAdminUpgradeabilityProxies whose immutable admin is the PoolAddressesProvider, itself controlled by the on-chain governance Executor (0x5300A1a1...). Operationally relevant capital reachable from at least one admin is {{totalProtocolCapital}}, and the GHO stablecoin (the protocol's native asset) has a market cap of {{ghoMarketCap}}.",
+  "verified": true,
+  "description": "Aave V3 is a multi-pool overcollateralised lending market on Ethereum with four parallel deployments — Main, Lido, Prime/EtherFi, and Horizon RWA — each with its own Pool/PoolConfigurator/ACLManager triplet and a shared Aave Governance V3 root. Borrowers deposit collateral (ATokens) against which they take variable-rate debt (VariableDebtTokens), with valuations driven by Chainlink primary feeds and Aave-deployed CAPO adapters that bound liquid-staking and yield-bearing collateral ratios. The protocol is upgradeable: all pool implementations sit behind InitializableImmutableAdminUpgradeabilityProxies whose immutable admin is the PoolAddressesProvider, itself controlled by the on-chain governance Executor (0x5300A1a1...). Operationally relevant capital reachable from at least one admin is {{totalProtocolCapital}}, and the GHO stablecoin (the protocol's native asset) has a market cap of {{ghoMarketCap}}.",
   "admins": {
     "eth:0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A": {
       "name": "Executor",
@@ -884,7 +886,7 @@
     },
     "eth:0x44Bb2a64bAf94210B583338D3D97b1e8288Bd478": {
       "name": "DiscountedMKRSKYAdapter",
-      "description": "Aave-deployed adapter pricing MKR via the official MKR\u2194SKY conversion rate with a discount applied. Used during the MKR-to-SKY token migration window."
+      "description": "Aave-deployed adapter pricing MKR via the official MKR↔SKY conversion rate with a discount applied. Used during the MKR-to-SKY token migration window."
     },
     "eth:0xB6557F02F0a5dA7b9D3C2d979cc19e00e756F6dA": {
       "name": "PriceCapAdapterStable",

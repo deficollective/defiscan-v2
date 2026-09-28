@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-17T11:50:00.000Z",
   "lastModified": "2026-04-19T09:31:22.607Z",
   "protocolSlug": "uniswap-v3",
   "protocolName": "Uniswap V3",
   "tokenName": "UNI",
   "chain": "Ethereum",
   "projectType": "dex",
+  "verified": true,
   "description": "Uniswap V3 is an automated market maker built around concentrated liquidity, where LP positions are issued as NFTs by the NonfungiblePositionManager and traded against pools deployed by the UniswapV3Factory. Governance runs through Compound Governor Bravo: UNI holders propose and vote on-chain (2.5M UNI to propose, 40M UNI quorum, ~7-day voting window), and successful proposals execute after a 48-hour Timelock delay. The minter role on the UNI token is held by the Timelock, with minting limited to 2% of supply per year and a 365-day minimum interval between mints — both limits are hardcoded in the token contract.",
   "admins": {
     "eth:0x1a9C8182C09F50C8318d769245beA52c32BE35BC": {
@@ -72,6 +74,5 @@
       ]
     }
   },
-  "dataKeys": {},
-  "publishedAt": "2026-04-17T11:50:00.000Z"
+  "dataKeys": {}
 }

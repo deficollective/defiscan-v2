@@ -1,11 +1,13 @@
 {
   "version": "1.0",
+  "publishedAt": "2026-04-21T16:02:53.000Z",
   "lastModified": "2026-03-20T12:00:00.000Z",
   "protocolSlug": "aerodrome",
   "protocolName": "Aerodrome Finance",
   "tokenName": "AERO",
   "chain": "Base",
   "projectType": "dex",
+  "verified": true,
   "description": "Aerodrome is a ve(3,3) decentralized exchange on Base, forked from Velodrome V2. It combines concentrated and volatile/stable AMM liquidity pools with a vote-escrow governance model where AERO token holders lock tokens as veNFTs to direct weekly emissions to gauges. All core contracts are immutable, but protocol parameters (swap fees, emission caps, factory registrations) are controlled by a 3/7 multisig acting as governor. The AERO token has a market cap of {{aeroMarketCap}}.",
   "admins": {
     "base:0xe6a41fe61e7a1996b59d508661e3f524d6a32075": {
@@ -60,18 +62,34 @@
               "type": "dataTable",
               "dataSource": "project.contracts",
               "columns": [
-                { "field": "name", "header": "Name" },
-                { "field": "address", "header": "Address", "format": "address" },
-                { "field": "proxyType", "header": "Proxy Type", "format": "badge" }
+                {
+                  "field": "name",
+                  "header": "Name"
+                },
+                {
+                  "field": "address",
+                  "header": "Address",
+                  "format": "address"
+                },
+                {
+                  "field": "proxyType",
+                  "header": "Proxy Type",
+                  "format": "badge"
+                }
               ],
-              "filters": { "excludeExternal": true }
+              "filters": {
+                "excludeExternal": true
+              }
             }
           ]
         },
         {
           "title": "Audits",
           "content": [
-            { "type": "text", "content": "" }
+            {
+              "type": "text",
+              "content": ""
+            }
           ]
         }
       ]
