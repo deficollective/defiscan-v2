@@ -1,13 +1,13 @@
-Generated with discovered.json: 0x465c3351ced7e46c614a1e0c1142a630cd970ec6
+Generated with discovered.json: 0x9db3bd7411636d1655c357db1f3adc01385329ee
 
-# Diff at Mon, 28 Sep 2026 08:49:30 GMT:
+# Diff at Mon, 28 Sep 2026 11:24:55 GMT:
 
 - author: inth3l00p (<admin@tiscacatalin.com>)
-- current timestamp: 1790584705
+- current timestamp: 1790594229
 
 ## Description
 
-Apply config fixes: DurationVaultStrategy impl rekey, stETH ignoreMethods
+Apply contract names and watch-mode ignores
 
 ## Initial discovery
 
@@ -103,7 +103,7 @@ Apply config fixes: DurationVaultStrategy impl rekey, stETH ignoreMethods
 
 ```diff
 +   Status: CREATED
-    contract Safe (eth:0x218B5eC7482e072F6D47feb0463B3297eFb4bA56)
+    contract EigenIncentiveCouncilMultisig (eth:0x218B5eC7482e072F6D47feb0463B3297eFb4bA56)
     +++ description: None
 ```
 
@@ -133,7 +133,7 @@ Apply config fixes: DurationVaultStrategy impl rekey, stETH ignoreMethods
 
 ```diff
 +   Status: CREATED
-    contract EigenLayerOwningMultisig (eth:0x369e6F597e22EaB55fFb173C6d9cD234BD699111)
+    contract EigenLayerExecutorMultisig (eth:0x369e6F597e22EaB55fFb173C6d9cD234BD699111)
     +++ description: None
 ```
 
@@ -157,7 +157,7 @@ Apply config fixes: DurationVaultStrategy impl rekey, stETH ignoreMethods
 
 ```diff
 +   Status: CREATED
-    contract EigenLayerOperationsMultisig2 (eth:0x461854d84Ee845F905e0eCf6C288DDEEb4A9533F)
+    contract EigenLayerProtocolCouncilMultisig (eth:0x461854d84Ee845F905e0eCf6C288DDEEb4A9533F)
     +++ description: None
 ```
 
@@ -223,7 +223,7 @@ Apply config fixes: DurationVaultStrategy impl rekey, stETH ignoreMethods
 
 ```diff
 +   Status: CREATED
-    contract TimelockController (eth:0x738130BC8eADe1Bc65A9c056DEa636835896bc53)
+    contract EigenLayerBeigenTimelock (eth:0x738130BC8eADe1Bc65A9c056DEa636835896bc53)
     +++ description: A timelock that allows scheduling calls and executing or cancelling them with a delay.
 ```
 
@@ -325,7 +325,7 @@ Apply config fixes: DurationVaultStrategy impl rekey, stETH ignoreMethods
 
 ```diff
 +   Status: CREATED
-    contract EigenLayerBeigenOwningMultisig (eth:0x942eaF324971440384e4cA0ffA39fC3bb369D67d)
+    contract EigenLayerBeigenExecutorMultisig (eth:0x942eaF324971440384e4cA0ffA39fC3bb369D67d)
     +++ description: None
 ```
 
@@ -421,7 +421,7 @@ Apply config fixes: DurationVaultStrategy impl rekey, stETH ignoreMethods
 
 ```diff
 +   Status: CREATED
-    contract TimelockController (eth:0xC06Fd4F821eaC1fF1ae8067b36342899b57BAa2d)
+    contract EigenLayerTimelock (eth:0xC06Fd4F821eaC1fF1ae8067b36342899b57BAa2d)
     +++ description: A timelock that allows scheduling calls and executing or cancelling them with a delay.
 ```
 

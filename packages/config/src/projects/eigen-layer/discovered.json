@@ -1,7 +1,7 @@
 {
   "name": "eigen-layer",
-  "timestamp": 1790584705,
-  "configHash": "0x5d33e75337641bb5e7d8018280a542f7ac087eb5031dc4b872d37e34a04a4b59",
+  "timestamp": 1790594229,
+  "configHash": "0x7b7237dfb1def2d66da9f111d9a6dba1377f3f6ad76164a4170b3f3816210a72",
   "entries": [
     {
       "address": "eth:0x00000000000000000000000000000000000E16E4",
@@ -590,7 +590,7 @@
         "paused": 0,
         "pauserRegistry": "eth:0xB8765ed72235d279c3Fb53936E4606db0Ef12806",
         "strategyManager": "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A",
-        "totalShares": "6071415006217820170489",
+        "totalShares": "6071214401785138904914",
         "underlyingToken": "eth:0xf951E335afb289353dc249e82926178EaC7DEd78"
       },
       "implementationNames": {
@@ -1034,7 +1034,7 @@
       }
     },
     {
-      "name": "Safe",
+      "name": "EigenIncentiveCouncilMultisig",
       "address": "eth:0x218B5eC7482e072F6D47feb0463B3297eFb4bA56",
       "type": "Contract",
       "template": "GnosisSafe",
@@ -1461,7 +1461,7 @@
       "proxyType": "EOA"
     },
     {
-      "name": "EigenLayerOwningMultisig",
+      "name": "EigenLayerExecutorMultisig",
       "address": "eth:0x369e6F597e22EaB55fFb173C6d9cD234BD699111",
       "type": "Contract",
       "template": "GnosisSafe",
@@ -1727,7 +1727,7 @@
       ]
     },
     {
-      "name": "EigenLayerOperationsMultisig2",
+      "name": "EigenLayerProtocolCouncilMultisig",
       "address": "eth:0x461854d84Ee845F905e0eCf6C288DDEEb4A9533F",
       "type": "Contract",
       "template": "GnosisSafe",
@@ -2319,6 +2319,7 @@
       "ignoreInWatchMode": [
         "activeValidatorCount",
         "currentCheckpointTimestamp",
+        "getConsolidationRequestFee",
         "lastCheckpointTimestamp",
         "withdrawableRestakedExecutionLayerGwei"
       ],
@@ -2337,7 +2338,7 @@
         "currentCheckpointTimestamp": 0,
         "eigenPodManager": "eth:0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338",
         "ethPOS": "eth:0x00000000219ab540356cBB839Cbe05303d7705Fa",
-        "getConsolidationRequestFee": 7,
+        "getConsolidationRequestFee": 29528,
         "getWithdrawalRequestFee": 1,
         "lastCheckpointTimestamp": 0,
         "podOwner": "eth:0x0000000000000000000000000000000000000000",
@@ -2886,7 +2887,7 @@
       "proxyType": "EOA"
     },
     {
-      "name": "TimelockController",
+      "name": "EigenLayerBeigenTimelock",
       "address": "eth:0x738130BC8eADe1Bc65A9c056DEa636835896bc53",
       "type": "Contract",
       "template": "eigenlayer/TimelockControllerOwning",
@@ -3313,7 +3314,7 @@
           ]
         ],
         "$upgradeCount": 2,
-        "clock": 1790584703,
+        "clock": 1790594219,
         "CLOCK_MODE": "mode=timestamp",
         "decimals": 18,
         "DOMAIN_SEPARATOR": "0x5dd88b27402a52ec3e227839f0f448d699f04c912202aa0d2b25bb86127a6e96",
@@ -3386,9 +3387,9 @@
         "implementation": "eth:0xD86756dBb01e75A11AaDaCB75c8495759ED92033",
         "isGovernor": false,
         "name": "Origin Ether",
-        "nonRebasingSupply": "12850049059980710337395",
-        "rebasingCredits": "18949562661143236138791",
-        "rebasingCreditsHighres": "18949562661143236138791553253713",
+        "nonRebasingSupply": "12850655133094924602585",
+        "rebasingCredits": "18949044416871604533531",
+        "rebasingCreditsHighres": "18949044416871604533531893488776",
         "rebasingCreditsPerToken": "855085400551838739",
         "rebasingCreditsPerTokenHighres": "855085400551838739555641078",
         "symbol": "OETH",
@@ -3870,7 +3871,7 @@
         "getCollector": "eth:0x53b5c4231FBa19de04866A84FEd928aEca0102Fe",
         "getCommittedBalance": 0,
         "getCoverageFund": "eth:0x32Aac358b627B9FEaa971CC33304027A41e49a81",
-        "getCurrentEpochId": 478543,
+        "getCurrentEpochId": 478568,
         "getCurrentFrame": {
           "_startEpochId": 478350,
           "_startTime": 183686400,
@@ -3906,7 +3907,7 @@
           "relativeLowerBound": 500
         },
         "getSlashingContainmentMode": false,
-        "getTime": 1790584703,
+        "getTime": 1790594219,
         "getWithdrawalCredentials": "0x0100000000000000000000000afd81862eea47322cf85db39d3d07e8a3c25154",
         "name": "Liquid Staked ETH",
         "PUBLIC_KEY_LENGTH": 48,
@@ -4241,7 +4242,7 @@
       }
     },
     {
-      "name": "EigenLayerBeigenOwningMultisig",
+      "name": "EigenLayerBeigenExecutorMultisig",
       "address": "eth:0x942eaF324971440384e4cA0ffA39fC3bb369D67d",
       "type": "Contract",
       "template": "GnosisSafe",
@@ -4644,12 +4645,12 @@
         "lastRewardAmount": "21627000000000000000",
         "lastSync": 1790208311,
         "name": "Staked Frax Ether",
-        "pricePerShare": "1170426789357919565",
+        "pricePerShare": "1170435904622556314",
         "rewardsCycleEnd": 1790812800,
         "rewardsCycleLength": 604800,
         "symbol": "sfrxETH",
-        "totalAssets": "43715695798295419394356",
-        "totalSupply": "37350218053601852045489"
+        "totalAssets": "43716023952289098168660",
+        "totalSupply": "37350207542024010425877"
       },
       "implementationNames": {
         "eth:0xac3E018457B222d93114458476f3E3416Abbe38F": "sfrxETH"
@@ -4703,7 +4704,7 @@
         "paused": 0,
         "pauserRegistry": "eth:0xB8765ed72235d279c3Fb53936E4606db0Ef12806",
         "strategyManager": "eth:0x858646372CC42E1A627fcE94aa7A7033e7CF075A",
-        "totalShares": "289836062937536081511552216",
+        "totalShares": "289735210320703679329067528",
         "underlyingToken": "eth:0x83E9115d334D248Ce39a6f36144aEaB5b3456e75"
       },
       "implementationNames": {
@@ -4785,18 +4786,22 @@
         "0x3abd0076b3c015fb6e0288c4b962b0d8f5b529971dccac72ead20921ae9279b2"
       ],
       "proxyType": "immutable",
-      "ignoreInWatchMode": ["getCollateralRate", "getTotalCollateral"],
+      "ignoreInWatchMode": [
+        "getCollateralRate",
+        "getTotalCollateral",
+        "totalSupply"
+      ],
       "sinceTimestamp": 1632980684,
       "sinceBlock": 13325304,
       "values": {
         "$immutable": true,
         "decimals": 18,
-        "getCollateralRate": 0,
+        "getCollateralRate": 3983,
         "getExchangeRate": "1172679306937426892",
-        "getTotalCollateral": 18,
+        "getTotalCollateral": 1476948137,
         "name": "Rocket Pool ETH",
         "symbol": "rETH",
-        "totalSupply": "316195499252993406877060",
+        "totalSupply": "316195272258230372949277",
         "version": 1
       },
       "implementationNames": {
@@ -4814,10 +4819,12 @@
       "proxyType": "EIP897 proxy",
       "ignoreInWatchMode": [
         "getBufferedEther",
+        "getCurrentStakeLimit",
         "getMaxMintableExternalShares",
         "getStakeLimitFullInfo",
         "getTotalPooledEther",
         "getTotalShares",
+        "getWithdrawalsReserve",
         "totalSupply"
       ],
       "sinceTimestamp": 1608242396,
@@ -4847,9 +4854,9 @@
           "beaconValidators": 500548,
           "beaconBalance": "9791828895958079000000000"
         },
-        "getBufferedEther": "384068432537489269888",
+        "getBufferedEther": "768563916990309518995",
         "getContractVersion": 4,
-        "getCurrentStakeLimit": "150000000000000000000000",
+        "getCurrentStakeLimit": "149699563140417491615139",
         "getDepositableEther": "6000000000000000000",
         "getDepositsReserve": "6000000000000000000",
         "getDepositsReserveTarget": "1500000000000000000000",
@@ -4866,23 +4873,23 @@
         "getInitializationBlock": 11473216,
         "getLidoLocator": "eth:0xC1d0b3DE6792Bf6b4b37EccdcC24e45978Cfd2Eb",
         "getMaxExternalRatioBP": 3000,
-        "getMaxMintableExternalShares": "3367655417881936587806600",
+        "getMaxMintableExternalShares": "3367787772681323949603636",
         "getRecoveryVault": "eth:0x0000000000000000000000000000000000000000",
         "getStakeLimitFullInfo": {
           "isStakingPaused_": false,
           "isStakingLimitSet": true,
-          "currentStakeLimit": "150000000000000000000000",
+          "currentStakeLimit": "149699563140417491615139",
           "maxStakeLimit": "150000000000000000000000",
           "maxStakeLimitGrowthBlocks": 6400,
-          "prevStakeLimit": "149993860240515616732797",
-          "prevStakeBlockNumber": 26074753
+          "prevStakeLimit": "149699563140417491615139",
+          "prevStakeBlockNumber": 26075597
         },
         "getTotalELRewardsCollected": "238251411453844503407525",
-        "getTotalPooledEther": "9798226696315636030806654",
-        "getTotalShares": "7869963513458071133362148",
+        "getTotalPooledEther": "9798611191800088851055761",
+        "getTotalShares": "7870272341323308310888566",
         "getTreasury": "eth:0x3e40D73EB977Dc6a537aF587D48316feE66E9C8c",
         "getWithdrawalCredentials": "0x010000000000000000000000b9d7934878b5fb9610b3fe8a5e441e8fad7e293f",
-        "getWithdrawalsReserve": "378068432537489269888",
+        "getWithdrawalsReserve": "762563916990309518995",
         "hasInitialized": true,
         "implementation": "eth:0x028271E30a695c0527A0C50cA30603feD004cDb0",
         "isDepositable": false,
@@ -4897,7 +4904,7 @@
         "STAKING_CONTROL_ROLE": "0xa42eee1333c0758ba72be38e728b6dadb32ea767de5b4ddbaea1dae85b1b051f",
         "STAKING_PAUSE_ROLE": "0x84ea57490227bc2be925c684e2a367071d69890b629590198f4125a018eb1de8",
         "symbol": "stETH",
-        "totalSupply": "9798226696315636030806654"
+        "totalSupply": "9798611191800088851055761"
       },
       "implementationNames": {
         "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": "AppProxyUpgradeable",
@@ -5601,7 +5608,7 @@
       "proxyType": "EOA"
     },
     {
-      "name": "TimelockController",
+      "name": "EigenLayerTimelock",
       "address": "eth:0xC06Fd4F821eaC1fF1ae8067b36342899b57BAa2d",
       "type": "Contract",
       "template": "eigenlayer/TimelockControllerOwning",
@@ -5839,6 +5846,7 @@
         "0xefc40a7920ba08434c4c972b4733b7e29e2a352e49619e20476e791e121e2f81"
       ],
       "proxyType": "EIP1967 proxy",
+      "ignoreInWatchMode": ["totalSupply"],
       "sinceTimestamp": 1696584719,
       "sinceBlock": 18290587,
       "values": {
@@ -5882,7 +5890,7 @@
         "REMOVE_BLOCK_LIST_CONTRACT_ROLE": "0xa7e5f4407fb7a6903f54f2279f3aefe796f21c33a3ea2caae0d0150b895a61a9",
         "stakingContract": "eth:0xe3cBd06D7dadB3F4e6557bAb7EdD924CD1489E8f",
         "symbol": "mETH",
-        "totalSupply": "214151507807297897779770",
+        "totalSupply": "214158202037267745648015",
         "unstakeRequestsManagerContract": "eth:0x38fDF7b489316e03eD8754ad339cb5c4483FDcf9"
       },
       "implementationNames": {
@@ -6050,6 +6058,7 @@
         "0x7f7daa6489189218a7c690344247f956da1468153d382759cdb06302bbc61cbe"
       ],
       "proxyType": "EIP1967 proxy",
+      "ignoreInWatchMode": ["ratio"],
       "sinceTimestamp": 1604948706,
       "sinceBlock": 11225111,
       "values": {
@@ -6189,7 +6198,7 @@
         "MAX_THRESHOLD": 100000000,
         "name": "Ankr Staked ETH",
         "owner": "eth:0xA3464e1b86EE6941A600f9F69C61A47322af918F",
-        "ratio": "806158572300395404",
+        "ratio": "806104385412300506",
         "symbol": "ankrETH",
         "totalSupply": "6744141638050227028392"
       },
@@ -10409,6 +10418,6 @@
     "global/UpgradeableBeacon": "0x7d24ef68050bed263f4cfd0471631d16b2f33814fbbd4e9aadf666c81bbf0c2d",
     "GnosisSafe": "0x12db59bec64fa8de67bbeb6a6e913f6c5ff1598c0a5fba90282afaf08e2a748c"
   },
-  "usedBlockNumbers": { "ethereum": 26074807 },
-  "permissionsConfigHash": "0x75bad9f3dbd6f5ac551443096f80a6af4e36f33a55c9daffab635b8868052b47"
+  "usedBlockNumbers": { "ethereum": 26075597 },
+  "permissionsConfigHash": "0x10af2e4e67b645205e5c60863f8e3db2e22e08f19960d061cb1cb687511fc623"
 }
