@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-05-19T15:03:56.033Z",
+  "lastModified": "2026-09-28T09:49:58.000Z",
   "contracts": {
     "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39": {
       "functions": [
@@ -17,7 +17,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this contract. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on AllocationManager by setting bits in its pause bitmap. It can block allocation changes, operator set registration and deregistration, and slashing. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:46.343Z",
@@ -39,7 +39,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this contract, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the AllocationManager pause bitmap, blocking allocation changes, operator set registration and deregistration, and slashing at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:46.352Z",
@@ -80,7 +80,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this contract. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on DelegationManager by setting bits in its pause bitmap. It can block new delegations and queuing or completing withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:49.393Z",
@@ -102,7 +102,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this contract, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the DelegationManager pause bitmap, blocking new delegations and queuing or completing withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:49.402Z",
@@ -143,7 +143,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on EigenPodManager. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on EigenPodManager by setting bits in its pause bitmap. It can block new EigenPods, credential and checkpoint proofs, withdrawal and consolidation requests, and withdrawals of restaked ETH. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:22.977Z",
@@ -165,7 +165,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on EigenPodManager, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the EigenPodManager pause bitmap, blocking new EigenPods, credential and checkpoint proofs, withdrawal and consolidation requests, and withdrawals of restaked ETH at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:22.987Z",
@@ -202,10 +202,10 @@
             {
               "type": "other",
               "label": "role-transfer-affects-fork-timestamp",
-              "description": "Transfers the proofTimestampSetter role, which controls when the Pectra fork timestamp activates for beacon-chain withdrawal proof validation. A malicious setter could disable Pectra proof validation by setting the timestamp to far future, breaking withdrawal proof verification for all native-ETH restakers (beacon withdrawals stuck). Owner is EigenLayerOwningMultisig (1-of-2)."
+              "description": "Hands the proofTimestampSetter role to a new address, which can then set the Pectra fork timestamp and stall proof validation for every native restaker. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T15:03:24.565Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:03:24.565Z"
@@ -224,7 +224,7 @@
             {
               "type": "other",
               "label": "fork-activation-control",
-              "description": "Sets the timestamp at which the Pectra hard fork's withdrawal proof format activates. A malicious value (far future) breaks beacon-chain withdrawal proof validation across all EigenPods; setting to past creates invalid-format reverts on legitimate withdrawal proofs. Callable only by proofTimestampSetter (single address)."
+              "description": "Sets the timestamp from which EigenPods use the Pectra proof format. A wrong value makes pods check proofs against the wrong format, so valid proofs can fail and native ETH withdrawals can stall. Only the proofTimestampSetter can call it, currently the Operations Multisig."
             }
           ],
           "timestamp": "2026-05-19T15:03:24.575Z",
@@ -250,7 +250,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on StrategyManager. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyManager by setting bits in its pause bitmap. It can block deposits and the burning or redistribution of slashed shares. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:14.336Z",
@@ -272,7 +272,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on StrategyManager, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyManager pause bitmap, blocking deposits and the burning or redistribution of slashed shares at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:14.345Z",
@@ -309,10 +309,10 @@
             {
               "type": "other",
               "label": "role-transfer",
-              "description": "Transfers the strategyWhitelister role. The whitelister can add new IStrategy contracts to the deposit whitelist (addStrategiesToDepositWhitelist) — a new strategy could custody user deposits malicially. A malicious whitelister cannot drain existing strategy balances (each StrategyBaseTVLLimits has its own deposit/withdraw flow), but can list a backdoored strategy for future deposits. Owner is EigenLayerOwningMultisig (1-of-2)."
+              "description": "Changes the strategyWhitelister, which is the StrategyFactory today. The whitelister decides which strategies accept deposits, so a malicious one could list a backdoored strategy for new deposits. Balances in existing strategies stay out of its reach. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T15:03:24.583Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:03:24.583Z"
@@ -365,7 +365,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on RewardsCoordinator. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on RewardsCoordinator by setting bits in its pause bitmap. It can block reward submissions, root submission and disabling, and claims. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:37.011Z",
@@ -387,7 +387,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on RewardsCoordinator, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the RewardsCoordinator pause bitmap, blocking reward submissions, root submission and disabling, and claims at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:37.020Z",
@@ -424,7 +424,7 @@
             {
               "type": "other",
               "label": "activation-delay-bound",
-              "description": "Submitted root activates after 7-day delay (activationDelay). During this window, the root can be reviewed and a new correct root submitted, overriding the malicious one."
+              "description": "A submitted root becomes claimable after the activation delay, currently 7 days. Until then the rewards updater can disable a bad root with disableRoot. After activation, claims against the root can no longer be stopped this way."
             }
           ],
           "timestamp": "2026-05-12T17:04:37.040Z",
@@ -446,7 +446,7 @@
             {
               "type": "other",
               "label": "root-veto",
-              "description": "Marks a distribution root as disabled before activation. onlyRewardsUpdater + onlyWhenNotPaused(PAUSED_SUBMIT_DISABLE_ROOTS). Vetoes a single root from being claimed (defensive); cannot extract funds. Same semantics as a cancel-payload."
+              "description": "Disables a distribution root before it activates, so nobody can claim against it. Only the rewards updater can call it, and only while root submission is unpaused. It moves no funds."
             }
           ],
           "timestamp": "2026-05-19T15:03:24.591Z",
@@ -468,7 +468,7 @@
             {
               "type": "other",
               "label": "future-only",
-              "description": "Sets the delay between a distribution root submission and its activation. Future-only — applies to subsequent submitted roots, not existing pending roots. Bounded by MAX_ACTIVATION_DELAY in the contract."
+              "description": "Sets the delay between submitting a root and claims opening on it. Each root stores its activation time when it is submitted, so a change only affects later roots. The contract sets no upper or lower limit, so the owner could set the delay to zero and remove the review window for future roots."
             }
           ],
           "timestamp": "2026-05-19T15:03:24.599Z",
@@ -505,10 +505,10 @@
             {
               "type": "other",
               "label": "future-fee-redirect",
-              "description": "Sets the protocol fee recipient address for rewards distribution. Future fees on distribution roots go to the new recipient; cannot extract historical fees already settled. Owner is EigenLayerOwningMultisig (1-of-2)."
+              "description": "Sets the address that receives the protocol's share of rewards. The change applies to future rewards, and fees already paid out stay where they are. Owner is the Operations Multisig (3-of-6)."
             }
           ],
-          "timestamp": "2026-05-19T15:03:24.607Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:03:24.607Z"
@@ -527,7 +527,7 @@
             {
               "type": "other",
               "label": "role-transfer-rewards-control",
-              "description": "Sets the rewardsUpdater address — the single address allowed to submit and disable distribution roots. A malicious updater could submit a fraudulent root claiming all earners' rewards to attacker-controlled addresses, but each root has activationDelay before becoming claimable, giving a window for governance to disableRoot."
+              "description": "Sets the rewards updater, the single address that submits and disables distribution roots. A malicious updater could submit a root that pays rewards to its own addresses. Each root waits for the activation delay first, and in that window the owner can replace the updater so the new one disables the bad root."
             }
           ],
           "timestamp": "2026-05-19T15:03:24.615Z",
@@ -549,7 +549,7 @@
             {
               "type": "other",
               "label": "role-grant",
-              "description": "Adds/removes an address from the rewardsForAllSubmitter whitelist. Those addresses can call createRewardsForAllSubmission, which depositors of incentives use to fund rewards from their own balance — no extraction surface."
+              "description": "Adds or removes an address allowed to create rewards-for-all submissions. Submitters fund these from their own balance, so the role cannot take funds from the protocol."
             }
           ],
           "timestamp": "2026-05-19T15:03:24.628Z",
@@ -605,7 +605,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this contract. While paused, user operations on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on EmissionsController by setting bits in its pause bitmap. It can block EIGEN emission flows. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:45.364Z",
@@ -627,7 +627,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this contract, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the EmissionsController pause bitmap, blocking EIGEN emission flows at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:45.373Z",
@@ -664,7 +664,7 @@
             {
               "type": "other",
               "label": "role-transfer-emissions-control",
-              "description": "Sets the IncentiveCouncil — the only address that can add or update distributions on the EmissionsController. A malicious council can configure new distributions that direct emitted EIGEN inflation to chosen recipients. Owner is EigenLayerOperationsMultisig (3-of-6)."
+              "description": "Changes the Incentive Council, the only address that can add or update distributions. A malicious council could send future EIGEN emissions to its own recipients. Owner is the Operations Multisig (3-of-6)."
             }
           ],
           "timestamp": "2026-05-19T15:03:24.637Z",
@@ -677,12 +677,8 @@
           "functionName": "sweep",
           "isPermissioned": false,
           "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "$self.incentiveCouncil"
-            }
-          ],
-          "timestamp": "2026-05-12T17:08:33.888Z",
+          "ownerDefinitions": [],
+          "timestamp": "2026-09-28T09:49:58.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-12T17:08:33.888Z"
@@ -701,7 +697,7 @@
             {
               "type": "other",
               "label": "future-emissions-only",
-              "description": "Adds a new emissions distribution starting from a future epoch. Bounded by per-epoch emission rates configured in the protocol; cannot directly extract existing funds. The council can direct future EIGEN emissions to chosen recipients (operators/AVSs)."
+              "description": "Adds a distribution that starts in a future epoch. The council can send future EIGEN emissions to recipients it chooses, up to the configured per-epoch emission rate. Balances that already exist stay out of its reach."
             }
           ],
           "timestamp": "2026-05-19T15:03:24.647Z",
@@ -723,7 +719,7 @@
             {
               "type": "other",
               "label": "future-emissions-only",
-              "description": "Replaces an existing distribution's parameters. Affects future epochs only; cannot rewrite past emissions. Same scope risk as addDistribution."
+              "description": "Changes an existing distribution for future epochs, leaving past emissions as they were. The risk matches addDistribution."
             }
           ],
           "timestamp": "2026-05-19T15:03:24.656Z",
@@ -749,7 +745,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this contract. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on AVSDirectory by setting bits in its pause bitmap. It can block operator registration and deregistration with AVSs. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:52.239Z",
@@ -771,7 +767,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this contract, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the AVSDirectory pause bitmap, blocking operator registration and deregistration with AVSs at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:52.251Z",
@@ -812,7 +808,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:52.419Z",
@@ -834,7 +830,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:04:52.430Z",
@@ -890,7 +886,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this contract. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on EigenStrategy by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:56.842Z",
@@ -912,7 +908,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this contract, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the EigenStrategy pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:56.852Z",
@@ -953,7 +949,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on RegistryCoordinator. While paused, user operations on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on RegistryCoordinator by setting bits in its pause bitmap. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:05:03.639Z",
@@ -975,7 +971,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on RegistryCoordinator, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the RegistryCoordinator pause bitmap, pausing all of its guarded functions at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:05:03.650Z",
@@ -1057,7 +1053,7 @@
             {
               "type": "other",
               "label": "role-management",
-              "description": "Sets the address that approves operator churn (replacing operators when quorum is full). Operational role; no direct fund movement. A malicious approver could enable bad operators to replace honest ones, but this affects AVS correctness, not protocol funds."
+              "description": "Sets the address that approves operator churn, which is when a new operator replaces an existing one in a full quorum. A malicious approver could let bad operators push out honest ones. That affects EigenDA correctness, and no restaked funds move."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.135Z",
@@ -1079,7 +1075,7 @@
             {
               "type": "other",
               "label": "role-management",
-              "description": "Sets the ejector role on the registry coordinator. Same scope as EjectionManager.setEjector — operational role for AVS membership management, no fund movement."
+              "description": "Sets the ejector on the RegistryCoordinator, currently the EjectionManager. Like EjectionManager.setEjector, it manages EigenDA membership and moves no funds."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.144Z",
@@ -1316,7 +1312,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on EigenDAServiceManager. While paused, user operations on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on EigenDAServiceManager by setting bits in its pause bitmap. It can block batch confirmation. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:05:35.032Z",
@@ -1338,7 +1334,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on EigenDAServiceManager, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the EigenDAServiceManager pause bitmap, blocking batch confirmation at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:05:35.041Z",
@@ -1390,7 +1386,7 @@
             {
               "type": "other",
               "label": "role-management",
-              "description": "Sets the address allowed to initiate rewards distribution events for this AVS. Doesn't move funds itself; the initiator can only submit reward distributions (depositing rewards from their own balance)."
+              "description": "Sets the address that creates reward submissions for EigenDA. Submissions are paid from the initiator's own balance, so this role cannot take funds from the protocol."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.003Z",
@@ -1412,10 +1408,10 @@
             {
               "type": "other",
               "label": "rewards-redirect",
-              "description": "Calls RewardsCoordinator.setClaimerFor(claimer) for THIS AVS. The new claimer can then call RewardsCoordinator.processClaim to redirect this AVS's accrued rewards to themselves. Bounded by the rewards already accrued + future rewards until the claimer is changed back. Owner is EigenDAOperationsMultisig (3-of-4)."
+              "description": "Calls RewardsCoordinator.setClaimerFor for EigenDA as an AVS. The new claimer can collect the AVS's accrued rewards through processClaim until the owner changes it back. Owner is the EigenDA Operations Multisig (2-of-4)."
             }
           ],
-          "timestamp": "2026-05-19T15:02:04.994Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:02:04.994Z"
@@ -1434,7 +1430,7 @@
             {
               "type": "other",
               "label": "role-management",
-              "description": "Sets the address allowed to call confirmBatch. The batch confirmer is an operational role for EigenDA data availability — no direct fund movement. A malicious confirmer could confirm bad batches (DA layer correctness impact, not protocol fund impact)."
+              "description": "Adds or removes an address allowed to call confirmBatch. A malicious confirmer could confirm incorrect data-availability batches. That harms EigenDA correctness, and no restaked funds move through it."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.013Z",
@@ -1501,7 +1497,7 @@
             {
               "type": "other",
               "label": "future-only-validity-check",
-              "description": "Toggles whether stale-stake signatures are forbidden on batch confirmation. Operational data-availability correctness param; no fund movement."
+              "description": "Turns the rule that rejects batch signatures based on stale stake on or off. It changes data-availability checks only, and no funds move."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.021Z",
@@ -1527,10 +1523,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Replaces or repoints the BackingEigen token implementation. A malicious impl could remint, redirect transfers, or break the wrapping invariant with Eigen Token. Owner is EigenLayerBeigenOwningMultisig (1-of-2 GnosisSafe, low threshold)."
+              "description": "Upgrades or re-points the bEIGEN token implementation. A malicious implementation could mint freely, redirect transfers, or break the 1:1 link with EIGEN. Owner is the bEIGEN Owning Multisig (1-of-2, signed by the 24-day bEIGEN Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.894Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.894Z"
@@ -1549,10 +1545,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Replaces or repoints the BackingEigen token implementation. A malicious impl could remint, redirect transfers, or break the wrapping invariant with Eigen Token. Owner is EigenLayerBeigenOwningMultisig (1-of-2 GnosisSafe, low threshold)."
+              "description": "Upgrades or re-points the bEIGEN token implementation. A malicious implementation could mint freely, redirect transfers, or break the 1:1 link with EIGEN. Owner is the bEIGEN Owning Multisig (1-of-2, signed by the 24-day bEIGEN Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.885Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.885Z"
@@ -1571,10 +1567,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Replaces or repoints the BackingEigen token implementation. A malicious impl could remint, redirect transfers, or break the wrapping invariant with Eigen Token. Owner is EigenLayerBeigenOwningMultisig (1-of-2 GnosisSafe, low threshold)."
+              "description": "Upgrades or re-points the bEIGEN token implementation. A malicious implementation could mint freely, redirect transfers, or break the 1:1 link with EIGEN. Owner is the bEIGEN Owning Multisig (1-of-2, signed by the 24-day bEIGEN Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.902Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.902Z"
@@ -1597,10 +1593,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Upgrade authority for 11 EigenDA proxies: BLSApkRegistry, EigenDADisperserRegistry, EigenDARelayRegistry, EigenDAServiceManager, EigenDAThresholdRegistry, etc. A malicious impl could break operator registration, ejection, or batch confirmation. Owner is EigenDAOperationsMultisig (3-of-4 GnosisSafe)."
+              "description": "Upgrade authority for the 11 EigenDA proxies, including BLSApkRegistry, the disperser, relay and threshold registries, and EigenDAServiceManager. A malicious implementation could break operator registration, ejection or batch confirmation. Owner is the EigenDA Operations Multisig (2-of-4)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.919Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.919Z"
@@ -1619,10 +1615,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Upgrade authority for 11 EigenDA proxies: BLSApkRegistry, EigenDADisperserRegistry, EigenDARelayRegistry, EigenDAServiceManager, EigenDAThresholdRegistry, etc. A malicious impl could break operator registration, ejection, or batch confirmation. Owner is EigenDAOperationsMultisig (3-of-4 GnosisSafe)."
+              "description": "Upgrade authority for the 11 EigenDA proxies, including BLSApkRegistry, the disperser, relay and threshold registries, and EigenDAServiceManager. A malicious implementation could break operator registration, ejection or batch confirmation. Owner is the EigenDA Operations Multisig (2-of-4)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.911Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.911Z"
@@ -1641,10 +1637,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Upgrade authority for 11 EigenDA proxies: BLSApkRegistry, EigenDADisperserRegistry, EigenDARelayRegistry, EigenDAServiceManager, EigenDAThresholdRegistry, etc. A malicious impl could break operator registration, ejection, or batch confirmation. Owner is EigenDAOperationsMultisig (3-of-4 GnosisSafe)."
+              "description": "Upgrade authority for the 11 EigenDA proxies, including BLSApkRegistry, the disperser, relay and threshold registries, and EigenDAServiceManager. A malicious implementation could break operator registration, ejection or batch confirmation. Owner is the EigenDA Operations Multisig (2-of-4)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.928Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.928Z"
@@ -1667,10 +1663,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Upgrade authority for the entire EigenLayer core: 31 proxies including AllocationManager, AVSDirectory, DelegationManager, EigenPodManager, EmissionsController, StrategyManager, RewardsCoordinator, and all 12 StrategyBaseTVLLimits restaking pools. A malicious impl on DelegationManager or StrategyManager could drain all restaked LST balances. Owner is EigenLayerOwningMultisig (1-of-2 GnosisSafe, low threshold — single point of compromise)."
+              "description": "Upgrade authority for the EigenLayer core: 31 proxies, including AllocationManager, AVSDirectory, DelegationManager, EigenPodManager, EmissionsController, StrategyManager, RewardsCoordinator and all 12 StrategyBaseTVLLimits pools. A malicious implementation of DelegationManager, StrategyManager or any strategy could drain the restaked balances. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.946Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.946Z"
@@ -1689,10 +1685,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Upgrade authority for the entire EigenLayer core: 31 proxies including AllocationManager, AVSDirectory, DelegationManager, EigenPodManager, EmissionsController, StrategyManager, RewardsCoordinator, and all 12 StrategyBaseTVLLimits restaking pools. A malicious impl on DelegationManager or StrategyManager could drain all restaked LST balances. Owner is EigenLayerOwningMultisig (1-of-2 GnosisSafe, low threshold — single point of compromise)."
+              "description": "Upgrade authority for the EigenLayer core: 31 proxies, including AllocationManager, AVSDirectory, DelegationManager, EigenPodManager, EmissionsController, StrategyManager, RewardsCoordinator and all 12 StrategyBaseTVLLimits pools. A malicious implementation of DelegationManager, StrategyManager or any strategy could drain the restaked balances. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.936Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.936Z"
@@ -1711,10 +1707,10 @@
             {
               "type": "other",
               "label": "proxy-admin-upgrade",
-              "description": "Upgrade authority for the entire EigenLayer core: 31 proxies including AllocationManager, AVSDirectory, DelegationManager, EigenPodManager, EmissionsController, StrategyManager, RewardsCoordinator, and all 12 StrategyBaseTVLLimits restaking pools. A malicious impl on DelegationManager or StrategyManager could drain all restaked LST balances. Owner is EigenLayerOwningMultisig (1-of-2 GnosisSafe, low threshold — single point of compromise)."
+              "description": "Upgrade authority for the EigenLayer core: 31 proxies, including AllocationManager, AVSDirectory, DelegationManager, EigenPodManager, EmissionsController, StrategyManager, RewardsCoordinator and all 12 StrategyBaseTVLLimits pools. A malicious implementation of DelegationManager, StrategyManager or any strategy could drain the restaked balances. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.955Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.955Z"
@@ -1737,10 +1733,10 @@
             {
               "type": "other",
               "label": "beacon-upgrade",
-              "description": "Replaces the StrategyBase implementation shared by all 12 StrategyBaseTVLLimits restaking pools (LST collateral strategies). A malicious impl could drain the entire LST balance across all 12 pools simultaneously. Owner is EigenLayerOwningMultisig (1-of-2 GnosisSafe)."
+              "description": "Replaces the implementation used by every strategy deployed through StrategyFactory. The 12 original LST pools are separate transparent proxies and are upgraded through the main ProxyAdmin. A malicious implementation could drain every factory-deployed strategy at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.964Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.964Z"
@@ -1763,10 +1759,10 @@
             {
               "type": "other",
               "label": "beacon-upgrade",
-              "description": "Replaces the DurationVaultStrategy implementation. The strategy currently has 0 shares (placeholder/unused), so immediate fund exposure is 0; if it is activated in the future a malicious impl would have full control of any deposited funds. Owner is EigenLayerOwningMultisig (1-of-2 GnosisSafe)."
+              "description": "Replaces the implementation used by duration vaults deployed through StrategyFactory. A malicious implementation would control any funds held in those vaults. The implementation contract itself holds no shares. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.972Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.972Z"
@@ -1789,10 +1785,10 @@
             {
               "type": "other",
               "label": "beacon-upgrade",
-              "description": "Replaces the EigenPod implementation. Every user EigenPod (factory-deployed proxy) reads from this beacon, so a malicious impl could redirect beacon-chain withdrawal proofs or arbitrary native-ETH from all native restaking participants. Owner is EigenLayerOwningMultisig (1-of-2 GnosisSafe)."
+              "description": "Replaces the EigenPod implementation. Every EigenPod is a beacon proxy that reads from here, so a malicious implementation could forge or block withdrawal proofs and take native ETH from all native restakers. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:58:05.980Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.980Z"
@@ -1814,7 +1810,7 @@
           "mitigations": [
             {
               "type": "delay",
-              "description": "Action queued in timelock; at minimum 24 days must pass before execution.",
+              "description": "Every call is queued in the timelock and can run only after at least 24 days.",
               "value": 2073600
             }
           ],
@@ -1836,7 +1832,7 @@
           "mitigations": [
             {
               "type": "delay",
-              "description": "Action queued in timelock; at minimum 24 days must pass before execution.",
+              "description": "Every call is queued in the timelock and can run only after at least 24 days.",
               "value": 2073600
             }
           ],
@@ -1873,7 +1869,7 @@
           "mitigations": [
             {
               "type": "delay",
-              "description": "Action queued in timelock; at minimum 24 days must pass before execution.",
+              "description": "Every call is queued in the timelock and can run only after at least 24 days.",
               "value": 2073600
             }
           ],
@@ -1895,7 +1891,7 @@
           "mitigations": [
             {
               "type": "delay",
-              "description": "Action queued in timelock; at minimum 24 days must pass before execution.",
+              "description": "Every call is queued in the timelock and can run only after at least 24 days.",
               "value": 2073600
             }
           ],
@@ -1921,7 +1917,7 @@
           "mitigations": [
             {
               "type": "delay",
-              "description": "Action queued in timelock; at minimum 10 days must pass before execution.",
+              "description": "Every call is queued in the timelock and can run only after at least 10 days.",
               "value": 864000
             }
           ],
@@ -1943,7 +1939,7 @@
           "mitigations": [
             {
               "type": "delay",
-              "description": "Action queued in timelock; at minimum 10 days must pass before execution.",
+              "description": "Every call is queued in the timelock and can run only after at least 10 days.",
               "value": 864000
             }
           ],
@@ -1980,7 +1976,7 @@
           "mitigations": [
             {
               "type": "delay",
-              "description": "Action queued in timelock; at minimum 10 days must pass before execution.",
+              "description": "Every call is queued in the timelock and can run only after at least 10 days.",
               "value": 864000
             }
           ],
@@ -2002,7 +1998,7 @@
           "mitigations": [
             {
               "type": "delay",
-              "description": "Action queued in timelock; at minimum 10 days must pass before execution.",
+              "description": "Every call is queued in the timelock and can run only after at least 10 days.",
               "value": 864000
             }
           ],
@@ -2029,10 +2025,10 @@
             {
               "type": "other",
               "label": "unlimited-mint-grant",
-              "description": "Adds/removes addresses to/from the isMinter mapping. A newly granted minter can call BackingEigen.mint with no on-chain cap, diluting the bEIGEN supply that backs EIGEN 1:1. Owner is EigenLayerBeigenOwningMultisig (1-of-2 GnosisSafe)."
+              "description": "Adds or removes a bEIGEN minter. A new minter can mint without any cap, diluting the bEIGEN that backs EIGEN 1:1. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
             }
           ],
-          "timestamp": "2026-05-19T14:59:01.682Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:59:01.682Z"
@@ -2051,7 +2047,7 @@
             {
               "type": "other",
               "label": "restrictions-already-disabled",
-              "description": "Updates the allowedFrom/To whitelist used during transfer restrictions. On-chain state shows transferRestrictionsDisabledAfter = 0, so transfer restrictions are permanently OFF and these whitelist updates have no read sites that affect transfers. Cannot re-enable restrictions (disableTransferRestrictions is one-way)."
+              "description": "Updates the allowlists that apply while transfer restrictions are on. transferRestrictionsDisabledAfter is 0 on-chain, so restrictions are already off and these lists no longer affect transfers. They cannot be switched back on, because disableTransferRestrictions only works once."
             }
           ],
           "timestamp": "2026-05-19T14:59:01.706Z",
@@ -2073,7 +2069,7 @@
             {
               "type": "other",
               "label": "restrictions-already-disabled",
-              "description": "Updates the allowedFrom/To whitelist used during transfer restrictions. On-chain state shows transferRestrictionsDisabledAfter = 0, so transfer restrictions are permanently OFF and these whitelist updates have no read sites that affect transfers. Cannot re-enable restrictions (disableTransferRestrictions is one-way)."
+              "description": "Updates the allowlists that apply while transfer restrictions are on. transferRestrictionsDisabledAfter is 0 on-chain, so restrictions are already off and these lists no longer affect transfers. They cannot be switched back on, because disableTransferRestrictions only works once."
             }
           ],
           "timestamp": "2026-05-19T14:59:01.714Z",
@@ -2110,7 +2106,7 @@
             {
               "type": "other",
               "label": "unlimited-issuance",
-              "description": "Mints arbitrary amounts of bEIGEN to any address. Gated only by isMinter mapping (no on-chain cap, no per-block limit). Each minted bEIGEN dilutes the 1:1 backing of EIGEN (current total supply: 1.82B bEIGEN backing 1.82B EIGEN). New minters can be added by the BeigenOwningMultisig."
+              "description": "Mints any amount of bEIGEN to any address. The only check is the isMinter mapping, with no cap or rate limit. Extra bEIGEN dilutes EIGEN, which is wrapped 1:1 from bEIGEN. The token owner, the Executor Multisig, decides who can mint."
             }
           ],
           "timestamp": "2026-05-19T14:59:01.695Z",
@@ -2136,7 +2132,7 @@
             {
               "type": "other",
               "label": "restrictions-already-disabled",
-              "description": "Updates the allowedFrom/To whitelist on the EIGEN governance token. On-chain transferRestrictionsDisabledAfter = 0 means restrictions are permanently OFF; whitelist updates have no read sites affecting transfers."
+              "description": "Updates the allowlists that apply while EIGEN transfer restrictions are on. transferRestrictionsDisabledAfter is 0 on-chain, so restrictions are already off and these lists no longer affect transfers. They cannot be switched back on."
             }
           ],
           "timestamp": "2026-05-19T14:59:01.724Z",
@@ -2158,7 +2154,7 @@
             {
               "type": "other",
               "label": "restrictions-already-disabled",
-              "description": "Updates the allowedFrom/To whitelist on the EIGEN governance token. On-chain transferRestrictionsDisabledAfter = 0 means restrictions are permanently OFF; whitelist updates have no read sites affecting transfers."
+              "description": "Updates the allowlists that apply while EIGEN transfer restrictions are on. transferRestrictionsDisabledAfter is 0 on-chain, so restrictions are already off and these lists no longer affect transfers. They cannot be switched back on."
             }
           ],
           "timestamp": "2026-05-19T14:59:01.733Z",
@@ -2232,7 +2228,7 @@
             {
               "type": "other",
               "label": "role-management",
-              "description": "Sets/unsets an address in the ejector role. The ejector can eject operators from the AVS (kicking them out of the operator set) but cannot extract protocol funds — ejection is an AVS operational action, not a financial one. EigenLayer slashing is governed separately by AllocationManager."
+              "description": "Adds or removes an ejector. Ejectors can remove operators from EigenDA quorums within the EjectionManager rate limits. Ejection changes AVS membership only, and slashing is handled separately by AllocationManager."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.126Z",
@@ -2258,7 +2254,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on StrategyFactory. While paused, user operations on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyFactory by setting bits in its pause bitmap. It can block deployment of new strategies. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:06:25.655Z",
@@ -2280,7 +2276,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on StrategyFactory, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyFactory pause bitmap, blocking deployment of new strategies at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:06:25.664Z",
@@ -2472,7 +2468,7 @@
             {
               "type": "other",
               "label": "role-management",
-              "description": "Sets the isPauser mapping; the resulting pauser can pause/unpause protocol functions on EigenLayer contracts. The pause function itself is the critical surface — this setIsPauser is one step removed. A malicious unpauser could grant pauser to attacker who could then freeze deposits/withdrawals across the protocol via the various pausable contracts. No direct fund movement. Caller must hold the unpauser address (single-address role, not a multisig role)."
+              "description": "Adds or removes a pauser. Pausers can only pause, and unpausing stays with the unpauser. A malicious unpauser could add a hostile pauser who then freezes deposits and withdrawals across EigenLayer. Only the unpauser, the Executor Multisig, can call it."
             }
           ],
           "timestamp": "2026-05-19T14:59:34.820Z",
@@ -2494,7 +2490,7 @@
             {
               "type": "other",
               "label": "role-transfer",
-              "description": "Transfers the unpauser role to a new single address. The unpauser is the most authoritative role in the pause system — can set/clear pausers and unpause. A malicious new unpauser could revoke all legitimate pausers (DoS on pause function) but cannot directly extract funds. Caller must hold the current unpauser address."
+              "description": "Moves the unpauser role to a new address. The unpauser manages the pauser list and is the only role that can unpause. A malicious unpauser could remove every legitimate pauser or keep the protocol paused, though it cannot move funds directly. Only the current unpauser can call it."
             }
           ],
           "timestamp": "2026-05-19T14:59:34.830Z",
@@ -2520,7 +2516,7 @@
             {
               "type": "other",
               "label": "role-management",
-              "description": "Sets the isPauser mapping; the resulting pauser can pause/unpause protocol functions on EigenLayer contracts. The pause function itself is the critical surface — this setIsPauser is one step removed. A malicious unpauser could grant pauser to attacker who could then freeze deposits/withdrawals across the protocol via the various pausable contracts. No direct fund movement. Caller must hold the unpauser address (single-address role, not a multisig role)."
+              "description": "Adds or removes a pauser. Pausers can only pause, and unpausing stays with the unpauser. A malicious unpauser could add a hostile pauser who then freezes deposits and withdrawals across EigenLayer. Only the unpauser, the Executor Multisig, can call it."
             }
           ],
           "timestamp": "2026-05-19T14:59:34.838Z",
@@ -2542,7 +2538,7 @@
             {
               "type": "other",
               "label": "role-transfer",
-              "description": "Transfers the unpauser role to a new single address. The unpauser is the most authoritative role in the pause system — can set/clear pausers and unpause. A malicious new unpauser could revoke all legitimate pausers (DoS on pause function) but cannot directly extract funds. Caller must hold the current unpauser address."
+              "description": "Moves the unpauser role to a new address. The unpauser manages the pauser list and is the only role that can unpause. A malicious unpauser could remove every legitimate pauser or keep the protocol paused, though it cannot move funds directly. Only the current unpauser can call it."
             }
           ],
           "timestamp": "2026-05-19T14:59:34.846Z",
@@ -2568,7 +2564,7 @@
             {
               "type": "other",
               "label": "data-availability-config",
-              "description": "Registers a disperser address against a key in the EigenDA disperser registry. Operational coordination data; no read sites that affect fund movement. A bad disperser would impact DA-layer message routing but not protocol-tracked funds."
+              "description": "Registers a disperser address under a key. This is EigenDA routing data. A bad entry would disrupt blob dispersal, and no fund flow reads it."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.029Z",
@@ -2594,7 +2590,7 @@
             {
               "type": "other",
               "label": "data-availability-config",
-              "description": "Adds a relay to the EigenDA relay registry. Operational P2P data routing for EigenDA blob retrieval; no fund-movement read sites."
+              "description": "Adds a relay used to retrieve EigenDA blobs. It is routing data only, and no fund flow reads it."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.037Z",
@@ -2620,7 +2616,7 @@
             {
               "type": "other",
               "label": "data-availability-config",
-              "description": "Adds a versioned blob threshold parameter set. Used by EigenDA to validate blob attestations; no fund-movement read sites."
+              "description": "Adds a versioned set of blob parameters that EigenDA uses to validate attestations. No fund flow reads it."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.045Z",
@@ -2646,7 +2642,7 @@
             {
               "type": "other",
               "label": "operator-table-update",
-              "description": "Updates the certified operator table used by BN254 certificate verification. Operational coordination data for off-chain consensus; no read sites affect protocol funds."
+              "description": "Updates the operator table that BN254CertificateVerifier checks certificates against. AVSs use it to verify operator signatures on other chains, and no EigenLayer fund flow reads it."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.053Z",
@@ -2672,7 +2668,7 @@
             {
               "type": "other",
               "label": "operator-table-update",
-              "description": "Updates the certified operator table for ECDSA certificate verification. Operational coordination data; no fund-movement read sites."
+              "description": "Updates the operator table that ECDSACertificateVerifier checks certificates against. AVSs use it to verify operator signatures on other chains, and no EigenLayer fund flow reads it."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.062Z",
@@ -2698,7 +2694,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on OperatorTableUpdater. While paused, user operations on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on OperatorTableUpdater by setting bits in its pause bitmap. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:07:04.552Z",
@@ -2720,7 +2716,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on OperatorTableUpdater, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the OperatorTableUpdater pause bitmap, pausing all of its guarded functions at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:07:04.560Z",
@@ -2757,7 +2753,7 @@
             {
               "type": "other",
               "label": "operator-table-config",
-              "description": "Sets the confirmation threshold for global operator-table root updates. Operational consensus parameter; no read sites affect protocol funds."
+              "description": "Sets the signature threshold needed to confirm a new global operator-table root. It is a consensus setting, and no fund flow reads it."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.080Z",
@@ -2779,7 +2775,7 @@
             {
               "type": "other",
               "label": "defensive-disable",
-              "description": "Marks an operator-table root as disabled (will not be confirmed). Defensive operational action — invalidates a single root but doesn't extract funds. Same shape as a payload-veto."
+              "description": "Disables a single operator-table root so it is never used. It is a defensive action and moves no funds."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.090Z",
@@ -2801,7 +2797,7 @@
             {
               "type": "other",
               "label": "role-update",
-              "description": "Updates the address that can generate operator-table updates. Role-management; the generator can submit operator-table updates which are then validated against the global confirmation threshold. No direct fund-movement path."
+              "description": "Changes the generator that produces operator-table updates. Its updates still have to meet the global confirmation threshold, and no funds move through this role."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.100Z",
@@ -2827,7 +2823,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on CrossChainRegistry. While paused, user operations on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on CrossChainRegistry by setting bits in its pause bitmap. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:07:13.252Z",
@@ -2849,7 +2845,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on CrossChainRegistry, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the CrossChainRegistry pause bitmap, pausing all of its guarded functions at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:07:13.261Z",
@@ -2886,7 +2882,7 @@
             {
               "type": "other",
               "label": "future-only",
-              "description": "Whitelists chain IDs eligible for cross-chain operator-table distribution. Future-only configuration; no read sites affect protocol funds."
+              "description": "Adds chain IDs that can receive operator tables. It only affects future distribution, and no fund flow reads it."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.109Z",
@@ -2908,7 +2904,7 @@
             {
               "type": "other",
               "label": "future-only",
-              "description": "Removes chain IDs from the cross-chain whitelist. Blocks future cross-chain distribution to those chains; cannot recall data already distributed."
+              "description": "Removes chain IDs from the operator-table whitelist. Distribution to those chains stops from then on, and data already sent stays where it is."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.118Z",
@@ -2934,203 +2930,6 @@
         }
       ]
     },
-    "eth:0xC355123d0a51b4B5185aA7f21150904CEE3EAC97": {
-      "functions": [
-        {
-          "functionName": "pause",
-          "isPermissioned": true,
-          "score": "critical",
-          "ownerDefinitions": [
-            {
-              "path": "@pauserRegistry.pausers"
-            }
-          ],
-          "mitigations": [
-            {
-              "type": "other",
-              "label": "pause-bound",
-              "description": "Sets bitmask paused status on DurationVaultStrategy. While paused, user operations on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.143Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.143Z"
-          }
-        },
-        {
-          "functionName": "pauseAll",
-          "isPermissioned": true,
-          "score": "critical",
-          "ownerDefinitions": [
-            {
-              "path": "@pauserRegistry.pausers"
-            }
-          ],
-          "mitigations": [
-            {
-              "type": "other",
-              "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on DurationVaultStrategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.154Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.154Z"
-          }
-        },
-        {
-          "functionName": "unpause",
-          "isPermissioned": true,
-          "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "@pauserRegistry.unpauser"
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.163Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.163Z"
-          }
-        },
-        {
-          "functionName": "lock",
-          "isPermissioned": true,
-          "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "$self.vaultAdmin"
-            }
-          ],
-          "mitigations": [
-            {
-              "type": "other",
-              "label": "state-transition-only",
-              "description": "Transitions the vault from ALLOCATIONS to WITHDRAWALS state. onlyVaultAdmin gates. The lock prevents new deposits but enables withdrawals — no fund extraction. Currently the contract has 0 shares (unused placeholder), so immediate impact is null."
-            }
-          ],
-          "timestamp": "2026-05-19T15:03:55.992Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-19T15:03:55.992Z"
-          }
-        },
-        {
-          "functionName": "advanceToWithdrawals",
-          "isPermissioned": true,
-          "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "$self.arbitrator"
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.180Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.180Z"
-          }
-        },
-        {
-          "functionName": "updateMetadataURI",
-          "isPermissioned": true,
-          "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "$self.vaultAdmin"
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.188Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.188Z"
-          }
-        },
-        {
-          "functionName": "updateDelegationApprover",
-          "isPermissioned": true,
-          "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "$self.vaultAdmin"
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.195Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.195Z"
-          }
-        },
-        {
-          "functionName": "updateOperatorMetadataURI",
-          "isPermissioned": true,
-          "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "$self.vaultAdmin"
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.203Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.203Z"
-          }
-        },
-        {
-          "functionName": "setRewardsClaimer",
-          "isPermissioned": true,
-          "score": "critical",
-          "ownerDefinitions": [
-            {
-              "path": "$self.vaultAdmin"
-            }
-          ],
-          "mitigations": [
-            {
-              "type": "other",
-              "label": "rewards-redirect",
-              "description": "Calls RewardsCoordinator.setClaimerFor(this, claimer). A malicious claimer can redirect this vault's accrued rewards. Bounded by the vault's accumulated rewards (currently 0; vault is unused placeholder with 0 shares)."
-            }
-          ],
-          "timestamp": "2026-05-19T15:03:56.004Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-19T15:03:56.004Z"
-          }
-        },
-        {
-          "functionName": "updateTVLLimits",
-          "isPermissioned": true,
-          "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "$self.vaultAdmin"
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.219Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.219Z"
-          }
-        },
-        {
-          "functionName": "setTVLLimits",
-          "isPermissioned": true,
-          "score": "no-impact",
-          "ownerDefinitions": [
-            {
-              "path": "@pauserRegistry.unpauser"
-            }
-          ],
-          "timestamp": "2026-05-12T17:07:26.227Z",
-          "lastChangedBy": {
-            "author": "unknown",
-            "date": "2026-05-12T17:07:26.227Z"
-          }
-        }
-      ]
-    },
     "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129": {
       "functions": [
         {
@@ -3139,20 +2938,20 @@
           "score": "no-impact",
           "ownerDefinitions": [
             {
-              "path": "$self.DEFAULT_ADMIN_ROLE"
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
             }
           ],
           "mitigations": [
             {
               "type": "other",
               "label": "registry-bookkeeping",
-              "description": "Registers contract deployments into the ProtocolRegistry (name → address mapping). Bookkeeping/discovery aid — no read sites that affect protocol funds. The registry is consulted by tooling and external integrators, not by the protocol's fund-flow logic."
+              "description": "Records contract deployments in the registry, mapping names to addresses. Integrators and tooling read it, and the protocol's fund flows never do."
             }
           ],
-          "timestamp": "2026-05-19T15:03:56.022Z",
+          "timestamp": "2026-09-28T07:05:27.000Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-05-19T15:03:56.022Z"
+            "date": "2026-09-28T07:05:27.000Z"
           }
         },
         {
@@ -3161,20 +2960,20 @@
           "score": "no-impact",
           "ownerDefinitions": [
             {
-              "path": "$self.DEFAULT_ADMIN_ROLE"
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
             }
           ],
           "mitigations": [
             {
               "type": "other",
               "label": "registry-bookkeeping",
-              "description": "Updates a deployment's DeploymentConfig (e.g. ABI metadata, version) in the ProtocolRegistry. Off-chain/tooling-facing data; no fund-flow read sites."
+              "description": "Updates a deployment's configuration record in the registry. Tooling reads this data, and the protocol's fund flows never do."
             }
           ],
-          "timestamp": "2026-05-19T15:03:56.033Z",
+          "timestamp": "2026-09-28T07:05:27.000Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-05-19T15:03:56.033Z"
+            "date": "2026-09-28T07:05:27.000Z"
           }
         },
         {
@@ -3183,6 +2982,9 @@
           "score": "critical",
           "ownerDefinitions": [
             {
+              "path": "$self.accessControl.PAUSER_ROLE.members"
+            },
+            {
               "path": "eth:0x5050389572f2d220ad927CcbeA0D406831012390"
             }
           ],
@@ -3190,13 +2992,13 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Pauses all registered contracts in the ProtocolRegistry, blocking operations across the entire registered protocol. The unpauser can restore operations."
+              "description": "Calls pauseAll on every contract listed in the registry, pausing the whole registered protocol in one transaction. The unpauser can restore operations."
             }
           ],
-          "timestamp": "2026-05-13T07:40:00.972Z",
+          "timestamp": "2026-09-28T07:05:27.000Z",
           "lastChangedBy": {
             "author": "unknown",
-            "date": "2026-05-13T07:40:00.972Z"
+            "date": "2026-09-28T07:05:27.000Z"
           }
         }
       ]
@@ -3216,7 +3018,7 @@
             {
               "type": "other",
               "label": "future-only",
-              "description": "Sets a payment reservation for a future depositor account. Only affects future on-demand-payment accounting; no current fund movement. Quorum split is validated on-chain."
+              "description": "Sets a bandwidth reservation for an account over a future period. The contract checks the quorum split and that the end time comes after the start. It changes payment accounting only and moves no funds."
             }
           ],
           "timestamp": "2026-05-19T15:02:04.967Z",
@@ -3298,10 +3100,10 @@
             {
               "type": "other",
               "label": "bounded-by-vault-balance",
-              "description": "Withdraws native ETH from PaymentVault to owner(). Bounded by PaymentVault's own ETH balance (currently ~1.52 ETH). Owner is EigenDAOperationsMultisig (3-of-4 GnosisSafe), and the destination is hard-coded to owner() — cannot route to arbitrary address, only to the multisig itself."
+              "description": "Withdraws native ETH from PaymentVault. The destination is always owner(), the EigenDA Operations Multisig (2-of-4), so the most it can move is the vault's own ETH balance."
             }
           ],
-          "timestamp": "2026-05-19T15:02:04.977Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:02:04.977Z"
@@ -3320,10 +3122,10 @@
             {
               "type": "other",
               "label": "bounded-by-vault-balance",
-              "description": "Withdraws any ERC20 from PaymentVault to owner(). Bounded by the vault's balance of the requested token. Destination is hard-coded to owner() (EigenDAOperationsMultisig 3-of-4)."
+              "description": "Withdraws any ERC-20 held by PaymentVault. The destination is always owner(), the EigenDA Operations Multisig (2-of-4), and the amount is limited to the vault's balance of that token."
             }
           ],
-          "timestamp": "2026-05-19T15:02:04.986Z",
+          "timestamp": "2026-09-28T09:25:46.000Z",
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:02:04.986Z"
@@ -3361,7 +3163,7 @@
             {
               "type": "other",
               "label": "future-fee-redirect",
-              "description": "Sets the address that receives the protocol fee split on tasks submitted via TaskMailbox. A malicious collector receives all future fees from task submissions. Bounded per-tx by individual task fees (no batch-extraction surface from this setter alone); cannot extract historical fees that already settled to the previous collector."
+              "description": "Sets the address that receives the protocol's share of task fees. A malicious collector would only receive future fees, and fees already paid stay with the previous collector."
             }
           ],
           "timestamp": "2026-05-19T15:02:05.152Z",
@@ -3387,7 +3189,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this contract. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBase by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:59.764Z",
@@ -3409,7 +3211,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this contract, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBase pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-12T17:03:59.773Z",
@@ -3450,7 +3252,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.076Z",
@@ -3472,7 +3274,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.080Z",
@@ -3528,7 +3330,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.085Z",
@@ -3550,7 +3352,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.087Z",
@@ -3606,7 +3408,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.092Z",
@@ -3628,7 +3430,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.094Z",
@@ -3684,7 +3486,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.098Z",
@@ -3706,7 +3508,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.099Z",
@@ -3762,7 +3564,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.104Z",
@@ -3784,7 +3586,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.106Z",
@@ -3840,7 +3642,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.110Z",
@@ -3862,7 +3664,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.111Z",
@@ -3918,7 +3720,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.115Z",
@@ -3940,7 +3742,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.117Z",
@@ -3996,7 +3798,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.120Z",
@@ -4018,7 +3820,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.121Z",
@@ -4074,7 +3876,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.125Z",
@@ -4096,7 +3898,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.126Z",
@@ -4152,7 +3954,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.130Z",
@@ -4174,7 +3976,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.131Z",
@@ -4230,7 +4032,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.135Z",
@@ -4252,7 +4054,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.136Z",
@@ -4308,7 +4110,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this strategy contract. While paused, user deposit and withdrawal operations on this strategy are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on StrategyBaseTVLLimits by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.141Z",
@@ -4330,7 +4132,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this strategy, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the StrategyBaseTVLLimits pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.142Z",
@@ -4386,7 +4188,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets bitmask paused status on this contract. While paused, user operations (deposit, withdraw, delegate, etc.) on this contract are blocked. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Pauses selected functions on EigenStrategy by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.146Z",
@@ -4408,7 +4210,7 @@
             {
               "type": "other",
               "label": "pause-bound",
-              "description": "Sets all bits in bitmask paused status on this contract, blocking all user operations. The unpauser (EigenLayerOwningMultisig) can restore operations."
+              "description": "Sets every bit in the EigenStrategy pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
             }
           ],
           "timestamp": "2026-05-13T10:50:09.148Z",
@@ -4430,6 +4232,203 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-13T10:50:09.149Z"
+          }
+        }
+      ]
+    },
+    "eth:0xc946787cFd6c155886C673BF9815C841c1718903": {
+      "functions": [
+        {
+          "functionName": "pause",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "@pauserRegistry.pausers"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "pause-bound",
+              "description": "Pauses selected functions on DurationVaultStrategy by setting bits in its pause bitmap. It can block deposits and withdrawals. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.143Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.143Z"
+          }
+        },
+        {
+          "functionName": "pauseAll",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "@pauserRegistry.pausers"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "pause-bound",
+              "description": "Sets every bit in the DurationVaultStrategy pause bitmap, blocking deposits and withdrawals at once. Pausers can only pause, and the Executor Multisig, as unpauser, restores operations."
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.154Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.154Z"
+          }
+        },
+        {
+          "functionName": "unpause",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "@pauserRegistry.unpauser"
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.163Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.163Z"
+          }
+        },
+        {
+          "functionName": "lock",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.vaultAdmin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "state-transition-only",
+              "description": "Moves the vault from its deposit phase into its allocation phase, which closes deposits and locks the stake for the configured duration. Only the vault admin can call it. Withdrawals open when the duration ends or when the arbitrator calls advanceToWithdrawals. The implementation contract itself holds no shares."
+            }
+          ],
+          "timestamp": "2026-05-19T15:03:55.992Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-19T15:03:55.992Z"
+          }
+        },
+        {
+          "functionName": "advanceToWithdrawals",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.arbitrator"
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.180Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.180Z"
+          }
+        },
+        {
+          "functionName": "updateMetadataURI",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.vaultAdmin"
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.188Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.188Z"
+          }
+        },
+        {
+          "functionName": "updateDelegationApprover",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.vaultAdmin"
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.195Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.195Z"
+          }
+        },
+        {
+          "functionName": "updateOperatorMetadataURI",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.vaultAdmin"
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.203Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.203Z"
+          }
+        },
+        {
+          "functionName": "setRewardsClaimer",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.vaultAdmin"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "rewards-redirect",
+              "description": "Calls RewardsCoordinator.setClaimerFor for the vault, so the new claimer can collect the vault's accrued rewards. The implementation contract itself holds no shares and has no rewards."
+            }
+          ],
+          "timestamp": "2026-05-19T15:03:56.004Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-19T15:03:56.004Z"
+          }
+        },
+        {
+          "functionName": "updateTVLLimits",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "$self.vaultAdmin"
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.219Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.219Z"
+          }
+        },
+        {
+          "functionName": "setTVLLimits",
+          "isPermissioned": true,
+          "score": "no-impact",
+          "ownerDefinitions": [
+            {
+              "path": "@pauserRegistry.unpauser"
+            }
+          ],
+          "timestamp": "2026-05-12T17:07:26.227Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-05-12T17:07:26.227Z"
           }
         }
       ]
