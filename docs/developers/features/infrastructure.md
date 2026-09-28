@@ -133,6 +133,7 @@ For protocols that deploy many identical child contracts (Uniswap V2 pairs, Fran
 | `aerodrome-v2-factory` | DefiLlama + on-chain `allPoolsLength()` via Base Blockscout RPC | None | Reports Aerodrome V2 TVL (DefiLlama slug `aerodrome-v1`), pool count via `eth_call` |
 | `aerodrome-cl-factory` | DefiLlama + on-chain `allPoolsLength()` via Base Blockscout RPC | None | Reports Slipstream TVL (DefiLlama slug `aerodrome-slipstream`), combines pool counts from both CL factory deployments |
 | `pancakeswap-v2-factory` | DefiLlama + on-chain `allPairsLength()` via BSC public RPC | None | Reports PancakeSwap V2 TVL (DefiLlama slug `pancakeswap-amm`), pair count via `eth_call` to `bsc-dataseed.binance.org` |
+| `eigenlayer-native-eth` | DeFiLlama protocol API | None | Reads the latest `tokensInUsd` snapshot from `api.llama.fi/protocol/eigenlayer` and returns the `WETH` entry, which is the ETH restaked natively through EigenPods. That ETH sits on the beacon chain, so there is no ERC-20 balance to read. LST tokens are left out because `fetchBalances` on the StrategyBaseTVLLimits proxies already counts them. Tagged on EigenPodManager |
 
 **Adding a new handler:**
 

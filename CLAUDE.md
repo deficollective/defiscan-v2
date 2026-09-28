@@ -356,6 +356,7 @@ packages/
 │           └── uniswapV3Factory.ts  # Uniswap V3 TVL via DeFiLlama (no API key; chain mapped via CHAIN_ID_TO_DEFILLAMA_NAME)
 │           ├── aerodromeV2Factory.ts     # DefiLlama TVL + on-chain allPoolsLength() via Base Blockscout RPC (no key)
 │           ├── aerodromeClFactory.ts     # DefiLlama Slipstream TVL + pool count across both CL factories (no key)
+│           ├── eigenLayerNativeEth.ts    # EigenLayer native ETH restaking TVL from the WETH entry of DeFiLlama `eigenlayer` tokensInUsd. LSTs are left out because fetchBalances on the strategies already counts them (no key)
 │           └── pancakeswapV2Factory.ts   # DefiLlama TVL (slug: pancakeswap-amm) + on-chain allPairsLength() via BSC public RPC (no key)
 └── config/src/projects/compound-v3/
     ├── permission-overrides.json
