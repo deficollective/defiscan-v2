@@ -10,7 +10,7 @@ const __dirname = dirname(__filename)
 // Keep in sync with the full type when adding new aggregated fields.
 interface CompiledReview {
   // Optional for back-compat with older compiled-review.json files that
-  // predate this field. Resolved as `verified ?? true` at read time.
+  // predate this field. A missing value reads as unverified.
   verified?: boolean
   metadata: {
     protocolName: string
@@ -210,9 +210,9 @@ function main() {
       chain: review.metadata.chain,
       projectType: review.metadata.projectType,
       tokenName: review.metadata.tokenName,
-      // Legacy compiled reviews predate this field — treat missing as verified
-      // (they were researcher-curated). New AI reviews must explicitly set false.
-      verified: review.verified ?? true,
+      // A compiled review without the field is treated as unverified. Nothing
+      // may show the Verified badge without an explicit true from the compiler.
+      verified: review.verified ?? false,
       totals: {
         ...review.totals,
         totalTokenValue: totalTokenValueForProtocol,

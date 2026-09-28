@@ -240,7 +240,7 @@ Each file has its own backend CRUD module under `packages/l2b/src/implementation
 
 **Schema notes**:
 
-- `ReviewConfig.publishedAt?: string` is **optional** on the type for backwards compatibility, but `getReviewConfig` backfills it to `lastModified` on read, so in-memory instances always have a value.
+- `ReviewConfig.publishedAt?: string` is **optional** on the type for backwards compatibility. The compiler resolves it through `resolvePublishedAt` in `reviewIntegrity.ts`: the explicit field first, then the git commit that first added `review-config.json`, then `lastModified` as a last resort. Anything other than the explicit field raises a `MISSING_PUBLISHED_AT` integrity warning. Every project in the repo now carries the field explicitly. `getReviewConfig` still backfills it to `lastModified` for the editor UI.
 - `ResourcesFile.lastModified?: string` is also optional — legacy `resources.json` files that predate this model return `undefined` from `getResourcesLastModified`, at which point the compiler falls back to `reviewConfig.lastModified`. The first researcher edit stamps the field.
 - `governance.json` has no schema change — we use filesystem mtime because it has no compile-time mutation path, so mtime cleanly tracks researcher edits.
 
@@ -248,8 +248,8 @@ Each file has its own backend CRUD module under `packages/l2b/src/implementation
 
 Reviews carry a researcher-attestation flag that drives the `VERIFIED` / `UNVERIFIED` pill on Gallery cards and the report Hero:
 
-- `ReviewConfig.verified?: boolean` — optional in the type. **Missing field reads as `true`** (legacy reviews were researcher-curated). New AI-generated reviews must explicitly write `false`.
-- `CompiledReview.verified: boolean` — sourced as `reviewConfig.verified ?? true` in `buildCompiledReview`. Mirrored into `ProtocolSummary.verified` in `index.json` by `compile-data.ts` so Gallery filtering and the pill render without loading every full review.
+- `ReviewConfig.verified?: boolean` — optional in the type. **A missing field compiles as `false`** and raises a `MISSING_VERIFIED` integrity warning. Nothing may show the Verified badge without an explicit `true`. Every project in the repo carries the field explicitly, so the default only ever applies to a brand-new review.
+- `CompiledReview.verified: boolean` — sourced as `reviewConfig.verified ?? false` in `buildCompiledReview`. `compile-data.ts` applies the same default for compiled files that predate the field. Mirrored into `ProtocolSummary.verified` in `index.json` by `compile-data.ts` so Gallery filtering and the pill render without loading every full review.
 - The frontend `StatusPill` (`pages/review/views/StatusPill.tsx`) is the single place colors and labels live; it has two variants (`'card'` for Gallery, `'hero'` for the report hero).
 
 **Lifecycle rules**:
@@ -258,6 +258,25 @@ Reviews carry a researcher-attestation flag that drives the `VERIFIED` / `UNVERI
 2. **Regeneration**: the skill **preserves** the prior value via the out-of-band `/tmp/review-config-$0-verified.txt` file (the existing review-config is moved aside before generation, so the field has to be captured separately). Re-running the skill on a Verified protocol keeps it Verified.
 3. **Researcher edits via the editor panels**: do NOT change `verified`. `writeReviewConfig` reads the existing file and copies the field over when the incoming payload doesn't include it, so a description tweak doesn't accidentally re-flip the flag. Only an explicit toggle does.
 4. **Explicit toggle**: the **Mark as Verified / Mark as Unverified** button in `TerminalExtensions` (protocolbeat) reads the current config via `getReviewConfig`, flips `verified`, and PUTs the full config through the same `updateReviewConfig` endpoint used by the editors. No separate API.
+
+### Integrity warnings
+
+Every compile runs `checkReviewIntegrity` (`reviewIntegrity.ts`) after template resolution. It never blocks the compile, but each warning is logged as `[review-integrity] <project>: <CODE>: <message>` and returned in the `warnings` array of the `compile-review` and `compile-all-reviews` responses. Codes:
+
+| Code | Meaning |
+|---|---|
+| `MISSING_PUBLISHED_AT` | `publishedAt` came from git history or `lastModified` instead of the config |
+| `MISSING_VERIFIED` | no `verified` field, compiled as unverified |
+| `PUBLISHED_AFTER_MODIFIED` | `publishedAt` is later than `lastModified` |
+| `FUTURE_TIMESTAMP` | any of the three compiled timestamps is in the future |
+| `PLACEHOLDER_TIMESTAMP` | `publishedAt` or `lastModified` is a round hour, which usually means it was typed by hand |
+| `AUDIT_DATE_INVALID` | an audit date is not `YYYY`, `YYYY-MM` or `YYYY-MM-DD`, or is in the future |
+| `AUDIT_MISSING_AUTHOR` | an audit entry has no author |
+| `UNRESOLVED_TEMPLATE` | a compiled description still contains `{{...}}` or `(N/A)` |
+| `DATA_KEY_UNUSED` / `DATA_KEY_UNDEFINED` | `dataKeys` and the `{{vars}}` used in the text have drifted apart |
+| `SLUG_MISMATCH` | `protocolSlug` differs from the project folder name |
+
+A review is not finished while its compile prints warnings. The `/generate-review` and `/review-protocol` skills check the list at the end of their run.
 
 The previous `ACTIVE` / `UPDATED` status (driven by a 7-day window on the newest activity event) was abandoned with this change. `getLatestActivityTimestamp` is still used for the "Last Activity" subtext on Gallery cards and the hero/footer "Latest activity" lines — those are independent informative timestamps and unaffected.
 
