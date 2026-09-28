@@ -1,13 +1,13 @@
-Generated with discovered.json: 0xaf2fc8486bb807ad4a391e162d710d4bc7298e9e
+Generated with discovered.json: 0x465c3351ced7e46c614a1e0c1142a630cd970ec6
 
-# Diff at Tue, 19 May 2026 15:07:45 GMT:
+# Diff at Mon, 28 Sep 2026 08:49:30 GMT:
 
-- author: Alexandru Marcu (<alx.marcu@gmail.com>)
-- current timestamp: 1779202034
+- author: inth3l00p (<admin@tiscacatalin.com>)
+- current timestamp: 1790584705
 
 ## Description
 
-Discovery rerun on the same block number with only config-related changes.
+Apply config fixes: DurationVaultStrategy impl rekey, stETH ignoreMethods
 
 ## Initial discovery
 
@@ -56,7 +56,7 @@ Discovery rerun on the same block number with only config-related changes.
 ```diff
 +   Status: CREATED
     contract UpgradeableBeacon (eth:0x0fCE0A591D96BB76883323eF555867111E2050a9)
-    +++ description: A beacon with an upgradeable implementation currently set as eth:0xC355123d0a51b4B5185aA7f21150904CEE3EAC97. Beacon proxy contracts pointing to this beacon will all use its implementation.
+    +++ description: A beacon with an upgradeable implementation currently set as eth:0xc946787cFd6c155886C673BF9815C841c1718903. Beacon proxy contracts pointing to this beacon will all use its implementation.
 ```
 
 ```diff
@@ -140,7 +140,7 @@ Discovery rerun on the same block number with only config-related changes.
 ```diff
 +   Status: CREATED
     contract DelegationManager (eth:0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A)
-    +++ description: The DelegationManager contract is responsible for registering EigenLayer operators and managing the EigenLayer strategies delegations. The EigenDA StakeRegistry contract reads from the DelegationManager to track the total stake of each EigenDA operator.
+    +++ description: None
 ```
 
 ```diff
@@ -427,7 +427,7 @@ Discovery rerun on the same block number with only config-related changes.
 
 ```diff
 +   Status: CREATED
-    contract DurationVaultStrategy (eth:0xC355123d0a51b4B5185aA7f21150904CEE3EAC97)
+    contract DurationVaultStrategy (eth:0xc946787cFd6c155886C673BF9815C841c1718903)
     +++ description: None
 ```
 
