@@ -124,11 +124,6 @@
     "eth:0x54f4bC6bDEbe479173a2bbDc31dD7178408A57A4": {
       "ignoreInWatchMode": ["BN254_KEY_REGISTRATION_TYPEHASH", "domainSeparator", "ECDSA_KEY_REGISTRATION_TYPEHASH", "version"]
     },
-    // ProtocolRegistry
-    "eth:0x27a84740FdDed5B7D66d9bb6E5d1DEA6eb0C0129": {
-      "ignoreInWatchMode": ["DEFAULT_ADMIN_ROLE", "majorVersion", "PAUSER_ROLE", "totalDeployments", "version"]
-    },
-
     // ── EIGEN + bEIGEN token contracts ────────────────────────────────────────
 
     // BackingEigen (bEIGEN) — historical supply
@@ -183,7 +178,7 @@
       "ignoreInWatchMode": ["explanation", "totalShares"]
     },
     // DurationVaultStrategy (immutable)
-    "eth:0xC355123d0a51b4B5185aA7f21150904CEE3EAC97": {
+    "eth:0xc946787cFd6c155886C673BF9815C841c1718903": {
       "ignoreInWatchMode": [
         "explanation",
         "metadataURI",
@@ -395,6 +390,7 @@
     },
     "eth:0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
       // stETH — Lido
+      "ignoreMethods": ["getPooledEthByShares", "getPooledEthBySharesRoundUp", "getSharesByPooledEth"],
       "ignoreRelatives": ["$implementation", "getEIP712StETH", "getEVMScriptRegistry", "getLidoLocator", "getRecoveryVault", "getTreasury", "implementation", "kernel"],
       "ignoreInWatchMode": ["getBufferedEther", "getMaxMintableExternalShares", "getStakeLimitFullInfo", "getTotalPooledEther", "getTotalShares", "totalSupply"]
     },
@@ -430,7 +426,7 @@
       "ignoreRelatives": ["$admin", "$implementation", "AccessControlManager"]
     },
     "eth:0xa2E3356610840701BDf5611a53974510Ae27E2e1": {
-      // WrapTokenV3ETH — Mantle
+      // wBETH (WrapTokenV3ETH) — Binance
       "ignoreRelatives": ["_UNWRAP_ETH_ADDRESS", "$admin", "$implementation", "admin", "blacklister", "ethReceiver", "implementation", "masterMinter", "operator", "oracle", "owner", "pauser", "rescuer"]
     },
 
@@ -454,7 +450,7 @@
       "ignoreRelatives": ["Canceller", "Executor", "Proposer", "timelockAdminAC"]
     },
     "eth:0x79973d557CD9dd87eb61E250cc2572c990e20196": {
-      // UnwrapTokenV1ETH — Mantle
+      // UnwrapTokenV1ETH — Binance wBETH
       "ignoreRelatives": ["$admin", "$implementation", "admin", "blacklister", "ethBackAddress", "implementation", "operatorAddress", "owner", "pauser", "rechargeAddress", "WBETH_TOKEN_ADDRESS"],
       "ignoreMethods": ["getWithdrawRequests"]
     },
@@ -469,7 +465,7 @@
       "ignoreMethods": ["requestByID", "requestInfo"]
     },
     "eth:0x81720695e43A39C52557Ce6386feB3FAAC215f06": {
-      // ExchangeRateUpdater — Mantle mETH
+      // ExchangeRateUpdater — Binance wBETH
       "ignoreRelatives": ["owner", "tokenContract"]
     },
 
@@ -481,11 +477,11 @@
 
     // ── External Swell infrastructure ─────────────────────────────────────────
     "eth:0xb8FFC3Cd6e7Cf5a098A1c92F48009765B24088Dc": {
-      // Kernel — Swell
+      // Kernel (Aragon) — Lido DAO
       "ignoreRelatives": ["$implementation", "acl", "getRecoveryVault", "implementation"]
     },
     "eth:0x9b37180d847B27ADC13C2277299045C1237Ae281": {
-      // ExchangeRateUpdater — Swell swETH
+      // ExchangeRateUpdater — Coinbase cbETH oracle
       "ignoreRelatives": ["owner", "tokenContract"]
     },
     "eth:0x625087d72c762254a72CB22cC2ECa40da6b95EAC": {
@@ -540,7 +536,7 @@
 
     // ── External miscellaneous ────────────────────────────────────────────────
     "eth:0x67B12264Ca3e0037Fc7E22F2457b42643a04C86e": {
-      // ProxyAdmin — external owner (not in graph)
+      // ProxyAdmin — Stader ETHx
       "ignoreRelatives": ["owner"]
     },
     "eth:0x7F68e9C17D22005688b8E6968fCe31e32B4B03d1": {
