@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-28T09:49:58.000Z",
+  "lastModified": "2026-09-28T10:41:02.000Z",
   "protocolSlug": "eigen-layer",
   "protocolName": "EigenLayer",
   "tokenName": "EIGEN",
@@ -92,6 +92,18 @@
     "eth:0x604238AB35438f7c46066Aae988FB07CF98f0256": {
       "name": "RewardsCoordinator Updater (EOA)",
       "description": "The EOA set as rewardsUpdater on the RewardsCoordinator. It submits distribution roots with submitRoot and can disable a root with disableRoot before it activates. A new root becomes claimable 7 days after submission, and during that window the updater can still disable it. It has no direct access to restaked LSTs."
+    },
+    "eth:0xFEA47018D632A77bA579846c840d5706705Dc598": {
+      "name": "EigenLayer Community Multisig (9-of-13)",
+      "description": "A 9-of-13 Safe made up of members of the Ethereum community, as listed by the Eigen Foundation. It holds TIMELOCK_ADMIN_ROLE on both timelocks, so it can grant or remove proposer, executor and canceller roles there with no delay. It is also one of the two signers on the Executor Multisig and on the bEIGEN Owning Multisig, which lets it act on either of them in an emergency without waiting for a timelock."
+    },
+    "eth:0xC06Fd4F821eaC1fF1ae8067b36342899b57BAa2d": {
+      "name": "EigenLayer Timelock (10-day)",
+      "description": "The core timelock, with a minimum delay of 10 days. It is one of the two signers on the Executor Multisig, which owns the main ProxyAdmin, so normal core upgrades pass through here. It holds TIMELOCK_ADMIN_ROLE on itself, so it can change its own roles, but only through an operation that has waited out the delay."
+    },
+    "eth:0x738130BC8eADe1Bc65A9c056DEa636835896bc53": {
+      "name": "EigenLayer bEIGEN Timelock (24-day)",
+      "description": "The bEIGEN timelock, with a minimum delay of 24 days. It is one of the two signers on the bEIGEN Owning Multisig, so normal bEIGEN upgrades pass through here. It holds TIMELOCK_ADMIN_ROLE on itself, so it can change its own roles, but only through an operation that has waited out the delay."
     }
   },
   "dependencies": {

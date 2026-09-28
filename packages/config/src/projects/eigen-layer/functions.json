@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastModified": "2026-09-28T09:49:58.000Z",
+  "lastModified": "2026-09-28T10:40:48.000Z",
   "contracts": {
     "eth:0x948a420b8CC1d6BFd0B6087C2E7c344a2CD0bc39": {
       "functions": [
@@ -232,6 +232,50 @@
             "author": "unknown",
             "date": "2026-05-19T15:03:24.575Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of EigenPodManager to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of EigenPodManager to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -346,6 +390,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-12T17:04:14.380Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of StrategyManager to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of StrategyManager to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -587,6 +675,50 @@
             "author": "unknown",
             "date": "2026-05-12T17:04:37.101Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of RewardsCoordinator to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of RewardsCoordinator to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -727,6 +859,50 @@
             "author": "unknown",
             "date": "2026-05-19T15:03:24.656Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of EmissionsController to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of EmissionsController to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -789,6 +965,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-12T17:03:52.262Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of AVSDirectory to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of AVSDirectory to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -1097,6 +1317,72 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-12T17:05:03.707Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of RegistryCoordinator to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of RegistryCoordinator to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "setPauserRegistry",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "@pauserRegistry.unpauser"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "pauser-registry-swap",
+              "description": "Points RegistryCoordinator at a different PauserRegistry. Whoever controls the new registry decides who can pause and unpause RegistryCoordinator. Only the unpauser of the current EigenDA PauserRegistry can call it, which is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -1505,6 +1791,72 @@
             "author": "unknown",
             "date": "2026-05-19T15:02:05.021Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of EigenDAServiceManager to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of EigenDAServiceManager to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "setPauserRegistry",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "@pauserRegistry.unpauser"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "pauser-registry-swap",
+              "description": "Points EigenDAServiceManager at a different PauserRegistry. Whoever controls the new registry decides who can pause and unpause EigenDAServiceManager. Only the unpauser of the current EigenDA PauserRegistry can call it, which is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -1574,6 +1926,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.902Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of ProxyAdmin to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the bEIGEN Owning Multisig (1-of-2, signed by the 24-day bEIGEN Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of ProxyAdmin to the zero address for good. After that, the proxies it manages could never be upgraded again. Owner is the bEIGEN Owning Multisig (1-of-2, signed by the 24-day bEIGEN Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -1645,6 +2041,50 @@
             "author": "unknown",
             "date": "2026-05-19T14:58:05.928Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of ProxyAdmin to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of ProxyAdmin to the zero address for good. After that, the proxies it manages could never be upgraded again. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -1715,6 +2155,50 @@
             "author": "unknown",
             "date": "2026-05-19T14:58:05.955Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of ProxyAdmin to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of ProxyAdmin to the zero address for good. After that, the proxies it manages could never be upgraded again. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -1740,6 +2224,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.964Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of UpgradeableBeacon to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of UpgradeableBeacon to the zero address for good. After that, the implementation behind this beacon could never be changed again. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -1767,6 +2295,50 @@
             "author": "unknown",
             "date": "2026-05-19T14:58:05.972Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of UpgradeableBeacon to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of UpgradeableBeacon to the zero address for good. After that, the implementation behind this beacon could never be changed again. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -1792,6 +2364,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T14:58:05.980Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of UpgradeableBeacon to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of UpgradeableBeacon to the zero address for good. After that, the implementation behind this beacon could never be changed again. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -1900,6 +2516,50 @@
             "author": "unknown",
             "date": "2026-05-12T17:05:56.058Z"
           }
+        },
+        {
+          "functionName": "grantRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.TIMELOCK_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-grant",
+              "description": "Grants PROPOSER_ROLE, EXECUTOR_ROLE, CANCELLER_ROLE or TIMELOCK_ADMIN_ROLE on the 24-day timelock. The role admin is TIMELOCK_ADMIN_ROLE, held by the timelock itself and by the Community Multisig (9-of-13). The Community Multisig can call this directly with no delay, while the timelock can only do it through one of its own queued operations."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "revokeRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.TIMELOCK_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-revoke",
+              "description": "Removes a role on the 24-day timelock, for example taking EXECUTOR_ROLE from the Protocol Council or CANCELLER_ROLE from the Operations Multisig. TIMELOCK_ADMIN_ROLE is held by the timelock itself and by the Community Multisig (9-of-13), which can act with no delay."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -2006,6 +2666,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-12T17:06:01.244Z"
+          }
+        },
+        {
+          "functionName": "grantRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.TIMELOCK_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-grant",
+              "description": "Grants PROPOSER_ROLE, EXECUTOR_ROLE, CANCELLER_ROLE or TIMELOCK_ADMIN_ROLE on the 10-day timelock. The role admin is TIMELOCK_ADMIN_ROLE, held by the timelock itself and by the Community Multisig (9-of-13). The Community Multisig can call this directly with no delay, while the timelock can only do it through one of its own queued operations."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "revokeRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.TIMELOCK_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-revoke",
+              "description": "Removes a role on the 10-day timelock, for example taking EXECUTOR_ROLE from the Protocol Council or CANCELLER_ROLE from the Operations Multisig. TIMELOCK_ADMIN_ROLE is held by the timelock itself and by the Community Multisig (9-of-13), which can act with no delay."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -2114,6 +2818,50 @@
             "author": "unknown",
             "date": "2026-05-19T14:59:01.695Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of BackingEigen to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of BackingEigen to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -2177,6 +2925,50 @@
             "author": "unknown",
             "date": "2026-05-12T17:06:11.995Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of Eigen Token to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of Eigen Token to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -2235,6 +3027,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:02:05.126Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of EjectionManager to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of EjectionManager to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -2343,6 +3179,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-12T17:06:25.699Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of StrategyFactory to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of StrategyFactory to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -2572,6 +3452,50 @@
             "author": "unknown",
             "date": "2026-05-19T15:02:05.029Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of EigenDADisperserRegistry to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of EigenDADisperserRegistry to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -2598,6 +3522,50 @@
             "author": "unknown",
             "date": "2026-05-19T15:02:05.037Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of EigenDARelayRegistry to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of EigenDARelayRegistry to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -2623,6 +3591,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:02:05.045Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of EigenDAThresholdRegistry to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of EigenDAThresholdRegistry to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -2805,6 +3817,50 @@
             "author": "unknown",
             "date": "2026-05-19T15:02:05.100Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of OperatorTableUpdater to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of OperatorTableUpdater to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -2927,6 +3983,50 @@
             "author": "unknown",
             "date": "2026-05-12T17:07:13.296Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of CrossChainRegistry to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of CrossChainRegistry to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -2999,6 +4099,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-09-28T07:05:27.000Z"
+          }
+        },
+        {
+          "functionName": "grantRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-grant",
+              "description": "Grants a role on the ProtocolRegistry. Giving someone PAUSER_ROLE lets them call pauseAll and pause every registered EigenLayer contract in one transaction. DEFAULT_ADMIN_ROLE is held by the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "revokeRole",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.accessControl.DEFAULT_ADMIN_ROLE.members"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "role-revoke",
+              "description": "Removes a role on the ProtocolRegistry, for example taking PAUSER_ROLE away from the Pauser Multisig. DEFAULT_ADMIN_ROLE is held by the Executor Multisig (1-of-2, signed by the 10-day Timelock and the 9-of-13 Community Multisig)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
@@ -3130,6 +4274,50 @@
             "author": "unknown",
             "date": "2026-05-19T15:02:04.986Z"
           }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of PaymentVault to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of PaymentVault to the zero address for good. After that, the ETH and tokens in PaymentVault could never be withdrawn. Owner is the EigenDA Operations Multisig (2-of-4)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
         }
       ]
     },
@@ -3170,6 +4358,50 @@
           "lastChangedBy": {
             "author": "unknown",
             "date": "2026-05-19T15:02:05.152Z"
+          }
+        },
+        {
+          "functionName": "transferOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-transfer",
+              "description": "Hands ownership of TaskMailbox to a new address in one step, with no acceptance needed. The new owner gets every owner-only function on the contract at once. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
+          }
+        },
+        {
+          "functionName": "renounceOwnership",
+          "isPermissioned": true,
+          "score": "critical",
+          "ownerDefinitions": [
+            {
+              "path": "$self.owner"
+            }
+          ],
+          "mitigations": [
+            {
+              "type": "other",
+              "label": "ownership-renounce",
+              "description": "Sets the owner of TaskMailbox to the zero address for good. After that, every owner-only setting on the contract would be frozen in its current state. Owner is the Operations Multisig (3-of-6)."
+            }
+          ],
+          "timestamp": "2026-09-28T10:40:48.000Z",
+          "lastChangedBy": {
+            "author": "unknown",
+            "date": "2026-09-28T10:40:48.000Z"
           }
         }
       ]
