@@ -4,28 +4,9 @@ import {
   type DiscoveryPaths,
   TemplateService,
 } from '@l2beat/discovery'
-import type {
-  ApiContractTagsResponse,
-  ApiFunctionsResponse,
-  AuditEntry,
-  ContractFundsData,
-  ApiFundsDataResponse,
-  Impact,
-  Mitigation,
-  ResourceEntry,
-  ReviewConfig,
-} from './types'
-import { getFunctions } from './functions'
-import { getFundsData } from './fundsData'
-import { getContractTags } from './contractTags'
-import { countLinesOfCode } from './countLinesOfCode'
-import {
-  getAudits,
-  getLinesOfCode,
-  getResources,
-  getResourcesLastModified,
-} from './resources'
-import { getGovernance } from './governance'
+import * as fs from 'fs'
+import * as path from 'path'
+import { getProject } from '../getProject'
 import { getActivityEvents } from './activity'
 import type {
   ActivityFileEvent,
@@ -35,23 +16,48 @@ import type {
   RoleUpdateEvent,
 } from './activityClassifier'
 import {
+  addressesEqual,
+  buildImplementationToProxyMap,
+  getFromAddressRecord,
+  normalizeChainAddress,
+} from './addressUtils'
+import { getContractTags } from './contractTags'
+import { countLinesOfCode } from './countLinesOfCode'
+import { getFunctions } from './functions'
+import { getFundsData } from './fundsData'
+import { getGovernance } from './governance'
+import {
   type CompiledGovernance,
   resolveGovernance,
 } from './governanceCompiler'
 import {
-  normalizeChainAddress,
-  addressesEqual,
-  getFromAddressRecord,
-  buildImplementationToProxyMap,
-} from './addressUtils'
-import { getProject } from '../getProject'
-import {
-  ProjectAnalysis,
   type ApiAdminsResponse,
   type ApiDependenciesResponse,
+  ProjectAnalysis,
 } from './projectAnalysis'
-import * as fs from 'fs'
-import * as path from 'path'
+import {
+  getAudits,
+  getLinesOfCode,
+  getResources,
+  getResourcesLastModified,
+} from './resources'
+import {
+  checkReviewIntegrity,
+  type IntegrityWarning,
+  type PublishedAtSource,
+  resolvePublishedAt,
+} from './reviewIntegrity'
+import type {
+  ApiContractTagsResponse,
+  ApiFunctionsResponse,
+  ApiFundsDataResponse,
+  AuditEntry,
+  ContractFundsData,
+  Impact,
+  Mitigation,
+  ResourceEntry,
+  ReviewConfig,
+} from './types'
 
 // ============================================================================
 // Compiled Review Types
@@ -271,7 +277,7 @@ export type ActivityEvent = UpgradeEvent | ActivityFileEvent
 // ============================================================================
 
 export type CompileResult =
-  | { status: 'success'; path: string }
+  | { status: 'success'; path: string; warnings: IntegrityWarning[] }
   | { status: 'skipped'; reason: 'no-review-config' | 'no-call-graph' }
   | { status: 'error'; error: string }
 
@@ -423,7 +429,7 @@ export class ReviewCompiler {
       })
 
       // 10. Build the compiled review
-      const compiled = this.buildCompiledReview(
+      const { compiled, publishedAtSource } = this.buildCompiledReview(
         project,
         reviewConfig,
         adminsResult,
@@ -444,7 +450,20 @@ export class ReviewCompiler {
         fundsData,
       })
 
-      // 12. Write compiled-review.json to defiscan-frontend/public/data/<slug>/
+      // 12. Integrity checks. Never block the compile, but never stay quiet:
+      // each warning is logged and returned to the caller.
+      const warnings = checkReviewIntegrity({
+        project,
+        reviewConfig,
+        audits,
+        compiled,
+        publishedAtSource,
+      })
+      for (const w of warnings) {
+        this.log(`[review-integrity] ${project}: ${w.code}: ${w.message}`)
+      }
+
+      // 13. Write compiled-review.json to defiscan-frontend/public/data/<slug>/
       const targetDir = outputDir ?? this.getDefaultOutputDir()
       const slug = reviewConfig.protocolSlug
       const slugDir = path.join(targetDir, slug)
@@ -455,7 +474,7 @@ export class ReviewCompiler {
 
       this.log(`Review compiled successfully: ${outputPath}`)
 
-      return { status: 'success', path: outputPath }
+      return { status: 'success', path: outputPath, warnings }
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : String(error)
@@ -477,7 +496,7 @@ export class ReviewCompiler {
     resources: ResourceEntry[],
     audits: AuditEntry[],
     linesOfCode: number | undefined,
-  ): CompiledReview {
+  ): { compiled: CompiledReview; publishedAtSource: PublishedAtSource } {
     const tagsByAddress = new Map<
       string,
       ApiContractTagsResponse['tags'][number]
@@ -881,16 +900,25 @@ export class ReviewCompiler {
         : compiledAt
 
     // publishedAt = first time review-config.json was created. Preserved by
-    // writeReviewConfig and the /generate-review skill. Fall back to
-    // lastModified for legacy projects whose configs predate this field.
-    const publishedAt = reviewConfig.publishedAt || lastModified
+    // writeReviewConfig and the /generate-review skill. When the field is
+    // missing we take the commit that first added review-config.json, and
+    // only then lastModified. Anything other than the explicit field raises
+    // an integrity warning, so the fallback can't go unnoticed again.
+    const resolvedPublishedAt = resolvePublishedAt(
+      this.paths,
+      project,
+      reviewConfig,
+      lastModified,
+    )
+    const publishedAt = resolvedPublishedAt.value
 
-    // verified = researcher attestation. Missing field on legacy configs
-    // reads as true (they were researcher-curated); AI-generated reviews
-    // must explicitly write false.
-    const verified = reviewConfig.verified ?? true
+    // verified = researcher attestation. A missing field compiles as
+    // unverified: nothing may show the Verified badge without an explicit
+    // true in review-config.json. Every config in the repo carries the field
+    // explicitly, so this default only applies to new reviews.
+    const verified = reviewConfig.verified ?? false
 
-    return {
+    const compiled: CompiledReview = {
       version: '1.0',
       publishedAt,
       lastModified,
@@ -944,6 +972,7 @@ export class ReviewCompiler {
       ),
       sections: reviewConfig.sections ?? {},
     }
+    return { compiled, publishedAtSource: resolvedPublishedAt.source }
   }
 
   /**
@@ -1028,7 +1057,8 @@ export class ReviewCompiler {
       if (dataPath.startsWith('v2score.')) {
         // Backward compatibility: map v2score.* paths to adminsResult
         return this.resolveV2ScorePath(dataPath, sources.adminsResult)
-      } else if (dataPath.startsWith('fundsdata.')) {
+      }
+      if (dataPath.startsWith('fundsdata.')) {
         // Normalize contract address keys for case-insensitive matching
         const fundsData = { ...sources.fundsData }
         if (fundsData.contracts) {
