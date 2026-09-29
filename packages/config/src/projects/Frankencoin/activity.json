@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790608879,
-  "lastConsumedUpdateNotifierId": 662,
+  "lastReconciledAt": 1790690755,
+  "lastConsumedUpdateNotifierId": 668,
   "events": [
     {
       "timestamp": "2026-04-21T09:00:35.000Z",
@@ -4184,6 +4184,125 @@
           "field": "values.getPrice",
           "before": "95866635747485757",
           "after": "95675652992376926"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-29T14:00:48.000Z",
+      "updateNotifierId": 668,
+      "address": "eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721",
+      "contractName": "Firepit",
+      "entity": null,
+      "id": "668:eth:0x0D5Cd355e2aBEB8fb1552F56c965B867346d6721:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.nonce",
+          "before": 1374,
+          "after": 1378
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-29T14:00:48.000Z",
+      "updateNotifierId": 668,
+      "address": "eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF",
+      "contractName": "UniswapV3Pool",
+      "entity": null,
+      "id": "668:eth:0x8E4318E2cb1ae291254B187001a59a1f8ac78cEF:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.slot0.tick",
+          "before": -274438,
+          "after": -274465
+        },
+        {
+          "field": "values.slot0.sqrtPriceX96",
+          "before": "87064379535711389432804",
+          "after": "86947546438179929172529"
+        },
+        {
+          "field": "values.liquidity",
+          "before": "184999079340409858000",
+          "after": "97213654245601425680"
+        },
+        {
+          "field": "values.observations.0.2",
+          "before": "6400284346298397053491943700086",
+          "after": "6400284489830739235869783968003"
+        },
+        {
+          "field": "values.observations.0.1",
+          "before": -23047758378132,
+          "after": -23068871706192
+        },
+        {
+          "field": "values.observations.0.0",
+          "before": 1790606243,
+          "after": 1790683175
+        },
+        {
+          "field": "values.protocolFees.token0",
+          "before": "59397868914768148714",
+          "after": "63195604534222937099"
+        },
+        {
+          "field": "values.protocolFees.token1",
+          "before": 116190,
+          "after": 26172
+        },
+        {
+          "field": "values.feeGrowthGlobal0X128",
+          "before": "196890154909297949634334627140229997728381",
+          "after": "196923812422706002806380483774484389275458"
+        },
+        {
+          "field": "values.feeGrowthGlobal1X128",
+          "before": "297949312742131069666232660973",
+          "after": "297952264993436010851487981671"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-29T14:00:48.000Z",
+      "updateNotifierId": 668,
+      "address": "eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58",
+      "contractName": "UniswapAmplifier",
+      "entity": null,
+      "id": "668:eth:0xa1304E5Aaf83CDB7c2b367F50B99Bb0647ED8C58:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getPrice",
+          "before": "95675652992376926",
+          "after": "95419047870236366"
+        },
+        {
+          "field": "values.totalBorrowed",
+          "before": "1399248197250305916017810",
+          "after": "1584834579354625147583803"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-29T14:00:48.000Z",
+      "updateNotifierId": 668,
+      "address": "eth:0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "contractName": "Tether USD Token",
+      "entity": null,
+      "id": "668:eth:0xdAC17F958D2ee523a2206206994597C13D831ec7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalSupply",
+          "before": "88304342264551152",
+          "after": "88304299381626618"
+        },
+        {
+          "field": "values._totalSupply",
+          "before": "88304342264551152",
+          "after": "88304299381626618"
         }
       ]
     }

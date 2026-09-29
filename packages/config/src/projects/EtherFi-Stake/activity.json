@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790425272,
-  "lastConsumedUpdateNotifierId": 650,
+  "lastReconciledAt": 1790690815,
+  "lastConsumedUpdateNotifierId": 669,
   "events": [
     {
       "timestamp": "2026-03-26T08:10:03.000Z",
@@ -6486,6 +6486,22 @@
       "entity": null,
       "id": "650:eth:0x747C741496a507E4B404b50463e691A8d692f6Ac:contract-added",
       "type": "contract-added"
+    },
+    {
+      "timestamp": "2026-09-29T14:00:48.000Z",
+      "updateNotifierId": 669,
+      "address": "eth:0x670F3818Fe5B1144e361A9A44EcbEA8231cCD32a",
+      "contractName": "EtherFiNode",
+      "entity": null,
+      "id": "669:eth:0x670F3818Fe5B1144e361A9A44EcbEA8231cCD32a:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getConsolidationRequestFee",
+          "before": 1,
+          "after": 23349
+        }
+      ]
     }
   ]
 }

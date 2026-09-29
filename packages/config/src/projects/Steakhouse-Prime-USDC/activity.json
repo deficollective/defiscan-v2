@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790608854,
-  "lastConsumedUpdateNotifierId": 661,
+  "lastReconciledAt": 1790690715,
+  "lastConsumedUpdateNotifierId": 667,
   "events": [
     {
       "timestamp": "2026-04-30T09:26:35.000Z",
@@ -1511,6 +1511,81 @@
         {
           "field": "values.marketOracles.3",
           "before": "base:0xFEa2D58cEfCb9fcb597723c6bAE66fFE4193aFE4"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-29T14:00:48.000Z",
+      "updateNotifierId": 667,
+      "address": "base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD",
+      "contractName": "SafeL2",
+      "entity": null,
+      "id": "667:base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.multisigThreshold",
+          "before": "5 of 9 (56%)",
+          "after": "5 of 10 (50%)"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-29T14:00:48.000Z",
+      "updateNotifierId": 667,
+      "address": "base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD",
+      "contractName": "SafeL2",
+      "entity": null,
+      "id": "667:base:0x0A0e559bc3b0950a7e448F0d4894db195b9cf8DD:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.0",
+          "after": "base:0xC04F9610694a9E07e0d6a361bEC53ABeaDf9Cf9e"
+        },
+        {
+          "field": "values.$members.1",
+          "after": "base:0x005398827D00c2951ffB52BD91164eF402bCF105"
+        },
+        {
+          "field": "values.$members.0",
+          "before": "base:0xf83dB716A1Ff12F9005F98f678D8BE97B8Bc81d6",
+          "after": "base:0x2E8c25A6f7f7f34666b998813aBF97D8B617f111"
+        },
+        {
+          "field": "values.$members.1",
+          "before": "base:0x8AE8EE5ad6EaE89836B0070Ebc47AF06E3D7422b",
+          "after": "base:0x5571A6fEf340a9D26f1428684B9e893EA84b46Ac"
+        },
+        {
+          "field": "values.$members.2",
+          "before": "base:0xd2B8Dd0Fd51d80bF939047A9AAa55919112838E8",
+          "after": "base:0x32E5Cb1a68761a0CFf88d4baa21e398422B5166E"
+        },
+        {
+          "field": "values.$members.3",
+          "before": "base:0xd8bAA2606c4f0d121d4a08b0D83acF0Dee9dCA77",
+          "after": "base:0x21C1e5Be991BF1544ca9759a601f66Dc60083f7d"
+        },
+        {
+          "field": "values.$members.4",
+          "before": "base:0xcC771952fdE840E30C6802734e5ad20479c2959f",
+          "after": "base:0x9A86713145F38cd688969c0ECc87B314b23254b2"
+        },
+        {
+          "field": "values.$members.5",
+          "before": "base:0xE3fCEE6B6cd564E073346f71394f60eC9aDf5120",
+          "after": "base:0xBC27046213d34D4A153cF57a48c74D74239e8968"
+        },
+        {
+          "field": "values.$members.6",
+          "before": "base:0x0D61C8b6CA9669A36F351De3AE335e9689dd9C5b",
+          "after": "base:0x394e6eF80c6F4Ad14a891A3987D8bD1387afA0b1"
+        },
+        {
+          "field": "values.$members.8",
+          "before": "base:0x387Cde8598E1CBb297FDc5bAEbA5E5c5c2735344"
         }
       ]
     }
