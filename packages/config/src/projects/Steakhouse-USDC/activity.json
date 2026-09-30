@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790690702,
-  "lastConsumedUpdateNotifierId": 666,
+  "lastReconciledAt": 1790775479,
+  "lastConsumedUpdateNotifierId": 675,
   "events": [
     {
       "timestamp": "2026-03-03T13:51:02.000Z",
@@ -14191,6 +14191,255 @@
           "field": "values.liquidityData",
           "before": "0x000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec7000000000000000000000000cbb7c0000ab88b473b1f5afd9ef808440eed33bf0000000000000000000000009f983115741d0f7f2eae07831415057ad3de34d2000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000",
           "after": "0x000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec70000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599000000000000000000000000008bf4b1cda0cc9f0e882e0697f036667652e1ef000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 675,
+      "address": "eth:0x5E3aCa36fE2361e1866752AD74CB429F64CDcF1A",
+      "contractName": "MorphoMarketV1AdapterV2",
+      "entity": null,
+      "id": "675:eth:0x5E3aCa36fE2361e1866752AD74CB429F64CDcF1A:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.realAssets",
+          "before": "34950870226903223249192120",
+          "after": "35076342616743224041765315"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 675,
+      "address": "eth:0xbEEF00A59B577423653A1526c7009bdE103F542B",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "675:eth:0xbEEF00A59B577423653A1526c7009bdE103F542B:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.liquidityData",
+          "before": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000cbb7c0000ab88b473b1f5afd9ef808440eed33bf000000000000000000000000a6d6950c9f177f1de7f7757fb33539e3ec60182a000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000",
+          "after": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000007f39c581f595b53c5cb19bd0b3f8da6c935e2ca000000000000000000000000048f7e36eb6b826b2df4b2e630b62cd25e89e40e2000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 675,
+      "address": "eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB",
+      "contractName": "MetaMorpho",
+      "isDependency": false,
+      "entity": null,
+      "id": "675:eth:0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.supplyQueue.2",
+          "before": "0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc",
+          "after": "0x85252bb8485c99bba46fe149c7dd2aad83672640f53c630890673cf1848ba16e"
+        },
+        {
+          "field": "values.supplyQueue.6",
+          "before": "0x85252bb8485c99bba46fe149c7dd2aad83672640f53c630890673cf1848ba16e"
+        },
+        {
+          "field": "values.supplyQueue.7",
+          "after": "0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc"
+        },
+        {
+          "field": "values.marketParams.3.collateralToken",
+          "before": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+          "after": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee"
+        },
+        {
+          "field": "values.marketParams.3.marketId",
+          "before": "0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc",
+          "after": "0x85252bb8485c99bba46fe149c7dd2aad83672640f53c630890673cf1848ba16e"
+        },
+        {
+          "field": "values.marketParams.3.oracle",
+          "before": "eth:0x48F7E36EB6B826B2dF4B2E630B62Cd25e89E40e2",
+          "after": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411"
+        },
+        {
+          "field": "values.marketParams.7",
+          "before": {
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000",
+            "oracle": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411",
+            "marketId": "0x85252bb8485c99bba46fe149c7dd2aad83672640f53c630890673cf1848ba16e",
+            "loanToken": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "collateralToken": "eth:0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee"
+          }
+        },
+        {
+          "field": "values.marketParams.8",
+          "after": {
+            "marketId": "0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc",
+            "loanToken": "eth:0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "collateralToken": "eth:0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "oracle": "eth:0x48F7E36EB6B826B2dF4B2E630B62Cd25e89E40e2",
+            "irm": "eth:0x870aC11D48B15DB9a138Cf899d20F13F79Ba00BC",
+            "lltv": "860000000000000000"
+          }
+        },
+        {
+          "field": "values.marketOracles.3",
+          "before": "eth:0x48F7E36EB6B826B2dF4B2E630B62Cd25e89E40e2",
+          "after": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411"
+        },
+        {
+          "field": "values.marketOracles.7",
+          "before": "eth:0xa3A7A3ceFee206f9d7Fe00eC3C83324ED4228411"
+        },
+        {
+          "field": "values.marketOracles.8",
+          "after": "eth:0x48F7E36EB6B826B2dF4B2E630B62Cd25e89E40e2"
+        },
+        {
+          "field": "values.withdrawQueue.3",
+          "before": "0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc",
+          "after": "0x85252bb8485c99bba46fe149c7dd2aad83672640f53c630890673cf1848ba16e"
+        },
+        {
+          "field": "values.withdrawQueue.7",
+          "before": "0x85252bb8485c99bba46fe149c7dd2aad83672640f53c630890673cf1848ba16e"
+        },
+        {
+          "field": "values.withdrawQueue.8",
+          "after": "0xb323495f7e4148be5643a4ea4a8221eef163e4bccfdedc2a6f4696baacbc86cc"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 675,
+      "address": "eth:0xBEeF01b15dD31E55b4B0d6b6fD19D380c522cc24",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "675:eth:0xBEeF01b15dD31E55b4B0d6b6fD19D380c522cc24:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.totalAssets",
+          "before": 4001107,
+          "after": 4001123
+        },
+        {
+          "field": "values.previewDeposit.1",
+          "before": 999721077270,
+          "after": 999717079509
+        },
+        {
+          "field": "values.previewDeposit.2",
+          "before": 1999442154541,
+          "after": 1999434159019
+        },
+        {
+          "field": "values.previewDeposit.3",
+          "before": 2999163231811,
+          "after": 2999151238528
+        },
+        {
+          "field": "values.previewDeposit.4",
+          "before": 3998884309082,
+          "after": 3998868318038
+        },
+        {
+          "field": "values.convertToShares.1",
+          "before": 999721077270,
+          "after": 999717079509
+        },
+        {
+          "field": "values.convertToShares.2",
+          "before": 1999442154541,
+          "after": 1999434159019
+        },
+        {
+          "field": "values.convertToShares.3",
+          "before": 2999163231811,
+          "after": 2999151238528
+        },
+        {
+          "field": "values.convertToShares.4",
+          "before": 3998884309082,
+          "after": 3998868318038
+        },
+        {
+          "field": "values.previewWithdraw.1",
+          "before": 999721077271,
+          "after": 999717079510
+        },
+        {
+          "field": "values.previewWithdraw.2",
+          "before": 1999442154542,
+          "after": 1999434159020
+        },
+        {
+          "field": "values.previewWithdraw.3",
+          "before": 2999163231812,
+          "after": 2999151238529
+        },
+        {
+          "field": "values.previewWithdraw.4",
+          "before": 3998884309083,
+          "after": 3998868318039
+        },
+        {
+          "field": "values.accrueInterestView.0",
+          "before": 4001107,
+          "after": 4001123
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 675,
+      "address": "eth:0xbeef0A65206ba55319851836c91f3Fd8864a2E39",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "675:eth:0xbeef0A65206ba55319851836c91f3Fd8864a2E39:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.liquidityData",
+          "before": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000000f948cba8231db7898ef36a4212581ad7b1b4580000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000",
+          "after": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599000000000000000000000000f1561bc4b3d1ba49053986fb9ee88d4fe22d0cf4000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 675,
+      "address": "eth:0xbeeff07d991C04CD640DE9F15C08ba59c4FEDEb7",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "675:eth:0xbeeff07d991C04CD640DE9F15C08ba59c4FEDEb7:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.liquidityData",
+          "before": "0x000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec70000000000000000000000002260fac5e5542a773aa44fbcfedf7c193bc2c599000000000000000000000000008bf4b1cda0cc9f0e882e0697f036667652e1ef000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000",
+          "after": "0x000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec7000000000000000000000000cbb7c0000ab88b473b1f5afd9ef808440eed33bf0000000000000000000000009f983115741d0f7f2eae07831415057ad3de34d2000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 675,
+      "address": "eth:0xbeeff2C5bF38f90e3482a8b19F12E5a6D2FCa757",
+      "contractName": "VaultV2",
+      "entity": null,
+      "id": "675:eth:0xbeeff2C5bF38f90e3482a8b19F12E5a6D2FCa757:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.liquidityData",
+          "before": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000004614f7a56a3eb83b2ff9fa4b4b9575b28fb6864400000000000000000000000052ea2c12734b5bb61e1edf52bb0f01d9206493fc000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000cb2bba6f17b8000",
+          "after": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000cd5fe23c85820f7b72d0926fc9b05b43e359b7ee000000000000000000000000a3a7a3cefee206f9d7fe00ec3c83324ed4228411000000000000000000000000870ac11d48b15db9a138cf899d20f13f79ba00bc0000000000000000000000000000000000000000000000000bef55718ad60000"
         }
       ]
     }

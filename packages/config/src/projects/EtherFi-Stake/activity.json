@@ -1,7 +1,7 @@
 {
   "version": "1.1",
-  "lastReconciledAt": 1790690815,
-  "lastConsumedUpdateNotifierId": 669,
+  "lastReconciledAt": 1790775516,
+  "lastConsumedUpdateNotifierId": 677,
   "events": [
     {
       "timestamp": "2026-03-26T08:10:03.000Z",
@@ -6500,6 +6500,39 @@
           "field": "values.getConsolidationRequestFee",
           "before": 1,
           "after": 23349
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 677,
+      "address": "eth:0x0c83EAe1FE72c390A02E426572854931EefF93BA",
+      "contractName": "Safe",
+      "entity": null,
+      "id": "677:eth:0x0c83EAe1FE72c390A02E426572854931EefF93BA:role:Safe.owners",
+      "type": "role-update",
+      "roleName": "Safe.owners",
+      "changes": [
+        {
+          "field": "values.$members.7",
+          "before": "eth:0x4024380A7c52328a0BB2B608846dCf2E4621f049",
+          "after": "eth:0x513A849d64C3a199C288D679946a65e5a5B709F4"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-30T13:36:34.000Z",
+      "updateNotifierId": 677,
+      "address": "eth:0x670F3818Fe5B1144e361A9A44EcbEA8231cCD32a",
+      "contractName": "EtherFiNode",
+      "entity": null,
+      "id": "677:eth:0x670F3818Fe5B1144e361A9A44EcbEA8231cCD32a:data-change",
+      "type": "data-change",
+      "changes": [
+        {
+          "field": "values.getConsolidationRequestFee",
+          "before": 23349,
+          "after": 10
         }
       ]
     }
