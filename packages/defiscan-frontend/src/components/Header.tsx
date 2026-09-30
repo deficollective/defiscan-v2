@@ -39,6 +39,9 @@ export function Header() {
             <Link to="/gallery" className={navClass('/gallery')}>
               Reports
             </Link>
+            <Link to="/contagion" className={navClass('/contagion')}>
+              Contagion Map
+            </Link>
             <Link to="/about" className={navClass('/about')}>
               About
             </Link>
